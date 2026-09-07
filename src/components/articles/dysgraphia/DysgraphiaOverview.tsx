@@ -211,7 +211,7 @@ export function DysgraphiaOverview({ setCurrentArticle }: DysgraphiaOverviewProp
           <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Diagnosis, Strengths & Outlook</h2>
           
           <ImageWithFallback 
-            src="/images/dysgraphia/dysgraphia-overview-technology.webp" 
+            src="/images/dysgraphia/dysgraphia-overview-diagnosis.webp" 
             alt="Individual successfully utilizing speech-to-text software on a laptop"
             className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
           />
