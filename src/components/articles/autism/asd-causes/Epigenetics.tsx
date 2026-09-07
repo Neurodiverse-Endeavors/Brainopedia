@@ -58,8 +58,8 @@ export function Epigenetics({ setCurrentArticle }: EpigeneticsProps) {
           </p>
         </div>
 
-        <div className="bg-white p-5 rounded-lg border-t-4 border-purple-400 shadow-sm">
-          <div className="flex items-center gap-2 mb-3 text-purple-500">
+        <div className="bg-white p-5 rounded-lg border-t-4 border-[#0c264d] shadow-sm">
+          <div className="flex items-center gap-2 mb-3 text-[#0c264d]">
             <Brain size={20} />
             <h3 className="font-bold font-spartan">Brain Development</h3>
           </div>

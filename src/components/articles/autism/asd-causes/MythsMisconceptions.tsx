@@ -43,7 +43,7 @@ export function MythsMisconceptions({ setCurrentArticle }: MythsMisconceptionsPr
       </div>
 
       {/* The Gut / Diet Feature Box */}
-      <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-indigo-400 mb-8">
+      <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-cyan-400 mb-8">
         <h3 className="font-bold mb-2 text-med font-spartan text-[#0c264d]">
           <span className="text-red-500 mr-2">✗</span> Myth: Specific diets (like GFCF) can "cure" autism.
         </h3>
@@ -92,7 +92,7 @@ export function MythsMisconceptions({ setCurrentArticle }: MythsMisconceptionsPr
         </div>
 
         {/* Savant */}
-        <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-emerald-400">
+        <div className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-[#0c264d]">
           <h3 className="font-bold mb-2 text-lg font-spartan text-[#0c264d]">
             <span className="text-red-500 mr-2">✗</span> Myth: The "Rain Man" Savant
           </h3>

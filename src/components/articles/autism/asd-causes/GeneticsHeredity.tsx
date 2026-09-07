@@ -158,11 +158,11 @@ export function GeneticsHeredity({ setCurrentArticle }: { setCurrentArticle?: (i
         </div>
 
         {/* Associated Syndromes */}
-        <div className="bg-white p-6 rounded-xl border-t-4 border-red-400 shadow-sm flex flex-col">
+        <div className="bg-white p-6 rounded-xl border-t-4 border-[#0c264d] shadow-sm flex flex-col">
           <h3 className="text-[#0c264d] font-bold mb-4 text-lg font-spartan">Associated Syndromes</h3>
           <div className="space-y-4 text-sm flex-grow">
-            <div className="bg-red-50 p-4 rounded-lg border border-red-100">
-              <strong className="text-red-900">Fragile X Syndrome (FXS):</strong> Leading inherited cause of intellectual disability. ~90% of males show autistic characteristics.<sup className="text-green-600 font-bold ml-0.5">5</sup>
+            <div className="bg-red-50 p-4 rounded-lg border border-[#0c264d]">
+              <strong className="text-[#0c264d]">Fragile X Syndrome (FXS):</strong> Leading inherited cause of intellectual disability. ~90% of males show autistic characteristics.<sup className="text-green-600 font-bold ml-0.5">5</sup>
             </div>
             <div className="flex flex-col gap-2 text-sm font-bold">
               <span className="px-4 py-2 bg-white border border-gray-200 rounded shadow-sm text-gray-700 text-center">Tuberous Sclerosis (25-61%)</span>
