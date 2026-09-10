@@ -153,7 +153,7 @@ export function Articledownsyndrome({ setCurrentArticle }: ArticledownsyndromePr
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Down syndrome results from a random error during cell division that produces an extra copy of chromosome 21, with the vast majority of cases not being inherited.<sup className="text-[#10b981] font-bold ml-0.5">19</sup> This extra genetic material directly influences physical development throughout the body, particularly shaping brain structure and the resulting cognitive profile.
+            Down syndrome is a naturally occurring genetic variation that happens when a spontaneous event during cell division creates an extra copy of chromosome 21, with the vast majority of cases not being inherited.<sup className="text-[#10b981] font-bold ml-0.5">19</sup> This additional genetic material directly influences physical development throughout the body, particularly shaping brain structure and the resulting cognitive profile.
           </p>
 
           <button
