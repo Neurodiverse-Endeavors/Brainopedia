@@ -1,331 +1,398 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { MapPin, Activity, Home, Users, Heart, GraduationCap, Briefcase, Scale, MessageSquare, Brain, ShieldAlert, Lightbulb, CheckCircle, Handshake } from 'lucide-react';
 
 interface NVLDLivingProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function NVLDLiving({ setCurrentArticle }: NVLDLivingProps) {
+export function NVLDLiving({ setCurrentArticle, initialTab }: NVLDLivingProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'daily');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('nvld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Living with NVLD
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('nvld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to NVLD
-        </a>
+          <span className="text-xl">←</span>
+          All About NVLD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Living with NVLD
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('nvld')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About NVLD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Living with NVLD involves navigating challenges in visual-spatial processing, motor skills, and social 
-            interactions while leveraging strong verbal abilities.<sup>1</sup> With understanding, support, and 
-            appropriate accommodations, individuals with NVLD can lead successful and fulfilling lives.<sup>2</sup>
-          </p>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('daily')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'daily'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Daily Life & Relationships
+        </button>
+        <button
+          onClick={() => setActiveTab('career')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'career'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Education & Career
+        </button>
+        <button
+          onClick={() => setActiveTab('wellbeing')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'wellbeing'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Well-being & Advocacy
+        </button>
+      </div>
+
+      {/* ==========================================
+          TAB 1: DAILY LIFE & RELATIONSHIPS
+      ========================================== */}
+      {activeTab === 'daily' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Daily Life Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Navigating Daily Challenges</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-living-daily.webp"
+              alt="Person using a GPS map and checklists to organize their day"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Living with NVLD means the physical world often feels like a puzzle with missing pieces. Tasks that rely on spatial mapping, motor skills, or implicit understanding require conscious, deliberate effort. However, with the right strategies and tools, independence is highly achievable.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <MapPin className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Navigation & Transport</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Getting lost is a frequent reality. Adults with NVLD often rely heavily on GPS apps, pre-planning routes meticulously, using public transit with written schedules, or utilizing rideshare apps to reduce driving stress.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Activity className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Motor Activities</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Daily clumsiness and difficulty with fine motor tasks (like cooking or crafts) are common. Success comes from choosing non-competitive physical recreation focused entirely on personal enjoyment.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3 md:col-span-2">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Home className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Independent Living Skills</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Managing a household requires externalizing executive functions: strictly following written recipes step-by-step, using budgeting apps for money management, and implementing visual timers to keep daily routines on track.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Relationships Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships & Social Life</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-living-relationships-hero.webp"
+              alt="Friends communicating openly and enjoying shared verbal interests"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Because NVLD obscures nonverbal cues, socializing can feel like watching a foreign film without subtitles. Thriving socially means shifting away from guessing body language and leaning into direct, explicit communication.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Friendships</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li><strong>Quality over quantity:</strong> Cultivating a few close friends who appreciate directness is often more fulfilling than navigating large groups.<sup className="text-[#10b981] font-bold ml-0.5">2</sup></li>
+                  <li><strong>Shared interests:</strong> Connecting through highly verbal hobbies like book clubs, tabletop games, or debate teams.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Romantic Partners</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Requires a partner who appreciates deep verbal connection and understands the need for explicit communication rather than subtle hints.</li>
+                  <li>Open, honest conversations about sensory limits and spatial challenges are essential for harmony.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Handshake className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm">Family Dynamics</h3>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Educating family members about the reality of the profile helps transition them from frustration to support.</li>
+                  <li>Asking explicitly for help when overwhelmed by visual-spatial demands (like assembling furniture).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      )}
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Daily Life Challenges</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3cml0aW5nJTIwd29ya2luZ3xlbnwxfHx8fDE2NzQ1MzUxN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Writing working"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Navigation and Spatial Challenges</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Getting lost:</strong> Difficulty with directions and navigation<sup>3</sup></li>
-            <li className="mb-2"><strong>Driving:</strong> Challenges learning to drive and navigating</li>
-            <li className="mb-2"><strong>Spatial organization:</strong> Organizing physical spaces</li>
-            <li className="mb-2"><strong>Solutions:</strong> GPS apps, written directions, landmarks</li>
-          </ul>
+      {/* ==========================================
+          TAB 2: EDUCATION & CAREER
+      ========================================== */}
+      {activeTab === 'career' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Motor and Physical Activities</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Clumsiness in daily activities<sup>4</sup></li>
-            <li className="mb-2">Difficulty with sports and physical recreation</li>
-            <li className="mb-2">Challenges with fine motor tasks (cooking, crafts)</li>
-            <li className="mb-2">Solutions: Choose non-competitive physical activities, focus on enjoyment</li>
-          </ul>
+          {/* Education Journey Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Education Journey</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-living-education.webp"
+              alt="Student navigating college campus with accommodations"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The academic journey for a student with NVLD is often a rollercoaster—starting strong in early elementary reading, hitting severe turbulence in middle school math and social dynamics, and finally stabilizing in high school and college once they can select courses that cater to their verbal strengths.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Navigation</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Missing social cues in daily interactions<sup>5</sup></li>
-            <li className="mb-2">Difficulty reading situations and contexts</li>
-            <li className="mb-2">Misunderstanding nonverbal communication</li>
-            <li className="mb-2">Solutions: Ask directly when unsure, find understanding friends</li>
-          </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Primary & Secondary School</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Middle School:</strong> Social challenges intensify as peer interactions become complex and abstract math (geometry) is introduced.</li>
+                  <li><strong>High School:</strong> Support focuses on leveraging high-level verbal abilities in coursework while utilizing IEP/504 accommodations for visual-spatial deficits.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Higher Education</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Course Selection:</strong> Students thrive when they minimize visual-spatial requirements and choose majors emphasizing verbal abilities.</li>
+                  <li><strong>Disability Services:</strong> Registering early for college accommodations (like digital textbooks or extended testing time) is critical for success.<sup className="text-[#10b981] font-bold ml-0.5">2</sup></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Career Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Career & Employment</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-living-career-hero.webp"
+              alt="Successful professional utilizing verbal strengths in a specialized career"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Adults with NVLD are highly intelligent, articulate, and dedicated. Finding professional success is entirely about environmental fit—choosing career paths that demand verbal reasoning and minimizing roles that require spatial organization or rapid physical coordination.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Briefcase className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Suitable Pathways</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li><strong>Writing/Journalism:</strong> Excelling in research, editing, and verbal expression.</li>
+                  <li><strong>Law & Academia:</strong> Thriving in environments of verbal reasoning, historical analysis, and legal advocacy.</li>
+                  <li><strong>Counseling/Therapy:</strong> Utilizing strong verbal communication to help others.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Scale className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Workplace Support</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Requesting written instructions and standardized procedures rather than visual flowcharts.</li>
+                  <li>Utilizing digital task-management apps to offset executive function demands.</li>
+                  <li>Seeking verbal clarification after visual presentations.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <MessageSquare className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Disclosure Decisions</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Disclosing NVLD to an employer is entirely optional, but it is required to receive formal accommodations under the ADA.</li>
+                  <li>Many choose to frame it positively as a "highly verbal learning style."</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
         </div>
+      )}
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Education Journey</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Elementary School</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Verbal strengths shine:</strong> Reading decoding, vocabulary<sup>6</sup></li>
-            <li className="mb-2"><strong>Challenges emerge:</strong> Handwriting, math, social difficulties</li>
-            <li className="mb-2"><strong>Support needs:</strong> IEP or 504 plan with accommodations</li>
-            <li className="mb-2"><strong>Building confidence:</strong> Focus on verbal strengths</li>
-          </ul>
+      {/* ==========================================
+          TAB 3: WELL-BEING & ADVOCACY
+      ========================================== */}
+      {activeTab === 'wellbeing' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Middle School</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Increasing organizational demands<sup>7</sup></li>
-            <li className="mb-2">Social challenges intensify as peer interactions become complex</li>
-            <li className="mb-2">Math becomes more visual-spatial (geometry)</li>
-            <li className="mb-2">Need for continued support and accommodations</li>
-          </ul>
+          {/* Emotional Well-being Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Emotional Well-being</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-living-wellbeing.webp"
+              alt="Calming visual representing therapy and self-care strategies"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The chronic stress of navigating a world that assumes visual and spatial intuition takes a heavy toll. Protecting mental health is just as important as securing academic accommodations.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">High School</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Leverage verbal abilities in coursework<sup>8</sup></li>
-            <li className="mb-2">Accommodate visual-spatial challenges</li>
-            <li className="mb-2">College planning: Choose appropriate programs</li>
-            <li className="mb-2">Transition planning for independence</li>
-          </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Brain className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Mental Health Risks</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Individuals with NVLD face significantly heightened risks for severe social anxiety and secondary depression, particularly as they enter adolescence and adulthood where social isolation can peak.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">College and Higher Education</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Disability services:</strong> Register early for accommodations<sup>9</sup></li>
-            <li className="mb-2"><strong>Course selection:</strong> Minimize visual-spatial requirements</li>
-            <li className="mb-2"><strong>Major choice:</strong> Fields emphasizing verbal abilities</li>
-            <li className="mb-2"><strong>Campus navigation:</strong> Maps, orientation, planning routes</li>
-            <li className="mb-2"><strong>Social support:</strong> Join clubs, find understanding peers</li>
-          </ul>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <ShieldAlert className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Coping Strategies</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Cognitive-behavioral therapy (CBT) is highly effective because it relies on language and logic. Building resilience means practicing deep self-compassion and recognizing that spatial struggles are neurological, not personal failings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Advocacy & Success Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Self-Advocacy & Success</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-living-advocacy-hero.webp"
+              alt="Confident individual self-advocating and succeeding"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Many individuals with NVLD lead incredibly successful, fulfilling lives. The key to unlocking that potential is understanding your unique cognitive profile, embracing your strengths, and advocating fiercely for the tools you need.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Lightbulb className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Leverage Your Assets</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Your advanced vocabulary, rote memory, and strong reading comprehension are superpowers. Use them to compensate for spatial weaknesses—when you can't visualize a solution, talk or write your way through it.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <MessageSquare className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Own Your Narrative</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Use your exceptional verbal skills to advocate for yourself. Educate professors, bosses, and partners about what NVLD is, and request accommodations clearly and specifically without apology.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <CheckCircle className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Keys to Success</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Remember that accommodations level the playing field; they are never "cheating." Focus your energy on what you *can* do, give yourself grace on the tasks that exhaust you, and remember that NVLD is just one aspect of your brilliant mind.</p>
+              </div>
+
+            </div>
+          </div>
         </div>
+      )}
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Career and Employment</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Suitable Career Paths</h3>
-          <p className="mb-4">
-            Careers emphasizing verbal strengths and minimizing visual-spatial demands:<sup>1</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Writing and journalism:</strong> Verbal expression, research, editing</li>
-            <li className="mb-2"><strong>Law:</strong> Verbal reasoning, advocacy, legal writing<sup>1</sup></li>
-            <li className="mb-2"><strong>Teaching:</strong> Verbal instruction, especially language arts, history</li>
-            <li className="mb-2"><strong>Counseling/therapy:</strong> Verbal communication, helping others</li>
-            <li className="mb-2"><strong>Business:</strong> Roles emphasizing communication over spatial tasks</li>
-            <li className="mb-2"><strong>Academia:</strong> Research and teaching in verbal fields</li>
-          </ul>
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('nvld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+        >
+          <span className="text-xl">←</span>
+          All About NVLD
+        </button>
+      </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Workplace Accommodations</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Written instructions and procedures<sup>2</sup></li>
-            <li className="mb-2">Verbal clarification of visual materials</li>
-            <li className="mb-2">Assistive technology (GPS, organizational apps)</li>
-            <li className="mb-2">Flexible work arrangements</li>
-            <li className="mb-2">Understanding supervisors and colleagues</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Disclosure Decisions</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Optional to disclose NVLD to employers</li>
-            <li className="mb-2">May be needed for requesting accommodations<sup>3</sup></li>
-            <li className="mb-2">Consider job requirements and culture</li>
-            <li className="mb-2">Protected under ADA when requesting accommodations</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Relationships and Social Life</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmllbmRzJTIwdG9nZXRoZXJ8ZW58MXx8fHwxNjc0NTM1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Friends together"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Friendships</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Finding true friends:</strong> People who appreciate you for who you are<sup>4</sup></li>
-            <li className="mb-2"><strong>Shared interests:</strong> Connect through common verbal interests</li>
-            <li className="mb-2"><strong>Direct communication:</strong> Ask directly when missing social cues</li>
-            <li className="mb-2"><strong>Quality over quantity:</strong> Few close friends may be more fulfilling</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Romantic Relationships</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Open communication about needs and challenges<sup>5</sup></li>
-            <li className="mb-2">Partners who appreciate verbal connection</li>
-            <li className="mb-2">Being explicit rather than relying on nonverbal cues</li>
-            <li className="mb-2">Finding someone understanding and patient</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Family Dynamics</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Educating family members about NVLD<sup>6</sup></li>
-            <li className="mb-2">Asking for support when needed</li>
-            <li className="mb-2">Appreciating family understanding</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Independent Living Skills</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Daily Life Skills</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Cooking:</strong> Follow written recipes step-by-step<sup>[17]</sup></li>
-            <li className="mb-2"><strong>Organization:</strong> Use checklists, calendars, routines</li>
-            <li className="mb-2"><strong>Money management:</strong> Budgeting apps, written budgets</li>
-            <li className="mb-2"><strong>Time management:</strong> Alarms, schedules, visual timers</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Transportation</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">GPS navigation for driving</li>
-            <li className="mb-2">Public transportation with written routes<sup>[18]</sup></li>
-            <li className="mb-2">Rideshare apps</li>
-            <li className="mb-2">Planning routes in advance</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Emotional Well-being</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Mental Health Considerations</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Anxiety:</strong> Common due to social and spatial challenges<sup>[19]</sup></li>
-            <li className="mb-2"><strong>Depression:</strong> Risk increases in adolescence and adulthood</li>
-            <li className="mb-2"><strong>Self-esteem:</strong> Building confidence through strengths<sup>[20]</sup></li>
-            <li className="mb-2"><strong>Therapy:</strong> CBT and supportive counseling helpful</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Coping Strategies</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Recognize and celebrate verbal strengths</li>
-            <li className="mb-2">Develop compensatory strategies</li>
-            <li className="mb-2">Build supportive relationships<sup>[21]</sup></li>
-            <li className="mb-2">Practice self-compassion</li>
-            <li className="mb-2">Seek professional help when needed</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Leveraging Strengths</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Verbal Abilities as Assets</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Communication:</strong> Strong verbal expression<sup>[22]</sup></li>
-            <li className="mb-2"><strong>Learning:</strong> Excel with verbal instruction</li>
-            <li className="mb-2"><strong>Memory:</strong> Strong rote verbal memory</li>
-            <li className="mb-2"><strong>Reading:</strong> Often avid readers with strong comprehension (with support)</li>
-            <li className="mb-2"><strong>Writing:</strong> May excel in creative or analytical writing</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Building on Interests</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Pursue verbal hobbies (book clubs, debate, theater)</li>
-            <li className="mb-2">Develop expertise in areas of interest<sup>[23]</sup></li>
-            <li className="mb-2">Use strengths to compensate for weaknesses</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Self-Advocacy</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Understanding Your Needs</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Know your NVLD profile and challenges<sup>[24]</sup></li>
-            <li className="mb-2">Identify effective accommodations and strategies</li>
-            <li className="mb-2">Recognize when to ask for help</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Communicating Needs</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Use verbal strengths to advocate for yourself</li>
-            <li className="mb-2">Educate others about NVLD when appropriate</li>
-            <li className="mb-2">Request accommodations clearly and specifically</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Looking Forward</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Keys to Success:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li><strong>Understand your profile:</strong> Know strengths and challenges</li>
-              <li><strong>Use accommodations:</strong> They level the playing field, not "cheating"</li>
-              <li><strong>Leverage verbal strengths:</strong> Choose paths that emphasize these abilities<sup>[25]</sup></li>
-              <li><strong>Develop compensatory strategies:</strong> Technology, routines, supports</li>
-              <li><strong>Build supportive relationships:</strong> People who understand and accept you</li>
-              <li><strong>Focus on what you CAN do:</strong> Not limitations</li>
-              <li><strong>Be patient with yourself:</strong> Progress takes time<sup>[26]</sup></li>
-              <li><strong>Seek support when needed:</strong> Therapy, coaching, accommodations</li>
-              <li><strong>Remember:</strong> NVLD is one aspect of who you are, not your entire identity</li>
-            </ul>
+      {/* ===== REFERENCES SECTION ===== */}
+      <div className="clear-both mt-16 font-spartan">
+        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+        
+        {/* CITED STUDIES: GREEN */}
+        <div className="mb-6">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+            Cited Studies & Statistics
+          </h4>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+            <p>1. Rourke, B. P. (1989). Nonverbal learning disabilities: The syndrome and the model. <i>Guilford Press</i>. https://doi.org/10.1007/978-1-4757-0635-2</p>
+            <p>2. Tanguay, P. B. (2002). Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions. <i>Jessica Kingsley Publishers</i>. https://doi.org/10.1037/10515-000</p>
           </div>
         </div>
 
+        {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Hope and Success</h2>
-          
-          <p className="mb-4">
-            Many individuals with NVLD lead successful, fulfilling lives. With understanding, support, appropriate 
-            accommodations, and by leveraging verbal strengths, people with NVLD thrive in careers, relationships, 
-            and personal pursuits. The challenges are real, but so are the strengths and possibilities.<sup>[27]</sup>
-          </p>
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+            Background Sources
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+            <li>Semrud-Clikeman, M. (2007). Social competence in children. <i>Springer</i>.</li>
+            <li>Thompson, S. (1997). The source for nonverbal learning disorders. <i>LinguiSystems</i>.</li>
+          </ul>
         </div>
       </div>
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Rourke, B. P. (1989). <em>Nonverbal learning disabilities: The syndrome and the model</em>. New York: Guilford Press.</p>
-          <p>[2] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[3] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[4] Rourke, B. P. (1995). "Syndrome of nonverbal learning disabilities: Neurodevelopmental manifestations." <em>Clinical Child and Family Psychology Review</em>, 1(4), 209-234.</p>
-          <p>[5] Semrud-Clikeman, M., & Hynd, G. W. (1990). "Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children." <em>Psychological Bulletin</em>, 107(2), 196-209.</p>
-          <p>[6] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[7] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[8] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[9] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[10] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[11] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[12] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[13] Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq.</p>
-          <p>[14] Semrud-Clikeman, M. (2007). <em>Social competence in children</em>. New York: Springer.</p>
-          <p>[15] Rourke, B. P., & Fuerst, D. R. (1991). <em>Learning disabilities and psychosocial functioning: A neuropsychological perspective</em>. New York: Guilford Press.</p>
-          <p>[16] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[17] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[18] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[19] Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). "A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk." <em>Journal of Learning Disabilities</em>, 22(3), 169-175.</p>
-          <p>[20] Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). "A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk." <em>Journal of Learning Disabilities</em>, 22(3), 169-175.</p>
-          <p>[21] Semrud-Clikeman, M. (2007). <em>Social competence in children</em>. New York: Springer.</p>
-          <p>[22] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[23] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[24] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[25] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[26] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[27] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school</em>. London: Jessica Kingsley Publishers.</p>
-        </div>
-      </section>
-
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('nvld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
-        >
-          ← Back to NVLD
-        </a>
-      </div>
     </article>
   );
 }

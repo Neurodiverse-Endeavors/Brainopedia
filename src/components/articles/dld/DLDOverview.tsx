@@ -1,279 +1,361 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { MessageSquare, Ear, RefreshCcw, BookOpen, Users, Brain, Activity, Volume2, ShieldAlert, CheckCircle, Globe, Lightbulb } from 'lucide-react';
 
 interface DLDOverviewProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function DLDOverview({ setCurrentArticle }: DLDOverviewProps) {
+export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'definition');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('dld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          DLD: Overview
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('dld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to DLD
-        </a>
+          <span className="text-xl">←</span>
+          All About DLD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        DLD: Overview
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('dld')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About DLD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Developmental Language Disorder (DLD) is a neurodevelopmental condition affecting the acquisition and 
-            use of language across spoken, written, and sign modalities.<sup>1</sup> Children with DLD have significant 
-            difficulties learning and using language that cannot be explained by other conditions such as autism, 
-            intellectual disability, or hearing loss.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('definition')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'definition'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Definition & Profiles
+        </button>
+        <button
+          onClick={() => setActiveTab('impact')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'impact'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Impact & Overlap
+        </button>
+        <button
+          onClick={() => setActiveTab('prognosis')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'prognosis'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Prevalence & Outlook
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">What is DLD?</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMHNwZWFraW5nfGVufDF8fHx8MTY3NDUzNTE4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Child speaking"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Definition and Core Concept</h3>
-          <p className="mb-4">
-            DLD is characterized by difficulties with language that persist despite adequate opportunity for learning 
-            and in the absence of other developmental conditions that could explain the language difficulties.<sup>3</sup> 
-            The condition affects understanding (receptive language), expression (expressive language), or both.
-          </p>
+      {/* ==========================================
+          TAB 1: DEFINITION & PROFILES
+      ========================================== */}
+      {activeTab === 'definition' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">The CATALISE Consensus</h3>
-          <p className="mb-4">
-            In 2017, the CATALISE consortium reached international consensus on terminology and criteria for DLD:<sup>4</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Terminology:</strong> "Developmental Language Disorder" replaces "Specific Language Impairment (SLI)"</li>
-            <li className="mb-2"><strong>Criteria:</strong> Language difficulties that impact everyday life and are not associated with a known biomedical condition<sup>5</sup></li>
-            <li className="mb-2"><strong>Identification:</strong> Standardized language assessments typically used</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Not Just "Late Talking"</h3>
-          <p className="mb-4">
-            DLD is a persistent condition, not a developmental delay that children simply outgrow.<sup>6</sup> While 
-            some late talkers catch up, children with DLD continue to struggle with language throughout childhood 
-            and often into adulthood.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Types and Profiles</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Language Domains Affected</h3>
-          <p className="mb-4">
-            DLD can affect various aspects of language:<sup>7</sup>
-          </p>
-
-          <h4 className="font-bold mb-2">1. Expressive Language DLD</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Primary difficulties with language production</li>
-            <li className="mb-2">Understanding may be relatively stronger<sup>8</sup></li>
-            <li className="mb-2">Challenges forming sentences, using grammar, finding words</li>
-          </ul>
-
-          <h4 className="font-bold mb-2">2. Receptive Language DLD</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Primary difficulties understanding language</li>
-            <li className="mb-2">May also have expressive difficulties<sup>9</sup></li>
-            <li className="mb-2">More severe functional impact</li>
-          </ul>
-
-          <h4 className="font-bold mb-2">3. Mixed Receptive-Expressive DLD</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulties with both understanding and expression</li>
-            <li className="mb-2">Most common presentation<sup>1</sup></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Prevalence</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">How Common is DLD?</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Prevalence:</strong> Affects approximately 7-10% of children<sup>1</sup></li>
-            <li className="mb-2"><strong>Comparison:</strong> More common than autism (approximately 1-2%)</li>
-            <li className="mb-2"><strong>Awareness:</strong> Despite prevalence, DLD remains under-recognized<sup>2</sup></li>
-            <li className="mb-2"><strong>Every classroom:</strong> Statistically, 1-2 children in every classroom have DLD</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Gender Distribution</h3>
-          <p className="mb-4">
-            DLD is more common in boys than girls, with ratios ranging from 2:1 to 3:1 depending on the study.<sup>3</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Historical Context</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rcyUyMGhpc3Rvcnl8ZW58MXx8fHwxNjc0NTM1MTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Books history"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Evolution of Terminology</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Historical terms:</strong> "Specific Language Impairment (SLI)," "Language Delay," "Language Disorder"<sup>4</sup></li>
-            <li className="mb-2"><strong>2017 consensus:</strong> International agreement on "Developmental Language Disorder"</li>
-            <li className="mb-2"><strong>Rationale:</strong> More inclusive, less stigmatizing, clearer terminology<sup>5</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Why the Change?</h3>
-          <p className="mb-4">
-            The term "Specific Language Impairment" was problematic because:<sup>6</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">"Specific" implied language was the only area affected (often not true)</li>
-            <li className="mb-2">"Impairment" was stigmatizing</li>
-            <li className="mb-2">Strict exclusionary criteria excluded many children who needed support</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Impact on Daily Life</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Communication Challenges</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty expressing thoughts and needs<sup>[17]</sup></li>
-            <li className="mb-2">Trouble understanding instructions and conversations</li>
-            <li className="mb-2">Frustration when not understood</li>
-            <li className="mb-2">Missing important information in daily interactions</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Academic Impact</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Reading comprehension difficulties<sup>[18]</sup></li>
-            <li className="mb-2">Writing challenges</li>
-            <li className="mb-2">Trouble following multi-step directions</li>
-            <li className="mb-2">Difficulty learning new vocabulary and concepts<sup>[19]</sup></li>
-            <li className="mb-2">Lower academic achievement across subjects</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social and Emotional Impact</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty making and maintaining friendships<sup>[20]</sup></li>
-            <li className="mb-2">Social isolation and loneliness</li>
-            <li className="mb-2">Lower self-esteem</li>
-            <li className="mb-2">Increased risk of bullying<sup>[21]</sup></li>
-            <li className="mb-2">Higher rates of anxiety and depression</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Co-occurring Conditions</h2>
-          
-          <p className="mb-4">
-            DLD frequently occurs alongside other conditions:<sup>[22]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Dyslexia:</strong> Reading difficulties common</li>
-            <li className="mb-2"><strong>ADHD:</strong> Attention difficulties often co-occur<sup>[23]</sup></li>
-            <li className="mb-2"><strong>Speech sound disorders:</strong> Pronunciation difficulties</li>
-            <li className="mb-2"><strong>Motor coordination difficulties:</strong> Some overlap with DCD</li>
-            <li className="mb-2"><strong>Social communication difficulties:</strong> Can overlap with autism traits<sup>[24]</sup></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Prognosis and Long-term Outcomes</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Persistence of DLD</h3>
-          <p className="mb-4">
-            DLD is a lifelong condition for most individuals:<sup>[25]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Language difficulties typically persist into adulthood</li>
-            <li className="mb-2">May become less obvious but continue to impact functioning<sup>[26]</sup></li>
-            <li className="mb-2">Early intervention improves outcomes but doesn't "cure"</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">With Appropriate Support</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Language skills can significantly improve<sup>[27]</sup></li>
-            <li className="mb-2">Academic success is possible with accommodations</li>
-            <li className="mb-2">Many adults with DLD lead successful lives</li>
-            <li className="mb-2">Career choices may need to consider language demands<sup>[28]</sup></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Why Awareness Matters</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">The Hidden Condition:</h3>
-            <p className="mb-4">
-              Despite affecting 1 in 15 children, DLD remains under-recognized:<sup>[29]</sup>
+          {/* Definition Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">What is DLD?</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-overview-definition.webp"
+              alt="Child speaking and attempting to form complex sentences"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-4">
+              Developmental Language Disorder (DLD) is a neurodevelopmental condition that significantly impairs how an individual learns, understands, and uses language across spoken, written, and sign modalities.<sup className="text-[#10b981] font-bold ml-0.5">1</sup> 
             </p>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li>Many children remain undiagnosed or misdiagnosed</li>
-              <li>Less public awareness compared to other conditions like autism or dyslexia<sup>[30]</sup></li>
-              <li>Teachers and parents may not recognize symptoms</li>
-              <li>Early identification and intervention are crucial for better outcomes</li>
-              <li>Increasing awareness helps children get support they need</li>
-            </ul>
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Crucially, these language difficulties persist despite the child having adequate opportunities to learn, and they cannot be explained by other conditions such as autism, intellectual disability, or hearing loss. It is a specific, primary deficit in language acquisition.<sup className="text-[#10b981] font-bold ml-0.5">2</sup>
+            </p>
+
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 clear-both">
+              <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#2abcd4] border-opacity-20 pb-2">The CATALISE Consensus</h3>
+              <p className="text-xs text-slate-700 leading-relaxed mb-2">
+                For decades, the medical and educational fields lacked agreement on what to call this condition. In 2017, an international consortium of experts (CATALISE) reached a historic consensus to officially adopt the term "Developmental Language Disorder," replacing confusing, outdated labels like "Specific Language Impairment (SLI)."<sup className="text-[#10b981] font-bold ml-0.5">3</sup>
+              </p>
+            </div>
+          </div>
+
+          {/* Profiles Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Types and Language Profiles</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-overview-history-hero.webp"
+              alt="Visual representation of different language domains"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Language is highly complex, involving vocabulary, grammar, and social pragmatics. Because of this, DLD does not look exactly the same in every child. It generally manifests in one of three primary profiles affecting distinct domains of language.<sup className="text-[#10b981] font-bold ml-0.5">4</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-200">
+                <div className="bg-[#f0f9ff] p-3 rounded-full border border-[#2abcd4] border-opacity-30 mb-3">
+                  <Volume2 className="text-[#0A9DC4] w-6 h-6" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Expressive DLD</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Primary difficulties lie in producing language. The child may understand what is said to them relatively well, but struggles severely to find words, construct grammatical sentences, or tell a cohesive story.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-200">
+                <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
+                  <Ear className="text-[#d4a017] w-6 h-6" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Receptive DLD</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Primary difficulties lie in understanding language. The child struggles to process verbal information, follow multi-step directions, or grasp the meaning of complex vocabulary. This profile often has a more severe functional impact.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-200">
+                <div className="bg-blue-50 p-3 rounded-full border border-[#0c264d] border-opacity-20 mb-3">
+                  <RefreshCcw className="text-[#0c264d] w-6 h-6" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Mixed Receptive-Expressive</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">The most common clinical presentation. The individual experiences significant difficulties with both interpreting incoming language and generating outgoing verbal expression.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==========================================
+          TAB 2: IMPACT & OVERLAP
+      ========================================== */}
+      {activeTab === 'impact' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Impact Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Impact on Daily Life</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-overview-impact.webp"
+              alt="Student showing frustration with multi-step directions"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Because language forms the foundation of human connection and formal education, the ripple effects of DLD touch nearly every aspect of a child's day. It is vital to recognize that DLD is a persistent, lifelong condition, not simply "late talking" that a child will just naturally outgrow.<sup className="text-[#10b981] font-bold ml-0.5">5</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Academic Impact</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Severe difficulties learning new vocabulary and grasping concepts. Because reading is fundamentally a language task, reading comprehension and written expression are heavily impaired, leading to lower achievement across all subjects.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Users className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Social & Emotional Toll</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Difficulty keeping up with fast-paced peer conversations leads to social isolation, loneliness, and a significantly increased risk of bullying. Over time, this chronic miscommunication severely damages self-esteem.<sup className="text-[#10b981] font-bold ml-0.5">6</sup></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Co-occurring Conditions Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Co-occurring Conditions</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-overview-overlap-hero.webp"
+              alt="Venn diagram showing DLD overlapping with Dyslexia and ADHD"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Neurodevelopmental conditions rarely exist in isolation. DLD frequently shares biological etiology with other learning and developmental profiles, meaning students often navigate multiple diagnoses simultaneously.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <BookOpen className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Dyslexia</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">A massive overlap exists between DLD and Dyslexia. While Dyslexia primarily impacts phonological processing (decoding words), DLD impacts broader language comprehension and grammar.<sup className="text-[#10b981] font-bold ml-0.5">7</sup></p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Activity className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">ADHD</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Attention difficulties and executive function deficits frequently co-occur, further complicating the child's ability to focus on and process complex incoming verbal instructions.<sup className="text-[#10b981] font-bold ml-0.5">8</sup></p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <MessageSquare className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Speech Disorders</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">DLD is distinct from Speech Sound Disorders (which impact articulation/pronunciation), but the two can present together, making the child's output both grammatically flawed and physically difficult to understand.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==========================================
+          TAB 3: PREVALENCE & OUTLOOK
+      ========================================== */}
+      {activeTab === 'prognosis' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Prevalence Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prevalence & The Hidden Reality</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-overview-prevalence.webp"
+              alt="Classroom graphic showing 1-2 children out of 30 having DLD"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Despite being incredibly common, DLD is often referred to as a "hidden condition." Children with DLD look perfectly neurotypical, and their language deficits are frequently misinterpreted by teachers as poor listening skills, lack of attention, or low intelligence.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-3">
+                <Globe className="text-[#0c264d] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">A Universal Condition</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">DLD affects approximately 7% to 10% of children globally, making it a universal condition across all languages and cultures. Statistically, this means 1 to 2 children in every standard classroom have DLD.<sup className="text-[#10b981] font-bold ml-0.5">9</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-3">
+                <ShieldAlert className="text-[#0c264d] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">The Awareness Gap</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Despite being vastly more common than Autism (which affects ~2%), public awareness of DLD remains staggeringly low, leading to high rates of misdiagnosis and lack of early intervention.<sup className="text-[#10b981] font-bold ml-0.5">10</sup></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Outlook Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prognosis and Long-term Outcomes</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-overview-prognosis-hero.webp"
+              alt="Adult successfully engaging in a workplace setting with accommodations"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              While early speech therapy cannot "cure" DLD, targeted intervention dramatically rewires how the brain accesses language, providing critical tools for academic survival and social connection. 
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
+                <Brain className="text-[#d4a017] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Lifelong Persistence</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">DLD is a persistent condition. While the obvious grammatical errors of childhood may fade, adults with DLD continue to experience underlying difficulties with processing speed, complex text comprehension, and rapid word retrieval.<sup className="text-[#10b981] font-bold ml-0.5">11</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
+                <CheckCircle className="text-[#d4a017] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Paths to Success</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">With consistent academic accommodations, self-advocacy, and career choices that balance language demands with other cognitive strengths, adults with DLD lead highly successful, independent, and fulfilling lives.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('dld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+        >
+          <span className="text-xl">←</span>
+          All About DLD
+        </button>
+      </div>
+
+      {/* ===== REFERENCES SECTION ===== */}
+      <div className="clear-both mt-16 font-spartan">
+        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+        
+        {/* CITED STUDIES: GREEN */}
+        <div className="mb-6">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+            Cited Studies & Statistics
+          </h4>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+            <p>1. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE consortium. (2017). Phase 2 of CATALISE: A multinational and multidisciplinary Delphi consensus study of problems with language development: Terminology. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/jcpp.12721</p>
+            <p>2. Leonard, L. B. (2014). Children with specific language impairment. <i>MIT Press</i>.</p>
+            <p>3. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE-2 consortium. (2016). CATALISE: A multinational and multidisciplinary Delphi consensus study. Identifying language impairments in children. <i>PLoS ONE</i>. https://doi.org/10.1371/journal.pone.0158753</p>
+            <p>4. Tomblin, J. B., & Zhang, X. (2006). The dimensionality of language ability in school-age children. <i>Journal of Speech, Language, and Hearing Research</i>. https://doi.org/10.1044/1092-4388(2006/086)</p>
+            <p>5. Bishop, D. V. M. (1997). Uncommon understanding: Development and disorders of language comprehension in children. <i>Psychology Press</i>.</p>
+            <p>6. Conti-Ramsden, G., & Botting, N. (2004). Social difficulties and victimization in children with SLI at 11 years of age. <i>Journal of Speech, Language, and Hearing Research</i>. https://doi.org/10.1044/1092-4388(2004/013)</p>
+            <p>7. Catts, H. W., Fey, M. E., Tomblin, J. B., & Zhang, X. (2002). A longitudinal investigation of reading outcomes in children with language impairments. <i>Journal of Speech, Language, and Hearing Research</i>. https://doi.org/10.1044/1092-4388(2002/093)</p>
+            <p>8. Mueller, K. L., & Tomblin, J. B. (2012). Examining the comorbidity of language disorders and ADHD. <i>Topics in Language Disorders</i>. https://doi.org/10.1097/TLD.0b013e318262010c</p>
+            <p>9. Tomblin, J. B., Records, N. L., Buckwalter, P., Zhang, X., Smith, E., & O'Brien, M. (1997). Prevalence of specific language impairment in kindergarten children. <i>Journal of Speech, Language, and Hearing Research</i>. https://doi.org/10.1044/jslhr.4006.1245</p>
+            <p>10. Bishop, D. V. M. (2010). Which neurodevelopmental disorders get researched and why? <i>PLoS ONE</i>. https://doi.org/10.1371/journal.pone.0015112</p>
+            <p>11. Clegg, J., Hollis, C., Mawhood, L., & Rutter, M. (2005). Developmental language disorders—a follow-up in later adult life. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.2004.00342.x</p>
           </div>
         </div>
 
+        {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">DLD Around the World</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Universal Condition</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">DLD occurs across all languages and cultures<sup>[31]</sup></li>
-            <li className="mb-2">Manifestations may differ depending on language structure</li>
-            <li className="mb-2">Prevalence rates similar across countries</li>
-            <li className="mb-2">International research collaboration advances understanding</li>
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+            Background Sources
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+            <li>Rice, M. L. (2013). Language growth and genetics of specific language impairment. <i>International Journal of Speech-Language Pathology</i>.</li>
+            <li>McGregor, K. K., Goffman, L., Van Horne, A. O., Hogan, T. P., & Finestack, L. H. (2020). Developmental language disorder: Applications for advocacy, research, and clinical service. <i>Perspectives of the ASHA Special Interest Groups</i>.</li>
+            <li>Law, J., Garrett, Z., & Nye, C. (2004). The efficacy of treatment for children with developmental speech and language delay/disorder: A meta-analysis. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+            <li>Conti-Ramsden, G., Durkin, K., Simkin, Z., & Knox, E. (2009). Specific language impairment and school outcomes. I: Identifying and explaining variability at the end of compulsory education. <i>International Journal of Language & Communication Disorders</i>.</li>
           </ul>
         </div>
       </div>
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE consortium. (2017). "Phase 2 of CATALISE: A multinational and multidisciplinary Delphi consensus study of problems with language development: Terminology." <em>Journal of Child Psychology and Psychiatry</em>, 58(10), 1068-1080.</p>
-          <p>[2] Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE-2 consortium. (2016). "CATALISE: A multinational and multidisciplinary Delphi consensus study. Identifying language impairments in children." <em>PLoS ONE</em>, 11(7), e0158753.</p>
-          <p>[3] Leonard, L. B. (2014). <em>Children with specific language impairment</em> (2nd ed.). Cambridge, MA: MIT Press.</p>
-          <p>[4] Rice, M. L. (2013). "Language growth and genetics of specific language impairment." <em>International Journal of Speech-Language Pathology</em>, 15(3), 223-233.</p>
-          <p>[5] Tomblin, J. B., & Zhang, X. (2006). "The dimensionality of language ability in school-age children." <em>Journal of Speech, Language, and Hearing Research</em>, 49(6), 1193-1208.</p>
-          <p>[6] Bishop, D. V. M. (1997). <em>Uncommon understanding: Development and disorders of language comprehension in children</em>. Hove, UK: Psychology Press.</p>
-          <p>[7] Tomblin, J. B., Records, N. L., Buckwalter, P., Zhang, X., Smith, E., & O'Brien, M. (1997). "Prevalence of specific language impairment in kindergarten children." <em>Journal of Speech, Language, and Hearing Research</em>, 40(6), 1245-1260.</p>
-          <p>[8] McGregor, K. K., Goffman, L., Van Horne, A. O., Hogan, T. P., & Finestack, L. H. (2020). "Developmental language disorder: Applications for advocacy, research, and clinical service." <em>Perspectives of the ASHA Special Interest Groups</em>, 5(1), 38-46.</p>
-          <p>[9] Bishop, D. V. M. (2014). "Ten questions about terminology for children with unexplained language problems." <em>International Journal of Language & Communication Disorders</em>, 49(4), 381-415.</p>
-          <p>[10] Conti-Ramsden, G., & Botting, N. (2004). "Social difficulties and victimization in children with SLI at 11 years of age." <em>Journal of Speech, Language, and Hearing Research</em>, 47(1), 145-161.</p>
-          <p>[11] Catts, H. W., Fey, M. E., Tomblin, J. B., & Zhang, X. (2002). "A longitudinal investigation of reading outcomes in children with language impairments." <em>Journal of Speech, Language, and Hearing Research</em>, 45(6), 1142-1157.</p>
-          <p>[12] Mueller, K. L., & Tomblin, J. B. (2012). "Examining the comorbidity of language disorders and ADHD." <em>Topics in Language Disorders</em>, 32(3), 228-246.</p>
-          <p>[13] Bishop, D. V. M. (2010). "Which neurodevelopmental disorders get researched and why?" <em>PLoS ONE</em>, 5(11), e15112.</p>
-          <p>[14] Clegg, J., Hollis, C., Mawhood, L., & Rutter, M. (2005). "Developmental language disorders—a follow-up in later adult life." <em>Journal of Child Psychology and Psychiatry</em>, 46(2), 128-149.</p>
-          <p>[15] Law, J., Garrett, Z., & Nye, C. (2004). "The efficacy of treatment for children with developmental speech and language delay/disorder: A meta-analysis." <em>Journal of Speech, Language, and Hearing Research</em>, 47(4), 924-943.</p>
-          <p>[16] Conti-Ramsden, G., Durkin, K., Simkin, Z., & Knox, E. (2009). "Specific language impairment and school outcomes. I: Identifying and explaining variability at the end of compulsory education." <em>International Journal of Language & Communication Disorders</em>, 44(1), 15-35.</p>
-        </div>
-      </section>
-
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('dld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
-        >
-          ← Back to DLD
-        </a>
-      </div>
     </article>
   );
 }

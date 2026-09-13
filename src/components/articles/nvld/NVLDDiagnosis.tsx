@@ -1,305 +1,384 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Brain, Stethoscope, FileSearch, Users, Triangle, BookOpen, Eye, Search, GraduationCap, ArrowRightCircle } from 'lucide-react';
 
 interface NVLDDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function NVLDDiagnosis({ setCurrentArticle }: NVLDDiagnosisProps) {
+export function NVLDDiagnosis({ setCurrentArticle, initialTab }: NVLDDiagnosisProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('nvld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          NVLD: Testing & Diagnosing
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('nvld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to NVLD
-        </a>
+          <span className="text-xl">←</span>
+          All About NVLD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        NVLD: Testing & Diagnosing
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('nvld')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About NVLD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Diagnosing NVLD presents unique challenges because it is not an official DSM-5 diagnosis.<sup>1</sup> 
-            However, qualified professionals can identify the NVLD pattern through comprehensive neuropsychological 
-            assessment focusing on the distinctive profile of verbal strengths and nonverbal weaknesses.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('process')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'process'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Evaluation Process
+        </button>
+        <button
+          onClick={() => setActiveTab('testing')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'testing'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Core Testing Areas
+        </button>
+        <button
+          onClick={() => setActiveTab('criteria')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'criteria'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Criteria & Outcomes
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Diagnostic Challenges</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">No Official Diagnosis</h3>
-          <p className="mb-4">
-            NVLD is not currently recognized in the DSM-5 or ICD-11:<sup>3</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Widely used clinically despite lack of official status</li>
-            <li className="mb-2">No standardized diagnostic criteria across professionals</li>
-            <li className="mb-2">May be diagnosed under "Other Specified Learning Disorder" in DSM-5</li>
-            <li className="mb-2">Research ongoing regarding classification<sup>4</sup></li>
-          </ul>
+      {/* ==========================================
+          TAB 1: EVALUATION PROCESS
+      ========================================== */}
+      {activeTab === 'process' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Overlapping Conditions</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Symptoms overlap with ASD, ADHD, DCD<sup>5</sup></li>
-            <li className="mb-2">Verbal strengths may mask difficulties</li>
-            <li className="mb-2">Comprehensive assessment needed for accurate identification</li>
-          </ul>
-        </div>
+          {/* Challenges Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Diagnostic Challenges & Professionals</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-diagnosis-challenges.webp"
+              alt="Representation of the diagnostic classification challenge"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-4">
+              Obtaining a formal Nonverbal Learning Disability diagnosis presents unique bureaucratic challenges because NVLD is not currently an official code in the DSM-5 or ICD-11 medical manuals.<sup className="text-[#10b981] font-bold ml-0.5">1</sup> Instead of a simple blood test or standard checklist, identifying NVLD requires a comprehensive neuropsychological assessment to expose the subtle, distinctive gap between a child's verbal strengths and their nonverbal weaknesses.
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Who Can Evaluate for NVLD?</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Qualified Professionals</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Neuropsychologists:</strong> Most qualified to identify NVLD pattern<sup>6</sup></li>
-            <li className="mb-2"><strong>Clinical psychologists:</strong> With expertise in learning disabilities</li>
-            <li className="mb-2"><strong>School psychologists:</strong> May identify pattern in educational settings</li>
-            <li className="mb-2"><strong>Developmental pediatricians:</strong> In collaboration with psychologists</li>
-          </ul>
-        </div>
+            <h3 className="text-[#0c264d] font-bold mt-6 mb-4 text-lg clear-both border-b border-[#2abcd4] border-opacity-20 pb-2">Who Can Evaluate for NVLD?</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Brain className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="text-[#0c264d] font-bold text-sm mb-1">Neuropsychologists</h4>
+                  <p className="text-xs text-slate-700 leading-relaxed">The most highly qualified professionals to identify the NVLD pattern, as they specialize in brain-behavior relationships and detailed cognitive testing.</p>
+                </div>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Evaluation Process</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZXN0JTIwYXNzZXNzbWVudHxlbnwxfHx8fDE2NzQ1MzUxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Test assessment"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Background Information</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Developmental history (motor milestones, language development)<sup>7</sup></li>
-            <li className="mb-2">Medical history (neurological conditions, injuries)</li>
-            <li className="mb-2">Academic history (strengths and weaknesses)</li>
-            <li className="mb-2">Social history (friendships, social challenges)</li>
-            <li className="mb-2">Family history (learning disabilities, related conditions)</li>
-          </ul>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Stethoscope className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="text-[#0c264d] font-bold text-sm mb-1">Clinical Psychologists</h4>
+                  <p className="text-xs text-slate-700 leading-relaxed">Those with specific expertise in complex learning disabilities and developmental profiles can administer the necessary battery of IQ tests.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Parent and Teacher Interviews</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Current concerns and difficulties</li>
-            <li className="mb-2">Observations of social interactions</li>
-            <li className="mb-2">Academic performance patterns<sup>8</sup></li>
-            <li className="mb-2">Motor coordination and daily living skills</li>
-          </ul>
-        </div>
+          {/* Process Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Evaluation Process</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-diagnosis-process-hero.webp"
+              alt="Visual timeline of a comprehensive clinical evaluation"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Because NVLD symptoms overlap heavily with Autism, ADHD, and Dyspraxia, the evaluation process is extensive. It looks far beyond basic academic scores to analyze the child's entire developmental history and daily functioning.
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Cognitive and Intelligence Testing</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">IQ Assessment</h3>
-          <p className="mb-4">
-            The hallmark of NVLD is the VIQ-PIQ split:<sup>9</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>WISC-V or WAIS-IV:</strong> Wechsler Intelligence Scales</li>
-            <li className="mb-2"><strong>Verbal Comprehension Index:</strong> Typically average to above-average</li>
-            <li className="mb-2"><strong>Visual-Spatial Index:</strong> Significantly lower than verbal</li>
-            <li className="mb-2"><strong>Fluid Reasoning Index:</strong> May be lower, especially nonverbal tasks<sup>1</sup></li>
-            <li className="mb-2"><strong>Processing Speed Index:</strong> Often lower</li>
-          </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <FileSearch className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Background & History</h3>
+                </div>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Developmental:</strong> Tracking early motor milestones and language acquisition timelines.</li>
+                  <li><strong>Medical:</strong> Reviewing history for neurological conditions, premature birth, or head injuries.</li>
+                  <li><strong>Academic:</strong> Analyzing early report cards for the classic pattern of strong reading but struggling math/handwriting.</li>
+                </ul>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Discrepancy Patterns</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Typically 10+ point difference between verbal and visual-spatial scores<sup>1</sup></li>
-            <li className="mb-2">Greater discrepancy may indicate more significant NVLD</li>
-            <li className="mb-2">Pattern more important than absolute scores</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Visual-Spatial and Motor Assessment</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Visual-Spatial Tests</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Rey-Osterrieth Complex Figure:</strong> Copy and recall complex design<sup>2</sup></li>
-            <li className="mb-2"><strong>Beery VMI:</strong> Visual-Motor Integration test</li>
-            <li className="mb-2"><strong>Judgment of Line Orientation:</strong> Spatial perception</li>
-            <li className="mb-2"><strong>Block Design:</strong> From WISC/WAIS</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Motor Skills Assessment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Grooved Pegboard:</strong> Fine motor dexterity and speed</li>
-            <li className="mb-2"><strong>Finger Tapping Test:</strong> Motor speed<sup>3</sup></li>
-            <li className="mb-2"><strong>Handwriting samples:</strong> Graphomotor skills</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Academic Achievement Testing</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading Assessment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Decoding:</strong> Typically strong<sup>4</sup></li>
-            <li className="mb-2"><strong>Reading comprehension:</strong> May decline with complex text</li>
-            <li className="mb-2"><strong>Pattern:</strong> Decoding stronger than comprehension</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Mathematics Assessment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Arithmetic:</strong> Computational difficulties<sup>5</sup></li>
-            <li className="mb-2"><strong>Math reasoning:</strong> Especially visual-spatial problems</li>
-            <li className="mb-2"><strong>Geometry:</strong> Significant challenges</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Written Expression</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Handwriting difficulties due to motor and spatial issues</li>
-            <li className="mb-2">Organization challenges in written work<sup>6</sup></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Social-Emotional Assessment</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Skills Evaluation</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty reading facial expressions and social cues<sup>[17]</sup></li>
-            <li className="mb-2">Challenges with pragmatic language (social use of language)</li>
-            <li className="mb-2">Problems with perspective-taking</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Emotional Functioning</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Assessment for anxiety and depression<sup>[18]</sup></li>
-            <li className="mb-2">Behavioral rating scales from parents and teachers</li>
-            <li className="mb-2">Self-report measures (for older children/adolescents)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Differential Diagnosis</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwbGVhcm5pbmd8ZW58MXx8fHwxNjc0NTM1MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Student learning"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Distinguishing from Other Conditions</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Autism Spectrum Disorder:</strong> NVLD lacks restricted interests and repetitive behaviors<sup>[19]</sup></li>
-            <li className="mb-2"><strong>ADHD:</strong> NVLD has specific visual-spatial deficits</li>
-            <li className="mb-2"><strong>Dyslexia:</strong> Opposite pattern (reading vs. visual-spatial)</li>
-            <li className="mb-2"><strong>DCD:</strong> NVLD includes broader cognitive and social deficits</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Diagnostic Criteria</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Rourke's Diagnostic Guidelines</h3>
-          <p className="mb-4">
-            Based on Rourke's work, NVLD typically includes:<sup>[20]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Bilateral tactile-perceptual deficits (right worse than left)</li>
-            <li className="mb-2">Bilateral psychomotor coordination deficits (right worse than left)</li>
-            <li className="mb-2">Visual-spatial-organizational deficits</li>
-            <li className="mb-2">Difficulty with novel or complex situations</li>
-            <li className="mb-2">Deficits in nonverbal problem-solving</li>
-            <li className="mb-2">Well-developed rote verbal skills</li>
-            <li className="mb-2">Verbosity</li>
-            <li className="mb-2">Social interaction deficits</li>
-            <li className="mb-2">Academic difficulties, especially in mathematics</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Evaluation Report</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Components</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Background information and reason for referral</li>
-            <li className="mb-2">Tests administered and behavioral observations</li>
-            <li className="mb-2">Test results and interpretations<sup>[21]</sup></li>
-            <li className="mb-2">Summary and diagnostic impressions</li>
-            <li className="mb-2">Detailed recommendations for support</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Classification</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">School-Based Services</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">May qualify under "Specific Learning Disability" (SLD)<sup>[22]</sup></li>
-            <li className="mb-2">Or "Other Health Impairment" (OHI) in some cases</li>
-            <li className="mb-2">504 Plan if doesn't qualify for IEP</li>
-            <li className="mb-2">Accommodations based on identified needs</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Important Considerations</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Key Points:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li>Comprehensive neuropsychological evaluation essential<sup>[23]</sup></li>
-              <li>Look for pattern across multiple areas, not isolated deficits</li>
-              <li>VIQ-PIQ discrepancy important but not the only factor</li>
-              <li>Early identification allows earlier intervention</li>
-              <li>Diagnosis provides framework for understanding and support<sup>[24]</sup></li>
-            </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Clinical Interviews</h3>
+                </div>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Parent insights:</strong> Detailing struggles with daily living skills, motor coordination, and emotional regulation at home.</li>
+                  <li><strong>Teacher feedback:</strong> Observations of social interactions with peers, unstructured recess behavior, and organizational failures in the classroom.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). Arlington, VA: American Psychiatric Publishing.</p>
-          <p>[2] Rourke, B. P. (1989). <em>Nonverbal learning disabilities: The syndrome and the model</em>. New York: Guilford Press.</p>
-          <p>[3] Mammarella, I. C., & Cornoldi, C. (2014). "An analysis of the criteria used to diagnose children with nonverbal learning disability (NLD)." <em>Child Neuropsychology</em>, 20(3), 255-280.</p>
-          <p>[4] Fine, J. G., Semrud-Clikeman, M., Bledsoe, J. C., & Musielak, K. A. (2013). "A critical review of the literature on NLD as a developmental disorder." <em>Child Neuropsychology</em>, 19(2), 190-223.</p>
-          <p>[5] Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). "Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome." <em>Journal of Child Psychology and Psychiatry</em>, 36(7), 1127-1140.</p>
-          <p>[6] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[7] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[8] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[9] Rourke, B. P. (1995). "Syndrome of nonverbal learning disabilities: Neurodevelopmental manifestations." <em>Clinical Child and Family Psychology Review</em>, 1(4), 209-234.</p>
-          <p>[10] Wechsler, D. (2014). <em>Wechsler Intelligence Scale for Children</em> (5th ed.). San Antonio, TX: Pearson.</p>
-          <p>[11] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[12] Meyers, J. E., & Meyers, K. R. (1995). <em>Rey Complex Figure Test and Recognition Trial</em>. Odessa, FL: Psychological Assessment Resources.</p>
-          <p>[13] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[14] Rourke, B. P. (1995). "Syndrome of nonverbal learning disabilities." <em>Clinical Child and Family Psychology Review</em>, 1(4), 209-234.</p>
-          <p>[15] Rourke, B. P., & Conway, J. A. (1997). "Disabilities of arithmetic and mathematical reasoning: Perspectives from neurology and neuropsychology." <em>Journal of Learning Disabilities</em>, 30(1), 34-46.</p>
-          <p>[16] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[17] Semrud-Clikeman, M., & Hynd, G. W. (1990). "Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children." <em>Psychological Bulletin</em>, 107(2), 196-209.</p>
-          <p>[18] Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). "A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk." <em>Journal of Learning Disabilities</em>, 22(3), 169-175.</p>
-          <p>[19] Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). "Validity and neuropsychological characterization of Asperger syndrome." <em>Journal of Child Psychology and Psychiatry</em>, 36(7), 1127-1140.</p>
-          <p>[20] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[21] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[22] Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</p>
-          <p>[23] Rourke, B. P. (2000). "Neuropsychological and psychosocial subtyping: A review of investigations within the University of Windsor laboratory." <em>Canadian Psychology</em>, 41(1), 34-51.</p>
-          <p>[24] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
+      {/* ==========================================
+          TAB 2: CORE TESTING AREAS
+      ========================================== */}
+      {activeTab === 'testing' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Cognitive Testing Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Cognitive & Intelligence Testing</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-diagnosis-iq.webp"
+              alt="Bar chart showing the split between Verbal and Spatial IQ"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The cornerstone of an NVLD diagnosis is standardized Intelligence Quotient (IQ) testing—most commonly the WISC-V for children or WAIS-IV for adults. Clinicians are not looking at the "Full Scale" overall IQ score, but rather the dramatic discrepancy between specific sub-indices.<sup className="text-[#10b981] font-bold ml-0.5">2</sup>
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Verbal Comprehension (VCI)</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Typically scores average, above-average, or gifted. This measures verbal reasoning, vocabulary, and auditory knowledge.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Visual-Spatial (VSI)</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Scores significantly lower than the VCI. A gap of 10 to 15+ points between these two indices is the primary diagnostic marker of NVLD.<sup className="text-[#10b981] font-bold ml-0.5">3</sup></p>
+              </div>
+            </div>
+          </div>
+
+          {/* Specialized Assessments Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Specialized Assessments</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-diagnosis-assessments-hero.webp"
+              alt="Visual representations of specialized clinical testing tools"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Beyond standard IQ testing, neuropsychologists utilize specialized tools to isolate exact deficits in motor control, spatial processing, and academic achievement.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Triangle className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Visual-Spatial & Motor</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li><strong>Rey-Osterrieth Figure:</strong> Tests ability to copy and recall a highly complex geometric drawing.</li>
+                  <li><strong>Grooved Pegboard:</strong> Measures fine motor dexterity and visual-motor coordination speed.</li>
+                  <li><strong>Block Design:</strong> Recreating patterns using colored blocks.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <BookOpen className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Academic Achievement</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li><strong>Reading:</strong> Identifies the gap between excellent word decoding and poor abstract comprehension.</li>
+                  <li><strong>Math:</strong> Highlights severe computational errors, misaligned columns, and poor geometric reasoning.</li>
+                  <li><strong>Writing:</strong> Assesses graphomotor (handwriting) fatigue and disorganized essay structure.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 sm:col-span-2 lg:col-span-1">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Eye className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Social-Emotional</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Evaluating pragmatic (social) language use and conversational turn-taking.</li>
+                  <li>Testing the ability to accurately read facial expressions from photographs.</li>
+                  <li>Screening for secondary anxiety or depression using self-report behavioral scales.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('nvld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: CRITERIA & OUTCOMES
+      ========================================== */}
+      {activeTab === 'criteria' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Criteria Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Diagnostic Criteria</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-diagnosis-criteria.webp"
+              alt="Clipboard highlighting clinical diagnostic criteria"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Because there is no DSM-5 checklist, most neuropsychologists rely on Byron Rourke’s established diagnostic guidelines to confirm an NVLD profile. A diagnosis requires a consistent pattern of deficits across multiple domains, rather than just a single low math score.<sup className="text-[#10b981] font-bold ml-0.5">3</sup>
+            </p>
+
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] clear-both max-w-3xl">
+              <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-[#ffd166] pb-2">Rourke's Core Indicators:</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 list-disc ml-5 text-xs text-slate-700">
+                <li>Bilateral tactile-perceptual deficits (left side of body typically worse).</li>
+                <li>Bilateral psychomotor coordination deficits (clumsiness).</li>
+                <li>Severe visual-spatial-organizational deficits.</li>
+                <li>Extreme difficulty adapting to novel or complex situations.</li>
+                <li>Deficits in nonverbal, abstract problem-solving.</li>
+                <li>Highly developed rote verbal memory and reading decoding.</li>
+                <li>Verbosity (talking excessively).</li>
+                <li>Significant social interaction and cue-reading deficits.</li>
+                <li>Academic failure specifically in advanced mathematics.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Outcomes Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis & School Support</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-diagnosis-outcomes-hero.webp"
+              alt="Conceptual graphic showing paths to academic support and clear diagnosis"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Search className="text-[#2abcd4] w-5 h-5" /> Distinguishing Conditions
+                </h3>
+                <div className="space-y-3">
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                    <h4 className="text-[#0c264d] font-bold text-xs mb-1">Autism Spectrum Disorder</h4>
+                    <p className="text-xs text-slate-700">Unlike ASD, NVLD generally lacks restricted special interests and repetitive motor behaviors (stimming).<sup className="text-[#10b981] font-bold ml-0.5">4</sup></p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                    <h4 className="text-[#0c264d] font-bold text-xs mb-1">ADHD</h4>
+                    <p className="text-xs text-slate-700">While ADHD shares executive function issues, it does not intrinsically cause the severe visual-spatial or fine-motor deficits central to NVLD.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                    <h4 className="text-[#0c264d] font-bold text-xs mb-1">Dyslexia</h4>
+                    <p className="text-xs text-slate-700">The mirror opposite of NVLD; dyslexia features language deficits with strong spatial abilities, while NVLD features language strengths with spatial deficits.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <GraduationCap className="text-[#2abcd4] w-5 h-5" /> Educational Classification
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  Because schools require official IDEA categories for Special Education, an NVLD report must translate clinical findings into educational law.
+                </p>
+                <div className="space-y-3">
+                  <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm flex items-start gap-2">
+                    <ArrowRightCircle className="text-[#0A9DC4] w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">Often qualifies under <strong>Specific Learning Disability (SLD)</strong> in mathematics or written expression.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm flex items-start gap-2">
+                    <ArrowRightCircle className="text-[#0A9DC4] w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">May qualify under <strong>Other Health Impairment (OHI)</strong> if executive function/attention severely impacts learning.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm flex items-start gap-2">
+                    <ArrowRightCircle className="text-[#0A9DC4] w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">If denied an IEP, a <strong>504 Plan</strong> can legally mandate accommodations like typed notes and extended time.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('nvld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to NVLD
-        </a>
+          <span className="text-xl">←</span>
+          All About NVLD
+        </button>
       </div>
+
+      {/* ===== REFERENCES SECTION ===== */}
+      <div className="clear-both mt-16 font-spartan">
+        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+        
+        {/* CITED STUDIES: GREEN */}
+        <div className="mb-6">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+            Cited Studies & Statistics
+          </h4>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+            <p>1. American Psychiatric Association. (2022). Diagnostic and statistical manual of mental disorders (5th ed., text rev.). <i>American Psychiatric Association</i>. https://doi.org/10.1176/appi.books.9780890425787</p>
+            <p>2. Fine, J. G., Semrud-Clikeman, M., Bledsoe, J. C., & Musielak, K. A. (2013). A critical review of the literature on NLD as a developmental disorder. <i>Child Neuropsychology</i>. https://doi.org/10.1080/09297049.2011.648923</p>
+            <p>3. Mammarella, I. C., & Cornoldi, C. (2014). An analysis of the criteria used to diagnose children with nonverbal learning disability (NLD). <i>Child Neuropsychology</i>. https://doi.org/10.1080/09297049.2013.796920</p>
+            <p>4. Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.1995.tb01361.x</p>
+          </div>
+        </div>
+
+        {/* BACKGROUND SOURCES: CYAN */}
+        <div>
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+            Background Sources
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+            <li>Rourke, B. P. (1989). Nonverbal learning disabilities: The syndrome and the model. <i>Guilford Press</i>.</li>
+            <li>Thompson, S. (1997). The source for nonverbal learning disorders. <i>LinguiSystems</i>.</li>
+          </ul>
+        </div>
+      </div>
+
     </article>
   );
 }

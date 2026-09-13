@@ -1,278 +1,433 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { MessageSquare, Ear, BookOpen, Headphones } from 'lucide-react';
 
 interface NVLDOverviewProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function NVLDOverview({ setCurrentArticle }: NVLDOverviewProps) {
+export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'definition');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('nvld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          NVLD: Overview
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('nvld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to NVLD
-        </a>
+          <span className="text-xl">←</span>
+          Back to NVLD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        NVLD: Overview
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('nvld')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        Back to NVLD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Nonverbal Learning Disability (NVLD), also called Nonverbal Learning Disorder, is a neurodevelopmental 
-            condition characterized by strengths in verbal abilities alongside significant challenges in visual-spatial 
-            processing, motor skills, and social perception.<sup>1</sup> Despite strong language skills, individuals 
-            with NVLD struggle with understanding nonverbal information and spatial relationships.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('definition')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'definition'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Definition & Core Features
+        </button>
+        <button
+          onClick={() => setActiveTab('comparisons')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'comparisons'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Prevalence & Comparisons
+        </button>
+        <button
+          onClick={() => setActiveTab('lifespan')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'lifespan'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Lifespan & Outlook
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">What is NVLD?</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwdXp6bGUlMjBzcGF0aWFsfGVufDF8fHx8MTY3NDUzNTEyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Puzzle spatial"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Definition and Core Concept</h3>
-          <p className="mb-4">
-            NVLD represents a pattern of neuropsychological assets and deficits first comprehensively described 
-            by Byron Rourke in the 1980s.<sup>3</sup> The condition involves a specific profile where verbal 
-            skills are relatively intact or even advanced, while nonverbal abilities are significantly impaired.
-          </p>
+      {/* ==========================================
+          TAB 1: DEFINITION & CORE FEATURES
+      ========================================== */}
+      {activeTab === 'definition' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">The Verbal-Nonverbal Discrepancy</h3>
-          <p className="mb-4">
-            The hallmark of NVLD is a significant split between verbal and nonverbal abilities:<sup>4</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Verbal strengths:</strong> Strong vocabulary, verbal memory, reading decoding</li>
-            <li className="mb-2"><strong>Nonverbal weaknesses:</strong> Visual-spatial processing, motor coordination, social cues</li>
-            <li className="mb-2"><strong>Discrepancy:</strong> Often 10+ point difference between Verbal IQ and Performance IQ</li>
-          </ul>
+          {/* Discrepancy Card (Cyan) */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Definition & The Discrepancy</h2>
+            
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Controversy and Recognition</h3>
-          <p className="mb-4">
-            NVLD is not currently recognized as an official diagnosis in the DSM-5 or ICD-11.<sup>5</sup> However, 
-            it is widely used by neuropsychologists and educators to describe a specific pattern of learning difficulties. 
-            Research is ongoing regarding its classification and diagnostic criteria.<sup>6</sup>
-          </p>
-        </div>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-overview-discrepancy.webp"
+              alt="Chart showing the gap between verbal IQ and performance IQ"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-4">
+              Nonverbal Learning Disability (NVLD) is a neurodevelopmental profile characterized by a fascinating and often misunderstood cognitive split: exceptional strengths in verbal and language abilities existing alongside significant challenges in visual-spatial processing, motor coordination, and social perception.
+            </p>
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              First comprehensively described by Byron Rourke in the 1980s, the absolute hallmark of NVLD is a dramatic discrepancy between a student's verbal intelligence and their nonverbal reasoning. Clinical evaluations frequently reveal a 10-point or greater gap between Verbal IQ and Performance IQ, creating a highly uneven learning profile.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Core Features of NVLD</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Primary Deficits</h3>
-          <p className="mb-4">
-            According to Rourke's model, NVLD involves deficits in three main areas:<sup>7</sup>
-          </p>
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] clear-both">
+              <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#2abcd4] border-opacity-20 pb-2">Diagnostic Controversy</h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                NVLD is not currently recognized as an official, standalone diagnosis in the DSM-5 or ICD-11.<sup className="text-[#10b981] font-bold ml-0.5">2</sup> However, it is widely utilized by clinical neuropsychologists, educators, and developmental specialists to accurately describe this highly specific pattern of cognitive assets and learning challenges.
+              </p>
+            </div>
+          </div>
 
-          <h4 className="font-bold mb-2">1. Visual-Spatial-Organizational</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Poor spatial perception and reasoning</li>
-            <li className="mb-2">Difficulty with visual details and patterns<sup>8</sup></li>
-            <li className="mb-2">Challenges organizing visual information</li>
-            <li className="mb-2">Problems with spatial relationships and directions</li>
-          </ul>
+          {/* Core Challenges Card (Yellow) */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Primary Areas of Challenge</h2>
+            <ImageWithFallback 
+              src="/images/nvld/nvld-overview-definition-hero.webp"
+              alt="Abstract representation of verbal strengths and spatial challenges"
+              className="block mx-auto w-full max-w-2xl mb-6 rounded-lg shadow-sm border border-cyan-100"
+            />
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              According to established neuropsychological models, the NVLD profile consistently impacts three major domains of daily functioning and academic performance.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>
+            </p>
 
-          <h4 className="font-bold mb-2">2. Motor and Psychomotor</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Poor fine and gross motor coordination</li>
-            <li className="mb-2">Awkward or clumsy movements<sup>9</sup></li>
-            <li className="mb-2">Difficulty with balance and bilateral coordination</li>
-            <li className="mb-2">Challenges with handwriting and physical activities</li>
-          </ul>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166] pb-2">Visual-Spatial</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Profound difficulty with spatial perception and geometric reasoning.</li>
+                  <li>Struggles identifying the "big picture" versus hyper-focusing on minute visual details.</li>
+                  <li>Challenges organizing visual information on a page (like math columns).</li>
+                </ul>
+              </div>
 
-          <h4 className="font-bold mb-2">3. Social Perception</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty reading facial expressions and body language<sup>1</sup></li>
-            <li className="mb-2">Missing social cues and context</li>
-            <li className="mb-2">Challenges understanding nonverbal communication</li>
-            <li className="mb-2">Literal interpretation of language</li>
-          </ul>
-        </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166] pb-2">Motor Control</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Delayed development of fine and gross motor coordination.</li>
+                  <li>Noticeable physical awkwardness or challenges with bilateral coordination.</li>
+                  <li>Severe difficulty with the physical mechanics of handwriting.</li>
+                </ul>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Strengths in NVLD</h2>
-          
-          <p className="mb-4">
-            Individuals with NVLD typically have notable verbal strengths:<sup>1</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Advanced vocabulary:</strong> Rich, sophisticated word knowledge</li>
-            <li className="mb-2"><strong>Strong rote verbal memory:</strong> Excellent at memorizing verbal information</li>
-            <li className="mb-2"><strong>Early reading skills:</strong> Often learn to read early and decode well<sup>2</sup></li>
-            <li className="mb-2"><strong>Verbal reasoning:</strong> Good at verbal problem-solving</li>
-            <li className="mb-2"><strong>Attention to detail:</strong> Notice verbal details and patterns</li>
-          </ul>
-        </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166] pb-2">Social Perception</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Significant difficulty intuitively reading facial expressions and body language.</li>
+                  <li>Missing subtle, unspoken social cues and environmental context.</li>
+                  <li>A tendency toward highly literal, rigid interpretation of language and humor.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Prevalence</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwbGVhcm5pbmd8ZW58MXx8fHwxNjc0NTM1MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Student learning"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">How Common is NVLD?</h3>
-          <p className="mb-4">
-            Prevalence estimates are difficult because NVLD is not an official diagnosis:<sup>3</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Estimated to affect 1-3% of the general population</li>
-            <li className="mb-2">May be underdiagnosed due to lack of official recognition</li>
-            <li className="mb-2">Verbal strengths can mask difficulties in early years</li>
-          </ul>
+          {/* Strengths Card (Slate) */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Unique Cognitive Strengths</h2>
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              The "disability" label often masks the extraordinary capabilities of individuals with NVLD. They typically possess remarkable auditory and language-based processing skills that can be leveraged for high academic and professional success.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Gender Distribution</h3>
-          <p className="mb-4">
-            Unlike many neurodevelopmental conditions, NVLD appears to affect males and females relatively equally, 
-            or may even be slightly more common in females.<sup>4</sup>
-          </p>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              {/* Strength Mini-Card 1 */}
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4 hover:-translate-y-1 transition-transform duration-200">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <MessageSquare className="text-[#0A9DC4] w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Advanced Vocabulary</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Developing a rich, sophisticated, and highly articulate word knowledge very early in life.</p>
+                </div>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">NVLD vs. Other Conditions</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">NVLD vs. Autism Spectrum Disorder</h3>
-          <p className="mb-4">
-            NVLD and ASD share some similarities, particularly in social challenges:<sup>5</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Similarities:</strong> Social difficulties, literal thinking, preference for routines</li>
-            <li className="mb-2"><strong>Differences:</strong> NVLD lacks restricted interests and repetitive behaviors typical of ASD</li>
-            <li className="mb-2"><strong>Overlap:</strong> Some individuals may meet criteria for both</li>
-          </ul>
+              {/* Strength Mini-Card 2 */}
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4 hover:-translate-y-1 transition-transform duration-200">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Ear className="text-[#d4a017] w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Auditory Rote Memory</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Demonstrating an excellent capacity for memorizing and accurately recalling spoken information, facts, and verbal sequences.</p>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">NVLD vs. Dyslexia</h3>
-          <p className="mb-4">
-            NVLD is sometimes considered the "opposite" of dyslexia:<sup>6</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Dyslexia:</strong> Verbal/language difficulties, visual-spatial strengths</li>
-            <li className="mb-2"><strong>NVLD:</strong> Verbal/language strengths, visual-spatial difficulties</li>
-          </ul>
+              {/* Strength Mini-Card 3 */}
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4 hover:-translate-y-1 transition-transform duration-200">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <BookOpen className="text-[#0c264d] w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Early Reading Skills</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Frequently learning to read and decode complex words well ahead of their peers (sometimes presenting as early hyperlexia).</p>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">NVLD vs. ADHD</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Can co-occur with ADHD<sup>[17]</sup></li>
-            <li className="mb-2">NVLD involves specific visual-spatial deficits not seen in ADHD alone</li>
-            <li className="mb-2">Both may involve executive function challenges</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Impact Across the Lifespan</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Early Childhood</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Motor delays (walking, running, riding bike)</li>
-            <li className="mb-2">Advanced verbal skills may mask other difficulties<sup>[18]</sup></li>
-            <li className="mb-2">Difficulty with puzzles, building blocks, drawing</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">School Years</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Struggles with math, especially visual-spatial aspects<sup>[19]</sup></li>
-            <li className="mb-2">Handwriting difficulties</li>
-            <li className="mb-2">Social isolation and friendship challenges</li>
-            <li className="mb-2">Organizational difficulties increase as demands grow</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Adolescence and Adulthood</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Continued social challenges<sup>[20]</sup></li>
-            <li className="mb-2">Anxiety and depression risk</li>
-            <li className="mb-2">Difficulty with independent living skills (driving, navigation)</li>
-            <li className="mb-2">Career challenges in visually-demanding fields</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Co-occurring Conditions</h2>
-          
-          <p className="mb-4">
-            NVLD frequently occurs alongside other conditions:<sup>[21]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Anxiety disorders:</strong> Particularly social anxiety</li>
-            <li className="mb-2"><strong>Depression:</strong> Due to social and academic struggles</li>
-            <li className="mb-2"><strong>ADHD:</strong> Attention and executive function challenges</li>
-            <li className="mb-2"><strong>Autism Spectrum Disorder:</strong> Overlapping features<sup>[22]</sup></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Prognosis and Hope</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">With Appropriate Support:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li>Individuals with NVLD can succeed academically and professionally<sup>[23]</sup></li>
-              <li>Verbal strengths can be leveraged in many careers</li>
-              <li>Social skills can improve with explicit teaching</li>
-              <li>Accommodations and assistive technology help compensate for weaknesses</li>
-              <li>Early identification and intervention improve outcomes<sup>[24]</sup></li>
-              <li>Many individuals with NVLD lead fulfilling, successful lives</li>
-            </ul>
+              {/* Strength Mini-Card 4 */}
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4 hover:-translate-y-1 transition-transform duration-200">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Headphones className="text-[#0A9DC4] w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Auditory Attention</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">A strong, natural ability to learn efficiently through verbal instruction and auditory lectures rather than visual diagrams.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Rourke, B. P. (1989). <em>Nonverbal learning disabilities: The syndrome and the model</em>. New York: Guilford Press.</p>
-          <p>[2] Rourke, B. P., & Tsatsanis, K. D. (2000). "Nonverbal learning disabilities and Asperger syndrome." In A. Klin, F. R. Volkmar, & S. S. Sparrow (Eds.), <em>Asperger syndrome</em> (pp. 231-253). New York: Guilford Press.</p>
-          <p>[3] Rourke, B. P. (1989). <em>Nonverbal learning disabilities: The syndrome and the model</em>. New York: Guilford Press.</p>
-          <p>[4] Rourke, B. P. (1995). "Syndrome of nonverbal learning disabilities: Neurodevelopmental manifestations." <em>Clinical Child and Family Psychology Review</em>, 1(4), 209-234.</p>
-          <p>[5] American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). Arlington, VA: American Psychiatric Publishing.</p>
-          <p>[6] Mammarella, I. C., & Cornoldi, C. (2014). "An analysis of the criteria used to diagnose children with nonverbal learning disability (NLD)." <em>Child Neuropsychology</em>, 20(3), 255-280.</p>
-          <p>[7] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[8] Drummond, C. R., Ahmad, S. A., & Rourke, B. P. (2005). "Rules for the classification of younger children with nonverbal learning disabilities and basic phonological processing disabilities." <em>Archives of Clinical Neuropsychology</em>, 20(2), 171-182.</p>
-          <p>[9] Rourke, B. P., & Conway, J. A. (1997). "Disabilities of arithmetic and mathematical reasoning: Perspectives from neurology and neuropsychology." <em>Journal of Learning Disabilities</em>, 30(1), 34-46.</p>
-          <p>[10] Semrud-Clikeman, M., & Hynd, G. W. (1990). "Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children." <em>Psychological Bulletin</em>, 107(2), 196-209.</p>
-          <p>[11] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[12] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[13] Mammarella, I. C., & Cornoldi, C. (2014). "An analysis of the criteria used to diagnose children with nonverbal learning disability." <em>Child Neuropsychology</em>, 20(3), 255-280.</p>
-          <p>[14] Rourke, B. P. (1995). "Syndrome of nonverbal learning disabilities." <em>Clinical Child and Family Psychology Review</em>, 1(4), 209-234.</p>
-          <p>[15] Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). "Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome." <em>Journal of Child Psychology and Psychiatry</em>, 36(7), 1127-1140.</p>
-          <p>[16] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[17] Semrud-Clikeman, M. (2007). <em>Social competence in children</em>. New York: Springer.</p>
-          <p>[18] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[19] Rourke, B. P., & Conway, J. A. (1997). "Disabilities of arithmetic and mathematical reasoning." <em>Journal of Learning Disabilities</em>, 30(1), 34-46.</p>
-          <p>[20] Rourke, B. P., & Fuerst, D. R. (1991). <em>Learning disabilities and psychosocial functioning: A neuropsychological perspective</em>. New York: Guilford Press.</p>
-          <p>[21] Semrud-Clikeman, M., & Hynd, G. W. (1990). "Right hemispheric dysfunction in nonverbal learning disabilities." <em>Psychological Bulletin</em>, 107(2), 196-209.</p>
-          <p>[22] Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). "Validity and neuropsychological characterization of Asperger syndrome." <em>Journal of Child Psychology and Psychiatry</em>, 36(7), 1127-1140.</p>
-          <p>[23] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[24] Rourke, B. P. (2000). "Neuropsychological and psychosocial subtyping: A review of investigations within the University of Windsor laboratory." <em>Canadian Psychology</em>, 41(1), 34-51.</p>
+      {/* ==========================================
+          TAB 2: PREVALENCE & COMPARISONS
+      ========================================== */}
+      {activeTab === 'comparisons' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Prevalence Card (Yellow) */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prevalence & Demographics</h2>
+            
+
+            <ImageWithFallback 
+              src="/images/nvld/nvld-overview-demographics.webp"
+              alt="Icon group representing diverse student population"
+              className="w-48 h-auto rounded-md border border-[#ffd166] float-left mr-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-4">
+              Because NVLD relies heavily on internal visual-spatial deficits rather than obvious behavioral markers, it is frequently misdiagnosed or confused with other neurodevelopmental profiles that share overlapping symptoms.
+            </p>
+
+            <p className="text-sm text-slate-700 leading-relaxed mb-4">
+              Establishing exact prevalence rates is mathematically difficult because NVLD lacks a dedicated diagnostic code in major medical manuals. However, modern clinical estimates suggest NVLD affects between 1% to 3% of the general population.<sup className="text-[#10b981] font-bold ml-0.5">3</sup> 
+            </p>
+            
+            <p className="text-sm text-slate-700 leading-relaxed clear-both">
+              Unlike many other neurodevelopmental conditions (which often heavily skew male), early research indicates that NVLD affects males and females relatively equally, or may even present at slightly higher rates in female populations.<sup className="text-[#10b981] font-bold ml-0.5">3</sup>
+            </p>
+          </div>
+
+          {/* NVLD vs Autism Card (Cyan) */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">NVLD vs. Autism Spectrum Disorder</h2>
+            <ImageWithFallback 
+              src="/images/nvld/nvld-overview-autism-hero.webp"
+              alt="Venn diagram showing the overlap between NVLD, Autism, and ADHD"
+              className="block mx-auto w-full max-w-2xl mb-6 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+              The highest rate of diagnostic confusion occurs between NVLD and Autism Spectrum Disorder (specifically the profile previously known as Asperger's Syndrome), as they share highly visible social challenges.<sup className="text-[#10b981] font-bold ml-0.5">4</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4] border-opacity-20 pb-2">Shared Characteristics</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Significant difficulty interpreting nonverbal social cues and body language.</li>
+                  <li>A strong tendency toward literal thinking and missing subtle sarcasm.</li>
+                  <li>Challenges navigating complex, unstructured peer relationships.</li>
+                  <li>A preference for established routines and predictable environments.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4] border-opacity-20 pb-2">Key Differences</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Restricted interests:</strong> Individuals with NVLD generally do not exhibit the intense, highly restricted special interests characteristic of autism.</li>
+                  <li><strong>Repetitive behaviors:</strong> NVLD does not inherently include the repetitive motor movements (stimming) defined in autism criteria.</li>
+                  <li><strong>Spatial reasoning:</strong> Autistic individuals often have visual-spatial strengths, whereas visual-spatial deficits are the core diagnostic marker of NVLD.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Dyslexia and ADHD Card (Slate) */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">NVLD vs. Dyslexia & ADHD</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-gray-200 pb-2">The Opposite of Dyslexia</h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-3">
+                  Neuropsychologically, NVLD is often viewed as the mirror opposite of developmental dyslexia:
+                </p>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Dyslexia:</strong> Characterized by language and phonological processing difficulties, but often accompanied by immense visual-spatial strengths.</li>
+                  <li><strong>NVLD:</strong> Characterized by exceptional verbal and phonological skills, undermined by severe visual-spatial weaknesses.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-gray-200 pb-2">Distinguishing ADHD</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>While both conditions feature executive function and organizational challenges, ADHD alone does not produce the specific, severe visual-spatial deficits seen in NVLD.</li>
+                  <li>However, NVLD and ADHD are highly comorbid and frequently co-occur in the same individual.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('nvld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: LIFESPAN & OUTLOOK
+      ========================================== */}
+      {activeTab === 'lifespan' && (
+        <div className="space-y-8 animate-fadeIn">
+          
+          {/* Lifespan Impact Card (Yellow) */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Developmental Timeline</h2>
+
+            <ImageWithFallback 
+              src="/images/nvld/nvld-overview-lifespan-hero.webp"
+              alt="Timeline showing the progression of NVLD traits from childhood to adulthood"
+              className="block mx-auto w-full max-w-2xl mb-6 rounded-lg shadow-sm border border-yellow-200"
+            />
+
+            <p className="text-slate-700 leading-relaxed text-sm text-center max-w-4xl mx-auto mb-8">
+              Because children with NVLD are highly articulate and often learn to read early, their profound struggles with spatial reasoning and social dynamics are frequently dismissed as behavioral issues or anxiety. Understanding how the profile evolves over time is crucial for early intervention.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166] pb-2">Early Childhood</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Advanced, adult-like vocabulary masks underlying developmental gaps.</li>
+                  <li>Significant delays in motor milestones like riding a bike, catching a ball, or tying shoes.</li>
+                  <li>Avoidance of visual-spatial toys like puzzles, LEGOs, or building blocks.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166] pb-2">School Years</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Severe, unexpected struggles with advanced math, geometry, and spatial alignment of numbers.</li>
+                  <li>Intense difficulty with handwriting and organizing physical space (messy desks/lockers).</li>
+                  <li>Increasing social isolation as peer interactions rely heavily on unspoken nuances.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166] pb-2">Adolescence & Adults</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Difficulty mastering complex independent living skills, particularly driving and geographical navigation.</li>
+                  <li>Heightened risk for mood disorders due to chronic social misinterpretations.</li>
+                  <li>Success is often found by directing career paths away from visually-demanding fields.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Co-occurring Conditions Card (Cyan) */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Co-occurring Conditions</h2>
+            <ImageWithFallback 
+              src="/images/nvld/nvld-overview-co-occurring-hero.webp"
+              alt="Venn diagram showing the overlap between NVLD, Autism, and ADHD"
+              className="block mx-auto w-full max-w-2xl mb-6 rounded-lg shadow-sm border border-yellow-200"
+            />
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+              NVLD rarely exists in a vacuum. Because of the inherent stress of navigating a highly visual and social world with spatial deficits, secondary psychological challenges are incredibly common.<sup className="text-[#10b981] font-bold ml-0.5">5</sup>
+            </p>
+
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] max-w-3xl mx-auto">
+              <ul className="list-disc ml-5 text-sm text-slate-700 space-y-3">
+                <li><strong>Anxiety Disorders:</strong> Chronic social anxiety is a frequent byproduct of constantly missing nonverbal cues and inadvertently offending peers.</li>
+                <li><strong>Depression:</strong> Often emerges in adolescence as social isolation and academic math struggles compound.</li>
+                <li><strong>ADHD:</strong> Highly comorbid, sharing significant overlap in executive function and organizational deficits.</li>
+                <li><strong>Dyscalculia:</strong> The specific learning disability in math is a direct, natural consequence of severe visual-spatial impairments.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Prognosis Card (Slate) */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prognosis and Hope</h2>
+            
+            <div className="bg-white rounded-md border border-gray-200 p-6 max-w-3xl mx-auto">
+              <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                The most powerful tool for an individual with NVLD is their voice. With early identification, explicitly taught social frameworks, and targeted academic accommodations, outcomes are highly positive. 
+              </p>
+              <ul className="list-disc ml-5 space-y-2 text-sm text-slate-700">
+                <li>Their extraordinary verbal strengths naturally align with successful careers in law, writing, psychology, broadcasting, and education.</li>
+                <li>Social skills and cue-reading can be logically, explicitly taught to compensate for a lack of intuition.</li>
+                <li>Assistive technology (like speech-to-text and digital organizers) effectively bypasses fine motor and spatial organization barriers.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('nvld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to NVLD
-        </a>
+          <span className="text-xl">←</span>
+          Back to NVLD
+        </button>
       </div>
+
+      {/* ===== REFERENCES SECTION ===== */}
+      <div className="clear-both mt-16 font-spartan">
+        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+        
+        {/* CITED STUDIES: GREEN */}
+        <div className="mb-6">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+            Cited Studies & Statistics
+          </h4>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+            <p>1. Rourke, B. P. (1989). Nonverbal learning disabilities: The syndrome and the model. <i>Guilford Press</i>. https://doi.org/10.1007/978-1-4757-0635-2</p>
+            <p>2. Mammarella, I. C., & Cornoldi, C. (2014). An analysis of the criteria used to diagnose children with nonverbal learning disability (NLD). <i>Child Neuropsychology</i>. https://doi.org/10.1080/09297049.2013.796920</p>
+            <p>3. Margolis, A. E., Broitman, J., Davis, J. M., Alexander, L., Hamilton, A., Ray, Z., ... & Davis, N. (2020). Estimated prevalence of nonverbal learning disability among North American children and adolescents. <i>JAMA Network Open</i>. https://doi.org/10.1001/jamanetworkopen.2020.2551</p>
+            <p>4. Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.1995.tb01361.x</p>
+            <p>5. Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>. https://doi.org/10.1037/0033-2909.107.2.196</p>
+          </div>
+        </div>
+
+        {/* BACKGROUND SOURCES: CYAN */}
+        <div>
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+            Background Sources
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+            <li>Tanguay, P. B. (2002). Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions. <i>Jessica Kingsley Publishers</i>.</li>
+            <li>Thompson, S. (1997). The source for nonverbal learning disorders. <i>LinguiSystems</i>.</li>
+          </ul>
+        </div>
+      </div>
+
     </article>
   );
 }

@@ -1,308 +1,423 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Stethoscope, Brain, ClipboardList, UserCheck, FileSearch, Ear, MessageSquare, FileText, Layers, Search, AlertTriangle, GraduationCap, CheckCircle, Mic } from 'lucide-react';
 
 interface DLDDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function DLDDiagnosis({ setCurrentArticle }: DLDDiagnosisProps) {
+export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('dld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          DLD: Testing & Diagnosing
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('dld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to DLD
-        </a>
+          <span className="text-xl">←</span>
+          All About DLD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        DLD: Testing & Diagnosing
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('dld')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About DLD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Diagnosing Developmental Language Disorder requires comprehensive assessment by qualified professionals, 
-            typically speech-language pathologists.<sup>1</sup> The diagnostic process involves standardized testing, 
-            observations, and consideration of the child's language use in everyday contexts.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('process')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'process'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Evaluation Process
+        </button>
+        <button
+          onClick={() => setActiveTab('testing')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'testing'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Core Testing Areas
+        </button>
+        <button
+          onClick={() => setActiveTab('criteria')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'criteria'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Diagnosis & Outcomes
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Who Can Diagnose DLD?</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Qualified Professionals</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Speech-Language Pathologists (SLPs):</strong> Primary professionals for DLD assessment<sup>3</sup></li>
-            <li className="mb-2"><strong>Educational psychologists:</strong> May identify language concerns</li>
-            <li className="mb-2"><strong>Developmental pediatricians:</strong> Medical screening and referral</li>
-            <li className="mb-2"><strong>Neuropsychologists:</strong> Comprehensive cognitive-language assessment<sup>4</sup></li>
-          </ul>
-        </div>
+      {/* ==========================================
+          TAB 1: EVALUATION PROCESS
+      ========================================== */}
+      {activeTab === 'process' && (
+        <div className="space-y-8 animate-fadeIn">
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">CATALISE Diagnostic Criteria</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZXN0JTIwYXNzZXNzbWVudHxlbnwxfHx8fDE2NzQ1MzUxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Test assessment"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">International Consensus Criteria</h3>
-          <p className="mb-4">
-            The 2017 CATALISE consensus established diagnostic criteria:<sup>5</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Language difficulties:</strong> Persistent problems with language learning and use</li>
-            <li className="mb-2"><strong>Functional impact:</strong> Language difficulties interfere with daily life<sup>6</sup></li>
-            <li className="mb-2"><strong>Not explained by:</strong> Known biomedical condition, intellectual disability, hearing impairment, lack of opportunity</li>
-            <li className="mb-2"><strong>Standardized tests:</strong> Typically perform below age expectations on language tests</li>
-          </ul>
+          {/* Professionals Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Diagnostic Team & Process</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-diagnosis-professionals.webp"
+              alt="Speech-Language Pathologist working with a child"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Diagnosing Developmental Language Disorder requires a comprehensive assessment. Because language impacts so many areas of development, the diagnostic process involves a multidisciplinary approach, standardized testing, and careful observation of the child's language use in everyday contexts.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Flexibility in Criteria</h3>
-          <p className="mb-4">
-            CATALISE moved away from strict cutoff scores:<sup>7</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Clinical judgment important alongside test scores</li>
-            <li className="mb-2">Functional impact prioritized over arbitrary cutoffs</li>
-            <li className="mb-2">Allows identification of children who need support</li>
-          </ul>
-        </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <UserCheck className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Qualified Professionals</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li><strong>SLPs:</strong> Speech-Language Pathologists are the primary professionals for DLD assessment.</li>
+                    <li><strong>Psychologists:</strong> Educational or neuropsychologists assist with cognitive profiling.</li>
+                    <li><strong>Pediatricians:</strong> Provide medical screening to rule out physical causes.</li>
+                  </ul>
+                </div>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Assessment Process</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Case History</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Developmental history:</strong> Language milestones, early development<sup>8</sup></li>
-            <li className="mb-2"><strong>Medical history:</strong> Hearing, health conditions, medications</li>
-            <li className="mb-2"><strong>Family history:</strong> Language or learning difficulties in relatives<sup>9</sup></li>
-            <li className="mb-2"><strong>Educational history:</strong> School performance and concerns</li>
-            <li className="mb-2"><strong>Current concerns:</strong> Specific difficulties parents and teachers notice</li>
-          </ul>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <FileSearch className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Case History</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li><strong>Developmental:</strong> Tracking exact language and motor milestones.</li>
+                    <li><strong>Family:</strong> Identifying any family history of learning or language difficulties.</li>
+                    <li><strong>Hearing:</strong> An essential audiological screening to rule out hearing loss as the primary cause.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Hearing Screening</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Essential to rule out hearing loss as primary cause<sup>1</sup></li>
-            <li className="mb-2">Full audiological evaluation if concerns exist</li>
-            <li className="mb-2">History of ear infections documented</li>
-          </ul>
-        </div>
+          {/* CATALISE Criteria Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The CATALISE Diagnostic Criteria</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-diagnosis-catalise-hero.webp"
+              alt="Visual representation of international consensus criteria"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              In 2017, the multinational CATALISE consortium established the definitive, modern diagnostic criteria for DLD, moving the clinical world away from strict, arbitrary cutoff scores and toward functional, real-world impact.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Standardized Language Testing</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Comprehensive Language Assessment</h3>
-          <p className="mb-4">
-            Multiple domains should be assessed:<sup>1</sup>
-          </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <AlertTriangle className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Persistent Difficulty</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">The child must exhibit persistent problems with language learning and use that interfere significantly with their everyday life, academic achievement, or social interactions.</p>
+              </div>
 
-          <h4 className="font-bold mb-2">Receptive Language Tests</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>CELF-5:</strong> Clinical Evaluation of Language Fundamentals<sup>2</sup></li>
-            <li className="mb-2"><strong>PPVT-5:</strong> Peabody Picture Vocabulary Test</li>
-            <li className="mb-2"><strong>TROG-2:</strong> Test for Reception of Grammar</li>
-            <li className="mb-2">Assesses understanding of words, sentences, and grammar</li>
-          </ul>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Search className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Rule-Outs</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">The language deficit cannot be primarily explained by another known biomedical condition (like a brain injury), intellectual disability, hearing impairment, or severe environmental deprivation.</p>
+              </div>
 
-          <h4 className="font-bold mb-2">Expressive Language Tests</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>CELF-5:</strong> Expressive subtests<sup>3</sup></li>
-            <li className="mb-2"><strong>EVT-3:</strong> Expressive Vocabulary Test</li>
-            <li className="mb-2"><strong>Sentence formulation tasks:</strong> Grammar and syntax</li>
-            <li className="mb-2"><strong>Naming tasks:</strong> Word retrieval abilities</li>
-          </ul>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <ClipboardList className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Clinical Flexibility</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Clinical judgment is prioritized alongside standardized test scores, allowing SLPs to diagnose children whose test scores might barely pass but whose functional language severely impacts them.</p>
+              </div>
+            </div>
+          </div>
 
-          <h4 className="font-bold mb-2">Comprehensive Batteries</h4>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>CELF-5:</strong> Ages 5-21<sup>4</sup></li>
-            <li className="mb-2"><strong>CASL-2:</strong> Comprehensive Assessment of Spoken Language</li>
-            <li className="mb-2"><strong>OWLS-II:</strong> Oral and Written Language Scales</li>
-            <li className="mb-2">Assess multiple language domains comprehensively</li>
-          </ul>
-        </div>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE consortium. (2017). Phase 2 of CATALISE: A multinational and multidisciplinary Delphi consensus study of problems with language development: Terminology. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/jcpp.12721</p>
+              </div>
+            </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Language Sample Analysis</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Naturalistic Language Assessment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Spontaneous speech:</strong> Recording natural conversation or play<sup>5</sup></li>
-            <li className="mb-2"><strong>Narrative samples:</strong> Telling stories or retelling events</li>
-            <li className="mb-2"><strong>Analysis of grammar:</strong> Types and frequency of errors<sup>6</sup></li>
-            <li className="mb-2"><strong>Vocabulary use:</strong> Diversity and sophistication</li>
-            <li className="mb-2"><strong>Sentence complexity:</strong> Length and complexity of utterances</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Clinical Markers</h3>
-          <p className="mb-4">
-            Certain grammatical markers are particularly sensitive to DLD:<sup>[17]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Past tense -ed errors</li>
-            <li className="mb-2">Third person singular -s omission</li>
-            <li className="mb-2">Auxiliary verb (is, are, was, were) errors<sup>[18]</sup></li>
-            <li className="mb-2">These grammatical markers help differentiate DLD from typical development</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Additional Assessments</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Phonological Assessment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Speech sound production</li>
-            <li className="mb-2">Phonological awareness skills<sup>[19]</sup></li>
-            <li className="mb-2">Important for literacy predictions</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Nonverbal Cognitive Assessment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Nonverbal IQ testing to rule out intellectual disability<sup>[20]</sup></li>
-            <li className="mb-2">Not required by CATALISE but often helpful</li>
-            <li className="mb-2">Helps understand cognitive profile</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Working Memory and Processing</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Phonological working memory tasks<sup>[21]</sup></li>
-            <li className="mb-2">Processing speed assessment</li>
-            <li className="mb-2">Helps identify underlying processing difficulties</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Questionnaires and Rating Scales</h2>
-          
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>CCC-2:</strong> Children's Communication Checklist<sup>[22]</sup></li>
-            <li className="mb-2"><strong>CELF-5 Pragmatics Profile:</strong> Social communication</li>
-            <li className="mb-2"><strong>Parent/teacher questionnaires:</strong> Real-world language use<sup>[23]</sup></li>
-            <li className="mb-2">Provides functional perspective beyond test scores</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Differential Diagnosis</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwbGVhcm5pbmd8ZW58MXx8fHwxNjc0NTM1MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Student learning"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Distinguishing from Other Conditions</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Autism Spectrum Disorder:</strong> ASD has social-communication deficits plus restricted interests<sup>[24]</sup></li>
-            <li className="mb-2"><strong>Intellectual Disability:</strong> DLD has language more impaired than nonverbal cognition</li>
-            <li className="mb-2"><strong>Hearing Impairment:</strong> Audiological evaluation rules out<sup>[25]</sup></li>
-            <li className="mb-2"><strong>Environmental deprivation:</strong> History and improvements with exposure</li>
-            <li className="mb-2"><strong>Selective mutism:</strong> Speaks normally in some situations</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Co-occurring Conditions</h3>
-          <p className="mb-4">
-            Important to identify co-occurring conditions:<sup>[26]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">ADHD commonly co-occurs</li>
-            <li className="mb-2">Reading disabilities (dyslexia)</li>
-            <li className="mb-2">Speech sound disorders</li>
-            <li className="mb-2">Each needs separate assessment and treatment</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Early Identification</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Screening Tools</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Brief screening measures for early detection<sup>[27]</sup></li>
-            <li className="mb-2">Well-child visits ideal time for screening</li>
-            <li className="mb-2">Parent report measures valuable</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Late Talkers</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Not all late talkers have DLD<sup>[28]</sup></li>
-            <li className="mb-2">But many children with DLD were late talkers</li>
-            <li className="mb-2">Monitoring and follow-up essential</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Classification</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">School-Based Services</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">May qualify under "Speech or Language Impairment" category<sup>[29]</sup></li>
-            <li className="mb-2">IEP (Individualized Education Program) eligibility</li>
-            <li className="mb-2">504 Plan alternative if doesn't meet IEP criteria</li>
-            <li className="mb-2">School-based SLP services<sup>[30]</sup></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Diagnostic Report</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Key Components:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li>Background information and reason for referral</li>
-              <li>Developmental, medical, and family history</li>
-              <li>Tests administered and behavioral observations<sup>[31]</sup></li>
-              <li>Test results with scores and interpretations</li>
-              <li>Language sample analysis</li>
-              <li>Summary of strengths and weaknesses</li>
-              <li>Diagnostic impressions and classification</li>
-              <li>Detailed, actionable recommendations<sup>[32]</sup></li>
-            </ul>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>American Speech-Language-Hearing Association. (n.d.). <i>Spoken language disorders</i>.</li>
+                <li>Leonard, L. B. (2014). Children with specific language impairment (2nd ed.). <i>MIT Press</i>.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] American Speech-Language-Hearing Association. (n.d.). <em>Spoken language disorders</em>. Retrieved from www.asha.org</p>
-          <p>[2] Leonard, L. B. (2014). <em>Children with specific language impairment</em> (2nd ed.). Cambridge, MA: MIT Press.</p>
-          <p>[3] Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE-2 consortium. (2016). "CATALISE: A multinational and multidisciplinary Delphi consensus study." <em>PLoS ONE</em>, 11(7), e0158753.</p>
-          <p>[4] Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE consortium. (2017). "Phase 2 of CATALISE." <em>Journal of Child Psychology and Psychiatry</em>, 58(10), 1068-1080.</p>
-          <p>[5] Tomblin, J. B., & Buckwalter, P. R. (1998). "Heritability of poor language achievement among twins." <em>Journal of Speech, Language, and Hearing Research</em>, 41(1), 188-199.</p>
-          <p>[6] Wiig, E. H., Semel, E., & Secord, W. A. (2013). <em>Clinical Evaluation of Language Fundamentals</em> (5th ed.). San Antonio, TX: Pearson.</p>
-          <p>[7] Heilmann, J., Nockerts, A., & Miller, J. F. (2010). "Language sampling: Does the length of the transcript matter?" <em>Language, Speech, and Hearing Services in Schools</em>, 41(4), 393-404.</p>
-          <p>[8] Rice, M. L., & Wexler, K. (1996). "Toward tense as a clinical marker of specific language impairment in English-speaking children." <em>Journal of Speech and Hearing Research</em>, 39(6), 1239-1257.</p>
-          <p>[9] Rice, M. L., Wexler, K., & Hershberger, S. (1998). "Tense over time." <em>Journal of Speech, Language, and Hearing Research</em>, 41(6), 1412-1431.</p>
-          <p>[10] Catts, H. W., Fey, M. E., Tomblin, J. B., & Zhang, X. (2002). "A longitudinal investigation of reading outcomes in children with language impairments." <em>Journal of Speech, Language, and Hearing Research</em>, 45(6), 1142-1157.</p>
-          <p>[11] Gathercole, S. E., & Baddeley, A. D. (1990). "Phonological memory deficits in language disordered children." <em>Journal of Memory and Language</em>, 29(3), 336-360.</p>
-          <p>[12] Bishop, D. V. M. (2003). <em>Children's Communication Checklist</em> (2nd ed.). London: Psychological Corporation.</p>
-          <p>[13] Mueller, K. L., & Tomblin, J. B. (2012). "Examining the comorbidity of language disorders and ADHD." <em>Topics in Language Disorders</em>, 32(3), 228-246.</p>
-          <p>[14] Law, J., Boyle, J., Harris, F., Harkness, A., & Nye, C. (2000). "The feasibility of universal screening for primary speech and language delay." <em>Developmental Medicine & Child Neurology</em>, 42(3), 190-200.</p>
-          <p>[15] Rice, M. L., Taylor, C. L., & Zubrick, S. R. (2008). "Language outcomes of 7-year-old children with or without a history of late language emergence at 24 months." <em>Journal of Speech, Language, and Hearing Research</em>, 51(2), 394-407.</p>
-          <p>[16] Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</p>
+      {/* ==========================================
+          TAB 2: CORE TESTING AREAS
+      ========================================== */}
+      {activeTab === 'testing' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Standardized Testing Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Standardized Language Testing</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-diagnosis-testing.webp"
+              alt="Child engaging in a receptive language test with an SLP"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              To accurately map a child's language profile, Speech-Language Pathologists utilize comprehensive test batteries that separate language into specific, measurable domains.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Ear className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Receptive Language</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Tests like the PPVT-5 (Peabody Picture Vocabulary Test) or TROG-2 measure how well the child understands vocabulary and grammar without requiring them to speak.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <MessageSquare className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Expressive Language</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Tests like the EVT-3 (Expressive Vocabulary Test) assess word retrieval, sentence formulation, and the ability to generate correct syntax.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4 md:col-span-2">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Layers className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Comprehensive Batteries</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Tests like the CELF-5 (Clinical Evaluation of Language Fundamentals) or CASL-2 are massive, multi-hour batteries that assess all language domains to provide a full developmental profile.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Specialized Assessments Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Language Sampling & Additional Testing</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-diagnosis-assessments-hero.webp"
+              alt="Visualizing natural language sampling and speech analysis"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Mic className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Natural Language Samples</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed mb-2">Standardized tests can miss real-world struggles. SLPs record natural conversation and narrative storytelling to analyze spontaneous grammar errors, vocabulary diversity, and sentence complexity.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <FileText className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Clinical Markers</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed mb-2">During sampling, SLPs look for highly specific grammatical markers that differentiate DLD from typical development, specifically errors with the past tense <em>-ed</em> and the third-person singular <em>-s</em>.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 sm:col-span-2 lg:col-span-1">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Brain className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Working Memory</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed mb-2">Testing often includes phonological working memory and processing speed tasks to identify the underlying cognitive roadblocks preventing efficient language acquisition.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Wiig, E. H., Semel, E., & Secord, W. A. (2013). Clinical Evaluation of Language Fundamentals (5th ed.). <i>Pearson</i>.</li>
+                <li>Heilmann, J., Nockerts, A., & Miller, J. F. (2010). Language sampling: Does the length of the transcript matter? <i>Language, Speech, and Hearing Services in Schools</i>.</li>
+                <li>Rice, M. L., & Wexler, K. (1996). Toward tense as a clinical marker of specific language impairment in English-speaking children. <i>Journal of Speech and Hearing Research</i>.</li>
+                <li>Gathercole, S. E., & Baddeley, A. D. (1990). Phonological memory deficits in language disordered children. <i>Journal of Memory and Language</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('dld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: DIAGNOSIS & OUTCOMES
+      ========================================== */}
+      {activeTab === 'criteria' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Differential Diagnosis Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-diagnosis-differential.webp"
+              alt="Conceptual visual of sorting different diagnostic profiles"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Because language delays are a symptom of many different conditions, the diagnostic team must carefully distinguish primary DLD from other neurodevelopmental profiles. It is also critical to identify co-occurring conditions, as ADHD and Dyslexia frequently present alongside DLD.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Distinguishing Profiles</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Autism:</strong> DLD lacks the restricted interests and repetitive behaviors characteristic of ASD.</li>
+                  <li><strong>Intellectual Disability:</strong> In DLD, language is significantly more impaired than general nonverbal cognition.</li>
+                  <li><strong>Environmental:</strong> DLD persists even when environmental or bilingual exposure improves.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Early Identification</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>While many children with DLD were "late talkers," not all late talkers have DLD.</li>
+                  <li>Brief screening measures at well-child pediatric visits are essential for flagging at-risk children for early intervention.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Outcomes Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Educational Classification & The Report</h2>
+            
+            <ImageWithFallback 
+              src="/images/dld/dld-diagnosis-report-hero.webp"
+              alt="Formal educational support meeting and IEP planning"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <ClipboardList className="text-[#2abcd4] w-5 h-5" /> The Evaluation Report
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  A formal diagnostic report should provide a clear roadmap for parents and educators, synthesizing test data into actionable support strategies.
+                </p>
+                <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                  <h4 className="text-[#0c264d] font-bold text-sm mb-2">Key Components:</h4>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Developmental and medical history.</li>
+                    <li>Standardized test scores and interpretations.</li>
+                    <li>Language sample analysis data.</li>
+                    <li>Formal diagnostic classification.</li>
+                    <li>Detailed, actionable classroom recommendations.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <GraduationCap className="text-[#2abcd4] w-5 h-5" /> School-Based Services
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  To receive specialized instruction in the public school system, the clinical diagnosis must be translated into an educational classification under IDEA.
+                </p>
+                <div className="space-y-3">
+                  <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm flex items-start gap-2">
+                    <CheckCircle className="text-[#0A9DC4] w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">Most children with DLD qualify for an IEP under the <strong>Speech or Language Impairment</strong> category.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm flex items-start gap-2">
+                    <CheckCircle className="text-[#0A9DC4] w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">If a child does not qualify for an IEP, a <strong>504 Plan</strong> can legally mandate classroom accommodations.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Mueller, K. L., & Tomblin, J. B. (2012). Examining the comorbidity of language disorders and ADHD. <i>Topics in Language Disorders</i>.</li>
+                <li>Law, J., Boyle, J., Harris, F., Harkness, A., & Nye, C. (2000). The feasibility of universal screening for primary speech and language delay. <i>Developmental Medicine & Child Neurology</i>.</li>
+                <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('dld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to DLD
-        </a>
+          <span className="text-xl">←</span>
+          All About DLD
+        </button>
       </div>
+
     </article>
   );
 }

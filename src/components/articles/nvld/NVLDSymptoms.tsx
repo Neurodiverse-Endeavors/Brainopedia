@@ -1,300 +1,412 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Ear, MessageSquare, BookOpen, Search, Focus, BrainCircuit } from 'lucide-react';
 
 interface NVLDSymptomsProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function NVLDSymptoms({ setCurrentArticle }: NVLDSymptomsProps) {
+export function NVLDSymptoms({ setCurrentArticle, initialTab }: NVLDSymptomsProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'spatial');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('nvld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          NVLD: Symptoms & Characteristics
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('nvld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to NVLD
-        </a>
+          <span className="text-xl">←</span>
+          All About NVLD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        NVLD: Symptoms & Characteristics
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('nvld')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About NVLD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Nonverbal Learning Disability presents with a distinctive pattern of symptoms characterized by strong 
-            verbal abilities alongside significant deficits in visual-spatial, motor, and social domains.<sup>1</sup> 
-            The constellation of symptoms typically becomes more apparent as academic and social demands increase.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('spatial')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'spatial'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Visual-Spatial & Motor
+        </button>
+        <button
+          onClick={() => setActiveTab('social')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'social'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Social & Academic
+        </button>
+        <button
+          onClick={() => setActiveTab('progression')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'progression'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Progression & Strengths
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Visual-Spatial Deficits</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwdXp6bGUlMjBzcGF0aWFsfGVufDF8fHx8MTY3NDUzNTEyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Puzzle spatial"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Spatial Perception Difficulties</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Poor spatial awareness:</strong> Difficulty judging distances and spatial relationships<sup>3</sup></li>
-            <li className="mb-2"><strong>Navigation problems:</strong> Getting lost easily, poor sense of direction</li>
-            <li className="mb-2"><strong>Visual details:</strong> Missing visual details or patterns</li>
-            <li className="mb-2"><strong>Part-whole relationships:</strong> Difficulty seeing how parts fit into wholes<sup>4</sup></li>
-          </ul>
+      {/* ==========================================
+          TAB 1: VISUAL-SPATIAL & MOTOR
+      ========================================== */}
+      {activeTab === 'spatial' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Visual-Motor Integration</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty copying shapes and designs</li>
-            <li className="mb-2">Poor performance on puzzles and building tasks<sup>5</sup></li>
-            <li className="mb-2">Challenges with mazes and dot-to-dot activities</li>
-            <li className="mb-2">Trouble with hands-on construction and assembly</li>
-          </ul>
+          {/* Spatial Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Visual-Spatial Deficits</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-symptoms-spatial.webp"
+              alt="Representation of spatial alignment and visual processing challenges"
+              className="w-64 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The foundational symptom of Nonverbal Learning Disability is a profound difficulty understanding and organizing visual and spatial information. While their verbal language skills excel, individuals with NVLD struggle to perceive the physical world accurately, making tasks that require geometric reasoning or spatial awareness incredibly exhausting.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Visual Organization</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty organizing visual information on a page</li>
-            <li className="mb-2">Poor spatial organization of written work<sup>6</sup></li>
-            <li className="mb-2">Trouble with visual scanning and tracking</li>
-            <li className="mb-2">Challenges interpreting graphs, charts, and diagrams</li>
-          </ul>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-[#2abcd4] border-opacity-20 pb-2">Spatial Perception</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Poor awareness:</strong> Difficulty judging distances, speeds, and spatial relationships between objects.<sup className="text-[#10b981] font-bold ml-0.5">2</sup></li>
+                  <li><strong>Navigation:</strong> Getting lost easily and possessing a notably poor sense of direction.</li>
+                  <li><strong>The Big Picture:</strong> Hyper-focusing on small visual details while completely missing how parts fit into the whole.</li>
+                </ul>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Motor Coordination Difficulties</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Gross Motor Skills</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Clumsiness:</strong> Frequent tripping, bumping into things<sup>7</sup></li>
-            <li className="mb-2"><strong>Balance problems:</strong> Difficulty with activities requiring balance</li>
-            <li className="mb-2"><strong>Bilateral coordination:</strong> Trouble coordinating both sides of body</li>
-            <li className="mb-2"><strong>Sports challenges:</strong> Difficulty with team sports and physical activities<sup>8</sup></li>
-            <li className="mb-2"><strong>Motor milestones:</strong> Delayed walking, running, or bike riding</li>
-          </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-[#2abcd4] border-opacity-20 pb-2">Visual-Motor & Organization</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Integration:</strong> Severe difficulty copying shapes, designs, or building with blocks/LEGOs.</li>
+                  <li><strong>Layout:</strong> Trouble organizing visual information on a page, causing messy, overlapping written work.</li>
+                  <li><strong>Scanning:</strong> Challenges tracking text visually or interpreting graphs, charts, and maps.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Fine Motor Skills</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Poor handwriting despite adequate instruction<sup>9</sup></li>
-            <li className="mb-2">Difficulty with buttoning, zipping, tying shoes</li>
-            <li className="mb-2">Challenges with scissors, coloring within lines</li>
-            <li className="mb-2">Trouble with manipulating small objects</li>
-          </ul>
+          {/* Motor Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Motor Coordination Difficulties</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-symptoms-motor-hero.webp"
+              alt="Graphic illustrating fine and gross motor challenges"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Because the brain struggles to map the physical environment, individuals with NVLD typically experience significant delays and ongoing challenges with both gross and fine motor coordination, often presenting as general physical "clumsiness."
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Graphomotor Difficulties</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Inconsistent letter formation and sizing</li>
-            <li className="mb-2">Poor spatial organization on paper<sup>1</sup></li>
-            <li className="mb-2">Difficulty staying on lines</li>
-            <li className="mb-2">Slow, labored handwriting</li>
-          </ul>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-[#ffd166] pb-2">Gross Motor</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Frequent tripping, bumping into doorframes, or dropping items.<sup className="text-[#10b981] font-bold ml-0.5">3</sup></li>
+                  <li>Difficulty with activities requiring balance or bilateral coordination (using both sides of the body).</li>
+                  <li>Severe struggles with physical education and team sports.</li>
+                </ul>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Social and Emotional Symptoms</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Nonverbal Communication Deficits</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Reading facial expressions:</strong> Difficulty interpreting emotional expressions<sup>1</sup></li>
-            <li className="mb-2"><strong>Body language:</strong> Missing nonverbal social cues</li>
-            <li className="mb-2"><strong>Personal space:</strong> Standing too close or too far from others</li>
-            <li className="mb-2"><strong>Eye contact:</strong> Inappropriate or inconsistent eye contact<sup>2</sup></li>
-            <li className="mb-2"><strong>Gestures:</strong> Limited use of or misunderstanding of gestures</li>
-          </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-[#ffd166] pb-2">Fine Motor</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Trouble with daily living skills like buttoning shirts, zipping jackets, or tying shoes.</li>
+                  <li>Challenges using scissors or coloring within the lines.</li>
+                  <li>Difficulty manipulating small objects quickly or accurately.</li>
+                </ul>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Interaction Challenges</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty making and keeping friends<sup>3</sup></li>
-            <li className="mb-2">Missing subtle social cues and context</li>
-            <li className="mb-2">Literal interpretation of language (missing sarcasm, idioms)</li>
-            <li className="mb-2">Talking "too much" or dominating conversations</li>
-            <li className="mb-2">Difficulty with social timing and turn-taking<sup>4</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Emotional Regulation</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Anxiety, especially in social or novel situations<sup>5</sup></li>
-            <li className="mb-2">Difficulty coping with change or transitions</li>
-            <li className="mb-2">Low frustration tolerance</li>
-            <li className="mb-2">Risk for depression, particularly in adolescence<sup>6</sup></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Academic Symptoms</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXRoJTIwcHJvYmxlbXxlbnwxfHx8fDE2NzQ1MzUxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Math problem"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Mathematics Difficulties</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Visual-spatial aspects:</strong> Difficulty with geometry, measurement, graphing<sup>[17]</sup></li>
-            <li className="mb-2"><strong>Place value:</strong> Trouble understanding spatial aspects of numbers</li>
-            <li className="mb-2"><strong>Calculation errors:</strong> Misaligning numbers in columns</li>
-            <li className="mb-2"><strong>Word problems:</strong> Difficulty visualizing problems (despite good reading)<sup>[18]</sup></li>
-            <li className="mb-2"><strong>Math facts:</strong> May struggle despite strong verbal memory</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading Comprehension</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Decoding vs. comprehension split:</strong> Can decode words but miss meaning<sup>[19]</sup></li>
-            <li className="mb-2"><strong>Inferencing:</strong> Difficulty making inferences and reading between lines</li>
-            <li className="mb-2"><strong>Main idea:</strong> Trouble identifying central themes</li>
-            <li className="mb-2"><strong>Novel information:</strong> Challenges with new or complex material</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Written Expression</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty organizing thoughts on paper<sup>[20]</sup></li>
-            <li className="mb-2">Poor handwriting affecting output</li>
-            <li className="mb-2">Verbose but disorganized writing</li>
-            <li className="mb-2">Trouble with visual layout and spacing</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Science and Other Subjects</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty with diagrams, charts, and visual representations</li>
-            <li className="mb-2">Challenges with hands-on experiments and labs<sup>[21]</sup></li>
-            <li className="mb-2">Trouble with maps in geography</li>
-            <li className="mb-2">Difficulty in art class with spatial and motor demands</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Executive Function Symptoms</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Organization and Planning</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Poor organizational skills<sup>[22]</sup></li>
-            <li className="mb-2">Difficulty planning and executing multi-step tasks</li>
-            <li className="mb-2">Trouble with time management</li>
-            <li className="mb-2">Disorganized backpack, desk, locker, room</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Flexibility and Problem-Solving</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty adapting to new situations<sup>[23]</sup></li>
-            <li className="mb-2">Rigid thinking patterns</li>
-            <li className="mb-2">Trouble problem-solving in novel situations</li>
-            <li className="mb-2">Preference for routines and predictability</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Verbal Strengths</h2>
-          
-          <p className="mb-4">
-            While these are strengths, they can sometimes create their own challenges:<sup>[24]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Advanced vocabulary:</strong> May seem "too adult" or pedantic</li>
-            <li className="mb-2"><strong>Rote verbal memory:</strong> Can memorize and recite facts extensively</li>
-            <li className="mb-2"><strong>Early reading:</strong> Often learn to read early and read fluently</li>
-            <li className="mb-2"><strong>Verbal expression:</strong> Articulate when speaking about interests</li>
-            <li className="mb-2"><strong>Attention to detail:</strong> Notice and remember verbal details</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Developmental Progression</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Preschool and Early Elementary</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Motor delays more apparent than academic issues<sup>[25]</sup></li>
-            <li className="mb-2">Advanced verbal skills may mask difficulties</li>
-            <li className="mb-2">Avoidance of physical activities</li>
-            <li className="mb-2">Difficulty with coloring, cutting, drawing</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Upper Elementary</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Math difficulties become more evident</li>
-            <li className="mb-2">Social challenges increase as peer interactions become more complex</li>
-            <li className="mb-2">Organizational demands exceed abilities<sup>[26]</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Middle School and Beyond</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Reading comprehension gaps widen</li>
-            <li className="mb-2">Social isolation may increase</li>
-            <li className="mb-2">Risk for anxiety and depression<sup>[27]</sup></li>
-            <li className="mb-2">Challenges with independence and self-care skills</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Distinguishing Features</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Key Diagnostic Indicators:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li><strong>VIQ-PIQ discrepancy:</strong> Significant gap between verbal and performance IQ scores<sup>[28]</sup></li>
-              <li><strong>Verbal strengths:</strong> Advanced language skills, early reading</li>
-              <li><strong>Visual-spatial weaknesses:</strong> Poor spatial reasoning and visual processing</li>
-              <li><strong>Motor difficulties:</strong> Fine and gross motor coordination challenges</li>
-              <li><strong>Social deficits:</strong> Difficulty reading nonverbal cues</li>
-              <li><strong>Academic pattern:</strong> Struggles with math, especially visual-spatial aspects</li>
-            </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-[#ffd166] pb-2">Graphomotor (Writing)</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Inconsistent, illegible letter formation despite ample instruction.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></li>
+                  <li>Difficulty staying on the lines or sizing letters appropriately.</li>
+                  <li>A highly effortful, slow, and labored writing process that causes physical fatigue.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Rourke, B. P. (1989). <em>Nonverbal learning disabilities: The syndrome and the model</em>. New York: Guilford Press.</p>
-          <p>[2] Rourke, B. P. (1995). "Syndrome of nonverbal learning disabilities: Neurodevelopmental manifestations." <em>Clinical Child and Family Psychology Review</em>, 1(4), 209-234.</p>
-          <p>[3] Rourke, B. P., & Conway, J. A. (1997). "Disabilities of arithmetic and mathematical reasoning: Perspectives from neurology and neuropsychology." <em>Journal of Learning Disabilities</em>, 30(1), 34-46.</p>
-          <p>[4] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[5] Drummond, C. R., Ahmad, S. A., & Rourke, B. P. (2005). "Rules for the classification of younger children with nonverbal learning disabilities." <em>Archives of Clinical Neuropsychology</em>, 20(2), 171-182.</p>
-          <p>[6] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[7] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[8] Semrud-Clikeman, M., & Hynd, G. W. (1990). "Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children." <em>Psychological Bulletin</em>, 107(2), 196-209.</p>
-          <p>[9] Rourke, B. P. (1995). "Syndrome of nonverbal learning disabilities." <em>Clinical Child and Family Psychology Review</em>, 1(4), 209-234.</p>
-          <p>[10] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[11] Semrud-Clikeman, M., & Hynd, G. W. (1990). "Right hemispheric dysfunction in nonverbal learning disabilities." <em>Psychological Bulletin</em>, 107(2), 196-209.</p>
-          <p>[12] Rourke, B. P., & Fuerst, D. R. (1991). <em>Learning disabilities and psychosocial functioning: A neuropsychological perspective</em>. New York: Guilford Press.</p>
-          <p>[13] Semrud-Clikeman, M. (2007). <em>Social competence in children</em>. New York: Springer.</p>
-          <p>[14] Rourke, B. P., & Fuerst, D. R. (1991). <em>Learning disabilities and psychosocial functioning</em>. New York: Guilford Press.</p>
-          <p>[15] Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). "A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk." <em>Journal of Learning Disabilities</em>, 22(3), 169-175.</p>
-          <p>[16] Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). "A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk." <em>Journal of Learning Disabilities</em>, 22(3), 169-175.</p>
-          <p>[17] Rourke, B. P., & Conway, J. A. (1997). "Disabilities of arithmetic and mathematical reasoning." <em>Journal of Learning Disabilities</em>, 30(1), 34-46.</p>
-          <p>[18] Rourke, B. P. (1993). "Arithmetic disabilities, specific and otherwise: A neuropsychological perspective." <em>Journal of Learning Disabilities</em>, 26(4), 214-226.</p>
-          <p>[19] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[20] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[21] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[22] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[23] Semrud-Clikeman, M., & Hynd, G. W. (1990). "Right hemispheric dysfunction in nonverbal learning disabilities." <em>Psychological Bulletin</em>, 107(2), 196-209.</p>
-          <p>[24] Rourke, B. P. (1989). <em>Nonverbal learning disabilities</em>. New York: Guilford Press.</p>
-          <p>[25] Thompson, S. (1997). <em>The source for nonverbal learning disorders</em>. East Moline, IL: LinguiSystems.</p>
-          <p>[26] Tanguay, P. B. (2002). <em>Nonverbal learning disabilities at school</em>. London: Jessica Kingsley Publishers.</p>
-          <p>[27] Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). "A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk." <em>Journal of Learning Disabilities</em>, 22(3), 169-175.</p>
-          <p>[28] Rourke, B. P. (1995). "Syndrome of nonverbal learning disabilities." <em>Clinical Child and Family Psychology Review</em>, 1(4), 209-234.</p>
+      {/* ==========================================
+          TAB 2: SOCIAL & ACADEMIC
+      ========================================== */}
+      {activeTab === 'social' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Social Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social & Emotional Symptoms</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-symptoms-social.webp"
+              alt="Conceptual graphic showing missed nonverbal social cues"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Up to 65% of human communication is nonverbal. Because NVLD impairs the brain's ability to read visual data, these individuals operate in a social world where they are essentially "blind" to body language, facial expressions, and unspoken social context.<sup className="text-[#10b981] font-bold ml-0.5">4</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-gray-200 pb-2">Communication & Interaction</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Reading faces:</strong> Complete inability to interpret subtle emotional expressions or eye contact.</li>
+                  <li><strong>Literal thinking:</strong> Missing sarcasm, idioms, and implied meanings, relying entirely on exactly what is said.</li>
+                  <li><strong>Social timing:</strong> Talking "too much," dominating conversations, or missing the cues for turn-taking.</li>
+                  <li><strong>Space:</strong> Frequently violating personal space bubbles without realizing it.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-gray-200 pb-2">Emotional Regulation</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Anxiety:</strong> High levels of chronic anxiety, specifically triggered by novel or unstructured social situations.<sup className="text-[#10b981] font-bold ml-0.5">5</sup></li>
+                  <li><strong>Rigidity:</strong> Difficulty coping with sudden changes or transitions in daily routines.</li>
+                  <li><strong>Isolation:</strong> A heightened risk for depression in adolescence as peer relationships become incredibly complex.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Academic Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Academic & Executive Challenges</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-symptoms-academic-hero.webp"
+              alt="Visual representation of academic challenges in math and organization"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              While early academic years (which focus heavily on reading and rote memorization) may be highly successful, students with NVLD typically "hit a wall" in later elementary school as subjects shift toward abstract reasoning, visual data, and complex executive function.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#2abcd4] border-opacity-20 pb-2">Mathematics</h3>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Severe struggles with geometry, graphing, and fractions.</li>
+                  <li>Misaligning numbers in multi-step equations.</li>
+                  <li>Inability to visualize math word problems.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#2abcd4] border-opacity-20 pb-2">Reading & Writing</h3>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Can read perfectly, but struggles to infer the "main idea."</li>
+                  <li>Writing is highly verbose but lacks structure or organization.</li>
+                  <li>Difficulty reading between the lines.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#2abcd4] border-opacity-20 pb-2">Sciences</h3>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Inability to interpret textbook charts, maps, or diagrams.</li>
+                  <li>Physical clumsiness during hands-on lab experiments.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#2abcd4] border-opacity-20 pb-2">Executive Function</h3>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Chronically disorganized lockers, desks, and backpacks.</li>
+                  <li>Poor time management and inability to plan multi-step projects.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('nvld'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: PROGRESSION & STRENGTHS
+      ========================================== */}
+      {activeTab === 'progression' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Progression Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Developmental Progression</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-symptoms-progression.webp"
+              alt="Timeline of symptom evolution from childhood to adulthood"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The presentation of NVLD evolves dramatically as a child grows. Because they are highly articulate and often learn to read early, their profound struggles with spatial reasoning and social dynamics are frequently dismissed early on as mere quirkiness, behavioral issues, or simple anxiety.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#ffd166] pb-2">Early Childhood</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Advanced verbal skills mask underlying developmental gaps.</li>
+                  <li>Noticeable avoidance of physical activities, playgrounds, or fine-motor toys like coloring and puzzles.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#ffd166] pb-2">Upper Elementary</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Visual-spatial math difficulties (geometry, long division) suddenly become severe obstacles.</li>
+                  <li>Social challenges erupt as peer interactions shift from structured play to complex, unspoken social rules.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold mb-2 text-sm border-b border-[#ffd166] pb-2">Adolescence & Beyond</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Massive struggles with independent life skills that require spatial mapping (like learning to drive).</li>
+                  <li>High risk for social isolation and secondary depression without explicit social intervention.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Strengths & Indicators Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Strengths & Key Indicators</h2>
+            
+            <ImageWithFallback 
+              src="/images/nvld/nvld-symptoms-strengths-hero.webp"
+              alt="Iconic representation of verbal strengths and diagnostic markers"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              A formal diagnostic evaluation will look for a highly specific cluster of traits. The most definitive marker is the stark contrast between the individual's remarkable verbal assets and their visual-spatial deficits.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              
+              {/* Icon Mini-Card 1 */}
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <MessageSquare className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Advanced Language</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Possesses an incredibly rich vocabulary, though they may speak in a manner that sounds overly formal, pedantic, or "adult-like."</p>
+                </div>
+              </div>
+
+              {/* Icon Mini-Card 2 */}
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Ear className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Rote Verbal Memory</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Demonstrates a phenomenal ability to memorize, retain, and effortlessly recite extensive verbal facts, lists, and auditory information.</p>
+                </div>
+              </div>
+
+              {/* Icon Mini-Card 3 */}
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <BookOpen className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Early Decoding</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Frequently learns to read and decode complex words well ahead of neurotypical milestones, utilizing immense auditory strength.</p>
+                </div>
+              </div>
+
+              {/* Icon Mini-Card 4 */}
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-green-500 border-opacity-30 shrink-0">
+                  <BrainCircuit className="text-green-600 w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">The VIQ-PIQ Gap</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">The ultimate diagnostic indicator: A standardized IQ test revealing a massive point gap between Verbal IQ and Performance (spatial) IQ.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('nvld')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to NVLD
-        </a>
+          <span className="text-xl">←</span>
+          All About NVLD
+        </button>
       </div>
+
+      {/* ===== REFERENCES SECTION ===== */}
+      <div className="clear-both mt-16 font-spartan">
+        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+        
+        {/* CITED STUDIES: GREEN */}
+        <div className="mb-6">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+            Cited Studies & Statistics
+          </h4>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+            <p>1. Rourke, B. P. (1995). Syndrome of nonverbal learning disabilities: Neurodevelopmental manifestations. <i>Clinical Child and Family Psychology Review</i>. https://doi.org/10.1007/BF02353232</p>
+            <p>2. Drummond, C. R., Ahmad, S. A., & Rourke, B. P. (2005). Rules for the classification of younger children with nonverbal learning disabilities. <i>Archives of Clinical Neuropsychology</i>. https://doi.org/10.1016/j.acn.2004.04.004</p>
+            <p>3. Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>. https://doi.org/10.1037/0033-2909.107.2.196</p>
+            <p>4. Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.1995.tb01361.x</p>
+            <p>5. Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221948902200305</p>
+          </div>
+        </div>
+
+        {/* BACKGROUND SOURCES: CYAN */}
+        <div>
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+            Background Sources
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+            <li>Rourke, B. P. (1989). Nonverbal learning disabilities: The syndrome and the model. <i>Guilford Press</i>.</li>
+            <li>Semrud-Clikeman, M. (2007). Social competence in children. <i>Springer</i>.</li>
+            <li>Thompson, S. (1997). The source for nonverbal learning disorders. <i>LinguiSystems</i>.</li>
+          </ul>
+        </div>
+      </div>
+
     </article>
   );
 }
