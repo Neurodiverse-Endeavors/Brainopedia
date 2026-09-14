@@ -1,255 +1,427 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Ear, MessageSquare, BookOpen, LayoutTemplate, Brain, CheckCircle, Users, Activity, Laptop, Home, Heart, ShieldCheck, FileText, Lightbulb } from 'lucide-react';
 
 interface HyperlexiaSupportProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function HyperlexiaSupport({ setCurrentArticle }: HyperlexiaSupportProps) {
+export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaSupportProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'academic');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('hyperlexia'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Hyperlexia: Support & Management
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('hyperlexia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Hyperlexia
-        </a>
+          <span className="text-xl">←</span>
+          All About Hyperlexia
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Hyperlexia: Support & Management
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('hyperlexia')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About Hyperlexia
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Supporting children with hyperlexia involves leveraging their reading strengths while addressing language 
-            comprehension and social-communication needs.<sup>1</sup> Intervention should be individualized based on 
-            whether hyperlexia occurs alone or with autism.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('academic')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'academic'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Academic & Therapy
+        </button>
+        <button
+          onClick={() => setActiveTab('social')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'social'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Social & Behavioral
+        </button>
+        <button
+          onClick={() => setActiveTab('home')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'home'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Home & Strengths
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Leveraging Reading as a Strength</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMHJlYWRpbmclMjBib29rfGVufDF8fHx8MTY3NDUzNTI3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Child reading book"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Using Reading as a Learning Tool</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Visual supports:</strong> Use written words alongside spoken language<sup>3</sup></li>
-            <li className="mb-2"><strong>Reading to learn:</strong> Teach concepts through reading</li>
-            <li className="mb-2"><strong>Written schedules:</strong> Visual schedules and routines</li>
-            <li className="mb-2"><strong>Social stories:</strong> Written stories to teach social concepts<sup>4</sup></li>
-          </ul>
+      {/* ==========================================
+          TAB 1: ACADEMIC & THERAPY
+      ========================================== */}
+      {activeTab === 'academic' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading as Communication Aid</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Writing or typing to communicate</li>
-            <li className="mb-2">Using text alongside pictures<sup>5</sup></li>
-            <li className="mb-2">Written choice boards</li>
-          </ul>
-        </div>
+          {/* Therapy Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Speech-Language Therapy</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-support-therapy.webp"
+              alt="Speech-Language Pathologist working with a child using visual reading aids"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Supporting a child with hyperlexia involves a unique approach: you must actively use their advanced reading abilities to treat their language and comprehension deficits. Speech-Language Therapy is the foundation of this intervention.
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Language Comprehension Intervention</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Building Reading Comprehension</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Explicit comprehension strategies:</strong> Direct teaching of understanding<sup>6</sup></li>
-            <li className="mb-2"><strong>Questioning:</strong> Teaching to ask and answer questions about text</li>
-            <li className="mb-2"><strong>Vocabulary instruction:</strong> Building word meanings, not just recognition</li>
-            <li className="mb-2"><strong>Inferencing:</strong> Explicitly teaching "reading between the lines"<sup>7</sup></li>
-          </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <BookOpen className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Reading Comprehension</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Explicitly teaching "reading between the lines" and inferencing.</li>
+                    <li>Training the child to stop decoding and start asking "why" and "how" questions about the text.</li>
+                    <li>Building deep vocabulary meaning, not just word recognition.</li>
+                  </ul>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Listening Comprehension</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Building spoken language understanding<sup>8</sup></li>
-            <li className="mb-2">Following directions practice</li>
-            <li className="mb-2">Answering questions about verbal information</li>
-            <li className="mb-2">Connecting listening and reading comprehension</li>
-          </ul>
-        </div>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Ear className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Listening & Spoken Language</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Building receptive language by having the child follow spoken directions without written clues.</li>
+                    <li>Connecting spoken instructions directly to written text so the child learns the auditory equivalent of what they read.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Speech-Language Therapy</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Language Development</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Receptive language:</strong> Understanding spoken language<sup>9</sup></li>
-            <li className="mb-2"><strong>Expressive language:</strong> Verbal expression and communication</li>
-            <li className="mb-2"><strong>Vocabulary:</strong> Word meanings, not just reading words</li>
-            <li className="mb-2"><strong>Grammar:</strong> Sentence structure and language formulation</li>
-          </ul>
+          {/* Educational Strategies Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Educational Strategies & Planning</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-support-education-hero.webp"
+              alt="Classroom setting highlighting visual supports and structured schedules"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              In the classroom, teachers must recognize that perfect reading fluency does not equal understanding. Academic accommodations should bridge the gap between their visual strengths and auditory challenges.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Pragmatic Language</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Social use of language<sup>1</sup></li>
-            <li className="mb-2">Conversational skills</li>
-            <li className="mb-2">Understanding context and non-literal language</li>
-          </ul>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <LayoutTemplate className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Classroom Accommodations</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Provide written instructions alongside verbal directions.</li>
+                  <li>Use graphic organizers and charts to visually structure abstract concepts.</li>
+                  <li>Pre-teach complex vocabulary before the lesson begins.</li>
+                </ul>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Strategies</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Classroom Accommodations</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Written supports:</strong> Provide written instructions and information<sup>1</sup></li>
-            <li className="mb-2"><strong>Visual aids:</strong> Charts, graphic organizers, visual schedules</li>
-            <li className="mb-2"><strong>Pre-teaching:</strong> Introduce vocabulary and concepts before lessons</li>
-            <li className="mb-2"><strong>Comprehension checks:</strong> Frequent checking of understanding<sup>2</sup></li>
-          </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Teaching Strategies</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Use the child's intense interest in reading to engage them in non-preferred subjects.</li>
+                  <li>Perform frequent "comprehension checks" rather than assuming they understand because they read it flawlessly.</li>
+                </ul>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Teaching Strategies</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Explicit, direct instruction</li>
-            <li className="mb-2">Breaking down complex information<sup>3</sup></li>
-            <li className="mb-2">Using child's reading interest to engage</li>
-            <li className="mb-2">Connecting reading to real-world meaning</li>
-          </ul>
-        </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <FileText className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">IEP / 504 Planning</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Ensure IEP goals focus explicitly on language comprehension and social pragmatics, not decoding.</li>
+                  <li>May qualify under Speech-Language Impairment or Autism categories based on their specific profile.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Social Skills Support</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGZyaWVuZHN8ZW58MXx8fHwxNjc0NTM1Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Children friends"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Skills Training</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Social stories:</strong> Written stories teaching social situations<sup>4</sup></li>
-            <li className="mb-2"><strong>Role-playing:</strong> Practicing social interactions</li>
-            <li className="mb-2"><strong>Explicit teaching:</strong> Direct instruction in social skills</li>
-            <li className="mb-2"><strong>Peer interactions:</strong> Structured peer activities<sup>5</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Using Reading for Social Learning</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Books about emotions and social situations</li>
-            <li className="mb-2">Written scripts for social scenarios<sup>6</sup></li>
-            <li className="mb-2">Reading about characters' thoughts and feelings</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Behavioral Support</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Applied Behavior Analysis (ABA)</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">May be appropriate if autism is present<sup>[17]</sup></li>
-            <li className="mb-2">Teaching functional skills</li>
-            <li className="mb-2">Reducing interfering behaviors</li>
-            <li className="mb-2">Building communication and social skills</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Managing Reading Perseveration</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Setting limits on reading time if interfering<sup>[18]</sup></li>
-            <li className="mb-2">Using reading as reward for other activities</li>
-            <li className="mb-2">Expanding interests beyond reading</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Parent and Home Strategies</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Using Reading at Home</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Shared reading:</strong> Read together and discuss<sup>[19]</sup></li>
-            <li className="mb-2"><strong>Ask questions:</strong> Help child think about meaning</li>
-            <li className="mb-2"><strong>Connect to life:</strong> Relate reading to real experiences</li>
-            <li className="mb-2"><strong>Expand vocabulary:</strong> Explain words, not just read them<sup>[20]</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Language-Rich Environment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Talk frequently with child</li>
-            <li className="mb-2">Narrate daily activities<sup>[21]</sup></li>
-            <li className="mb-2">Ask and answer questions</li>
-            <li className="mb-2">Encourage verbal expression</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Technology and Tools</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Helpful Technology</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Interactive e-books with comprehension supports</li>
-            <li className="mb-2">Visual schedule apps<sup>[22]</sup></li>
-            <li className="mb-2">Communication apps if needed</li>
-            <li className="mb-2">Educational apps targeting comprehension</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Planning</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">IEP or 504 Plan</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>May qualify:</strong> Under speech-language impairment or autism<sup>[23]</sup></li>
-            <li className="mb-2"><strong>Goals:</strong> Language comprehension, social communication</li>
-            <li className="mb-2"><strong>Accommodations:</strong> Visual supports, written instructions</li>
-            <li className="mb-2"><strong>Services:</strong> Speech therapy, special education support</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Key Principles</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Effective Support Strategies:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li><strong>Leverage reading strength:</strong> Use as tool for learning<sup>[24]</sup></li>
-              <li><strong>Focus on comprehension:</strong> Not just decoding</li>
-              <li><strong>Build language skills:</strong> Spoken and written understanding</li>
-              <li><strong>Address social needs:</strong> Explicit social skills teaching</li>
-              <li><strong>Individualize approach:</strong> Based on child's specific profile<sup>[25]</sup></li>
-              <li><strong>Collaborate:</strong> Parents, teachers, therapists working together</li>
-              <li><strong>Early intervention:</strong> Start support as soon as identified</li>
-            </ul>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
+                <li>American Speech-Language-Hearing Association. (n.d.). Language disorders. <i>ASHA</i>.</li>
+                <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Kupperman, P., Bligh, S., & Barouski, K. (2002). "Hyperlexia." In A. M. Wetherby & B. M. Prizant (Eds.), <em>Autism spectrum disorders</em> (pp. 357-376). Baltimore: Paul H. Brookes.</p>
-          <p>[2] Treffert, D. A. (2011). "Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder." <em>Wisconsin Medical Society</em>.</p>
-          <p>[3] Gray, C. (2010). <em>The new social story book</em>. Arlington, TX: Future Horizons.</p>
-          <p>[4] Nation, K. (1999). "Reading skills in hyperlexia: A developmental perspective." <em>Psychological Bulletin</em>, 125(3), 338-355.</p>
-          <p>[5] American Speech-Language-Hearing Association. (n.d.). <em>Language disorders</em>. Retrieved from www.asha.org</p>
-          <p>[6] National Research Council. (2001). <em>Educating children with autism</em>. Washington, DC: National Academy Press.</p>
-          <p>[7] Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</p>
-          <p>[8] Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). "Annotation: Hyperlexia: Disability or superability?" <em>Journal of Child Psychology and Psychiatry</em>, 44(8), 1079-1091.</p>
+      {/* ==========================================
+          TAB 2: SOCIAL & BEHAVIORAL
+      ========================================== */}
+      {activeTab === 'social' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Social Skills Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social Skills Support</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-support-social.webp"
+              alt="Child reading a Social Story book with an adult to prepare for a playdate"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Because spoken language is difficult, social interactions can be overwhelming. The most effective way to teach a hyperlexic child how to navigate the social world is to give them a script to read.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <BookOpen className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Reading for Social Learning</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li><strong>Social Stories:</strong> Using custom-written stories to explain the "rules" of specific social situations (like sharing at recess).</li>
+                    <li><strong>Scripts:</strong> Providing written scripts so the child knows exactly what to say to initiate play.</li>
+                    <li>Reading books that explicitly name characters' thoughts and emotions.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Users className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Social Skills Training</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Explicitly teaching pragmatic language (e.g., how to take turns talking).</li>
+                    <li>Role-playing scenarios with an adult before attempting them with peers.</li>
+                    <li>Using structured peer-buddy systems in the classroom.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Behavioral & Tech Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Behavioral & Tech Support</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-support-behavior-hero.webp"
+              alt="Child using a tablet with visual schedules to manage transitions"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Activity className="text-[#2abcd4] w-5 h-5" /> Behavioral Support
+                </h3>
+                <div className="space-y-3">
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                    <h4 className="text-[#0c264d] font-bold text-xs mb-1">Managing Perseveration</h4>
+                    <p className="text-xs text-slate-700">If compulsive reading interferes with daily life, gently set limits (e.g., "We will read three pages, then eat lunch") or use reading time as a reward for completing non-preferred tasks.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                    <h4 className="text-[#0c264d] font-bold text-xs mb-1">Targeted Therapies</h4>
+                    <p className="text-xs text-slate-700">For children with co-occurring autism (Type 2), structured behavioral therapies can help build functional communication and ease transition anxiety.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Laptop className="text-[#2abcd4] w-5 h-5" /> Helpful Technology
+                </h3>
+                <div className="space-y-3">
+                  <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm flex items-start gap-2">
+                    <CheckCircle className="text-[#0A9DC4] w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700"><strong>Visual Schedule Apps:</strong> Providing written, predictable routines to ease anxiety.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm flex items-start gap-2">
+                    <CheckCircle className="text-[#0A9DC4] w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700"><strong>Interactive E-Books:</strong> Using apps that specifically target reading comprehension by requiring the child to interact with the meaning of the text.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Gray, C. (2010). The new social story book. <i>Future Horizons</i>.</li>
+                <li>National Research Council. (2001). Educating children with autism. <i>National Academy Press</i>.</li>
+                <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('hyperlexia'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: HOME & STRENGTHS
+      ========================================== */}
+      {activeTab === 'home' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Home Strategies Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Home & Parent Strategies</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-support-home.webp"
+              alt="Parent pausing to ask questions during shared reading"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Parents can profoundly impact a hyperlexic child's development by transforming reading from an isolated, mechanical activity into an interactive, shared experience.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Active Shared Reading</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Don't just let them speed-read aloud. Pause frequently to ask "What happened?" or "Why did the character do that?"</li>
+                    <li>Explicitly explain vocabulary words rather than just letting them read the word and move on.</li>
+                    <li>Connect the book to real life (e.g., "Look, a dog! Just like the dog we saw at the park.").</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Home className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">A Language-Rich Environment</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Narrate your daily activities aloud to bathe the child in functional, everyday language.</li>
+                    <li>Model correct grammar when speaking to them without demanding they repeat it perfectly.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Strengths Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Leveraging Strengths & Key Principles</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-support-strengths-hero.webp"
+              alt="Child proudly using their advanced reading skills to learn and communicate"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              The goal of hyperlexia support is never to suppress their love of letters or reading. Instead, the goal is to use their exceptional visual processing as a bridge to overcome their auditory and social barriers.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                <div className="bg-blue-50 p-3 rounded-full border border-[#0c264d] border-opacity-20 mb-3">
+                  <MessageSquare className="text-[#0c264d] w-6 h-6" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Reading as Communication</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">If spoken language is too frustrating, encourage them to write or type to communicate their needs. Written choice boards are incredibly effective.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                <div className="bg-blue-50 p-3 rounded-full border border-[#0c264d] border-opacity-20 mb-3">
+                  <Heart className="text-[#0c264d] w-6 h-6" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Protect Self-Esteem</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Celebrate their reading abilities! Build on their individual interests and ensure they feel successful, protecting against secondary anxiety or depression.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                <div className="bg-blue-50 p-3 rounded-full border border-[#0c264d] border-opacity-20 mb-3">
+                  <ShieldCheck className="text-[#0c264d] w-6 h-6" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">The Whole-Child Approach</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Focus on comprehension over decoding, explicitly teach social skills through text, and ensure parents, teachers, and therapists are collaborating as a team.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Kupperman, P., Bligh, S., & Barouski, K. (2002). Hyperlexia. In A. M. Wetherby & B. M. Prizant (Eds.), <i>Autism spectrum disorders</i>.</li>
+                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder. <i>Wisconsin Medical Society</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('hyperlexia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Hyperlexia
-        </a>
+          <span className="text-xl">←</span>
+          All About Hyperlexia
+        </button>
       </div>
+
     </article>
   );
 }

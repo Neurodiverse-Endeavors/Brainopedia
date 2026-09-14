@@ -1,412 +1,395 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Brain, ShieldAlert, Users, Heart, MessageSquare, GraduationCap, Target, Briefcase, Laptop, Compass, Activity, CheckCircle, Smartphone, Sparkles } from 'lucide-react';
 
 interface TwiceExceptionalLivingProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function TwiceExceptionalLiving({ setCurrentArticle }: TwiceExceptionalLivingProps) {
+export function TwiceExceptionalLiving({ setCurrentArticle, initialTab }: TwiceExceptionalLivingProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'identity');
+
   return (
-    <article className="max-w-6xl">
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* GLOBAL STYLE FOR CITATIONS */}
       <style>
         {`
           sup {
             color: #10b981;
+            font-weight: bold;
+            margin-left: 2px;
           }
         `}
       </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('twice-exceptional'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Living with Twice-Exceptionality
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('twice-exceptional')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Twice-Exceptional
-        </a>
+          <span className="text-xl">←</span>
+          All About 2e
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Living with Twice-Exceptionality
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('twice-exceptional')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About 2e
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Living as a twice-exceptional individual involves navigating the unique challenges and opportunities 
-            that come from possessing both exceptional abilities and significant challenges.<sup>1</sup> 
-            Success requires self-understanding, effective strategies, supportive relationships, and environments 
-            that honor both aspects of one's exceptionalities.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('identity')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'identity'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Identity & Relationships
+        </button>
+        <button
+          onClick={() => setActiveTab('career')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'career'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Education & Career
+        </button>
+        <button
+          onClick={() => setActiveTab('wellbeing')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'wellbeing'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Well-being & Management
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Identity and Self-Understanding</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZWZsZWN0aW5nfGVufDF8fHx8MTY3NDUzNTI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Person reflecting"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Understanding Your Profile</h3>
-          <p className="mb-4">
-            Understanding one's specific pattern of strengths and challenges is foundational to success.<sup>3</sup> 
-            Learning about your twice-exceptionality—what it means, how it manifests, and how it affects various 
-            areas of life—provides a framework for making sense of experiences.<sup>4</sup> This understanding 
-            often brings relief and validation.<sup>5</sup>
-          </p>
+      {/* ==========================================
+          TAB 1: IDENTITY & RELATIONSHIPS
+      ========================================== */}
+      {activeTab === 'identity' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Integrating Both Identities</h3>
-          <p className="mb-4">
-            Developing an integrated identity that acknowledges both giftedness and disability is important for 
-            psychological well-being.<sup>6</sup> Neither aspect should be ignored or overemphasized at the 
-            expense of the other.<sup>7</sup> You are not defined solely by either your gifts or your challenges, 
-            but by the complex interplay of both.<sup>8</sup>
-          </p>
+          {/* Identity Card (Cyan) - Uses Float Image + flow-root */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Identity & Self-Understanding</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-living-identity.webp"
+              alt="Young adult engaged in deep existential thought and reflection"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Developing a healthy identity as a 2e individual requires integrating two seemingly contradictory realities. You are not defined solely by your exceptional gifts, nor are you defined solely by your disabling challenges—you are defined by the complex interplay of both.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">The Internal Experience</h3>
-          <p className="mb-4">
-            Many 2e individuals describe feeling "different" from both typical learners and from others who are 
-            gifted or who have disabilities.<sup>9</sup> The internal experience often includes awareness of 
-            significant discrepancies between abilities and performance, leading to confusion and frustration.<sup>1</sup> 
-            Understanding that these feelings are common among 2e individuals can reduce isolation.<sup>1</sup>
-          </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Brain className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">The Internal Experience</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Many 2e individuals describe feeling profoundly "different" from both typical learners and from neurotypical gifted peers. Understanding that this internal contradiction is a shared, valid neurological experience often brings massive relief.</p>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Overcoming Imposter Syndrome</h3>
-          <p className="mb-4">
-            Many 2e individuals experience imposter syndrome—feeling like a fraud despite evidence of high 
-            ability.<sup>2</sup> Disabilities can fuel self-doubt, making accomplishments feel undeserved.<sup>3</sup> 
-            Recognizing this pattern and actively challenging distorted thinking helps manage imposter feelings.<sup>4</sup>
-          </p>
-        </div>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <ShieldAlert className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Imposter Syndrome</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Because your disabilities fuel deep self-doubt, accomplishments often feel unearned or "faked." Actively recognizing this pattern is the first step to dismantling imposter syndrome.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Journey</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Navigating School</h3>
-          <p className="mb-4">
-            School years can be challenging for 2e students who often feel they don't fit in gifted programs, 
-            special education settings, or general classrooms.<sup>5</sup> Finding the right educational 
-            environment—whether traditional school, specialized program, homeschooling, or alternative education—
-            significantly impacts success and well-being.<sup>6</sup>
-          </p>
+          {/* Relationships Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships & Community</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-living-relationships-hero.webp"
+              alt="Friends connecting deeply through shared neurodivergent experiences"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Finding people who appreciate your intense intellectual abilities while simultaneously accepting your processing or executive function challenges is critical for long-term happiness.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Advocating for Your Needs</h3>
-          <p className="mb-4">
-            Self-advocacy skills are essential.<sup>[17]</sup> Learning to communicate your needs, request 
-            accommodations, explain your profile, and seek support when necessary empowers you throughout life.<sup>[18]</sup> 
-            Advocacy includes both asking for help and declining services that don't fit your needs.<sup>[19]</sup>
-          </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Finding Your People</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Quality matters far more than quantity. Many 2e individuals feel most comfortable with others who are neurodiverse, gifted, or simply value intense, unfiltered authenticity.</p>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">College and Higher Education</h3>
-          <p className="mb-4">
-            College presents both opportunities and challenges for 2e students.<sup>[20]</sup> Success requires 
-            selecting appropriate schools, accessing disability services, managing increased independence, and 
-            developing effective study strategies.<sup>[21]</sup> Many 2e students thrive in college where they 
-            can focus on interests and choose accessible formats.<sup>[22]</sup>
-          </p>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <MessageSquare className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Social Contexts</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">You likely shift between different social contexts constantly, adjusting your communication style and depth. This adaptability is a valuable social skill, even if it feels exhausting.</p>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Graduate and Professional Education</h3>
-          <p className="mb-4">
-            Advanced degrees can be rewarding for 2e individuals who find their passion.<sup>[23]</sup> However, 
-            challenges with academic writing, comprehensive exams, or dissertation work may require additional 
-            support.<sup>[24]</sup> Many successful professionals are twice-exceptional, demonstrating that 
-            advanced education is achievable.<sup>[25]</sup>
-          </p>
-        </div>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Romantic & Family</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Successful relationships involve partners who value intellectual engagement but respect your need for accommodations. In parenting, understanding your own 2e profile prevents you from projecting unrealistic expectations onto your children.</p>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Career and Work Life</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b3JrJTIwc3VjY2Vzc3xlbnwxfHx8fDE2NzQ1MzUyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Work success"
-            className="w-72 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Finding the Right Fit</h3>
-          <p className="mb-4">
-            Career selection should leverage strengths while managing challenges.<sup>[26]</sup> Successful 2e 
-            adults often work in fields utilizing their talents where disabilities have minimal impact.<sup>[27]</sup> 
-            Careers in science, technology, arts, entrepreneurship, and specialized fields attract many 2e 
-            individuals.<sup>[28]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Workplace Accommodations</h3>
-          <p className="mb-4">
-            Under the ADA, employees with documented disabilities can request reasonable accommodations.<sup>[29]</sup> 
-            Accommodations might include assistive technology, flexible scheduling, modified communication formats, 
-            or environmental adjustments.<sup>[30]</sup> Deciding whether and when to disclose disabilities is a 
-            personal choice with pros and cons.<sup>[31]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Entrepreneurship</h3>
-          <p className="mb-4">
-            Many 2e individuals gravitate toward self-employment or entrepreneurship, which offers autonomy, 
-            flexibility, and ability to structure work around strengths.<sup>[32]</sup> Entrepreneurship allows 
-            focus on creative, strategic thinking while delegating or accommodating areas of weakness.<sup>[33]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Managing Workplace Challenges</h3>
-          <p className="mb-4">
-            Common workplace challenges include organization, time management, written communication, or social 
-            navigation.<sup>[34]</sup> Developing personalized systems, using technology, and knowing when to ask 
-            for help support workplace success.<sup>[35]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Career Changes and Growth</h3>
-          <p className="mb-4">
-            2e adults may change careers multiple times, seeking better fit or following evolving interests.<sup>[36]</sup> 
-            Career changes can represent growth and self-knowledge rather than failure.<sup>[37]</sup> The combination 
-            of diverse abilities often enables success across different fields.<sup>[38]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Relationships and Social Life</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Finding Your People</h3>
-          <p className="mb-4">
-            Finding friends and partners who appreciate both your abilities and accept your challenges is 
-            important.<sup>[39]</sup> Many 2e individuals feel most comfortable with others who are also 2e, 
-            gifted, neurodiverse, or who simply value authenticity.<sup>[40]</sup> Quality of relationships 
-            matters more than quantity.<sup>[41]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Communication in Relationships</h3>
-          <p className="mb-4">
-            Open communication about needs, preferences, and challenges strengthens relationships.<sup>[42]</sup> 
-            Partners, friends, and family who understand your twice-exceptionality can provide better support.<sup>[43]</sup> 
-            However, you're not obligated to disclose more than feels comfortable.<sup>[44]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Romantic Relationships</h3>
-          <p className="mb-4">
-            Successful romantic relationships involve partners who value intellectual connection, accept differences, 
-            and support both growth and accommodation needs.<sup>[45]</sup> Communication about how twice-exceptionality 
-            affects daily life, responsibilities, and plans helps prevent misunderstandings.<sup>[46]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Parenting as a 2e Adult</h3>
-          <p className="mb-4">
-            2e adults who become parents may have 2e children, creating unique family dynamics.<sup>[47]</sup> 
-            Understanding your own profile helps you support your children while avoiding projection or 
-            over-identification.<sup>[48]</sup> Balancing support for children's development with managing your 
-            own needs requires intentional effort.<sup>[49]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Mental Health and Well-Being</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Managing Anxiety and Depression</h3>
-          <p className="mb-4">
-            Rates of anxiety and depression are elevated among 2e individuals.<sup>[50]</sup> Factors include 
-            perfectionism, social difficulties, chronic stress from navigating challenges, and awareness of 
-            discrepancies between potential and achievement.<sup>[51]</sup> Professional counseling, medication 
-            when appropriate, and self-care strategies all support mental health.<sup>[52]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Processing Emotional Intensity</h3>
-          <p className="mb-4">
-            Many 2e individuals experience emotional intensity characteristic of giftedness.<sup>[53]</sup> 
-            Learning to manage intense emotions through mindfulness, emotional regulation skills, creative 
-            expression, or physical activity supports well-being.<sup>[54]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Perfectionism and Self-Compassion</h3>
-          <p className="mb-4">
-            Perfectionism is common and problematic for 2e individuals.<sup>[55]</sup> Developing self-compassion—
-            treating yourself with kindness rather than harsh judgment—counters perfectionism.<sup>[56]</sup> 
-            Accepting that mistakes and struggles are part of being human, not personal failures, promotes 
-            resilience.<sup>[57]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Therapy and Counseling</h3>
-          <p className="mb-4">
-            Working with therapists who understand both giftedness and disabilities provides valuable support.<sup>[58]</sup> 
-            Therapy can address identity issues, relationship challenges, anxiety, depression, or life transitions.<sup>[59]</sup> 
-            Cognitive-behavioral, acceptance-based, and strength-focused approaches can be particularly helpful.<sup>[60]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Practical Life Management</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmdhbml6YXRpb24lMjBwbGFubmluZ3xlbnwxfHx8fDE2NzQ1MzUyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Organization and planning"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Organization and Time Management</h3>
-          <p className="mb-4">
-            Executive function challenges affect daily life management.<sup>[61]</sup> Developing personalized 
-            systems for organization, time management, and task completion is essential.<sup>[62]</sup> Tools 
-            like calendars, apps, lists, routines, and environmental structure support executive functioning.<sup>[63]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Technology and Tools</h3>
-          <p className="mb-4">
-            Technology can be transformative for 2e adults.<sup>[64]</sup> Assistive technology, productivity 
-            apps, organizational tools, and communication platforms enable management of challenges while 
-            leveraging strengths.<sup>[65]</sup> Finding the right tools and learning to use them effectively 
-            takes experimentation.<sup>[66]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Building Support Systems</h3>
-          <p className="mb-4">
-            Successful 2e adults often build support systems including family, friends, professionals, and 
-            services that help manage areas of challenge.<sup>[67]</sup> Asking for and accepting help is a 
-            strength, not weakness.<sup>[68]</sup> Outsourcing tasks in areas of weakness frees energy for 
-            strengths.<sup>[69]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Self-Care and Balance</h3>
-          <p className="mb-4">
-            Maintaining physical health, adequate sleep, good nutrition, and regular exercise supports cognitive 
-            and emotional functioning.<sup>[70]</sup> Balance between work, relationships, interests, and rest 
-            prevents burnout.<sup>[71]</sup> Recognizing your own limits and respecting them is important.<sup>[72]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Personal Growth and Development</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Developing Your Gifts</h3>
-          <p className="mb-4">
-            Continuing to develop talents and pursue interests provides fulfillment and purpose.<sup>[73]</sup> 
-            Whether through career, hobbies, creative pursuits, or volunteer work, using your abilities 
-            meaningfully contributes to life satisfaction.<sup>[74]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Learning and Growth Mindset</h3>
-          <p className="mb-4">
-            Adopting a growth mindset—believing abilities can develop through effort—supports resilience.<sup>[75]</sup> 
-            Viewing challenges as opportunities for learning rather than evidence of inadequacy promotes 
-            continued growth.<sup>[76]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Finding Meaning and Purpose</h3>
-          <p className="mb-4">
-            Many 2e individuals grapple with questions of meaning and purpose.<sup>[77]</sup> Finding ways to 
-            contribute, make a difference, or pursue meaningful goals provides direction and satisfaction.<sup>[78]</sup> 
-            Your unique combination of abilities and experiences may enable contributions others cannot make.<sup>[79]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Embracing Authenticity</h3>
-          <p className="mb-4">
-            Living authentically—being true to yourself rather than trying to conform to others' expectations—
-            supports well-being.<sup>[80]</sup> Accepting both your strengths and challenges without pretense 
-            allows genuine connection and reduces stress.<sup>[81]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Community and Connection</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Finding Community</h3>
-          <p className="mb-4">
-            Connecting with other 2e individuals through support groups, online communities, conferences, or 
-            social media reduces isolation.<sup>[82]</sup> Shared experiences create understanding and validation 
-            that's difficult to find elsewhere.<sup>[83]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Advocacy and Awareness</h3>
-          <p className="mb-4">
-            Some 2e adults become advocates, working to improve understanding and services for others.<sup>[84]</sup> 
-            Sharing your story, educating others, or working for systemic change can be personally meaningful 
-            and benefit the 2e community.<sup>[85]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Mentorship</h3>
-          <p className="mb-4">
-            Both receiving mentorship from older 2e adults and mentoring younger ones provides connection and 
-            support.<sup>[86]</sup> Learning from others' experiences and sharing your own creates community 
-            and helps navigate common challenges.<sup>[87]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Success Stories and Role Models</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Notable Twice-Exceptional Individuals</h3>
-          <p className="mb-4">
-            Many accomplished individuals are believed to have been twice-exceptional, including scientists, 
-            inventors, artists, and entrepreneurs.<sup>[88]</sup> Albert Einstein, Thomas Edison, and Temple 
-            Grandin are frequently cited examples.<sup>[89]</sup> Their achievements demonstrate that 
-            twice-exceptionality need not limit success.<sup>[90]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Contemporary Success</h3>
-          <p className="mb-4">
-            Research on successful adults with learning disabilities reveals common factors including self-awareness, 
-            realistic goal-setting, persistence, use of support systems, and leveraging strengths.<sup>[91]</sup> 
-            Many 2e adults report that their unique perspective and problem-solving abilities contribute to their 
-            success.<sup>[92]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Redefining Success</h3>
-          <p className="mb-4">
-            Success for 2e individuals may look different than conventional definitions.<sup>[93]</sup> Personal 
-            fulfillment, meaningful relationships, contributing to areas of passion, and living authentically 
-            may matter more than traditional markers like prestigious careers or wealth.<sup>[94]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Looking Forward</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Lifelong Development</h3>
-          <p className="mb-4">
-            Twice-exceptionality is a lifelong experience, not something you outgrow.<sup>[95]</sup> However, 
-            self-understanding, effective strategies, and life experience often make management easier over time.<sup>[96]</sup> 
-            Many 2e adults report that life improves significantly after school years when they gain more control 
-            over their environments and pursuits.<sup>[97]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Hope and Possibility</h3>
-          <p className="mb-4">
-            While twice-exceptionality presents real challenges, it also brings unique gifts and perspectives.<sup>[98]</sup> 
-            With appropriate support, self-understanding, and opportunity to develop talents, 2e individuals can 
-            lead fulfilling, successful lives.<sup>[99]</sup> Your combination of abilities and challenges makes 
-            you uniquely you—not better or worse than others, simply different.<sup>[100]</sup>
-          </p>
-
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6 mt-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Living Well with Twice-Exceptionality:</h3>
-            <div className="text-sm">
-              <p>
-                Success as a twice-exceptional individual involves self-understanding, developing effective strategies, 
-                building supportive relationships, creating environments that work for you, and accepting both your 
-                abilities and challenges.<sup>[101]</sup> While the journey has unique challenges, many 2e individuals 
-                report that their distinctive combination of strengths and weaknesses contributes to their creativity, 
-                problem-solving, and unique contributions to the world.<sup>[102]</sup> You are not defined by either 
-                your gifts or your challenges alone, but by how you navigate and integrate both into a meaningful 
-                life.<sup>[103]</sup>
-              </p>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Foley-Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). Empirical investigation of twice-exceptionality: Where have we been and where are we going? <i>Gifted Child Quarterly</i>.</li>
+                <li>Reis, S. M., Baum, S. M., & Burke, E. (2014). An operational definition of twice-exceptional learners: Implications and applications. <i>Gifted Child Quarterly</i>.</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Foley-Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). "Empirical investigation of twice-exceptionality: Where have we been and where are we going?" <em>Gifted Child Quarterly</em>, 55(1), 3-17.</p>
-          <p>[2] Reis, S. M., Baum, S. M., & Burke, E. (2014). "An operational definition of twice-exceptional learners: Implications and applications." <em>Gifted Child Quarterly</em>, 58(3), 217-230.</p>
-          <p>[3]-[103] See full reference list in the original twice-exceptional living article. Key sources include Foley-Nicpon, Assouline, & Colangelo (2013); Baum, Schader, & Owen (2017); Raskind et al. (1999); Gerber, Ginsberg, & Reiff (1992); Dweck (2006); and Armstrong (2010).</p>
+      {/* ==========================================
+          TAB 2: EDUCATION & CAREER
+      ========================================== */}
+      {activeTab === 'career' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Education Card (Yellow) - Uses Float Image + flow-root */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Educational Journey</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-living-education.webp"
+              alt="Student navigating a college campus, utilizing their accommodations confidently"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The K-12 school system is famously difficult for 2e students who feel they don't fit into either gifted or special education boxes. However, higher education often provides the flexibility they have always craved.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Target className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Self-Advocacy</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Learning to boldly communicate your needs, request specific accommodations, and decline services that don't fit your profile is the most important skill you can take into adulthood.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <GraduationCap className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">College & Beyond</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Many 2e students truly thrive in college, where they can finally hyper-focus on their intense interests and choose accessible formats (like project-based courses instead of timed written exams).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Career Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Career & Entrepreneurship</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-living-career-hero.webp"
+              alt="2e adult thriving in a dynamic, flexible entrepreneurial work environment"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Briefcase className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Finding the Fit</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Career selection must ruthlessly leverage your strengths while bypassing your challenges. Careers in tech, the arts, sciences, and specialized research heavily attract 2e individuals.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Compass className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Entrepreneurship</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Many naturally gravitate toward self-employment. It offers the ultimate autonomy, allowing you to focus purely on creative, strategic thinking while delegating or outsourcing your areas of weakness.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Laptop className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Workplace Accommodations</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Under the ADA, you have the right to reasonable accommodations like assistive tech, flexible scheduling, or modified communication formats. Developing personalized organizational systems is vital.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). To be gifted and learning disabled: Strength-based strategies. <i>Prufrock Press</i>.</li>
+                <li>Gerber, P. J., Ginsberg, R., & Reiff, H. B. (1992). Identifying alterable patterns in employment success for highly successful adults with learning disabilities. <i>Journal of Learning Disabilities</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('twice-exceptional'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: WELL-BEING & MANAGEMENT
+      ========================================== */}
+      {activeTab === 'wellbeing' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Well-being Card (Slate) - Uses Float Image + flow-root */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Mental Health & Well-being</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-living-wellbeing.webp"
+              alt="Calming visual representing mindfulness and finding peace amidst intensity"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Rates of anxiety and depression are elevated among 2e individuals due to chronic stress, perfectionism, and the daily exhaustion of navigating a world not built for their neurological profile.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Activity className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Perfectionism & Compassion</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Developing self-compassion counters paralyzing perfectionism. Accepting that mistakes are a necessary part of being human, rather than evidence of a personal intellectual failure, builds resilience.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Heart className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Therapy & Mindfulness</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Working with a therapist who specifically understands 2e is invaluable. Mindfulness practices, meditation, and creative expression help process the extreme emotional intensity characteristic of giftedness.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Thriving Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Thriving & Practical Management</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-living-thriving-hero.webp"
+              alt="Successful adult confidently using organizational tech tools to manage daily life"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Smartphone className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Tech & Organization</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Executive function challenges affect daily life permanently. Technology is transformative: productivity apps, digital calendars, and visual schedules allow you to manage challenges while leveraging your intellectual strengths.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <CheckCircle className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Building Support Systems</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Asking for help is a strength. Successful 2e adults intentionally build support systems and ruthlessly outsource or delegate tasks in their areas of weakness, freeing up their energy for their strengths.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Sparkles className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Authenticity & Legacy</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Living authentically—being true to yourself rather than trying to conform to neurotypical expectations—reduces stress. Many 2e individuals find their ultimate purpose by channeling their gifts into advocacy, innovation, and leaving a meaningful legacy.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Dweck, C. S. (2006). Mindset: The new psychology of success. <i>Random House</i>.</li>
+                <li>Armstrong, T. (2010). Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences. <i>Da Capo Press</i>.</li>
+                <li>Raskind, M. H., Goldberg, R. J., Higgins, E. L., & Herman, K. L. (1999). Patterns of change and predictors of success in individuals with learning disabilities. <i>Journal of Learning Disabilities</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('twice-exceptional')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Twice-Exceptional
-        </a>
+          <span className="text-xl">←</span>
+          All About 2e
+        </button>
       </div>
+
     </article>
   );
 }

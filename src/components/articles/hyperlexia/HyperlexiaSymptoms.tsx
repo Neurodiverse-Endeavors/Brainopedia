@@ -1,253 +1,414 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { BookOpen, Eye, Split, Ear, MessageSquare, Repeat, Type, Users, Target, Clock, Brain, Activity, Baby, GraduationCap, CheckCircle } from 'lucide-react';
 
 interface HyperlexiaSymptomsProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function HyperlexiaSymptoms({ setCurrentArticle }: HyperlexiaSymptomsProps) {
+export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: HyperlexiaSymptomsProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'reading');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('hyperlexia'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Hyperlexia: Symptoms & Characteristics
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('hyperlexia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Hyperlexia
-        </a>
+          <span className="text-xl">←</span>
+          All About Hyperlexia
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Hyperlexia: Symptoms & Characteristics
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('hyperlexia')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About Hyperlexia
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Hyperlexia presents with a distinctive pattern of advanced reading skills alongside significant language 
-            and communication challenges.<sup>1</sup> The symptoms vary depending on whether hyperlexia occurs alone 
-            or with autism spectrum disorder.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('reading')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'reading'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Reading & Comprehension
+        </button>
+        <button
+          onClick={() => setActiveTab('language')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'language'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Language & Social
+        </button>
+        <button
+          onClick={() => setActiveTab('cognition')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'cognition'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Cognition & Lifespan
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Reading Characteristics</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMHJlYWRpbmd8ZW58MXx8fHwxNjc0NTM1MjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Child reading"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Precocious Reading Ability</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Early reading onset:</strong> Often before age 5, sometimes as early as 2-3<sup>3</sup></li>
-            <li className="mb-2"><strong>Self-taught:</strong> Learn to read without explicit instruction</li>
-            <li className="mb-2"><strong>Advanced decoding:</strong> Can read words far beyond age level<sup>4</sup></li>
-            <li className="mb-2"><strong>Accurate pronunciation:</strong> Often pronounce words correctly despite age</li>
-          </ul>
+      {/* ==========================================
+          TAB 1: READING & COMPREHENSION
+      ========================================== */}
+      {activeTab === 'reading' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Fascination with Letters and Words</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Letter obsession:</strong> Intense interest in letters, numbers, symbols<sup>5</sup></li>
-            <li className="mb-2"><strong>Alphabet knowledge:</strong> Learning alphabet very early</li>
-            <li className="mb-2"><strong>Environmental print:</strong> Reading signs, labels, logos everywhere</li>
-            <li className="mb-2"><strong>Seeking text:</strong> Actively looking for things to read<sup>6</sup></li>
-          </ul>
+          {/* Reading Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Reading Characteristics</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-symptoms-reading.webp"
+              alt="Toddler reading environmental print and complex text"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Hyperlexia presents with a highly distinctive pattern. The most visible symptom is an astonishing, advanced reading ability that emerges years before neurotypical expectations, almost always driven by an intense internal fascination rather than external teaching.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading Behaviors</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Reading aloud frequently or compulsively</li>
-            <li className="mb-2">Preference for reading over other activities<sup>7</sup></li>
-            <li className="mb-2">Memorizing books or text passages</li>
-            <li className="mb-2">Reading without being asked or prompted</li>
-          </ul>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <BookOpen className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Precocious Decoding</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Onset often occurs before age 5, sometimes as early as 2 or 3 years old.</li>
+                    <li>Entirely self-taught; they learn to read without explicit phonics instruction.</li>
+                    <li>Can accurately pronounce and decode complex words far beyond their developmental age level.</li>
+                  </ul>
+                </div>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Comprehension Difficulties</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading Comprehension Deficits</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Decoding-comprehension gap:</strong> Can read words but not understand meaning<sup>8</sup></li>
-            <li className="mb-2"><strong>Literal interpretation:</strong> Missing inferential meaning</li>
-            <li className="mb-2"><strong>Difficulty with questions:</strong> Can't answer "why" or "how" about what they read<sup>9</sup></li>
-            <li className="mb-2"><strong>Context problems:</strong> Trouble using context to understand text</li>
-          </ul>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Eye className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Symbol Fascination</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Intense, magnetic obsession with letters, numbers, and logos.</li>
+                    <li>Compulsively reading environmental print (street signs, cereal boxes) aloud.</li>
+                    <li>A strong preference for reading over traditional play activities or toys.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Listening Comprehension</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty understanding spoken language<sup>1</sup></li>
-            <li className="mb-2">Trouble following verbal instructions</li>
-            <li className="mb-2">Limited understanding of conversations</li>
-          </ul>
-        </div>
+          {/* Comprehension Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Comprehension Difficulties</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-symptoms-comprehension-hero.webp"
+              alt="Visual representing the split between perfect decoding and lacking meaning"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              The true defining marker of hyperlexia is not just early reading, but the stark contrast between the child's ability to mechanically sound out words and their inability to understand what those words actually mean.
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Language Development</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Delayed or Disordered Speech</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Late talking:</strong> Delayed speech development despite early reading<sup>1</sup></li>
-            <li className="mb-2"><strong>Limited expressive language:</strong> Difficulty expressing thoughts verbally</li>
-            <li className="mb-2"><strong>Language disorder:</strong> May meet criteria for developmental language disorder</li>
-          </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Split className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">The Reading Split</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Can flawlessly read complex paragraphs but cannot answer basic "who, what, or why" questions about the text.</li>
+                  <li>Highly literal interpretation of language, completely missing metaphors, sarcasm, or inferential context clues.</li>
+                </ul>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Echolalia and Scripting</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Echolalia:</strong> Repeating words, phrases, or sentences<sup>2</sup></li>
-            <li className="mb-2"><strong>Immediate echoing:</strong> Repeating what just heard</li>
-            <li className="mb-2"><strong>Delayed echolalia:</strong> Repeating memorized phrases from books or media</li>
-            <li className="mb-2"><strong>Scripting:</strong> Using memorized language from texts<sup>3</sup></li>
-          </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Ear className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Listening Comprehension</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Significant difficulty understanding spoken language in real-time.</li>
+                  <li>Trouble following verbal instructions unless they are written down.</li>
+                  <li>Limited understanding of conversational flow and unwritten social rules.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Vocabulary Patterns</h3>
-          
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">May use advanced written vocabulary they've read</li>
-            <li className="mb-2">Limited functional vocabulary for communication<sup>4</sup></li>
-            <li className="mb-2">Difficulty with word meanings despite recognition</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Social Communication Difficulties</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Pragmatic Language Challenges</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Conversational difficulties:</strong> Trouble with back-and-forth conversation<sup>5</sup></li>
-            <li className="mb-2"><strong>Topic maintenance:</strong> Difficulty staying on topic</li>
-            <li className="mb-2"><strong>Social cues:</strong> Missing nonverbal communication</li>
-            <li className="mb-2"><strong>Inappropriate responses:</strong> Responses may not match context<sup>6</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Interaction</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Difficulty making friends</li>
-            <li className="mb-2">Preference for solitary activities (especially reading)<sup>[17]</sup></li>
-            <li className="mb-2">Limited interest in peers</li>
-            <li className="mb-2">May prefer adult company or being alone</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Behavioral Characteristics</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Restricted Interests</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Reading as perseveration:</strong> Intense, narrow focus on reading<sup>[18]</sup></li>
-            <li className="mb-2"><strong>Letters/numbers obsession:</strong> Fascination with symbols</li>
-            <li className="mb-2"><strong>Specific topics:</strong> May focus on particular subjects in reading</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Repetitive Behaviors</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Repetitive reading of same books or passages<sup>[19]</sup></li>
-            <li className="mb-2">Lining up books or letters</li>
-            <li className="mb-2">Organizing by alphabetical order</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Need for Routine</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Preference for sameness and predictability</li>
-            <li className="mb-2">Difficulty with transitions<sup>[20]</sup></li>
-            <li className="mb-2">Reading as self-regulation or comfort</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Cognitive Profile</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Strengths</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Visual memory:</strong> Exceptional visual memory skills<sup>[21]</sup></li>
-            <li className="mb-2"><strong>Pattern recognition:</strong> Strong ability to recognize patterns</li>
-            <li className="mb-2"><strong>Rote memory:</strong> Good at memorization</li>
-            <li className="mb-2"><strong>Visual learning:</strong> Learn well through visual modality</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Weaknesses</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Auditory processing difficulties<sup>[22]</sup></li>
-            <li className="mb-2">Abstract reasoning challenges</li>
-            <li className="mb-2">Executive function difficulties</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Symptoms by Age</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Toddler Years (Ages 2-3)</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Fascination with letters and numbers</li>
-            <li className="mb-2">Beginning to recognize and name letters<sup>[23]</sup></li>
-            <li className="mb-2">May be reading simple words</li>
-            <li className="mb-2">Delayed speech or language concerns</li>
-            <li className="mb-2">Limited social interaction with peers</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Preschool (Ages 3-5)</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Advanced reading ability becomes obvious<sup>[24]</sup></li>
-            <li className="mb-2">Reading beyond age level</li>
-            <li className="mb-2">Comprehension doesn't match decoding</li>
-            <li className="mb-2">Social and communication difficulties apparent</li>
-            <li className="mb-2">May show autism-like behaviors</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">School Age (Ages 6+)</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Comprehension gap becomes more problematic<sup>[25]</sup></li>
-            <li className="mb-2">Academic challenges in subjects requiring comprehension</li>
-            <li className="mb-2">Social difficulties with peers</li>
-            <li className="mb-2">May need support despite reading ability</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Distinguishing Features</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Key Diagnostic Indicators:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li><strong>Early reading:</strong> Reading before age 5 without formal instruction<sup>[26]</sup></li>
-              <li><strong>Decoding-comprehension split:</strong> Reading accuracy &gt;&gt; reading comprehension</li>
-              <li><strong>Language difficulties:</strong> Delayed or disordered language development</li>
-              <li><strong>Letter fascination:</strong> Intense, early interest in letters/symbols<sup>[27]</sup></li>
-              <li><strong>Social challenges:</strong> Difficulty with social communication</li>
-              <li><strong>Not just giftedness:</strong> Gifted readers have strong comprehension too</li>
-            </ul>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Silberberg, N. E., & Silberberg, M. C. (1967). Hyperlexia: Specific word recognition skills in young children. <i>Exceptional Children</i>.</li>
+                <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
+                <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Nation, K. (1999). "Reading skills in hyperlexia: A developmental perspective." <em>Psychological Bulletin</em>, 125(3), 338-355.</p>
-          <p>[2] Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). "Annotation: Hyperlexia: Disability or superability?" <em>Journal of Child Psychology and Psychiatry</em>, 44(8), 1079-1091.</p>
-          <p>[3] Silberberg, N. E., & Silberberg, M. C. (1967). "Hyperlexia: Specific word recognition skills in young children." <em>Exceptional Children</em>, 34(1), 41-42.</p>
-          <p>[4] Kupperman, P., Bligh, S., & Barouski, K. (2002). "Hyperlexia." In A. M. Wetherby & B. M. Prizant (Eds.), <em>Autism spectrum disorders</em> (pp. 357-376). Baltimore: Paul H. Brookes.</p>
-          <p>[5] Nation, K., Clarke, P., Wright, B., & Williams, C. (2006). "Patterns of reading ability in children with autism spectrum disorder." <em>Journal of Autism and Developmental Disorders</em>, 36(7), 911-919.</p>
+      {/* ==========================================
+          TAB 2: LANGUAGE & SOCIAL
+      ========================================== */}
+      {activeTab === 'language' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Language Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Language Development</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-symptoms-language.webp"
+              alt="Child scripting or repeating phrases rather than engaging in conversation"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Paradoxically, despite their advanced mastery of written letters, children with hyperlexia almost always present with delayed, disordered, or highly atypical spoken language development.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <MessageSquare className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Delayed Speech</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Children often experience late talking and limited expressive language, struggling significantly to formulate their own original thoughts verbally.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Repeat className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Echolalia</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">High reliance on echolalia (echoing what is heard) and scripting (repeating memorized phrases from books, movies, or TV shows) to communicate.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Type className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Vocabulary Gaps</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">May use incredibly advanced vocabulary they have read, but lack functional, everyday vocabulary needed to request a snack or express physical pain.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Social & Behavioral Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social & Behavioral Traits</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-symptoms-social-hero.webp"
+              alt="Child retreating into the comfort of a book during a social setting"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Users className="text-[#0A9DC4] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Pragmatics & Peers</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Severe difficulty initiating or maintaining back-and-forth conversation.</li>
+                  <li>Missing nonverbal communication cues entirely.</li>
+                  <li>Frequently preferring solitary activities (especially reading) over interacting with peers.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Target className="text-[#0A9DC4] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Restricted Interests</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Reading often serves as an intense perseveration or special interest.</li>
+                  <li>May exhibit repetitive behaviors like obsessively lining up books, sorting alphabet blocks, or re-reading the exact same passage.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 md:col-span-2">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Clock className="text-[#0A9DC4] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Need for Routine</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  A strong preference for sameness and predictability. Children with hyperlexia often struggle immensely with transitions, using reading as a way to self-regulate or find comfort in unpredictable environments.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Kupperman, P., Bligh, S., & Barouski, K. (2002). Hyperlexia. In A. M. Wetherby & B. M. Prizant (Eds.), <i>Autism spectrum disorders: A developmental transactional perspective</i>.</li>
+                <li>Nation, K., Clarke, P., Wright, B., & Williams, C. (2006). Patterns of reading ability in children with autism spectrum disorder. <i>Journal of Autism and Developmental Disorders</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('hyperlexia'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: COGNITION & LIFESPAN
+      ========================================== */}
+      {activeTab === 'cognition' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Cognitive Profile Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Cognitive Profile</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-symptoms-cognition.webp"
+              alt="Glowing brain highlighting visual memory and pattern recognition"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Hyperlexia is defined by a sharply uneven "spiky" cognitive profile. The brain is uniquely wired to excel in visual domains while struggling heavily with auditory and abstract processing.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Brain className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Exceptional Strengths</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Photographic visual memory and rote memorization skills.</li>
+                    <li>Extremely strong pattern recognition and sequential processing.</li>
+                    <li>High capacity for visual learning.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Activity className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Cognitive Weaknesses</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li>Auditory processing delays (struggling to learn via listening).</li>
+                    <li>Abstract reasoning challenges.</li>
+                    <li>Executive function deficits regarding flexibility.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Lifespan Progression Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Progression & Key Indicators</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-symptoms-lifespan-hero.webp"
+              alt="Timeline of hyperlexic traits evolving from toddlerhood to school age"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Baby className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Toddler (Ages 2-3)</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Characterized by a pure fascination with letters and early word reading, coupled with noticeable delays in speech and limited social interaction with peers.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Activity className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Preschool (Ages 3-5)</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Advanced reading becomes obvious and undeniable. However, the gap between decoding and comprehension widens, and autism-like behaviors may emerge.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <GraduationCap className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">School Age (Ages 6+)</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Academic challenges hit as school transitions from "learning to read" to "reading to learn." Social difficulties compound, requiring targeted support.</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[#0c264d] border-opacity-20 max-w-4xl mx-auto">
+              <h3 className="text-[#0c264d] font-bold mb-3 text-sm flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#2abcd4]" /> Distinguishing from Giftedness
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Gifted children also read early, but they exhibit strong comprehension and use their reading to learn about the world. Hyperlexia is specifically defined by the intense decoding-comprehension split and the accompanying language/social deficits.
+              </p>
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder; Assessing children who read early or speak late. <i>Wisconsin Medical Society</i>.</li>
+                <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
+                <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('hyperlexia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Hyperlexia
-        </a>
+          <span className="text-xl">←</span>
+          All About Hyperlexia
+        </button>
       </div>
+
     </article>
   );
 }

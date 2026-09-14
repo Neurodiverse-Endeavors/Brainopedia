@@ -1,404 +1,413 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Scale, Brain, Map, FastForward, Laptop, BookOpen, Heart, Users, Target, ShieldCheck, FileText, Home, GraduationCap, Briefcase, CheckCircle, Lightbulb } from 'lucide-react';
 
 interface TwiceExceptionalSupportProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function TwiceExceptionalSupport({ setCurrentArticle }: TwiceExceptionalSupportProps) {
+export function TwiceExceptionalSupport({ setCurrentArticle, initialTab }: TwiceExceptionalSupportProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'academic');
+
   return (
-    <article className="max-w-6xl">
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* GLOBAL STYLE FOR CITATIONS */}
       <style>
         {`
           sup {
             color: #10b981;
+            font-weight: bold;
+            margin-left: 2px;
           }
         `}
       </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('twice-exceptional'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Twice-Exceptional: Support & Management
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('twice-exceptional')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Twice-Exceptional
-        </a>
+          <span className="text-xl">←</span>
+          All About 2e
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Twice-Exceptional: Support & Management
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('twice-exceptional')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About 2e
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Supporting twice-exceptional students requires dual differentiation—simultaneously addressing 
-            advanced abilities and providing accommodations for disabilities.<sup>1</sup> Neither the 
-            giftedness nor the disability should be neglected in favor of the other.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('academic')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'academic'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Academic Interventions
+        </button>
+        <button
+          onClick={() => setActiveTab('emotional')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'emotional'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Social & Emotional
+        </button>
+        <button
+          onClick={() => setActiveTab('advocacy')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'advocacy'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Advocacy & Transitions
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Dual Differentiation Framework</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwbGVhcm5pbmd8ZW58MXx8fHwxNjc0NTM1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Student learning"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Strength-Based Approach</h3>
-          <p className="mb-4">
-            A strength-based approach emphasizes developing talents while providing support for challenges.<sup>3</sup> 
-            Focusing on what students can do rather than only on deficits builds confidence and motivation.<sup>4</sup> 
-            Talents should be nurtured even while addressing areas of weakness.<sup>5</sup>
-          </p>
+      {/* ==========================================
+          TAB 1: ACADEMIC INTERVENTIONS
+      ========================================== */}
+      {activeTab === 'academic' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Addressing Both Exceptionalities</h3>
-          <p className="mb-4">
-            Effective programming provides both challenge for gifts and accommodations for disabilities.<sup>6</sup> 
-            Students need access to advanced content and accelerated pacing alongside modifications for learning 
-            differences.<sup>7</sup> Educational plans should address cognitive, academic, social-emotional, 
-            and behavioral needs comprehensively.<sup>8</sup>
-          </p>
+          {/* Differentiation Card (Cyan) - Uses Float Image + flow-root */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Dual Differentiation Framework</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-support-differentiation.webp"
+              alt="Teacher providing advanced learning materials alongside assistive technology"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Supporting twice-exceptional students requires a complete refusal to compromise. Educators must provide "dual differentiation"—simultaneously providing rigorous acceleration for the student's gifts while providing robust accommodations for their disabilities.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Individualized Planning</h3>
-          <p className="mb-4">
-            Each 2e student presents a unique profile requiring individualized support.<sup>9</sup> Cookie-cutter 
-            approaches fail to address the specific combination of strengths and weaknesses.<sup>1</sup> 
-            Collaborative team planning involving gifted specialists, special educators, general educators, 
-            and families optimizes outcomes.<sup>1</sup>
-          </p>
-        </div>
+            <div className="grid grid-cols-1 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Brain className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Strength-Based Approach</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Focus intensely on developing their specific talents first. Nurturing their intellectual gifts builds the confidence and motivation they desperately need to tackle their areas of weakness.</p>
+                </div>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Modifications and Accommodations</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Curriculum Compacting</h3>
-          <p className="mb-4">
-            Compacting eliminates content already mastered, replacing it with more challenging material.<sup>2</sup> 
-            This approach honors advanced abilities while freeing time for skill remediation or enrichment.<sup>3</sup> 
-            Research shows many gifted students can demonstrate mastery of 40-50% of regular curriculum before 
-            it's taught.<sup>4</sup>
-          </p>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Scale className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Addressing Both Exceptionialities</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Neither the gift nor the disability should be neglected. Students need access to complex, abstract content through accessible formats (like audiobooks) alongside explicit skill remediation.</p>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Flexible Pacing and Grouping</h3>
-          <p className="mb-4">
-            Allowing students to progress at different rates in different subjects accommodates uneven 
-            development.<sup>5</sup> Subject-specific acceleration enables advancement in areas of strength 
-            while providing additional time or support in challenge areas.<sup>6</sup>
-          </p>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Map className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Placement Options</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">While many succeed in general education with heavy collaboration between gifted and special educators, specialized 2e programs or "gifted classrooms with accommodations" often provide the best peer connections.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Differentiated Instruction</h3>
-          <p className="mb-4">
-            Differentiation adjusts content, process, product, and learning environment to match student needs.<sup>[17]</sup> 
-            For 2e students, this means providing complex, abstract content through accessible formats with 
-            appropriate scaffolding and accommodations.<sup>[18]</sup>
-          </p>
+          {/* Modifications Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Modifications & Specific Strategies</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-support-interventions-hero.webp"
+              alt="Student engaging in complex problem-based learning utilizing alternative response formats"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Assistive Technology</h3>
-          <p className="mb-4">
-            Technology bypasses areas of weakness while allowing students to demonstrate advanced thinking.<sup>[19]</sup> 
-            Text-to-speech, speech-to-text, word prediction, graphic organizers, and calculators enable 
-            students to access and produce content matching their intellectual level.<sup>[20]</sup> Assistive 
-            technology is an equalizer, not a crutch.<sup>[21]</sup>
-          </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <FastForward className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Compacting</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Eliminating content already mastered. Research shows gifted students can demonstrate mastery of 40-50% of regular curriculum material before it is even taught.<sup>1</sup> This frees up time for necessary remediation.</p>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Alternative Response Formats</h3>
-          <p className="mb-4">
-            Allowing students to demonstrate knowledge through varied formats accommodates disabilities while 
-            revealing gifts.<sup>[22]</sup> Oral presentations, videos, models, or demonstrations may better 
-            showcase understanding than written tests.<sup>[23]</sup>
-          </p>
-        </div>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Laptop className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Assistive Technology</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Tech is an equalizer, not a crutch. Speech-to-text, audiobooks, and calculators allow students to instantly bypass their processing weaknesses and demonstrate their advanced, collegiate-level thinking.</p>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Specific Intervention Strategies</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwdGVhY2hlcnxlbnwxfHx8fDE2NzQ1MzUyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Student and teacher"
-            className="w-72 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Targeted Interventions</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">For dysgraphia, allow alternative response formats (like oral presentations or building models). For executive dysfunction, explicitly teach the organizational systems that neurotypical students absorb implicitly.</p>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading Interventions</h3>
-          <p className="mb-4">
-            For gifted students with dyslexia, multisensory structured literacy approaches like Orton-Gillingham 
-            build decoding skills.<sup>[24]</sup> However, instruction should also provide access to complex 
-            text matching intellectual level through audiobooks or read-alouds.<sup>[25]</sup> Separating 
-            decoding instruction from comprehension allows both needs to be met.<sup>[26]</sup>
-          </p>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Reis, S. M., Burns, D. E., & Renzulli, J. S. (1992). Curriculum compacting: The complete guide to modifying the regular curriculum for high ability students. <i>Creative Learning Press</i>.</p>
+              </div>
+            </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Writing Support</h3>
-          <p className="mb-4">
-            For dysgraphia, assistive technology, reduced writing requirements, and focus on quality over 
-            quantity help students express complex ideas.<sup>[27]</sup> Teaching keyboarding skills early 
-            provides an alternative to handwriting.<sup>[28]</sup> Graphic organizers support organization 
-            and planning.<sup>[29]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Mathematics Interventions</h3>
-          <p className="mb-4">
-            Gifted students with dyscalculia benefit from separating calculation practice from conceptual 
-            mathematics.<sup>[30]</sup> Calculators enable engagement with advanced problem-solving despite 
-            calculation difficulties.<sup>[31]</sup> Explicit instruction in foundational number sense supports 
-            development of basic skills.<sup>[32]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Executive Function Support</h3>
-          <p className="mb-4">
-            Teaching organizational systems, time management, planning strategies, and self-monitoring helps 
-            2e students compensate for executive function weaknesses.<sup>[33]</sup> External structures like 
-            checklists, calendars, and rubrics scaffold executive function skills.<sup>[34]</sup> Explicitly 
-            teaching what neurotypical students absorb implicitly is essential.<sup>[35]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Placement Options</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">General Education with Support</h3>
-          <p className="mb-4">
-            Many 2e students can succeed in general education with appropriate accommodations, modifications, 
-            and differentiation.<sup>[36]</sup> Collaboration between general and special educators enhances 
-            outcomes.<sup>[37]</sup> This placement maintains access to advanced content and age peers.<sup>[38]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Specialized Twice-Exceptional Programs</h3>
-          <p className="mb-4">
-            Some schools offer programs specifically designed for 2e students, providing both challenge and 
-            support.<sup>[39]</sup> These programs understand the 2e profile and employ staff trained in dual 
-            differentiation.<sup>[40]</sup> Research on specialized 2e programs shows positive outcomes for 
-            achievement and social-emotional development.<sup>[41]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Gifted Programs with Accommodations</h3>
-          <p className="mb-4">
-            Placing 2e students in gifted programs with necessary accommodations provides intellectual challenge 
-            and peer connections.<sup>[42]</sup> However, gifted teachers need training in understanding and 
-            supporting disabilities.<sup>[43]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Homeschooling and Alternative Education</h3>
-          <p className="mb-4">
-            Some families choose homeschooling or alternative educational settings to better meet 2e needs.<sup>[44]</sup> 
-            These options allow maximum individualization and flexible pacing.<sup>[45]</sup> Online gifted 
-            programs combined with local support services can provide comprehensive programming.<sup>[46]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Social-Emotional Support</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Counseling</h3>
-          <p className="mb-4">
-            Many 2e students benefit from counseling addressing identity, self-esteem, anxiety, depression, 
-            or perfectionism.<sup>[47]</sup> Therapists should understand both giftedness and disabilities 
-            to provide appropriate support.<sup>[48]</sup> Cognitive-behavioral approaches help students 
-            develop coping strategies.<sup>[49]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Skills Training</h3>
-          <p className="mb-4">
-            Some 2e students, particularly those with ADHD or autism, benefit from explicit social skills 
-            instruction.<sup>[50]</sup> Training should account for advanced cognitive abilities while 
-            addressing social challenges.<sup>[51]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Peer Support and Connections</h3>
-          <p className="mb-4">
-            Connecting with other 2e students reduces isolation and validates experiences.<sup>[52]</sup> 
-            Support groups, summer programs, or online communities provide connection with similar peers.<sup>[53]</sup> 
-            Finding intellectual peers who also understand challenges is particularly important.<sup>[54]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Building Self-Understanding</h3>
-          <p className="mb-4">
-            Helping students understand their twice-exceptionality promotes self-acceptance and self-advocacy.<sup>[55]</sup> 
-            Learning about their cognitive profile, strengths, challenges, and strategies empowers students.<sup>[56]</sup> 
-            Age-appropriate explanations help students make sense of their experiences.<sup>[57]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Addressing Perfectionism</h3>
-          <p className="mb-4">
-            Interventions for perfectionism include teaching growth mindset, normalizing mistakes, setting 
-            realistic standards, and distinguishing between healthy striving and maladaptive perfectionism.<sup>[58]</sup> 
-            The gap between intellectual capacity and execution can fuel perfectionism in 2e students.<sup>[59]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Planning and Legal Rights</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbGFubmluZyUyMGRvY3VtZW50c3xlbnwxfHx8fDE2NzQ1MzUyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Planning documents"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Individualized Education Program (IEP)</h3>
-          <p className="mb-4">
-            Students eligible for special education receive IEPs outlining services, accommodations, and 
-            goals.<sup>[60]</sup> IEPs for 2e students should address both remediation and enrichment needs.<sup>[61]</sup> 
-            Goals should target areas of weakness while ensuring access to advanced curriculum.<sup>[62]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">504 Plans</h3>
-          <p className="mb-4">
-            Students with disabilities who don't qualify for special education may receive 504 plans providing 
-            accommodations.<sup>[63]</sup> These plans ensure equal access to education through modifications 
-            like extended time, assistive technology, or preferential seating.<sup>[64]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Gifted Education Plans</h3>
-          <p className="mb-4">
-            Many states require educational plans for identified gifted students.<sup>[65]</sup> For 2e students, 
-            coordinating gifted and special education plans ensures comprehensive support.<sup>[66]</sup> Both 
-            documents should reference each other and work together.<sup>[67]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Legal Protections</h3>
-          <p className="mb-4">
-            IDEA protects students with disabilities, ensuring free appropriate public education.<sup>[68]</sup> 
-            Section 504 of the Rehabilitation Act and the ADA prohibit disability discrimination.<sup>[69]</sup> 
-            However, no federal mandate requires gifted services, varying by state.<sup>[70]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Parent and Family Support</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Understanding and Advocacy</h3>
-          <p className="mb-4">
-            Parents must understand both giftedness and disabilities to advocate effectively.<sup>[71]</sup> 
-            Learning about twice-exceptionality, available services, and legal rights empowers families.<sup>[72]</sup> 
-            Parent support groups provide community and shared experiences.<sup>[73]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Home Support</h3>
-          <p className="mb-4">
-            Families can support talent development through providing resources, encouraging interests, and 
-            fostering intellectual curiosity.<sup>[74]</sup> Simultaneously, understanding and accommodating 
-            disabilities at home reduces frustration.<sup>[75]</sup> Balancing challenge and support at home 
-            mirrors school needs.<sup>[76]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Managing Expectations</h3>
-          <p className="mb-4">
-            Parents must balance high expectations appropriate to abilities with realistic understanding of 
-            disabilities.<sup>[77]</sup> Avoiding both underestimation and excessive pressure is challenging 
-            but essential.<sup>[78]</sup> Focusing on effort, growth, and individual progress rather than 
-            perfection supports healthy development.<sup>[79]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Teacher Training and Professional Development</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Understanding Twice-Exceptionality</h3>
-          <p className="mb-4">
-            Teachers need training in recognizing and supporting 2e students.<sup>[80]</sup> Professional 
-            development should address characteristics, identification, and instructional strategies.<sup>[81]</sup> 
-            Both gifted and special education teachers benefit from cross-training.<sup>[82]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Differentiation Skills</h3>
-          <p className="mb-4">
-            Teachers must develop skills in dual differentiation, providing both challenge and accommodation.<sup>[83]</sup> 
-            Training in curriculum compacting, flexible grouping, and technology integration enhances capacity 
-            to serve 2e students.<sup>[84]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Collaborative Practice</h3>
-          <p className="mb-4">
-            Collaboration among general educators, gifted specialists, special educators, and related service 
-            providers optimizes support.<sup>[85]</sup> Teamwork allows sharing of expertise and resources.<sup>[86]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Promising Programs and Approaches</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Twice-Exceptional Summer Programs</h3>
-          <p className="mb-4">
-            Specialized summer programs provide intensive academic challenge alongside support for challenges.<sup>[87]</sup> 
-            These programs create community among 2e students and offer respite from struggling to fit in 
-            elsewhere.<sup>[88]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Talent Development Model</h3>
-          <p className="mb-4">
-            This approach emphasizes developing talents as the primary focus while providing necessary 
-            accommodations.<sup>[89]</sup> Engaging students through their interests and strengths increases 
-            motivation and willingness to work on challenges.<sup>[90]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Project-Based Learning</h3>
-          <p className="mb-4">
-            Complex, authentic projects allow 2e students to demonstrate advanced thinking while receiving 
-            support for production challenges.<sup>[91]</sup> Project-based learning engages interests and 
-            reduces emphasis on areas of weakness.<sup>[92]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Universal Design for Learning</h3>
-          <p className="mb-4">
-            UDL provides multiple means of representation, expression, and engagement, benefiting all learners 
-            including 2e students.<sup>[93]</sup> This framework reduces barriers while maintaining high 
-            expectations.<sup>[94]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Transition Planning</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Post-Secondary Education</h3>
-          <p className="mb-4">
-            Transition to college requires careful planning for 2e students.<sup>[95]</sup> Students need to 
-            understand their rights under ADA, identify needed accommodations, and develop self-advocacy skills.<sup>[96]</sup> 
-            College selection should consider both academic challenge and disability support services.<sup>[97]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Career Development</h3>
-          <p className="mb-4">
-            Career planning should leverage strengths while considering how to manage challenges in work 
-            settings.<sup>[98]</sup> Many 2e adults find success in careers using their talents while 
-            minimizing impact of disabilities.<sup>[99]</sup> Self-employment or flexible work arrangements 
-            may be particularly suitable.<sup>[100]</sup>
-          </p>
-
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6 mt-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Core Principles:</h3>
-            <div className="text-sm">
-              <p>
-                Effective support for twice-exceptional students requires simultaneous attention to both 
-                exceptionalities—developing gifts while supporting challenges.<sup>[101]</sup> A strength-based 
-                approach that emphasizes abilities while providing necessary accommodations and modifications 
-                enables 2e students to reach their potential.<sup>[102]</sup> No single intervention works for 
-                all 2e students; individualized, comprehensive planning tailored to each student's unique 
-                profile is essential.<sup>[103]</sup>
-              </p>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Baum, S. M., Cooper, C. R., & Neu, T. W. (2001). Dual differentiation: An approach for meeting the curricular needs of gifted students with learning disabilities. <i>Psychology in the Schools</i>.</li>
+                <li>Foley-Nicpon, M. (2013). Gifted child quarterly and talent development for gifted students with co-occurring disabilities. <i>Gifted Child Quarterly</i>.</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Baum, S. M., Cooper, C. R., & Neu, T. W. (2001). "Dual differentiation: An approach for meeting the curricular needs of gifted students with learning disabilities." <em>Psychology in the Schools</em>, 38(5), 477-490.</p>
-          <p>[2] Reis, S. M., Baum, S. M., & Burke, E. (2014). "An operational definition of twice-exceptional learners: Implications and applications." <em>Gifted Child Quarterly</em>, 58(3), 217-230.</p>
-          <p>[3]-[103] See full reference list in the original twice-exceptional support article. Key sources include Baum, Schader, & Owen (2017); Trail (2011); Foley-Nicpon et al. (2011); Weinfeld et al. (2006); Tomlinson (2001); and the National Association for Gifted Children position statements.</p>
+      {/* ==========================================
+          TAB 2: SOCIAL & EMOTIONAL
+      ========================================== */}
+      {activeTab === 'emotional' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Emotional Card (Slate) - Uses Float Image + flow-root */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social-Emotional Support</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-support-emotional.webp"
+              alt="School counselor having a supportive conversation with a student about perfectionism"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The internal experience of twice-exceptionality is frequently exhausting. Without targeted affective support, the gap between their intellect and their output can easily breed severe depression and anxiety.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Heart className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Targeted Counseling</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">2e students require counselors who understand *both* exceptionalities. Interventions heavily utilize cognitive-behavioral strategies to tackle clinical perfectionism, imposter syndrome, and the fear of failure.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <ShieldCheck className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Building Self-Understanding</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Explicitly teaching the student about their own 2e profile is transformative. Understanding the exact neurological reasons why they are "smart but struggling" promotes self-acceptance and crucial self-advocacy skills.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Peers Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Peer Connection & Social Identity</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-support-peers-hero.webp"
+              alt="Cluster of 2e students collaborating happily in a specialized program"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Users className="text-[#2abcd4] w-5 h-5" /> Finding Intellectual Peers
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  2e students frequently feel like they belong nowhere—too "disabled" for the gifted kids, and too "gifted" for the special education kids.
+                </p>
+                <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm">
+                  <p className="text-xs text-slate-700">Connecting them with other 2e students (through specialized summer camps, talent development programs, or online communities) instantly reduces isolation and validates their deeply contradictory lived experiences.</p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Target className="text-[#2abcd4] w-5 h-5" /> Social Skills Training
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  For 2e students with Autism or ADHD, social interaction can be deeply confusing despite their high intelligence.
+                </p>
+                <div className="bg-white p-3 rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm">
+                  <p className="text-xs text-slate-700">They benefit massively from explicit social skills instruction that respects their advanced cognitive abilities—explaining the *logic* and *theory* behind social interactions, rather than just demanding blind compliance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>King, E. W. (2005). Addressing the social and emotional needs of twice-exceptional students. <i>Teaching Exceptional Children</i>.</li>
+                <li>Neihart, M. (2008). Identifying and providing services to twice exceptional children. In <i>Handbook of giftedness in children</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('twice-exceptional'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: ADVOCACY & TRANSITIONS
+      ========================================== */}
+      {activeTab === 'advocacy' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Advocacy Card (Yellow) - Uses Float Image + flow-root */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Educational Planning & Legal Rights</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-support-advocacy.webp"
+              alt="Collaborative IEP meeting with parents and dual-specialists"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Ensuring a 2e student's success requires aggressive, informed advocacy from parents to secure legally binding documentation that addresses both sides of the bell curve.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <FileText className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">IEPs & 504 Plans</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">If eligible under IDEA or Section 504, a student's IEP must explicitly contain goals targeting their areas of weakness <em>while legally ensuring</em> access to advanced, gifted-level curriculum.<sup>1</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Home className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Parent Advocacy</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Parents must often educate the educators. Balancing high expectations for their child's intellect with realistic patience for their disability is challenging, making parent support groups vital.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Transitions Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Programs, Transitions & Beyond</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-support-transitions-hero.webp"
+              alt="Older 2e student transitioning to college, utilizing self-advocacy skills"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Lightbulb className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Promising Programs</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Organizations like the Jack Kent Cooke Foundation explicitly provide critical scholarship support and mentoring to bridge the gap for low-income and culturally diverse 2e students.<sup>2</sup></p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <CheckCircle className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Universal Design</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">The Universal Design for Learning (UDL) framework naturally benefits 2e students by providing multiple, built-in means of representation and expression, reducing classroom barriers.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <GraduationCap className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">College & Career</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Transitioning to post-secondary life requires students to master self-advocacy. Career planning should heavily leverage their immense strengths while steering them toward flexible work environments.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</p>
+                <p>2. Wyner, J. S., Bridgeland, J. M., & DiIulio, J. J., Jr. (2007). Achievement trap: How America is failing millions of high-achieving students from lower-income families. <i>Jack Kent Cooke Foundation</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Assouline, S. G., & Whiteman, C. S. (2011). Twice-exceptionality: Implications for school psychologists in the post-IDEA 2004 era. <i>Journal of Applied School Psychology</i>.</li>
+                <li>Edyburn, D. L. (2004). 2003 in review: A synthesis of the special education technology literature. <i>Journal of Special Education Technology</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('twice-exceptional')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Twice-Exceptional
-        </a>
+          <span className="text-xl">←</span>
+          All About 2e
+        </button>
       </div>
+
     </article>
   );
 }

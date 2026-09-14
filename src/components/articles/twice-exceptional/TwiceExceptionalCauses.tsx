@@ -1,425 +1,457 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Dna, Network, Microscope, Brain, Activity, Hourglass, Baby, Home, Clock, BookX, Zap, Puzzle, Layers, ShieldCheck, Globe, Link, XCircle, Lightbulb } from 'lucide-react';
 
 interface TwiceExceptionalCausesProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function TwiceExceptionalCauses({ setCurrentArticle }: TwiceExceptionalCausesProps) {
+export function TwiceExceptionalCauses({ setCurrentArticle, initialTab }: TwiceExceptionalCausesProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'biology');
+
   return (
-    <article className="max-w-6xl">
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* GLOBAL STYLE FOR CITATIONS */}
       <style>
         {`
           sup {
             color: #10b981;
+            font-weight: bold;
+            margin-left: 2px;
           }
         `}
       </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('twice-exceptional'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Twice-Exceptional: Causes & Origins
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('twice-exceptional')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Twice-Exceptional
-        </a>
+          <span className="text-xl">←</span>
+          All About 2e
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Twice-Exceptional: Causes & Origins
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('twice-exceptional')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About 2e
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Understanding the causes of twice-exceptionality requires examining both the origins of giftedness 
-            and the causes of various disabilities, as well as how these conditions co-occur.<sup>1</sup> 
-            Research increasingly shows that the same neurological differences can contribute to both exceptional 
-            abilities and specific challenges.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('biology')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'biology'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Genetics & Neurobiology
+        </button>
+        <button
+          onClick={() => setActiveTab('environment')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'environment'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Development & Environment
+        </button>
+        <button
+          onClick={() => setActiveTab('theories')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'theories'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Theories & Misconceptions
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Genetic Factors</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1576086213369-97a306d36557?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxETkElMjBzY2llbmNlfGVufDF8fHx8MTY3NDUzNTI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="DNA science"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Heritability of Both Traits</h3>
-          <p className="mb-4">
-            Both giftedness and many disabilities have significant genetic components.<sup>3</sup> Intelligence 
-            is highly heritable, with estimates of 50-80% genetic contribution.<sup>4</sup> Similarly, conditions 
-            like dyslexia, ADHD, and autism show strong genetic influences.<sup>5</sup>
-          </p>
+      {/* ==========================================
+          TAB 1: GENETICS & NEUROBIOLOGY
+      ========================================== */}
+      {activeTab === 'biology' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Shared Genetic Risk Factors</h3>
-          <p className="mb-4">
-            Some genetic variants associated with high intelligence also increase risk for certain conditions.<sup>6</sup> 
-            Research has identified genetic overlap between high cognitive ability and autism, ADHD, and other 
-            neurodevelopmental conditions.<sup>7</sup> The same genes that contribute to advanced cognitive 
-            abilities may increase vulnerability to certain disabilities.<sup>8</sup>
-          </p>
+          {/* Genetics Card (Cyan) - Uses Float Image + flow-root to prevent spooling */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Genetics & Epigenetics</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-causes-genetics.webp"
+              alt="DNA strand interwoven with abstract patterns representing polygenic heritability"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Twice-exceptionality is not a random coincidence. Research increasingly shows that the very same genetic and neurological differences that contribute to a child's exceptional abilities often directly contribute to their specific challenges.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Pleiotropy</h3>
-          <p className="mb-4">
-            Pleiotropy—when one gene affects multiple traits—may explain some instances of twice-exceptionality.<sup>9</sup> 
-            Genetic variants that enhance one cognitive ability may simultaneously create challenges in another 
-            area.<sup>1</sup>
-          </p>
+            <div className="grid grid-cols-1 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Dna className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Heritability & Pleiotropy</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Intelligence is highly heritable (estimates show a 50-80% genetic contribution).<sup>1</sup> Pleiotropy occurs when a single gene affects multiple traits. Genetic variants that massively enhance one cognitive ability may simultaneously create deficits in another area.</p>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Family Patterns</h3>
-          <p className="mb-4">
-            Families often show clustering of both giftedness and disabilities.<sup>1</sup> It's common for 
-            2e individuals to have family members who are gifted, have learning disabilities, or are themselves 
-            twice-exceptional.<sup>2</sup> Studies of gifted individuals with dyslexia show strong familial 
-            patterns for both traits.<sup>3</sup>
-          </p>
-        </div>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Network className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Shared Risk Factors</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Genome-wide studies show an overlap between high cognitive ability and conditions like ADHD and Autism. The same genes contributing to advanced reasoning increase vulnerability to these conditions.</p>
+                </div>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Neurological Factors</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Brain Structure and Function</h3>
-          <p className="mb-4">
-            Neuroimaging studies reveal that twice-exceptional individuals often show both the brain 
-            characteristics associated with giftedness and those associated with their specific disability.<sup>4</sup> 
-            For example, gifted individuals with dyslexia may show enhanced right-hemisphere activation typical 
-            of giftedness alongside left-hemisphere differences characteristic of dyslexia.<sup>5</sup>
-          </p>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Microscope className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Epigenetics</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Epigenetic mechanisms dictate how the environment influences gene expression. Prenatal stress or early environmental factors can flip "switches" on DNA, influencing whether a genetic predisposition manifests purely as a gift, a disability, or both.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Neural Connectivity Differences</h3>
-          <p className="mb-4">
-            Research suggests that both giftedness and certain disabilities involve atypical neural connectivity.<sup>6</sup> 
-            Enhanced connectivity in some brain regions may support advanced abilities while reduced connectivity 
-            in others contributes to specific deficits.<sup>[17]</sup>
-          </p>
+          {/* Neurobiology Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Neurological Factors</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-causes-neuro-hero.webp"
+              alt="Highly active brain scan highlighting distinct neural pathways and connectivity"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Neuroimaging reveals that 2e individuals show a physical blend in brain structure—possessing both the neurological characteristics of giftedness and the neural signatures of their specific disability.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Neurotransmitter Systems</h3>
-          <p className="mb-4">
-            Variations in neurotransmitter systems, particularly dopamine, may contribute to both high ability 
-            and conditions like ADHD.<sup>[18]</sup> The same dopaminergic variations that enhance creativity 
-            and divergent thinking may also affect attention regulation.<sup>[19]</sup>
-          </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Hemispheric Activity</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">A 2e student with dyslexia might show the enhanced right-hemisphere activation typical of high giftedness, sitting right alongside the left-hemisphere processing deficits characteristic of dyslexia.</p>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Processing Speed and Working Memory</h3>
-          <p className="mb-4">
-            Many 2e individuals show dissociations between reasoning abilities and processing speed or working 
-            memory.<sup>[20]</sup> Advanced reasoning circuits may develop alongside weaknesses in processing 
-            efficiency.<sup>[21]</sup> These processing differences have neurological underpinnings in white 
-            matter connectivity and cortical processing efficiency.<sup>[22]</sup>
-          </p>
-        </div>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Activity className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Atypical Connectivity</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Variations in neurotransmitters, especially dopamine, drive both high ability and ADHD. The same dopaminergic differences that fuel incredible divergent creativity also disrupt attention regulation.</p>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Developmental Factors</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTY3NDUzNTI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Child development"
-            className="w-72 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Hourglass className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Processing Disconnects</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Advanced abstract reasoning circuits often develop rapidly, entirely outpacing the brain's white-matter connectivity required for basic processing speed and working memory efficiency.</p>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Asynchronous Development</h3>
-          <p className="mb-4">
-            Asynchronous development—uneven development across different domains—is characteristic of both 
-            giftedness and many disabilities.<sup>[23]</sup> The same developmental processes that create 
-            advanced abilities in some areas may contribute to delays or difficulties in others.<sup>[24]</sup>
-          </p>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Plomin, R., & Deary, I. J. (2015). Genetics and intelligence differences: Five special findings. <i>Molecular Psychiatry</i>. https://doi.org/10.1038/mp.2014.105</p>
+              </div>
+            </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Critical Period Variations</h3>
-          <p className="mb-4">
-            Brain development occurs through critical periods when specific skills are most readily acquired.<sup>[25]</sup> 
-            Variations in the timing or duration of critical periods may contribute to uneven profiles of 
-            abilities.<sup>[26]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Prenatal and Early Development</h3>
-          <p className="mb-4">
-            Both giftedness and disabilities can have origins in prenatal brain development.<sup>[27]</sup> 
-            Factors affecting early brain development may influence both exceptional abilities and areas of 
-            weakness.<sup>[28]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Environmental Influences</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Early Experiences</h3>
-          <p className="mb-4">
-            While twice-exceptionality has strong biological roots, environmental factors influence how abilities 
-            and disabilities manifest.<sup>[29]</sup> Enriched environments may enhance gifts while also making 
-            disabilities more apparent through increased demands.<sup>[30]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Compensation and Development</h3>
-          <p className="mb-4">
-            Environmental opportunities for developing strengths can help compensate for weaknesses.<sup>[31]</sup> 
-            Conversely, lack of support for either the disability or the giftedness can impact overall development.<sup>[32]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Educational Experiences</h3>
-          <p className="mb-4">
-            School experiences don't cause twice-exceptionality but can affect how it presents and how students 
-            cope.<sup>[33]</sup> Supportive environments may allow both abilities and challenges to be visible, 
-            while unsupportive contexts may lead to masking or underachievement.<sup>[34]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Specific Condition Etiologies</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Giftedness with Dyslexia</h3>
-          <p className="mb-4">
-            The co-occurrence of giftedness and dyslexia may reflect enhanced right-hemisphere and visual-spatial 
-            abilities combined with left-hemisphere phonological processing difficulties.<sup>[35]</sup> Some 
-            theories suggest that the same neural variations that enhance spatial reasoning and creativity may 
-            contribute to reading challenges.<sup>[36]</sup> Geschwind and Galaburda's theory proposed that 
-            prenatal testosterone influences brain lateralization, potentially creating both talents and 
-            learning difficulties.<sup>[37]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Giftedness with ADHD</h3>
-          <p className="mb-4">
-            ADHD and giftedness share some neurological features including dopaminergic system variations.<sup>[38]</sup> 
-            Both conditions are associated with divergent thinking and creativity.<sup>[39]</sup> The same 
-            prefrontal cortex variations that support creative problem-solving may also affect executive function 
-            and attention regulation.<sup>[40]</sup> Some research suggests that ADHD traits may confer advantages 
-            for certain types of creative thinking.<sup>[41]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Giftedness with Autism</h3>
-          <p className="mb-4">
-            The genetic architecture of autism shows overlap with that of high intelligence.<sup>[42]</sup> 
-            Some genetic variants associated with autism are also associated with high cognitive ability, 
-            particularly in STEM fields.<sup>[43]</sup> The "intense world" theory of autism suggests that 
-            enhanced neural connectivity may contribute to both exceptional abilities and sensory/social 
-            challenges.<sup>[44]</sup> Savant abilities in autism represent an extreme form of asynchronous 
-            development with peaks of extraordinary ability.<sup>[45]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Giftedness with Anxiety/Depression</h3>
-          <p className="mb-4">
-            While giftedness doesn't cause mental health conditions, certain features of giftedness may increase 
-            vulnerability.<sup>[46]</sup> Heightened sensitivity, intensity, perfectionism, and existential 
-            concerns may contribute to anxiety and depression in some gifted individuals.<sup>[47]</sup> 
-            Overexcitabilities, particularly emotional and imaginational, may predispose to emotional difficulties.<sup>[48]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Theoretical Models</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">The Asynchrony Model</h3>
-          <p className="mb-4">
-            Silverman's theory of asynchronous development suggests that gifted individuals naturally develop 
-            unevenly, with the degree of asynchrony often proportional to intellectual ability.<sup>[49]</sup> 
-            In twice-exceptional individuals, this asynchrony is even more pronounced, creating significant 
-            discrepancies between areas of strength and weakness.<sup>[50]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Dual Differentiation Theory</h3>
-          <p className="mb-4">
-            This framework proposes that 2e students require differentiation for both their gifts and their 
-            disabilities, recognizing that the two exceptionalities interact.<sup>[51]</sup> The same neurological 
-            substrate that produces giftedness may also contribute to disability.<sup>[52]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Neurodiversity Perspective</h3>
-          <p className="mb-4">
-            The neurodiversity framework views twice-exceptionality as a natural variation in human neurology.<sup>[53]</sup> 
-            This perspective suggests that the same brain differences that create challenges in conventional 
-            environments may provide advantages in others.<sup>[54]</sup> Different neurological wiring creates 
-            both strengths and weaknesses depending on demands and context.<sup>[55]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">The Trade-Off Model</h3>
-          <p className="mb-4">
-            Some researchers propose that certain cognitive abilities involve trade-offs, where enhancement 
-            in one area comes at the cost of another.<sup>[56]</sup> Enhanced abilities in specific domains 
-            may occur alongside vulnerabilities in others due to brain resources being allocated differently.<sup>[57]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Epigenetic Factors</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2llbmNlJTIwcmVzZWFyY2h8ZW58MXx8fHwxNjc0NTM1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Science research"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Gene-Environment Interactions</h3>
-          <p className="mb-4">
-            Epigenetic mechanisms—how environment influences gene expression—may contribute to twice-exceptionality.<sup>[58]</sup> 
-            Environmental factors can influence whether genetic predispositions manifest as abilities, disabilities, 
-            or both.<sup>[59]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Stress and Development</h3>
-          <p className="mb-4">
-            Prenatal and early life stress can affect brain development through epigenetic mechanisms.<sup>[60]</sup> 
-            These influences may contribute to the expression of both exceptional abilities and vulnerabilities.<sup>[61]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Why Both Conditions Co-Occur</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Statistical Co-Occurrence</h3>
-          <p className="mb-4">
-            Given the prevalence of both giftedness and disabilities in the population, some co-occurrence 
-            would be expected by chance alone.<sup>[62]</sup> However, research suggests that certain combinations 
-            occur more frequently than would be predicted by independent probabilities.<sup>[63]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Shared Etiological Pathways</h3>
-          <p className="mb-4">
-            For some combinations, shared biological pathways explain co-occurrence.<sup>[64]</sup> The same 
-            genetic or neurological factors that create exceptional abilities may increase vulnerability to 
-            specific disabilities.<sup>[65]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Compensation Theory</h3>
-          <p className="mb-4">
-            Some researchers propose that gifts may develop partly as compensation for disabilities.<sup>[66]</sup> 
-            The brain's neuroplasticity may lead to enhanced development in intact pathways when other pathways 
-            are impaired.<sup>[67]</sup> However, this theory doesn't fully explain twice-exceptionality, as 
-            many 2e individuals show advanced abilities that exceed what compensation would require.<sup>[68]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Not Caused By:</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Poor Teaching or Parenting</h3>
-          <p className="mb-4">
-            Twice-exceptionality is not caused by inadequate instruction or parenting, though these factors 
-            may affect how it manifests.<sup>[69]</sup> Both giftedness and disabilities have biological roots.<sup>[70]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Lack of Effort</h3>
-          <p className="mb-4">
-            The difficulties experienced by 2e students are not due to laziness or insufficient effort.<sup>[71]</sup> 
-            Their challenges have neurological bases, and their inconsistent performance reflects genuine 
-            variations in ability rather than inconsistent effort.<sup>[72]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Intentional Underachievement</h3>
-          <p className="mb-4">
-            While some 2e students may develop patterns of underachievement, the initial discrepancy between 
-            ability and achievement stems from the disability, not from deliberate choice.<sup>[73]</sup>
-          </p>
-
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6 mt-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Current Understanding:</h3>
-            <div className="text-sm">
-              <p>
-                Research increasingly supports the view that twice-exceptionality often reflects shared 
-                neurological and genetic factors rather than simply the random co-occurrence of two separate 
-                conditions.<sup>[74]</sup> The same brain differences that create exceptional abilities may 
-                also create specific vulnerabilities.<sup>[75]</sup> Understanding these shared pathways helps 
-                explain why certain combinations of giftedness and disability occur together and informs more 
-                effective support strategies.<sup>[76]</sup>
-              </p>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Foley-Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). Empirical investigation of twice-exceptionality: Where have we been and where are we going? <i>Gifted Child Quarterly</i>.</li>
+                <li>Gilger, J. W., & Hynd, G. W. (2008). Neurodevelopmental variation as a framework for thinking about the twice exceptional. <i>Roeper Review</i>.</li>
+                <li>Szyf, M. (2015). Nongenetic inheritance and transgenerational epigenetics. <i>Trends in Molecular Medicine</i>.</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Foley-Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). "Empirical investigation of twice-exceptionality: Where have we been and where are we going?" <em>Gifted Child Quarterly</em>, 55(1), 3-17.</p>
-          <p>[2] Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <em>To be gifted and learning disabled: Strength-based strategies for helping twice-exceptional students with LD, ADHD, ASD, and more</em> (3rd ed.). Waco, TX: Prufrock Press.</p>
-          <p>[3] Plomin, R., & Deary, I. J. (2015). "Genetics and intelligence differences: Five special findings." <em>Molecular Psychiatry</em>, 20(1), 98-108.</p>
-          <p>[4] Bouchard, T. J., Jr. (2013). "The Wilson effect: The increase in heritability of IQ with age." <em>Twin Research and Human Genetics</em>, 16(5), 923-930.</p>
-          <p>[5] Gialluisi, A., Andlauer, T. F., Mirza-Schreiber, N., Moll, K., Becker, J., Hoffmann, P., ... & Schulte-Korne, G. (2021). "Genome-wide association study reveals new insights into the heritability and genetic correlates of developmental dyslexia." <em>Molecular Psychiatry</em>, 26(7), 3004-3017.</p>
-          <p>[6] Hill, W. D., Marioni, R. E., Maghzian, O., Ritchie, S. J., Hagenaars, S. P., McIntosh, A. M., ... & Deary, I. J. (2019). "A combined analysis of genetically correlated traits identifies 187 loci and a role for neurogenesis and myelination in intelligence." <em>Molecular Psychiatry</em>, 24(2), 169-181.</p>
-          <p>[7] Clarke, T. K., Lupton, M. K., Fernandez-Pujals, A. M., Starr, J., Davies, G., Cox, S., ... & McIntosh, A. M. (2016). "Common polygenic risk for autism spectrum disorder (ASD) is associated with cognitive ability in the general population." <em>Molecular Psychiatry</em>, 21(3), 419-425.</p>
-          <p>[8] Demange, P. A., Malanchini, M., Mallard, T. T., Biroli, P., Cox, S. R., Grotzinger, A. D., ... & Nivard, M. G. (2021). "Investigating the genetic architecture of noncognitive skills using GWAS-by-subtraction." <em>Nature Genetics</em>, 53(1), 35-44.</p>
-          <p>[9] Pickrell, J. K., Berisa, T., Liu, J. Z., Segurel, L., Tung, J. Y., & Hinds, D. A. (2016). "Detection and interpretation of shared genetic influences on 42 human traits." <em>Nature Genetics</em>, 48(7), 709-717.</p>
-          <p>[10] Krapohl, E., Rimfeld, K., Shakeshaft, N. G., Trzaskowski, M., McMillan, A., Pingault, J. B., ... & Plomin, R. (2014). "The high heritability of educational achievement reflects many genetically influenced traits, not just intelligence." <em>Proceedings of the National Academy of Sciences</em>, 111(42), 15273-15278.</p>
-          <p>[11] Winner, E. (2000). "The origins and ends of giftedness." <em>American Psychologist</em>, 55(1), 159-169.</p>
-          <p>[12] Gilger, J. W., & Hynd, G. W. (2008). "Neurodevelopmental variation as a framework for thinking about the twice exceptional." <em>Roeper Review</em>, 30(4), 214-228.</p>
-          <p>[13] Gilger, J. W., Pennington, B. F., & DeFries, J. C. (1992). "A twin study of the etiology of comorbidity: Attention-deficit hyperactivity disorder and dyslexia." <em>Journal of the American Academy of Child & Adolescent Psychiatry</em>, 31(2), 343-348.</p>
-          <p>[14] van Viersen, S., Kroesbergen, E. H., Slot, E. M., & de Bree, E. H. (2014). "High reading skills mask dyslexia in gifted children." <em>Journal of Learning Disabilities</em>, 49(2), 189-199.</p>
-          <p>[15] von Karolyi, C., Winner, E., Gray, W., & Sherman, G. F. (2003). "Dyslexia linked to talent: Global visual-spatial ability." <em>Brain and Language</em>, 85(3), 427-431.</p>
-          <p>[16] Thatcher, R. W., North, D., & Biver, C. (2005). "EEG and intelligence: Relations between EEG coherence, EEG phase delay and power." <em>Clinical Neurophysiology</em>, 116(9), 2129-2141.</p>
-          <p>[17] Geschwind, N., & Galaburda, A. M. (1987). <em>Cerebral lateralization: Biological mechanisms, associations, and pathology</em>. Cambridge, MA: MIT Press.</p>
-          <p>[18] Volkow, N. D., Wang, G. J., Kollins, S. H., Wigal, T. L., Newcorn, J. H., Telang, F., ... & Swanson, J. M. (2009). "Evaluating dopamine reward pathway in ADHD: Clinical implications." <em>JAMA</em>, 302(10), 1084-1091.</p>
-          <p>[19] Boot, E., Booij, J., Hasler, G., Zinkstok, J. R., de Haan, L., Linszen, D. H., & van Amelsvoort, T. A. (2008). "AMPT-induced monoamine depletion in humans: Evaluation of two alternative [123I] IBZM SPECT procedures." <em>European Journal of Nuclear Medicine and Molecular Imaging</em>, 35(7), 1350-1356.</p>
-          <p>[20] Silverman, L. K. (2009). "The two-edged sword of compensation: How the gifted cope with learning disabilities." <em>Gifted Education International</em>, 25(2), 115-130.</p>
-          <p>[21] Assouline, S. G., Foley Nicpon, M., & Whiteman, C. (2010). "Cognitive and psychosocial characteristics of gifted students with written language disability." <em>Gifted Child Quarterly</em>, 54(2), 102-115.</p>
-          <p>[22] Penke, L., Maniega, S. M., Bastin, M. E., Valdes Hernandez, M. C., Murray, C., Royle, N. A., ... & Deary, I. J. (2012). "Brain white matter tract integrity as a neural foundation for general intelligence." <em>Molecular Psychiatry</em>, 17(10), 1026-1030.</p>
-          <p>[23] Silverman, L. K. (1997). "The construct of asynchronous development." <em>Peabody Journal of Education</em>, 72(3-4), 36-58.</p>
-          <p>[24] Morelock, M. J., & Morrison, K. (1999). "Differentiating 'developmentally appropriate': The multidimensional curriculum model for young gifted children." <em>Roeper Review</em>, 21(3), 195-200.</p>
-          <p>[25] Knudsen, E. I. (2004). "Sensitive periods in the development of the brain and behavior." <em>Journal of Cognitive Neuroscience</em>, 16(8), 1412-1425.</p>
-          <p>[26] Newport, E. L., Bavelier, D., & Neville, H. J. (2001). "Critical thinking about critical periods: Perspectives on a critical period for language acquisition." In E. Dupoux (Ed.), <em>Language, brain and cognitive development: Essays in honor of Jacques Mehler</em> (pp. 481-502). Cambridge, MA: MIT Press.</p>
-          <p>[27] Tau, G. Z., & Peterson, B. S. (2010). "Normal development of brain circuits." <em>Neuropsychopharmacology</em>, 35(1), 147-168.</p>
-          <p>[28] Silbereis, J. C., Pochareddy, S., Zhu, Y., Li, M., & Sestan, N. (2016). "The cellular and molecular landscapes of the developing human central nervous system." <em>Neuron</em>, 89(2), 248-268.</p>
-          <p>[29] Tucker-Drob, E. M., & Briley, D. A. (2014). "Continuity of genetic and environmental influences on cognition across the life span: A meta-analysis of longitudinal twin and adoption studies." <em>Psychological Bulletin</em>, 140(4), 949-979.</p>
-          <p>[30] Sameroff, A. (2010). "A unified theory of development: A dialectic integration of nature and nurture." <em>Child Development</em>, 81(1), 6-22.</p>
-          <p>[31] Reis, S. M., Neu, T. W., & McGuire, J. M. (1997). "Case studies of high-ability students with learning disabilities who have achieved." <em>Exceptional Children</em>, 63(4), 463-479.</p>
-          <p>[32] Subotnik, R. F., Olszewski-Kubilius, P., & Worrell, F. C. (2011). "Rethinking giftedness and gifted education: A proposed direction forward based on psychological science." <em>Psychological Science in the Public Interest</em>, 12(1), 3-54.</p>
-          <p>[33] Bronfenbrenner, U., & Morris, P. A. (2006). "The bioecological model of human development." In W. Damon & R. M. Lerner (Eds.), <em>Handbook of child psychology: Vol. 1. Theoretical models of human development</em> (6th ed., pp. 793-828). Hoboken, NJ: Wiley.</p>
-          <p>[34] Reis, S. M., & McCoach, D. B. (2000). "The underachievement of gifted students: What do we know and where do we go?" <em>Gifted Child Quarterly</em>, 44(3), 152-170.</p>
-          <p>[35] West, T. G. (1997). <em>In the mind's eye: Visual thinkers, gifted people with dyslexia and other learning difficulties, computer images and the ironies of creativity</em>. Amherst, NY: Prometheus Books.</p>
-          <p>[36] Eide, B. L., & Eide, F. F. (2011). <em>The dyslexic advantage: Unlocking the hidden potential of the dyslexic brain</em>. New York: Hudson Street Press.</p>
-          <p>[37] Geschwind, N., & Behan, P. (1982). "Left-handedness: Association with immune disease, migraine, and developmental learning disorder." <em>Proceedings of the National Academy of Sciences</em>, 79(16), 5097-5100.</p>
-          <p>[38] Antshel, K. M., Faraone, S. V., Maglione, K., Doyle, A., Fried, R., Seidman, L., & Biederman, J. (2008). "Temporal stability of ADHD in the high-IQ population: Results from the MGH Longitudinal Family Studies of ADHD." <em>Journal of the American Academy of Child & Adolescent Psychiatry</em>, 47(7), 817-825.</p>
-          <p>[39] White, H. A., & Shah, P. (2006). "Uninhibited imaginations: Creativity in adults with attention-deficit/hyperactivity disorder." <em>Personality and Individual Differences</em>, 40(6), 1121-1131.</p>
-          <p>[40] Arnsten, A. F., & Rubia, K. (2012). "Neurobiological circuits regulating attention, cognitive control, motivation, and emotion: Disruptions in neurodevelopmental psychiatric disorders." <em>Journal of the American Academy of Child & Adolescent Psychiatry</em>, 51(4), 356-367.</p>
-          <p>[41] Fugate, C. M., Zentall, S. S., & Gentry, M. (2013). "Creativity and working memory in gifted students with and without characteristics of attention deficit hyperactive disorder." <em>Gifted Child Quarterly</em>, 57(4), 234-246.</p>
-          <p>[42] Grove, J., Ripke, S., Als, T. D., Mattheisen, M., Walters, R. K., Won, H., ... & Borglum, A. D. (2019). "Identification of common genetic risk variants for autism spectrum disorder." <em>Nature Genetics</em>, 51(3), 431-444.</p>
-          <p>[43] Baron-Cohen, S., Ashwin, E., Ashwin, C., Tavassoli, T., & Chakrabarti, B. (2009). "Talent in autism: Hyper-systemizing, hyper-attention to detail and sensory hypersensitivity." <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em>, 364(1522), 1377-1383.</p>
-          <p>[44] Markram, K., & Markram, H. (2010). "The intense world theory-A unifying theory of the neurobiology of autism." <em>Frontiers in Human Neuroscience</em>, 4, 224.</p>
-          <p>[45] Treffert, D. A. (2009). "The savant syndrome: An extraordinary condition. A synopsis: Past, present, future." <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em>, 364(1522), 1351-1357.</p>
-          <p>[46] Neihart, M. (2002). "Gifted children and depression." In M. Neihart, S. M. Reis, N. M. Robinson, & S. M. Moon (Eds.), <em>The social and emotional development of gifted children</em> (pp. 93-101). Waco, TX: Prufrock Press.</p>
-          <p>[47] Webb, J. T., Meckstroth, E. A., & Tolan, S. S. (1982). <em>Guiding the gifted child: A practical source for parents and teachers</em>. Scottsdale, AZ: Gifted Psychology Press.</p>
-          <p>[48] Piechowski, M. M. (2006). "'Mellow out,' they say. If I only could": Intensities and sensitivities of the young and bright. Madison, WI: Yunasa Books.</p>
-          <p>[49] Silverman, L. K. (2013). <em>Giftedness 101</em>. New York: Springer Publishing.</p>
-          <p>[50] Morelock, M. J. (1992). "Giftedness: The view from within." <em>Understanding Our Gifted</em>, 4(3), 1, 11-15.</p>
-          <p>[51] Baum, S. M., Cooper, C. R., & Neu, T. W. (2001). "Dual differentiation: An approach for meeting the curricular needs of gifted students with learning disabilities." <em>Psychology in the Schools</em>, 38(5), 477-490.</p>
-          <p>[52] Reis, S. M., Baum, S. M., & Burke, E. (2014). "An operational definition of twice-exceptional learners: Implications and applications." <em>Gifted Child Quarterly</em>, 58(3), 217-230.</p>
-          <p>[53] Armstrong, T. (2010). <em>Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences</em>. Philadelphia: Da Capo Press.</p>
-          <p>[54] Singer, J. (2017). <em>NeuroDiversity: The birth of an idea</em>. Amazon.</p>
-          <p>[55] Baron-Cohen, S. (2017). "Editorial Perspective: Neurodiversity-a revolutionary concept for autism and psychiatry." <em>Journal of Child Psychology and Psychiatry</em>, 58(6), 744-747.</p>
-          <p>[56] Hills, T. T. (2006). "Animal foraging and the evolution of goal-directed cognition." <em>Cognitive Science</em>, 30(1), 3-41.</p>
-          <p>[57] Cowan, N. (2010). "The magical mystery four: How is working memory capacity limited, and why?" <em>Current Directions in Psychological Science</em>, 19(1), 51-57.</p>
-          <p>[58] Champagne, F. A., & Curley, J. P. (2009). "Epigenetic mechanisms mediating the long-term effects of maternal care on development." <em>Neuroscience & Biobehavioral Reviews</em>, 33(4), 593-600.</p>
-          <p>[59] Meaney, M. J. (2010). "Epigenetics and the biological definition of gene x environment interactions." <em>Child Development</em>, 81(1), 41-79.</p>
-          <p>[60] Bick, J., & Nelson, C. A. (2016). "Early adverse experiences and the developing brain." <em>Neuropsychopharmacology</em>, 41(1), 177-196.</p>
-          <p>[61] Szyf, M. (2015). "Nongenetic inheritance and transgenerational epigenetics." <em>Trends in Molecular Medicine</em>, 21(2), 134-144.</p>
-          <p>[62] McCoach, D. B., Kehle, T. J., Bray, M. A., & Siegle, D. (2001). "Best practices in the identification of gifted students with learning disabilities." <em>Psychology in the Schools</em>, 38(5), 403-411.</p>
-          <p>[63] Brody, L. E., & Mills, C. J. (1997). "Gifted children with learning disabilities: A review of the issues." <em>Journal of Learning Disabilities</em>, 30(3), 282-296.</p>
-          <p>[64] Gilger, J. W., & Hynd, G. W. (2008). "Neurodevelopmental variation as a framework for thinking about the twice exceptional." <em>Roeper Review</em>, 30(4), 214-228.</p>
-          <p>[65] Pennington, B. F. (2006). "From single to multiple deficit models of developmental disorders." <em>Cognition</em>, 101(2), 385-413.</p>
-          <p>[66] Karolyi, C. V., Ramos-Ford, V., & Gardner, H. (2003). "Multiple intelligences: A perspective on giftedness." In N. Colangelo & G. A. Davis (Eds.), <em>Handbook of gifted education</em> (3rd ed., pp. 100-112). Boston: Allyn & Bacon.</p>
-          <p>[67] Merzenich, M. M., & Jenkins, W. M. (1995). "Cortical plasticity, learning, and learning dysfunction." In B. Julesz & I. Kovacs (Eds.), <em>Maturational windows and adult cortical plasticity</em> (pp. 247-272). Reading, MA: Addison-Wesley.</p>
-          <p>[68] Lovett, B. J., & Lewandowski, L. J. (2006). "Gifted students with learning disabilities: Who are they?" <em>Journal of Learning Disabilities</em>, 39(6), 515-527.</p>
-          <p>[69] National Association for Gifted Children. (2013). <em>Position statement: Students with gifts and talents who have learning disabilities</em>. Washington, DC: Author.</p>
-          <p>[70] Petrill, S. A., & Wilkerson, B. (2000). "Intelligence and achievement: A behavioral genetic perspective." <em>Educational Psychology Review</em>, 12(2), 185-199.</p>
-          <p>[71] Trail, B. A. (2011). <em>Twice-exceptional gifted children: Understanding, teaching, and counseling gifted students</em>. Waco, TX: Prufrock Press.</p>
-          <p>[72] Baum, S. M., & Owen, S. V. (1988). "High ability/learning disabled students: How are they different?" <em>Gifted Child Quarterly</em>, 32(3), 321-326.</p>
-          <p>[73] Rimm, S. B. (2008). "Underachievement syndrome: A national epidemic." In S. I. Pfeiffer (Ed.), <em>Handbook of giftedness in children</em> (pp. 424-443). New York: Springer.</p>
-          <p>[74] Foley-Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). "Empirical investigation of twice-exceptionality: Where have we been and where are we going?" <em>Gifted Child Quarterly</em>, 55(1), 3-17.</p>
-          <p>[75] Gilger, J. W., & Hynd, G. W. (2008). "Neurodevelopmental variation as a framework for thinking about the twice exceptional." <em>Roeper Review</em>, 30(4), 214-228.</p>
-          <p>[76] Reis, S. M., Baum, S. M., & Burke, E. (2014). "An operational definition of twice-exceptional learners: Implications and applications." <em>Gifted Child Quarterly</em>, 58(3), 217-230.</p>
+      {/* ==========================================
+          TAB 2: DEVELOPMENT & ENVIRONMENT
+      ========================================== */}
+      {activeTab === 'environment' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Development Card (Slate) - Uses Float Image + flow-root to prevent spooling */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Development & Environment</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-causes-development.webp"
+              alt="Visual of a child in an enriching environment, illustrating environmental scaffolding"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              While twice-exceptionality has strong, undeniable biological roots, a child's environment drastically influences how those abilities and disabilities actually manifest in daily life.
+            </p>
+
+            <div className="grid grid-cols-1 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Baby className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Asynchronous Growth</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Uneven development across different domains is the core feature of 2e. The exact same biological developmental processes that create hyper-advanced abilities in one area inherently cause delays or bottlenecks in others.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Clock className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Critical Periods</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">The brain develops through "critical periods" when specific skills are most readily acquired. Variations in the timing or duration of these critical periods can permanently alter the brain's cognitive profile.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Home className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Environmental Amplification</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">School and home experiences do not *cause* 2e, but highly enriched environments often make both the gifts and the disabilities much more apparent by placing high demands on the child's processing capabilities.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Specific Etiologies Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Specific Condition Etiologies</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-causes-conditions-hero.webp"
+              alt="Conceptual visual showing different neural signatures for Dyslexia, ADHD, and Autism"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <BookX className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Gifted + Dyslexia</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Geschwind and Galaburda's theory proposed that prenatal testosterone influences brain lateralization, potentially creating both high visual-spatial talent and severe phonological reading difficulties simultaneously.<sup>1</sup></p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Zap className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Gifted + ADHD</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">The exact same prefrontal cortex variations and dopamine levels that allow for incredible divergent thinking, rapid idea generation, and hyperfocus also severely impair the brain's ability to regulate attention on demand.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Puzzle className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Gifted + Autism</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">The "intense world" theory of autism suggests that extreme neural hyper-connectivity is responsible for both the individual's astonishingly advanced abilities (like savantism) and their debilitating sensory/social overloads.<sup>2</sup></p>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Geschwind, N., & Galaburda, A. M. (1987). Cerebral lateralization: Biological mechanisms, associations, and pathology. <i>MIT Press</i>.</p>
+                <p>2. Markram, K., & Markram, H. (2010). The intense world theory-A unifying theory of the neurobiology of autism. <i>Frontiers in Human Neuroscience</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Eide, B. L., & Eide, F. F. (2011). The dyslexic advantage: Unlocking the hidden potential of the dyslexic brain. <i>Hudson Street Press</i>.</li>
+                <li>Fugate, C. M., Zentall, S. S., & Gentry, M. (2013). Creativity and working memory in gifted students with and without characteristics of attention deficit hyperactive disorder. <i>Gifted Child Quarterly</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('twice-exceptional'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: THEORIES & MISCONCEPTIONS
+      ========================================== */}
+      {activeTab === 'theories' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Theories Card (Yellow) - Uses Float Image + flow-root */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Theoretical Models</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-causes-models.webp"
+              alt="Infographic visualization of asynchrony, showing gears of different sizes turning at different speeds"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Researchers use several theoretical frameworks to explain why these intense contradictions exist within a single brain.
+            </p>
+
+            <div className="grid grid-cols-1 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Layers className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">The Asynchrony Model</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Silverman's theory suggests that all gifted individuals naturally develop unevenly.<sup>1</sup> In 2e individuals, this asynchrony is simply pushed to its absolute extreme, creating vast chasms between their strengths and weaknesses.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <ShieldCheck className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Dual Differentiation</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Proposes that because the exact same neurological substrate produces *both* the gift and the disability, educators cannot separate them. The student requires accommodations for their disability simultaneously with acceleration for their gifts.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Globe className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Neurodiversity Perspective</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Views 2e as a natural variation in human neurology, rather than a broken brain. The same brain differences that create severe struggles in a standardized classroom provide massive advantages in specific real-world contexts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Myths Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Co-Occurrence & Misconceptions</h2>
+            
+            <ImageWithFallback 
+              src="/images/2e/2e-causes-myths-hero.webp"
+              alt="Magnifying glass shattering common misconceptions about 2e students being lazy"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Link className="text-[#2abcd4] w-5 h-5" /> Why Do They Co-Occur?
+                </h3>
+                <div className="space-y-3">
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                    <h4 className="text-[#0c264d] font-bold text-xs mb-1">Shared Etiology</h4>
+                    <p className="text-xs text-slate-700">The primary cause of 2e is shared biological pathways. The genetic factors that drive high intelligence inherently increase the risk for specific neurodevelopmental conditions.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                    <h4 className="text-[#0c264d] font-bold text-xs mb-1">Compensation Theory</h4>
+                    <p className="text-xs text-slate-700">Neuroplasticity allows the brain to "over-develop" intact pathways (creating a gift) to compensate for impaired pathways (a disability), though this doesn't fully explain the extreme highs of 2e.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <XCircle className="text-red-500 w-5 h-5" /> What 2e is NOT Caused By
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  The difficulties experienced by 2e students are neurologically based. They are absolutely NOT caused by:
+                </p>
+                <div className="bg-white p-3 rounded-lg border border-red-200 shadow-sm flex items-start gap-2 mb-2">
+                  <Lightbulb className="text-red-500 w-4 h-4 mt-0.5 shrink-0" />
+                  <p className="text-xs text-slate-700"><strong>Poor Parenting or Teaching:</strong> While bad environments worsen symptoms, they do not create the neurological wiring of 2e.</p>
+                </div>
+                <div className="bg-white p-3 rounded-lg border border-red-200 shadow-sm flex items-start gap-2">
+                  <Lightbulb className="text-red-500 w-4 h-4 mt-0.5 shrink-0" />
+                  <p className="text-xs text-slate-700"><strong>Laziness or Lack of Effort:</strong> The massive inconsistencies in their performance are due to genuine processing variations, not a lack of willpower or intentional underachievement.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Silverman, L. K. (1997). The construct of asynchronous development. <i>Peabody Journal of Education</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Armstrong, T. (2010). Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences. <i>Da Capo Press</i>.</li>
+                <li>Rimm, S. B. (2008). Underachievement syndrome: A national epidemic. In S. I. Pfeiffer (Ed.), <i>Handbook of giftedness in children</i>. Springer.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('twice-exceptional')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Twice-Exceptional
-        </a>
+          <span className="text-xl">←</span>
+          All About 2e
+        </button>
       </div>
+
     </article>
   );
 }

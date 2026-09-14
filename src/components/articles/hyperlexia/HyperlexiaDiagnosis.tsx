@@ -1,275 +1,400 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { FileSearch, Search, Users, ClipboardList, BookOpen, Ear, Brain, Activity, CheckCircle, Network, Eye } from 'lucide-react';
 
 interface HyperlexiaDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function HyperlexiaDiagnosis({ setCurrentArticle }: HyperlexiaDiagnosisProps) {
+export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: HyperlexiaDiagnosisProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('hyperlexia'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Hyperlexia: Testing & Diagnosing
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('hyperlexia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Hyperlexia
-        </a>
+          <span className="text-xl">←</span>
+          All About Hyperlexia
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Hyperlexia: Testing & Diagnosing
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('hyperlexia')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About Hyperlexia
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Diagnosing hyperlexia involves comprehensive evaluation of reading abilities, language development, and 
-            cognitive-communicative functioning.<sup>1</sup> Because hyperlexia is not an official DSM-5 diagnosis, 
-            assessment focuses on identifying the characteristic pattern rather than applying specific diagnostic criteria.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('process')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'process'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Evaluation Process
+        </button>
+        <button
+          onClick={() => setActiveTab('testing')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'testing'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Core Testing Areas
+        </button>
+        <button
+          onClick={() => setActiveTab('autism')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'autism'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Autism & Outcomes
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Diagnostic Challenges</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Not an Official Diagnosis</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">No DSM-5 or ICD-11 classification for hyperlexia<sup>3</sup></li>
-            <li className="mb-2">Widely recognized by clinicians but no standardized criteria</li>
-            <li className="mb-2">Described as a pattern or syndrome</li>
-            <li className="mb-2">Often diagnosed alongside autism or language disorder</li>
-          </ul>
+      {/* ==========================================
+          TAB 1: EVALUATION PROCESS
+      ========================================== */}
+      {activeTab === 'process' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Can Be Overlooked</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Reading ability may mask language difficulties<sup>4</sup></li>
-            <li className="mb-2">May be seen as "gifted" rather than having difficulties</li>
-            <li className="mb-2">Comprehension problems not always apparent early</li>
-          </ul>
-        </div>
+          {/* Challenges Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Diagnostic Challenges</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-diagnosis-challenges.webp"
+              alt="Visual representing the lack of a formal DSM-5 classification"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Diagnosing hyperlexia presents a unique set of challenges because it is not an official diagnosis in the DSM-5 or ICD-11 medical manuals. Clinicians focus on identifying the characteristic pattern rather than checking boxes on a standardized diagnostic list.
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Who Can Evaluate?</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBjaGlsZHxlbnwxfHx8fDE2NzQ1MzUyNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Doctor child"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Qualified Professionals</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Speech-language pathologists:</strong> Language and reading assessment<sup>5</sup></li>
-            <li className="mb-2"><strong>Neuropsychologists:</strong> Comprehensive cognitive-language evaluation</li>
-            <li className="mb-2"><strong>Developmental pediatricians:</strong> Medical evaluation and developmental assessment</li>
-            <li className="mb-2"><strong>Psychologists:</strong> Autism and cognitive assessment<sup>6</sup></li>
-          </ul>
-        </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <Search className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Easily Overlooked</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Early, flawless reading ability often heavily masks the child's underlying language difficulties. The child may simply be labeled "gifted," causing their severe comprehension problems to be completely missed until school demands increase.</p>
+                </div>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Assessment Components</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Case History</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Developmental history:</strong> When did child start reading? How?<sup>7</sup></li>
-            <li className="mb-2"><strong>Language development:</strong> Speech and language milestones</li>
-            <li className="mb-2"><strong>Reading behaviors:</strong> Fascination with letters, self-teaching</li>
-            <li className="mb-2"><strong>Social-communication:</strong> Social interaction patterns</li>
-            <li className="mb-2"><strong>Family history:</strong> Autism, language disorders, reading abilities</li>
-          </ul>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <FileSearch className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">A Complex Syndrome</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Because there are no standardized criteria, it is often diagnosed as a descriptive "syndrome" alongside a primary diagnosis of Autism Spectrum Disorder or Developmental Language Disorder.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Observation</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Observing child's reading behaviors<sup>8</sup></li>
-            <li className="mb-2">Social-communicative interactions</li>
-            <li className="mb-2">Play and interests</li>
-            <li className="mb-2">Response to language and questions</li>
-          </ul>
-        </div>
+          {/* Process Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Evaluation Team & Process</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-diagnosis-process-hero.webp"
+              alt="Multidisciplinary team reviewing a child's developmental history"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              A hyperlexic profile involves reading, speech, cognition, and social development. Therefore, an accurate evaluation requires a multidisciplinary team rather than a single doctor.
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Reading Assessment</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Decoding Skills</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Word reading:</strong> Standardized word reading tests<sup>9</sup></li>
-            <li className="mb-2"><strong>Pseudoword decoding:</strong> Reading nonsense words</li>
-            <li className="mb-2"><strong>Reading fluency:</strong> Speed and accuracy</li>
-            <li className="mb-2"><strong>Age comparison:</strong> Reading typically years above age level</li>
-          </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Qualified Professionals</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li><strong>Speech-Language Pathologists:</strong> Essential for mapping the gap between reading decoding and language comprehension.</li>
+                  <li><strong>Neuropsychologists:</strong> Conduct comprehensive cognitive and IQ testing to identify specific visual strengths and processing delays.</li>
+                </ul>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading Comprehension</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Comprehension tests:</strong> Understanding what was read<sup>1</sup></li>
-            <li className="mb-2"><strong>Question answering:</strong> Literal vs. inferential questions</li>
-            <li className="mb-2"><strong>Retelling:</strong> Ability to retell stories</li>
-            <li className="mb-2"><strong>Discrepancy:</strong> Comprehension significantly lower than decoding</li>
-          </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <ClipboardList className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Clinical Observation</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>The process begins with a detailed developmental history, specifically noting when and how the child learned to read.</li>
+                  <li>Clinicians observe the child's natural play, watching to see if they prefer interacting with text/letters over interacting with peers.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Common Assessment Tools</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">WRMT-III (Woodcock Reading Mastery Tests)</li>
-            <li className="mb-2">GORT-5 (Gray Oral Reading Tests)<sup>1</sup></li>
-            <li className="mb-2">TOWRE-2 (Test of Word Reading Efficiency)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Language Assessment</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Receptive Language</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Listening comprehension:</strong> Understanding spoken language<sup>2</sup></li>
-            <li className="mb-2"><strong>Following directions:</strong> Multi-step instruction following</li>
-            <li className="mb-2"><strong>Vocabulary comprehension:</strong> Understanding word meanings</li>
-            <li className="mb-2"><strong>Typical findings:</strong> Often below expected levels</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Expressive Language</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Vocabulary production</li>
-            <li className="mb-2">Sentence formulation<sup>3</sup></li>
-            <li className="mb-2">Narrative abilities</li>
-            <li className="mb-2">Conversational skills</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Language Tests</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">CELF-5 (Clinical Evaluation of Language Fundamentals)<sup>4</sup></li>
-            <li className="mb-2">PPVT-5 (Peabody Picture Vocabulary Test)</li>
-            <li className="mb-2">EVT-3 (Expressive Vocabulary Test)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Autism Screening and Evaluation</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMGFzc2Vzc21lbnR8ZW58MXx8fHwxNjc0NTM1MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Child assessment"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Autism Assessment</h3>
-          <p className="mb-4">
-            Because hyperlexia frequently co-occurs with autism, autism evaluation is important:<sup>5</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>ADOS-2:</strong> Autism Diagnostic Observation Schedule</li>
-            <li className="mb-2"><strong>ADI-R:</strong> Autism Diagnostic Interview-Revised</li>
-            <li className="mb-2"><strong>Screening tools:</strong> M-CHAT, SCQ<sup>6</sup></li>
-            <li className="mb-2"><strong>Social communication:</strong> Detailed assessment needed</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Differentiating Types</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Type 1: No autism features, good prognosis</li>
-            <li className="mb-2">Type 2: Meets full autism criteria<sup>[17]</sup></li>
-            <li className="mb-2">Type 3: Some autism features that may improve</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Cognitive Assessment</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Intelligence Testing</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Nonverbal IQ assessment<sup>[18]</sup></li>
-            <li className="mb-2">Cognitive strengths and weaknesses</li>
-            <li className="mb-2">Visual vs. verbal processing</li>
-            <li className="mb-2">Typically average or above nonverbal cognition</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Memory Assessment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Visual memory (often strong)<sup>[19]</sup></li>
-            <li className="mb-2">Verbal memory</li>
-            <li className="mb-2">Working memory</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Diagnostic Profile</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Characteristic Pattern:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li><strong>Reading decoding:</strong> Significantly advanced for age<sup>[20]</sup></li>
-              <li><strong>Reading comprehension:</strong> Below decoding level, often below age level</li>
-              <li><strong>Listening comprehension:</strong> Below expected level</li>
-              <li><strong>Language development:</strong> Delayed or disordered</li>
-              <li><strong>Social communication:</strong> Difficulties present<sup>[21]</sup></li>
-              <li><strong>Nonverbal cognition:</strong> Typically average or above</li>
-              <li><strong>Visual memory:</strong> Strength</li>
-            </ul>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (5th ed.). <i>American Psychiatric Publishing</i>.</li>
+                <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
+                <li>American Speech-Language-Hearing Association. (n.d.). Reading and writing disorders. <i>ASHA</i>.</li>
+              </ul>
+            </div>
           </div>
         </div>
+      )}
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Additional Considerations</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Medical Evaluation</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Hearing screening<sup>[22]</sup></li>
-            <li className="mb-2">Vision assessment</li>
-            <li className="mb-2">Rule out other conditions</li>
-          </ul>
+      {/* ==========================================
+          TAB 2: CORE TESTING AREAS
+      ========================================== */}
+      {activeTab === 'testing' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Longitudinal Assessment</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Reassessment over time important<sup>[23]</sup></li>
-            <li className="mb-2">Track comprehension development</li>
-            <li className="mb-2">Monitor social-communication skills</li>
-            <li className="mb-2">Determine trajectory (Type 1, 2, or 3)</li>
-          </ul>
+          {/* Reading & Language Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Reading & Language Assessment</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-diagnosis-testing.webp"
+              alt="Child reading aloud during a standardized assessment"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The primary goal of testing is to definitively document the "split" between the child's mechanical reading ability and their actual understanding of the words.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <BookOpen className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Reading Assessment</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li><strong>Decoding:</strong> Tests like the TOWRE-2 assess the ability to sound out real words and pseudowords (nonsense words), which is typically years above age level.</li>
+                    <li><strong>Comprehension:</strong> Tests like the GORT-5 measure if the child can answer inferential questions about the text, which is typically significantly lower than their decoding score.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Ear className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Spoken Language</h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
+                    <li><strong>Receptive:</strong> Assessing the child's ability to follow multi-step verbal instructions and understand vocabulary without visual cues.</li>
+                    <li><strong>Expressive:</strong> Assessing narrative abilities and conversational skills, often revealing a reliance on scripted or echoed language.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Cognitive Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Cognitive Assessment</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-diagnosis-cognitive-hero.webp"
+              alt="Visualizations of standard cognitive tests like block design"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Intelligence testing helps clinicians understand the child's underlying cognitive profile, distinguishing hyperlexia from global intellectual delays.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Brain className="text-[#0A9DC4] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">IQ Testing</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Nonverbal IQ tests are crucial because the child's verbal delays can artificially lower standard IQ scores.</li>
+                  <li>Nonverbal cognition is typically average or above average in hyperlexic profiles.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Eye className="text-[#0A9DC4] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Memory & Processing</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Assessments heavily contrast the child's visual memory (often exceptional) against their verbal and auditory working memory (often delayed).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
+                <li>Wiederholt, J. L., & Bryant, B. R. (2012). Gray Oral Reading Tests (5th ed.). <i>Pro-Ed</i>.</li>
+                <li>Wiig, E. H., Semel, E., & Secord, W. A. (2013). Clinical Evaluation of Language Fundamentals (5th ed.). <i>Pearson</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      )}
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Reporting and Diagnosis</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Diagnostic Terminology</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">May be described as "hyperlexic reading pattern"<sup>[24]</sup></li>
-            <li className="mb-2">Often diagnosed with autism and/or language disorder</li>
-            <li className="mb-2">Report should describe full profile</li>
-            <li className="mb-2">Recommendations based on individual needs</li>
-          </ul>
+      {/* ==========================================
+          TAB 3: AUTISM & OUTCOMES
+      ========================================== */}
+      {activeTab === 'autism' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Autism Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Autism Screening</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-diagnosis-autism.webp"
+              alt="Clinician conducting play-based observation for social communication"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Because hyperlexia is so heavily associated with the autism spectrum, a formal autism evaluation is almost always a required step in the diagnostic process.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Observation Tools</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Clinicians use the ADOS-2 (Autism Diagnostic Observation Schedule) to systematically evaluate social communication and play behaviors.</li>
+                  <li>They will assess if reading is being used as a repetitive, restricted interest rather than for functional communication.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Differentiating Types</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li><strong>Type 1:</strong> Cleared of autism; good prognosis.</li>
+                  <li><strong>Type 2:</strong> Meets full criteria for autism diagnosis.</li>
+                  <li><strong>Type 3:</strong> Shows autistic traits early on, requiring longitudinal tracking to see if they fade over time.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Profile & Report Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Diagnostic Profile & Report</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-diagnosis-profile-hero.webp"
+              alt="Clinical report highlighting the hyperlexic cognitive profile"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Network className="text-[#2abcd4] w-5 h-5" /> The Characteristic Pattern
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  Ultimately, clinicians look for a highly specific "spiky" profile across the test results:
+                </p>
+                <div className="space-y-3">
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm flex items-start gap-2">
+                    <CheckCircle className="text-green-600 w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">Reading decoding is significantly advanced for age.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm flex items-start gap-2">
+                    <CheckCircle className="text-red-500 w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">Reading comprehension is far below decoding level.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm flex items-start gap-2">
+                    <CheckCircle className="text-green-600 w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">Visual memory and nonverbal cognition are strong.</p>
+                  </div>
+                  <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm flex items-start gap-2">
+                    <CheckCircle className="text-red-500 w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">Spoken language and social pragmatics are delayed.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <ClipboardList className="text-[#2abcd4] w-5 h-5" /> Terminology & Reporting
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  Because hyperlexia is not in the DSM-5, the final evaluation report must carefully frame the findings for school support.
+                </p>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-3">
+                  <li>Clinicians often describe it as a "hyperlexic reading pattern" within the narrative of the report.</li>
+                  <li>It is usually attached to an official diagnosis of Autism Spectrum Disorder or Developmental Language Disorder to ensure the child legally qualifies for an IEP and school-based speech therapy.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Kupperman, P., Bligh, S., & Barouski, K. (2002). Hyperlexia. In A. M. Wetherby & B. M. Prizant (Eds.), <i>Autism spectrum disorders</i>.</li>
+                <li>Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., & Bishop, S. (2012). Autism Diagnostic Observation Schedule (2nd ed.). <i>Western Psychological Services</i>.</li>
+                <li>Nation, K., Clarke, P., Wright, B., & Williams, C. (2006). Patterns of reading ability in children with autism spectrum disorder. <i>Journal of Autism and Developmental Disorders</i>.</li>
+                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder. <i>Wisconsin Medical Society</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). "Annotation: Hyperlexia: Disability or superability?" <em>Journal of Child Psychology and Psychiatry</em>, 44(8), 1079-1091.</p>
-          <p>[2] Kupperman, P., Bligh, S., & Barouski, K. (2002). "Hyperlexia." In A. M. Wetherby & B. M. Prizant (Eds.), <em>Autism spectrum disorders</em> (pp. 357-376). Baltimore: Paul H. Brookes.</p>
-          <p>[3] American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). Arlington, VA: American Psychiatric Publishing.</p>
-          <p>[4] Nation, K. (1999). "Reading skills in hyperlexia: A developmental perspective." <em>Psychological Bulletin</em>, 125(3), 338-355.</p>
-          <p>[5] American Speech-Language-Hearing Association. (n.d.). <em>Reading and writing disorders</em>. Retrieved from www.asha.org</p>
-          <p>[6] Wiederholt, J. L., & Bryant, B. R. (2012). <em>Gray Oral Reading Tests</em> (5th ed.). Austin, TX: Pro-Ed.</p>
-          <p>[7] Wiig, E. H., Semel, E., & Secord, W. A. (2013). <em>Clinical Evaluation of Language Fundamentals</em> (5th ed.). San Antonio, TX: Pearson.</p>
-          <p>[8] Nation, K., Clarke, P., Wright, B., & Williams, C. (2006). "Patterns of reading ability in children with autism spectrum disorder." <em>Journal of Autism and Developmental Disorders</em>, 36(7), 911-919.</p>
-          <p>[9] Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., & Bishop, S. (2012). <em>Autism Diagnostic Observation Schedule</em> (2nd ed.). Torrance, CA: Western Psychological Services.</p>
-          <p>[10] Treffert, D. A. (2011). "Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder." <em>Wisconsin Medical Society</em>.</p>
-        </div>
-      </section>
-
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('hyperlexia'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('hyperlexia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Hyperlexia
-        </a>
+          <span className="text-xl">←</span>
+          All About Hyperlexia
+        </button>
       </div>
+
     </article>
   );
 }

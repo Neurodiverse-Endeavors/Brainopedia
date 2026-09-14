@@ -1,274 +1,382 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { BookOpen, MessageSquare, Users, Heart, GraduationCap, Building, Briefcase, FileText, Network, Brain, Lightbulb, CheckCircle } from 'lucide-react';
 
 interface HyperlexiaLivingProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function HyperlexiaLiving({ setCurrentArticle }: HyperlexiaLivingProps) {
+export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLivingProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'daily');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('hyperlexia'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Living with Hyperlexia
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('hyperlexia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Hyperlexia
-        </a>
+          <span className="text-xl">←</span>
+          All About Hyperlexia
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Living with Hyperlexia
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('hyperlexia')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About Hyperlexia
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Living with hyperlexia involves navigating the unique combination of exceptional reading skills alongside 
-            language comprehension and social challenges.<sup>1</sup> Outcomes vary significantly depending on the 
-            type of hyperlexia and presence of autism or other conditions.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('daily')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'daily'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Daily Life & Social
+        </button>
+        <button
+          onClick={() => setActiveTab('career')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'career'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Education & Career
+        </button>
+        <button
+          onClick={() => setActiveTab('wellbeing')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'wellbeing'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Well-being & Advocacy
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Daily Life with Hyperlexia</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMHJlYWRpbmd8ZW58MXx8fHwxNjc0NTM1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Child reading"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading as Central Interest</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Love of reading:</strong> Books and text remain important throughout life<sup>3</sup></li>
-            <li className="mb-2"><strong>Comfort activity:</strong> Reading as calming or self-regulation</li>
-            <li className="mb-2"><strong>Learning through reading:</strong> Prefer visual learning modality</li>
-            <li className="mb-2"><strong>Career implications:</strong> May gravitate toward text-based work</li>
-          </ul>
+      {/* ==========================================
+          TAB 1: DAILY LIFE & SOCIAL
+      ========================================== */}
+      {activeTab === 'daily' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Communication Challenges</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Ongoing language comprehension difficulties<sup>4</sup></li>
-            <li className="mb-2">May prefer written to verbal communication</li>
-            <li className="mb-2">Difficulty with complex spoken language</li>
-            <li className="mb-2">Misunderstandings in conversations</li>
-          </ul>
-        </div>
+          {/* Daily Life Card (Cyan) - Uses Float Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Navigating Daily Life</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-living-daily.webp"
+              alt="Person finding comfort in reading in a busy environment"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Living with hyperlexia involves a unique balancing act: navigating the daily challenges of auditory processing and language comprehension while relying on an extraordinary, lifelong gift for visual decoding.
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Educational Journey</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Early School Years</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Reading standout:</strong> Obvious reading ability draws attention<sup>5</sup></li>
-            <li className="mb-2"><strong>Hidden struggles:</strong> Comprehension difficulties may not be recognized</li>
-            <li className="mb-2"><strong>Social challenges:</strong> Difficulty connecting with peers</li>
-            <li className="mb-2"><strong>Need support:</strong> Despite appearing advanced</li>
-          </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <BookOpen className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Reading as a Core Interest</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Books and text often remain a central part of life. For many, reading is not just a way to learn—it is a vital tool for self-regulation, comfort, and escaping sensory or social overwhelm.</p>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Upper Elementary and Beyond</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Comprehension gap becomes more problematic<sup>6</sup></li>
-            <li className="mb-2">Academic challenges increase with complexity</li>
-            <li className="mb-2">Reading remains a strength to leverage</li>
-            <li className="mb-2">Accommodations and support continue to be needed</li>
-          </ul>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
+                <MessageSquare className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Communication Hurdles</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Individuals often prefer written communication over verbal exchanges. Fast-paced spoken conversations can cause misunderstandings, requiring the individual to actively ask for clarification or repetition.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Higher Education</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Many individuals attend college<sup>7</sup></li>
-            <li className="mb-2">Disability services for comprehension support</li>
-            <li className="mb-2">Choose majors emphasizing reading over oral communication</li>
-            <li className="mb-2">Success with appropriate accommodations</li>
-          </ul>
-        </div>
+          {/* Relationships Card (Yellow) - Uses Hero Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social Relationships</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-living-relationships-hero.webp"
+              alt="Friends connecting through a shared text-based interest"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Socializing can be exhausting when you naturally miss nonverbal cues or struggle to process complex spoken language. Building a fulfilling social life often means finding communities that share your communication style.
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Social Relationships</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Friendships</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Social challenges persist:</strong> Difficulty with social communication<sup>8</sup></li>
-            <li className="mb-2"><strong>Finding like-minded peers:</strong> Connect through shared reading interests</li>
-            <li className="mb-2"><strong>Book clubs and reading groups:</strong> Natural social settings</li>
-            <li className="mb-2"><strong>Online communities:</strong> Text-based interaction may be easier</li>
-          </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Building Friendships</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Connecting through shared, structured interests (like book clubs or gaming) rather than unstructured socializing.</li>
+                  <li>Many individuals find deep connection in online communities where text-based interaction removes the pressure of spoken conversation.</li>
+                </ul>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Family Dynamics</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Family understanding crucial<sup>9</sup></li>
-            <li className="mb-2">Using written communication at home helpful</li>
-            <li className="mb-2">Appreciating reading strengths while supporting weaknesses</li>
-          </ul>
-        </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
+                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Family Dynamics</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Educating family members to use written communication (like texts or lists) for important information rather than relying on verbal instructions.</li>
+                  <li>Fostering an environment that appreciates the individual's reading strengths while supporting their social fatigue.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Career and Employment</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3cml0aW5nJTIwd29ya3xlbnwxfHx8fDE2NzQ1MzUyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Writing work"
-            className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Leveraging Reading Strength</h3>
-          <p className="mb-4">
-            Career paths that utilize reading ability:<sup>1</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Writing and editing:</strong> Working with text</li>
-            <li className="mb-2"><strong>Research:</strong> Reading-intensive work</li>
-            <li className="mb-2"><strong>Library science:</strong> Books and information</li>
-            <li className="mb-2"><strong>Data analysis:</strong> Reading and interpreting information</li>
-            <li className="mb-2"><strong>Technical fields:</strong> Reading manuals and technical documents</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Workplace Considerations</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Jobs with written rather than extensive verbal communication<sup>1</sup></li>
-            <li className="mb-2">Accommodations for comprehension if needed</li>
-            <li className="mb-2">Email and written communication preferred</li>
-            <li className="mb-2">Independent work vs. highly social roles</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Outcomes by Type</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Type 1: Neurotypical Hyperlexia</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Excellent prognosis:</strong> Comprehension typically catches up<sup>2</sup></li>
-            <li className="mb-2"><strong>Reading remains strength:</strong> May pursue reading-related careers</li>
-            <li className="mb-2"><strong>Social skills develop:</strong> No ongoing social difficulties</li>
-            <li className="mb-2"><strong>Successful outcomes:</strong> Often excel academically and professionally</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Type 2: Hyperlexia with Autism</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Variable outcomes:</strong> Similar to autism spectrum outcomes<sup>3</sup></li>
-            <li className="mb-2"><strong>Ongoing support needs:</strong> Language and social support continue</li>
-            <li className="mb-2"><strong>Reading as advantage:</strong> Can be leveraged for learning and career</li>
-            <li className="mb-2"><strong>Individual variation:</strong> Wide range of functioning levels</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Type 3: Improving Over Time</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Significant improvement:</strong> Language and social skills develop<sup>4</sup></li>
-            <li className="mb-2"><strong>May not meet autism criteria later:</strong> Early concerns diminish</li>
-            <li className="mb-2"><strong>Better outcomes:</strong> Than Type 2</li>
-            <li className="mb-2"><strong>Reading remains strength:</strong> Can be asset throughout life</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Self-Advocacy and Understanding</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Understanding Your Profile</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Knowing strengths:</strong> Exceptional reading ability<sup>5</sup></li>
-            <li className="mb-2"><strong>Recognizing challenges:</strong> Comprehension and communication difficulties</li>
-            <li className="mb-2"><strong>Self-awareness:</strong> Understanding how hyperlexia affects you</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Advocating for Needs</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Requesting written information and instructions</li>
-            <li className="mb-2">Asking for clarification when needed<sup>6</sup></li>
-            <li className="mb-2">Communicating accommodation needs</li>
-            <li className="mb-2">Using reading strength in learning and work</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Positive Aspects</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Reading as Lifelong Gift</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Love of reading:</strong> Brings joy and fulfillment<sup>[17]</sup></li>
-            <li className="mb-2"><strong>Learning tool:</strong> Can learn almost anything through reading</li>
-            <li className="mb-2"><strong>Career asset:</strong> Advantage in many professions</li>
-            <li className="mb-2"><strong>Coping mechanism:</strong> Reading as comfort and escape</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Unique Perspective</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Unique way of processing information</li>
-            <li className="mb-2">Strong visual-textual memory<sup>[18]</sup></li>
-            <li className="mb-2">Attention to detail in written material</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Challenges to Navigate</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Ongoing Difficulties</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Language comprehension may remain challenging<sup>[19]</sup></li>
-            <li className="mb-2">Social communication difficulties</li>
-            <li className="mb-2">Need for accommodations in various settings</li>
-            <li className="mb-2">Misunderstanding by others who focus on reading ability</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Hope and Success</h2>
-          
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Keys to Thriving:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li><strong>Use reading strength:</strong> Leverage in all areas of life<sup>[20]</sup></li>
-              <li><strong>Build on interests:</strong> Pursue reading-related passions</li>
-              <li><strong>Get support for challenges:</strong> Address comprehension and social needs</li>
-              <li><strong>Find understanding people:</strong> Those who appreciate whole person</li>
-              <li><strong>Accommodate needs:</strong> Use tools and strategies that help<sup>[21]</sup></li>
-              <li><strong>Accept yourself:</strong> Hyperlexia is part of who you are</li>
-              <li><strong>Connect with others:</strong> Find community and support</li>
-              <li><strong>Keep learning:</strong> Use reading to continue growing<sup>[22]</sup></li>
-            </ul>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
+                <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
+                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder. <i>Wisconsin Medical Society</i>.</li>
+              </ul>
+            </div>
           </div>
         </div>
+      )}
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Looking Forward</h2>
-          
-          <p className="mb-4">
-            Living with hyperlexia brings both challenges and unique strengths. While language comprehension and 
-            social communication may remain areas of difficulty, the exceptional reading ability is a genuine gift 
-            that can be leveraged throughout life.<sup>[23]</sup> With appropriate support, understanding, and 
-            self-advocacy, individuals with hyperlexia can lead fulfilling, successful lives doing what they love—
-            reading, learning, and sharing knowledge.<sup>[24]</sup>
-          </p>
+      {/* ==========================================
+          TAB 2: EDUCATION & CAREER
+      ========================================== */}
+      {activeTab === 'career' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Educational Journey Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Educational Journey</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-living-education.webp"
+              alt="Student navigating campus with visual and written accommodations"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              The academic journey for a hyperlexic student is complex. While they may be the "star reader" in kindergarten, the gap between their flawless decoding and their actual reading comprehension becomes a major hurdle in upper elementary school.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <GraduationCap className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Early Years</h3>
+                </div>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Incredible reading ability often masks deep comprehension struggles, meaning they may not get the IEP support they actually need until the work becomes abstract.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Building className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Higher Education</h3>
+                </div>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                  <li>Many individuals successfully attend college by registering early with Disability Services to secure comprehension support.</li>
+                  <li>Success often comes from choosing majors that emphasize heavy reading and data over oral communication or abstract philosophy.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Employment Card (Slate) - Uses Hero Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Employment & Trajectories</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-living-career-hero.webp"
+              alt="Professional excelling in a text-heavy career"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Briefcase className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Suitable Career Paths</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Careers that utilize intense reading ability and visual memory are ideal. Many excel in writing, editing, library science, tech/data analysis, or fields requiring the review of heavy technical manuals.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <FileText className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Workplace Strategies</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Success in the workplace means requesting accommodations: relying on email over meetings, asking for written instructions rather than verbal off-the-cuff directions, and choosing independent roles over highly social ones.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Network className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Outcomes by Type</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Trajectory depends on the profile. Type 1 & 3 individuals often see comprehension catch up entirely. Type 2 individuals (with Autism) may need ongoing social support but can highly leverage their reading for career success.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Nation, K., Clarke, P., Wright, B., & Williams, C. (2006). Patterns of reading ability in children with autism spectrum disorder. <i>Journal of Autism and Developmental Disorders</i>.</li>
+                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder. <i>Wisconsin Medical Society</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Nation, K. (1999). "Reading skills in hyperlexia: A developmental perspective." <em>Psychological Bulletin</em>, 125(3), 338-355.</p>
-          <p>[2] Treffert, D. A. (2011). "Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder." <em>Wisconsin Medical Society</em>.</p>
-          <p>[3] Kupperman, P., Bligh, S., & Barouski, K. (2002). "Hyperlexia." In A. M. Wetherby & B. M. Prizant (Eds.), <em>Autism spectrum disorders</em> (pp. 357-376). Baltimore: Paul H. Brookes.</p>
-          <p>[4] Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). "Annotation: Hyperlexia: Disability or superability?" <em>Journal of Child Psychology and Psychiatry</em>, 44(8), 1079-1091.</p>
-          <p>[5] Nation, K., Clarke, P., Wright, B., & Williams, C. (2006). "Patterns of reading ability in children with autism spectrum disorder." <em>Journal of Autism and Developmental Disorders</em>, 36(7), 911-919.</p>
+      {/* ==========================================
+          TAB 3: WELL-BEING & ADVOCACY
+      ========================================== */}
+      {activeTab === 'wellbeing' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Self-Advocacy Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Self-Advocacy & Understanding</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-living-advocacy.webp"
+              alt="Individual confidently requesting written instructions to support their needs"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Because hyperlexia is often misunderstood (even by medical professionals), learning to become your own advocate is an essential life skill. 
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <Brain className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Understanding Your Profile</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">It starts with deep self-awareness. Recognizing that your extraordinary reading ability is paired with genuine comprehension and auditory roadblocks helps remove shame and guilt from misunderstandings.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <MessageSquare className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Communicating Needs</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Practice explicitly asking for what you need. Phrases like, "I process information much better when I can read it—could you email me those instructions?" are powerful tools for self-advocacy.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Strengths Card (Cyan) - Uses Hero Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Strengths & Lifelong Success</h2>
+            
+            <ImageWithFallback 
+              src="/images/hyperlexia/hyperlexia-living-success-hero.webp"
+              alt="Empowering visual of a thriving individual embracing their unique reading gift"
+              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              While language and social nuances may always require conscious effort, the exceptional ability to decode and retain written information is a profound, lifelong gift.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <BookOpen className="text-[#0A9DC4] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">The Gift of Reading</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li><strong>A Learning Tool:</strong> With the right supports, an individual with hyperlexia can learn to master almost any subject through text.</li>
+                  <li><strong>A Coping Mechanism:</strong> Reading provides a lifelong, healthy avenue for comfort, regulation, and escape when the world feels overwhelming.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-3 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <CheckCircle className="text-[#0A9DC4] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Keys to Thriving</h3>
+                </div>
+                <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                  <li>Focus relentlessly on your strengths rather than obsessing over limitations.</li>
+                  <li>Utilize accommodations without apology—they level the playing field.</li>
+                  <li>Find your community: surround yourself with people who appreciate your unique perspective and straightforward communication style.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Kupperman, P., Bligh, S., & Barouski, K. (2002). Hyperlexia. In A. M. Wetherby & B. M. Prizant (Eds.), <i>Autism spectrum disorders</i>.</li>
+                <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('hyperlexia'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('hyperlexia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Hyperlexia
-        </a>
+          <span className="text-xl">←</span>
+          All About Hyperlexia
+        </button>
       </div>
+
     </article>
   );
 }
