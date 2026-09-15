@@ -1,571 +1,417 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Eye, Ear, Heart, AlertTriangle, Users, Home, GraduationCap, Briefcase, Zap, Laptop, Clock, ShieldCheck, Compass, CheckCircle, Baby, MessageSquare } from 'lucide-react';
 
 interface APDLivingProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function APDLiving({ setCurrentArticle }: APDLivingProps) {
+export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'life');
+
   return (
-    <article className="max-w-6xl">
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* GLOBAL STYLE FOR CITATIONS */}
       <style>
         {`
           sup {
             color: #10b981;
+            font-weight: bold;
+            margin-left: 2px;
           }
         `}
       </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('apd'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Living with APD
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('apd')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Auditory Processing Disorder
-        </a>
+          <span className="text-xl">←</span>
+          All About APD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Living with Auditory Processing Disorder
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('apd')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About APD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Living with Auditory Processing Disorder presents unique challenges across settings and life stages, 
-            but with understanding, appropriate support, and effective strategies, individuals with APD can thrive.<sup>1</sup> 
-            Success involves acknowledging both challenges and strengths while developing personalized approaches 
-            for navigating an auditory world.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('life')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'life'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Life & Relationships
+        </button>
+        <button
+          onClick={() => setActiveTab('work')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'work'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Work & Strategies
+        </button>
+        <button
+          onClick={() => setActiveTab('future')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'future'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Lifespan & Community
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Daily Life Challenges</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYWlseSUyMGxpZmV8ZW58MXx8fHwxNjc0NTM1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Daily life activities"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Communication in Everyday Situations</h3>
-          <p className="mb-4">
-            Routine communication tasks others take for granted can be exhausting with APD.<sup>3</sup> Phone 
-            conversations without visual cues are particularly challenging.<sup>4</sup> Drive-through ordering, 
-            announcements in stores, and crowded social gatherings all present difficulties.<sup>5</sup>
-          </p>
+      {/* ==========================================
+          TAB 1: LIFE & RELATIONSHIPS
+      ========================================== */}
+      {activeTab === 'life' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">The Invisible Challenge</h3>
-          <p className="mb-4">
-            APD is invisible—there's no outward sign of difficulty.<sup>6</sup> People may misinterpret 
-            challenges as rudeness ("Why aren't you listening?"), lack of intelligence, or willful inattention.<sup>7</sup> 
-            Explaining the condition repeatedly becomes necessary but tiring.<sup>8</sup>
-          </p>
+          {/* Daily Life Card (Cyan) - Uses Float Image with organic text flow */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Life & Emotional Impact</h2>
+            
+            <ImageWithFallback 
+              src="/images/apd/apd-living-daily.webp"
+              alt="Person experiencing listening fatigue, visually separating from a noisy environment"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Routine communication tasks that others take for granted can be exhausting with APD. Because it is completely invisible, the daily friction of navigating an auditory world takes a heavy emotional toll.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Listening Fatigue</h3>
-          <p className="mb-4">
-            The constant cognitive effort required to process auditory information leads to exhaustion.<sup>9</sup> 
-            By day's end, individuals may have depleted capacity for listening or conversation.<sup>1</sup> 
-            This isn't laziness—it's genuine neurological fatigue.<sup>1</sup>
-          </p>
+            <div className="mb-5">
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <AlertTriangle className="text-[#0A9DC4] w-5 h-5" /> The Invisible Challenge
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                People frequently misinterpret APD challenges as rudeness, lack of intelligence, or willful inattention. Constantly having to explain your neurological profile to strangers or peers becomes incredibly tiring.
+              </p>
+            </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Misunderstandings</h3>
-          <p className="mb-4">
-            Missing parts of conversations leads to confusion, inappropriate responses, or appearing disengaged.<sup>2</sup> 
-            People may think someone with APD isn't interested or isn't paying attention when they're actually 
-            working hard to process what's being said.<sup>3</sup>
-          </p>
-        </div>
+            <div className="mb-5">
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <Zap className="text-[#0A9DC4] w-5 h-5" /> Listening Fatigue
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                The constant, hyper-active cognitive effort required to simply process basic auditory information leads to severe exhaustion. By the end of the day, this depletion is not laziness—it is genuine neurological fatigue.
+              </p>
+            </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">School Experiences</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">The Classroom Challenge</h3>
-          <p className="mb-4">
-            Traditional lecture-based classrooms are optimized for auditory learning—exactly what's difficult 
-            with APD.<sup>4</sup> Background noise from classmates, HVAC systems, or hallways compounds 
-            challenges.<sup>5</sup> By the time information is processed, the teacher has moved on.<sup>6</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Academic Impacts</h3>
-          <p className="mb-4">
-            Students with APD often struggle with subjects requiring extensive listening—lectures, foreign 
-            languages, or verbal problem-solving.<sup>[17]</sup> Reading and spelling difficulties may arise from 
-            phonological processing deficits.<sup>[18]</sup> Test scores may underestimate actual knowledge when 
-            tests rely on verbal instructions.<sup>[19]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Challenges at School</h3>
-          <p className="mb-4">
-            Cafeterias, playgrounds, and hallways are noisy environments where conversation is difficult.<sup>[20]</sup> 
-            Missing jokes, misunderstanding social cues, or needing repetition can affect peer relationships.<sup>[21]</sup> 
-            Some students withdraw from social situations that are too challenging.<sup>[22]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Self-Esteem and Confidence</h3>
-          <p className="mb-4">
-            Repeated struggles and misunderstandings can erode self-esteem.<sup>[23]</sup> Students may internalize 
-            messages that they're "not trying hard enough" or "not smart enough."<sup>[24]</sup> Diagnosis and 
-            understanding help, but emotional impacts may linger.<sup>[25]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Relationships and Social Life</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmllbmRzJTIwdGFsa2luZ3xlbnwxfHx8fDE2NzQ1MzUyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Friends talking"
-            className="w-72 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Navigating Friendships</h3>
-          <p className="mb-4">
-            Building and maintaining friendships requires communication—an area of challenge with APD.<sup>[26]</sup> 
-            Group conversations are particularly difficult as multiple voices overlap.<sup>[27]</sup> Close one-on-one 
-            friendships in quiet settings may feel more comfortable than large social groups.<sup>[28]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Dating and Romantic Relationships</h3>
-          <p className="mb-4">
-            Dating often involves challenging listening situations—restaurants, movies, parties.<sup>[29]</sup> 
-            Phone conversations and miscommunications can create difficulties.<sup>[30]</sup> Partners need to 
-            understand APD and adapt communication accordingly.<sup>[31]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Family Dynamics</h3>
-          <p className="mb-4">
-            Family members may struggle to understand why someone "hears when they want to" or seems to ignore 
-            them.<sup>[32]</sup> Education about APD helps families develop patience and appropriate communication 
-            strategies.<sup>[33]</sup> Family support is crucial for positive outcomes.<sup>[34]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Activities and Events</h3>
-          <p className="mb-4">
-            Parties, concerts, sporting events, and other group activities present significant challenges.<sup>[35]</sup> 
-            Individuals with APD may avoid these situations or find them exhausting.<sup>[36]</sup> Choosing 
-            quieter social options isn't antisocial—it's practical accommodation.<sup>[37]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Work and Career Considerations</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Workplace Challenges</h3>
-          <p className="mb-4">
-            Open office environments with background noise and multiple conversations are particularly difficult.<sup>[38]</sup> 
-            Meetings, especially large ones or those with poor acoustics, strain auditory processing.<sup>[39]</sup> 
-            Phone conferences without visual cues compound challenges.<sup>[40]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Career Selection</h3>
-          <p className="mb-4">
-            Some careers are better suited to individuals with APD than others.<sup>[41]</sup> Jobs emphasizing 
-            visual or hands-on skills, allowing quiet work environments, or minimizing auditory demands may be 
-            good fits.<sup>[42]</sup> This doesn't mean capabilities are limited—it means playing to strengths.<sup>[43]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Workplace Accommodations</h3>
-          <p className="mb-4">
-            Reasonable accommodations can enable success: quiet workspaces, written communication when possible, 
-            meeting agendas in advance, and permission to record meetings.<sup>[44]</sup> Remote work arrangements 
-            may significantly improve functioning.<sup>[45]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Disclosure Decisions</h3>
-          <p className="mb-4">
-            Whether to disclose APD to employers is a personal decision.<sup>[46]</sup> Disclosure can secure 
-            accommodations but may involve stigma concerns.<sup>[47]</sup> Some choose strategic partial disclosure; 
-            others are fully open.<sup>[48]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Emotional and Psychological Impact</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Frustration and Anxiety</h3>
-          <p className="mb-4">
-            Constant communication challenges create frustration.<sup>[49]</sup> Anxiety about missing important 
-            information, appearing incompetent, or social embarrassment is common.<sup>[50]</sup> Some individuals 
-            develop anticipatory anxiety about challenging listening situations.<sup>[51]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Depression and Isolation</h3>
-          <p className="mb-4">
-            Chronic struggles and social difficulties can contribute to depression.<sup>[52]</sup> Some individuals 
-            withdraw from social activities to avoid challenges, leading to isolation.<sup>[53]</sup> Mental health 
-            support may be beneficial.<sup>[54]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Identity and Self-Concept</h3>
-          <p className="mb-4">
-            APD shapes identity and self-understanding.<sup>[55]</sup> Some embrace it as part of neurodiversity; 
-            others view it primarily as a challenge to overcome.<sup>[56]</sup> Diagnosis often provides relief 
-            and explanation for longstanding difficulties.<sup>[57]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Resilience and Coping</h3>
-          <p className="mb-4">
-            Many individuals with APD develop remarkable resilience and coping skills.<sup>[58]</sup> Learning 
-            to advocate for needs, develop workarounds, and persist despite challenges builds strength.<sup>[59]</sup> 
-            These skills serve well beyond managing APD.<sup>[60]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Practical Strategies for Daily Living</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbGFubmluZyUyMHN0cmF0ZWd5fGVufDF8fHx8MTY3NDUzNTI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Planning and strategy"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Communication Strategies</h3>
-          <p className="mb-4">
-            Advocating for needs is essential: asking people to face you when speaking, requesting quieter 
-            conversation locations, or asking for information in writing.<sup>[61]</sup> Being direct about needs 
-            prevents misunderstandings.<sup>[62]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Environmental Management</h3>
-          <p className="mb-4">
-            When possible, control the listening environment: choosing quiet restaurants, sitting away from 
-            noise sources, or scheduling important conversations during quiet times.<sup>[63]</sup> Small 
-            environmental adjustments make significant differences.<sup>[64]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Technology Use</h3>
-          <p className="mb-4">
-            Technology assists in many ways: captioning apps for conversations, noise-canceling headphones, 
-            voice-to-text for phone conversations, and recording important information.<sup>[65]</sup> Email and 
-            text messaging reduce reliance on phone conversations.<sup>[66]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Energy Management</h3>
-          <p className="mb-4">
-            Recognizing and managing listening fatigue is important.<sup>[67]</sup> Building in breaks, limiting 
-            challenging listening situations, and prioritizing rest prevents burnout.<sup>[68]</sup> It's okay 
-            to decline activities when depleted.<sup>[69]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Memory Supports</h3>
-          <p className="mb-4">
-            External memory aids compensate for auditory memory difficulties: written notes, phone reminders, 
-            calendar systems, and to-do lists.<sup>[70]</sup> Don't rely on memory for important information—write 
-            it down.<sup>[71]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Strengths and Abilities</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Visual Processing Strengths</h3>
-          <p className="mb-4">
-            Many individuals with APD excel at visual processing.<sup>[72]</sup> Careers and activities emphasizing 
-            visual skills—art, design, architecture, engineering, computer programming—may be strengths.<sup>[73]</sup> 
-            Visual learning strategies support academic success.<sup>[74]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Detail Orientation and Focus</h3>
-          <p className="mb-4">
-            Some individuals with APD develop strong focus and attention to detail from constantly working to 
-            process information accurately.<sup>[75]</sup> These skills transfer to many contexts.<sup>[76]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Problem-Solving and Creativity</h3>
-          <p className="mb-4">
-            Developing workarounds for auditory challenges often requires creative problem-solving.<sup>[77]</sup> 
-            These skills benefit many areas of life.<sup>[78]</sup> Thinking differently about problems can lead 
-            to innovative solutions.<sup>[79]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Empathy and Understanding</h3>
-          <p className="mb-4">
-            Experiencing challenges can build empathy for others facing difficulties.<sup>[80]</sup> Many 
-            individuals with APD develop strong advocacy skills and sensitivity to accessibility needs.<sup>[81]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Life Across Different Ages</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Early Childhood</h3>
-          <p className="mb-4">
-            Young children with APD may struggle with following directions, learning songs, or understanding 
-            stories read aloud.<sup>[82]</sup> Early intervention supports language and auditory skill development.<sup>[83]</sup> 
-            Parent education helps families support their child effectively.<sup>[84]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">School-Age Years</h3>
-          <p className="mb-4">
-            Academic and social demands increase during school years.<sup>[85]</sup> Appropriate accommodations 
-            and support are crucial for success.<sup>[86]</sup> Developing self-advocacy skills empowers children 
-            to communicate their needs.<sup>[87]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Adolescence</h3>
-          <p className="mb-4">
-            Teenagers face complex social dynamics and increased academic rigor.<sup>[88]</sup> Identity development 
-            includes integrating APD into self-concept.<sup>[89]</sup> Planning for post-secondary education or 
-            careers requires considering APD's impacts.<sup>[90]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Adulthood</h3>
-          <p className="mb-4">
-            Adults with APD continue experiencing challenges but often have developed effective compensation 
-            strategies.<sup>[91]</sup> Career choices, relationships, and lifestyle can be structured to minimize 
-            difficulties.<sup>[92]</sup> Self-advocacy and environmental control become more feasible.<sup>[93]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Older Adulthood</h3>
-          <p className="mb-4">
-            Age-related hearing changes may compound APD challenges.<sup>[94]</sup> However, a lifetime of 
-            compensation strategies helps.<sup>[95]</sup> Maintaining social connections despite communication 
-            challenges benefits cognitive and emotional health.<sup>[96]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Success Stories and Role Models</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWNjZXNzJTIwdGVhbXxlbnwxfHx8fDE2NzQ1MzUyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Success and achievement"
-            className="w-72 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Academic Success</h3>
-          <p className="mb-4">
-            Many individuals with APD succeed academically through appropriate accommodations and determination.<sup>[97]</sup> 
-            College students with APD can thrive with disability services support.<sup>[98]</sup> Graduate degrees 
-            and professional programs are achievable.<sup>[99]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Career Achievement</h3>
-          <p className="mb-4">
-            APD doesn't limit career potential when individuals find good matches between their abilities and 
-            job requirements.<sup>[100]</sup> Success spans diverse fields including STEM, arts, trades, and 
-            business.<sup>[101]</sup> Strategic career choices and accommodations enable achievement.<sup>[102]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Personal Fulfillment</h3>
-          <p className="mb-4">
-            Beyond academic and career success, individuals with APD lead fulfilling lives with meaningful 
-            relationships, hobbies, and contributions.<sup>[103]</sup> APD is one aspect of identity, not its 
-            totality.<sup>[104]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Advocacy and Support Communities</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Connecting with Others</h3>
-          <p className="mb-4">
-            Finding others with similar experiences reduces isolation and provides practical insights.<sup>[105]</sup> 
-            Online communities, support groups, and advocacy organizations offer connection and resources.<sup>[106]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Self-Advocacy</h3>
-          <p className="mb-4">
-            Learning to advocate effectively for accommodations and needs is empowering.<sup>[107]</sup> This 
-            includes understanding rights, communicating needs clearly, and knowing what helps.<sup>[108]</sup> 
-            Self-advocacy skills develop over time with practice.<sup>[109]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Raising Awareness</h3>
-          <p className="mb-4">
-            Individuals with APD and families can help educate others about the condition.<sup>[110]</sup> Raising 
-            awareness in schools, workplaces, and communities improves understanding and support.<sup>[111]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Looking Forward: Hope and Progress</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Improving Understanding</h3>
-          <p className="mb-4">
-            Research continues advancing understanding of APD's neurological basis and effective interventions.<sup>[112]</sup> 
-            Better assessment tools and evidence-based treatments are emerging.<sup>[113]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Technology Advances</h3>
-          <p className="mb-4">
-            Improving assistive technology—better speech-to-text, noise-canceling devices, and remote microphone 
-            systems—supports individuals with APD.<sup>[114]</sup> Future innovations will likely provide even 
-            more helpful tools.<sup>[115]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Growing Awareness</h3>
-          <p className="mb-4">
-            Increasing awareness of APD in educational and medical communities improves access to diagnosis and 
-            support.<sup>[116]</sup> More professionals are trained in APD assessment and management.<sup>[117]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Individual Growth</h3>
-          <p className="mb-4">
-            Individuals continue developing compensation strategies throughout life.<sup>[118]</sup> What's 
-            challenging at one age may become more manageable with maturity, experience, and effective strategies.<sup>[119]</sup> 
-            Growth and adaptation are ongoing.<sup>[120]</sup>
-          </p>
-
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6 mt-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Living Well with APD:</h3>
-            <div className="text-sm">
-              <p>
-                Living with APD involves real challenges—communication difficulties, listening fatigue, social 
-                complexities, and academic or workplace obstacles.<sup>[121]</sup> However, with understanding, 
-                appropriate support, effective strategies, and playing to strengths, individuals with APD can 
-                and do thrive.<sup>[122]</sup> Success requires acknowledging both challenges and abilities, 
-                developing personalized accommodations, and building resilience.<sup>[123]</sup> APD is part 
-                of the diverse spectrum of human neurology—different, but not deficient.<sup>[124]</sup> With 
-                the right support and self-understanding, individuals with APD can lead fulfilling, successful 
-                lives while navigating an auditory world in their own way.<sup>[125]</sup>
+            <div>
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <Heart className="text-[#0A9DC4] w-5 h-5" /> Emotional Toll
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Chronic struggles and the anxiety of missing important information often contribute to depression. Many individuals withdraw from social activities to avoid the embarrassment of communication breakdowns.
               </p>
             </div>
           </div>
-        </div>
-      </div>
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[2] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[3] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[4] Smoski, W. J., Brunt, M. A., & Tannahill, J. C. (1998). "Children's Auditory Performance Scale." <em>Educational Audiology Association</em>.</p>
-          <p>[5] Anderson, K. L., & Smaldino, J. J. (2000). "Children's home inventory for listening difficulties (CHILD)." <em>Educational Audiology Review</em>, 17(3), 3-4.</p>
-          <p>[6] Hind, S. (2006). "Survey of care pathway for auditory processing disorder." <em>Audiological Medicine</em>, 4(1), 12-24.</p>
-          <p>[7] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[8] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[9] Hornsby, B. W., Naylor, G., & Bess, F. H. (2016). "A taxonomy of fatigue concepts and their relation to hearing loss." <em>Ear and Hearing</em>, 37, 136S-144S.</p>
-          <p>[10] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[11] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[12] Bellis, T. J., & Ferre, J. M. (1999). "Multidimensional approach to the differential diagnosis of central auditory processing disorders in children." <em>Journal of the American Academy of Audiology</em>, 10(6), 319-328.</p>
-          <p>[13] Smoski, W. J., Brunt, M. A., & Tannahill, J. C. (1998). "Children's Auditory Performance Scale." <em>Educational Audiology Association</em>.</p>
-          <p>[14] Sharma, M., Purdy, S. C., & Kelly, A. S. (2009). "Comorbidity of auditory processing, language, and reading disorders." <em>Journal of Speech, Language, and Hearing Research</em>, 52(3), 706-722.</p>
-          <p>[15] Crandell, C. C., & Smaldino, J. J. (2000). "Classroom acoustics for children with normal hearing and with hearing impairment." <em>Language, Speech, and Hearing Services in Schools</em>, 31(4), 362-370.</p>
-          <p>[16] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[17] Sharma, M., Purdy, S. C., & Kelly, A. S. (2009). "Comorbidity of auditory processing, language, and reading disorders." <em>Journal of Speech, Language, and Hearing Research</em>, 52(3), 706-722.</p>
-          <p>[18] Tallal, P. (1980). "Auditory temporal perception, phonics, and reading disabilities in children." <em>Brain and Language</em>, 9(2), 182-198.</p>
-          <p>[19] Keith, R. W. (2000). "Development and standardization of SCAN-C Test for Auditory Processing Disorders in Children." <em>Journal of the American Academy of Audiology</em>, 11(8), 438-445.</p>
-          <p>[20] Anderson, K. L., & Smaldino, J. J. (2000). "Children's home inventory for listening difficulties (CHILD)." <em>Educational Audiology Review</em>, 17(3), 3-4.</p>
-          <p>[21] Dawes, P., Bishop, D. V., Sirimanna, T., & Bamiou, D. E. (2008). "Profile and aetiology of children diagnosed with auditory processing disorder (APD)." <em>International Journal of Pediatric Otorhinolaryngology</em>, 72(4), 483-489.</p>
-          <p>[22] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[23] Dawes, P., Bishop, D. V., Sirimanna, T., & Bamiou, D. E. (2008). "Profile and aetiology of children diagnosed with auditory processing disorder (APD)." <em>International Journal of Pediatric Otorhinolaryngology</em>, 72(4), 483-489.</p>
-          <p>[24] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[25] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[26] Anderson, K. L., & Smaldino, J. J. (2000). "Children's home inventory for listening difficulties (CHILD)." <em>Educational Audiology Review</em>, 17(3), 3-4.</p>
-          <p>[27] Moore, D. R., Cowan, J. A., Riley, A., Edmondson-Jones, A. M., & Ferguson, M. A. (2011). "Development of auditory processing in 6- to 11-yr-old children." <em>Ear and Hearing</em>, 32(3), 269-285.</p>
-          <p>[28] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[29] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[30] Smoski, W. J., Brunt, M. A., & Tannahill, J. C. (1998). "Children's Auditory Performance Scale." <em>Educational Audiology Association</em>.</p>
-          <p>[31] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[32] Hind, S. (2006). "Survey of care pathway for auditory processing disorder." <em>Audiological Medicine</em>, 4(1), 12-24.</p>
-          <p>[33] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[34] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[35] Anderson, K. L., & Smaldino, J. J. (2000). "Children's home inventory for listening difficulties (CHILD)." <em>Educational Audiology Review</em>, 17(3), 3-4.</p>
-          <p>[36] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[37] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[38] Job Accommodation Network. (2021). "Accommodation and compliance: Auditory processing disorder." <em>JAN</em>.</p>
-          <p>[39] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[40] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[41] Cacace, A. T., & McFarland, D. J. (2005). "The importance of modality specificity in diagnosing central auditory processing disorder." <em>American Journal of Audiology</em>, 14(2), 112-123.</p>
-          <p>[42] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[43] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[44] Job Accommodation Network. (2021). "Accommodation and compliance: Auditory processing disorder." <em>JAN</em>.</p>
-          <p>[45] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[46] Job Accommodation Network. (2021). "Accommodation and compliance: Auditory processing disorder." <em>JAN</em>.</p>
-          <p>[47] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[48] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[49] Dawes, P., Bishop, D. V., Sirimanna, T., & Bamiou, D. E. (2008). "Profile and aetiology of children diagnosed with auditory processing disorder (APD)." <em>International Journal of Pediatric Otorhinolaryngology</em>, 72(4), 483-489.</p>
-          <p>[50] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[51] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[52] Dawes, P., Bishop, D. V., Sirimanna, T., & Bamiou, D. E. (2008). "Profile and aetiology of children diagnosed with auditory processing disorder (APD)." <em>International Journal of Pediatric Otorhinolaryngology</em>, 72(4), 483-489.</p>
-          <p>[53] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[54] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[55] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[56] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[57] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[58] Haft, S. L., Myers, C. A., & Hoeft, F. (2016). "Socio-emotional and cognitive resilience in children with reading disabilities." <em>Current Opinion in Behavioral Sciences</em>, 10, 133-141.</p>
-          <p>[59] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[60] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[61] American Academy of Audiology. (2010). "Clinical practice guidelines: Diagnosis, treatment and management of children and adults with central auditory processing disorder." <em>AAA</em>.</p>
-          <p>[62] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[63] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[64] American Academy of Audiology. (2010). "Clinical practice guidelines: Diagnosis, treatment and management of children and adults with central auditory processing disorder." <em>AAA</em>.</p>
-          <p>[65] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[66] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[67] Hornsby, B. W., Naylor, G., & Bess, F. H. (2016). "A taxonomy of fatigue concepts and their relation to hearing loss." <em>Ear and Hearing</em>, 37, 136S-144S.</p>
-          <p>[68] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[69] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[70] Kiewra, K. A. (2002). "How classroom teachers can help students learn and teach them how to learn." <em>Theory Into Practice</em>, 41(2), 71-80.</p>
-          <p>[71] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[72] Cacace, A. T., & McFarland, D. J. (2005). "The importance of modality specificity in diagnosing central auditory processing disorder." <em>American Journal of Audiology</em>, 14(2), 112-123.</p>
-          <p>[73] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[74] Mayer, R. E. (2009). <em>Multimedia learning</em> (2nd ed.). New York: Cambridge University Press.</p>
-          <p>[75] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[76] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[77] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[78] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[79] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[80] Haft, S. L., Myers, C. A., & Hoeft, F. (2016). "Socio-emotional and cognitive resilience in children with reading disabilities." <em>Current Opinion in Behavioral Sciences</em>, 10, 133-141.</p>
-          <p>[81] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[82] Friel-Patti, S. (1999). "Clinical decision-making in the assessment and intervention of central auditory processing disorders." <em>Language, Speech, and Hearing Services in Schools</em>, 30(4), 345-352.</p>
-          <p>[83] Chermak, G. D., & Musiek, F. E. (2002). "Auditory training: Principles and approaches for remediating and managing auditory processing disorders." <em>Seminars in Hearing</em>, 23(4), 297-308.</p>
-          <p>[84] American Academy of Audiology. (2010). "Clinical practice guidelines: Diagnosis, treatment and management of children and adults with central auditory processing disorder." <em>AAA</em>.</p>
-          <p>[85] Sharma, M., Purdy, S. C., & Kelly, A. S. (2009). "Comorbidity of auditory processing, language, and reading disorders." <em>Journal of Speech, Language, and Hearing Research</em>, 52(3), 706-722.</p>
-          <p>[86] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[87] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[88] DeBonis, D. A., & Moncrieff, D. (2008). "Dichotic listening in children: Age-related changes in direction and magnitude of ear advantage." <em>Brain and Cognition</em>, 67(2), 191-197.</p>
-          <p>[89] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[90] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[91] Bamiou, D. E., Musiek, F. E., & Luxon, L. M. (2001). "Aetiology and clinical presentations of auditory processing disorders—a review." <em>Archives of Disease in Childhood</em>, 85(5), 361-365.</p>
-          <p>[92] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[93] Job Accommodation Network. (2021). "Accommodation and compliance: Auditory processing disorder." <em>JAN</em>.</p>
-          <p>[94] Fuente, A., & McPherson, B. (2006). "Organic solvents and hearing loss: The challenge for audiology." <em>International Journal of Audiology</em>, 45(7), 367-381.</p>
-          <p>[95] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[96] Peelle, J. E., & Wingfield, A. (2016). "The neural consequences of age-related hearing loss." <em>Trends in Neurosciences</em>, 39(7), 486-497.</p>
-          <p>[97] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[98] Sireci, S. G., Scarpati, S. E., & Li, S. (2005). "Test accommodations for students with disabilities: An analysis of the interaction hypothesis." <em>Review of Educational Research</em>, 75(4), 457-490.</p>
-          <p>[99] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[100] Cacace, A. T., & McFarland, D. J. (2005). "The importance of modality specificity in diagnosing central auditory processing disorder." <em>American Journal of Audiology</em>, 14(2), 112-123.</p>
-          <p>[101] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[102] Job Accommodation Network. (2021). "Accommodation and compliance: Auditory processing disorder." <em>JAN</em>.</p>
-          <p>[103] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[104] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[105] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[106] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[107] American Academy of Audiology. (2010). "Clinical practice guidelines: Diagnosis, treatment and management of children and adults with central auditory processing disorder." <em>AAA</em>.</p>
-          <p>[108] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[109] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[110] American Academy of Audiology. (2010). "Clinical practice guidelines: Diagnosis, treatment and management of children and adults with central auditory processing disorder." <em>AAA</em>.</p>
-          <p>[111] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[112] Moore, D. R., & Hunter, L. L. (2013). "Auditory processing disorder (APD) in children: A marker of neurodevelopmental syndrome." <em>Hearing, Balance and Communication</em>, 11(3), 160-167.</p>
-          <p>[113] Sharma, M., Purdy, S. C., & Kelly, A. S. (2014). "The contribution of speech-evoked cortical auditory evoked potentials to the diagnosis and measurement of intervention outcomes in children with auditory processing disorder." <em>Seminars in Hearing</em>, 35(1), 51-64.</p>
-          <p>[114] Schafer, E. C., & Thibodeau, L. M. (2006). "Speech recognition in noise in children with cochlear implants while listening in bilateral, bimodal, and FM-system arrangements." <em>American Journal of Audiology</em>, 15(2), 114-126.</p>
-          <p>[115] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[116] Emanuel, D. C., Ficca, K. N., & Korczak, P. (2011). "Survey of the diagnosis and management of auditory processing disorder." <em>American Journal of Audiology</em>, 20(1), 48-60.</p>
-          <p>[117] American Academy of Audiology. (2010). "Clinical practice guidelines: Diagnosis, treatment and management of children and adults with central auditory processing disorder." <em>AAA</em>.</p>
-          <p>[118] Moore, D. R., Ferguson, M. A., Edmondson-Jones, A. M., Ratib, S., & Riley, A. (2010). "Nature of auditory processing disorder in children." <em>Pediatrics</em>, 126(2), e382-e390.</p>
-          <p>[119] DeBonis, D. A., & Moncrieff, D. (2008). "Dichotic listening in children: Age-related changes in direction and magnitude of ear advantage." <em>Brain and Cognition</em>, 67(2), 191-197.</p>
-          <p>[120] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[121] Bellis, T. J. (2003). <em>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</em> (2nd ed.). Clifton Park, NY: Delmar Learning.</p>
-          <p>[122] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-          <p>[123] American Academy of Audiology. (2010). "Clinical practice guidelines: Diagnosis, treatment and management of children and adults with central auditory processing disorder." <em>AAA</em>.</p>
-          <p>[124] Cacace, A. T., & McFarland, D. J. (2005). "The importance of modality specificity in diagnosing central auditory processing disorder." <em>American Journal of Audiology</em>, 14(2), 112-123.</p>
-          <p>[125] Chermak, G. D., & Musiek, F. E. (2014). <em>Handbook of central auditory processing disorder: Vol. 2. Comprehensive intervention</em> (2nd ed.). San Diego: Plural Publishing.</p>
-        </div>
-      </section>
+          {/* Relationships Card (Yellow) - Uses W-64 Centered Hero Image and Grid */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships & Social Contexts</h2>
+            
+            <ImageWithFallback 
+              src="/images/apd/apd-living-relationships-hero.webp"
+              alt="Friends engaged in a quiet, intimate, and accessible conversation"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+            />
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('apd'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Friendships & Dating</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Group conversations with overlapping voices are notoriously difficult. Close, one-on-one friendships in quiet settings feel far more comfortable. Romantic partners must be willing to adapt their communication style.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Home className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Family Dynamics</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Family members may struggle to understand why you "hear when you want to" or seem to ignore them. Open education about APD is essential to help families develop patience and use accessible communication.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <GraduationCap className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">School Socializing</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Cafeterias, playgrounds, and hallways are auditory nightmares. Choosing quieter social options isn't "antisocial"—it's a highly practical, healthy accommodation to preserve your energy.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Hornsby, B. W., Naylor, G., & Bess, F. H. (2016). A taxonomy of fatigue concepts and their relation to hearing loss. <i>Ear and Hearing</i>.</li>
+                <li>Bellis, T. J. (2003). Assessment and management of central auditory processing disorders in the educational setting. <i>Delmar Learning</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==========================================
+          TAB 2: WORK & STRATEGIES
+      ========================================== */}
+      {activeTab === 'work' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Strategies Card (Slate) - Uses Float Image with organic text flow */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Practical Management & Tech</h2>
+            
+            <ImageWithFallback 
+              src="/images/apd/apd-living-strategies.webp"
+              alt="Person utilizing practical management tools like noise-canceling headphones"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Executive function challenges heavily affect daily life. Developing highly personalized systems for organization, time management, and task completion is essential for independent success.
+            </p>
+
+            <div className="mb-5">
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <Laptop className="text-[#0c264d] w-5 h-5" /> Technology as an Equalizer
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Technology is transformative. Captioning apps, noise-canceling headphones, and recording important meetings (with permission) allow you to bypass your processing weaknesses entirely. Email and text messaging drastically reduce reliance on stressful phone calls.
+              </p>
+            </div>
+
+            <div className="mb-5">
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <Ear className="text-[#0c264d] w-5 h-5" /> Environmental Control
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Whenever possible, control your listening environment. Choose quiet restaurants, sit far away from noise sources (like kitchens or speakers), and purposefully schedule important conversations during quiet times of the day.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <Clock className="text-[#0c264d] w-5 h-5" /> Energy & Memory
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Never rely on auditory memory for important information—write it down immediately. Building in breaks and setting strict limits on challenging listening situations is crucial to preventing complete burnout.
+              </p>
+            </div>
+          </div>
+
+          {/* Career Card (Cyan) - Uses W-64 Centered Hero Image and Grid */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Career & Strengths</h2>
+            
+            <ImageWithFallback 
+              src="/images/apd/apd-living-career-hero.webp"
+              alt="Adult with APD thriving in a visually-oriented career"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+              Some careers are significantly better suited to individuals with APD. Success means ruthlessly playing to your strengths rather than trying to force yourself to overcome your deficits.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Briefcase className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Finding the Fit</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Careers emphasizing visual or hands-on skills (art, design, engineering, tech) are incredible fits. Many gravitate toward entrepreneurship, which offers the ultimate autonomy to structure work perfectly around your strengths.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <ShieldCheck className="text-[#0A9DC4] w-7 h-7" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Workplace Accommodations</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Under the ADA, employees have the right to request reasonable accommodations.<sup>1</sup> This might include requesting written instructions, utilizing closed-door offices, or securing remote work arrangements.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Eye className="text-[#0A9DC4] w-6 h-6" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Visual & Creative Strengths</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Many with APD excel at visual processing and hyper-focus. Furthermore, developing workarounds for auditory challenges builds profound, out-of-the-box creative problem-solving skills that translate brilliantly into the workplace.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Legal Protections
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Job Accommodation Network. (2021). Accommodation and compliance: Auditory processing disorder. <i>JAN</i>.</li>
+                <li>Mayer, R. E. (2009). Multimedia learning. <i>Cambridge University Press</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==========================================
+          TAB 3: LIFESPAN & COMMUNITY
+      ========================================== */}
+      {activeTab === 'future' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Lifespan Card (Yellow) - Uses Float Image with organic text flow */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Life Across the Ages</h2>
+            
+            <ImageWithFallback 
+              src="/images/apd/apd-living-lifespan.webp"
+              alt="Split visual showing a child receiving early support and an adult advocating for needs"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Twice-exceptionality and APD are lifelong profiles—they are not something you "outgrow." However, self-understanding and life experience make management significantly easier over time.
+            </p>
+
+            <div className="mb-5">
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <Baby className="text-[#d4a017] w-5 h-5" /> Childhood & School
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Young children benefit immensely from early language intervention. As academic demands soar during elementary and middle school, appropriate accommodations (like IEPs) are absolutely crucial for success and preserving self-esteem.
+              </p>
+            </div>
+
+            <div className="mb-5">
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <Users className="text-[#d4a017] w-5 h-5" /> Adolescence
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Teenagers face complex social dynamics and incredibly fast-paced instruction. This is the critical period where identity development occurs, and students must actively learn how to advocate for their own needs.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                <Compass className="text-[#d4a017] w-5 h-5" /> Adulthood & Beyond
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Many adults report that life improves significantly after school ends because they finally gain control over their environments. While age-related hearing changes may eventually compound APD, a lifetime of compensation strategies provides immense resilience.
+              </p>
+            </div>
+          </div>
+
+          {/* Advocacy Card (Slate) - Uses W-64 Centered Hero Image and Grid */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Advocacy, Community & Hope</h2>
+            
+            <ImageWithFallback 
+              src="/images/apd/apd-living-advocacy-hero.webp"
+              alt="Diverse support group connecting over shared neurodivergent experiences"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <Users className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Finding Your People</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Connecting with other individuals who share your exact auditory experiences completely shatters the feeling of isolation. Online communities and advocacy organizations offer validation that is difficult to find anywhere else.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <MessageSquare className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Self-Advocacy</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Learning to fiercely advocate for your accommodations is incredibly empowering. Many individuals take this a step further, sharing their story to raise awareness in schools and workplaces to improve support for the next generation.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                  <CheckCircle className="text-[#0c264d] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Redefining Success</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Success for neurodivergent individuals often looks very different than conventional definitions. Personal fulfillment, pursuing your passions, and living authentically matter far more than traditional, standardized markers of achievement.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Dawes, P., & Bishop, D. (2009). Auditory processing disorder in relation to developmental disorders. <i>International Journal of Language & Communication Disorders</i>.</li>
+                <li>Peelle, J. E., & Wingfield, A. (2016). The neural consequences of age-related hearing loss. <i>Trends in Neurosciences</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('apd')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Auditory Processing Disorder
-        </a>
+          <span className="text-xl">←</span>
+          All About APD
+        </button>
       </div>
+
     </article>
   );
 }

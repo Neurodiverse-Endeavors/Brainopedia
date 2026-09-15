@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Brain, Heart, Users, ShieldAlert, Sparkles, Compass, Target, GraduationCap, Briefcase, Activity, Map, Lightbulb, CheckCircle } from 'lucide-react';
+import { BookOpen, Brain, Heart, Users, ShieldAlert, Sparkles, Compass, Target, GraduationCap, Briefcase, Activity, Map, Lightbulb, CheckCircle, BookOpenCheck } from 'lucide-react';
 
 interface GiftednessLivingProps {
   setCurrentArticle?: (article: string) => void;

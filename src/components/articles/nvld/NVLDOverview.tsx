@@ -109,9 +109,9 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Primary Areas of Challenge</h2>
             <ImageWithFallback 
-              src="/images/nvld/nvld-overview-definition-hero.webp"
+              src="/images/nvld/nvld-overview-challenges-hero.webp"
               alt="Abstract representation of verbal strengths and spatial challenges"
-              className="block mx-auto w-full max-w-2xl mb-6 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-2xl mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               According to established neuropsychological models, the NVLD profile consistently impacts three major domains of daily functioning and academic performance.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>

@@ -1,616 +1,411 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { ShieldCheck, Brain, Heart, Users, ShieldAlert, Sparkles, Compass, Search, GraduationCap, Briefcase, Activity, Map, Lightbulb, CheckCircle, Zap, Monitor, BookOpen, Clock, AlertTriangle } from 'lucide-react';
 
 interface VPDLivingProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function VPDLiving({ setCurrentArticle }: VPDLivingProps) {
+export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'daily');
+
   return (
-    <article className="max-w-6xl">
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* GLOBAL STYLE FOR CITATIONS */}
       <style>
         {`
           sup {
             color: #10b981;
+            font-weight: bold;
+            margin-left: 2px;
           }
         `}
       </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('visual-processing'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Living with Visual Processing Disorder
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('visual-processing')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to Visual Processing Disorder
-        </a>
+          <span className="text-xl">←</span>
+          All About VPD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        Living with Visual Processing Disorder
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('visual-processing')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About VPD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">
-            Living with Visual Processing Disorder involves navigating a visually-oriented world with different 
-            visual processing abilities.<sup>1</sup> While VPD presents challenges, understanding, appropriate 
-            support, and effective strategies enable individuals to thrive academically, professionally, and 
-            personally.<sup>2</sup>
-          </p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => setActiveTab('daily')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'daily'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Daily Life & Emotion
+        </button>
+        <button
+          onClick={() => setActiveTab('education')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'education'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Education & Career
+        </button>
+        <button
+          onClick={() => setActiveTab('lifespan')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'lifespan'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Relationships & Lifespan
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Daily Life with VPD</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYWlseSUyMGxpZmV8ZW58MXx8fHwxNjc0NTM1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Daily life activities"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Visual Fatigue</h3>
-          <p className="mb-4">
-            Tasks requiring visual processing are mentally exhausting.<sup>3</sup> Reading, writing, navigating 
-            visually complex environments, or detailed visual work depletes energy more quickly than for those 
-            without VPD.<sup>4</sup> Managing energy and taking breaks prevents burnout.<sup>5</sup>
-          </p>
+      {/* ==========================================
+          TAB 1: DAILY LIFE & EMOTION
+      ========================================== */}
+      {activeTab === 'daily' && (
+        <div className="space-y-8 animate-fadeIn">
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Navigation and Spatial Awareness</h3>
-          <p className="mb-4">
-            Visual-spatial processing challenges affect navigation—getting lost in familiar places, difficulty 
-            following maps, or challenges with spatial relationships in parking or crowded spaces.<sup>6</sup> 
-            Extra time, GPS assistance, and landmark-based navigation help.<sup>7</sup>
-          </p>
+          {/* Daily Life Card (Cyan) - Uses Float Image & Flow Root */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Life with VPD</h2>
+            
+            <ImageWithFallback 
+              src="/images/vpd/vpd-living-daily.webp"
+              alt="Person experiencing visual fatigue, rubbing their eyes after a long day"
+              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Navigating a visually-oriented world with VPD means routine communication tasks require a massive amount of hidden effort. This constant translation process takes a profound physical and emotional toll.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Visual Organization</h3>
-          <p className="mb-4">
-            Keeping spaces visually organized is challenging when visual-spatial processing is affected.<sup>8</sup> 
-            External organizational systems—labels, bins, consistent placement—compensate for internal visual 
-            organization difficulties.<sup>9</sup>
-          </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Zap className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Visual Fatigue</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Tasks requiring intense visual processing (reading, navigating cluttered environments) deplete energy rapidly. This exhaustion is not laziness—it is genuine neurological fatigue.</p>
+                </div>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Visual-Motor Tasks</h3>
-          <p className="mb-4">
-            Daily tasks requiring visual-motor coordination—buttoning, tying, cutting, assembling items—take 
-            longer and require more effort.<sup>1</sup> Adaptive equipment, alternatives (Velcro instead 
-            of buttons), or simply allowing extra time helps.<sup>1</sup>
-          </p>
-        </div>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Map className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Spatial Navigation</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Getting lost in familiar places or struggling to follow maps is incredibly common. Driving demands complex visual processing, meaning many rely heavily on GPS with voice directions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">School Experiences</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Academic Challenges</h3>
-          <p className="mb-4">
-            School heavily emphasizes visual learning—reading textbooks, worksheets, copying from boards, 
-            handwriting.<sup>2</sup> Students with VPD must work harder than peers for the same outcomes.<sup>3</sup> 
-            This effort disparity is often invisible to others.<sup>4</sup>
-          </p>
+          {/* Emotional Impact Card (Yellow) - Uses W-64 Centered Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Emotional & Psychological Impact</h2>
+            
+            <ImageWithFallback 
+              src="/images/vpd/vpd-living-emotional.webp"
+              alt="Visual representing resilience and emotional regulation"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Repeatedly struggling with tasks that others find completely effortless damages self-esteem. The emotional weight of an invisible disability requires active psychological maintenance.
+            </p>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Subject-Specific Impacts</h3>
-          <p className="mb-4">
-            Reading-heavy subjects, math (especially geometry), and classes requiring detailed visual work 
-            are most affected.<sup>5</sup> Science diagrams, geography maps, and art classes may be 
-            challenging.<sup>6</sup> However, verbal subjects and hands-on learning may be relative strengths.<sup>[17]</sup>
-          </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <AlertTriangle className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Anxiety & Frustration</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Anticipatory anxiety about visually challenging situations (like taking a written test or navigating a new building) is common. Chronic frustration frequently presents as irritability or avoidance.</p>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Homework Burden</h3>
-          <p className="mb-4">
-            Homework takes significantly longer due to visual processing demands.<sup>[18]</sup> Reading 
-            assignments, written work, and visual projects extend homework time.<sup>[19]</sup> This reduces 
-            time for rest, play, and other activities.<sup>[20]</sup>
-          </p>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <ShieldAlert className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Identity & Self-Esteem</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Children often internalize labels like "lazy" or "careless." Understanding that these struggles have a real neurological basis is crucial to countering negative self-perceptions.</p>
+              </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Aspects</h3>
-          <p className="mb-4">
-            Visual-motor challenges may affect playground activities, sports, or crafts that peers enjoy.<sup>[21]</sup> 
-            Being "bad at sports" or struggling with activities others find easy impacts social participation 
-            and self-image.<sup>[22]</sup>
-          </p>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Building Resilience</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Developing resilience requires reframing VPD as a neurodivergent difference rather than purely a deficit. Learning to aggressively advocate for accommodations builds lifelong strength.</p>
+              </div>
+            </div>
+          </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Self-Esteem and Identity</h3>
-          <p className="mb-4">
-            Repeated struggles despite effort affect self-esteem.<sup>[23]</sup> Labels like "lazy," "careless," 
-            or "not trying" hurt when difficulties actually reflect neurological differences.<sup>[24]</sup> 
-            Understanding VPD helps reframe struggles appropriately.<sup>[25]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Higher Education</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xsZWdlJTIwc3R1ZGVudHN8ZW58MXx8fHwxNjc0NTM1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="College students studying"
-            className="w-72 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">College and University</h3>
-          <p className="mb-4">
-            Higher education increases reading and writing demands.<sup>[26]</sup> However, more flexibility 
-            in course selection, format, and scheduling allows students to work with their learning style.<sup>[27]</sup> 
-            Disability services provide accommodations.<sup>[28]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Accessing Accommodations</h3>
-          <p className="mb-4">
-            Students must self-disclose to disability services and provide documentation.<sup>[29]</sup> 
-            Accommodations might include extended time, alternative formats, note-taking services, or assistive 
-            technology.<sup>[30]</sup> Self-advocacy is essential at this level.<sup>[31]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Major Selection</h3>
-          <p className="mb-4">
-            Field of study can leverage strengths or compound challenges.<sup>[32]</sup> Fields emphasizing 
-            verbal, analytical, or hands-on skills may suit individuals with VPD better than visually-intensive 
-            fields.<sup>[33]</sup> However, with appropriate accommodations, many paths are accessible.<sup>[34]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Technology Skills</h3>
-          <p className="mb-4">
-            Proficiency with assistive technology becomes increasingly important in higher education.<sup>[35]</sup> 
-            Text-to-speech, speech-to-text, organizational apps, and digital note-taking support academic 
-            success.<sup>[36]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Career and Work Life</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Career Selection</h3>
-          <p className="mb-4">
-            Career paths that emphasize verbal, analytical, interpersonal, or technical skills may be good 
-            fits.<sup>[37]</sup> Fields like counseling, teaching (especially verbal subjects), technology, 
-            trades, or business leverage different strengths.<sup>[38]</sup> Visually-intensive careers 
-            (graphic design, architecture, surgery) may present more challenges though aren't impossible.<sup>[39]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Workplace Challenges</h3>
-          <p className="mb-4">
-            Reading and responding to emails, reviewing documents, navigating spreadsheets, or organizing 
-            visual information are common workplace tasks that may be challenging.<sup>[40]</sup> Written 
-            communication, detailed visual work, or multitasking with visual information requires extra 
-            effort.<sup>[41]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Workplace Accommodations</h3>
-          <p className="mb-4">
-            Americans with Disabilities Act (ADA) protections may apply to VPD.<sup>[42]</sup> Reasonable 
-            accommodations include assistive technology, modified formats, extended deadlines for complex 
-            visual work, or task modifications.<sup>[43]</sup> Documentation supports accommodation requests.<sup>[44]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Professional Success</h3>
-          <p className="mb-4">
-            Many individuals with VPD have successful careers.<sup>[45]</sup> Playing to strengths, using 
-            accommodations strategically, and choosing roles that fit abilities enables success.<sup>[46]</sup> 
-            Determination, creativity in problem-solving, and good verbal skills often characterize successful 
-            adults with VPD.<sup>[47]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Relationships and Social Life</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Explaining VPD to Others</h3>
-          <p className="mb-4">
-            Explaining an invisible condition is challenging.<sup>[48]</sup> People may not understand why 
-            someone with "perfect vision" struggles with visual tasks.<sup>[49]</sup> Clear explanation helps: 
-            "My eyes see fine, but my brain processes visual information differently."<sup>[50]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Romantic Relationships</h3>
-          <p className="mb-4">
-            Partners need to understand VPD's impacts—why navigation is challenging, why reading menus takes 
-            longer, why organizing is difficult.<sup>[51]</sup> Understanding and patience from partners 
-            support successful relationships.<sup>[52]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Parenting with VPD</h3>
-          <p className="mb-4">
-            Parents with VPD may find certain parenting tasks challenging—helping with homework, certain 
-            play activities, or visual organization.<sup>[53]</sup> However, they bring unique perspectives 
-            and strengths to parenting.<sup>[54]</sup> Partnering with others or using accommodations helps.<sup>[55]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Social Activities</h3>
-          <p className="mb-4">
-            Choosing social activities that don't heavily emphasize visual-motor skills makes participation 
-            more enjoyable.<sup>[56]</sup> Conversation-based socializing, dining, music, or interest-based 
-            groups may be more comfortable than sports or visually-intensive activities.<sup>[57]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Practical Life Skills</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYWlseSUyMHRhc2tzfGVufDF8fHx8MTY3NDUzNTI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Daily life tasks and skills"
-            className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Driving</h3>
-          <p className="mb-4">
-            Driving requires complex visual processing—spatial awareness, visual-motor coordination, processing 
-            visual information quickly.<sup>[58]</sup> Some individuals with VPD find driving challenging; 
-            others adapt successfully.<sup>[59]</sup> Extra practice, lessons, or alternative transportation 
-            may be appropriate.<sup>[60]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Home Management</h3>
-          <p className="mb-4">
-            Organizing homes, following visual assembly instructions, certain cooking tasks, or home repairs 
-            involving visual-spatial skills may be challenging.<sup>[61]</sup> Using organizational systems, 
-            asking for help, or hiring services for particularly challenging tasks is reasonable.<sup>[62]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Financial Management</h3>
-          <p className="mb-4">
-            Visual organization of financial information, reading statements, or tracking visual details may 
-            be affected.<sup>[63]</sup> Digital tools with text-to-speech, simplified formats, or professional 
-            financial help can assist.<sup>[64]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Healthcare Navigation</h3>
-          <p className="mb-4">
-            Reading medical information, finding locations in large medical facilities, or managing visual 
-            aspects of healthcare presents challenges.<sup>[65]</sup> Asking for verbal instructions, using 
-            navigation apps, or having support persons helps.<sup>[66]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Emotional and Psychological Aspects</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Frustration and Stress</h3>
-          <p className="mb-4">
-            Chronic difficulty with tasks others find simple creates frustration.<sup>[67]</sup> The extra 
-            effort required for visual tasks is stressful.<sup>[68]</sup> Acknowledging this frustration and 
-            developing healthy coping strategies is important.<sup>[69]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Anxiety</h3>
-          <p className="mb-4">
-            Anticipatory anxiety about challenging visual situations is common.<sup>[70]</sup> Test anxiety, 
-            anxiety about navigation or visual-motor tasks, or general anxiety may develop.<sup>[71]</sup> 
-            Addressing anxiety through therapy, coping strategies, or accommodations helps.<sup>[72]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Depression</h3>
-          <p className="mb-4">
-            Persistent struggles, social isolation, or feeling "different" can contribute to depression.<sup>[73]</sup> 
-            Professional mental health support addresses these impacts.<sup>[74]</sup> Understanding VPD's 
-            neurological basis helps counter negative self-perceptions.<sup>[75]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Building Resilience</h3>
-          <p className="mb-4">
-            Many individuals with VPD develop remarkable resilience through overcoming challenges.<sup>[76]</sup> 
-            Problem-solving skills, persistence, and creative thinking become strengths.<sup>[77]</sup> Reframing 
-            VPD as a difference rather than purely a deficit supports positive identity.<sup>[78]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Advocacy and Self-Advocacy</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Understanding Rights</h3>
-          <p className="mb-4">
-            Understanding legal protections—IDEA in schools, Section 504, ADA in workplaces—empowers 
-            advocacy.<sup>[79]</sup> Knowing what accommodations are available and how to request them is 
-            essential.<sup>[80]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Communicating Needs</h3>
-          <p className="mb-4">
-            Clearly articulating needs—what is difficult, what helps, what accommodations are needed—enables 
-            others to provide appropriate support.<sup>[81]</sup> Specific requests work better than general 
-            statements.<sup>[82]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Building Support Networks</h3>
-          <p className="mb-4">
-            Connecting with others who have VPD, learning disabilities, or related conditions provides support 
-            and practical strategies.<sup>[83]</sup> Online communities, support groups, or advocacy organizations 
-            offer connection.<sup>[84]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Educating Others</h3>
-          <p className="mb-4">
-            Individuals with VPD and families can help educate teachers, employers, and others about the 
-            condition.<sup>[85]</sup> Increasing awareness improves understanding and support.<sup>[86]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Strengths and Positive Aspects</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Verbal and Auditory Strengths</h3>
-          <p className="mb-4">
-            Many individuals with VPD excel in verbal communication, listening comprehension, and auditory 
-            learning.<sup>[87]</sup> These strengths support success in verbally-oriented fields and activities.<sup>[88]</sup> 
-            Podcasts, audiobooks, and conversation-based learning suit this profile.<sup>[89]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Analytical Thinking</h3>
-          <p className="mb-4">
-            VPD doesn't affect intelligence or analytical abilities.<sup>[90]</sup> Many individuals excel 
-            in logical reasoning, problem-solving, and conceptual thinking.<sup>[91]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Creativity and Innovation</h3>
-          <p className="mb-4">
-            Finding creative solutions to visual challenges builds innovative thinking.<sup>[92]</sup> Different 
-            ways of processing information may lead to unique perspectives or creative approaches.<sup>[93]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Empathy and Understanding</h3>
-          <p className="mb-4">
-            Experiencing challenges often builds empathy and understanding for others' struggles.<sup>[94]</sup> 
-            Many individuals with VPD develop strong advocacy skills and sensitivity to accessibility.<sup>[95]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Technology and Modern Life</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwaGVscHxlbnwxfHx8fDE2NzQ1MzUyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Technology assistance"
-            className="w-72 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Digital Accessibility</h3>
-          <p className="mb-4">
-            Modern technology offers unprecedented accessibility.<sup>[96]</sup> Text-to-speech, speech-to-text, 
-            adjustable text size and format, and digital organization tools assist significantly.<sup>[97]</sup> 
-            Smartphones and tablets provide powerful accommodation tools.<sup>[98]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Audiobooks and Podcasts</h3>
-          <p className="mb-4">
-            The explosion of audio content provides access to information and entertainment without visual 
-            processing demands.<sup>[99]</sup> Audiobooks, podcasts, and audio-based learning have never 
-            been more available.<sup>[100]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">GPS and Navigation</h3>
-          <p className="mb-4">
-            GPS technology with voice directions compensates for spatial navigation challenges.<sup>[101]</sup> 
-            This independence-enabling technology benefits individuals with visual-spatial difficulties.<sup>[102]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Remote Work and Learning</h3>
-          <p className="mb-4">
-            Increased remote options allow individuals to work and learn in controlled, accommodated environments.<sup>[103]</sup> 
-            Digital formats are often more adaptable than physical materials.<sup>[104]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Life Across Different Stages</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Childhood</h3>
-          <p className="mb-4">
-            Early identification and intervention support development.<sup>[105]</sup> Understanding VPD helps 
-            families and educators provide appropriate support rather than attributing struggles to laziness.<sup>[106]</sup> 
-            Building skills and confidence early matters.<sup>[107]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Adolescence</h3>
-          <p className="mb-4">
-            Teenagers develop self-advocacy skills and begin making educational and career decisions.<sup>[108]</sup> 
-            Understanding their own VPD profile helps informed decision-making.<sup>[109]</sup> Identity 
-            development includes integrating VPD into self-concept.<sup>[110]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Young Adulthood</h3>
-          <p className="mb-4">
-            Transition to independence, higher education, or careers requires applying accommodation knowledge 
-            to new settings.<sup>[111]</sup> Self-advocacy becomes fully the individual's responsibility.<sup>[112]</sup> 
-            Career choices reflect both interests and practical considerations.<sup>[113]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Middle and Later Adulthood</h3>
-          <p className="mb-4">
-            Adults typically have developed effective compensation strategies over time.<sup>[114]</sup> Career 
-            paths and lifestyle choices reflect accumulated wisdom about what works.<sup>[115]</sup> Many 
-            adults with VPD are successful, content, and well-adapted.<sup>[116]</sup>
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Looking Forward with Hope</h2>
-          
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Growing Understanding</h3>
-          <p className="mb-4">
-            Understanding of visual processing and effective interventions continues advancing.<sup>[117]</sup> 
-            Better assessment tools, intervention programs, and accommodations emerge from ongoing research.<sup>[118]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Technological Advances</h3>
-          <p className="mb-4">
-            Technology continues evolving to support accessibility.<sup>[119]</sup> Artificial intelligence, 
-            improved text-to-speech and speech-to-text, and new assistive tools provide increasing support.<sup>[120]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Increasing Awareness</h3>
-          <p className="mb-4">
-            Awareness of learning differences including VPD is growing.<sup>[121]</sup> Schools, workplaces, 
-            and society increasingly recognize neurodiversity and provide accommodations.<sup>[122]</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Individual Growth</h3>
-          <p className="mb-4">
-            Individuals continue learning, adapting, and developing throughout life.<sup>[123]</sup> What's 
-            challenging at one point may become more manageable with strategies, accommodations, and experience.<sup>[124]</sup> 
-            Growth and adaptation are ongoing possibilities.<sup>[125]</sup>
-          </p>
-
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6 mt-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Thriving with VPD:</h3>
-            <div className="text-sm">
-              <p>
-                Living with Visual Processing Disorder involves real challenges—visual fatigue, academic 
-                struggles, coordination difficulties, and navigation challenges affect daily life.<sup>[126]</sup> 
-                However, with understanding, appropriate accommodations, effective strategies, and focus on 
-                strengths, individuals with VPD can and do thrive academically, professionally, and personally.<sup>[127]</sup> 
-                Success involves accepting both challenges and abilities, using accommodations strategically, 
-                and building on verbal, analytical, and other strengths.<sup>[128]</sup> VPD is one aspect 
-                of diverse human neurology—different, but not limiting potential.<sup>[129]</sup> With support 
-                and self-understanding, individuals with VPD lead fulfilling, successful lives navigating 
-                visual demands in their own way.<sup>[130]</sup>
-              </p>
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Hornsby, B. W., Naylor, G., & Bess, F. H. (2016). A taxonomy of fatigue concepts and their relation to hearing loss. <i>Ear and Hearing</i>.</li>
+                <li>Levine, M. (2003). The myth of laziness. <i>Simon & Schuster</i>.</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[2] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[3] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[4] Grisham, D., Sheppard, M. M., & Tran, W. U. (1993). "Visual symptoms and reading performance." <em>Optometry and Vision Science</em>, 70(5), 384-391.</p>
-          <p>[5] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[6] Newcombe, F., & Ratcliff, G. (1989). "Disorders of visuospatial analysis." In F. Boller & J. Grafman (Eds.), <em>Handbook of neuropsychology</em> (Vol. 2, pp. 333-356). Amsterdam: Elsevier.</p>
-          <p>[7] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[8] Todd, V. R. (1999). "Visual perceptual frame of reference: An information processing approach." In P. Kramer & J. Hinojosa (Eds.), <em>Frames of reference for pediatric occupational therapy</em> (2nd ed., pp. 205-256). Baltimore: Lippincott Williams & Wilkins.</p>
-          <p>[9] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[10] Beery, K. E., Buktenica, N. A., & Beery, N. A. (2010). <em>Beery-Buktenica Developmental Test of Visual-Motor Integration</em> (6th ed.). San Antonio: Pearson.</p>
-          <p>[11] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[12] Kavale, K., & Forness, S. (2000). "Auditory and visual perception processes and reading ability: A quantitative reanalysis and historical reinterpretation." <em>Learning Disability Quarterly</em>, 23(4), 253-270.</p>
-          <p>[13] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[14] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[15] Kulp, M. T., Earley, M. J., Mitchell, G. L., Timmerman, L. M., Frasco, C. S., & Geier, J. E. (2004). "Are visual perceptual skills related to mathematics ability in second through sixth grade children?" <em>Focus on Learning Problems in Mathematics</em>, 26(4), 44-51.</p>
-          <p>[16] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[17] Todd, V. R. (1999). "Visual perceptual frame of reference: An information processing approach." In P. Kramer & J. Hinojosa (Eds.), <em>Frames of reference for pediatric occupational therapy</em> (2nd ed., pp. 205-256). Baltimore: Lippincott Williams & Wilkins.</p>
-          <p>[18] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[19] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[20] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[21] Wilson, P. H., & McKenzie, B. E. (1998). "Information processing deficits associated with developmental coordination disorder: A meta-analysis of research findings." <em>Journal of Child Psychology and Psychiatry</em>, 39(6), 829-840.</p>
-          <p>[22] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[23] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[24] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[25] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[26] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[27] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[28] Sireci, S. G., Scarpati, S. E., & Li, S. (2005). "Test accommodations for students with disabilities: An analysis of the interaction hypothesis." <em>Review of Educational Research</em>, 75(4), 457-490.</p>
-          <p>[29] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[30] Thurlow, M. L., Lazarus, S. S., Thompson, S. J., & Morse, A. B. (2005). <em>State policies on assessment participation and accommodations for students with disabilities</em>. <em>Journal of Special Education</em>, 38(4), 232-240.</p>
-          <p>[31] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[32] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[33] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[34] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[35] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[36] Anderson-Inman, L., & Horney, M. A. (2007). "Supported eText: Assistive technology through text transformations." <em>Reading Research Quarterly</em>, 42(1), 153-160.</p>
-          <p>[37] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[38] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[39] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[40] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[41] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[42] Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq.</p>
-          <p>[43] Job Accommodation Network. (2021). "Accommodation and compliance series: Visual impairments." <em>JAN</em>.</p>
-          <p>[44] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[45] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[46] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[47] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[48] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[49] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[50] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[51] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[52] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[53] Todd, V. R. (1999). "Visual perceptual frame of reference: An information processing approach." In P. Kramer & J. Hinojosa (Eds.), <em>Frames of reference for pediatric occupational therapy</em> (2nd ed., pp. 205-256). Baltimore: Lippincott Williams & Wilkins.</p>
-          <p>[54] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[55] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[56] Todd, V. R. (1999). "Visual perceptual frame of reference: An information processing approach." In P. Kramer & J. Hinojosa (Eds.), <em>Frames of reference for pediatric occupational therapy</em> (2nd ed., pp. 205-256). Baltimore: Lippincott Williams & Wilkins.</p>
-          <p>[57] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[58] Anstey, K. J., Wood, J., Lord, S., & Walker, J. G. (2005). "Cognitive, sensory and physical factors enabling driving safety in older adults." <em>Clinical Psychology Review</em>, 25(1), 45-65.</p>
-          <p>[59] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[60] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[61] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[62] Todd, V. R. (1999). "Visual perceptual frame of reference: An information processing approach." In P. Kramer & J. Hinojosa (Eds.), <em>Frames of reference for pediatric occupational therapy</em> (2nd ed., pp. 205-256). Baltimore: Lippincott Williams & Wilkins.</p>
-          <p>[63] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[64] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[65] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[66] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[67] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[68] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[69] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[70] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[71] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[72] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[73] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[74] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[75] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[76] Haft, S. L., Myers, C. A., & Hoeft, F. (2016). "Socio-emotional and cognitive resilience in children with reading disabilities." <em>Current Opinion in Behavioral Sciences</em>, 10, 133-141.</p>
-          <p>[77] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[78] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[79] Yell, M. L. (2016). <em>The law and special education</em> (4th ed.). Boston: Pearson.</p>
-          <p>[80] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[81] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[82] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[83] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[84] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[85] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[86] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[87] Todd, V. R. (1999). "Visual perceptual frame of reference: An information processing approach." In P. Kramer & J. Hinojosa (Eds.), <em>Frames of reference for pediatric occupational therapy</em> (2nd ed., pp. 205-256). Baltimore: Lippincott Williams & Wilkins.</p>
-          <p>[88] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[89] Esteves, K. J., & Whitten, E. (2011). "Assisted reading with digital audiobooks for students with reading disabilities." <em>Reading Horizons</em>, 51(1), 21-40.</p>
-          <p>[90] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[91] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[92] Todd, V. R. (1999). "Visual perceptual frame of reference: An information processing approach." In P. Kramer & J. Hinojosa (Eds.), <em>Frames of reference for pediatric occupational therapy</em> (2nd ed., pp. 205-256). Baltimore: Lippincott Williams & Wilkins.</p>
-          <p>[93] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[94] Haft, S. L., Myers, C. A., & Hoeft, F. (2016). "Socio-emotional and cognitive resilience in children with reading disabilities." <em>Current Opinion in Behavioral Sciences</em>, 10, 133-141.</p>
-          <p>[95] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[96] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[97] Anderson-Inman, L., & Horney, M. A. (2007). "Supported eText: Assistive technology through text transformations." <em>Reading Research Quarterly</em>, 42(1), 153-160.</p>
-          <p>[98] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[99] Esteves, K. J., & Whitten, E. (2011). "Assisted reading with digital audiobooks for students with reading disabilities." <em>Reading Horizons</em>, 51(1), 21-40.</p>
-          <p>[100] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[101] Anstey, K. J., Wood, J., Lord, S., & Walker, J. G. (2005). "Cognitive, sensory and physical factors enabling driving safety in older adults." <em>Clinical Psychology Review</em>, 25(1), 45-65.</p>
-          <p>[102] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[103] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[104] Anderson-Inman, L., & Horney, M. A. (2007). "Supported eText: Assistive technology through text transformations." <em>Reading Research Quarterly</em>, 42(1), 153-160.</p>
-          <p>[105] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[106] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[107] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[108] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[109] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[110] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[111] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[112] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[113] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[114] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[115] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[116] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[117] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[118] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[119] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[120] Anderson-Inman, L., & Horney, M. A. (2007). "Supported eText: Assistive technology through text transformations." <em>Reading Research Quarterly</em>, 42(1), 153-160.</p>
-          <p>[121] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[122] Rose, D. H., & Meyer, A. (2002). <em>Teaching every student in the digital age: Universal design for learning</em>. Alexandria: ASCD.</p>
-          <p>[123] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[124] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[125] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[126] Levine, M. (2003). <em>The myth of laziness</em>. New York: Simon & Schuster.</p>
-          <p>[127] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
-          <p>[128] Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational therapy for children</em> (6th ed., pp. 373-403). Maryland Heights: Mosby Elsevier.</p>
-          <p>[129] American Optometric Association. (2017). "Care of the patient with learning related vision problems." <em>Optometric Clinical Practice Guideline</em>. St. Louis: AOA.</p>
-          <p>[130] Scheiman, M., & Rouse, M. W. (2006). <em>Optometric management of learning-related vision problems</em> (2nd ed.). St. Louis: Mosby Elsevier.</p>
+      {/* ==========================================
+          TAB 2: EDUCATION & CAREER
+      ========================================== */}
+      {activeTab === 'education' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Education Card (Slate) - Uses Float Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Educational Experiences</h2>
+            
+            <ImageWithFallback 
+              src="/images/vpd/vpd-living-education.webp"
+              alt="Student navigating a self-directed learning journey on a college campus"
+              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Traditional schooling heavily emphasizes visual learning (textbooks, whiteboards, dense worksheets). Without structural changes, a student with VPD must work twice as hard for the exact same outcomes.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <BookOpen className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Homework Burden</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Because reading and writing demand so much visual processing time, homework takes significantly longer, frequently bleeding into the evening and robbing the student of necessary rest.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
+                  <GraduationCap className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Higher Education</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">While college vastly increases reading demands, it also allows students to select majors that match their specific strengths (like verbal or analytical fields). Accessing disability services is vital.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Career Card (Cyan) - Uses W-64 Centered Image */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Career & Work Life</h2>
+            
+            <ImageWithFallback 
+              src="/images/vpd/vpd-living-career.webp"
+              alt="Adult utilizing digital accommodations in an uncluttered workspace"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Professional success comes from leaning into natural strengths rather than grinding against deficits. Determining whether to formally disclose the disability to an employer is a highly personal decision.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Compass className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Career Selection</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Career paths emphasizing verbal, interpersonal, or conceptual skills (teaching, counseling, management) often bypass visual deficits. Highly visual fields like architecture or graphic design may present more friction.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <ShieldCheck className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Workplace Accommodations</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">The Americans with Disabilities Act (ADA) offers legal protections for VPD in the workplace.<sup>1</sup> Reasonable accommodations might include assistive technology, remote work options, or extended deadlines for reading-heavy tasks.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  <Briefcase className="text-[#0A9DC4] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">Professional Success</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Many individuals with VPD have wildly successful careers. Their sheer determination, resilience, and creative problem-solving skills make them highly adaptable, innovative employees.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Legal Protections
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Job Accommodation Network. (2021). Accommodation and compliance series: Visual impairments. <i>JAN</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('visual-processing'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+      {/* ==========================================
+          TAB 3: RELATIONSHIPS & LIFESPAN
+      ========================================== */}
+      {activeTab === 'lifespan' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Social Life Card (Yellow) - Uses Float Image */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships & Social Life</h2>
+            
+            <ImageWithFallback 
+              src="/images/vpd/vpd-living-social.webp"
+              alt="Friends or a romantic couple engaged in an accessible conversation"
+              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              Socializing requires energy. Because navigating the physical world is exhausting for someone with VPD, choosing social environments wisely is a critical self-care boundary.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Heart className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Explaining VPD</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">It is incredibly frustrating when partners or friends misinterpret visual deficits as a lack of effort. Using the exact phrase, "My eyes see fine, but my brain processes visual information differently," provides instant clarity.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Users className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Social Activities</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Social activities involving intense visual-motor tracking (like playing catch or team sports) cause high anxiety. Participating in conversation-based socializing or interest groups is often vastly more enjoyable.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Advocacy & Strengths Card (Slate) - Uses W-64 Centered Image */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Advocacy, Strengths & Hope</h2>
+            
+            <ImageWithFallback 
+              src="/images/vpd/vpd-living-advocacy.webp"
+              alt="Diverse community group connecting over shared neurodivergent experiences"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              VPD does not limit overall intelligence. By harnessing technology and finding supportive communities, individuals transition from merely surviving to actively thriving.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Lightbulb className="text-[#2abcd4] w-5 h-5" /> Built-In Strengths
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  Individuals with VPD frequently develop massive verbal and auditory processing strengths. Furthermore, having to constantly invent new workarounds for a visually-designed world forces the individual to develop out-of-the-box, highly creative problem-solving skills that translate brilliantly to the workplace.
+                </p>
+                <div className="bg-white p-3 rounded-lg border border-[#0c264d] border-opacity-20 shadow-sm flex items-start gap-2">
+                  <Monitor className="text-[#0c264d] w-4 h-4 mt-0.5 shrink-0" />
+                  <p className="text-xs text-slate-700">Modern technology (audiobooks, voice dictation, GPS) acts as an instant equalizer, granting unprecedented independence.</p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Search className="text-[#2abcd4] w-5 h-5" /> Self-Advocacy & Community
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  Connecting with others who have learning differences completely shatters the feeling of isolation. Experiencing these challenges often builds deep empathy and understanding for others, making individuals with VPD highly effective advocates for workplace accessibility.
+                </p>
+                <div className="bg-white p-3 rounded-lg border border-[#0c264d] border-opacity-20 shadow-sm flex items-start gap-2">
+                  <Clock className="text-[#0c264d] w-4 h-4 mt-0.5 shrink-0" />
+                  <p className="text-xs text-slate-700">While the core processing difference never vanishes, it becomes highly manageable as the individual matures and masters their accommodations.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age. <i>ASCD</i>.</li>
+                <li>Esteves, K. J., & Whitten, E. (2011). Assisted reading with digital audiobooks for students with reading disabilities. <i>Reading Horizons</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('visual-processing')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
-          ← Back to Visual Processing Disorder
-        </a>
+          <span className="text-xl">←</span>
+          All About VPD
+        </button>
       </div>
+
     </article>
   );
 }
