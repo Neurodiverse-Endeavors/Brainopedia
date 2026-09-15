@@ -20,6 +20,7 @@ export default function Layout({ children }: LayoutProps) {
       <Header 
         searchQuery={searchQuery} 
         setSearchQuery={setSearchQuery} 
+        onSearchSelect={setCurrentArticle}
         toggleSidebar={toggleSidebar}
       />
       
@@ -31,7 +32,9 @@ export default function Layout({ children }: LayoutProps) {
           closeSidebar={closeSidebar}
         />
         
-        <main className="flex-1 overflow-x-hidden">
+        {/* THE FIX: We added min-h-[100vh] here. This forces the content area to ALWAYS be 
+            at least the full height of the monitor, so the footer never jumps up! */}
+        <main className="flex-1 overflow-x-hidden min-h-[100vh]">
           {children}
         </main>
       </div>
