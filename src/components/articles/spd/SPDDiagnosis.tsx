@@ -1,334 +1,426 @@
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Users, Stethoscope, Activity, FileText, CheckSquare, MessageSquare, ClipboardList, Home, Eye, Puzzle, Brain, GitMerge, AlertTriangle, Heart, ShieldAlert, ListChecks } from 'lucide-react';
 
 interface SPDDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function SPDDiagnosis({ setCurrentArticle }: SPDDiagnosisProps) {
+export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProps) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+
   return (
-    <article className="max-w-6xl">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-          }
-        `}
-      </style>
-      <div className="mb-6">
-        <a 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setCurrentArticle?.('spd'); }}
-          className="text-[#2abcd4] hover:underline cursor-pointer"
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          SPD: Testing & Diagnosing
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('spd')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
         >
-          ← Back to SPD
-        </a>
+          <span className="text-xl">←</span>
+          All About SPD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">
-        SPD: Testing & Diagnosing
-      </h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('spd')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About SPD
+      </button>
 
-      <div className="space-y-8">
-        {/* Introduction Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Assessment of Sensory Processing Disorder</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1709127347884-a106974ef58d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvY2N1cGF0aW9uYWwlMjB0aGVyYXB5JTIwY2hpbGQlMjBhc3Nlc3NtZW50fGVufDF8fHx8MTc2NzQwNjQ2MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Occupational therapy assessment"
-            className="w-96 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4"
-          />
-          
-          <p className="mb-4">
-            The assessment and diagnosis of Sensory Processing Disorder involves a comprehensive evaluation of how an individual 
-            receives, processes, and responds to sensory information across all sensory systems.<sup>[1][2]</sup> Evaluation is 
-            typically conducted by occupational therapists with specialized training in sensory integration, though other 
-            professionals may also contribute to the assessment process.<sup>3</sup>
-          </p>
-          <p className="mb-4">
-            It's important to note that SPD is not currently included as a distinct diagnosis in the DSM-5 or ICD-11 diagnostic 
-            manuals.<sup>4</sup> However, sensory processing differences are widely recognized by occupational therapists and 
-            other professionals, and comprehensive assessment protocols have been developed to identify and characterize sensory 
-            processing challenges.<sup>[1][2]</sup>
-          </p>
-        </div>
-
-        {/* Who Conducts Assessments Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Assessment Professionals</h2>
-          
-          <p className="mb-4">
-            Several types of professionals may be involved in evaluating sensory processing:
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Occupational Therapists</h3>
-          <p className="mb-4">
-            Occupational therapists (OTs), particularly those with specialized training in sensory integration, are the primary 
-            professionals who assess and diagnose SPD.<sup>5</sup> Many OTs pursue advanced certification in Ayres Sensory 
-            Integration® (ASI) or complete extensive continuing education in sensory processing assessment and intervention.<sup>6</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Other Professionals</h3>
-          <p className="mb-4">
-            Depending on the individual and presenting concerns, other professionals may contribute to the evaluation:
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Psychologists:</strong> May assess for co-occurring conditions like ADHD, anxiety, or autism</li>
-            <li className="mb-2"><strong>Speech-Language Pathologists:</strong> May evaluate oral-motor and feeding difficulties related to sensory processing</li>
-            <li className="mb-2"><strong>Physical Therapists:</strong> May assess vestibular and proprioceptive functions affecting movement and balance</li>
-            <li className="mb-2"><strong>Developmental Pediatricians:</strong> May coordinate comprehensive evaluations and rule out medical conditions<sup>7</sup></li>
-          </ul>
-        </div>
-
-        {/* Assessment Components Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Components of Comprehensive Assessment</h2>
-          
-          <p className="mb-4">
-            A thorough sensory processing evaluation includes multiple components to build a complete picture of an individual's 
-            sensory profile:<sup>1</sup>
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Developmental and Sensory History</h3>
-          <p className="mb-4">
-            The assessment begins with gathering detailed information about:<sup>8</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Developmental milestones and early sensory behaviors</li>
-            <li className="mb-2">Prenatal, birth, and medical history</li>
-            <li className="mb-2">Current sensory concerns across different environments (home, school, community)</li>
-            <li className="mb-2">Daily routines and how sensory issues impact functioning</li>
-            <li className="mb-2">Family history of sensory sensitivities or related conditions</li>
-            <li className="mb-2">Previous interventions and their outcomes</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Standardized Questionnaires and Scales</h3>
-          <p className="mb-4">
-            Several validated assessment tools help identify and characterize sensory processing patterns:
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Sensory Profile 2:</strong> A comprehensive questionnaire completed by caregivers that measures 
-            sensory processing patterns across multiple contexts for individuals from birth through adulthood.<sup>9</sup> It 
-            identifies patterns related to sensory modulation, discrimination, and sensory-based motor abilities.</li>
-            <li className="mb-2"><strong>Sensory Processing Measure (SPM):</strong> Evaluates sensory processing, praxis, and social 
-            participation in both home and school environments.<sup>1</sup></li>
-            <li className="mb-2"><strong>Sensory Experiences Questionnaire (SEQ):</strong> Designed for young children, particularly 
-            useful in research and clinical assessment of sensory features.<sup>1</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Clinical Observations</h3>
-          <p className="mb-4">
-            Direct observation of the individual interacting with sensory experiences provides crucial assessment information:<sup>3</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Responses to various sensory stimuli (tactile, auditory, visual, vestibular, proprioceptive)</li>
-            <li className="mb-2">Self-regulation strategies and behaviors</li>
-            <li className="mb-2">Motor coordination and praxis abilities</li>
-            <li className="mb-2">Attention and arousal levels across activities</li>
-            <li className="mb-2">Adaptive responses to sensory challenges<sup>8</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Standardized Performance Assessments</h3>
-          <p className="mb-4">
-            For in-depth assessment, particularly for research or complex presentations, occupational therapists may use:
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Sensory Integration and Praxis Tests (SIPT):</strong> A comprehensive battery of 17 tests 
-            measuring various aspects of sensory integration and praxis for children ages 4-8 years.<sup>2</sup> Requires 
-            specialized certification to administer and interpret.</li>
-            <li className="mb-2"><strong>Evaluation in Ayres Sensory Integration (EASI):</strong> A newer assessment tool designed 
-            to measure fidelity to Ayres Sensory Integration intervention principles and evaluate intervention outcomes.<sup>3</sup></li>
-            <li className="mb-2">Praxis (motor planning) abilities<sup>2</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Test of Sensory Functions in Infants (TSFI)</h3>
-          <p className="mb-4">
-            For infants and very young children, the TSFI assesses sensory processing and reactivity in children ages 4-18 months.<sup>4</sup>
-          </p>
-        </div>
-
-        {/* Environmental Assessment Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Environmental and Functional Assessment</h2>
-          
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGdyb3VwJTIwZGl2ZXJzaXR5fGVufDF8fHx8MTc2NzQwNjQ2MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
-            alt="Children in various environments"
-            className="w-80 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4"
-          />
-          
-          <p className="mb-4">
-            Assessment of how sensory processing affects daily life and participation is crucial:<sup>[15][16]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Observation in natural environments (home, school, community)</li>
-            <li className="mb-2">Assessment of participation in age-appropriate activities</li>
-            <li className="mb-2">Impact on self-care, play, learning, and social interactions<sup>[17]</sup></li>
-            <li className="mb-2">Environmental factors that support or challenge sensory processing</li>
-            <li className="mb-2">Family and cultural considerations in sensory experiences</li>
-          </ul>
-        </div>
-
-        {/* Differential Diagnosis Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Differential Diagnosis and Co-occurring Conditions</h2>
-          
-          <p className="mb-4">
-            A comprehensive assessment considers the relationship between sensory processing differences and other conditions, 
-            screening for related diagnoses:<sup>2</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Autism Spectrum Disorder:</strong> Sensory processing differences are common in autism, 
-            and assessment should clarify whether SPD occurs independently or as part of autism.<sup>[18][19]</sup></li>
-            <li className="mb-2"><strong>ADHD:</strong> Both conditions involve attention, impulse control, sensory modulation, 
-            and regulation challenges.<sup>[20][21]</sup></li>
-            <li className="mb-2"><strong>Anxiety Disorders:</strong> Sensory sensitivities can contribute to anxiety, and anxiety 
-            can increase sensory reactivity.<sup>[22]</sup></li>
-            <li className="mb-2"><strong>Developmental Coordination Disorder:</strong> Motor difficulties may stem from sensory-based 
-            motor challenges or other developmental issues.</li>
-            <li className="mb-2"><strong>Hearing or Vision Problems:</strong> Ruling out sensory impairments is essential.</li>
-          </ul>
-        </div>
-
-        {/* Diagnostic Criteria Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Diagnostic Considerations</h2>
-          
-          <p className="mb-4">
-            While SPD is not in the DSM-5, researchers and clinicians have proposed diagnostic criteria. Miller and 
-            colleagues outlined criteria for diagnosing SPD subtypes:<sup>2</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Sensory processing difficulties that interfere with participation in daily activities</li>
-            <li className="mb-2">Patterns consistent with one or more SPD subtypes (modulation, discrimination, motor)</li>
-            <li className="mb-2">Measurable differences on standardized sensory processing assessments<sup>1</sup></li>
-            <li className="mb-2">Symptoms not better explained by other conditions</li>
-            <li className="mb-2">Duration of symptoms (typically present for at least 6 months)</li>
-          </ul>
-        </div>
-
-        {/* Assessment Process Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Assessment Process</h2>
-          
-          <p className="mb-4">
-            Comprehensive sensory processing assessment typically unfolds over multiple sessions:
-          </p>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Initial Consultation</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Detailed interview with parents/caregivers about sensory concerns</li>
-            <li className="mb-2">Review of developmental and medical history</li>
-            <li className="mb-2">Discussion of family priorities and goals for assessment<sup>[23]</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Formal Assessment Sessions</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Completion of standardized questionnaires</li>
-            <li className="mb-2">Clinical observations and interactions with the individual</li>
-            <li className="mb-2">Administration of standardized tests (if appropriate)</li>
-            <li className="mb-2">Environmental observations in natural settings (if possible)</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Information Gathering</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Teacher or school reports (if applicable)<sup>1</sup></li>
-            <li className="mb-2">Records from other professionals (pediatrician, psychologist, etc.)</li>
-            <li className="mb-2">Video recordings or parent observations from home</li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Integration and Interpretation</h3>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Analysis of all assessment data</li>
-            <li className="mb-2">Motor and coordination evaluation<sup>2</sup></li>
-            <li className="mb-2">Identification of sensory processing patterns and subtypes</li>
-            <li className="mb-2">Understanding the individual's unique sensory profile</li>
-            <li className="mb-2">Determining impact on daily functioning and participation<sup>5</sup></li>
-          </ul>
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Feedback and Recommendations</h3>
-          <p className="mb-4">
-            The assessment concludes with a comprehensive report and feedback session providing:<sup>[24]</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Clear explanation of assessment findings</li>
-            <li className="mb-2">Description of the individual's sensory profile and patterns</li>
-            <li className="mb-2">Recommendations for intervention and support</li>
-            <li className="mb-2">Strategies for home, school, and community environments</li>
-            <li className="mb-2">Referrals to other professionals if needed</li>
-          </ul>
-        </div>
-
-        {/* Ongoing Assessment Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Ongoing Assessment and Monitoring</h2>
-          
-          <p className="mb-4">
-            Assessment is not a one-time event but an ongoing process:<sup>3</sup>
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Progress Monitoring:</strong> Regular evaluation of intervention effectiveness and changes in sensory processing</li>
-            <li className="mb-2"><strong>Reassessment:</strong> Periodic comprehensive reassessments to track developmental changes and intervention outcomes</li>
-            <li className="mb-2"><strong>Goal Setting and Measurement:</strong> Use of tools like Goal 
-            Attainment Scaling<sup>3</sup></li>
-            <li className="mb-2"><strong>Family Input:</strong> Continuous feedback from families about functional changes and 
-            quality of life<sup>5</sup></li>
-          </ul>
-        </div>
-
-        {/* Important Considerations Section */}
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Important Considerations</h2>
-          
-          <p className="mb-4">
-            Several factors should be considered when approaching sensory processing assessment:
-          </p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Individual Variability:</strong> Sensory processing presents differently in each person, 
-            requiring individualized assessment approaches<sup>[25]</sup></li>
-            <li className="mb-2"><strong>Context Matters:</strong> Sensory responses can vary across environments and states of 
-            arousal, stress, or fatigue</li>
-            <li className="mb-2"><strong>Cultural Sensitivity:</strong> Cultural backgrounds influence sensory experiences, 
-            preferences, and responses</li>
-            <li className="mb-2"><strong>Developmental Changes:</strong> Sensory processing profiles can evolve over time with 
-            development and intervention</li>
-            <li className="mb-2"><strong>Strengths-Based Approach:</strong> Assessment should identify not only challenges but also 
-            sensory strengths and effective coping strategies<sup>[26]</sup></li>
-          </ul>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+        <button
+          onClick={() => setActiveTab('process')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'process'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          The Assessment Process
+        </button>
+        <button
+          onClick={() => setActiveTab('tools')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'tools'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Tools & Measures
+        </button>
+        <button
+          onClick={() => setActiveTab('diagnosis')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'diagnosis'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Diagnosis & Context
+        </button>
       </div>
 
-      <section className="mt-8">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Schaaf, R. C., & Lane, A. E. (2015). "Toward a best-practice protocol for assessment of sensory features in ASD." <em>Journal of Autism and Developmental Disorders</em>, 45(5), 1380-1395.</p>
-          <p>[2] Miller, L. J., Anzalone, M. E., Lane, S. J., Cermak, S. A., & Osten, E. T. (2007). "Concept evolution in sensory integration: A proposed nosology for diagnosis." <em>American Journal of Occupational Therapy</em>, 61(2), 135-140.</p>
-          <p>[3] Parham, L. D., & Mailloux, Z. (2015). "Sensory integration." In J. Case-Smith & J. C. O'Brien (Eds.), <em>Occupational Therapy for Children and Adolescents</em> (7th ed., pp. 258-303). St. Louis: Elsevier.</p>
-          <p>[4] American Psychiatric Association. (2013). <em>Diagnostic and Statistical Manual of Mental Disorders</em> (5th ed.). Arlington, VA: American Psychiatric Publishing.</p>
-          <p>[5] Schaaf, R. C., Benevides, T., Mailloux, Z., et al. (2014). "An intervention for sensory difficulties in children with autism: A randomized trial." <em>Journal of Autism and Developmental Disorders</em>, 44(7), 1493-1506.</p>
-          <p>[6] Parham, L. D., Roley, S. S., May-Benson, T. A., et al. (2011). "Development of a fidelity measure for research on the effectiveness of the Ayres Sensory Integration intervention." <em>American Journal of Occupational Therapy</em>, 65(2), 133-142.</p>
-          <p>[7] Miller, L. J., Nielsen, D. M., Schoen, S. A., & Brett-Green, B. A. (2009). "Perspectives on sensory processing disorder: A call for translational research." <em>Frontiers in Integrative Neuroscience</em>, 3, 22.</p>
-          <p>[8] Bundy, A. C., Lane, S. J., & Murray, E. A. (2002). <em>Sensory Integration: Theory and Practice</em> (2nd ed.). Philadelphia: F.A. Davis Company.</p>
-          <p>[9] Dunn, W. (2014). <em>Sensory Profile 2: User's Manual</em>. Bloomington, MN: Pearson.</p>
-          <p>[10] Parham, L. D., Ecker, C., Miller Kuhaneck, H., Henry, D. A., & Glennon, T. J. (2007). <em>Sensory Processing Measure (SPM): Manual</em>. Los Angeles: Western Psychological Services.</p>
-          <p>[11] Baranek, G. T., David, F. J., Poe, M. D., Stone, W. L., & Watson, L. R. (2006). "Sensory Experiences Questionnaire: Discriminating sensory features in young children with autism, developmental delays, and typical development." <em>Journal of Child Psychology and Psychiatry</em>, 47(6), 591-601.</p>
-          <p>[12] Ayres, A. J. (1989). <em>Sensory Integration and Praxis Tests (SIPT)</em>. Los Angeles: Western Psychological Services.</p>
-          <p>[13] Mailloux, Z., Parham, L. D., Roley, S. S., Ruzzano, L., & Schaaf, R. C. (2018). "Introduction to the Evaluation in Ayres Sensory Integration (EASI)." <em>American Journal of Occupational Therapy</em>, 72(1), 7201195030.</p>
-          <p>[14] DeGangi, G. A., & Greenspan, S. I. (1989). "Test of Sensory Functions in Infants (TSFI)." Los Angeles: Western Psychological Services.</p>
-          <p>[15] Bar-Shalita, T., Vatine, J. J., & Parush, S. (2008). "Sensory modulation disorder: A risk factor for participation in daily life activities." <em>Developmental Medicine & Child Neurology</em>, 50(12), 932-937.</p>
-          <p>[16] Ashburner, J., Ziviani, J., & Rodger, S. (2008). "Sensory processing and classroom emotional, behavioral, and educational outcomes in children with autism spectrum disorder." <em>American Journal of Occupational Therapy</em>, 62(5), 564-573.</p>
-          <p>[17] Cosbey, J., Johnston, S. S., & Dunn, M. L. (2010). "Sensory processing disorders and social participation." <em>American Journal of Occupational Therapy</em>, 64(3), 462-473.</p>
-          <p>[18] Lane, S. J., Reynolds, S., & Thacker, L. (2010). "Sensory over-responsivity and ADHD: Differentiating using electrodermal responses, cortisol, and anxiety." <em>Frontiers in Integrative Neuroscience</em>, 4, 8.</p>
-          <p>[19] Ben-Sasson, A., Hen, L., Fluss, R., Cermak, S. A., Engel-Yeger, B., & Gal, E. (2009). "A meta-analysis of sensory modulation symptoms in individuals with autism spectrum disorders." <em>Journal of Autism and Developmental Disorders</em>, 39(1), 1-11.</p>
-          <p>[20] Marco, E. J., Hinkley, L. B., Hill, S. S., & Nagarajan, S. S. (2011). "Sensory processing in autism: A review of neurophysiologic findings." <em>Pediatric Research</em>, 69(5), 48R-54R.</p>
-          <p>[21] Dunn, W., & Bennett, D. (2002). "Patterns of sensory processing in children with attention deficit hyperactivity disorder." <em>OTJR: Occupation, Participation and Health</em>, 22(1), 4-15.</p>
-          <p>[22] Ben-Sasson, A., Carter, A. S., & Briggs-Gowan, M. J. (2009). "Sensory over-responsivity in elementary school: Prevalence and social-emotional correlates." <em>Journal of Abnormal Child Psychology</em>, 37(5), 705-716.</p>
-          <p>[23] Cermak, S. A., & Larkin, D. (2002). "Developmental coordination disorder." In A. C. Bundy, S. J. Lane, & E. A. Murray (Eds.), <em>Sensory Integration: Theory and Practice</em> (2nd ed., pp. 215-248). Philadelphia: F.A. Davis.</p>
-          <p>[24] Schaaf, R. C., & Miller, L. J. (2005). "Occupational therapy using a sensory integrative approach for children with developmental disabilities." <em>Mental Retardation and Developmental Disabilities Research Reviews</em>, 11(2), 143-148.</p>
-          <p>[25] Case-Smith, J., & Arbesman, M. (2008). "Evidence-based review of interventions for autism used in or of relevance to occupational therapy." <em>American Journal of Occupational Therapy</em>, 62(4), 416-429.</p>
-          <p>[26] Dunn, W. (2001). "The sensations of everyday life: Empirical, theoretical, and pragmatic considerations." <em>American Journal of Occupational Therapy</em>, 55(6), 608-620.</p>
+      {/* ==========================================
+          TAB 1: THE ASSESSMENT PROCESS
+      ========================================== */}
+      {activeTab === 'process' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Assessment Professionals Card (Cyan) */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Assessment Professionals</h2>
+            
+            <ImageWithFallback 
+              src="/images/spd/spd-diagnosis-professionals.webp"
+              alt="Multidisciplinary team reviewing a child's clinical file"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+              Evaluating how a nervous system processes the physical world requires highly specialized training. While multidisciplinary teams are ideal, the primary diagnostician is usually a specialized occupational therapist.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Activity className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Occupational Therapists (OTs)</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">The primary professionals who assess SPD. Parents should specifically seek out OTs who have advanced, rigorous certification in Ayres Sensory Integration® (ASI).</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Brain className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Psychologists</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Crucial for differential diagnosis. Psychologists assess whether the sensory symptoms are part of a co-occurring condition like ADHD, an anxiety disorder, or Autism.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Stethoscope className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Developmental Pediatricians</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Medical doctors who specialize in childhood development. They often coordinate the comprehensive evaluation and rule out strictly medical or genetic causes for the symptoms.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
+                  <Users className="text-[#0A9DC4] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Speech & Physical Therapists</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">SLPs frequently evaluate oral-motor or feeding difficulties related to sensory textures, while PTs assess how vestibular (balance) and proprioceptive functions affect gross motor movement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* The Evaluation Journey Card (Yellow) */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Evaluation Journey</h2>
+            
+            <ImageWithFallback 
+              src="/images/spd/spd-diagnosis-process.webp"
+              alt="Visual flowchart tracking the journey from consultation to feedback session"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <MessageSquare className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">1. Consultation</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">A detailed parent/caregiver interview gathering prenatal history, developmental milestones, and specific concerns across home and school environments.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <CheckSquare className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">2. Information Gathering</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Completion of standardized parent/teacher questionnaires to map out the individual's baseline sensory reactivity in natural environments.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <Eye className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">3. Clinical Observation</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">Direct interaction with the individual to observe their motor planning, self-regulation strategies, and physical responses to controlled sensory stimuli.</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
+                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
+                  <FileText className="text-[#d4a017] w-4 h-4" />
+                  <h3 className="text-[#0c264d] font-bold text-sm">4. Integration & Feedback</h3>
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">The OT synthesizes all data to identify the specific SPD subtype, culminating in a comprehensive diagnostic report with targeted home and school recommendations.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Parham, L. D., & Mailloux, Z. (2015). Sensory integration. In <i>Occupational Therapy for Children and Adolescents</i>. Elsevier.</li>
+                <li>Schaaf, R. C., & Lane, A. E. (2015). Toward a best-practice protocol for assessment of sensory features in ASD. <i>Journal of Autism and Developmental Disorders</i>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
+
+      {/* ==========================================
+          TAB 2: TOOLS & MEASURES
+      ========================================== */}
+      {activeTab === 'tools' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Questionnaires Card (Slate) */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Standardized Questionnaires</h2>
+            
+            <ImageWithFallback 
+              src="/images/spd/spd-diagnosis-questionnaires.webp"
+              alt="Parent filling out a standardized digital questionnaire regarding a child's sensory habits"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+              Before stepping into a clinic, evaluators rely heavily on standardized questionnaires to measure how the individual reacts to daily, real-world sensory events.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-slate-100 p-2 rounded-lg border border-gray-200 shrink-0">
+                  <ClipboardList className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Sensory Profile 2</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Updated in 2014, this is a comprehensive, widely used questionnaire completed by caregivers. It measures sensory patterns (modulation, discrimination) across multiple contexts for individuals from birth through adulthood.<sup>1</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="bg-slate-100 p-2 rounded-lg border border-gray-200 shrink-0">
+                  <Home className="text-[#0c264d] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Sensory Processing Measure (SPM)</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Evaluates sensory processing, motor planning (praxis), and social participation, specifically comparing how the child functions at home versus how they function in the school environment.<sup>2</sup></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Performance Assessments Card (Cyan) */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Performance Assessments</h2>
+            
+            <ImageWithFallback 
+              src="/images/spd/spd-diagnosis-performance.webp"
+              alt="Child engaged in a structured, playful motor-planning assessment in a sensory gym"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Puzzle className="text-[#2abcd4] w-5 h-5" /> The SIPT
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  The Sensory Integration and Praxis Tests (SIPT) is the classic gold standard for children ages 4-8. It is a comprehensive battery of 17 distinct tests measuring various aspects of sensory perception, motor planning, and visual-motor integration. It requires rigorous, specialized certification for the OT to administer and accurately interpret.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <Activity className="text-[#2abcd4] w-5 h-5" /> The EASI (Modern Tool)
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  Published in 2018, the Evaluation in Ayres Sensory Integration (EASI) is a modern, globally normed assessment tool.<sup>3</sup> It was designed to provide highly objective measurements of sensory perception, postural control, and praxis, offering a more contemporary alternative to older testing batteries.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Standardized Assessments
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Dunn, W. (2014). Sensory Profile 2: User's Manual. <i>Pearson</i>.</p>
+                <p>2. Parham, L. D., Ecker, C., Miller Kuhaneck, H., Henry, D. A., & Glennon, T. J. (2007). Sensory Processing Measure (SPM): Manual. <i>Western Psychological Services</i>.</p>
+                <p>3. Mailloux, Z., Parham, L. D., Roley, S. S., Ruzzano, L., & Schaaf, R. C. (2018). Introduction to the Evaluation in Ayres Sensory Integration (EASI). <i>American Journal of Occupational Therapy</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Ayres, A. J. (1989). Sensory Integration and Praxis Tests (SIPT). <i>Western Psychological Services</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==========================================
+          TAB 3: DIAGNOSIS & CONTEXT
+      ========================================== */}
+      {activeTab === 'diagnosis' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Differential Diagnosis Card (Yellow) */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
+            
+            <ImageWithFallback 
+              src="/images/spd/spd-diagnosis-differential.webp"
+              alt="Clinical diagram showing the overlapping circles of SPD, Autism, and ADHD"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+              Because sensory issues frequently co-occur with other neurodevelopmental profiles, a careful differential diagnosis must ensure the right interventions are prioritized.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <GitMerge className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Autism Spectrum Disorder</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Sensory differences are foundational to Autism. A comprehensive 2015 clinical protocol emphasizes that assessments must clearly determine whether SPD is occurring independently or as a component of the broader Autistic profile.<sup>1</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Brain className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">ADHD vs. SPD</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Both conditions heavily involve impulse control and regulation challenges. A child fidgeting in class might have ADHD (needing movement to maintain attention) or SPD (craving vestibular input to regulate their nervous system).</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <Heart className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Anxiety Disorders</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Sensory pain directly triggers a physiological anxiety response, while existing psychological anxiety can dramatically lower a person's sensory threshold, making them more reactive to lights and sounds.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
+                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
+                  <ShieldAlert className="text-[#d4a017] w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Medical Exclusions</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Before diagnosing a processing disorder, basic sensory impairments (like requiring prescription glasses or having a physical hearing deficit) must be entirely ruled out by medical specialists.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Diagnostic Considerations Card (Slate) */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Diagnostic Criteria & Considerations</h2>
+            
+            <ImageWithFallback 
+              src="/images/spd/spd-diagnosis-criteria.webp"
+              alt="Evaluator reviewing assessment data and matching it against specific diagnostic criteria"
+              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <ListChecks className="text-[#2abcd4] w-5 h-5" /> Proposed Criteria
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  Because SPD is absent from the DSM-5, clinicians rely on the proposed nosology developed by Lucy Jane Miller and colleagues.<sup>2</sup> To qualify for an SPD diagnosis, the individual must exhibit patterns consistent with an SPD subtype, show measurable differences on standardized tests, and—most importantly—the symptoms must severely interfere with daily functioning and participation.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
+                  <AlertTriangle className="text-[#2abcd4] w-5 h-5" /> Context Matters
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  A high-quality assessment recognizes that a child's sensory profile is deeply affected by their environment. A child might have perfectly regulated sensory responses in a calm, quiet home, but experience complete sensory modulation failure in a loud, chaotic school cafeteria. Diagnoses must account for these environmental stressors.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Protocols
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Schaaf, R. C., & Lane, A. E. (2015). Toward a best-practice protocol for assessment of sensory features in ASD. <i>Journal of Autism and Developmental Disorders</i>.</p>
+                <p>2. Miller, L. J., Anzalone, M. E., Lane, S. J., Cermak, S. A., & Osten, E. T. (2007). Concept evolution in sensory integration: A proposed nosology for diagnosis. <i>American Journal of Occupational Therapy</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>American Psychiatric Association. (2013). Diagnostic and Statistical Manual of Mental Disorders (5th ed.).</li>
+                <li>Lane, S. J., Reynolds, S., & Thacker, L. (2010). Sensory over-responsivity and ADHD: Differentiating using electrodermal responses, cortisol, and anxiety. <i>Frontiers in Integrative Neuroscience</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
     </article>
   );
 }
