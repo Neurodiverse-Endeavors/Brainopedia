@@ -168,7 +168,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE consortium. (2017). Phase 2 of CATALISE: A multinational and multidisciplinary Delphi consensus study of problems with language development: Terminology. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/jcpp.12721</p>
+                <p>1. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE consortium. (2017). Phase 2 of CATALISE: A multinational and multidisciplinary Delphi consensus study of problems with language development: Terminology. <i>Journal of Child Psychology and Psychiatry</i>.</p>
               </div>
             </div>
 
@@ -178,7 +178,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>American Speech-Language-Hearing Association. (n.d.). <i>Spoken language disorders</i>.</li>
-                <li>Leonard, L. B. (2014). Children with specific language impairment (2nd ed.). <i>MIT Press</i>.</li>
+                <li>Leonard, L. B. (2014). <i>Children with specific language impairment</i> (2nd ed.). MIT Press.</li>
               </ul>
             </div>
           </div>
@@ -287,7 +287,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Wiig, E. H., Semel, E., & Secord, W. A. (2013). Clinical Evaluation of Language Fundamentals (5th ed.). <i>Pearson</i>.</li>
+                <li>Wiig, E. H., Semel, E., & Secord, W. A. (2013). <i>Clinical Evaluation of Language Fundamentals</i> (5th ed.). Pearson.</li>
                 <li>Heilmann, J., Nockerts, A., & Miller, J. F. (2010). Language sampling: Does the length of the transcript matter? <i>Language, Speech, and Hearing Services in Schools</i>.</li>
                 <li>Rice, M. L., & Wexler, K. (1996). Toward tense as a clinical marker of specific language impairment in English-speaking children. <i>Journal of Speech and Hearing Research</i>.</li>
                 <li>Gathercole, S. E., & Baddeley, A. D. (1990). Phonological memory deficits in language disordered children. <i>Journal of Memory and Language</i>.</li>

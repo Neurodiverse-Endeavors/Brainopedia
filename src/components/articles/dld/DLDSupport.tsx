@@ -187,13 +187,13 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Law, J., Garrett, Z., & Nye, C. (2004). The efficacy of treatment for children with developmental speech and language delay/disorder. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://doi.org/10.1044/1092-4388(2004/069)" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1044/1092-4388(2004/069)</a></li>
-                <li>Ebbels, S. H. (2014). Effectiveness of intervention for grammar in school-aged children with primary language impairments: A review of the evidence. <i>Child Language Teaching and Therapy</i>. <a href="https://doi.org/10.1177/0265659013516135" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1177/0265659013516135</a></li>
-                <li>Camarata, S. M., Nelson, K. E., & Camarata, M. N. (1994). Comparison of conversational-recasting and imitative procedures for training grammatical structures in children with specific language impairment. <i>Journal of Speech and Hearing Research</i>. <a href="https://doi.org/10.1044/jshr.3706.1414" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1044/jshr.3706.1414</a></li>
-                <li>Marulis, L. M., & Neuman, S. B. (2010). The effects of vocabulary intervention on young children's word learning: A meta-analysis. <i>Review of Educational Research</i>. <a href="https://doi.org/10.3102/0034654310382242" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.3102/0034654310382242</a></li>
-                <li>Petersen, D. B., Gillam, S. L., Spencer, T., & Gillam, R. B. (2010). The effects of literate narrative intervention on children with neurologically based language impairments. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://doi.org/10.1044/1092-4388(2009/08-0247)" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1044/1092-4388(2009/08-0247)</a></li>
-                <li>Boyle, J., McCartney, E., O'Hare, A., & Forbes, J. (2009). Direct versus indirect and individual versus group modes of language therapy for children with primary language impairment. <i>International Journal of Language & Communication Disorders</i>. <a href="https://doi.org/10.1080/13682820802371190" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1080/13682820802371190</a></li>
-                <li>Warren, S. F., Fey, M. E., & Yoder, P. J. (2007). Differential treatment intensity research: A missing link to creating optimally effective communication interventions. <i>Mental Retardation and Developmental Disabilities Research Reviews</i>. <a href="https://doi.org/10.1002/mrdd.20139" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1002/mrdd.20139</a></li>
+                <li>Law, J., Garrett, Z., & Nye, C. (2004). The efficacy of treatment for children with developmental speech and language delay/disorder. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Ebbels, S. H. (2014). Effectiveness of intervention for grammar in school-aged children with primary language impairments: A review of the evidence. <i>Child Language Teaching and Therapy</i>.</li>
+                <li>Camarata, S. M., Nelson, K. E., & Camarata, M. N. (1994). Comparison of conversational-recasting and imitative procedures for training grammatical structures in children with specific language impairment. <i>Journal of Speech and Hearing Research</i>.</li>
+                <li>Marulis, L. M., & Neuman, S. B. (2010). The effects of vocabulary intervention on young children's word learning: A meta-analysis. <i>Review of Educational Research</i>.</li>
+                <li>Petersen, D. B., Gillam, S. L., Spencer, T., & Gillam, R. B. (2010). The effects of literate narrative intervention on children with neurologically based language impairments. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Boyle, J., McCartney, E., O'Hare, A., & Forbes, J. (2009). Direct versus indirect and individual versus group modes of language therapy for children with primary language impairment. <i>International Journal of Language & Communication Disorders</i>.</li>
+                <li>Warren, S. F., Fey, M. E., & Yoder, P. J. (2007). Differential treatment intensity research: A missing link to creating optimally effective communication interventions. <i>Mental Retardation and Developmental Disabilities Research Reviews</i>.</li>
               </ul>
             </div>
           </div>      </div>
@@ -248,7 +248,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] flex items-start gap-4">
                 <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
                   <CheckCircle className="text-[#0c264d] w-5 h-5" />
                 </div>
@@ -333,12 +333,12 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Cirrin, F. M., & Gillam, R. B. (2008). Language intervention practices for school-age children with spoken language disorders. <i>Language, Speech, and Hearing Services in Schools</i>. <a href="https://doi.org/10.1044/0161-1461(2008/07-0027)" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1044/0161-1461(2008/07-0027)</a></li>
-                <li>Dockrell, J. E., & Shield, B. M. (2006). Acoustical barriers in classrooms: The impact of noise on performance in the classroom. <i>British Educational Research Journal</i>. <a href="https://doi.org/10.1080/01411920500402030" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1080/01411920500402030</a></li>
-                <li>Catts, H. W., Fey, M. E., Tomblin, J. B., & Zhang, X. (2002). A longitudinal investigation of reading outcomes in children with language impairments. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://doi.org/10.1044/1092-4388(2002/093)" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1044/1092-4388(2002/093)</a></li>
-                <li>Saddler, B., & Graham, S. (2005). The effects of peer-assisted sentence-combining instruction on the writing performance of more and less skilled young writers. <i>Journal of Educational Psychology</i>. <a href="https://doi.org/10.1037/0022-0663.97.1.43" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1037/0022-0663.97.1.43</a></li>
-                <li>Elkind, J., Cohen, K., & Murray, C. (1993). Using computer-based readers to improve reading comprehension of students with dyslexia. <i>Annals of Dyslexia</i>. <a href="https://doi.org/10.1007/BF02648083" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1007/BF02648083</a></li>
-                <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). <a href="https://sites.ed.gov/idea/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">https://sites.ed.gov/idea/</a></li>
+                <li>Cirrin, F. M., & Gillam, R. B. (2008). Language intervention practices for school-age children with spoken language disorders. <i>Language, Speech, and Hearing Services in Schools</i>.</li>
+                <li>Dockrell, J. E., & Shield, B. M. (2006). Acoustical barriers in classrooms: The impact of noise on performance in the classroom. <i>British Educational Research Journal</i>.</li>
+                <li>Catts, H. W., Fey, M. E., Tomblin, J. B., & Zhang, X. (2002). A longitudinal investigation of reading outcomes in children with language impairments. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Saddler, B., & Graham, S. (2005). The effects of peer-assisted sentence-combining instruction on the writing performance of more and less skilled young writers. <i>Journal of Educational Psychology</i>.</li>
+                <li>Elkind, J., Cohen, K., & Murray, C. (1993). Using computer-based readers to improve reading comprehension of students with dyslexia. <i>Annals of Dyslexia</i>.</li>
+                <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</li>
               </ul>
             </div>
           </div>
@@ -440,10 +440,10 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Hoff, E. (2003). The specificity of environmental influence: Socioeconomic status affects early vocabulary development via maternal speech. <i>Child Development</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/14580061/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 14580061</a></li>
-                <li>Mol, S. E., Bus, A. G., de Jong, M. T., & Smeets, D. J. H. (2008). Added value of dialogic parent-child book readings: A meta-analysis. <i>Early Education and Development</i>. <a href="https://doi.org/10.1080/10409280701838603" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1080/10409280701838603</a></li>
-                <li>Jerome, A. C., Fujiki, M., Brinton, B., & James, S. L. (2002). Self-esteem in children with specific language impairment. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/12199401/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 12199401</a></li>
-                <li>Fujiki, M., Brinton, B., & Clarke, D. (2002). Emotion regulation in children with specific language impairment. <i>Language, Speech, and Hearing Services in Schools</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/12051614/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 12051614</a></li>
+                <li>Hoff, E. (2003). The specificity of environmental influence: Socioeconomic status affects early vocabulary development via maternal speech. <i>Child Development</i>.</li>
+                <li>Mol, S. E., Bus, A. G., de Jong, M. T., & Smeets, D. J. H. (2008). Added value of dialogic parent-child book readings: A meta-analysis. <i>Early Education and Development</i>.</li>
+                <li>Jerome, A. C., Fujiki, M., Brinton, B., & James, S. L. (2002). Self-esteem in children with specific language impairment. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Fujiki, M., Brinton, B., & Clarke, D. (2002). Emotion regulation in children with specific language impairment. <i>Language, Speech, and Hearing Services in Schools</i>.</li>
               </ul>
             </div>
           </div>

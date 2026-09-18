@@ -142,6 +142,33 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
               </div>
             </div>
           </div>
+
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE consortium. (2017). Phase 2 of CATALISE: A multinational and multidisciplinary Delphi consensus study of problems with language development: Terminology. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+                <p>2. Leonard, L. B. (2014). <i>Children with specific language impairment</i> (2nd ed.). MIT Press.</p>
+                <p>3. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE-2 consortium. (2016). CATALISE: A multinational and multidisciplinary Delphi consensus study. Identifying language impairments in children. <i>PLoS ONE</i>.</p>
+                <p>4. Tomblin, J. B., & Zhang, X. (2006). The dimensionality of language ability in school-age children. <i>Journal of Speech, Language, and Hearing Research</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Rice, M. L. (2013). Language growth and genetics of specific language impairment. <i>International Journal of Speech-Language Pathology</i>.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       )}
 
@@ -228,6 +255,33 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
               </div>
             </div>
           </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>5. Bishop, D. V. M. (1997). <i>Uncommon understanding: Development and disorders of language comprehension in children</i>. Psychology Press.</p>
+                <p>6. Conti-Ramsden, G., & Botting, N. (2004). Social difficulties and victimization in children with SLI at 11 years of age. <i>Journal of Speech, Language, and Hearing Research</i>.</p>
+                <p>7. Catts, H. W., Fey, M. E., Tomblin, J. B., & Zhang, X. (2002). A longitudinal investigation of reading outcomes in children with language impairments. <i>Journal of Speech, Language, and Hearing Research</i>.</p>
+                <p>8. Mueller, K. L., & Tomblin, J. B. (2012). Examining the comorbidity of language disorders and ADHD. <i>Topics in Language Disorders</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>McGregor, K. K., Goffman, L., Van Horne, A. O., Hogan, T. P., & Finestack, L. H. (2020). Developmental language disorder: Applications for advocacy, research, and clinical service. <i>Perspectives of the ASHA Special Interest Groups</i>.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       )}
 
@@ -304,56 +358,45 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
 
             </div>
           </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>9. Tomblin, J. B., Records, N. L., Buckwalter, P., Zhang, X., Smith, E., & O'Brien, M. (1997). Prevalence of specific language impairment in kindergarten children. <i>Journal of Speech, Language, and Hearing Research</i>.</p>
+                <p>10. Bishop, D. V. M. (2010). Which neurodevelopmental disorders get researched and why? <i>PLoS ONE</i>.</p>
+                <p>11. Clegg, J., Hollis, C., Mawhood, L., & Rutter, M. (2005). Developmental language disorders—a follow-up in later adult life. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Law, J., Garrett, Z., & Nye, C. (2004). The efficacy of treatment for children with developmental speech and language delay/disorder: A meta-analysis. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Conti-Ramsden, G., Durkin, K., Simkin, Z., & Knox, E. (2009). Specific language impairment and school outcomes. I: Identifying and explaining variability at the end of compulsory education. <i>International Journal of Language & Communication Disorders</i>.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       )}
 
       {/* FOOTER BUTTON */}
       <div className="flex justify-end my-8 w-full clear-both">
-        <button 
+        <button
           onClick={() => setCurrentArticle?.('dld')}
           className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
         >
           <span className="text-xl">←</span>
           All About DLD
         </button>
-      </div>
-
-{/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both mt-16 font-spartan">
-        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-        
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-            Cited Studies & Statistics
-          </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE consortium. (2017). Phase 2 of CATALISE: A multinational and multidisciplinary Delphi consensus study of problems with language development: Terminology. <i>Journal of Child Psychology and Psychiatry</i>. <a href="https://doi.org/10.1111/jcpp.12721" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1111/jcpp.12721</a></p>
-            <p>2. Leonard, L. B. (2014). <i>Children with specific language impairment</i> (2nd ed.). MIT Press.</p>
-            <p>3. Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE-2 consortium. (2016). CATALISE: A multinational and multidisciplinary Delphi consensus study. Identifying language impairments in children. <i>PLoS ONE</i>. <a href="https://doi.org/10.1371/journal.pone.0158753" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1371/journal.pone.0158753</a></p>
-            <p>4. Tomblin, J. B., & Zhang, X. (2006). The dimensionality of language ability in school-age children. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/17197491/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 17197491</a></p>
-            <p>5. Bishop, D. V. M. (1997). <i>Uncommon understanding: Development and disorders of language comprehension in children</i>. Psychology Press.</p>
-            <p>6. Conti-Ramsden, G., & Botting, N. (2004). Social difficulties and victimization in children with SLI at 11 years of age. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/15072535/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 15072535</a></p>
-            <p>7. Catts, H. W., Fey, M. E., Tomblin, J. B., & Zhang, X. (2002). A longitudinal investigation of reading outcomes in children with language impairments. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/12546483/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 12546483</a></p>
-            <p>8. Mueller, K. L., & Tomblin, J. B. (2012). Examining the comorbidity of language disorders and ADHD. <i>Topics in Language Disorders</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/25505812/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 25505812</a></p>
-            <p>9. Tomblin, J. B., Records, N. L., Buckwalter, P., Zhang, X., Smith, E., & O'Brien, M. (1997). Prevalence of specific language impairment in kindergarten children. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/9430746/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 9430746</a></p>
-            <p>10. Bishop, D. V. M. (2010). Which neurodevelopmental disorders get researched and why? <i>PLoS ONE</i>. <a href="https://doi.org/10.1371/journal.pone.0015112" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1371/journal.pone.0015112</a></p>
-            <p>11. Clegg, J., Hollis, C., Mawhood, L., & Rutter, M. (2005). Developmental language disorders—a follow-up in later adult life. <i>Journal of Child Psychology and Psychiatry</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/15679523/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 15679523</a></p>
-          </div>
-        </div>
-
-        {/* BACKGROUND SOURCES: CYAN */}
-        <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
-            Background Sources
-          </h4>
-          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Rice, M. L. (2013). Language growth and genetics of specific language impairment. <i>International Journal of Speech-Language Pathology</i>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3684183/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID:684183</a></li>
-            <li>McGregor, K. K., Goffman, L., Van Horne, A. O., Hogan, T. P., & Finestack, L. H. (2020). Developmental language disorder: Applications for advocacy, research, and clinical service. <i>Perspectives of the ASHA Special Interest Groups</i>. <a href="https://doi.org/10.1044/2019_PERSP-19-00083" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1044/2019_PERSP-19-00083</a></li>
-            <li>Law, J., Garrett, Z., & Nye, C. (2004). The efficacy of treatment for children with developmental speech and language delay/disorder: A meta-analysis. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/15324296/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 15324296</a></li>
-            <li>Conti-Ramsden, G., Durkin, K., Simkin, Z., & Knox, E. (2009). Specific language impairment and school outcomes. I: Identifying and explaining variability at the end of compulsory education. <i>International Journal of Language & Communication Disorders</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/18608604/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 18608604</a></li>
-          </ul>
-        </div>
       </div>
 
     </article>

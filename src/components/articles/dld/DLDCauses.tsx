@@ -161,8 +161,8 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Tomblin, J. B., & Buckwalter, P. R. (1998). Heritability of poor language achievement among twins. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/9493744/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 9493744</a></p>
-                <p>2. Ullman, M. T., & Pierpont, E. I. (2005). Specific language impairment is not specific to language: The procedural deficit hypothesis. <i>Cortex</i>. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010945208702764" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">https://www.sciencedirect.com/science/article/abs/pii/S0010945208702764</a></p>
+                <p>1. Tomblin, J. B., & Buckwalter, P. R. (1998). Heritability of poor language achievement among twins. <i>Journal of Speech, Language, and Hearing Research</i>.</p>
+                <p>2. Ullman, M. T., & Pierpont, E. I. (2005). Specific language impairment is not specific to language: The procedural deficit hypothesis. <i>Cortex</i>.</p>
               </div>
             </div>
 
@@ -171,9 +171,9 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Bishop, D. V. M. (2006). What causes specific language impairment in children? <i>Current Directions in Psychological Science</i>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2582396/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMC2582396</a></li>
-                <li>Newbury, D. F., & Monaco, A. P. (2010). Genetic advances in the study of speech and language disorders. <i>Neuron</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/20955937/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 20955937</a></li>
-                <li>Badcock, N. A., Bishop, D. V. M., Hardiman, M. J., Barry, J. G., & Watkins, K. E. (2012). Co-localisation of abnormal brain structure and function in specific language impairment. <i>Brain and Language</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/22137677/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 22137677</a></li>
+                <li>Bishop, D. V. M. (2006). What causes specific language impairment in children? <i>Current Directions in Psychological Science</i>.</li>
+                <li>Newbury, D. F., & Monaco, A. P. (2010). Genetic advances in the study of speech and language disorders. <i>Neuron</i>.</li>
+                <li>Badcock, N. A., Bishop, D. V. M., Hardiman, M. J., Barry, J. G., & Watkins, K. E. (2012). Co-localisation of abnormal brain structure and function in specific language impairment. <i>Brain and Language</i>.</li>
               </ul>
             </div>
           </div>
@@ -271,10 +271,10 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Gathercole, S. E., & Baddeley, A. D. (1990). Phonological memory deficits in language disordered children: Is there a causal connection? <i>Journal of Memory and Language</i>. <a href="https://doi.org/10.1016/0749-596X(90)90004-J" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1016/0749-596X(90)90004-J</a></li>
-                <li>Leonard, L. B., Weismer, S. E., Miller, C. A., Francis, D. J., Tomblin, J. B., & Kail, R. V. (2007). Speed of processing, working memory, and language impairment in children. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/17463238/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 17463238</a></li>
-                <li>Barre, N., Morgan, A., Doyle, L. W., & Anderson, P. J. (2011). Language abilities in children who were very preterm and/or very low birth weight: A meta-analysis. <i>The Journal of Pediatrics</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/21146182/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 21146182</a></li>
-                <li>Roberts, J. E., Rosenfeld, R. M., & Zeisel, S. A. (2004). Otitis media and speech and language: A meta-analysis of prospective studies. <i>Pediatrics</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/14993583/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 14993583</a></li>
+                <li>Gathercole, S. E., & Baddeley, A. D. (1990). Phonological memory deficits in language disordered children: Is there a causal connection? <i>Journal of Memory and Language</i>.</li>
+                <li>Leonard, L. B., Weismer, S. E., Miller, C. A., Francis, D. J., Tomblin, J. B., & Kail, R. V. (2007). Speed of processing, working memory, and language impairment in children. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Barre, N., Morgan, A., Doyle, L. W., & Anderson, P. J. (2011). Language abilities in children who were very preterm and/or very low birth weight: A meta-analysis. <i>The Journal of Pediatrics</i>.</li>
+                <li>Roberts, J. E., Rosenfeld, R. M., & Zeisel, S. A. (2004). Otitis media and speech and language: A meta-analysis of prospective studies. <i>Pediatrics</i>.</li>
               </ul>
             </div>
           </div>
@@ -374,8 +374,8 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Paradis, J., Genesee, F., & Crago, M. B. (2011). <i>Dual language development and disorders: A handbook on bilingualism and second language learning</i>. Paul H. Brookes Publishing.</li>
-                <li>Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE-2 consortium. (2016). CATALISE: A multinational and multidisciplinary Delphi consensus study. <i>PLoS ONE</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/27392128/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 27392128</a></li>
-                <li>Rice, M. L. (2013). Language growth and genetics of specific language impairment. <i>International Journal of Speech-Language Pathology</i>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3684183/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMCID: PMC3684183</a></li>
+                <li>Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE-2 consortium. (2016). CATALISE: A multinational and multidisciplinary Delphi consensus study. <i>PLoS ONE</i>.</li>
+                <li>Rice, M. L. (2013). Language growth and genetics of specific language impairment. <i>International Journal of Speech-Language Pathology</i>.</li>
               </ul>
             </div>
           </div>
