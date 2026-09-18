@@ -386,11 +386,11 @@ export function NVLDSymptoms({ setCurrentArticle, initialTab }: NVLDSymptomsProp
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Rourke, B. P. (1995). Syndrome of nonverbal learning disabilities: Neurodevelopmental manifestations. <i>Clinical Child and Family Psychology Review</i>. https://doi.org/10.1007/BF02353232</p>
-            <p>2. Drummond, C. R., Ahmad, S. A., & Rourke, B. P. (2005). Rules for the classification of younger children with nonverbal learning disabilities. <i>Archives of Clinical Neuropsychology</i>. https://doi.org/10.1016/j.acn.2004.04.004</p>
-            <p>3. Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>. https://doi.org/10.1037/0033-2909.107.2.196</p>
-            <p>4. Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.1995.tb01361.x</p>
-            <p>5. Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221948902200305</p>
+            <p>1. Rourke, B. P. (1995). Syndrome of nonverbal learning disabilities: Neurodevelopmental manifestations. <i>Clinical Child and Family Psychology Review</i>.</p>
+            <p>2. Drummond, C. R., Ahmad, S. A., & Rourke, B. P. (2005). Rules for the classification of younger children with nonverbal learning disabilities. <i>Archives of Clinical Neuropsychology</i>.</p>
+            <p>3. Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>.</p>
+            <p>4. Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+            <p>5. Rourke, B. P., Young, G. C., & Leenaars, A. A. (1989). A childhood learning disability that predisposes those afflicted to adolescent and adult depression and suicide risk. <i>Journal of Learning Disabilities</i>.</p>
           </div>
         </div>
 
@@ -400,9 +400,9 @@ export function NVLDSymptoms({ setCurrentArticle, initialTab }: NVLDSymptomsProp
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Rourke, B. P. (1989). Nonverbal learning disabilities: The syndrome and the model. <i>Guilford Press</i>.</li>
-            <li>Semrud-Clikeman, M. (2007). Social competence in children. <i>Springer</i>.</li>
-            <li>Thompson, S. (1997). The source for nonverbal learning disorders. <i>LinguiSystems</i>.</li>
+            <li>Rourke, B. P. (1989). <i>Nonverbal learning disabilities: The syndrome and the model</i>. Guilford Press.</li>
+            <li>Semrud-Clikeman, M. (2007). <i>Social competence in children</i>. Springer.</li>
+            <li>Thompson, S. (1997). <i>The source for nonverbal learning disorders</i>. LinguiSystems.</li>
           </ul>
         </div>
       </div>

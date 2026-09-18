@@ -339,11 +339,11 @@ export function NVLDCauses({ setCurrentArticle, initialTab }: NVLDCausesProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Rourke, B. P. (1989). Nonverbal learning disabilities: The syndrome and the model. <i>Guilford Press</i>. https://doi.org/10.1007/978-1-4757-0635-2</p>
-            <p>2. Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>. https://doi.org/10.1037/0033-2909.107.2.196</p>
-            <p>3. Rourke, B. P. (1987). Syndrome of nonverbal learning disabilities: The final common pathway of white-matter disease/dysfunction? <i>The Clinical Neuropsychologist</i>. https://doi.org/10.1080/13854048708520056</p>
-            <p>4. Fine, J. G., Semrud-Clikeman, M., Bledsoe, J. C., & Musielak, K. A. (2013). A critical review of the literature on NLD as a developmental disorder. <i>Child Neuropsychology</i>. https://doi.org/10.1080/09297049.2011.648923</p>
-            <p>5. Bellinger, D. C., Wypij, D., duPlessis, A. J., Rappaport, L. A., Jonas, R. A., Wernovsky, G., & Newburger, J. W. (2003). Neurodevelopmental status at eight years in children with dextro-transposition of the great arteries. <i>The Journal of Thoracic and Cardiovascular Surgery</i>. https://doi.org/10.1016/S0022-5223(03)01072-4</p>
+            <p>1. Rourke, B. P. (1989). <i>Nonverbal learning disabilities: The syndrome and the model</i>. Guilford Press.</p>
+            <p>2. Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>.</p>
+            <p>3. Rourke, B. P. (1987). Syndrome of nonverbal learning disabilities: The final common pathway of white-matter disease/dysfunction? <i>The Clinical Neuropsychologist</i>.</p>
+            <p>4. Fine, J. G., Semrud-Clikeman, M., Bledsoe, J. C., & Musielak, K. A. (2013). A critical review of the literature on NLD as a developmental disorder. <i>Child Neuropsychology</i>.</p>
+            <p>5. Bellinger, D. C., Wypij, D., duPlessis, A. J., Rappaport, L. A., Jonas, R. A., Wernovsky, G., & Newburger, J. W. (2003). Neurodevelopmental status at eight years in children with dextro-transposition of the great arteries. <i>The Journal of Thoracic and Cardiovascular Surgery</i>.</p>
           </div>
         </div>
 
@@ -355,7 +355,7 @@ export function NVLDCauses({ setCurrentArticle, initialTab }: NVLDCausesProps) {
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
             <li>Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome. <i>Journal of Child Psychology and Psychiatry</i>.</li>
             <li>Mammarella, I. C., & Cornoldi, C. (2014). An analysis of the criteria used to diagnose children with nonverbal learning disability (NLD). <i>Child Neuropsychology</i>.</li>
-            <li>Thompson, S. (1997). The source for nonverbal learning disorders. <i>LinguiSystems</i>.</li>
+            <li>Thompson, S. (1997). <i>The source for nonverbal learning disorders</i>. LinguiSystems.</li>
           </ul>
         </div>
       </div>

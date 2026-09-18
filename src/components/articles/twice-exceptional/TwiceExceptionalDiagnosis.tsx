@@ -180,7 +180,7 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
                 <p>1. Silverman, L. K. (2009). The measurement of giftedness. In L. V. Shavinina (Ed.), <i>International handbook on giftedness</i>. Springer.</p>
-                <p>2. Saklofske, D. H., Prifitera, A., Weiss, L. G., Rolfhus, E., & Zhu, J. (2005). Clinical interpretation of the WISC-IV FSIQ and GAI. <i>Elsevier Academic Press</i>.</p>
+                <p>2. Saklofske, D. H., Prifitera, A., Weiss, L. G., Rolfhus, E., & Zhu, J. (2005). <i>Clinical interpretation of the WISC-IV FSIQ and GAI</i>. Elsevier Academic Press.</p>
               </div>
             </div>
 
@@ -189,7 +189,7 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Pfeiffer, S. I. (2015). Essentials of gifted assessment. <i>John Wiley & Sons</i>.</li>
+                <li>Pfeiffer, S. I. (2015). <i>Essentials of gifted assessment</i>. John Wiley & Sons.</li>
                 <li>Mazzocco, M. M., & Myers, G. F. (2003). Complexities in identifying and defining mathematics learning disability. <i>Annals of Dyslexia</i>.</li>
               </ul>
             </div>
@@ -288,8 +288,8 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Gioia, G. A., Isquith, P. K., Guy, S. C., & Kenworthy, L. (2000). Behavior Rating Inventory of Executive Function: BRIEF. <i>Psychological Assessment Resources</i>.</p>
-                <p>2. Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., & Bishop, S. L. (2012). Autism Diagnostic Observation Schedule-Second Edition (ADOS-2). <i>Western Psychological Services</i>.</p>
+                <p>1. Gioia, G. A., Isquith, P. K., Guy, S. C., & Kenworthy, L. (2000). <i>Behavior Rating Inventory of Executive Function: BRIEF</i>. Psychological Assessment Resources.</p>
+                <p>2. Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., & Bishop, S. L. (2012). <i>Autism Diagnostic Observation Schedule-Second Edition (ADOS-2)</i>. Western Psychological Services.</p>
               </div>
             </div>
 
@@ -298,7 +298,7 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). Misdiagnosis and dual diagnoses of gifted children and adults. <i>Great Potential Press</i>.</li>
+                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <i>Misdiagnosis and dual diagnoses of gifted children and adults</i>. Great Potential Press.</li>
                 <li>Foley-Nicpon, M., Doobay, A. F., & Assouline, S. G. (2010). Parent, teacher, and self perceptions of psychosocial functioning in intellectually gifted children and adolescents with autism. <i>Journal of Autism and Developmental Disorders</i>.</li>
               </ul>
             </div>
@@ -399,7 +399,7 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Renzulli, J. S., Smith, L. H., White, A. J., Callahan, C. M., Hartman, R. K., & Westberg, K. L. (2002). Scales for Rating the Behavioral Characteristics of Superior Students. <i>Creative Learning Press</i>.</p>
+                <p>1. Renzulli, J. S., Smith, L. H., White, A. J., Callahan, C. M., Hartman, R. K., & Westberg, K. L. (2002). <i>Scales for Rating the Behavioral Characteristics of Superior Students</i>. Creative Learning Press.</p>
               </div>
             </div>
 

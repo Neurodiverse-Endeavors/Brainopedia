@@ -156,9 +156,9 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Whitmore, J. R. (1980). Giftedness, conflict, and underachievement. <i>Allyn & Bacon</i>.</p>
-                <p>2. Foley-Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). Empirical investigation of twice-exceptionality: Where have we been and where are we going? <i>Gifted Child Quarterly</i>. https://doi.org/10.1177/0016986210392180</p>
-                <p>3. McCoach, D. B., Kehle, T. J., Bray, M. A., & Siegle, D. (2001). Best practices in the identification of gifted students with learning disabilities. <i>Psychology in the Schools</i>. https://doi.org/10.1002/pits.1029</p>
+                <p>1. Whitmore, J. R. (1980). <i>Giftedness, conflict, and underachievement</i>. Allyn & Bacon.</p>
+                <p>2. Foley-Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). Empirical investigation of twice-exceptionality: Where have we been and where are we going? <i>Gifted Child Quarterly</i>.</p>
+                <p>3. McCoach, D. B., Kehle, T. J., Bray, M. A., & Siegle, D. (2001). Best practices in the identification of gifted students with learning disabilities. <i>Psychology in the Schools</i>.</p>
               </div>
             </div>
 
@@ -167,7 +167,7 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>National Association for Gifted Children. (2013). Position statement: Students with gifts and talents who have learning disabilities. <i>NAGC</i>.</li>
+                <li>National Association for Gifted Children. (2013). <i>Position statement: Students with gifts and talents who have learning disabilities</i>. NAGC.</li>
                 <li>Brody, L. E., & Mills, C. J. (1997). Gifted children with learning disabilities: A review of the issues. <i>Journal of Learning Disabilities</i>.</li>
               </ul>
             </div>
@@ -251,7 +251,7 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Baum, S. (1990). Gifted but learning disabled: A puzzling paradox. <i>Council for Exceptional Children</i>.</p>
+                <p>1. Baum, S. (1990). <i>Gifted but learning disabled: A puzzling paradox</i>. Council for Exceptional Children.</p>
               </div>
             </div>
 
@@ -261,7 +261,7 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Reis, S. M., & McCoach, D. B. (2000). The underachievement of gifted students: What do we know and where do we go? <i>Gifted Child Quarterly</i>.</li>
-                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). Misdiagnosis and dual diagnoses of gifted children and adults. <i>Great Potential Press</i>.</li>
+                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <i>Misdiagnosis and dual diagnoses of gifted children and adults</i>. Great Potential Press.</li>
               </ul>
             </div>
           </div>
@@ -359,7 +359,7 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Baum, S. M., Schader, R. M., & Owen, S. V. (2017). To be gifted and learning disabled: Strength-based strategies for helping twice-exceptional students with LD, ADHD, ASD, and more (3rd ed.). <i>Prufrock Press</i>.</p>
+                <p>1. Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <i>To be gifted and learning disabled: Strength-based strategies for helping twice-exceptional students with LD, ADHD, ASD, and more</i> (3rd ed.). Prufrock Press.</p>
               </div>
             </div>
 
@@ -368,8 +368,8 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Grandin, T., & Panek, R. (2013). The autistic brain: Thinking across the spectrum. <i>Houghton Mifflin Harcourt</i>.</li>
-                <li>Armstrong, T. (2010). Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences. <i>Da Capo Press</i>.</li>
+                <li>Grandin, T., & Panek, R. (2013). <i>The autistic brain: Thinking across the spectrum</i>. Houghton Mifflin Harcourt.</li>
+                <li>Armstrong, T. (2010). <i>Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences</i>. Da Capo Press.</li>
                 <li>Reis, S. M., Baum, S. M., & Burke, E. (2014). An operational definition of twice-exceptional learners: Implications and applications. <i>Gifted Child Quarterly</i>.</li>
               </ul>
             </div>

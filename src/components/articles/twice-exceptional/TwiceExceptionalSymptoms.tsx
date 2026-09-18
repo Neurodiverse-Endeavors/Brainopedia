@@ -194,7 +194,7 @@ export function TwiceExceptionalSymptoms({ setCurrentArticle, initialTab }: Twic
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Foley-Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). Empirical investigation of twice-exceptionality: Where have we been and where are we going? <i>Gifted Child Quarterly</i>.</li>
-                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). To be gifted and learning disabled: Strength-based strategies for helping twice-exceptional students. <i>Prufrock Press</i>.</li>
+                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <i>To be gifted and learning disabled: Strength-based strategies for helping twice-exceptional students</i>. Prufrock Press.</li>
               </ul>
             </div>
           </div>
@@ -282,7 +282,7 @@ export function TwiceExceptionalSymptoms({ setCurrentArticle, initialTab }: Twic
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Reis, S. M., & McCoach, D. B. (2000). The underachievement of gifted students: What do we know and where do we go? <i>Gifted Child Quarterly</i>.</li>
-                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). Misdiagnosis and dual diagnoses of gifted children and adults. <i>Great Potential Press</i>.</li>
+                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <i>Misdiagnosis and dual diagnoses of gifted children and adults</i>. Great Potential Press.</li>
               </ul>
             </div>
           </div>
@@ -407,8 +407,8 @@ export function TwiceExceptionalSymptoms({ setCurrentArticle, initialTab }: Twic
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Assouline, S. G., Foley Nicpon, M., & Whiteman, C. (2010). Cognitive and psychosocial characteristics of gifted students with written language disability. <i>Gifted Child Quarterly</i>.</li>
-                <li>Lovecky, D. V. (2004). Different minds: Gifted children with AD/HD, Asperger syndrome, and other learning deficits. <i>Jessica Kingsley Publishers</i>.</li>
-                <li>West, T. G. (1997). In the mind's eye: Visual thinkers, gifted people with dyslexia and other learning difficulties. <i>Prometheus Books</i>.</li>
+                <li>Lovecky, D. V. (2004). <i>Different minds: Gifted children with AD/HD, Asperger syndrome, and other learning deficits</i>. Jessica Kingsley Publishers.</li>
+                <li>West, T. G. (1997). <i>In the mind's eye: Visual thinkers, gifted people with dyslexia and other learning difficulties</i>. Prometheus Books.</li>
               </ul>
             </div>
           </div>

@@ -408,11 +408,11 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Rourke, B. P. (1989). Nonverbal learning disabilities: The syndrome and the model. <i>Guilford Press</i>. https://doi.org/10.1007/978-1-4757-0635-2</p>
-            <p>2. Mammarella, I. C., & Cornoldi, C. (2014). An analysis of the criteria used to diagnose children with nonverbal learning disability (NLD). <i>Child Neuropsychology</i>. https://doi.org/10.1080/09297049.2013.796920</p>
-            <p>3. Margolis, A. E., Broitman, J., Davis, J. M., Alexander, L., Hamilton, A., Ray, Z., ... & Davis, N. (2020). Estimated prevalence of nonverbal learning disability among North American children and adolescents. <i>JAMA Network Open</i>. https://doi.org/10.1001/jamanetworkopen.2020.2551</p>
-            <p>4. Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.1995.tb01361.x</p>
-            <p>5. Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>. https://doi.org/10.1037/0033-2909.107.2.196</p>
+            <p>1. Rourke, B. P. (1989). <i>Nonverbal learning disabilities: The syndrome and the model</i>. Guilford Press.</p>
+            <p>2. Mammarella, I. C., & Cornoldi, C. (2014). An analysis of the criteria used to diagnose children with nonverbal learning disability (NLD). <i>Child Neuropsychology</i>.</p>
+            <p>3. Margolis, A. E., Broitman, J., Davis, J. M., Alexander, L., Hamilton, A., Ray, Z., ... & Davis, N. (2020). Estimated prevalence of nonverbal learning disability among North American children and adolescents. <i>JAMA Network Open</i>.</p>
+            <p>4. Klin, A., Volkmar, F. R., Sparrow, S. S., Cicchetti, D. V., & Rourke, B. P. (1995). Validity and neuropsychological characterization of Asperger syndrome: Convergence with nonverbal learning disabilities syndrome. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+            <p>5. Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>.</p>
           </div>
         </div>
 
@@ -422,8 +422,8 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Tanguay, P. B. (2002). Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions. <i>Jessica Kingsley Publishers</i>.</li>
-            <li>Thompson, S. (1997). The source for nonverbal learning disorders. <i>LinguiSystems</i>.</li>
+            <li>Tanguay, P. B. (2002). <i>Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions</i>. Jessica Kingsley Publishers.</li>
+            <li>Thompson, S. (1997). <i>The source for nonverbal learning disorders</i>. LinguiSystems.</li>
           </ul>
         </div>
       </div>

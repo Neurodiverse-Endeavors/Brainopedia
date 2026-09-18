@@ -159,7 +159,7 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
             </div>
           </div>
 
-{/* TAB 1 REFERENCES */}
+          {/* TAB 1 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
             <div>
@@ -167,9 +167,9 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Conti-Ramsden, G., & Botting, N. (2004). Social difficulties and victimization in children with SLI at 11 years of age. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/15072535/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 15072535</a></li>
-                <li>Jerome, A. C., Fujiki, M., Brinton, B., & James, S. L. (2002). Self-esteem in children with specific language impairment. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/12199400/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 12199400</a></li>
-                <li>Fujiki, M., Brinton, B., & Clarke, D. (2002). Emotion regulation in children with specific language impairment. <i>Language, Speech, and Hearing Services in Schools</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/27764463/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 27764463</a></li>
+                <li>Conti-Ramsden, G., & Botting, N. (2004). Social difficulties and victimization in children with SLI at 11 years of age. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Jerome, A. C., Fujiki, M., Brinton, B., & James, S. L. (2002). Self-esteem in children with specific language impairment. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Fujiki, M., Brinton, B., & Clarke, D. (2002). Emotion regulation in children with specific language impairment. <i>Language, Speech, and Hearing Services in Schools</i>.</li>
               </ul>
             </div>
           </div>
@@ -272,7 +272,7 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
             </div>
           </div>
 
-{/* TAB 2 REFERENCES */}
+          {/* TAB 2 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
             <div>
@@ -280,11 +280,11 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
                 Cited Studies & Statistics
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Conti-Ramsden, G., & Durkin, K. (2012). Postschool educational and employment experiences of young people with specific language impairment. <i>Language, Speech, and Hearing Services in Schools</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/22826369/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 22826369</a></li>
-                <li>Clegg, J., Hollis, C., Mawhood, L., & Rutter, M. (2005). Developmental language disorders—a follow-up in later adult life. <i>Journal of Child Psychology and Psychiatry</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/15679523/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 15679523</a></li>
-                <li>Conti-Ramsden, G., Durkin, K., Simkin, Z., & Knox, E. (2009). Specific language impairment and school outcomes. I: Identifying and explaining variability at the end of compulsory education. <i>International Journal of Language & Communication Disorders</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/18608604/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 18608604</a></li>
-                <li>Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq. <a href="https://www.ada.gov/law-and-regs/ada/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">ADA.gov</a></li>
-                <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). <a href="https://sites.ed.gov/idea/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">https://sites.ed.gov/idea/</a></li>
+                <li>Conti-Ramsden, G., & Durkin, K. (2012). Postschool educational and employment experiences of young people with specific language impairment. <i>Language, Speech, and Hearing Services in Schools</i>.</li>
+                <li>Clegg, J., Hollis, C., Mawhood, L., & Rutter, M. (2005). Developmental language disorders—a follow-up in later adult life. <i>Journal of Child Psychology and Psychiatry</i>.</li>
+                <li>Conti-Ramsden, G., Durkin, K., Simkin, Z., & Knox, E. (2009). Specific language impairment and school outcomes. I: Identifying and explaining variability at the end of compulsory education. <i>International Journal of Language & Communication Disorders</i>.</li>
+                <li>Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq.</li>
+                <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</li>
               </ul>
             </div>
           </div>
@@ -376,7 +376,8 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
 
             </div>
           </div>
-{/* TAB 3 REFERENCES */}
+
+          {/* TAB 3 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
             <div>
@@ -384,11 +385,11 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>St Clair, M. C., Pickles, A., Durkin, K., & Conti-Ramsden, G. (2011). A longitudinal study of behavioral, emotional and social difficulties in individuals with a history of specific language impairment (SLI). <i>Journal of Communication Disorders</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/20970811/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 20970811</a></li>
-                <li>McGregor, K. K., Goffman, L., Van Horne, A. O., Hogan, T. P., & Finestack, L. H. (2020). Developmental language disorder: Applications for advocacy, research, and clinical service. <i>Perspectives of the ASHA Special Interest Groups</i>. <a href="https://doi.org/10.1044/2019_PERSP-19-00083" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1044/2019_PERSP-19-00083</a></li>
-                <li>Leonard, L. B. (2014). Children with specific language impairment (2nd ed.) MIT Press.</li>
-                <li>American Speech-Language-Hearing Association. (n.d.). <i>Spoken language disorders</i>. <a href="https://www.asha.org/practice-portal/clinical-topics/spoken-language-disorders/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">ASHA Practice Portal</a></li>
-                <li>Law, J., Garrett, Z., & Nye, C. (2004). The efficacy of treatment for children with developmental speech and language delay/disorder. <i>Journal of Speech, Language, and Hearing Research</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/15324296/" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">PMID: 15324296</a></li>
+                <li>St Clair, M. C., Pickles, A., Durkin, K., & Conti-Ramsden, G. (2011). A longitudinal study of behavioral, emotional and social difficulties in individuals with a history of specific language impairment (SLI). <i>Journal of Communication Disorders</i>.</li>
+                <li>McGregor, K. K., Goffman, L., Van Horne, A. O., Hogan, T. P., & Finestack, L. H. (2020). Developmental language disorder: Applications for advocacy, research, and clinical service. <i>Perspectives of the ASHA Special Interest Groups</i>.</li>
+                <li>Leonard, L. B. (2014). <i>Children with specific language impairment</i> (2nd ed.). MIT Press.</li>
+                <li>American Speech-Language-Hearing Association. (n.d.). <i>Spoken language disorders</i>.</li>
+                <li>Law, J., Garrett, Z., & Nye, C. (2004). The efficacy of treatment for children with developmental speech and language delay/disorder. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
               </ul>
             </div>
           </div>

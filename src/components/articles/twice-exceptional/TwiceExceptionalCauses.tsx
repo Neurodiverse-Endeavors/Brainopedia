@@ -179,7 +179,7 @@ export function TwiceExceptionalCauses({ setCurrentArticle, initialTab }: TwiceE
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Plomin, R., & Deary, I. J. (2015). Genetics and intelligence differences: Five special findings. <i>Molecular Psychiatry</i>. https://doi.org/10.1038/mp.2014.105</p>
+                <p>1. Plomin, R., & Deary, I. J. (2015). Genetics and intelligence differences: Five special findings. <i>Molecular Psychiatry</i>.</p>
               </div>
             </div>
 
@@ -296,7 +296,7 @@ export function TwiceExceptionalCauses({ setCurrentArticle, initialTab }: TwiceE
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Geschwind, N., & Galaburda, A. M. (1987). Cerebral lateralization: Biological mechanisms, associations, and pathology. <i>MIT Press</i>.</p>
+                <p>1. Geschwind, N., & Galaburda, A. M. (1987). <i>Cerebral lateralization: Biological mechanisms, associations, and pathology</i>. MIT Press.</p>
                 <p>2. Markram, K., & Markram, H. (2010). The intense world theory-A unifying theory of the neurobiology of autism. <i>Frontiers in Human Neuroscience</i>.</p>
               </div>
             </div>
@@ -306,7 +306,7 @@ export function TwiceExceptionalCauses({ setCurrentArticle, initialTab }: TwiceE
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Eide, B. L., & Eide, F. F. (2011). The dyslexic advantage: Unlocking the hidden potential of the dyslexic brain. <i>Hudson Street Press</i>.</li>
+                <li>Eide, B. L., & Eide, F. F. (2011). <i>The dyslexic advantage: Unlocking the hidden potential of the dyslexic brain</i>. Hudson Street Press.</li>
                 <li>Fugate, C. M., Zentall, S. S., & Gentry, M. (2013). Creativity and working memory in gifted students with and without characteristics of attention deficit hyperactive disorder. <i>Gifted Child Quarterly</i>.</li>
               </ul>
             </div>
@@ -433,7 +433,7 @@ export function TwiceExceptionalCauses({ setCurrentArticle, initialTab }: TwiceE
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Armstrong, T. (2010). Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences. <i>Da Capo Press</i>.</li>
+                <li>Armstrong, T. (2010). <i>Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences</i>. Da Capo Press.</li>
                 <li>Rimm, S. B. (2008). Underachievement syndrome: A national epidemic. In S. I. Pfeiffer (Ed.), <i>Handbook of giftedness in children</i>. Springer.</li>
               </ul>
             </div>

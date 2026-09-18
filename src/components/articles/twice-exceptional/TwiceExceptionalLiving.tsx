@@ -272,7 +272,7 @@ export function TwiceExceptionalLiving({ setCurrentArticle, initialTab }: TwiceE
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). To be gifted and learning disabled: Strength-based strategies. <i>Prufrock Press</i>.</li>
+                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <i>To be gifted and learning disabled: Strength-based strategies</i>. Prufrock Press.</li>
                 <li>Gerber, P. J., Ginsberg, R., & Reiff, H. B. (1992). Identifying alterable patterns in employment success for highly successful adults with learning disabilities. <i>Journal of Learning Disabilities</i>.</li>
               </ul>
             </div>
@@ -370,8 +370,8 @@ export function TwiceExceptionalLiving({ setCurrentArticle, initialTab }: TwiceE
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Dweck, C. S. (2006). Mindset: The new psychology of success. <i>Random House</i>.</li>
-                <li>Armstrong, T. (2010). Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences. <i>Da Capo Press</i>.</li>
+                <li>Dweck, C. S. (2006). <i>Mindset: The new psychology of success</i>. Random House.</li>
+                <li>Armstrong, T. (2010). <i>Neurodiversity: Discovering the extraordinary gifts of autism, ADHD, dyslexia, and other brain differences</i>. Da Capo Press.</li>
                 <li>Raskind, M. H., Goldberg, R. J., Higgins, E. L., & Herman, K. L. (1999). Patterns of change and predictors of success in individuals with learning disabilities. <i>Journal of Learning Disabilities</i>.</li>
               </ul>
             </div>

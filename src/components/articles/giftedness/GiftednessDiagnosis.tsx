@@ -162,10 +162,10 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Pfeiffer, S. I. (2015). Essentials of gifted assessment. <i>John Wiley & Sons</i>.</li>
-                <li>Wechsler, D. (2014). Wechsler Intelligence Scale for Children-Fifth Edition. <i>Pearson</i>.</li>
-                <li>Roid, G. H. (2003). Stanford-Binet Intelligence Scales, Fifth Edition. <i>Riverside Publishing</i>.</li>
-                <li>Torrance, E. P. (1974). Torrance Tests of Creative Thinking: Norms-technical manual. <i>Scholastic Testing Service</i>.</li>
+                <li>Pfeiffer, S. I. (2015). <i>Essentials of gifted assessment</i>. John Wiley & Sons.</li>
+                <li>Wechsler, D. (2014). <i>Wechsler Intelligence Scale for Children-Fifth Edition</i>. Pearson.</li>
+                <li>Roid, G. H. (2003). <i>Stanford-Binet Intelligence Scales, Fifth Edition</i>. Riverside Publishing.</li>
+                <li>Torrance, E. P. (1974). <i>Torrance Tests of Creative Thinking: Norms-technical manual</i>. Scholastic Testing Service.</li>
               </ul>
             </div>
           </div>
@@ -272,8 +272,8 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Card, D., & Giuliano, L. (2016). Universal screening increases the representation of low-income and minority students in gifted education. <i>Proceedings of the National Academy of Sciences</i>.</li>
-                <li>Lidz, C. S., & Elliott, J. G. (Eds.). (2000). Dynamic assessment: Prevailing models and applications. <i>JAI/Elsevier Science</i>.</li>
-                <li>Shaklee, B. D., Barbour, N. E., Ambrose, R., & Hansford, S. J. (1997). Designing and using portfolios. <i>Allyn & Bacon</i>.</li>
+                <li>Lidz, C. S., & Elliott, J. G. (Eds.). (2000). <i>Dynamic assessment: Prevailing models and applications</i>. JAI/Elsevier Science.</li>
+                <li>Shaklee, B. D., Barbour, N. E., Ambrose, R., & Hansford, S. J. (1997). <i>Designing and using portfolios</i>. Allyn & Bacon.</li>
               </ul>
             </div>
           </div>
@@ -372,9 +372,9 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). To be gifted and learning disabled: Strength-based strategies. <i>Prufrock Press</i>.</li>
-                <li>Ford, D. Y. (2013). Recruiting and retaining culturally different students in gifted education. <i>Prufrock Press</i>.</li>
-                <li>National Association for Gifted Children. (2010). NAGC Pre-K-Grade 12 Gifted Programming Standards. <i>Author</i>.</li>
+                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <i>To be gifted and learning disabled: Strength-based strategies</i>. Prufrock Press.</li>
+                <li>Ford, D. Y. (2013). <i>Recruiting and retaining culturally different students in gifted education</i>. Prufrock Press.</li>
+                <li>National Association for Gifted Children. (2010). <i>NAGC Pre-K-Grade 12 Gifted Programming Standards</i>. Author.</li>
                 <li>Lohman, D. F. (2005). The role of nonverbal ability tests in identifying academically gifted students. <i>Gifted Child Quarterly</i>.</li>
               </ul>
             </div>

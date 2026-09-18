@@ -166,7 +166,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Reis, S. M., & Renzulli, J. S. (1992). Using curriculum compacting to challenge the above-average. <i>Educational Leadership</i>. 50(2), 51-57.</p>
+                <p>1. Reis, S. M., & Renzulli, J. S. (1992). Using curriculum compacting to challenge the above-average. <i>Educational Leadership</i>.</p>
               </div>
             </div>
 
@@ -175,10 +175,10 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Colangelo, N., Assouline, S. G., & Gross, M. U. M. (Eds.). (2004). A nation deceived: How schools hold back America's brightest students. <i>Belin-Blank Center</i>.</li>
-                <li>Assouline, S. G., Colangelo, N., Lupkowski-Shoplik, A., Lipscomb, J., & Forstadt, L. (2009). Iowa Acceleration Scale (3rd ed.). <i>Great Potential Press</i>.</li>
-                <li>Tomlinson, C. A. (2001). How to differentiate instruction in mixed-ability classrooms (2nd ed.). <i>ASCD</i>.</li>
-                <li>VanTassel-Baska, J., & Stambaugh, T. (2006). Comprehensive curriculum for gifted learners (3rd ed.). <i>Allyn & Bacon</i>.</li>
+                <li>Colangelo, N., Assouline, S. G., & Gross, M. U. M. (Eds.). (2004). <i>A nation deceived: How schools hold back America's brightest students</i>. Belin-Blank Center.</li>
+                <li>Assouline, S. G., Colangelo, N., Lupkowski-Shoplik, A., Lipscomb, J., & Forstadt, L. (2009). <i>Iowa Acceleration Scale</i> (3rd ed.). Great Potential Press.</li>
+                <li>Tomlinson, C. A. (2001). <i>How to differentiate instruction in mixed-ability classrooms</i> (2nd ed.). ASCD.</li>
+                <li>VanTassel-Baska, J., & Stambaugh, T. (2006). <i>Comprehensive curriculum for gifted learners</i> (3rd ed.). Allyn & Bacon.</li>
               </ul>
             </div>
           </div>
@@ -279,7 +279,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Steenbergen-Hu, S., Makel, M. C., & Olszewski-Kubilius, P. (2016). What one hundred years of research says about the effects of ability grouping and acceleration. <i>Review of Educational Research</i>.</li>
                 <li>Peterson, J. S. (2015). School counselors and gifted kids: Respecting both cognitive and affective. <i>Journal of Counseling & Development</i>.</li>
-                <li>Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). The social and emotional development of gifted children. <i>Prufrock Press</i>.</li>
+                <li>Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). <i>The social and emotional development of gifted children</i>. Prufrock Press.</li>
               </ul>
             </div>
           </div>
@@ -373,9 +373,9 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). To be gifted and learning disabled. <i>Prufrock Press</i>.</li>
-                <li>Olszewski-Kubilius, P. (2007). The role of summer programs in developing the talents of gifted students. <i>Prufrock Press</i>.</li>
-                <li>Webb, J. T., Gore, J. L., Amend, E. R., & DeVries, A. R. (2007). A parent's guide to gifted children. <i>Great Potential Press</i>.</li>
+                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <i>To be gifted and learning disabled</i>. Prufrock Press.</li>
+                <li>Olszewski-Kubilius, P. (2007). <i>The role of summer programs in developing the talents of gifted students</i>. Prufrock Press.</li>
+                <li>Webb, J. T., Gore, J. L., Amend, E. R., & DeVries, A. R. (2007). <i>A parent's guide to gifted children</i>. Great Potential Press.</li>
               </ul>
             </div>
           </div>

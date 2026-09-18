@@ -181,7 +181,7 @@ export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaS
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
-                <li>American Speech-Language-Hearing Association. (n.d.). Language disorders. <i>ASHA</i>.</li>
+                <li>American Speech-Language-Hearing Association. (n.d.). Language disorders. ASHA.</li>
                 <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</li>
               </ul>
             </div>
@@ -293,8 +293,8 @@ export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaS
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Gray, C. (2010). The new social story book. <i>Future Horizons</i>.</li>
-                <li>National Research Council. (2001). Educating children with autism. <i>National Academy Press</i>.</li>
+                <li>Gray, C. (2010). <i>The new social story book</i>. Future Horizons.</li>
+                <li>National Research Council. (2001). <i>Educating children with autism</i>. National Academy Press.</li>
                 <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
               </ul>
             </div>
@@ -404,7 +404,7 @@ export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaS
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Kupperman, P., Bligh, S., & Barouski, K. (2002). Hyperlexia. In A. M. Wetherby & B. M. Prizant (Eds.), <i>Autism spectrum disorders</i>.</li>
-                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder. <i>Wisconsin Medical Society</i>.</li>
+                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder. Wisconsin Medical Society.</li>
               </ul>
             </div>
           </div>

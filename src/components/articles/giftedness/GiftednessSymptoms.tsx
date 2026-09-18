@@ -167,10 +167,10 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Clark, B. (2012). Growing up gifted: Developing the potential of children at home and at school (8th ed.). <i>Pearson</i>.</li>
-                <li>Sternberg, R. J. (1985). Beyond IQ: A triarchic theory of human intelligence. <i>Cambridge University Press</i>.</li>
-                <li>Winner, E. (1996). Gifted children: Myths and realities. <i>Basic Books</i>.</li>
-                <li>Silverman, L. K. (2002). Upside-down brilliance: The visual-spatial learner. <i>DeLeon Publishing</i>.</li>
+                <li>Clark, B. (2012). <i>Growing up gifted: Developing the potential of children at home and at school</i> (8th ed.). Pearson.</li>
+                <li>Sternberg, R. J. (1985). <i>Beyond IQ: A triarchic theory of human intelligence</i>. Cambridge University Press.</li>
+                <li>Winner, E. (1996). <i>Gifted children: Myths and realities</i>. Basic Books.</li>
+                <li>Silverman, L. K. (2002). <i>Upside-down brilliance: The visual-spatial learner</i>. DeLeon Publishing.</li>
               </ul>
             </div>
           </div>
@@ -277,8 +277,8 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). The social and emotional development of gifted children: What do we know? <i>Prufrock Press</i>.</li>
-                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). Misdiagnosis and dual diagnoses of gifted children and adults. <i>Great Potential Press</i>.</li>
+                <li>Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). <i>The social and emotional development of gifted children: What do we know?</i> Prufrock Press.</li>
+                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <i>Misdiagnosis and dual diagnoses of gifted children and adults</i>. Great Potential Press.</li>
                 <li>Silverman, L. K. (1994). The moral sensitivity of gifted children and the evolution of society. <i>Roeper Review</i>.</li>
                 <li>Schuler, P. A. (2000). Perfectionism and gifted adolescents. <i>Journal of Secondary Gifted Education</i>.</li>
               </ul>
@@ -396,8 +396,8 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Renzulli, J. S. (1978). What makes giftedness? Reexamining a definition. <i>Phi Delta Kappan</i>.</li>
-                <li>Runco, M. A. (2014). Creativity: Theories and themes. <i>Elsevier</i>.</li>
-                <li>Daniels, S., & Piechowski, M. M. (2009). Living with intensity. <i>Great Potential Press</i>.</li>
+                <li>Runco, M. A. (2014). <i>Creativity: Theories and themes</i>. Elsevier.</li>
+                <li>Daniels, S., & Piechowski, M. M. (2009). <i>Living with intensity</i>. Great Potential Press.</li>
                 <li>Winner, E., & Martino, G. (1993). Giftedness in the visual arts and music. In <i>International handbook of research and development of giftedness and talent</i>.</li>
               </ul>
             </div>

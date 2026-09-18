@@ -160,8 +160,8 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Plomin, R., & Deary, I. J. (2015). Genetics and intelligence differences: Five special findings. <i>Molecular Psychiatry</i>. https://doi.org/10.1038/mp.2014.105</p>
-                <p>2. Jung, R. E., & Haier, R. J. (2007). The Parieto-Frontal Integration Theory (P-FIT) of intelligence: Converging neuroimaging evidence. <i>Behavioral and Brain Sciences</i>. https://doi.org/10.1017/S0140525X07001185</p>
+                <p>1. Plomin, R., & Deary, I. J. (2015). Genetics and intelligence differences: Five special findings. <i>Molecular Psychiatry</i>.</p>
+                <p>2. Jung, R. E., & Haier, R. J. (2007). The Parieto-Frontal Integration Theory (P-FIT) of intelligence: Converging neuroimaging evidence. <i>Behavioral and Brain Sciences</i>.</p>
               </div>
             </div>
 
@@ -267,7 +267,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>3. Macnamara, B. N., Hambrick, D. Z., & Oswald, F. L. (2014). Deliberate practice and performance in music, games, sports, education, and professions: A meta-analysis. <i>Psychological Science</i>. https://doi.org/10.1177/0956797614535810</p>
+                <p>3. Macnamara, B. N., Hambrick, D. Z., & Oswald, F. L. (2014). Deliberate practice and performance in music, games, sports, education, and professions: A meta-analysis. <i>Psychological Science</i>.</p>
               </div>
             </div>
 
@@ -276,7 +276,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Plucker, J. A., & Peters, S. J. (2016). Excellence gaps in education: Expanding opportunities for talented students. <i>Harvard Education Press</i>.</li>
+                <li>Plucker, J. A., & Peters, S. J. (2016). <i>Excellence gaps in education: Expanding opportunities for talented students</i>. Harvard Education Press.</li>
                 <li>Walberg, H. J., & Tsai, S. L. (1983). Matthew effects in education. <i>American Educational Research Journal</i>.</li>
                 <li>Ericsson, K. A., Krampe, R. T., & Tesch-Romer, C. (1993). The role of deliberate practice in the acquisition of expert performance. <i>Psychological Review</i>.</li>
               </ul>
@@ -385,7 +385,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>4. Gagne, F. (2004). Transforming gifts into talents: The DMGT as a developmental theory. <i>High Ability Studies</i>. https://doi.org/10.1080/1359813042000314682</p>
+                <p>4. Gagne, F. (2004). Transforming gifts into talents: The DMGT as a developmental theory. <i>High Ability Studies</i>.</p>
               </div>
             </div>
 
@@ -394,7 +394,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Dweck, C. S. (2006). Mindset: The new psychology of success. <i>Random House</i>.</li>
+                <li>Dweck, C. S. (2006). <i>Mindset: The new psychology of success</i>. Random House.</li>
                 <li>Renzulli, J. S. (1978). What makes giftedness? Reexamining a definition. <i>Phi Delta Kappan</i>.</li>
                 <li>Subotnik, R. F., Olszewski-Kubilius, P., & Worrell, F. C. (2011). Rethinking giftedness and gifted education. <i>Psychological Science in the Public Interest</i>.</li>
               </ul>

@@ -166,12 +166,12 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
                 <p>1. Renzulli, J. S. (1978). What makes giftedness? Reexamining a definition. <i>Phi Delta Kappan</i>.</p>
-                <p>2. Gardner, H. (1983). Frames of mind: The theory of multiple intelligences. <i>Basic Books</i>.</p>
+                <p>2. Gardner, H. (1983). <i>Frames of mind: The theory of multiple intelligences</i>. Basic Books.</p>
                 <p>3. Gagné, F. (2004). Transforming gifts into talents: The DMGT as a developmental theory. <i>High Ability Studies</i>.</p>
-                <p>4. Hollingworth, L. S. (1942). Children above 180 IQ Stanford-Binet: Origin and development. <i>World Book Company</i>.</p>
+                <p>4. Hollingworth, L. S. (1942). <i>Children above 180 IQ Stanford-Binet: Origin and development</i>. World Book Company.</p>
                 <p>5. Silverman, L. K. (2009). The measurement of giftedness. In L. V. Shavinina (Ed.), <i>International handbook on giftedness</i>.</p>
                 <p>6. Kearney, K. (1996). Highly gifted children in full inclusion classrooms. <i>Highly Gifted Children</i>.</p>
-                <p>7. Gross, M. U. M. (1993). Exceptionally gifted children. <i>Routledge</i>.</p>
+                <p>7. Gross, M. U. M. (1993). <i>Exceptionally gifted children</i>. Routledge.</p>
               </div>
             </div>
 
@@ -181,8 +181,8 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>National Association for Gifted Children. (2019). What is giftedness?</li>
-                <li>U.S. Department of Education. (1993). National excellence: A case for developing America's talent.</li>
-                <li>Terman, L. M. (1925). Genetic studies of genius: Vol. 1. Mental and physical traits of a thousand gifted children.</li>
+                <li>U.S. Department of Education. (1993). <i>National excellence: A case for developing America's talent</i>.</li>
+                <li>Terman, L. M. (1925). <i>Genetic studies of genius: Mental and physical traits of a thousand gifted children</i>.</li>
               </ul>
             </div>
           </div>
@@ -283,8 +283,8 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Dabrowski, K. (1964). Positive disintegration. <i>Little, Brown</i>.</p>
-                <p>2. Plomin, R., & Deary, I. J. (2015). Genetics and intelligence differences: Five special findings. <i>Molecular Psychiatry</i>. https://doi.org/10.1038/mp.2014.105</p>
+                <p>1. Dabrowski, K. (1964). <i>Positive disintegration</i>. Little, Brown.</p>
+                <p>2. Plomin, R., & Deary, I. J. (2015). Genetics and intelligence differences: Five special findings. <i>Molecular Psychiatry</i>.</p>
               </div>
             </div>
 
@@ -398,8 +398,8 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Pfeiffer, S. I. (2015). Essentials of gifted assessment. <i>John Wiley & Sons</i>.</p>
-                <p>2. Marland, S. P., Jr. (1972). Education of the gifted and talented: Report to the Congress. <i>U.S. Government Printing Office</i>.</p>
+                <p>1. Pfeiffer, S. I. (2015). <i>Essentials of gifted assessment</i>. John Wiley & Sons.</p>
+                <p>2. Marland, S. P., Jr. (1972). <i>Education of the gifted and talented: Report to the Congress</i>. U.S. Government Printing Office.</p>
                 <p>3. National Center for Education Statistics. (2020). Percentage of public school students enrolled in gifted and talented programs. <i>Digest of Education Statistics</i>.</p>
               </div>
             </div>
@@ -409,9 +409,9 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). To be gifted and learning disabled. <i>Prufrock Press</i>.</li>
-                <li>Ford, D. Y. (2013). Recruiting and retaining culturally different students in gifted education. <i>Prufrock Press</i>.</li>
-                <li>Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). The social and emotional development of gifted children. <i>Prufrock Press</i>.</li>
+                <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <i>To be gifted and learning disabled</i>. Prufrock Press.</li>
+                <li>Ford, D. Y. (2013). <i>Recruiting and retaining culturally different students in gifted education</i>. Prufrock Press.</li>
+                <li>Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). <i>The social and emotional development of gifted children</i>. Prufrock Press.</li>
               </ul>
             </div>
           </div>

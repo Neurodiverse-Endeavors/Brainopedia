@@ -160,8 +160,8 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Silberberg, N. E., & Silberberg, M. C. (1967). Hyperlexia: Specific word recognition skills in young children. <i>Exceptional Children</i>. https://doi.org/10.1177/001440296703400104</p>
-                <p>2. Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder; Assessing children who read early or speak late. <i>Wisconsin Medical Society</i>.</p>
+                <p>1. Silberberg, N. E., & Silberberg, M. C. (1967). Hyperlexia: Specific word recognition skills in young children. <i>Exceptional Children</i>.</p>
+                <p>2. Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder; Assessing children who read early or speak late. Wisconsin Medical Society.</p>
               </div>
             </div>
 
@@ -275,7 +275,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/1469-7610.00193</p>
+                <p>1. Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</p>
               </div>
             </div>
 
@@ -403,7 +403,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Silberberg, N. E., & Silberberg, M. C. (1967). Hyperlexia: Specific word recognition skills in young children. <i>Exceptional Children</i>. https://doi.org/10.1177/001440296703400104</p>
+                <p>1. Silberberg, N. E., & Silberberg, M. C. (1967). Hyperlexia: Specific word recognition skills in young children. <i>Exceptional Children</i>.</p>
               </div>
             </div>
 
@@ -412,7 +412,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder; Assessing children who read early or speak late. <i>Wisconsin Medical Society</i>.</li>
+                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder; Assessing children who read early or speak late. Wisconsin Medical Society.</li>
                 <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
               </ul>
             </div>

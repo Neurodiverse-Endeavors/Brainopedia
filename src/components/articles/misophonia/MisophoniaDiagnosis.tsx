@@ -168,10 +168,10 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Schröder, A., et al. (2013). Misophonia: Diagnostic criteria for a new psychiatric disorder. <i>PLOS ONE</i>. <a href="https://doi.org/10.1371/journal.pone.0054706" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1371/journal.pone.0054706</a></p>
-                <p>2. Wu, M. S., et al. (2014). Misophonia: Incidence, phenomenology, and clinical correlates in an undergraduate student sample. <i>Journal of Clinical Psychology</i>. <a href="https://doi.org/10.1002/jclp.22098" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1002/jclp.22098</a></p>
-                <p>3. Tyler, R. S., et al. (2014). A review of hyperacusis and future directions. <i>American Journal of Audiology</i>. <a href="https://doi.org/10.1044/2014_AJA-14-0010" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1044/2014_AJA-14-0010</a></p>
-                <p>4. Brout, J. J., et al. (2018). Investigating misophonia: A review of the empirical literature. <i>Frontiers in Neuroscience</i>. <a href="https://doi.org/10.3389/fnins.2018.00036" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.3389/fnins.2018.00036</a></p>
+                <p>1. Schröder, A., et al. (2013). Misophonia: Diagnostic criteria for a new psychiatric disorder. <i>PLOS ONE</i>.</p>
+                <p>2. Wu, M. S., et al. (2014). Misophonia: Incidence, phenomenology, and clinical correlates in an undergraduate student sample. <i>Journal of Clinical Psychology</i>.</p>
+                <p>3. Tyler, R. S., et al. (2014). A review of hyperacusis and future directions. <i>American Journal of Audiology</i>.</p>
+                <p>4. Brout, J. J., et al. (2018). Investigating misophonia: A review of the empirical literature. <i>Frontiers in Neuroscience</i>.</p>
               </div>
             </div>
           </div>
@@ -263,10 +263,10 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Schröder, A., et al. (2013). Misophonia: Diagnostic criteria for a new psychiatric disorder. <i>PLOS ONE</i>. <a href="https://doi.org/10.1371/journal.pone.0054706" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1371/journal.pone.0054706</a></p>
-                <p>2. Wu, M. S., et al. (2014). Misophonia: Incidence, phenomenology, and clinical correlates in an undergraduate student sample. <i>Journal of Clinical Psychology</i>. <a href="https://doi.org/10.1002/jclp.22098" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.1002/jclp.22098</a></p>
-                <p>3. Vitoratou, S., et al. (2021). The S-Five scale. <i>Psych</i>. <a href="https://doi.org/10.3390/psych3030026" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.3390/psych3030026</a></p>
-                <p>4. Siepsiak, M., et al. (2020). Development of MisoQuest. <i>International Journal of Environmental Research and Public Health</i>. <a href="https://doi.org/10.3390/ijerph17072521" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.3390/ijerph17072521</a></p>
+                <p>1. Schröder, A., et al. (2013). Misophonia: Diagnostic criteria for a new psychiatric disorder. <i>PLOS ONE</i>.</p>
+                <p>2. Wu, M. S., et al. (2014). Misophonia: Incidence, phenomenology, and clinical correlates in an undergraduate student sample. <i>Journal of Clinical Psychology</i>.</p>
+                <p>3. Vitoratou, S., et al. (2021). The S-Five scale. <i>Psych</i>.</p>
+                <p>4. Siepsiak, M., et al. (2020). Development of MisoQuest. <i>International Journal of Environmental Research and Public Health</i>.</p>
               </div>
             </div>
           </div>
@@ -358,8 +358,8 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Edelstein, M., et al. (2013). Misophonia: Physiological investigations and case descriptions. <i>Frontiers in Human Neuroscience</i>. <a href="https://doi.org/10.3389/fnhum.2013.00296" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.3389/fnhum.2013.00296</a></p>
-                <p>2. Aazh, H., et al. (2019). Audiological and other factors predicting the presence of misophonia symptoms. <i>Frontiers in Neuroscience</i>. <a href="https://doi.org/10.3389/fnins.2019.00897" target="_blank" rel="noopener noreferrer" className="text-[#2abcd4] hover:underline">doi:10.3389/fnins.2019.00897</a></p>
+                <p>1. Edelstein, M., et al. (2013). Misophonia: Physiological investigations and case descriptions. <i>Frontiers in Human Neuroscience</i>.</p>
+                <p>2. Aazh, H., et al. (2019). Audiological and other factors predicting the presence of misophonia symptoms. <i>Frontiers in Neuroscience</i>.</p>
               </div>
             </div>
           </div>

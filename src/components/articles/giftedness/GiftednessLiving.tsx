@@ -163,8 +163,8 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). The social and emotional development of gifted children: What do we know? <i>Prufrock Press</i>.</li>
-                <li>Webb, J. T. (2013). Searching for meaning: Idealism, bright minds, disillusionment, and hope. <i>SENG</i>.</li>
+                <li>Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). <i>The social and emotional development of gifted children: What do we know?</i> Prufrock Press.</li>
+                <li>Webb, J. T. (2013). <i>Searching for meaning: Idealism, bright minds, disillusionment, and hope</i>. SENG.</li>
                 <li>Rysiew, K. J., Shore, B. M., & Leeb, R. T. (1999). Multipotentiality, giftedness, and career choice: A review. <i>Journal of Counseling & Development</i>.</li>
                 <li>Sakulku, J., & Alexander, J. (2011). The impostor phenomenon. <i>International Journal of Behavioral Science</i>.</li>
               </ul>
@@ -265,8 +265,8 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Janos, P. M., & Robinson, N. M. (1985). Psychosocial development in intellectually gifted children. <i>American Psychological Association</i>.</li>
-                <li>Gross, M. U. M. (2002). Social and emotional issues for exceptionally intellectually gifted students. <i>Prufrock Press</i>.</li>
+                <li>Janos, P. M., & Robinson, N. M. (1985). <i>Psychosocial development in intellectually gifted children</i>. American Psychological Association.</li>
+                <li>Gross, M. U. M. (2002). <i>Social and emotional issues for exceptionally intellectually gifted students</i>. Prufrock Press.</li>
                 <li>Cross, T. L., & Cross, J. R. (2015). Clinical and mental health issues in counseling the gifted individual. <i>Journal of Counseling & Development</i>.</li>
               </ul>
             </div>
@@ -371,7 +371,7 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Oden, M. H. (1968). The fulfillment of promise: 40-year follow-up of the Terman gifted group. <i>Genetic Psychology Monographs</i>. 77(1), 3-93.</p>
+                <p>1. Oden, M. H. (1968). The fulfillment of promise: 40-year follow-up of the Terman gifted group. <i>Genetic Psychology Monographs</i>.</p>
               </div>
             </div>
 
@@ -382,7 +382,7 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Subotnik, R. F., Olszewski-Kubilius, P., & Worrell, F. C. (2011). Rethinking giftedness and gifted education: A proposed direction forward. <i>Psychological Science in the Public Interest</i>.</li>
                 <li>Kerr, B. A., & Sodano, S. (2003). Career assessment with intellectually gifted students. <i>Journal of Career Assessment</i>.</li>
-                <li>Ibarra, H. (2003). Working identity: Unconventional strategies for reinventing your career. <i>Harvard Business School Press</i>.</li>
+                <li>Ibarra, H. (2003). <i>Working identity: Unconventional strategies for reinventing your career</i>. Harvard Business School Press.</li>
               </ul>
             </div>
           </div>

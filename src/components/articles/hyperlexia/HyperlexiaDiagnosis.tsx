@@ -158,9 +158,9 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (5th ed.). <i>American Psychiatric Publishing</i>.</li>
+                <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</li>
                 <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: Disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
-                <li>American Speech-Language-Hearing Association. (n.d.). Reading and writing disorders. <i>ASHA</i>.</li>
+                <li>American Speech-Language-Hearing Association. (n.d.). <i>Reading and writing disorders</i>. ASHA.</li>
               </ul>
             </div>
           </div>
@@ -263,8 +263,8 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
-                <li>Wiederholt, J. L., & Bryant, B. R. (2012). Gray Oral Reading Tests (5th ed.). <i>Pro-Ed</i>.</li>
-                <li>Wiig, E. H., Semel, E., & Secord, W. A. (2013). Clinical Evaluation of Language Fundamentals (5th ed.). <i>Pearson</i>.</li>
+                <li>Wiederholt, J. L., & Bryant, B. R. (2012). <i>Gray Oral Reading Tests</i> (5th ed.). Pro-Ed.</li>
+                <li>Wiig, E. H., Semel, E., & Secord, W. A. (2013). <i>Clinical Evaluation of Language Fundamentals</i> (5th ed.). Pearson.</li>
               </ul>
             </div>
           </div>
@@ -375,9 +375,9 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
                 <li>Kupperman, P., Bligh, S., & Barouski, K. (2002). Hyperlexia. In A. M. Wetherby & B. M. Prizant (Eds.), <i>Autism spectrum disorders</i>.</li>
-                <li>Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., & Bishop, S. (2012). Autism Diagnostic Observation Schedule (2nd ed.). <i>Western Psychological Services</i>.</li>
+                <li>Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., & Bishop, S. (2012). <i>Autism Diagnostic Observation Schedule</i> (2nd ed.). Western Psychological Services.</li>
                 <li>Nation, K., Clarke, P., Wright, B., & Williams, C. (2006). Patterns of reading ability in children with autism spectrum disorder. <i>Journal of Autism and Developmental Disorders</i>.</li>
-                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder. <i>Wisconsin Medical Society</i>.</li>
+                <li>Treffert, D. A. (2011). Hyperlexia III: Separating 'autistic-like' behaviors from autistic disorder. Wisconsin Medical Society.</li>
               </ul>
             </div>
           </div>

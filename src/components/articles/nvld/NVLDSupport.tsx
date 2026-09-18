@@ -283,7 +283,7 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
               Because spatial navigation and motor planning are impaired, simple daily routines that neurotypical children pick up through observation must be explicitly taught and practiced for a child with NVLD.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both max-w-4xl">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
                   <ListChecks className="text-[#d4a017] w-5 h-5" />
@@ -372,9 +372,9 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Rourke, B. P. (1989). Nonverbal learning disabilities: The syndrome and the model. <i>Guilford Press</i>. https://doi.org/10.1007/978-1-4757-0635-2</p>
-            <p>2. Rourke, B. P., & Conway, J. A. (1997). Disabilities of arithmetic and mathematical reasoning: Perspectives from neurology and neuropsychology. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949703000104</p>
-            <p>3. Tanguay, P. B. (2002). Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions. <i>Jessica Kingsley Publishers</i>. https://doi.org/10.1037/10515-000</p>
+            <p>1. Rourke, B. P. (1989). <i>Nonverbal learning disabilities: The syndrome and the model</i>. Guilford Press.</p>
+            <p>2. Rourke, B. P., & Conway, J. A. (1997). Disabilities of arithmetic and mathematical reasoning: Perspectives from neurology and neuropsychology. <i>Journal of Learning Disabilities</i>.</p>
+            <p>3. Tanguay, P. B. (2002). <i>Nonverbal learning disabilities at school: Educating students with NLD, Asperger syndrome, and related conditions</i>. Jessica Kingsley Publishers.</p>
           </div>
         </div>
 
@@ -384,9 +384,9 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Beery, K. E., & Beery, N. A. (2010). The Beery-Buktenica developmental test of visual-motor integration. <i>Pearson</i>.</li>
-            <li>Semrud-Clikeman, M. (2007). Social competence in children. <i>Springer</i>.</li>
-            <li>Thompson, S. (1997). The source for nonverbal learning disorders. <i>LinguiSystems</i>.</li>
+            <li>Beery, K. E., & Beery, N. A. (2010). <i>The Beery-Buktenica developmental test of visual-motor integration</i>. Pearson.</li>
+            <li>Semrud-Clikeman, M. (2007). <i>Social competence in children</i>. Springer.</li>
+            <li>Thompson, S. (1997). <i>The source for nonverbal learning disorders</i>. LinguiSystems.</li>
           </ul>
         </div>
       </div>
