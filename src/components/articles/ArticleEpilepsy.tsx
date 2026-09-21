@@ -103,7 +103,7 @@ export function ArticleEpilepsy({ setCurrentArticle }: ArticleEpilepsyProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Epilepsy is a neurological condition characterized by recurrent seizures caused by sudden, abnormal electrical activity in the brain, affecting approximately 1 in 26 people globally.<sup className="text-[#10b981] font-bold ml-0.5">1</sup> Beyond the physical seizures, it fundamentally alters memory, emotional processing, and sensory experiences, creating a distinctly unique neurological profile and way of experiencing reality.
+            Epilepsy is a neurological condition characterized by recurrent seizures caused by sudden, abnormal electrical activity in the brain, affecting approximately 1 in 26 people globally.<sup className="text-[#10b981] font-bold ml-0.5">2</sup> Beyond the physical seizures, it fundamentally alters memory, emotional processing, and sensory experiences, creating a distinctly unique neurological profile and way of experiencing reality.
           </p>
 
           <button
@@ -128,7 +128,7 @@ export function ArticleEpilepsy({ setCurrentArticle }: ArticleEpilepsyProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Epilepsy is primarily defined by recurrent seizures ranging from brief absence staring spells to full tonic-clonic events involving a total loss of consciousness.<sup className="text-[#10b981] font-bold ml-0.5">9</sup> Living with the condition also involves profoundly altered perception, with many experiencing predictive auras, intense periods of déjà vu, and highly unique creative insights linked directly to their altered neurological state.
+            Epilepsy is primarily defined by recurrent seizures ranging from brief absence staring spells to full tonic-clonic events involving a total loss of consciousness.<sup className="text-[#10b981] font-bold ml-0.5">3</sup> Living with the condition also involves profoundly altered perception, with many experiencing predictive auras, intense periods of déjà vu, and highly unique creative insights linked directly to their altered neurological state.
           </p>
 
           <button
@@ -178,7 +178,7 @@ export function ArticleEpilepsy({ setCurrentArticle }: ArticleEpilepsyProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Epilepsy is diagnosed clinically by neurologists, requiring a history of at least two unprovoked seizures and extensive evaluations including electroencephalograms (EEG) and brain imaging (MRI).<sup className="text-[#10b981] font-bold ml-0.5">25</sup> Accurate diagnosis relies on classifying the specific epilepsy syndrome to effectively guide treatment while carefully ruling out other conditions like complex migraines or severe syncope.
+            Epilepsy is diagnosed clinically by neurologists, requiring a history of at least two unprovoked seizures and extensive evaluations including electroencephalograms (EEG) and brain imaging (MRI).<sup className="text-[#10b981] font-bold ml-0.5">4</sup> Accurate diagnosis relies on classifying the specific epilepsy syndrome to effectively guide treatment while carefully ruling out other conditions like complex migraines or severe syncope.
           </p>
 
           <button
@@ -203,7 +203,7 @@ export function ArticleEpilepsy({ setCurrentArticle }: ArticleEpilepsyProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Management primarily utilizes anti-seizure medications, which successfully control seizures for about 70% of individuals, alongside specialized dietary therapies or implanted neurostimulation devices.<sup className="text-[#10b981] font-bold ml-0.5">34</sup> Crucial lifestyle strategies include adhering to strict sleep schedules, rigorous stress management, meticulous seizure tracking, and educating family members on proper seizure first aid.
+            Management primarily utilizes anti-seizure medications, which successfully control seizures for about 70% of individuals, alongside specialized dietary therapies or implanted neurostimulation devices.<sup className="text-[#10b981] font-bold ml-0.5">5</sup> Crucial lifestyle strategies include adhering to strict sleep schedules, rigorous stress management, meticulous seizure tracking, and educating family members on proper seizure first aid.
           </p>
 
           <button
@@ -228,7 +228,7 @@ export function ArticleEpilepsy({ setCurrentArticle }: ArticleEpilepsyProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Individuals with epilepsy successfully lead fulfilling lives across all areas of society, navigating both their unique cognitive experiences and the complex physical safety concerns of the condition.<sup className="text-[#10b981] font-bold ml-0.5">42</sup> Thriving involves actively reframing epilepsy as a distinct neurological way of being rather than a personal failing, while maintaining consistent treatment and combating societal stigma through continuous self-advocacy.
+            Individuals with epilepsy successfully lead fulfilling lives across all areas of society, navigating both their unique cognitive experiences and the complex physical safety concerns of the condition.<sup className="text-[#10b981] font-bold ml-0.5">6</sup> Thriving involves actively reframing epilepsy as a distinct neurological way of being rather than a personal failing, while maintaining consistent treatment and combating societal stigma through continuous self-advocacy.
           </p>
 
           <button
@@ -253,9 +253,12 @@ export function ArticleEpilepsy({ setCurrentArticle }: ArticleEpilepsyProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Fisher, R. S., van Emde Boas, W., Blume, W., et al. (2005). Epileptic seizures and epilepsy: Definitions proposed by the International League Against Epilepsy (ILAE) and the International Bureau for Epilepsy (IBE). <i>Epilepsia</i>. https://doi.org/10.1111/j.0013-9580.2005.66104.x</p>
-            <p>2. Helmstaedter, C., & Witt, J. A. (2017). Epilepsy and cognition—A bidirectional relationship? <i>Seizure</i>. https://doi.org/10.1016/j.seizure.2017.02.017</p>
-            <p>3. England, M. J., Liverman, C. T., Schultz, A. M., & Strawbridge, L. M. (Eds.). (2012). <i>Epilepsy across the spectrum: Promoting health and understanding</i>. National Academies Press. https://doi.org/10.17226/13379</p>
+            <p>1. Fisher, R. S., van Emde Boas, W., Blume, W., et al. (2005). Epileptic seizures and epilepsy: Definitions proposed by the International League Against Epilepsy (ILAE) and the International Bureau for Epilepsy (IBE). <i>Epilepsia</i>.</p>
+            <p>2. England, M. J., Liverman, C. T., Schultz, A. M., & Strawbridge, L. M. (Eds.). (2012). <i>Epilepsy across the spectrum: Promoting health and understanding</i>. National Academies Press.</p>
+            <p>3. Fisher, R. S., Cross, J. H., French, J. A., et al. (2017). Operational classification of seizure types by the International League Against Epilepsy. <i>Epilepsia</i>.</p>
+            <p>4. Fisher, R. S., Acevedo, C., Arzimanoglou, A., et al. (2014). ILAE official report: A practical clinical definition of epilepsy. <i>Epilepsia</i>.</p>
+            <p>5. Kwan, P., & Brodie, M. J. (2000). Early identification of refractory epilepsy. <i>New England Journal of Medicine</i>.</p>
+            <p>6. Jacoby, A., & Austin, J. K. (2007). Social stigma for adults and children with epilepsy. <i>Epilepsia</i>.</p>
           </div>
         </div>
         
@@ -265,8 +268,10 @@ export function ArticleEpilepsy({ setCurrentArticle }: ArticleEpilepsyProps) {
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Stafstrom, C. E., & Carmant, L. (2015). Seizures and epilepsy: An overview for neuroscientists. <i>Cold Spring Harbor Perspectives in Medicine</i>. https://doi.org/10.1101/cshperspect.a022426</li>
-            <li>Rayner, G., Jackson, G. D., & Wilson, S. J. (2016). Mechanisms of memory impairment in epilepsy depend on age at disease onset. <i>Neurology</i>. https://doi.org/10.1212/wnl.0000000000003231</li>
+            <li>Helmstaedter, C., & Witt, J. A. (2017). Epilepsy and cognition—A bidirectional relationship? <i>Seizure</i>.</li>
+            <li>Rayner, G., Jackson, G. D., & Wilson, S. J. (2016). Mechanisms of memory impairment in epilepsy depend on age at disease onset. <i>Neurology</i>.</li>
+            <li>Stafstrom, C. E., & Carmant, L. (2015). Seizures and epilepsy: An overview for neuroscientists. <i>Cold Spring Harbor Perspectives in Medicine</i>.</li>
+            <li>World Health Organization. (2019). <i>Epilepsy: A public health imperative</i>. World Health Organization.</li>
           </ul>
         </div>
       </div>

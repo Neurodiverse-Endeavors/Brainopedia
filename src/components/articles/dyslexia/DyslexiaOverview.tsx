@@ -495,11 +495,11 @@ export function DyslexiaOverview({ setCurrentArticle }: DyslexiaOverviewProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Ziegler, J. C., & Goswami, U. (2005). "Reading acquisition, developmental dyslexia, and skilled reading across languages." <i>Psychological Bulletin</i>. https://doi.org/10.1037/0033-2909.131.1.3</p>
-            <p>2. Snowling, M. J., & Melby-Lervåg, M. (2016). "Oral language deficits in familial dyslexia." <i>Psychological Bulletin</i>. https://doi.org/10.1037/bul0000037</p>
-            <p>3. Quinn, J. M., & Wagner, R. K. (2015). "Gender differences in reading impairment." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219413508323</p>
-            <p>4. Landerl, K., & Moll, K. (2010). "Comorbidity of learning disorders." <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.2009.02164.x</p>
-            <p>5. Richlan, F., et al. (2011). "Meta-analyzing brain dysfunctions in dyslexic children and adults." <i>Neuroimage</i>. https://doi.org/10.1016/j.neuroimage.2011.02.040</p>
+            <p>1. Ziegler, J. C., & Goswami, U. (2005). Reading acquisition, developmental dyslexia, and skilled reading across languages. <i>Psychological Bulletin</i>.</p>
+            <p>2. Snowling, M. J., & Melby-Lervåg, M. (2016). Oral language deficits in familial dyslexia. <i>Psychological Bulletin</i>.</p>
+            <p>3. Quinn, J. M., & Wagner, R. K. (2015). Gender differences in reading impairment. <i>Journal of Learning Disabilities</i>.</p>
+            <p>4. Landerl, K., & Moll, K. (2010). Comorbidity of learning disorders. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+            <p>5. Richlan, F., et al. (2011). Meta-analyzing brain dysfunctions in dyslexic children and adults. <i>Neuroimage</i>.</p>
           </div>
         </div>
         
@@ -509,10 +509,10 @@ export function DyslexiaOverview({ setCurrentArticle }: DyslexiaOverviewProps) {
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>. https://dyslexiaida.org/dyslexia-in-the-classroom/</p>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>Shaywitz, S. (2003). <i>Overcoming Dyslexia</i>. Knopf. https://www.penguinrandomhouse.com/books/165181/overcoming-dyslexia-by-sally-shaywitz-md/</p>
-            <p>Eide, B. L., & Eide, F. F. (2011). <i>The Dyslexic Advantage: Unlocking the Hidden Potential of the Dyslexic Brain</i>. Penguin. https://www.penguinrandomhouse.com/books/308960/the-dyslexic-advantage-revised-and-updated-by-brock-l-eide-md-ma-and-fernette-f-eide-md/</p>
+            <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>.</p>
+            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</p>
+            <p>Shaywitz, S. (2003). <i>Overcoming Dyslexia</i>. Knopf.</p>
+            <p>Eide, B. L., & Eide, F. F. (2011). <i>The Dyslexic Advantage: Unlocking the Hidden Potential of the Dyslexic Brain</i>. Penguin.</p>
           </div>
         </div>
       </div>

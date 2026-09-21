@@ -251,8 +251,8 @@ export function ArticleAPD({ setCurrentArticle }: ArticleAPDProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Chermak, G. D., Tucker, E., & Seikel, J. A. (2002). "Behavioral characteristics of auditory processing disorder and attention-deficit hyperactivity disorder: Predominantly inattentive type." <i>Journal of the American Academy of Audiology</i>. https://pubmed.ncbi.nlm.nih.gov/12141390/</p>
-            <p>2. Banai, K., & Kraus, N. (2008). "The dynamic brainstem: Implications for auditory processing disorder." In D. B. McFarland & A. T. Cacace (Eds.), <i>Current controversies in central auditory processing disorder</i>. Plural Publishing.</p>
+            <p>1. Chermak, G. D., Tucker, E., & Seikel, J. A. (2002). Behavioral characteristics of auditory processing disorder and attention-deficit hyperactivity disorder: Predominantly inattentive type. <i>Journal of the American Academy of Audiology</i>.</p>
+            <p>2. Banai, K., & Kraus, N. (2008). The dynamic brainstem: Implications for auditory processing disorder. In D. B. McFarland & A. T. Cacace (Eds.), <i>Current controversies in central auditory processing disorder</i>. Plural Publishing.</p>
           </div>
         </div>
 
@@ -262,9 +262,9 @@ export function ArticleAPD({ setCurrentArticle }: ArticleAPDProps) {
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Speech-Language-Hearing Association. (2005). <i>(Central) Auditory Processing Disorders—The Role of the Audiologist - Technical Report</i>. www.asha.org/policy/</p>
+            <p>American Speech-Language-Hearing Association. (2005). <i>(Central) Auditory Processing Disorders—The Role of the Audiologist - Technical Report</i>.</p>
             <p>Bellis, T. J. (2003). <i>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</i> (2nd ed.). Thomson Delmar Learning.</p>
-            <p>Moore, D. R. (2007). "Auditory processing disorders: Acquisition and treatment." <i>Journal of Communication Disorders</i>. https://pubmed.ncbi.nlm.nih.gov/17467002/</p>
+            <p>Moore, D. R. (2007). Auditory processing disorders: Acquisition and treatment. <i>Journal of Communication Disorders</i>.</p>
           </div>
         </div>
       </div>

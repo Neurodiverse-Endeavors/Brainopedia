@@ -75,29 +75,7 @@ const categories = [
       { id: 'intellectual-disability', label: 'Intellectual Disability', icon: Brain },
       { id: 'fasd', label: 'Fetal Alcohol Spectrum Disorder or "FASD"', icon: Droplets },
       { id: 'epilepsy', label: 'Epilepsy', icon: Waves },
-    ]
-  },
-  {
-    name: 'Acquired Neurodivergence',
-    // Solid Light Blue Background (#f0f9ff)
-    bgStyle: 'bg-[#f0f9ff] border-blue-100 text-[#0c264d]', 
-    subcategories: [
-      {
-        name: 'Traumatic Injuries',
-        articles: [
-          { id: 'tbi', label: 'TBI (Traumatic Brain Injury)', icon: Skull },
-          { id: 'cte', label: 'CTE (Chronic Traumatic Encephalopathy)', icon: BrainCog },
-        ]
-      },
-      { name: 'Strokes and Blood-Flow Problems', articles: [] },
-      { name: 'Oxygen-Loss Injuries', articles: [] },
-      { name: 'Chemical or Toxin-Related', articles: [] },
-      {
-        name: 'Brain Inflammation',
-        articles: [
-          { id: 'pandas', label: 'PANDAS & PANS', icon: Radio },
-        ]
-      },
+      { id: 'pandas', label: 'PANDAS & PANS', icon: Radio },
     ]
   }
 ];

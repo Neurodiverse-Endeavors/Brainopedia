@@ -186,28 +186,23 @@ export function DyslexiaLiving({ setCurrentArticle, initialTab }: DyslexiaLiving
 
           {/* References for Tab 1 */}
           <div className="clear-both"></div>
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
+            
+             
+   
             <div>
               <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Berninger, V. W., et al. (2008). "Writing problems in developmental dyslexia: Under-recognized and under-treated." <i>Journal of School Psychology</i>. https://doi.org/10.1016/j.jsp.2006.11.008</p>
-                <p>Breznitz, Z. (2006). <i>Fluency in reading: Synchronization of processes</i>. Routledge. https://doi.org/10.4324/9781410615367</p>
-                <p>Gerber, P. J. (2012). "The impact of learning disabilities on adulthood: A review of the evidenced-based literature for research and practice in adult education." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219411426858</p>
-                <p>Hughes, C. A., & Suritsky, S. K. (1994). "Note-taking skills of university students with and without learning disabilities." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949402700104</p>
-                <p>McNulty, M. A. (2003). "Dyslexia and the life course." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/00222194030360040701</p>
-                <p>Swan, D., & Goswami, U. (1997). "Picture naming deficits in developmental dyslexia: The phonological representations hypothesis." <i>Brain and Language</i>. https://doi.org/10.1006/brln.1997.1735</p>
-                <p>Swanson, H. L., & Berninger, V. (1995). "The role of working memory in skilled and less skilled readers' comprehension." <i>Intelligence</i>. https://doi.org/10.1016/0160-2896(95)90039-X</p>
+                <p>Berninger, V. W., et al. (2008). Writing problems in developmental dyslexia: Under-recognized and under-treated. <i>Journal of School Psychology</i>. </p>
+                <p>Breznitz, Z. (2006). <i>Fluency in reading: Synchronization of processes</i>. Routledge. </p>
+                <p>Gerber, P. J. (2012). The impact of learning disabilities on adulthood: A review of the evidenced-based literature for research and practice in adult education. <i>Journal of Learning Disabilities</i>. </p>
+                <p>Hughes, C. A., & Suritsky, S. K. (1994). Note-taking skills of university students with and without learning disabilities. <i>Journal of Learning Disabilities</i>. </p>
+                <p>McNulty, M. A. (2003). Dyslexia and the life course. <i>Journal of Learning Disabilities</i>. </p>
+                <p>Swan, D., & Goswami, U. (1997). Picture naming deficits in developmental dyslexia: The phonological representations hypothesis. <i>Brain and Language</i>. </p>
+                <p>Swanson, H. L., & Berninger, V. (1995). The role of working memory in skilled and less skilled readers' comprehension. <i>Intelligence</i>. </p>
               </div>
             </div>
           </div>
@@ -371,35 +366,28 @@ export function DyslexiaLiving({ setCurrentArticle, initialTab }: DyslexiaLiving
 
           {/* References for Tab 2 */}
           <div className="clear-both"></div>
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
+           
             <div>
               <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Drasgow, E., et al. (2001). "Developing legally correct and educationally appropriate IEPs." <i>Remedial and Special Education</i>. https://doi.org/10.1177/074193250102200604</p>
-                <p>Ehri, L. C. (2000). "Learning to read and learning to spell: Two sides of a coin." <i>Topics in Language Disorders</i>. https://doi.org/10.1097/00011363-200020030-00005</p>
-                <p>Graham, S., & Harris, K. R. (2000). "The role of self-regulation and transcription skills in writing and writing development." <i>Educational Psychologist</i>. https://doi.org/10.1207/S15326985EP3501_2</p>
-                <p>Hatcher, J., et al. (2002). "Cognitive assessment of dyslexic students in higher education." <i>British Journal of Educational Psychology</i>. https://doi.org/10.1348/000709902158793</p>
-                <p>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). https://sites.ed.gov/idea/statuteregulations/</p>
-                <p>Madaus, J. W. (2008). "Employment self-disclosure rates and rationales of university graduates with learning disabilities." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219407313804</p>
-                <p>Section 504 of the Rehabilitation Act of 1973, 29 U.S.C. § 794. https://www.dol.gov/agencies/oasam/centers-offices/civil-rights-center/statutes/section-504-rehabilitation-act-of-1973</p>
-                <p>Shaywitz, S. E., & Shaywitz, B. A. (2005). "Dyslexia (specific reading disability)." <i>Biological Psychiatry</i>. https://doi.org/10.1016/j.biopsych.2005.01.043</p>
-                <p>Shaywitz, S. E., et al. (2008). "The education of dyslexic children from childhood to young adulthood." <i>Annual Review of Psychology</i>. https://doi.org/10.1146/annurev.psych.59.103006.093633</p>
-                <p>Sparks, R. L., et al. (2008). "Early first-language reading and spelling skills predict later second-language reading and spelling skills." <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.100.1.162</p>
-                <p>Trainin, G., & Swanson, H. L. (2005). "Cognition, metacognition, and achievement of college students with learning disabilities." <i>Learning Disability Quarterly</i>. https://doi.org/10.2307/1593622</p>
-                <p>Vogel, S. A., & Adelman, P. B. (1992). "The success of college students with learning disabilities: Factors related to educational attainment." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949202500703</p>
-                <p>Yell, M. L., & Bateman, D. F. (2017). "Endrew F. v. Douglas County School District (2017): FAPE and the U.S. Supreme Court." <i>Teaching Exceptional Children</i>. https://doi.org/10.1177/0040059917721116</p>
-                <p>Zirkel, P. A. (2009). "What does the law say? Section 504, the ADA, and the schools." <i>Teaching Exceptional Children</i>. https://doi.org/10.1177/004005990904100509</p>
+                <p>Drasgow, E., et al. (2001). Developing legally correct and educationally appropriate IEPs. <i>Remedial and Special Education</i>. </p>
+                <p>Ehri, L. C. (2000). Learning to read and learning to spell: Two sides of a coin. <i>Topics in Language Disorders</i>. </p>
+                <p>Graham, S., & Harris, K. R. (2000). The role of self-regulation and transcription skills in writing and writing development. <i>Educational Psychologist</i>. </p>
+                <p>Hatcher, J., et al. (2002). Cognitive assessment of dyslexic students in higher education. <i>British Journal of Educational Psychology</i>. </p>
+                <p>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). </p>
+                <p>Madaus, J. W. (2008). Employment self-disclosure rates and rationales of university graduates with learning disabilities. <i>Journal of Learning Disabilities</i>. </p>
+                <p>Section 504 of the Rehabilitation Act of 1973, 29 U.S.C. § 794. </p>
+                <p>Shaywitz, S. E., & Shaywitz, B. A. (2005). Dyslexia (specific reading disability). <i>Biological Psychiatry</i>. </p>
+                <p>Shaywitz, S. E., et al. (2008). The education of dyslexic children from childhood to young adulthood. <i>Annual Review of Psychology</i>. </p>
+                <p>Sparks, R. L., et al. (2008). Early first-language reading and spelling skills predict later second-language reading and spelling skills. <i>Journal of Educational Psychology</i>. </p>
+                <p>Trainin, G., & Swanson, H. L. (2005). Cognition, metacognition, and achievement of college students with learning disabilities. <i>Learning Disability Quarterly</i>. </p>
+                <p>Vogel, S. A., & Adelman, P. B. (1992). The success of college students with learning disabilities: Factors related to educational attainment. <i>Journal of Learning Disabilities</i>. </p>
+                <p>Yell, M. L., & Bateman, D. F. (2017). Endrew F. v. Douglas County School District (2017): FAPE and the U.S. Supreme Court. <i>Teaching Exceptional Children</i>. </p>
+                <p>Zirkel, P. A. (2009). What does the law say? Section 5₀₄, the ADA, and the schools. <i>Teaching Exceptional Children</i>. </p>
               </div>
             </div>
           </div>
@@ -500,41 +488,35 @@ export function DyslexiaLiving({ setCurrentArticle, initialTab }: DyslexiaLiving
 
           {/* References for Tab 3 */}
           <div className="clear-both"></div>
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
+
+            
             <div>
               <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq. https://www.ada.gov/law-and-regs/ada/</p>
-                <p>Aronson, A. G. (2010). "New perspectives on reading intervention through audiobook technology." <i>Reading Psychology</i>. https://doi.org/10.1080/02702711.2010.505166</p>
-                <p>Cumming, T. M., & Rodríguez, C. D. (2017). "A meta-analysis of mobile technology supporting individuals with disabilities." <i>The Journal of Special Education Technology</i>. https://doi.org/10.1177/0162643417704439</p>
-                <p>Dawson, P., & Guare, R. (2010). <i>Executive skills in children and adolescents: A practical guide to assessment and intervention</i>. Guilford Press. https://www.guilford.com/books/Executive-Skills-in-Children-and-Adolescents/Dawson-Guare/9781462535316</p>
-                <p>Eckes, S. E., & Ochoa, T. A. (2005). "Students with disabilities: Transitioning from high school to higher education." <i>American Secondary Education</i>. https://www.jstor.org/stable/41064560</p>
-                <p>Eide, B. L., & Eide, F. F. (2011). <i>The dyslexic advantage: Unlocking the hidden potential of the dyslexic brain</i>. Penguin. https://www.penguinrandomhouse.com/books/308960/the-dyslexic-advantage-revised-and-updated-by-brock-l-eide-md-ma-and-fernette-f-eide-md/</p>
-                <p>Gerber, P. J. (2012). "The impact of learning disabilities on adulthood: A review of the evidenced-based literature for research and practice in adult education." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219411426858</p>
-                <p>Gerber, P. J., & Price, L. A. (2003). "Persons with learning disabilities in the workplace: What we know so far in the Americans with Disabilities Act era." <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/1540-5826.00067</p>
-                <p>Higgins, E. L., & Raskind, M. H. (2005). "The compensatory effectiveness of the Quicktionary Reading Pen II." <i>Journal of Special Education Technology</i>. https://doi.org/10.1177/016264340502000203</p>
-                <p>Hong, B. S., et al. (2007). "Preparing students for postsecondary education." <i>Teaching Exceptional Children</i>. https://doi.org/10.1177/004005990704000104</p>
-                <p>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). https://sites.ed.gov/idea/statuteregulations/</p>
-                <p>Leather, C., et al. (2011). "Cognitive functioning and work success in adults with dyslexia." <i>Dyslexia</i>. https://doi.org/10.1002/dys.441</p>
-                <p>Logan, J. (2009). "Dyslexic entrepreneurs: The incidence; their coping strategies and their business skills." <i>Dyslexia</i>. https://doi.org/10.1002/dys.388</p>
-                <p>MacArthur, C. A. (2009). "Reflections on research on writing and technology for struggling writers." <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00283.x</p>
-                <p>Madaus, J. W. (2008). "Employment self-disclosure rates and rationales of university graduates with learning disabilities." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219407313804</p>
-                <p>Mayer, R. E. (2009). <i>Multimedia learning</i>. Cambridge University Press. https://doi.org/10.1017/CBO9780511811678</p>
-                <p>McNamara, D. S. (2007). "Reading comprehension strategies can improve knowledge acquisition." <i>Scientific Studies of Reading</i>. https://doi.org/10.1080/10888430701530714</p>
-                <p>Raskind, M. H., & Higgins, E. L. (1998). "Assistive technology for postsecondary students with learning disabilities: An overview." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949803100104</p>
-                <p>Raskind, M. H., et al. (1999). "Patterns of change and predictors of success in individuals with learning disabilities: Results from a twenty-year longitudinal study." <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1207/sldrp1401_4</p>
-                <p>Schneps, M. H., et al. (2012). "History of reading struggles linked to enhanced learning in low spatial frequency scenes." <i>PloS One</i>. https://doi.org/10.1371/journal.pone.0035724</p>
+                <p>Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq. </p>
+                <p>Aronson, A. G. (2010). "New perspectives on reading intervention through audiobook technology." <i>Reading Psychology</i>. </p>
+                <p>Cumming, T. M., & Rodríguez, C. D. (2017). "A meta-analysis of mobile technology supporting individuals with disabilities." <i>The Journal of Special Education Technology</i>. </p>
+                <p>Dawson, P., & Guare, R. (2010). <i>Executive skills in children and adolescents: A practical guide to assessment and intervention</i>. Guilford Press. </p>
+                <p>Eckes, S. E., & Ochoa, T. A. (2005). "Students with disabilities: Transitioning from high school to higher education." <i>American Secondary Education</i>. </p>
+                <p>Eide, B. L., & Eide, F. F. (2011). <i>The dyslexic advantage: Unlocking the hidden potential of the dyslexic brain</i>. Penguin. </p>
+                <p>Gerber, P. J. (2012). "The impact of learning disabilities on adulthood: A review of the evidenced-based literature for research and practice in adult education." <i>Journal of Learning Disabilities</i>. </p>
+                <p>Gerber, P. J., & Price, L. A. (2003). "Persons with learning disabilities in the workplace: What we know so far in the Americans with Disabilities Act era." <i>Learning Disabilities Research & Practice</i>. </p>
+                <p>Higgins, E. L., & Raskind, M. H. (2005). "The compensatory effectiveness of the Quicktionary Reading Pen II." <i>Journal of Special Education Technology</i>. </p>
+                <p>Hong, B. S., et al. (2007). "Preparing students for postsecondary education." <i>Teaching Exceptional Children</i>. </p>
+                <p>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). </p>
+                <p>Leather, C., et al. (2011). "Cognitive functioning and work success in adults with dyslexia." <i>Dyslexia</i>. </p>
+                <p>Logan, J. (2009). "Dyslexic entrepreneurs: The incidence; their coping strategies and their business skills." <i>Dyslexia</i>. </p>
+                <p>MacArthur, C. A. (2009). "Reflections on research on writing and technology for struggling writers." <i>Learning Disabilities Research & Practice</i>. </p>
+                <p>Madaus, J. W. (2008). "Employment self-disclosure rates and rationales of university graduates with learning disabilities." <i>Journal of Learning Disabilities</i>. </p>
+                <p>Mayer, R. E. (2009). <i>Multimedia learning</i>. Cambridge University Press. </p>
+                <p>McNamara, D. S. (2007). "Reading comprehension strategies can improve knowledge acquisition." <i>Scientific Studies of Reading</i>. </p>
+                <p>Raskind, M. H., & Higgins, E. L. (1998). "Assistive technology for postsecondary students with learning disabilities: An overview." <i>Journal of Learning Disabilities</i>. </p>
+                <p>Raskind, M. H., et al. (1999). "Patterns of change and predictors of success in individuals with learning disabilities: Results from a twenty-year longitudinal study." <i>Learning Disabilities Research & Practice</i>. </p>
+                <p>Schneps, M. H., et al. (2012). "History of reading struggles linked to enhanced learning in low spatial frequency scenes." <i>PloS One</i>. </p>
               </div>
             </div>
           </div>
@@ -614,43 +596,36 @@ export function DyslexiaLiving({ setCurrentArticle, initialTab }: DyslexiaLiving
 
           {/* References for Tab 4 */}
           <div className="clear-both"></div>
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+     <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
+
             <div>
               <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Boetsch, E. A., et al. (1996). "Psychosocial correlates of dyslexia across the life span." <i>Development and Psychopathology</i>. https://doi.org/10.1017/S095457940000724X</p>
-                <p>Dweck, C. S. (2006). <i>Mindset: The new psychology of success</i>. Random House. https://www.penguinrandomhouse.com/books/44330/mindset-by-carol-s-dweck-phd/</p>
-                <p>Edyburn, D. L. (2013). "Critical issues in advancing the special education technology evidence base." <i>Exceptional Children</i>. https://doi.org/10.1177/001440291308000101</p>
-                <p>Eide, B. L., & Eide, F. F. (2011). <i>The dyslexic advantage: Unlocking the hidden potential of the dyslexic brain</i>. Penguin. https://www.penguinrandomhouse.com/books/308960/the-dyslexic-advantage-revised-and-updated-by-brock-l-eide-md-ma-and-fernette-f-eide-md/</p>
-                <p>Fletcher, J. M., et al. (2018). <i>Learning disabilities: From identification to intervention</i> (2nd ed.). Guilford Publications. https://www.guilford.com/books/Learning-Disabilities/Fletcher-Lyon-Fuchs-Barnes/9781462536375</p>
-                <p>Fuchs, L. S., et al. (2005). "Identifying appropriate test accommodations for students with learning disabilities." <i>Focus on Exceptional Children</i>. https://doi.org/10.17161/fec.v37i6.6792</p>
-                <p>Gerber, P. J., et al. (1992). "Identifying alterable patterns in employment success for highly successful adults with learning disabilities." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949202500802</p>
-                <p>Griffiths, Y., & Snowling, M. J. (2002). "Predictors of exception word and nonword reading in dyslexic children." <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.94.1.34</p>
-                <p>Logan, J. (2009). "Dyslexic entrepreneurs: The incidence; their coping strategies and their business skills." <i>Dyslexia</i>. https://doi.org/10.1002/dys.388</p>
-                <p>Madaus, J. W. (2006). "Employment outcomes of university graduates with learning disabilities." <i>Learning Disability Quarterly</i>. https://doi.org/10.2307/30035552</p>
-                <p>Morrison, F. J., & Cooney, R. R. (2002). "Parenting and academic achievement." In <i>Parenting and the child's world</i>. Psychology Press. https://doi.org/10.4324/9781410603593</p>
-                <p>Raskind, M. H., et al. (1999). "Patterns of change and predictors of success in individuals with learning disabilities: Results from a twenty-year longitudinal study." <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1207/sldrp1401_4</p>
-                <p>Shaywitz, S. (2003). <i>Overcoming dyslexia: A new and complete science-based program for reading problems at any level</i>. Knopf. https://www.penguinrandomhouse.com/books/165181/overcoming-dyslexia-by-sally-shaywitz-md/</p>
-                <p>Singer, E. (2007). "Coping with academic failure, a study of Dutch children with dyslexia." <i>Dyslexia</i>. https://doi.org/10.1002/dys.343</p>
-                <p>Sireci, S. G., et al. (2005). "Test accommodations for students with disabilities: An analysis of the interaction hypothesis." <i>Review of Educational Research</i>. https://doi.org/10.3102/00346543075001029</p>
-                <p>Snowling, M. J., & Hulme, C. (2011). "Evidence‐based interventions for reading and language difficulties: Creating a virtuous circle." <i>British Journal of Educational Psychology</i>. https://doi.org/10.1348/2044-8279.002001</p>
-                <p>Spear-Swerling, L. (2009). "A literacy tutoring experience for prospective special educators and struggling second graders." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219409338738</p>
-                <p>Torgesen, J. K. (2004). "Lessons learned from research on interventions for students who have difficulty learning to read." In <i>The voice of evidence in reading research</i>. Paul H. Brookes. https://brookespublishing.com/product/the-voice-of-evidence-in-reading-research/</p>
-                <p>Turnbull, A. P., et al. (2015). <i>Families, professionals, and exceptionality: Positive outcomes through partnerships and trust</i>. Pearson. https://www.pearson.com/en-us/subject-catalog/p/families-professionals-and-exceptionality-positive-outcomes-through-partnerships-and-trust/P200000002131/9780133833683</p>
-                <p>von Károlyi, C., et al. (2003). "Dyslexia linked to talent: Global visual-spatial ability." <i>Brain and Language</i>. https://doi.org/10.1016/S0006-8993(03)00040-1</p>
-                <p>West, T. G. (1997). <i>In the mind's eye: Visual thinkers, gifted people with dyslexia and other learning difficulties</i>. Prometheus Books. https://rowman.com/ISBN/9781615926510/In-the-Minds-Eye-Creative-Visual-Thinkers-Gifted-Dyslexics-and-the-Rise-of-Visual-Technologies</p>
-                <p>Wolff, U., & Lundberg, I. (2002). "The prevalence of dyslexia among art students." <i>Dyslexia</i>. https://doi.org/10.1002/dys.211</p>
+                <p>Boetsch, E. A., et al. (1996). Psychosocial correlates of dyslexia across the life span. <i>Development and Psychopathology</i>. </p>
+                <p>Dweck, C. S. (2006). <i>Mindset: The new psychology of success</i>. Random House. </p>
+                <p>Edyburn, D. L. (2013). Critical issues in advancing the special education technology evidence base. <i>Exceptional Children</i>. </p>
+                <p>Eide, B. L., & Eide, F. F. (2011). <i>The dyslexic advantage: Unlocking the hidden potential of the dyslexic brain</i>. Penguin. </p>
+                <p>Fletcher, J. M., et al. (2018). <i>Learning disabilities: From identification to intervention</i> (2nd ed.). Guilford Publications. </p>
+                <p>Fuchs, L. S., et al. (2005). Identifying appropriate test accommodations for students with learning disabilities. <i>Focus on Exceptional Children</i>. </p>
+                <p>Gerber, P. J., et al. (1992). Identifying alterable patterns in employment success for highly successful adults with learning disabilities. <i>Journal of Learning Disabilities</i>. </p>
+                <p>Griffiths, Y., & Snowling, M. J. (2002). Predictors of exception word and nonword reading in dyslexic children. <i>Journal of Educational Psychology</i>. </p>
+                <p>Logan, J. (2009). Dyslexic entrepreneurs: The incidence; their coping strategies and their business skills. <i>Dyslexia</i>. </p>
+                <p>Madaus, J. W. (2006). Employment outcomes of university graduates with learning disabilities. <i>Learning Disability Quarterly</i>. </p>
+                <p>Morrison, F. J., & Cooney, R. R. (2002). Parenting and academic achievement. In <i>Parenting and the child's world</i>. Psychology Press. </p>
+                <p>Raskind, M. H., et al. (1999). Patterns of change and predictors of success in individuals with learning disabilities: Results from a twenty-year longitudinal study. <i>Learning Disabilities Research & Practice</i>.</p>
+                <p>Shaywitz, S. (2003). <i>Overcoming dyslexia: A new and complete science-based program for reading problems at any level</i>. Knopf. </p>
+                <p>Singer, E. (2007). Coping with academic failure, a study of Dutch children with dyslexia. <i>Dyslexia</i>. </p>
+                <p>Sireci, S. G., et al. (2005). Test accommodations for students with disabilities: An analysis of the interaction hypothesis. <i>Review of Educational Research</i>. </p>
+                <p>Snowling, M. J., & Hulme, C. (2011). Evidence‐based interventions for reading and language difficulties: Creating a virtuous circle. <i>British Journal of Educational Psychology</i>. </p>
+                <p>Spear-Swerling, L. (2009). A literacy tutoring experience for prospective special educators and struggling second graders. <i>Journal of Learning Disabilities</i>. </p>
+                <p>Torgesen, J. K. (2004). Lessons learned from research on interventions for students who have difficulty learning to read. In <i>The voice of evidence in reading research</i>. Paul H. Brookes. </p>
+                <p>Turnbull, A. P., et al. (2015). <i>Families, professionals, and exceptionality: Positive outcomes through partnerships and trust</i>. Pearson. </p>
+                <p>von Károlyi, C., et al. (2003). Dyslexia linked to talent: Global visual-spatial ability. <i>Brain and Language</i>. </p>
+                <p>West, T. G. (1997). <i>In the mind's eye: Visual thinkers, gifted people with dyslexia and other learning difficulties</i>. Prometheus Books. </p>
+                <p>Wolff, U., & Lundberg, I. (2002). The prevalence of dyslexia among art students. <i>Dyslexia</i>. </p>
               </div>
             </div>
           </div>

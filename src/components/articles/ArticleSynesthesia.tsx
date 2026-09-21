@@ -252,8 +252,8 @@ export function ArticleSynesthesia({ setCurrentArticle }: ArticleSynesthesiaProp
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Simner, J., Mulvenna, C., Sagiv, N., et al. (2006). "Synaesthesia: The prevalence of atypical cross-modal experiences." <i>Perception</i>, 35(8), 1024-1033. https://doi.org/10.1068/p5469</p>
-            <p>2. Rouw, R., & Scholte, H. S. (2007). "Increased structural connectivity in grapheme-color synesthesia." <i>Nature Neuroscience</i>, 10(6), 792-797. https://doi.org/10.1038/nn1906</p>
+            <p>1. Simner, J., Mulvenna, C., Sagiv, N., et al. (2006). Synaesthesia: The prevalence of atypical cross-modal experiences. <i>Perception</i>.</p>
+            <p>2. Rouw, R., & Scholte, H. S. (2007). Increased structural connectivity in grapheme-color synesthesia. <i>Nature Neuroscience</i>.</p>
           </div>
         </div>
         
@@ -264,7 +264,7 @@ export function ArticleSynesthesia({ setCurrentArticle }: ArticleSynesthesiaProp
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>Cytowic, R. E., & Eagleman, D. M. (2009). <i>Wednesday is indigo blue: Discovering the brain of synesthesia</i>. MIT Press.</li>
-            <li>Ward, J. (2013). "Synesthesia." <i>Annual Review of Psychology</i>, 64, 49-75. https://doi.org/10.1146/annurev-psych-113011-143840</li>
+            <li>Ward, J. (2013). Synesthesia. <i>Annual Review of Psychology</i>.</li>
           </ul>
         </div>
       </div>

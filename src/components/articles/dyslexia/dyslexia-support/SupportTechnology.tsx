@@ -315,7 +315,7 @@ export function SupportTechnology({ setCurrentArticle }: SupportTechnologyProps)
           {/* REFERENCES SECTION */}
           <div className="clear-both"></div>
           
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
             
             <div className="mb-6">
@@ -323,12 +323,12 @@ export function SupportTechnology({ setCurrentArticle }: SupportTechnologyProps)
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>1. Stodden, R. A., et al. (2012). "Use of text-to-speech software to improve reading skills of high school struggling readers." <i>Procedia Computer Science</i>. https://doi.org/10.1016/j.procs.2012.10.041</p>
-                <p>2. Schneps, M. H., et al. (2013). "Shorter lines facilitate reading in those who struggle." <i>PloS One</i>. https://doi.org/10.1371/journal.pone.0071161</p>
-                <p>3. MacArthur, C. A. (2009). "Reflections on research on writing and technology for struggling writers." <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00283.x</p>
-                <p>4. Grimes, D., & Warschauer, M. (2010). "Utility in a fallible tool: A multi-site case study of automated writing evaluation." <i>The Journal of Technology, Learning and Assessment</i>. https://ejournals.bc.edu/index.php/jtla/article/view/1608</p>
-                <p>5. Cumming, T. M., & Rodríguez, C. D. (2017). "A meta-analysis of mobile technology supporting individuals with disabilities." <i>The Journal of Special Education Technology</i>. https://doi.org/10.1177/0162643417704439</p>
-                <p>6. Haydon, T., et al. (2011). "A review of the effectiveness of guided notes for students who struggle learning academic content." <i>Preventing School Failure</i>. https://doi.org/10.1080/1045988.2010.520359</p>
+                <p>1. Stodden, R. A., et al. (2012). Use of text-to-speech software to improve reading skills of high school struggling readers. <i>Procedia Computer Science</i>.</p>
+                <p>2. Schneps, M. H., et al. (2013). Shorter lines facilitate reading in those who struggle. <i>PloS One</i>. </p>
+                <p>3. MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>. </p>
+                <p>4. Grimes, D., & Warschauer, M. (2010). Utility in a fallible tool: A multi-site case study of automated writing evaluation. <i>The Journal of Technology, Learning and Assessment</i>.</p>
+                <p>5. Cumming, T. M., & Rodríguez, C. D. (2017). A meta-analysis of mobile technology supporting individuals with disabilities. <i>The Journal of Special Education Technology</i>. </p>
+                <p>6. Haydon, T., et al. (2011). A review of the effectiveness of guided notes for students who struggle learning academic content. <i>Preventing School Failure</i>. </p>
               </div>
             </div>
 
@@ -337,11 +337,11 @@ export function SupportTechnology({ setCurrentArticle }: SupportTechnologyProps)
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Drasgow, E., et al. (2001). "Developing legally correct and educationally appropriate IEPs." <i>Remedial and Special Education</i>. https://doi.org/10.1177/074193250102200604</p>
-                <p>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). https://sites.ed.gov/idea/statuteregulations/</p>
-                <p>Section 504 of the Rehabilitation Act of 1973, 29 U.S.C. § 794. https://www.dol.gov/agencies/oasam/centers-offices/civil-rights-center/statutes/section-504-rehabilitation-act-of-1973</p>
-                <p>Yell, M. L., & Bateman, D. F. (2017). "Endrew F. v. Douglas County School District (2017): FAPE and the U.S. Supreme Court." <i>Teaching Exceptional Children</i>. https://doi.org/10.1177/0040059917721116</p>
-                <p>Zirkel, P. A. (2009). "What does the law say? Section 504, the ADA, and the schools." <i>Teaching Exceptional Children</i>. https://doi.org/10.1177/004005990904100509</p>
+                <p>Drasgow, E., et al. (2001). Developing legally correct and educationally appropriate IEPs. <i>Remedial and Special Education</i>. </p>
+                <p>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). </p>
+                <p>Section 504 of the Rehabilitation Act of 1973, 29 U.S.C. § 794. </p>
+                <p>Yell, M. L., & Bateman, D. F. (2017). Endrew F. v. Douglas County School District (2017): FAPE and the U.S. Supreme Court. <i>Teaching Exceptional Children</i>. </p>
+                <p>Zirkel, P. A. (2009). What does the law say? Section 504, the ADA, and the schools." <i>Teaching Exceptional Children</i>. </p>
               </div>
             </div>
           </div>

@@ -247,11 +247,11 @@ export function ArticleADHD({ setCurrentArticle }: ArticleADHDProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Centers for Disease Control and Prevention. (2022). "Data and Statistics About ADHD." U.S. Department of Health and Human Services. https://www.cdc.gov/ncbddd/adhd/data.html</p>
-            <p>2. Kessler, R. C., Adler, L., Barkley, R., et al. (2006). "The prevalence and correlates of adult ADHD in the United States: Results from the National Comorbidity Survey Replication." <i>American Journal of Psychiatry</i>. https://doi.org/10.1176/ajp.2006.163.4.716</p>
-            <p>3. Faraone, S. V., & Larsson, H. (2019). "Genetics of attention deficit hyperactivity disorder." <i>Molecular Psychiatry</i>. https://doi.org/10.1038/s41380-018-0070-0</p>
-            <p>4. Cortese, S., Adamo, N., Del Giovane, C., et al. (2018). "Comparative efficacy and tolerability of medications for attention-deficit hyperactivity disorder in children, adolescents, and adults: a systematic review and network meta-analysis." <i>The Lancet Psychiatry</i>. https://doi.org/10.1016/S2215-0366(18)30269-4</p>
-            <p>5. Michelkoetter, U., & Brams, M. (2010). "Atomoxetine in the treatment of children and adolescents with ADHD." <i>Neuropsychiatric Disease and Treatment</i>. https://doi.org/10.2147/ndt.s6233</p>
+            <p>1. Centers for Disease Control and Prevention. (2022). Data and statistics about ADHD. U.S. Department of Health and Human Services.</p>
+            <p>2. Kessler, R. C., Adler, L., Barkley, R., et al. (2006). The prevalence and correlates of adult ADHD in the United States: Results from the National Comorbidity Survey Replication. <i>American Journal of Psychiatry</i>.</p>
+            <p>3. Faraone, S. V., & Larsson, H. (2019). Genetics of attention deficit hyperactivity disorder. <i>Molecular Psychiatry</i>.</p>
+            <p>4. Cortese, S., Adamo, N., Del Giovane, C., et al. (2018). Comparative efficacy and tolerability of medications for attention-deficit hyperactivity disorder in children, adolescents, and adults: A systematic review and network meta-analysis. <i>The Lancet Psychiatry</i>.</p>
+            <p>5. Michelkoetter, U., & Brams, M. (2010). Atomoxetine in the treatment of children and adolescents with ADHD. <i>Neuropsychiatric Disease and Treatment</i>.</p>
           </div>
         </div>
         
@@ -261,9 +261,9 @@ export function ArticleADHD({ setCurrentArticle }: ArticleADHDProps) {
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2013). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425596</p>
-            <p>Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD). "About ADHD." National Resource Center on ADHD. https://chadd.org/about-adhd/</p>
-            <p>Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i> (4th ed.). Guilford Press. https://www.guilford.com/books/Attention-Deficit-Hyperactivity-Disorder/Russell-Barkley/9781462517725</p>
+            <p>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</p>
+            <p>Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD). (n.d.). About ADHD. National Resource Center on ADHD.</p>
+            <p>Barkley, R. A. (2015). <i>Attention-deficit hyperactivity disorder: A handbook for diagnosis and treatment</i> (4th ed.). Guilford Press.</p>
           </div>
         </div>
       </div>

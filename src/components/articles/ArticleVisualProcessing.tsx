@@ -253,7 +253,7 @@ export function ArticleVisualProcessing({ setCurrentArticle }: ArticleVisualProc
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Eden, G. F., VanMeter, J. W., Rumsey, J. M., Maisog, J. M., Woods, R. P., & Zeffiro, T. A. (1996). "Abnormal processing of visual motion in dyslexia revealed by functional brain imaging." <i>Nature</i>. https://doi.org/10.1038/382066a0</p>
+            <p>1. Eden, G. F., VanMeter, J. W., Rumsey, J. M., Maisog, J. M., Woods, R. P., & Zeffiro, T. A. (1996). Abnormal processing of visual motion in dyslexia revealed by functional brain imaging. <i>Nature</i>.</p>
           </div>
         </div>
         
@@ -263,8 +263,8 @@ export function ArticleVisualProcessing({ setCurrentArticle }: ArticleVisualProc
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>National Center for Learning Disabilities. (2023). "Visual Processing Disorders."</li>
-            <li>Schneck, C. M. (2010). "Visual perception." In J. Case-Smith & J. C. O'Brien (Eds.), <i>Occupational therapy for children</i> (6th ed.). Mosby.</li>
+            <li>National Center for Learning Disabilities. (2023). Visual Processing Disorders.</li>
+            <li>Schneck, C. M. (2010). Visual perception. In J. Case-Smith & J. C. O'Brien (Eds.), <i>Occupational therapy for children</i> (6th ed.). Mosby.</li>
           </ul>
         </div>
       </div>

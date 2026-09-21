@@ -179,33 +179,28 @@ export function DyslexiaSymptomsCore({ setCurrentArticle }: SymptomsCoreProps) {
           </div>
 
           {/* REFERENCES SECTION */}
-          <div className="clear-both"></div>
-          
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
-            <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
             
             {/* Empty Cited Studies Section left as a structural placeholder per standard */}
             <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
+              
 
             <div>
               <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Ehri, L. C. (2000). "Learning to read and learning to spell: Two sides of a coin." <i>Topics in Language Disorders</i>. https://doi.org/10.1097/00011363-200020030-00005</p>
-                <p>Graham, S., & Harris, K. R. (2009). "Almost everything you need to know about writing instruction." <i>Focus on Exceptional Children</i>. https://doi.org/10.17161/foec.v41i4.6811</p>
-                <p>Shaywitz, S. E., & Shaywitz, B. A. (2005). "Dyslexia (specific reading disability)." <i>Biological Psychiatry</i>. https://doi.org/10.1016/j.biopsych.2005.01.043</p>
-                <p>Stanovich, K. E. (1988). "Explaining the differences between the dyslexic and the garden-variety poor reader." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221948802101003</p>
-                <p>Wagner, R. K., & Torgesen, J. K. (1987). "The nature of phonological processing and its causal role in the acquisition of reading skills." <i>Psychological Bulletin</i>. https://doi.org/10.1037/0033-2909.101.2.192</p>
+                <p>Ehri, L. C. (2000). Learning to read and learning to spell: Two sides of a coin. <i>Topics in Language Disorders</i>.</p>
+                <p>Graham, S., & Harris, K. R. (2009). Almost everything you need to know about writing instruction. <i>Focus on Exceptional Children</i>.</p>
+                <p>Ozernov-Palchik, O., & Gaab, N. (2016). Tackling the 'dyslexia paradox': reading intervention and brain plasticity. <i>Trends in Molecular Medicine</i>.</p>
+                <p>Shaywitz, S. E., & Shaywitz, B. A. (2005). Dyslexia (specific reading disability). <i>Biological Psychiatry</i>.</p>
+                <p>Snowling, M. J., Hulme, C., & Nation, K. (2020). Defining and understanding dyslexia: past, present and future. <i>Oxford Review of Education</i>.</p>
+                <p>Stanovich, K. E. (1988). Explaining the differences between the dyslexic and the garden-variety poor reader. <i>Journal of Learning Disabilities</i>.</p>
+                <p>Wagner, R. K., & Torgesen, J. K. (1987). The nature of phonological processing and its causal role in the acquisition of reading skills. <i>Psychological Bulletin</i>.</p>
               </div>
             </div>
+          </div>
           </div>
         </TabsContent>
       </Tabs>

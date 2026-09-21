@@ -189,7 +189,7 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
               <ImageWithFallback 
                 src="/images/mental-health/all-about-mood-emotions.webp"
                 alt="All About Mood & Emotions"
-                className="w-full h-auto rounded-lg shadow-sm"
+                className="w-full h-auto rounded-lg shadow-md"
               />
             </div>
           </div>
@@ -398,10 +398,10 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</li>
             <li>Barkley, R. A. (2015). <i>Attention-deficit hyperactivity disorder: A handbook for diagnosis and treatment</i> (4th ed.). Guilford Press.</li>
-            <li>Ginapp, C. M., et al. (2023). "Dysregulated not deficit": A qualitative study on symptomatology of ADHD in young adults. <i>PLOS One</i>. https://doi.org/10.1371/journal.pone.0292721</li>
-            <li>Hirvikoski, T., et al. (2016). "Premature mortality in autism spectrum disorder." <i>The British Journal of Psychiatry</i>. https://doi.org/10.1192/bjp.bp.114.160192</li>
-            <li>Shaw, P., et al. (2014). "Emotion dysregulation in attention deficit hyperactivity disorder." <i>The American Journal of Psychiatry</i>. https://doi.org/10.1176/appi.ajp.2013.13070966</li>
-            <li>Skirrow, C., et al. (2012). "Everyday emotional experien    ce of adults with attention deficit hyperactivity disorder." <i>Journal of Affective Disorders</i>. https://doi.org/10.1016/j.jad.2012.01.037</li>
+            <li>Ginapp, C. M., et al. (2023). Dysregulated not deficit: A qualitative study on symptomatology of ADHD in young adults. <i>PLOS One</i>.</li>
+            <li>Hirvikoski, T., et al. (2016). Premature mortality in autism spectrum disorder. <i>The British Journal of Psychiatry</i>.</li>
+            <li>Shaw, P., et al. (2014). Emotion dysregulation in attention deficit hyperactivity disorder. <i>The American Journal of Psychiatry</i>.</li>
+            <li>Skirrow, C., et al. (2012). Everyday emotional experience of adults with attention deficit hyperactivity disorder. <i>Journal of Affective Disorders</i>.</li>
           </ul>
         </div>
       </div>

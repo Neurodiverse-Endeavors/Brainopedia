@@ -383,9 +383,9 @@ export function CompulsionsCoping({ setCurrentArticle, initialTab }: Compulsions
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</li>
-            <li>Brigham, K. S., et al. (2018). "Avoidant/restrictive food intake disorder (ARFID)." <i>Current Opinion in Pediatrics</i>. https://doi.org/10.1097/MOP.0000000000000646</li>
-            <li>Grant, J. E., & Chamberlain, S. R. (2016). "Trichotillomania." <i>American Journal of Psychiatry</i>. https://doi.org/10.1176/appi.ajp.2016.15111432</li>
-            <li>Ruzich, E., et al. (2015). "Measuring autistic traits in the general population: A systematic review of the Autism-Spectrum Quotient (AQ) in a nonclinical population sample of 6,900 typical adult males and females." <i>Molecular Autism</i>. https://doi.org/10.1186/s13229-015-0008-5</li>
+            <li>Brigham, K. S., et al. (2018). Avoidant/restrictive food intake disorder (ARFID). <i>Current Opinion in Pediatrics</i>.</li>
+            <li>Grant, J. E., & Chamberlain, S. R. (2016). Trichotillomania. <i>American Journal of Psychiatry</i>.</li>
+            <li>Ruzich, E., et al. (2015). Measuring autistic traits in the general population: A systematic review of the Autism-Spectrum Quotient (AQ) in a nonclinical population sample of 6,900 typical adult males and females. <i>Molecular Autism</i>.</li>
           </ul>
         </div>
       </div>

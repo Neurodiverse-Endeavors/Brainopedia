@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../../ui/tabs';
 import { ImageWithFallback } from '../../../figma/ImageWithFallback';
 
@@ -83,7 +82,7 @@ export function DiagnosisEvaluation({ setCurrentArticle }: DiagnosisEvaluationPr
               <ImageWithFallback 
                 src="/images/dyslexia/dyslexia-diagnosis-eval-TAB-history.webp"
                 alt="Developmental history assessment"
-                className="w-full h-auto rounded-md border border-gray-200 mb-5"
+                className="w-96 h-auto rounded-md border border-gray-200 block mx-auto mb-5"
               />
               <div className="flex flex-col gap-3 flex-grow">
                 <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
@@ -104,7 +103,7 @@ export function DiagnosisEvaluation({ setCurrentArticle }: DiagnosisEvaluationPr
               <ImageWithFallback 
                 src="/images/dyslexia/dyslexia-diagnosis-eval-TAB-cognitive.webp"
                 alt="Cognitive assessment tools"
-                className="w-full h-auto rounded-md border border-gray-200 mb-5"
+                className="w-96 h-auto rounded-md border border-gray-200 block mx-auto mb-5"
               />
               <div className="flex flex-col gap-3 flex-grow">
                 <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
@@ -125,7 +124,7 @@ export function DiagnosisEvaluation({ setCurrentArticle }: DiagnosisEvaluationPr
               <ImageWithFallback 
                 src="/images/dyslexia/dyslexia-diagnosis-eval-TAB-reading.webp"
                 alt="Reading achievement testing"
-                className="w-full h-auto rounded-md border border-gray-200 mb-5"
+                className="w-96 h-auto rounded-md border border-gray-200 block mx-auto mb-5"
               />
               <div className="flex flex-col gap-3 flex-grow">
                 <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
@@ -146,7 +145,7 @@ export function DiagnosisEvaluation({ setCurrentArticle }: DiagnosisEvaluationPr
               <ImageWithFallback 
                 src="/images/dyslexia/dyslexia-diagnosis-eval-TAB-phonological.webp"
                 alt="Phonological processing evaluation"
-                className="w-full h-auto rounded-md border border-gray-200 mb-5"
+                className="w-96 h-auto rounded-md border border-gray-200 block mx-auto mb-5"
               />
               <div className="flex flex-col gap-3 flex-grow">
                 <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
@@ -164,22 +163,20 @@ export function DiagnosisEvaluation({ setCurrentArticle }: DiagnosisEvaluationPr
             {/* Oral Language Card (Full Width Span) */}
             <div className="bg-white border-t-4 border-[#0c264d] rounded-xl p-6 shadow-sm flex flex-col md:col-span-2">
               <h4 className="font-bold text-[#0c264d] text-xl mb-4 text-center">Oral Language</h4>
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <ImageWithFallback 
-                  src="/images/dyslexia/dyslexia-diagnosis-eval-TAB-oral.webp"
-                  alt="Oral language assessment"
-                  className="w-full md:w-1/3 h-auto rounded-md border border-gray-200"
-                />
-                <div className="flex flex-col gap-3 flex-grow w-full md:w-2/3">
-                  <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
-                    <strong className="text-[#0A9DC4]">Vocabulary:</strong> Evaluate both receptive (understanding) and expressive (speaking) vocabulary capabilities.
-                  </div>
-                  <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
-                    <strong className="text-[#0A9DC4]">Listening Comprehension:</strong> Test the overall capacity for understanding and processing spoken language in real-time.
-                  </div>
-                  <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
-                    <strong className="text-[#0A9DC4]">Morphological Awareness:</strong> Assess the individual's understanding of word structures, roots, prefixes, and suffixes.
-                  </div>
+              <ImageWithFallback 
+                src="/images/dyslexia/dyslexia-diagnosis-eval-TAB-oral.webp"
+                alt="Oral language assessment"
+                className="w-96 h-auto rounded-md border border-gray-200 block mx-auto mb-6"
+              />
+              <div className="flex flex-col gap-3 flex-grow w-full">
+                <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
+                  <strong className="text-[#0A9DC4]">Vocabulary:</strong> Evaluate both receptive (understanding) and expressive (speaking) vocabulary capabilities.
+                </div>
+                <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
+                  <strong className="text-[#0A9DC4]">Listening Comprehension:</strong> Test the overall capacity for understanding and processing spoken language in real-time.
+                </div>
+                <div className="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm text-slate-700">
+                  <strong className="text-[#0A9DC4]">Morphological Awareness:</strong> Assess the individual's understanding of word structures, roots, prefixes, and suffixes.
                 </div>
               </div>
             </div>
@@ -197,42 +194,30 @@ export function DiagnosisEvaluation({ setCurrentArticle }: DiagnosisEvaluationPr
           </div>
 
           {/* REFERENCES SECTION */}
-          <div className="clear-both"></div>
-          
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
-            <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
             
-            {/* CITED STUDIES: GREEN */}
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
-
             {/* BACKGROUND SOURCES: CYAN */}
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
                 Background Sources
               </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-                <p>Ehri, L. C. (2000). "Learning to read and learning to spell: Two sides of a coin." <em>Topics in Language Disorders</em>. https://doi.org/10.1097/00011363-200020030-00005</p>
-                <p>Fletcher, J. M., et al. (2018). <em>Learning disabilities: From identification to intervention</em> (2nd ed.). Guilford Publications. https://www.guilford.com/books/Learning-Disabilities/Fletcher-Lyon-Fuchs-Barnes/9781462536375</p>
-                <p>Fuchs, L. S., et al. (2001). "Oral reading fluency as an indicator of reading competence: A theoretical, empirical, and historical analysis." <em>Scientific Studies of Reading</em>. https://doi.org/10.1207/S1532799XSSR0503_3</p>
-                <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>. https://dyslexiaida.org/dyslexia-in-the-classroom/</p>
-                <p>Norton, E. S., & Wolf, M. (2012). "Rapid automatized naming (RAN) and reading fluency: Implications for understanding and treatment of reading disabilities." <em>Annual Review of Psychology</em>. https://doi.org/10.1146/annurev-psych-120710-100431</p>
-                <p>Pearson Education. (2020). <em>Wechsler Individual Achievement Test–Fourth Edition</em>. https://www.pearsonassessments.com/</p>
-                <p>Perfetti, C. (2007). "Reading ability: Lexical quality to comprehension." <em>Scientific Studies of Reading</em>. https://doi.org/10.1080/10888430701530730</p>
-                <p>Rack, J. P., et al. (1992). "The nonword reading deficit in developmental dyslexia: A review." <em>Reading Research Quarterly</em>. https://doi.org/10.2307/747832</p>
-                <p>Scarborough, H. S. (1998). "Early identification of children at risk for reading disabilities." In B. K. Shapiro, P. J. Accardo, & A. J. Capute (Eds.), <em>Specific reading disability: A view of the spectrum</em>. York Press.</p>
-                <p>Shaywitz, S. E., et al. (2008). "The education of dyslexic children from childhood to young adulthood." <em>Annual Review of Psychology</em>. https://doi.org/10.1146/annurev.psych.59.103006.093633</p>
-                <p>Swanson, H. L., & Berninger, V. (1995). "The role of working memory in skilled and less skilled readers' comprehension." <em>Intelligence</em>. https://doi.org/10.1016/0160-2896(95)90039-X</p>
-                <p>Wagner, R. K., et al. (2013). <em>Comprehensive Test of Phonological Processing–Second Edition</em>. Pro-Ed. https://www.proedinc.com/</p>
-                <p>Wechsler, D. (2014). <em>Wechsler Intelligence Scale for Children–Fifth Edition</em>. Pearson. https://www.pearsonassessments.com/</p>
-              </div>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+                <li>Ehri, L. C. (2000). Learning to read and learning to spell: Two sides of a coin. <i>Topics in Language Disorders</i>.</li>
+                <li>Fletcher, J. M., et al. (2018). <i>Learning disabilities: From identification to intervention</i> (2nd ed.). Guilford Publications.</li>
+                <li>Fuchs, L. S., et al. (2001). Oral reading fluency as an indicator of reading competence: A theoretical, empirical, and historical analysis. <i>Scientific Studies of Reading</i>.</li>
+                <li>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>.</li>
+                <li>Norton, E. S., & Wolf, M. (2012). Rapid automatized naming (RAN) and reading fluency: Implications for understanding and treatment of reading disabilities. <i>Annual Review of Psychology</i>.</li>
+                <li>Pearson Education. (2020). <i>Wechsler Individual Achievement Test–Fourth Edition</i>.</li>
+                <li>Perfetti, C. (2007). Reading ability: Lexical quality to comprehension. <i>Scientific Studies of Reading</i>.</li>
+                <li>Rack, J. P., et al. (1992). The nonword reading deficit in developmental dyslexia: A review. <i>Reading Research Quarterly</i>.</li>
+                <li>Scarborough, H. S. (1998). Early identification of children at risk for reading disabilities. In B. K. Shapiro, P. J. Accardo, & A. J. Capute (Eds.), <i>Specific reading disability: A view of the spectrum</i>. York Press.</li>
+                <li>Shaywitz, S. E., et al. (2008). The education of dyslexic children from childhood to young adulthood. <i>Annual Review of Psychology</i>.</li>
+                <li>Swanson, H. L., & Berninger, V. (1995). The role of working memory in skilled and less skilled readers' comprehension. <i>Intelligence</i>.</li>
+                <li>Wagner, R. K., et al. (2013). <i>Comprehensive Test of Phonological Processing–Second Edition</i>. Pro-Ed.</li>
+                <li>Wechsler, D. (2014). <i>Wechsler Intelligence Scale for Children–Fifth Edition</i>. Pearson.</li>
+              </ul>
             </div>
           </div>
         </TabsContent>

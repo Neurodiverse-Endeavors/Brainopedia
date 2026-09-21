@@ -364,10 +364,10 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</li>
-            <li>Hwang, Y. I., Foley, K. R., & Trollor, J. N. (2020). "Aging well on the autism spectrum." <i>Autism Research</i>. https://doi.org/10.1002/aur.2254</li>
-            <li>Kessler, R. C., et al. (2005). "Lifetime prevalence and age-of-onset distributions of DSM-IV disorders." <i>Archives of General Psychiatry</i>. https://doi.org/10.1001/archpsyc.62.6.593</li>
-            <li>Kooij, J. J. S., et al. (2010). "European consensus statement on diagnosis and treatment of adult ADHD." <i>BMC Psychiatry</i>. https://doi.org/10.1186/1471-244X-10-67</li>
-            <li>Neugebauer, A., et al. (2021). "Social anxiety in autism spectrum disorder and attention-deficit/hyperactivity disorder." <i>Journal of Autism and Developmental Disorders</i>.</li>
+            <li>Hwang, Y. I., Foley, K. R., & Trollor, J. N. (2020). Aging well on the autism spectrum. <i>Autism Research</i>.</li>
+            <li>Kessler, R. C., et al. (2005). Lifetime prevalence and age-of-onset distributions of DSM-IV disorders. <i>Archives of General Psychiatry</i>.</li>
+            <li>Kooij, J. J. S., et al. (2010). European consensus statement on diagnosis and treatment of adult ADHD. <i>BMC Psychiatry</i>.</li>
+            <li>Neugebauer, A., et al. (2021). Social anxiety in autism spectrum disorder and attention-deficit/hyperactivity disorder. <i>Journal of Autism and Developmental Disorders</i>.</li>
           </ul>
         </div>
       </div>

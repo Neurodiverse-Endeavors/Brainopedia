@@ -239,10 +239,10 @@ export function ArticleTourette({ setCurrentArticle }: ArticleTouretteProps) {
           Cited Studies & Statistics
         </h4>
         <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-          <p>1. Knight, T., et al. (2012). "Prevalence of tic disorders: A systematic review and meta-analysis." <i>Pediatric Neurology</i>. https://doi.org/10.1016/j.pediatrneurol.2012.05.002</p>
-          <p>2. Freeman, R. D., et al. (2000). "An international perspective on Tourette syndrome: Selected findings from 3,500 individuals in 22 countries." <i>Developmental Medicine & Child Neurology</i>. https://doi.org/10.1017/s0012162200000857</p>
-          <p>3. Hirschtritt, M. E., et al. (2015). "Lifetime prevalence, age of risk, and genetic relationships of comorbid psychiatric disorders in Tourette syndrome." <i>JAMA Psychiatry</i>. https://doi.org/10.1001/jamapsychiatry.2014.2650</p>
-          <p>4. Robertson, M. M., et al. (2009). "The international prevalence, epidemiology, and clinical phenomenology of Tourette syndrome: A cross-cultural perspective." <i>Journal of Psychosomatic Research</i>. https://doi.org/10.1016/j.jpsychores.2009.08.005</p>
+          <p>1. Knight, T., et al. (2012). Prevalence of tic disorders: A systematic review and meta-analysis. <i>Pediatric Neurology</i>.</p>
+          <p>2. Freeman, R. D., et al. (2000). An international perspective on Tourette syndrome: Selected findings from 3,500 individuals in 22 countries. <i>Developmental Medicine & Child Neurology</i>.</p>
+          <p>3. Hirschtritt, M. E., et al. (2015). Lifetime prevalence, age of risk, and genetic relationships of comorbid psychiatric disorders in Tourette syndrome. <i>JAMA Psychiatry</i>.</p>
+          <p>4. Robertson, M. M., et al. (2009). The international prevalence, epidemiology, and clinical phenomenology of Tourette syndrome: A cross-cultural perspective. <i>Journal of Psychosomatic Research</i>.</p>
         </div>
       </div>
       
@@ -252,14 +252,14 @@ export function ArticleTourette({ setCurrentArticle }: ArticleTouretteProps) {
           Background Sources
         </h4>
         <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-          <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</li>
-          <li>Jankovic, J. (2001). "Tourette's syndrome." <i>New England Journal of Medicine</i>. https://doi.org/10.1056/NEJMra011279</li>
-          <li>Leckman, J. F. (2002). "Tourette's syndrome." <i>The Lancet</i>. https://doi.org/10.1016/S0140-6736(02)11526-1</li>
-          <li>Mink, J. W. (2001). "Basal ganglia dysfunction in Tourette's syndrome: A new hypothesis." <i>Pediatric Neurology</i>. https://doi.org/10.1016/S0887-8994(01)00262-4</li>
-          <li>Pringsheim, T., et al. (2019). "Practice guideline recommendations summary: Treatment of tics in people with Tourette syndrome and chronic tic disorders." <i>Neurology</i>. https://doi.org/10.1212/WNL.0000000000007466</li>
-          <li>Roessner, V., et al. (2011). "European clinical guidelines for Tourette syndrome and other tic disorders. Part II: Pharmacological treatment." <i>European Child & Adolescent Psychiatry</i>. https://doi.org/10.1007/s00787-011-0163-5</li>
-          <li>Singer, H. S. (2005). "Tourette's syndrome: From behaviour to biology." <i>The Lancet Neurology</i>. https://doi.org/10.1016/S1474-4422(05)01012-4</li>
-          <li>World Health Organization. (2018). <i>International classification of diseases for mortality and morbidity statistics</i> (11th ed.). Geneva: WHO. https://icd.who.int/</li>
+          <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+          <li>Jankovic, J. (2001). Tourette's syndrome. <i>New England Journal of Medicine</i>.</li>
+          <li>Leckman, J. F. (2002). Tourette's syndrome. <i>The Lancet</i>.</li>
+          <li>Mink, J. W. (2001). Basal ganglia dysfunction in Tourette's syndrome: A new hypothesis. <i>Pediatric Neurology</i>.</li>
+          <li>Pringsheim, T., et al. (2019). Practice guideline recommendations summary: Treatment of tics in people with Tourette syndrome and chronic tic disorders. <i>Neurology</i>.</li>
+          <li>Roessner, V., et al. (2011). European clinical guidelines for Tourette syndrome and other tic disorders. Part II: Pharmacological treatment. <i>European Child & Adolescent Psychiatry</i>.</li>
+          <li>Singer, H. S. (2005). Tourette's syndrome: From behaviour to biology. <i>The Lancet Neurology</i>.</li>
+          <li>World Health Organization. (2018). <i>International classification of diseases for mortality and morbidity statistics</i> (11th ed.). Geneva: WHO.</li>
         </ul>
       </div>
     </div>

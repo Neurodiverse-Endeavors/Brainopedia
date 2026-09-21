@@ -134,33 +134,23 @@ export function DyslexiaSymptomsStrengths({ setCurrentArticle }: DyslexiaSymptom
           </div>
 
           {/* REFERENCES SECTION */}
-          <div className="clear-both"></div>
-          
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
-            <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
             
-            {/* Empty Cited Studies Section left as a structural placeholder per standard */}
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
-
+            {/* BACKGROUND SOURCES: CYAN */}
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
                 Background Sources
               </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Eide, B. L., & Eide, F. F. (2011). <i>The Dyslexic Advantage: Unlocking the Hidden Potential of the Dyslexic Brain</i>. Hudson Street Press. https://www.penguinrandomhouse.com/books/308960/the-dyslexic-advantage-revised-and-updated-by-brock-l-eide-md-ma-and-fernette-f-eide-md/</p>
-                <p>Everatt, J., et al. (1999). "Dyslexia, spatial ability, and creative thinking." <i>Dyslexia</i>. https://doi.org/10.1002/(SICI)1099-0909(199903)5:1%3C28::AID-DYS128%3E3.0.CO;2-H</p>
-                <p>Goldberg, R. J., et al. (2003). "Predictors of success in individuals with learning disabilities: A qualitative analysis of a 20-year longitudinal study." <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/1540-5826.00077</p>
-                <p>Schneps, M. H., et al. (2012). "Dyslexia favors visual thinking." <i>Psychological Science</i>. https://doi.org/10.1177/0956797611434914</p>
-                <p>Von Karolyi, C. (2001). "Visual-spatial strength in dyslexia: Rapid discrimination of impossible figures." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221940103400412</p>
-                <p>West, T. G. (2009). <i>In the Mind's Eye: Creative Visual Thinkers, Gifted Dyslexics, and the Rise of Visual Technologies</i>. Prometheus Books. https://rowman.com/ISBN/9781615926510/In-the-Minds-Eye-Creative-Visual-Thinkers-Gifted-Dyslexics-and-the-Rise-of-Visual-Technologies</p>
-              </div>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Eide, B. L., & Eide, F. F. (2011). <i>The Dyslexic Advantage: Unlocking the Hidden Potential of the Dyslexic Brain</i>. Hudson Street Press.</li>
+                <li>Everatt, J., et al. (1999). Dyslexia, spatial ability, and creative thinking. <i>Dyslexia</i>.</li>
+                <li>Goldberg, R. J., et al. (2003). Predictors of success in individuals with learning disabilities: A qualitative analysis of a 20-year longitudinal study. <i>Learning Disabilities Research & Practice</i>.</li>
+                <li>Schneps, M. H., et al. (2012). Dyslexia favors visual thinking. <i>Psychological Science</i>.</li>
+                <li>Taylor, H., & Vestergaard, M. (2022). Developmental dyslexia: disorder or specialization in exploration? <i>Frontiers in Psychology</i>.</li>
+                <li>Von Karolyi, C. (2001). Visual-spatial strength in dyslexia: Rapid discrimination of impossible figures. <i>Journal of Learning Disabilities</i>.</li>
+                <li>West, T. G. (2009). <i>In the Mind's Eye: Creative Visual Thinkers, Gifted Dyslexics, and the Rise of Visual Technologies</i>. Prometheus Books.</li>
+              </ul>
             </div>
           </div>
         </TabsContent>

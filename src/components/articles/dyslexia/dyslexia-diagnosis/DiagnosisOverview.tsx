@@ -311,41 +311,31 @@ export function DiagnosisOverview({ setCurrentArticle }: DiagnosisOverviewProps)
           </div>
 
           {/* REFERENCES SECTION */}
-          <div className="clear-both"></div>
-          
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
-            <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
-            
-            {/* CITED STUDIES: GREEN */}
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
 
             {/* BACKGROUND SOURCES: CYAN */}
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
                 Background Sources
               </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-                <p>Catts, H. W., et al. (2006). "Language deficits in poor comprehenders: A case for the simple view of reading." <i>Journal of Speech, Language, and Hearing Research</i>. https://doi.org/10.1044/1092-4388(2006/023)</p>
-                <p>Fletcher, J. M., et al. (2018). <i>Learning disabilities: From identification to intervention</i> (2nd ed.). Guilford Publications. https://www.guilford.com/books/Learning-Disabilities/Fletcher-Lyon-Fuchs-Barnes/9781462536375</p>
-                <p>Gerber, P. J. (2012). "The impact of learning disabilities on adulthood: A review of the evidenced-based literature for research and practice in adult education." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219411426858</p>
-                <p>Hale, J. B., & Fiorello, C. A. (2004). <i>School neuropsychology: A practitioner's handbook</i>. Guilford Press. https://www.guilford.com/books/School-Neuropsychology/Hale-Fiorello/9781572309876</p>
-                <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>. https://dyslexiaida.org/dyslexia-in-the-classroom/</p>
-                <p>Mather, N., & Wendling, B. J. (2011). <i>Essentials of dyslexia assessment and intervention</i>. John Wiley & Sons. https://www.wiley.com/en-us/Essentials+of+Dyslexia+Assessment+and+Intervention-p-9780470631621</p>
-                <p>National Association of School Psychologists. (2015). <i>Identification of students with specific learning disabilities</i>. https://www.nasponline.org/</p>
-                <p>Shaywitz, S. E., & Shaywitz, B. A. (2005). "Dyslexia (specific reading disability)." <i>Biological Psychiatry</i>. https://doi.org/10.1016/j.biopsych.2005.01.043</p>
-                <p>Snowling, M. J. (2013). "Early identification and interventions for dyslexia: A contemporary view." <i>Journal of Research in Special Educational Needs</i>. https://doi.org/10.1111/j.1471-3802.2012.01262.x</p>
-                <p>Snowling, M. J., & Hulme, C. (2012). "Annual research review: The nature and classification of reading disorders–a commentary on proposals for DSM‐5." <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.2011.02495.x</p>
-                <p>Torgesen, J. K. (2004). "Lessons learned from research on interventions for students who have difficulty learning to read." In P. McCardle & V. Chhabra (Eds.), <i>The voice of evidence in reading research</i>. Paul H. Brookes. https://brookespublishing.com/product/the-voice-of-evidence-in-reading-research/</p>
-                <p>Zirkel, P. A. (2013). "Is it time for elevating the standard for FAPE under IDEA?" <i>Exceptional Children</i>. https://doi.org/10.1177/001440291307900405</p>
-              </div>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+                <li>Catts, H. W., et al. (2006). Language deficits in poor comprehenders: A case for the simple view of reading. <i>Journal of Speech, Language, and Hearing Research</i>.</li>
+                <li>Fletcher, J. M., et al. (2018). <i>Learning disabilities: From identification to intervention</i> (2nd ed.). Guilford Publications.</li>
+                <li>Gerber, P. J. (2012). The impact of learning disabilities on adulthood: A review of the evidenced-based literature for research and practice in adult education. <i>Journal of Learning Disabilities</i>.</li>
+                <li>Hale, J. B., & Fiorello, C. A. (2004). <i>School neuropsychology: A practitioner's handbook</i>. Guilford Press.</li>
+                <li>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>.</li>
+                <li>Mather, N., & Wendling, B. J. (2011). <i>Essentials of dyslexia assessment and intervention</i>. John Wiley & Sons.</li>
+                <li>National Association of School Psychologists. (2015). <i>Identification of students with specific learning disabilities</i>.</li>
+                <li>Odegard, T. N., et al. (2020). Characteristics of students identified with dyslexia within the context of state legislation. <i>Journal of Learning Disabilities</i>.</li>
+                <li>Shaywitz, S. E., & Shaywitz, B. A. (2005). Dyslexia (specific reading disability). <i>Biological Psychiatry</i>.</li>
+                <li>Snowling, M. J. (2013). Early identification and interventions for dyslexia: A contemporary view. <i>Journal of Research in Special Educational Needs</i>.</li>
+                <li>Snowling, M. J., & Hulme, C. (2012). Annual research review: The nature and classification of reading disorders–a commentary on proposals for DSM-5. <i>Journal of Child Psychology and Psychiatry</i>.</li>
+                <li>Torgesen, J. K. (2004). Lessons learned from research on interventions for students who have difficulty learning to read. In P. McCardle & V. Chhabra (Eds.), <i>The voice of evidence in reading research</i>. Paul H. Brookes.</li>
+                <li>Wagner, R. K., et al. (2020). The prevalence of dyslexia: A new approach to its estimation. <i>Journal of Learning Disabilities</i>.</li>
+                <li>Zirkel, P. A. (2013). Is it time for elevating the standard for FAPE under IDEA? <i>Exceptional Children</i>.</li>
+              </ul>
             </div>
           </div>
         </TabsContent>

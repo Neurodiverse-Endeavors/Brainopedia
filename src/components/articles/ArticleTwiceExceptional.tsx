@@ -250,8 +250,8 @@ export function ArticleTwiceExceptional({ setCurrentArticle }: ArticleTwiceExcep
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Foley Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). "Empirical investigation of twice-exceptionality: Where have we been and where are we going?" <em>Gifted Child Quarterly</em>. https://doi.org/10.1177/0016986210382575</p>
-            <p>2. Plomin, R., & Deary, I. J. (2015). "Genetics and intelligence differences: Five special findings." <em>Molecular Psychiatry</em>. https://doi.org/10.1038/mp.2014.105</p>
+            <p>1. Foley Nicpon, M., Allmon, A., Sieck, B., & Stinson, R. D. (2011). Empirical investigation of twice-exceptionality: Where have we been and where are we going? <i>Gifted Child Quarterly</i>.</p>
+            <p>2. Plomin, R., & Deary, I. J. (2015). Genetics and intelligence differences: Five special findings. <i>Molecular Psychiatry</i>.</p>
           </div>
         </div>
 
@@ -261,9 +261,9 @@ export function ArticleTwiceExceptional({ setCurrentArticle }: ArticleTwiceExcep
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <em>To be gifted and learning disabled: Strength-based strategies for helping twice-exceptional students with LD, ADHD, ASD, and more</em>. Prufrock Press.</li>
-            <li>Trail, B. A. (2011). <em>Twice-exceptional gifted children: Understanding, teaching, and counseling gifted students</em>. Prufrock Press.</li>
-            <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <em>Misdiagnosis and dual diagnoses of gifted children and adults: ADHD, bipolar, OCD, Asperger's, depression, and other disorders</em>. Great Potential Press.</li>
+            <li>Baum, S. M., Schader, R. M., & Owen, S. V. (2017). <i>To be gifted and learning disabled: Strength-based strategies for helping twice-exceptional students with LD, ADHD, ASD, and more</i>. Prufrock Press.</li>
+            <li>Trail, B. A. (2011). <i>Twice-exceptional gifted children: Understanding, teaching, and counseling gifted students</i>. Prufrock Press.</li>
+            <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <i>Misdiagnosis and dual diagnoses of gifted children and adults: ADHD, bipolar, OCD, Asperger's, depression, and other disorders</i>. Great Potential Press.</li>
           </ul>
         </div>
       </div>

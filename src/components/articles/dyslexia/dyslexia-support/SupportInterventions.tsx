@@ -210,7 +210,7 @@ export function SupportInterventions({ setCurrentArticle }: SupportInterventions
           {/* REFERENCES SECTION */}
           <div className="clear-both"></div>
           
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
             
             <div className="mb-6">
@@ -218,7 +218,7 @@ export function SupportInterventions({ setCurrentArticle }: SupportInterventions
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>1. Snowling, M. J., & Hulme, C. (2011). "Evidence‐based interventions for reading and language difficulties." <em>British Journal of Educational Psychology</em>. https://doi.org/10.1348/2044-8279.002001</p>
+                <p>1. Snowling, M. J., & Hulme, C. (2011). Evidence‐based interventions for reading and language difficulties. <em>British Journal of Educational Psychology</em>.</p>
               </div>
             </div>
 
@@ -227,29 +227,29 @@ export function SupportInterventions({ setCurrentArticle }: SupportInterventions
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-                <p>Birsh, J. R. (Ed.). (2018). <em>Multisensory teaching of basic language skills</em> (4th ed.). Paul H. Brookes Publishing. https://brookespublishing.com/product/multisensory-teaching-of-basic-language-skills/</p>
-                <p>Carlisle, J. F. (2010). "Effects of instruction in morphological awareness on literacy achievement." <em>Reading Research Quarterly</em>. https://doi.org/10.1598/RRQ.45.4.5</p>
-                <p>Cunningham, A. E., & Stanovich, K. E. (1998). "What reading does for the mind." <em>American Educator</em>. https://www.aft.org/periodical/american-educator/spring-summer-1998/what-reading-does-mind</p>
-                <p>D'Agostino, J. V., & Murphy, J. A. (2004). "A meta-analysis of Reading Recovery in United States schools." <em>Educational Evaluation and Policy Analysis</em>. https://doi.org/10.3102/01623737026001023</p>
-                <p>Ehri, L. C., et al. (2001). "Phonemic awareness instruction helps children learn to read." <em>Reading Research Quarterly</em>. https://doi.org/10.1598/RRQ.36.3.2</p>
-                <p>Henry, M. K. (2010). <em>Unlocking literacy: Effective decoding and spelling instruction</em> (2nd ed.). Paul H. Brookes Publishing. https://brookespublishing.com/product/unlocking-literacy/</p>
-                <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>. https://dyslexiaida.org/dyslexia-in-the-classroom/</p>
-                <p>International Dyslexia Association. (2020). <em>Structured literacy: An introductory guide</em>. https://dyslexiaida.org/structured-literacy-an-introductory-guide/</p>
-                <p>Malmgren, K. W., & Leone, P. E. (2000). "Effects of a short-term auxiliary reading program on the reading skills of incarcerated youth." <em>Education and Treatment of Children</em>. https://www.jstor.org/stable/42899616</p>
-                <p>Morgan, P. L., & Sideridis, G. D. (2006). "Contrasting the effectiveness of fluency interventions." <em>Learning Disabilities Research & Practice</em>. https://doi.org/10.1111/j.1540-5826.2006.00219.x</p>
-                <p>National Reading Panel. (2000). <em>Teaching children to read: An evidence-based assessment of the scientific research literature on reading and its implications for reading instruction</em>. National Institute of Child Health and Human Development. https://www.nichd.nih.gov/sites/default/files/publications/pubs/nrp/Documents/report.pdf</p>
-                <p>Oakland, T., et al. (1998). "An evaluation of the dyslexia training program." <em>Journal of Learning Disabilities</em>. https://doi.org/10.1177/002221949803100204</p>
-                <p>Ransford-Kaldon, C. R., et al. (2011). "A randomized controlled trial of a response to intervention (RTI) tier 2 literacy program: Leveled Literacy Intervention (LLI)." <em>RTI International</em>. https://www.fountasandpinnell.com/research/</p>
-                <p>Rasinski, T. V., & Hoffman, J. V. (2003). "Oral reading in the school literacy curriculum." <em>Reading Research Quarterly</em>. https://doi.org/10.1598/RRQ.38.4.5</p>
-                <p>Ritchey, K. D., & Goeke, J. L. (2006). "Orton-Gillingham—based reading instruction: A review of the literature." <em>The Journal of Special Education</em>. https://doi.org/10.1177/00224669060400030501</p>
-                <p>Samuels, S. J. (1979). "The method of repeated readings." <em>The Reading Teacher</em>. https://www.jstor.org/stable/20194877</p>
-                <p>Scarborough, H. S. (2001). "Connecting early language and literacy to later reading (dis)abilities." In <em>Handbook of early literacy research</em>. Guilford Press. https://www.guilford.com/books/Handbook-of-Early-Literacy-Research/Neuman-Dickinson/9781593850062</p>
-                <p>Therrien, W. J. (2004). "Fluency and comprehension gains as a result of repeated reading." <em>Remedial and Special Education</em>. https://doi.org/10.1177/07419325040250040801</p>
-                <p>Topping, K. J. (2005). "Trends in peer learning." <em>Educational Psychology</em>. https://doi.org/10.1080/01443410500345172</p>
-                <p>Torgesen, J. K. (2004). "Lessons learned from research on interventions for students who have difficulty learning to read." In <em>The voice of evidence in reading research</em>. Paul H. Brookes. https://brookespublishing.com/product/the-voice-of-evidence-in-reading-research/</p>
-                <p>Torgesen, J. K., et al. (2001). "Intensive remedial instruction for children with severe reading disabilities." <em>Journal of Learning Disabilities</em>. https://doi.org/10.1177/002221940103400104</p>
-                <p>Wolf, M., et al. (2000). "Retrieval, automaticity, vocabulary elaboration, orthography (RAVE-O)." <em>Journal of Learning Disabilities</em>. https://doi.org/10.1177/002221940003300406</p>
+                <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. </p>
+                <p>Birsh, J. R. (Ed.). (2018). <em>Multisensory teaching of basic language skills</em> (4th ed.). Paul H. Brookes Publishing.</p>
+                <p>Carlisle, J. F. (2010). "Effects of instruction in morphological awareness on literacy achievement." <em>Reading Research Quarterly</em>.</p>
+                <p>Cunningham, A. E., & Stanovich, K. E. (1998). What reading does for the mind. <em>American Educator</em>. </p>
+                <p>D'Agostino, J. V., & Murphy, J. A. (2004). A meta-analysis of Reading Recovery in United States schools. <em>Educational Evaluation and Policy Analysis</em>. </p>
+                <p>Ehri, L. C., et al. (2001). Phonemic awareness instruction helps children learn to read. <em>Reading Research Quarterly</em>. </p>
+                <p>Henry, M. K. (2010). <em>Unlocking literacy: Effective decoding and spelling instruction</em> (2nd ed.). Paul H. Brookes Publishing.</p>
+                <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>. </p>
+                <p>International Dyslexia Association. (2020). <em>Structured literacy: An introductory guide</em>. </p>
+                <p>Malmgren, K. W., & Leone, P. E. (2000). Effects of a short-term auxiliary reading program on the reading skills of incarcerated youth. <em>Education and Treatment of Children</em>. </p>
+                <p>Morgan, P. L., & Sideridis, G. D. (2006). Contrasting the effectiveness of fluency interventions. <em>Learning Disabilities Research & Practice</em>. </p>
+                <p>National Reading Panel. (2000). <em>Teaching children to read: An evidence-based assessment of the scientific research literature on reading and its implications for reading instruction</em>. National Institute of Child Health and Human Development. </p>
+                <p>Oakland, T., et al. (1998). An evaluation of the dyslexia training program. <em>Journal of Learning Disabilities</em>. </p>
+                <p>Ransford-Kaldon, C. R., et al. (2011). A randomized controlled trial of a response to intervention (RTI) tier 2 literacy program: Leveled Literacy Intervention (LLI). <em>RTI International</em>. </p>
+                <p>Rasinski, T. V., & Hoffman, J. V. (2003). Oral reading in the school literacy curriculum. <em>Reading Research Quarterly</em>. </p>
+                <p>Ritchey, K. D., & Goeke, J. L. (2006). Orton-Gillingham—based reading instruction: A review of the literature. <em>The Journal of Special Education</em>. </p>
+                <p>Samuels, S. J. (1979). The method of repeated readings. <em>The Reading Teacher</em>. </p>
+                <p>Scarborough, H. S. (2001). Connecting early language and literacy to later reading (dis)abilities. In <em>Handbook of early literacy research</em>. Guilford Press. </p>
+                <p>Therrien, W. J. (2004). Fluency and comprehension gains as a result of repeated reading. <em>Remedial and Special Education</em>. </p>
+                <p>Topping, K. J. (2005). Trends in peer learning. <em>Educational Psychology</em>.</p>
+                <p>Torgesen, J. K. (2004). Lessons learned from research on interventions for students who have difficulty learning to read. In <em>The voice of evidence in reading research</em>. Paul H. Brookes. </p>
+                <p>Torgesen, J. K., et al. (2001). Intensive remedial instruction for children with severe reading disabilities. <em>Journal of Learning Disabilities</em>. </p>
+                <p>Wolf, M., et al. (2000). Retrieval, automaticity, vocabulary elaboration, orthography (RAVE-O). <em>Journal of Learning Disabilities</em>. </p>
               </div>
             </div>
           </div>

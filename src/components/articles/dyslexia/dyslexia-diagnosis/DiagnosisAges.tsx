@@ -283,17 +283,12 @@ export function DiagnosisAges({ setCurrentArticle }: DiagnosisAgesProps) {
           {/* REFERENCES SECTION */}
           <div className="clear-both"></div>
           
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
             
             {/* Empty Cited Studies Section left as a structural placeholder per standard */}
             <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-3 text-slate-600 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
+
             </div>
 
             <div>
@@ -301,23 +296,23 @@ export function DiagnosisAges({ setCurrentArticle }: DiagnosisAgesProps) {
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-                <p>Berninger, V. W., & Abbott, R. D. (2010). "Listening comprehension, oral expression, reading comprehension, and written expression: Related yet unique language systems in grades 1, 3, 5, and 7." <em>Journal of Educational Psychology</em>. https://doi.org/10.1037/a0019319</p>
-                <p>Bruck, M. (1990). "Word-recognition skills of adults with childhood diagnoses of dyslexia." <em>Developmental Psychology</em>. https://doi.org/10.1037/0012-1649.26.3.439</p>
-                <p>Compton, D. L., et al. (2006). "Selecting at-risk readers in first grade for early intervention: A two-year longitudinal study of reading disability." <em>Journal of Educational Psychology</em>. https://doi.org/10.1037/0022-0663.98.2.394</p>
-                <p>Edyburn, D. L. (2013). "Critical issues in advancing the special education technology evidence base." <em>Exceptional Children</em>. https://doi.org/10.1177/001440291308000101</p>
-                <p>Flanagan, D. P., et al. (2011). <em>Essentials of specific learning disability identification</em>. John Wiley & Sons. https://www.wiley.com/en-us/Essentials+of+Specific+Learning+Disability+Identification-p-9780470587607</p>
-                <p>Fuchs, L. S., & Fuchs, D. (2006). "Introduction to response to intervention: What, why, and how valid is it?" <em>Reading Research Quarterly</em>. https://doi.org/10.1598/RRQ.41.1.4</p>
-                <p>Good, R. H., & Kaminski, R. A. (Eds.). (2002). <em>Dynamic Indicators of Basic Early Literacy Skills</em> (6th ed.). Institute for the Development of Educational Achievement. https://dibels.uoregon.edu/</p>
-                <p>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004). https://sites.ed.gov/idea/statuteregulations/</p>
-                <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>. https://dyslexiaida.org/dyslexia-in-the-classroom/</p>
-                <p>International Dyslexia Association. (2021). <em>Resources for families and individuals</em>. https://dyslexiaida.org/</p>
-                <p>McNulty, M. A. (2003). "Dyslexia and the life course." <em>Journal of Learning Disabilities</em>. https://doi.org/10.1177/00222194030360040701</p>
-                <p>Rock, M. L. (2000). "Parents as equal partners: Balancing the scales in IEP development." <em>Teaching Exceptional Children</em>. https://doi.org/10.1177/004005990003200604</p>
-                <p>Schultz, E. K., & Stephens, T. L. (2015). "Core concepts for implementing response to intervention." In S. Jimerson, M. Burns, & A. VanDerHeyden (Eds.), <em>Handbook of response to intervention</em>. Springer. https://doi.org/10.1007/978-1-4899-7568-3_4</p>
-                <p>Swanson, H. L. (1999). "Reading comprehension and working memory in learning-disabled readers: Is the phonological loop more important than the executive system?" <em>Journal of Experimental Child Psychology</em>. https://doi.org/10.1006/jecp.1998.2477</p>
-                <p>Torgesen, J. K., et al. (2001). "Intensive remedial instruction for children with severe reading disabilities: Results of two instructional approaches." <em>Journal of Learning Disabilities</em>. https://doi.org/10.1177/002221940103400104</p>
-                <p>Wolf, M., & Katzir-Cohen, T. (2001). "Reading fluency and its intervention." <em>Scientific Studies of Reading</em>. https://doi.org/10.1207/S1532799XSSR0503_2</p>
+                <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</p>
+                <p>Berninger, V. W., & Abbott, R. D. (2010). Listening comprehension, oral expression, reading comprehension, and written expression: Related yet unique language systems in grades 1, 3, 5, and 7. <em>Journal of Educational Psychology</em>.</p>
+                <p>Bruck, M. (1990). Word-recognition skills of adults with childhood diagnoses of dyslexia. <em>Developmental Psychology</em>.</p>
+                <p>Compton, D. L., et al. (2006). Selecting at-risk readers in first grade for early intervention: A two-year longitudinal study of reading disability. <em>Journal of Educational Psychology</em>.</p>
+                <p>Edyburn, D. L. (2013). Critical issues in advancing the special education technology evidence base. <em>Exceptional Children</em>.</p>
+                <p>Flanagan, D. P., et al. (2011). <em>Essentials of specific learning disability identification</em>. John Wiley & Sons.</p>
+                <p>Fuchs, L. S., & Fuchs, D. (2006). Introduction to response to intervention: What, why, and how valid is it? <em>Reading Research Quarterly</em>.</p>
+                <p>Good, R. H., & Kaminski, R. A. (Eds.). (2002). <em>Dynamic Indicators of Basic Early Literacy Skills</em> (6th ed.). Institute for the Development of Educational Achievement.</p>
+                <p>Individuals with Disabilities Education Act, 20 U.S.C. § 1400 (2004).</p>
+                <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>.</p>
+                <p>International Dyslexia Association. (2021). <em>Resources for families and individuals</em>.</p>
+                <p>McNulty, M. A. (2003). Dyslexia and the life course.<em>Journal of Learning Disabilities</em>.</p>
+                <p>Rock, M. L. (2000). Parents as equal partners: Balancing the scales in IEP development.<em>Teaching Exceptional Children</em>.</p>
+                <p>Schultz, E. K., & Stephens, T. L. (2015). Core concepts for implementing response to intervention. In S. Jimerson, M. Burns, & A. VanDerHeyden (Eds.), <em>Handbook of response to intervention</em>. Springer.</p>
+                <p>Swanson, H. L. (1999). Reading comprehension and working memory in learning-disabled readers: Is the phonological loop more important than the executive system? <em>Journal of Experimental Child Psychology</em>.</p>
+                <p>Torgesen, J. K., et al. (2001). Intensive remedial instruction for children with severe reading disabilities: Results of two instructional approaches. <em>Journal of Learning Disabilities</em>.</p>
+                <p>Wolf, M., & Katzir-Cohen, T. (2001). Reading fluency and its intervention. <em>Scientific Studies of Reading</em>.</p>
               </div>
             </div>
           </div>

@@ -367,9 +367,9 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</li>
-            <li>Higgins, J. M., et al. (2021). "Autistic burnout: 'My physical body and mind started to shut down'." <i>Autism</i>. https://doi.org/10.1177/1362361321995995</li>
-            <li>Pearson, A., & Rose, K. (2021). "A conceptual analysis of autistic masking." <i>Autism in Adulthood</i>. https://doi.org/10.1089/aut.2020.0043</li>
-            <li>Raymaker, D. M., et al. (2020). "Having all of your internal resources exhausted beyond measure and being left with no clean-up crew: Defining autistic burnout." <i>Autism in Adulthood</i>. https://doi.org/10.1089/aut.2019.0079</li>
+            <li>Higgins, J. M., et al. (2021). Autistic burnout: 'My physical body and mind started to shut down'. <i>Autism</i>.</li>
+            <li>Pearson, A., & Rose, K. (2021). A conceptual analysis of autistic masking. <i>Autism in Adulthood</i>.</li>
+            <li>Raymaker, D. M., et al. (2020). Having all of your internal resources exhausted beyond measure and being left with no clean-up crew: Defining autistic burnout. <i>Autism in Adulthood</i>.</li>
           </ul>
         </div>
       </div>

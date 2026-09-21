@@ -253,9 +253,9 @@ export function ArticleTBI({ setCurrentArticle }: ArticleTBIProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Maas, A. I., Stocchetti, N., & Bullock, R. (2008). "Moderate and severe traumatic brain injury in adults." <i>The Lancet Neurology</i>. https://doi.org/10.1016/S1474-4422(08)70164-9</p>
-            <p>2. Taylor, C. A., Bell, J. M., Breiding, M. J., & Xu, L. (2017). "Traumatic brain injury-related emergency department visits, hospitalizations, and deaths—United States, 2007 and 2013." <i>MMWR Surveillance Summaries</i>. https://doi.org/10.15585/mmwr.ss6609a1</p>
-            <p>3. Rabinowitz, A. R., & Levin, H. S. (2014). "Cognitive sequelae of traumatic brain injury." <i>Psychiatric Clinics</i>. https://doi.org/10.1016/j.psc.2013.11.004</p>
+            <p>1. Maas, A. I., Stocchetti, N., & Bullock, R. (2008). Moderate and severe traumatic brain injury in adults. <i>The Lancet Neurology</i>.</p>
+            <p>2. Taylor, C. A., Bell, J. M., Breiding, M. J., & Xu, L. (2017). Traumatic brain injury-related emergency department visits, hospitalizations, and deaths—United States, 2007 and 2013. <i>MMWR Surveillance Summaries</i>.</p>
+            <p>3. Rabinowitz, A. R., & Levin, H. S. (2014). Cognitive sequelae of traumatic brain injury. <i>Psychiatric Clinics</i>.</p>
           </div>
         </div>
         
@@ -265,8 +265,8 @@ export function ArticleTBI({ setCurrentArticle }: ArticleTBIProps) {
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Langlois, J. A., Rutland-Brown, W., & Wald, M. M. (2006). "The epidemiology and impact of traumatic brain injury: A brief overview." <i>The Journal of Head Trauma Rehabilitation</i>. https://doi.org/10.1097/00001199-200609000-00001</li>
-            <li>Dikmen, S. S., Corrigan, J. D., Levin, H. S., Machamer, J., Stiers, W., & Weisskopf, M. G. (2009). "Cognitive outcome following traumatic brain injury." <i>The Journal of Head Trauma Rehabilitation</i>. https://doi.org/10.1097/HTR.0b013e3181c133e9</li>
+            <li>Langlois, J. A., Rutland-Brown, W., & Wald, M. M. (2006). The epidemiology and impact of traumatic brain injury: A brief overview. <i>The Journal of Head Trauma Rehabilitation</i>.</li>
+            <li>Dikmen, S. S., Corrigan, J. D., Levin, H. S., Machamer, J., Stiers, W., & Weisskopf, M. G. (2009). Cognitive outcome following traumatic brain injury. <i>The Journal of Head Trauma Rehabilitation</i>.</li>
           </ul>
         </div>
       </div>

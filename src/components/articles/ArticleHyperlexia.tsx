@@ -254,8 +254,8 @@ export function ArticleHyperlexia({ setCurrentArticle }: ArticleHyperlexiaProps)
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Burd, L., & Kerbeshian, J. (1985). "Hyperlexia and a variant of hypergraphia." <em>Perceptual and Motor Skills</em>, 60(3), 940-942. https://doi.org/10.2466/pms.1985.60.3.940</p>
-            <p>2. Turkeltaub, P. E., Flowers, D. L., Verbalis, A., Miranda, M., Gareau, L., & Eden, G. F. (2004). "The neural basis of hyperlexic reading: An fMRI case study." <em>Neuron</em>, 41(1), 11-25. https://doi.org/10.1016/S0896-6273(03)00803-1</p>
+            <p>1. Burd, L., & Kerbeshian, J. (1985). Hyperlexia and a variant of hypergraphia. <i>Perceptual and Motor Skills</i>.</p>
+            <p>2. Turkeltaub, P. E., Flowers, D. L., Verbalis, A., Miranda, M., Gareau, L., & Eden, G. F. (2004). The neural basis of hyperlexic reading: An fMRI case study. <i>Neuron</i>.</p>
           </div>
         </div>
 
@@ -265,10 +265,10 @@ export function ArticleHyperlexia({ setCurrentArticle }: ArticleHyperlexiaProps)
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). "Annotation: Hyperlexia: disability or superability?" <em>Journal of Child Psychology and Psychiatry</em>. https://doi.org/10.1111/1469-7610.00193</li>
-            <li>Nation, K. (1999). "Reading skills in hyperlexia: A developmental perspective." <em>Psychological Bulletin</em>. https://doi.org/10.1037/0033-2909.125.3.338</li>
-            <li>Newman, T. M., Macomber, D., Naples, A. J., Babitz, T., Volkmar, F., & Grigorenko, E. L. (2007). "Hyperlexia in children with autism spectrum disorders." <em>Journal of Autism and Developmental Disorders</em>. https://doi.org/10.1007/s10803-006-0206-y</li>
-            <li>Ostrolenk, A., Bao, V. A., Mottron, L., Collignon, O., & Bertone, A. (2019). "Hyperlexia: Systematic review, neurocognitive modelling, and outcome." <em>Neuroscience & Biobehavioral Reviews</em>. https://doi.org/10.1016/j.neubiorev.2019.04.014</li>
+            <li>Grigorenko, E. L., Klin, A., & Volkmar, F. (2003). Annotation: Hyperlexia: disability or superability? <i>Journal of Child Psychology and Psychiatry</i>.</li>
+            <li>Nation, K. (1999). Reading skills in hyperlexia: A developmental perspective. <i>Psychological Bulletin</i>.</li>
+            <li>Newman, T. M., Macomber, D., Naples, A. J., Babitz, T., Volkmar, F., & Grigorenko, E. L. (2007). Hyperlexia in children with autism spectrum disorders. <i>Journal of Autism and Developmental Disorders</i>.</li>
+            <li>Ostrolenk, A., Bao, V. A., Mottron, L., Collignon, O., & Bertone, A. (2019). Hyperlexia: Systematic review, neurocognitive modelling, and outcome. <i>Neuroscience & Biobehavioral Reviews</i>.</li>
           </ul>
         </div>
       </div>

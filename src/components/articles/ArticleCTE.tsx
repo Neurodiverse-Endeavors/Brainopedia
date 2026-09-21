@@ -253,9 +253,9 @@ export function ArticleCTE({ setCurrentArticle }: ArticleCTEProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. McKee, A. C., Cairns, N. J., Dickson, D. W., et al. (2016). "The first NINDS/NIBIB consensus meeting to define neuropathological criteria for the diagnosis of chronic traumatic encephalopathy." <i>Acta Neuropathologica</i>. https://doi.org/10.1007/s00401-015-1515-z</p>
-            <p>2. McKee, A. C., Stein, T. D., Nowinski, C. J., et al. (2013). "The spectrum of disease in chronic traumatic encephalopathy." <i>Brain</i>. https://doi.org/10.1093/brain/aws307</p>
-            <p>3. Mez, J., Daneshvar, D. H., Kiernan, P. T., et al. (2017). "Clinicopathological evaluation of chronic traumatic encephalopathy in players of American football." <i>JAMA</i>. https://doi.org/10.1001/jama.2017.8334</p>
+            <p>1. McKee, A. C., Cairns, N. J., Dickson, D. W., et al. (2016). The first NINDS/NIBIB consensus meeting to define neuropathological criteria for the diagnosis of chronic traumatic encephalopathy. <i>Acta Neuropathologica</i>.</p>
+            <p>2. McKee, A. C., Stein, T. D., Nowinski, C. J., et al. (2013). The spectrum of disease in chronic traumatic encephalopathy. <i>Brain</i>.</p>
+            <p>3. Mez, J., Daneshvar, D. H., Kiernan, P. T., et al. (2017). Clinicopathological evaluation of chronic traumatic encephalopathy in players of American football. <i>JAMA</i>.</p>
           </div>
         </div>
         
@@ -265,8 +265,8 @@ export function ArticleCTE({ setCurrentArticle }: ArticleCTEProps) {
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Stein, T. D., Alvarez, V. E., & McKee, A. C. (2014). "Chronic traumatic encephalopathy: A spectrum of neuropathological changes following repetitive brain trauma in athletes and military personnel." <i>Alzheimer's Research & Therapy</i>. https://doi.org/10.1186/alzrt234</li>
-            <li>Baugh, C. M., Stamm, J. M., Riley, D. O., et al. (2012). "Chronic traumatic encephalopathy: Neurodegeneration following repetitive concussive and subconcussive brain trauma." <i>Brain Imaging and Behavior</i>. https://doi.org/10.1007/s11682-012-9164-5</li>
+            <li>Stein, T. D., Alvarez, V. E., & McKee, A. C. (2014). Chronic traumatic encephalopathy: A spectrum of neuropathological changes following repetitive brain trauma in athletes and military personnel. <i>Alzheimer's Research & Therapy</i>.</li>
+            <li>Baugh, C. M., Stamm, J. M., Riley, D. O., et al. (2012). Chronic traumatic encephalopathy: Neurodegeneration following repetitive concussive and subconcussive brain trauma. <i>Brain Imaging and Behavior</i>.</li>
           </ul>
         </div>
       </div>

@@ -167,34 +167,24 @@ export function DyslexiaSymptomsImpact({ setCurrentArticle }: DyslexiaSymptomsIm
           </div>
 
           {/* REFERENCES SECTION */}
-          <div className="clear-both"></div>
-          
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
-            <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
-            
-            {/* Empty Cited Studies Section left as a structural placeholder per standard */}
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
 
+            {/* BACKGROUND SOURCES: CYAN */}
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
                 Background Sources
               </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Boetsch, E. A., et al. (1996). "Psychosocial correlates of dyslexia across the life span." <i>Development and Psychopathology</i>. https://doi.org/10.1017/s0954579400007253</p>
-                <p>Carroll, J. M., & Iles, J. E. (2006). "An assessment of anxiety levels in dyslexic students in higher education." <i>British Journal of Educational Psychology</i>. https://doi.org/10.1348/000709905X66233</p>
-                <p>Gerber, P. J. (2012). "The impact of learning disabilities on adulthood: A review." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219411426858</p>
-                <p>Grills-Taquechel, A. E., et al. (2012). "Anxiety and reading difficulties in early elementary school." <i>Child Psychiatry & Human Development</i>. https://doi.org/10.1007/s10578-011-0246-y</p>
-                <p>Humphrey, N., & Mullins, P. M. (2002). "Self-concept and self-esteem in developmental dyslexia." <i>Journal of Research in Special Educational Needs</i>. https://doi.org/10.1111/j.1471-3802.2002.00163.x</p>
-                <p>Lewandowski, L. J., et al. (2008). "Symptoms of ADHD and academic concerns in college students with and without ADHD diagnoses." <i>Journal of Attention Disorders</i>. https://doi.org/10.1177/1087054707304694</p>
-                <p>Meltzer, L. J. (2007). <i>Executive function in education: From theory to practice</i>. Guilford Press. https://www.guilford.com/books/Executive-Function-in-Education/Lynn-Meltzer/9781593854282</p>
-              </div>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Boetsch, E. A., et al. (1996). Psychosocial correlates of dyslexia across the life span. <i>Development and Psychopathology</i>.</li>
+                <li>Carroll, J. M., & Iles, J. E. (2006). An assessment of anxiety levels in dyslexic students in higher education. <i>British Journal of Educational Psychology</i>.</li>
+                <li>Gerber, P. J. (2012). The impact of learning disabilities on adulthood: A review. <i>Journal of Learning Disabilities</i>.</li>
+                <li>Grills-Taquechel, A. E., et al. (2012). Anxiety and reading difficulties in early elementary school. <i>Child Psychiatry & Human Development</i>.</li>
+                <li>Haft, S. L., Myers, C. A., & Hoeft, F. (2016). Socio-emotional and cognitive resilience in children with reading disabilities. <i>Current Opinion in Behavioral Sciences</i>.</li>
+                <li>Humphrey, N., & Mullins, P. M. (2002). Self-concept and self-esteem in developmental dyslexia. <i>Journal of Research in Special Educational Needs</i>.</li>
+                <li>Lewandowski, L. J., et al. (2008). Symptoms of ADHD and academic concerns in college students with and without ADHD diagnoses. <i>Journal of Attention Disorders</i>.</li>
+                <li>Meltzer, L. J. (2007). <i>Executive function in education: From theory to practice</i>. Guilford Press.</li>
+              </ul>
             </div>
           </div>
         </TabsContent>

@@ -186,7 +186,7 @@ export function SupportTutoring({ setCurrentArticle }: SupportTutoringProps) {
           {/* REFERENCES SECTION */}
           <div className="clear-both"></div>
           
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
             
             <div className="mb-6">
@@ -194,9 +194,9 @@ export function SupportTutoring({ setCurrentArticle }: SupportTutoringProps) {
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>1. Torgesen, J. K., et al. (2010). "Computer-assisted instruction to prevent early reading difficulties in students at risk for dyslexia: Outcomes from two instructional approaches." <em>Annals of Dyslexia</em>. https://doi.org/10.1007/s11881-009-0032-y</p>
-                <p>2. Lovett, M. W., et al. (2000). "Components of effective remediation for developmental reading disabilities: Combining phonological and strategy-based instruction to improve outcomes." <em>Journal of Educational Psychology</em>. https://doi.org/10.1037/0022-0663.92.2.263</p>
-                <p>3. Hock, M. F., et al. (2001). "The effects of an after-school tutoring program on the academic performance of at-risk students and students with LD." <em>Remedial and Special Education</em>. https://doi.org/10.1177/074193250102200305</p>
+                <p>1. Torgesen, J. K., et al. (2010). Computer-assisted instruction to prevent early reading difficulties in students at risk for dyslexia: Outcomes from two instructional approaches. <em>Annals of Dyslexia</em>. </p>
+                <p>2. Lovett, M. W., et al. (2000). Components of effective remediation for developmental reading disabilities: Combining phonological and strategy-based instruction to improve outcomes. <em>Journal of Educational Psychology</em>. </p>
+                <p>3. Hock, M. F., et al. (2001). The effects of an after-school tutoring program on the academic performance of at-risk students and students with LD. <em>Remedial and Special Education</em>. </p>
               </div>
             </div>
 
@@ -205,11 +205,11 @@ export function SupportTutoring({ setCurrentArticle }: SupportTutoringProps) {
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-                <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>. https://dyslexiaida.org/dyslexia-in-the-classroom/</p>
-                <p>Joshi, R. M., et al. (2009). "Do textbooks used in university reading education courses conform to the instructional recommendations of the National Reading Panel?" <em>Journal of Learning Disabilities</em>. https://doi.org/10.1177/0022219409338739</p>
-                <p>Ritter, G. W., et al. (2009). "The effectiveness of volunteer tutoring programs for elementary and middle school students: A meta-analysis." <em>Review of Educational Research</em>. https://doi.org/10.3102/0034654308325690</p>
-                <p>Spear-Swerling, L. (2009). "A literacy tutoring experience for prospective special educators and struggling second graders." <em>Journal of Learning Disabilities</em>. https://doi.org/10.1177/0022219409338738</p>
+                <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. </p>
+                <p>International Dyslexia Association. (2017). <i>Dyslexia in the Classroom: What Every Teacher Needs to Know</i>. </p>
+                <p>Joshi, R. M., et al. (2009). Do textbooks used in university reading education courses conform to the instructional recommendations of the National Reading Panel? <em>Journal of Learning Disabilities</em>. </p>
+                <p>Ritter, G. W., et al. (2009). The effectiveness of volunteer tutoring programs for elementary and middle school students: A meta-analysis. <em>Review of Educational Research</em>. </p>
+                <p>Spear-Swerling, L. (2009). A literacy tutoring experience for prospective special educators and struggling second graders. <em>Journal of Learning Disabilities</em>. </p>
               </div>
             </div>
           </div>

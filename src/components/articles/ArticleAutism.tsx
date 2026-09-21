@@ -221,7 +221,7 @@ export function ArticleAutism({ setCurrentArticle }: ArticleAutismProps) {
             Read more →
           </button>
         </section>
-</div>
+      </div>
 
       {/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
@@ -233,11 +233,11 @@ export function ArticleAutism({ setCurrentArticle }: ArticleAutismProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Centers for Disease Control and Prevention. (2023). "Data & Statistics on Autism Spectrum Disorder." U.S. Department of Health and Human Services. https://www.cdc.gov/ncbddd/autism/data.html</p>
-            <p>2. Sandin, S., et al. (2014). "The familial risk of autism." <i>JAMA</i>. https://doi.org/10.1001/jama.2014.4144</p>
-            <p>3. De Rubeis, S., et al. (2014). "Synaptic, transcriptional and chromatin genes disrupted in autism." <i>Nature</i>. https://doi.org/10.1038/nature13772</p>
-            <p>4. Courchesne, E., et al. (2011). "Brain growth across the life span in autism: age-specific changes in anatomical pathology." <i>Brain Research</i>. https://doi.org/10.1016/j.brainres.2010.11.081</p>
-            <p>5. American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
+            <p>1. Centers for Disease Control and Prevention. (2023). Data & statistics on autism spectrum disorder. U.S. Department of Health and Human Services.</p>
+            <p>2. Sandin, S., et al. (2014). The familial risk of autism. <i>JAMA</i>.</p>
+            <p>3. De Rubeis, S., et al. (2014). Synaptic, transcriptional and chromatin genes disrupted in autism. <i>Nature</i>.</p>
+            <p>4. Courchesne, E., et al. (2011). Brain growth across the life span in autism: Age-specific changes in anatomical pathology. <i>Brain Research</i>.</p>
+            <p>5. American Psychiatric Association. (2022). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</p>
           </div>
         </div>
         
@@ -247,8 +247,8 @@ export function ArticleAutism({ setCurrentArticle }: ArticleAutismProps) {
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Autistic Self Advocacy Network (ASAN). "About Autism." https://autisticadvocacy.org/about-asan/about-autism/</p>
-            <p>National Institute of Mental Health (NIMH). (2023). "Autism Spectrum Disorder." National Institutes of Health. https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd</p>
+            <p>Autistic Self Advocacy Network (ASAN). (n.d.). About autism.</p>
+            <p>National Institute of Mental Health (NIMH). (2023). Autism spectrum disorder. National Institutes of Health.</p>
           </div>
         </div>
       </div>

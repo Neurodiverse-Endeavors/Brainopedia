@@ -253,8 +253,8 @@ export function ArticleSPD({ setCurrentArticle }: ArticleSPDProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Ahn, R. R., Miller, L. J., Milberger, S., & McIntosh, D. N. (2004). "Prevalence of parents' perceptions of sensory processing disorders among kindergarten children." <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.58.3.287</p>
-            <p>2. Owen, J. P., Marco, E. J., Desai, S., et al. (2013). "Abnormal white matter microstructure in children with sensory processing disorders." <i>NeuroImage: Clinical</i>. https://doi.org/10.1016/j.nicl.2013.06.009</p>
+            <p>1. Ahn, R. R., Miller, L. J., Milberger, S., & McIntosh, D. N. (2004). Prevalence of parents' perceptions of sensory processing disorders among kindergarten children. <i>American Journal of Occupational Therapy</i>.</p>
+            <p>2. Owen, J. P., Marco, E. J., Desai, S., et al. (2013). Abnormal white matter microstructure in children with sensory processing disorders. <i>NeuroImage: Clinical</i>.</p>
           </div>
         </div>
         

@@ -70,7 +70,7 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
         <div className="space-y-6">
           <p className="text-slate-700 leading-relaxed">
             <strong className="text-[#0c264d]">Giftedness</strong> is a neurological difference characterized by advanced cognitive 
-            abilities, exceptional intensity of experience, and asynchronous development across domains. 
+            abilities, exceptional intensity of experience, and asynchronous development across domains.<sup className="text-[#10b981] font-bold ml-0.5">1</sup> 
             Far more than simply "being smart," giftedness represents a distinct neurotype involving 
             differences in brain structure, processing speed, pattern recognition, and emotional intensity 
             that fundamentally shape how individuals perceive and interact with the world.
@@ -108,7 +108,7 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
           <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Overview</h2>
           
           <p className="mb-4 text-slate-700 leading-relaxed">
-            Giftedness affects approximately 2-10% of the population and involves structural and functional brain differences like enhanced neural connectivity and increased synaptic efficiency.<sup className="text-[#10b981] font-bold ml-0.5">1, 2, 3</sup> Far more than just high achievement, it is a distinct neurotype that comes with unique cognitive, social, emotional, and existential experiences that require specialized understanding.
+            Giftedness affects approximately 2-10% of the population and involves structural and functional brain differences like enhanced neural connectivity and increased synaptic efficiency.<sup className="text-[#10b981] font-bold ml-0.5">2, 3</sup> Far more than just high achievement, it is a distinct neurotype that comes with unique cognitive, social, emotional, and existential experiences that require specialized understanding.
           </p>
           
           <button
@@ -132,7 +132,7 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
           <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Symptoms & Characteristics</h2>
           
           <p className="mb-4 text-slate-700 leading-relaxed">
-            Gifted individuals demonstrate rapid learning, abstract thinking from a very young age, exceptional memory, and an intense preference for complexity. A hallmark of this neurotype is asynchronous development, where intellectual abilities far outpace emotional or physical development, often accompanied by heightened neurological "overexcitabilities."
+            Gifted individuals demonstrate rapid learning, abstract thinking from a very young age, exceptional memory, and an intense preference for complexity. A hallmark of this neurotype is asynchronous development, where intellectual abilities far outpace emotional or physical development, often accompanied by heightened neurological "overexcitabilities."<sup className="text-[#10b981] font-bold ml-0.5">4</sup>
           </p>
 
           <button
@@ -156,7 +156,7 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
           <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Causes & Origins</h2>
           
           <p className="mb-4 text-slate-700 leading-relaxed">
-            Giftedness has a strong genetic component and represents a natural variation in human neurology that is present from birth, altering how the brain processes information and responds to stimuli. The characteristic intensities and overexcitabilities commonly seen in the gifted are neurological responses rooted in differences in white matter development and neural efficiency, not behavioral choices.
+            Giftedness has a strong genetic component and represents a natural variation in human neurology that is present from birth, altering how the brain processes information and responds to stimuli. The characteristic intensities and overexcitabilities commonly seen in the gifted are neurological responses rooted in differences in white matter development and neural efficiency, not behavioral choices.<sup className="text-[#10b981] font-bold ml-0.5">5</sup>
           </p>
 
           <button
@@ -180,7 +180,7 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
           <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Testing & Diagnosing</h2>
           
           <p className="mb-4 text-slate-700 leading-relaxed">
-            Identification traditionally involves IQ testing, academic achievement markers, and creativity assessments to evaluate raw cognitive potential rather than just academic performance. Culturally sensitive identification practices are heavily required, as giftedness in girls, children of color, and twice-exceptional individuals is frequently overlooked or misdiagnosed.
+            Identification traditionally involves IQ testing, academic achievement markers, and creativity assessments to evaluate raw cognitive potential rather than just academic performance. Culturally sensitive identification practices are heavily required, as giftedness in girls, children of color, and twice-exceptional individuals is frequently overlooked or misdiagnosed.<sup className="text-[#10b981] font-bold ml-0.5">6</sup>
           </p>
 
           <button
@@ -204,7 +204,7 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
           <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Support & Management</h2>
           
           <p className="mb-4 text-slate-700 leading-relaxed">
-            Educational support must provide appropriately challenging curriculums, independent projects, and clustering with intellectual peers to prevent burnout, apathy, or underachievement. Social and emotional support is equally vital, as gifted individuals benefit immensely from connections with true peer groups, validation of their intense feelings, and strategies to manage perfectionism.
+            Educational support must provide appropriately challenging curriculums, independent projects, and clustering with intellectual peers to prevent burnout, apathy, or underachievement. Social and emotional support is equally vital, as gifted individuals benefit immensely from connections with true peer groups, validation of their intense feelings, and strategies to manage perfectionism.<sup className="text-[#10b981] font-bold ml-0.5">7</sup>
           </p>
 
           <button
@@ -228,7 +228,7 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
           <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Living with Giftedness</h2>
           
           <p className="mb-4 text-slate-700 leading-relaxed">
-            Gifted individuals lead deeply fulfilling lives when they are able to embrace their neurotype, understand their asynchronous development, and find an intellectual community. With proper support and self-acceptance, they can successfully navigate unique challenges like multipotentiality or existential anxiety and utilize their intensity as a profound asset.
+            Gifted individuals lead deeply fulfilling lives when they are able to embrace their neurotype, understand their asynchronous development, and find an intellectual community. With proper support and self-acceptance, they can successfully navigate unique challenges like multipotentiality or existential anxiety and utilize their intensity as a profound asset.<sup className="text-[#10b981] font-bold ml-0.5">8</sup>
           </p>
 
           <button
@@ -255,9 +255,14 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Pfeiffer, S. I. (2015). <em>Essentials of gifted assessment</em>. John Wiley & Sons.</p>
-            <p>2. Geake, J. G., & Hansen, P. C. (2005). "Neural correlates of intelligence as revealed by fMRI of fluid analogies." <em>NeuroImage</em>. https://doi.org/10.1016/j.neuroimage.2005.01.046</p>
-            <p>3. Shaw, P., Greenstein, D., Lerch, J., et al. (2006). "Intellectual ability and cortical development in children and adolescents." <em>Nature</em>. https://doi.org/10.1038/nature04513</p>
+            <p>1. Silverman, L. K. (2013). <i>Giftedness 101</i>. Springer Publishing Company.</p>
+            <p>2. Geake, J. G., & Hansen, P. C. (2005). Neural correlates of intelligence as revealed by fMRI of fluid analogies. <i>NeuroImage</i>.</p>
+            <p>3. Shaw, P., Greenstein, D., Lerch, J., et al. (2006). Intellectual ability and cortical development in children and adolescents. <i>Nature</i>.</p>
+            <p>4. Dąbrowski, K. (1964). <i>Positive disintegration</i>. Little, Brown.</p>
+            <p>5. Neubauer, A. C., & Fink, A. (2009). Intelligence and neural efficiency. <i>Neuroscience & Biobehavioral Reviews</i>.</p>
+            <p>6. Ford, D. Y. (2013). <i>Recruiting and retaining culturally different students in gifted education</i>. Prufrock Press.</p>
+            <p>7. Neihart, M., Reis, S. M., Robinson, N. M., & Moon, S. M. (Eds.). (2002). <i>The social and emotional development of gifted children</i>. Prufrock Press.</p>
+            <p>8. Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <i>Misdiagnosis and dual diagnoses of gifted children and adults</i>. Great Potential Press.</p>
           </div>
         </div>
 
@@ -267,10 +272,10 @@ export function ArticleGiftedness({ setCurrentArticle }: ArticleGiftednessProps)
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Dąbrowski, K. (1964). <em>Positive disintegration</em>. Little, Brown.</li>
-            <li>Silverman, L. K. (2013). <em>Giftedness 101</em>. Springer Publishing Company.</li>
-            <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <em>Misdiagnosis and dual diagnoses of gifted children and adults: ADHD, bipolar, OCD, Asperger's, depression, and other disorders</em>. Great Potential Press.</li>
-            <li>Winner, E. (1996). <em>Gifted children: Myths and realities</em>. Basic Books.</li>
+            <li>Pfeiffer, S. I. (2015). <i>Essentials of gifted assessment</i>. John Wiley & Sons.</li>
+            <li>Winner, E. (1996). <i>Gifted children: Myths and realities</i>. Basic Books.</li>
+            <li>National Association for Gifted Children. (2019). What is giftedness?</li>
+            <li>Subotnik, R. F., Olszewski-Kubilius, P., & Worrell, F. C. (2011). Rethinking giftedness and gifted education. <i>Psychological Science in the Public Interest</i>.</li>
           </ul>
         </div>
       </div>

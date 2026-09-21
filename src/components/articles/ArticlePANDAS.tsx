@@ -252,9 +252,9 @@ export function ArticlePANDAS({ setCurrentArticle }: ArticlePANDASProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Swedo, S. E., Leonard, H. L., Garvey, M., et al. (1998). "Pediatric autoimmune neuropsychiatric disorders associated with streptococcal infections: Clinical description of the first 50 cases." <i>American Journal of Psychiatry</i>. https://doi.org/10.1176/ajp.155.2.264</p>
-            <p>2. Frankovich, J., Thienemann, M., Pearlstein, J., Crable, A., Brown, K., & Chang, K. (2015). "Multidisciplinary clinic dedicated to treating youth with pediatric acute-onset neuropsychiatric syndrome: Presenting characteristics of the first 47 consecutive patients." <i>Journal of Child and Adolescent Psychopharmacology</i>. https://doi.org/10.1089/cap.2014.0081</p>
-            <p>3. Swedo, S. E., Leckman, J. F., & Rose, N. R. (2012). "From research subgroup to clinical syndrome: Modifying the PANDAS criteria to describe PANS (pediatric acute-onset neuropsychiatric syndrome)." <i>Pediatrics & Therapeutics</i>. https://doi.org/10.4172/2161-0665.1000113</p>
+            <p>1. Swedo, S. E., Leonard, H. L., Garvey, M., et al. (1998). Pediatric autoimmune neuropsychiatric disorders associated with streptococcal infections: Clinical description of the first 50 cases. <i>American Journal of Psychiatry</i>.</p>
+            <p>2. Frankovich, J., Thienemann, M., Pearlstein, J., Crable, A., Brown, K., & Chang, K. (2015). Multidisciplinary clinic dedicated to treating youth with pediatric acute-onset neuropsychiatric syndrome: Presenting characteristics of the first 47 consecutive patients. <i>Journal of Child and Adolescent Psychopharmacology</i>.</p>
+            <p>3. Swedo, S. E., Leckman, J. F., & Rose, N. R. (2012). From research subgroup to clinical syndrome: Modifying the PANDAS criteria to describe PANS (pediatric acute-onset neuropsychiatric syndrome). <i>Pediatrics & Therapeutics</i>.</p>
           </div>
         </div>
         
@@ -264,8 +264,8 @@ export function ArticlePANDAS({ setCurrentArticle }: ArticlePANDASProps) {
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Williams, K. A., & Swedo, S. E. (2015). "Post-infectious autoimmune disorders: Sydenham's chorea, PANDAS and beyond." <i>Brain Research</i>. https://doi.org/10.1016/j.brainres.2014.09.071</li>
-            <li>Murphy, T. K., Storch, E. A., Turner, A., Reid, J. M., Tan, J., & Lewin, A. B. (2010). "Maternal history of autoimmune disease in children presenting with tics and/or obsessive-compulsive disorder." <i>Journal of Neuroimmunology</i>. https://doi.org/10.1016/j.jneuroim.2010.08.016</li>
+            <li>Williams, K. A., & Swedo, S. E. (2015). Post-infectious autoimmune disorders: Sydenham's chorea, PANDAS and beyond. <i>Brain Research</i>.</li>
+            <li>Murphy, T. K., Storch, E. A., Turner, A., Reid, J. M., Tan, J., & Lewin, A. B. (2010). Maternal history of autoimmune disease in children presenting with tics and/or obsessive-compulsive disorder. <i>Journal of Neuroimmunology</i>.</li>
           </ul>
         </div>
       </div>

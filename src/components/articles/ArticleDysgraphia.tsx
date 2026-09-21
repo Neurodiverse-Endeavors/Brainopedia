@@ -260,8 +260,8 @@ export function ArticleDysgraphia({ setCurrentArticle }: ArticleDysgraphiaProps)
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Chung, P. J., Patel, D. R., & Nizami, I. (2020). "Disorder of written expression and dysgraphia: Definition, diagnosis, and management." <i>Translational Pediatrics</i>, 9(Suppl 1), S46-S54. https://doi.org/10.21037/tp.2019.11.01</p>
-            <p>2. Berninger, V. W., & Richards, T. L. (2010). "Inter-relationships among behavioral markers, genes, brain, and treatment in dyslexia and dysgraphia." <i>Future Neurology</i>, 5(4), 597-617. https://doi.org/10.2217/fnl.10.22</p>
+            <p>1. Chung, P. J., Patel, D. R., & Nizami, I. (2020). Disorder of written expression and dysgraphia: Definition, diagnosis, and management. <i>Translational Pediatrics</i>.</p>
+            <p>2. Berninger, V. W., & Richards, T. L. (2010). Inter-relationships among behavioral markers, genes, brain, and treatment in dyslexia and dysgraphia. <i>Future Neurology</i>.</p>
           </div>
         </div>
 
@@ -271,10 +271,10 @@ export function ArticleDysgraphia({ setCurrentArticle }: ArticleDysgraphiaProps)
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Berninger, V. W. (2004). "Understanding the 'graphia' in developmental dysgraphia: A developmental neuropsychological perspective for disorders in producing written language." <i>The Handbook of Learning Disabilities</i>, 189-228.</p>
-            <p>Graham, S., & Weintraub, N. (1996). "A review of handwriting research: Progress and prospects from 1980 to 1994." <i>Educational Psychology Review</i>, 8(1), 7-87. https://doi.org/10.1007/BF02214387</p>
-            <p>MacArthur, C. A. (2009). "Reflections on research on writing and technology for struggling writers." <i>Learning Disabilities Research & Practice</i>, 24(2), 93-103. https://doi.org/10.1111/j.1540-5826.2009.00282.x</p>
-            <p>Rosenblum, S., Weiss, P. L., & Parush, S. (2003). "Product and process evaluation of handwriting difficulties." <i>Educational Psychology Review</i>, 15(1), 41-81. https://doi.org/10.1023/A:1021302606595</p>
+            <p>Berninger, V. W. (2004). Understanding the 'graphia' in developmental dysgraphia: A developmental neuropsychological perspective for disorders in producing written language. <i>The Handbook of Learning Disabilities</i>.</p>
+            <p>Graham, S., & Weintraub, N. (1996). A review of handwriting research: Progress and prospects from 1980 to 1994. <i>Educational Psychology Review</i>.</p>
+            <p>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>.</p>
+            <p>Rosenblum, S., Weiss, P. L., & Parush, S. (2003). Product and process evaluation of handwriting difficulties. <i>Educational Psychology Review</i>.</p>
           </div>
         </div>
       </div>

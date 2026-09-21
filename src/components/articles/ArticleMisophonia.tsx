@@ -254,8 +254,8 @@ export function ArticleMisophonia({ setCurrentArticle }: ArticleMisophoniaProps)
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Zhou, X., Wu, M. S., & Storch, E. A. (2017). "Misophonia symptoms among Chinese university students: Incidence, associated impairment, and clinical correlates." <i>Journal of Obsessive-Compulsive and Related Disorders</i>, 14, 7-12. https://doi.org/10.1016/j.jocrd.2017.05.001</p>
-            <p>2. Schröder, A., van Wingen, G., Eijsker, N., et al. (2019). "Misophonia is associated with altered brain activity in the auditory cortex and salience network." <i>Scientific Reports</i>, 9(1), 7542. https://doi.org/10.1038/s41598-019-44084-8</p>
+            <p>1. Zhou, X., Wu, M. S., & Storch, E. A. (2017). Misophonia symptoms among Chinese university students: Incidence, associated impairment, and clinical correlates. <i>Journal of Obsessive-Compulsive and Related Disorders</i>.</p>
+            <p>2. Schröder, A., van Wingen, G., Eijsker, N., et al. (2019). Misophonia is associated with altered brain activity in the auditory cortex and salience network. <i>Scientific Reports</i>.</p>
           </div>
         </div>
         
@@ -265,8 +265,8 @@ export function ArticleMisophonia({ setCurrentArticle }: ArticleMisophoniaProps)
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Swedo, S. E., Baguley, D. M., Denys, D., et al. (2022). "Consensus definition of misophonia: A Delphi study." <i>Frontiers in Neuroscience</i>, 16, 841816. https://doi.org/10.3389/fnins.2022.841816</li>
-            <li>Brout, J. J., Edelstein, M., Erfanian, M., et al. (2018). "Investigating misophonia: A review of the empirical literature, clinical implications, and a research agenda." <i>Frontiers in Neuroscience</i>, 12, 36. https://doi.org/10.3389/fnins.2018.00036</li>
+            <li>Swedo, S. E., Baguley, D. M., Denys, D., et al. (2022). Consensus definition of misophonia: A Delphi study. <i>Frontiers in Neuroscience</i>.</li>
+            <li>Brout, J. J., Edelstein, M., Erfanian, M., et al. (2018). Investigating misophonia: A review of the empirical literature, clinical implications, and a research agenda. <i>Frontiers in Neuroscience</i>.</li>
           </ul>
         </div>
       </div>

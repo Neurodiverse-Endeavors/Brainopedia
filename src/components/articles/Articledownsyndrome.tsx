@@ -153,7 +153,7 @@ export function Articledownsyndrome({ setCurrentArticle }: ArticledownsyndromePr
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Down syndrome is a naturally occurring genetic variation that happens when a spontaneous event during cell division creates an extra copy of chromosome 21, with the vast majority of cases not being inherited.<sup className="text-[#10b981] font-bold ml-0.5">19</sup> This additional genetic material directly influences physical development throughout the body, particularly shaping brain structure and the resulting cognitive profile.
+            Down syndrome is a naturally occurring genetic variation that happens when a spontaneous event during cell division creates an extra copy of chromosome 21, with the vast majority of cases not being inherited.<sup className="text-[#10b981] font-bold ml-0.5">2</sup> This additional genetic material directly influences physical development throughout the body, particularly shaping brain structure and the resulting cognitive profile.
           </p>
 
           <button
@@ -178,7 +178,7 @@ export function Articledownsyndrome({ setCurrentArticle }: ArticledownsyndromePr
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            The condition can be identified before birth through prenatal screening blood tests followed by definitive diagnostic testing like amniocentesis, or immediately at birth by observable physical characteristics.<sup className="text-[#10b981] font-bold ml-0.5">25</sup> Early identification is vital as it allows families to connect rapidly with early intervention services, specialized healthcare providers, and local community support networks.
+            The condition can be identified before birth through prenatal screening blood tests followed by definitive diagnostic testing like amniocentesis, or immediately at birth by observable physical characteristics.<sup className="text-[#10b981] font-bold ml-0.5">3</sup> Early identification is vital as it allows families to connect rapidly with early intervention services, specialized healthcare providers, and local community support networks.
           </p>
 
           <button
@@ -203,7 +203,7 @@ export function Articledownsyndrome({ setCurrentArticle }: ArticledownsyndromePr
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Comprehensive support leverages their visual learning strengths through inclusive classrooms, early intervention therapies, and specialized literacy instruction.<sup className="text-[#10b981] font-bold ml-0.5">32</sup> Modern management also prioritizes rigorous preventative healthcare tailored to specific medical guidelines, competitive integrated employment, and actively advocating for supported decision-making over strict guardianship.
+            Comprehensive support leverages their visual learning strengths through inclusive classrooms, early intervention therapies, and specialized literacy instruction.<sup className="text-[#10b981] font-bold ml-0.5">4</sup> Modern management also prioritizes rigorous preventative healthcare tailored to specific medical guidelines, competitive integrated employment, and actively advocating for supported decision-making over strict guardianship.
           </p>
 
           <button
@@ -228,7 +228,7 @@ export function Articledownsyndrome({ setCurrentArticle }: ArticledownsyndromePr
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Individuals with Down syndrome lead incredibly fulfilling lives, with many adults living semi-independently, pursuing competitive careers, and forming deep romantic relationships.<sup className="text-[#10b981] font-bold ml-0.5">40</sup> The ongoing advocacy movement continues to aggressively dismantle stigmas, proving that these individuals are defined by their dreams and capabilities rather than their chromosomal count.
+            Individuals with Down syndrome lead incredibly fulfilling lives, with many adults living semi-independently, pursuing competitive careers, and forming deep romantic relationships.<sup className="text-[#10b981] font-bold ml-0.5">5</sup> The ongoing advocacy movement continues to aggressively dismantle stigmas, proving that these individuals are defined by their dreams and capabilities rather than their chromosomal count.
           </p>
 
           <button
@@ -253,10 +253,11 @@ export function Articledownsyndrome({ setCurrentArticle }: ArticledownsyndromePr
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Lejeune, J., Gautier, M., & Turpin, R. (1959). Study of somatic chromosomes from 9 mongoloid children. <i>Comptes Rendus Hebdomadaires des Seances de l'Academie des Sciences</i>. https://pubmed.ncbi.nlm.nih.gov/13639368/</p>
-            <p>2. Antonarakis, S. E., Lyle, R., Dermitzakis, E. T., Reymond, A., & Deutsch, S. (2004). Chromosome 21 and Down syndrome: From genomics to pathophysiology. <i>Nature Reviews Genetics</i>. https://doi.org/10.1038/nrg1448</p>
-            <p>3. Parker, S. E., Mai, C. T., Canfield, M. A., et al. (2010). Updated national birth prevalence estimates for selected birth defects in the United States, 2004-2006. <i>Birth Defects Research Part A: Clinical and Molecular Teratology</i>. https://doi.org/10.1002/bdra.20735</p>
-            <p>4. Mai, C. T., Isenburg, J. L., Canfield, M. A., et al. (2019). National population-based estimates for major birth defects, 2010-2014. <i>Birth Defects Research</i>. https://doi.org/10.1002/bdr2.1589</p>
+            <p>1. Lejeune, J., Gautier, M., & Turpin, R. (1959). Study of somatic chromosomes from 9 mongoloid children. <i>Comptes Rendus Hebdomadaires des Seances de l'Academie des Sciences</i>.</p>
+            <p>2. Sherman, S. L., Allen, E. G., Bean, L. H., & Freeman, S. B. (2007). Epidemiology of Down syndrome. <i>Mental Retardation and Developmental Disabilities Research Reviews</i>.</p>
+            <p>3. Bull, M. J., & Committee on Genetics. (2011). Health supervision for children with Down syndrome. <i>Pediatrics</i>.</p>
+            <p>4. Burgoyne, K., Duff, F. J., Clarke, P. J., Smith, G., Buckley, S. J., Snowling, M. J., & Hulme, C. (2012). Efficacy of a reading and language intervention for children with Down syndrome: A randomized controlled trial. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+            <p>5. Skotko, B. G., Levine, S. P., & Goldstein, R. (2011). Having a son or daughter with Down syndrome: Perspectives from mothers and fathers. <i>American Journal of Medical Genetics Part A</i>.</p>
           </div>
         </div>
         
@@ -266,8 +267,12 @@ export function Articledownsyndrome({ setCurrentArticle }: ArticledownsyndromePr
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Down, J. L. (1866). Observations on an ethnic classification of idiots. <i>London Hospital Reports</i>. https://wellcomecollection.org/works/w6k3q77k</li>
-            <li>Chapman, R. S., & Hesketh, L. J. (2000). Behavioral phenotype of individuals with Down syndrome. <i>Mental Retardation and Developmental Disabilities Research Reviews</i>. https://doi.org/10.1002/1098-2779(2000)6:2&lt;84::AID-MRDD2&gt;3.0.CO;2-P</li>
+            <li>Antonarakis, S. E., Lyle, R., Dermitzakis, E. T., Reymond, A., & Deutsch, S. (2004). Chromosome 21 and Down syndrome: From genomics to pathophysiology. <i>Nature Reviews Genetics</i>.</li>
+            <li>Chapman, R. S., & Hesketh, L. J. (2000). Behavioral phenotype of individuals with Down syndrome. <i>Mental Retardation and Developmental Disabilities Research Reviews</i>.</li>
+            <li>Down, J. L. (1866). Observations on an ethnic classification of idiots. <i>London Hospital Reports</i>.</li>
+            <li>Mai, C. T., Isenburg, J. L., Canfield, M. A., et al. (2019). National population-based estimates for major birth defects, 2010-2014. <i>Birth Defects Research</i>.</li>
+            <li>National Down Syndrome Society (NDSS). (n.d.). <i>Down syndrome fact sheet</i>.</li>
+            <li>Parker, S. E., Mai, C. T., Canfield, M. A., et al. (2010). Updated national birth prevalence estimates for selected birth defects in the United States, 2004-2006. <i>Birth Defects Research Part A: Clinical and Molecular Teratology</i>.</li>
           </ul>
         </div>
       </div>

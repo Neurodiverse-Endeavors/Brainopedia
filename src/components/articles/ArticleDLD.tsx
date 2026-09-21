@@ -252,10 +252,10 @@ export function ArticleDLD({ setCurrentArticle }: ArticleDLDProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Tomblin, J. B., Records, N. L., Buckwalter, P., Zhang, X., Smith, E., & O'Brien, M. (1997). "Prevalence of specific language impairment in kindergarten children." <i>Journal of Speech, Language, and Hearing Research</i>, 40(6), 1245-1260.</p>
-            <p>2. Norbury, C. F., Gooch, D., Wray, C., et al. (2016). "The impact of nonverbal ability on prevalence and clinical presentation of language disorder: Evidence from a population study." <i>Journal of Child Psychology and Psychiatry</i>, 57(11), 1247-1257.</p>
+            <p>1. Tomblin, J. B., Records, N. L., Buckwalter, P., Zhang, X., Smith, E., & O'Brien, M. (1997). Prevalence of specific language impairment in kindergarten children. <i>Journal of Speech, Language, and Hearing Research</i>.</p>
+            <p>2. Norbury, C. F., Gooch, D., Wray, C., et al. (2016). The impact of nonverbal ability on prevalence and clinical presentation of language disorder: Evidence from a population study. <i>Journal of Child Psychology and Psychiatry</i>.</p>
             <p>3. Leonard, L. B. (2014). <i>Children with specific language impairment</i> (2nd ed.). MIT Press.</p>
-            <p>4. Badcock, N. A., Bishop, D. V. M., Hardiman, M. J., Barry, J. G., & Watkins, K. E. (2012). "Co-localisation of abnormal brain structure and function in specific language impairment." <i>Brain and Language</i>, 120(3), 310-320.</p>
+            <p>4. Badcock, N. A., Bishop, D. V. M., Hardiman, M. J., Barry, J. G., & Watkins, K. E. (2012). Co-localisation of abnormal brain structure and function in specific language impairment. <i>Brain and Language</i>.</p>
           </div>
         </div>
 
@@ -265,8 +265,8 @@ export function ArticleDLD({ setCurrentArticle }: ArticleDLDProps) {
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE Consortium. (2016). "CATALISE: A multinational and multidisciplinary Delphi consensus study. Identifying language impairments in children." <i>PLOS ONE</i>, 11(7), e0158753.</p>
-            <p>Ebbels, S. H., McCartney, E., Slonims, V., Dockrell, J. E., & Norbury, C. F. (2019). "Evidence-based pathways to intervention for children with language disorders." <i>International Journal of Language & Communication Disorders</i>, 54(1), 3-19.</p>
+            <p>Bishop, D. V. M., Snowling, M. J., Thompson, P. A., Greenhalgh, T., & CATALISE Consortium. (2016). CATALISE: A multinational and multidisciplinary Delphi consensus study. Identifying language impairments in children. <i>PLOS ONE</i>.</p>
+            <p>Ebbels, S. H., McCartney, E., Slonims, V., Dockrell, J. E., & Norbury, C. F. (2019). Evidence-based pathways to intervention for children with language disorders. <i>International Journal of Language & Communication Disorders</i>.</p>
             <p>Paul, R., & Norbury, C. F. (2012). <i>Language disorders from infancy through adolescence: Listening, speaking, reading, writing, and communicating</i> (4th ed.). Elsevier.</p>
           </div>
         </div>

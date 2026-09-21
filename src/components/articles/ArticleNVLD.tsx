@@ -253,8 +253,8 @@ export function ArticleNVLD({ setCurrentArticle }: ArticleNVLDProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Pelletier, P. M., Ahmad, S. A., & Rourke, B. P. (2001). "Classification rules for basic phonological processing disabilities and nonverbal learning disabilities: Formulation and external validity." <i>Child Neuropsychology</i>, 7(2), 84-98.</p>
-            <p>2. Rourke, B. P. (1989). <i>Nonverbal Learning Disabilities: The Syndrome and the Model</i>. Guilford Press.</p>
+            <p>1. Pelletier, P. M., Ahmad, S. A., & Rourke, B. P. (2001). Classification rules for basic phonological processing disabilities and nonverbal learning disabilities: Formulation and external validity. <i>Child Neuropsychology</i>.</p>
+            <p>2. Rourke, B. P. (1989). <i>Nonverbal learning disabilities: The syndrome and the model</i>. Guilford Press.</p>
           </div>
         </div>
 
@@ -265,8 +265,8 @@ export function ArticleNVLD({ setCurrentArticle }: ArticleNVLDProps) {
           </h4>
           <ul className="list-none text-xs space-y-4 text-slate-700 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>Davis, J. M., & Broitman, J. (2011). <i>Nonverbal learning disabilities in children: Bridging the gap between science and practice</i>. Springer Science & Business Media.</li>
-            <li>Fine, J. G., Semrud-Clikeman, M., Bledsoe, J. C., & Musielak, K. A. (2013). "A critical review of the literature on NLD as a developmental disorder." <i>Child Neuropsychology</i>, 19(2), 190-223.</li>
-            <li>Semrud-Clikeman, M., & Hynd, G. W. (1990). "Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children." <i>Psychological Bulletin</i>, 107(2), 196-209.</li>
+            <li>Fine, J. G., Semrud-Clikeman, M., Bledsoe, J. C., & Musielak, K. A. (2013). A critical review of the literature on NLD as a developmental disorder. <i>Child Neuropsychology</i>.</li>
+            <li>Semrud-Clikeman, M., & Hynd, G. W. (1990). Right hemispheric dysfunction in nonverbal learning disabilities: Social, academic, and adaptive functioning in adults and children. <i>Psychological Bulletin</i>.</li>
           </ul>
         </div>
       </div>

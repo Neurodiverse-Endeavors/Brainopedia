@@ -103,7 +103,7 @@ export function ArticleFASD({ setCurrentArticle }: ArticleFASDProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Fetal Alcohol Spectrum Disorder (FASD) is a permanent brain-based physical disability caused by prenatal alcohol exposure, affecting an estimated 2-5% of the population.<sup className="text-[#10b981] font-bold ml-0.5">1</sup> While the neurological damage is lifelong, individuals with FASD can absolutely thrive with early diagnosis, highly protective environments, and neurodiversity-affirming approaches.
+            Fetal Alcohol Spectrum Disorder (FASD) is a permanent brain-based physical disability caused by prenatal alcohol exposure, affecting an estimated 2-5% of the population.<sup className="text-[#10b981] font-bold ml-0.5">2</sup> While the neurological damage is lifelong, individuals with FASD can absolutely thrive with early diagnosis, highly protective environments, and neurodiversity-affirming approaches.
           </p>
 
           <button
@@ -128,7 +128,7 @@ export function ArticleFASD({ setCurrentArticle }: ArticleFASDProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            FASD frequently manifests as severe executive functioning challenges, including poor impulse control, difficulty learning from consequences, and significant memory inconsistencies.<sup className="text-[#10b981] font-bold ml-0.5">2</sup> Because many individuals lack the classic facial features and are highly outgoing, it is frequently misdiagnosed as an "invisible disability" or mistaken for isolated ADHD.
+            FASD frequently manifests as severe executive functioning challenges, including poor impulse control, difficulty learning from consequences, and significant memory inconsistencies.<sup className="text-[#10b981] font-bold ml-0.5">3</sup> Because many individuals lack the classic facial features and are highly outgoing, it is frequently misdiagnosed as an "invisible disability" or mistaken for isolated ADHD.
           </p>
 
           <button
@@ -153,7 +153,7 @@ export function ArticleFASD({ setCurrentArticle }: ArticleFASDProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            FASD is exclusively caused by prenatal alcohol exposure acting as a teratogen, aggressively interfering with cell development and neural organization in the developing fetus. This exposure causes permanent changes to brain structure and pathways, directly resulting in the functional impairments that clinically define the condition.
+            FASD is exclusively caused by prenatal alcohol exposure acting as a teratogen, aggressively interfering with cell development and neural organization in the developing fetus.<sup className="text-[#10b981] font-bold ml-0.5">4</sup> This exposure causes permanent changes to brain structure and pathways, directly resulting in the functional impairments that clinically define the condition.
           </p>
 
           <button
@@ -203,7 +203,7 @@ export function ArticleFASD({ setCurrentArticle }: ArticleFASDProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            FASD requires a neurodevelopmental approach that recognizes brain-based differences rather than punishing behaviors as willful or oppositional.<sup className="text-[#10b981] font-bold ml-0.5">36</sup> Crucial environmental modifications include utilizing highly concrete instructions with visual supports, maintaining incredibly stable home environments, and securing supported employment with robust job coaching.
+            FASD requires a neurodevelopmental approach that recognizes brain-based differences rather than punishing behaviors as willful or oppositional.<sup className="text-[#10b981] font-bold ml-0.5">5</sup> Crucial environmental modifications include utilizing highly concrete instructions with visual supports, maintaining incredibly stable home environments, and securing supported employment with robust job coaching.
           </p>
 
           <button
@@ -228,7 +228,7 @@ export function ArticleFASD({ setCurrentArticle }: ArticleFASDProps) {
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Individuals with FASD lead deeply fulfilling lives when their unique neurocognitive profile is properly understood and fully supported.<sup className="text-[#10b981] font-bold ml-0.5">42</sup> The key to lifelong success is treating FASD as a permanent physical disability requiring developmentally appropriate accommodations rather than expecting the individual to simply outgrow their neurological symptoms.
+            Individuals with FASD lead deeply fulfilling lives when their unique neurocognitive profile is properly understood and fully supported.<sup className="text-[#10b981] font-bold ml-0.5">6</sup> The key to lifelong success is treating FASD as a permanent physical disability requiring developmentally appropriate accommodations rather than expecting the individual to simply outgrow their neurological symptoms.
           </p>
 
           <button
@@ -253,10 +253,12 @@ export function ArticleFASD({ setCurrentArticle }: ArticleFASDProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Jones, K. L., & Smith, D. W. (1973). Recognition of the fetal alcohol syndrome in early infancy. <i>The Lancet</i>. https://doi.org/10.1016/S0140-6736(73)91092-1</p>
-            <p>2. Hoyme, H. E., Kalberg, W. O., Elliott, A. J., et al. (2016). Updated clinical guidelines for diagnosing fetal alcohol spectrum disorders. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2015-4256</p>
-            <p>3. May, P. A., Chambers, C. D., Kalberg, W. O., et al. (2018). Prevalence of fetal alcohol spectrum disorders in 4 US communities. <i>JAMA</i>. https://doi.org/10.1001/jama.2017.21896</p>
-            <p>4. May, P. A., Baete, A., Russo, J., et al. (2014). Prevalence and characteristics of fetal alcohol spectrum disorders. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2013-3319</p>
+            <p>1. Jones, K. L., & Smith, D. W. (1973). Recognition of the fetal alcohol syndrome in early infancy. <i>The Lancet</i>.</p>
+            <p>2. May, P. A., Chambers, C. D., Kalberg, W. O., et al. (2018). Prevalence of fetal alcohol spectrum disorders in 4 US communities. <i>JAMA</i>.</p>
+            <p>3. Mattson, S. N., Crocker, N., & Nguyen, T. T. (2011). Fetal alcohol spectrum disorders: Neuropsychological and behavioral features. <i>Neuropsychology Review</i>.</p>
+            <p>4. Riley, E. P., Infante, M. A., & Warren, K. R. (2011). Fetal alcohol spectrum disorders: An overview. <i>Neuropsychology Review</i>.</p>
+            <p>5. Petrenko, C. L. M. (2015). Positive behavioral interventions and family support for fetal alcohol spectrum disorders. <i>Current Developmental Disorders Reports</i>.</p>
+            <p>6. Streissguth, A. P., Bookstein, F. L., Barr, H. M., et al. (2004). Risk factors for adverse life outcomes in fetal alcohol syndrome and fetal alcohol effects. <i>Journal of Developmental and Behavioral Pediatrics</i>.</p>
           </div>
         </div>
         
@@ -266,8 +268,10 @@ export function ArticleFASD({ setCurrentArticle }: ArticleFASDProps) {
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Burd, L., Roberts, D., Olson, M., & Odendaal, H. (2007). Ethanol and the placenta: A review. <i>The Journal of Maternal-Fetal & Neonatal Medicine</i>. https://doi.org/10.1080/14767050701298365</li>
-            <li>American Academy of Pediatrics. (2015). Fetal alcohol spectrum disorders. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2015-3113</li>
+            <li>Burd, L., Roberts, D., Olson, M., & Odendaal, H. (2007). Ethanol and the placenta: A review. <i>The Journal of Maternal-Fetal & Neonatal Medicine</i>.</li>
+            <li>American Academy of Pediatrics. (2015). Fetal alcohol spectrum disorders. <i>Pediatrics</i>.</li>
+            <li>Chudley, A. E., Conry, J., Cook, J. L., et al. (2005). Fetal alcohol spectrum disorder: Canadian guidelines for diagnosis. <i>CMAJ</i>.</li>
+            <li>Hoyme, H. E., Kalberg, W. O., Elliott, A. J., et al. (2016). Updated clinical guidelines for diagnosing fetal alcohol spectrum disorders. <i>Pediatrics</i>.</li>
           </ul>
         </div>
       </div>

@@ -103,7 +103,7 @@ export function ArticleIntellectualDisability({ setCurrentArticle }: ArticleInte
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Intellectual disability affects approximately 1-3% of the global population and represents a highly diverse spectrum of cognitive functioning.<sup className="text-[#10b981] font-bold ml-0.5">3</sup> With appropriate person-centered supports and environmental accommodations, individuals with ID lead fulfilling, self-determined lives and contribute meaningfully to their communities.
+            Intellectual disability affects approximately 1-3% of the global population and represents a highly diverse spectrum of cognitive functioning.<sup className="text-[#10b981] font-bold ml-0.5">2</sup> With appropriate person-centered supports and environmental accommodations, individuals with ID lead fulfilling, self-determined lives and contribute meaningfully to their communities.
           </p>
           
           <button
@@ -128,7 +128,7 @@ export function ArticleIntellectualDisability({ setCurrentArticle }: ArticleInte
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            ID affects conceptual, social, and practical adaptive skills, with support needs ranging from intermittent assistance to pervasive 24-hour care.<sup className="text-[#10b981] font-bold ml-0.5">9</sup> Alongside these challenges, individuals frequently possess profound strengths in emotional intuition, deep loyalty in relationships, and highly authentic social interactions.
+            ID affects conceptual, social, and practical adaptive skills, with support needs ranging from intermittent assistance to pervasive 24-hour care.<sup className="text-[#10b981] font-bold ml-0.5">3</sup> Alongside these challenges, individuals frequently possess profound strengths in emotional intuition, deep loyalty in relationships, and highly authentic social interactions.
           </p>
 
           <button
@@ -153,7 +153,7 @@ export function ArticleIntellectualDisability({ setCurrentArticle }: ArticleInte
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            ID stems from diverse factors that disrupt early brain development, including genetic variations like Down syndrome or environmental factors such as prenatal complications.<sup className="text-[#10b981] font-bold ml-0.5">6</sup> While medical evaluations can identify many genetic or structural origins, the specific cause remains unidentified in up to 40% of cases, highlighting the immense complexity of neurological development.
+            ID stems from diverse factors that disrupt early brain development, including genetic variations like Down syndrome or environmental factors such as prenatal complications. While medical evaluations can identify many genetic or structural origins, the specific cause remains unidentified in up to 40% of cases, highlighting the immense complexity of neurological development.<sup className="text-[#10b981] font-bold ml-0.5">4</sup>
           </p>
 
           <button
@@ -178,7 +178,7 @@ export function ArticleIntellectualDisability({ setCurrentArticle }: ArticleInte
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Diagnosis is conducted by developmental specialists through comprehensive evaluations measuring both intellectual ability and adaptive functioning.<sup className="text-[#10b981] font-bold ml-0.5">23</sup> Modern diagnostic practices focus actively on identifying the individual's unique strengths rather than just deficits, ensuring they receive the most empowering and appropriate structural supports.
+            Diagnosis is conducted by developmental specialists through comprehensive evaluations measuring both intellectual ability and adaptive functioning.<sup className="text-[#10b981] font-bold ml-0.5">5</sup> Modern diagnostic practices focus actively on identifying the individual's unique strengths rather than just deficits, ensuring they receive the most empowering and appropriate structural supports.
           </p>
 
           <button
@@ -203,7 +203,7 @@ export function ArticleIntellectualDisability({ setCurrentArticle }: ArticleInte
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Effective management prioritizes inclusion and self-determination through Individualized Education Programs (IEPs), functional life skills training, and supported employment initiatives.<sup className="text-[#10b981] font-bold ml-0.5">29</sup> Strong self-advocacy support is critical, actively promoting supported decision-making over strict guardianship to protect the individual's civil rights and personal autonomy.
+            Effective management prioritizes inclusion and self-determination through Individualized Education Programs (IEPs), functional life skills training, and supported employment initiatives. Strong self-advocacy support is critical, actively promoting supported decision-making over strict guardianship to protect the individual's civil rights and personal autonomy.<sup className="text-[#10b981] font-bold ml-0.5">6</sup>
           </p>
 
           <button
@@ -228,7 +228,7 @@ export function ArticleIntellectualDisability({ setCurrentArticle }: ArticleInte
           />
           
           <p className="mb-4 text-slate-700 leading-relaxed text-sm">
-            Individuals with intellectual disabilities lead highly meaningful lives across all areas of society when provided with appropriate structural inclusion.<sup className="text-[#10b981] font-bold ml-0.5">38</sup> Led by self-advocates, the global movement continues to aggressively advance workplace inclusion, personal rights, and the unconditional recognition of full personhood for the ID community.
+            Individuals with intellectual disabilities lead highly meaningful lives across all areas of society when provided with appropriate structural inclusion.<sup className="text-[#10b981] font-bold ml-0.5">7</sup> Led by self-advocates, the global movement continues to aggressively advance workplace inclusion, personal rights, and the unconditional recognition of full personhood for the ID community.
           </p>
 
           <button
@@ -253,9 +253,13 @@ export function ArticleIntellectualDisability({ setCurrentArticle }: ArticleInte
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425596</p>
-            <p>2. Schalock, R. L., Borthwick-Duffy, S. A., Bradley, V. J., et al. (2010). <i>Intellectual disability: Definition, classification, and systems of supports</i> (11th ed.). American Association on Intellectual and Developmental Disabilities. https://www.aaidd.org/publications/bookstore-tags/product/intellectual-disability-definition-classification-and-systems-of-supports-11th-edition</p>
-            <p>3. Maulik, P. K., Mascarenhas, M. N., Mathers, C. D., Dua, T., & Saxena, S. (2011). Prevalence of intellectual disability: A meta-analysis of population-based studies. <i>Research in Developmental Disabilities</i>. https://doi.org/10.1016/j.ridd.2010.12.018</p>
+            <p>1. American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</p>
+            <p>2. Maulik, P. K., Mascarenhas, M. N., Mathers, C. D., Dua, T., & Saxena, S. (2011). Prevalence of intellectual disability: A meta-analysis of population-based studies. <i>Research in Developmental Disabilities</i>.</p>
+            <p>3. Schalock, R. L., Borthwick-Duffy, S. A., Bradley, V. J., et al. (2010). <i>Intellectual disability: Definition, classification, and systems of supports</i> (11th ed.). American Association on Intellectual and Developmental Disabilities.</p>
+            <p>4. Daily, D. K., Ardinger, H. H., & Holmes, G. E. (2000). Identification and evaluation of mental retardation. <i>American Family Physician</i>.</p>
+            <p>5. Tassé, M. J., Schalock, R. L., Balboni, G., et al. (2012). The construct of adaptive behavior: Its conceptualization, measurement, and use in the field of intellectual disability. <i>American Journal on Intellectual and Developmental Disabilities</i>.</p>
+            <p>6. Wehmeyer, M. L., & Abery, B. H. (2013). Self-determination and choice. <i>Intellectual and Developmental Disabilities</i>.</p>
+            <p>7. Shakespeare, T. (2006). The social model of disability. In L. J. Davis (Ed.), <i>The disability studies reader</i> (2nd ed.). Routledge.</p>
           </div>
         </div>
         
@@ -265,8 +269,8 @@ export function ArticleIntellectualDisability({ setCurrentArticle }: ArticleInte
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Schalock, R. L., Luckasson, R. A., & Shogren, K. A. (2007). The renaming of mental retardation: Understanding the change to the term intellectual disability. <i>Intellectual and Developmental Disabilities</i>. https://doi.org/10.1352/1934-9556(2007)45[116:TROMRU]2.0.CO;2</li>
-            <li>Shakespeare, T. (2006). The social model of disability. In L. J. Davis (Ed.), <i>The disability studies reader</i> (2nd ed.). Routledge. https://doi.org/10.4324/9780203955031</li>
+            <li>Schalock, R. L., Luckasson, R. A., & Shogren, K. A. (2007). The renaming of mental retardation: Understanding the change to the term intellectual disability. <i>Intellectual and Developmental Disabilities</i>.</li>
+            <li>World Health Organization. (2019). <i>International statistical classification of diseases and related health problems</i> (11th ed.). World Health Organization.</li>
           </ul>
         </div>
       </div>

@@ -252,8 +252,8 @@ export function ArticleDyspraxia({ setCurrentArticle }: ArticleDyspraxiaProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Lingam, R., Hunt, L., Golding, J., Jongmans, M., & Emond, A. (2009). "Prevalence of developmental coordination disorder using the DSM-IV at 7 years of age: A UK population-based study." <i>Pediatrics</i>. [INSERT DOI/URL HERE]</p>
-            <p>2. Zwicker, J. G., Missiuna, C., Harris, S. R., & Boyd, L. A. (2011). "Brain activation of children with developmental coordination disorder is different than peers." <i>Pediatrics</i>. [INSERT DOI/URL HERE]</p>
+            <p>1. Lingam, R., Hunt, L., Golding, J., Jongmans, M., & Emond, A. (2009). Prevalence of developmental coordination disorder using the DSM-IV at 7 years of age: A UK population-based study. <i>Pediatrics</i>.</p>
+            <p>2. Zwicker, J. G., Missiuna, C., Harris, S. R., & Boyd, L. A. (2011). Brain activation of children with developmental coordination disorder is different than peers. <i>Pediatrics</i>.</p>
           </div>
         </div>
         
@@ -264,7 +264,7 @@ export function ArticleDyspraxia({ setCurrentArticle }: ArticleDyspraxiaProps) {
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</li>
-            <li>Blank, R., Barnett, A. L., Cairney, J., et al. (2019). "International clinical practice recommendations on the definition, diagnosis, assessment, intervention, and psychosocial aspects of developmental coordination disorder." <i>Developmental Medicine & Child Neurology</i>. [INSERT DOI/URL HERE]</li>
+            <li>Blank, R., Barnett, A. L., Cairney, J., et al. (2019). International clinical practice recommendations on the definition, diagnosis, assessment, intervention, and psychosocial aspects of developmental coordination disorder. <i>Developmental Medicine & Child Neurology</i>.</li>
           </ul>
         </div>
       </div>

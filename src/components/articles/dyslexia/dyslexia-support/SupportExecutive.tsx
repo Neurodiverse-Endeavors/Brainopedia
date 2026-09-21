@@ -331,9 +331,8 @@ export function SupportExecutive({ setCurrentArticle }: SupportExecutiveProps) {
           </div>
 
           {/* REFERENCES SECTION */}
-          <div className="clear-both"></div>
-          
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+                    
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
             
             {/* CITED STUDIES: GREEN */}
@@ -342,10 +341,10 @@ export function SupportExecutive({ setCurrentArticle }: SupportExecutiveProps) {
                 Cited Studies & Statistics
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>1. Reiter, A., et al. (2005). "Executive functions in children with dyslexia." <i>Dyslexia</i>. https://doi.org/10.1002/dys.289</p>
-                <p>2. Hughes, C. A., & Suritsky, S. K. (1994). "Note-taking skills of university students with and without learning disabilities." <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949402700104</p>
-                <p>3. Gureasko-Moore, S., et al. (2007). "Self-management of classroom preparedness and homework." <i>School Psychology Review</i>. https://doi.org/10.1080/02796015.2007.12087923</p>
-                <p>4. Barkley, R. A. (1997). "Behavioral inhibition, sustained attention, and executive functions: constructing a unifying theory of ADHD." <i>Psychological Bulletin</i>. https://doi.org/10.1037/0033-2909.121.1.65</p>
+                <p>1. Reiter, A., et al. (2005). Executive functions in children with dyslexia. <i>Dyslexia</i>. </p>
+                <p>2. Hughes, C. A., & Suritsky, S. K. (1994). Note-taking skills of university students with and without learning disabilities. <i>Journal of Learning Disabilities</i>. </p>
+                <p>3. Gureasko-Moore, S., et al. (2007). Self-management of classroom preparedness and homework. <i>School Psychology Review</i>. </p>
+                <p>4. Barkley, R. A. (1997). Behavioral inhibition, sustained attention, and executive functions: constructing a unifying theory of ADHD. <i>Psychological Bulletin</i>. </p>
               </div>
             </div>
 
@@ -355,8 +354,8 @@ export function SupportExecutive({ setCurrentArticle }: SupportExecutiveProps) {
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Dawson, P., & Guare, R. (2010). <i>Executive skills in children and adolescents: A practical guide to assessment and intervention</i>. Guilford Press. https://www.guilford.com/books/Executive-Skills-in-Children-and-Adolescents/Dawson-Guare/9781462535316</p>
-                <p>Novak, J. D., & Gowin, D. B. (1984). <i>Learning how to learn</i>. Cambridge University Press. https://doi.org/10.1017/CBO9781139173469</p>
+                <p>Dawson, P., & Guare, R. (2010). <i>Executive skills in children and adolescents: A practical guide to assessment and intervention</i>. Guilford Press. </p>
+                <p>Novak, J. D., & Gowin, D. B. (1984). <i>Learning how to learn</i>. Cambridge University Press. </p>
                 <p>Robinson, F. P. (1970). <i>Effective study</i>. Harper & Row.</p>
               </div>
             </div>

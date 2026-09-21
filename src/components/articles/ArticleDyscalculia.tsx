@@ -260,8 +260,8 @@ export function ArticleDyscalculia({ setCurrentArticle }: ArticleDyscalculiaProp
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Gross-Tsur, V., Manor, O., & Shalev, R. S. (1996). "Developmental dyscalculia: Prevalence and demographic features." <i>Developmental Medicine & Child Neurology</i>, 38(1), 25-33. https://doi.org/10.1111/j.1469-8749.1996.tb15029.x</p>
-            <p>2. Butterworth, B., Varma, S., & Laurillard, D. (2011). "Dyscalculia: From brain to education." <i>Science</i>, 332(6033), 1049-1053. https://doi.org/10.1126/science.1193609</p>
+            <p>1. Gross-Tsur, V., Manor, O., & Shalev, R. S. (1996). Developmental dyscalculia: Prevalence and demographic features. <i>Developmental Medicine & Child Neurology</i>.</p>
+            <p>2. Butterworth, B., Varma, S., & Laurillard, D. (2011). Dyscalculia: From brain to education. <i>Science</i>.</p>
           </div>
         </div>
 
@@ -272,9 +272,9 @@ export function ArticleDyscalculia({ setCurrentArticle }: ArticleDyscalculiaProp
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
             <p>Dehaene, S. (1997). <i>The Number Sense: How the Mind Creates Mathematics</i>. Oxford University Press.</p>
-            <p>Geary, D. C. (2004). "Mathematics and learning disabilities." <i>Journal of Learning Disabilities</i>, 37(1), 4-15. https://doi.org/10.1177/00222194040370010201</p>
-            <p>Kaufmann, L., & von Aster, M. (2012). "The diagnosis and management of dyscalculia." <i>Deutsches Ärzteblatt International</i>, 109(45), 767-778. https://doi.org/10.3238/arztebl.2012.0767</p>
-            <p>Shalev, R. S. (2004). "Developmental dyscalculia." <i>Journal of Child Neurology</i>, 19(10), 765-771. https://doi.org/10.1177/08830738040190100601</p>
+            <p>Geary, D. C. (2004). Mathematics and learning disabilities. <i>Journal of Learning Disabilities</i>.</p>
+            <p>Kaufmann, L., & von Aster, M. (2012). The diagnosis and management of dyscalculia. <i>Deutsches Ärzteblatt International</i>.</p>
+            <p>Shalev, R. S. (2004). Developmental dyscalculia. <i>Journal of Child Neurology</i>.</p>
           </div>
         </div>
       </div>

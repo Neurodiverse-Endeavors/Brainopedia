@@ -398,34 +398,23 @@ export function SupportHome({ setCurrentArticle }: SupportHomeProps) {
           </div>
 
           {/* REFERENCES SECTION */}
-          <div className="clear-both"></div>
-          
-          <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
+
+          <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold font-spartan mb-5 text-xl text-[#0c264d]">References</h3>
             
-            {/* Empty Cited Studies Section left as a structural placeholder per standard */}
-            <div className="mb-6">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-[#10b981] mb-3 border-b-2 border-[#10b981] pb-2">
-                Cited Studies & Statistics
-              </h4>
-              <div className="text-xs space-y-4 text-slate-700 leading-relaxed italic" style={{ textIndent: 0 }}>
-                <p>No explicit statistical claims or empirical studies directly cited in the text of this section.</p>
-              </div>
-            </div>
-
             {/* BACKGROUND SOURCES: CYAN */}
             <div>
               <h4 className="font-bold text-sm uppercase tracking-wider text-[#2abcd4] mb-3 border-b-2 border-[#2abcd4] pb-2">
                 Background Sources
               </h4>
               <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-                <p>Aronson, A. G. (2010). "New perspectives on reading intervention through audiobook technology." <i>Reading Psychology</i>. https://doi.org/10.1080/02702711.2010.505166</p>
-                <p>Bus, A. G., et al. (1995). "Joint book reading makes for success in learning to read: A meta-analysis on intergenerational transmission of literacy." <i>Review of Educational Research</i>. https://doi.org/10.3102/00346543065001001</p>
-                <p>Cooper, H., et al. (2006). "Does homework improve academic achievement? A synthesis of research, 1987–2003." <i>Review of Educational Research</i>. https://doi.org/10.3102/00346543076001001</p>
-                <p>Epstein, J. L. (2001). <i>School, family, and community partnerships: Preparing educators and improving schools</i>. Westview Press. https://www.routledge.com/</p>
-                <p>Epstein, J. L., & Van Voorhis, F. L. (2001). "More than minutes: Teachers' roles in designing homework." <i>Educational Psychologist</i>. https://doi.org/10.1207/S15326985EP3603_4</p>
-                <p>Garriott, P. P., et al. (2000). "Teachers as parents, parents as children: What's wrong with this picture?" <i>Preventing School Failure</i>. https://doi.org/10.1080/10459880009599806</p>
-                <p>Guthrie, J. T., & Humenick, N. M. (2004). "Motivating students to read: Evidence for classroom practices that increase reading motivation and achievement." In <i>The voice of evidence in reading research</i>. Paul H. Brookes. https://brookespublishing.com/product/the-voice-of-evidence-in-reading-research/</p>
+                <p>Aronson, A. G. (2010). New perspectives on reading intervention through audiobook technology. <i>Reading Psychology</i>. </p>
+                <p>Bus, A. G., et al. (1995). Joint book reading makes for success in learning to read: A meta-analysis on intergenerational transmission of literacy. <i>Review of Educational Research</i>. </p>
+                <p>Cooper, H., et al. (2006). Does homework improve academic achievement? A synthesis of research, 1987–2003. <i>Review of Educational Research</i>. </p>
+                <p>Epstein, J. L. (2001). School, family, and community partnerships: Preparing educators and improving schools. Westview Press. </p>
+                <p>Epstein, J. L., & Van Voorhis, F. L. (2001). More than minutes: Teachers' roles in designing homework. <i>Educational Psychologist</i>. </p>
+                <p>Garriott, P. P., et al. (2000). Teachers as parents, parents as children: What's wrong with this picture? <i>Preventing School Failure</i>. </p>
+                <p>Guthrie, J. T., & Humenick, N. M. (2004). Motivating students to read: Evidence for classroom practices that increase reading motivation and achievement. In <i>The voice of evidence in reading research</i>. Paul H. Brookes.</p>
               </div>
             </div>
           </div>

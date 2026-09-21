@@ -251,11 +251,11 @@ export function ArticleDyslexia({ setCurrentArticle }: ArticleDyslexiaProps) {
           Cited Studies & Statistics
         </h4>
         <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-          <p>1. Shaywitz, S. E. (1998). "Dyslexia." <i>New England Journal of Medicine</i>. https://doi.org/10.1056/NEJM199801293380507</p>
-          <p>2. Norton, E. S., Beach, S. D., & Gabrieli, J. D. (2015). "Neurobiology of dyslexia." <i>Current Opinion in Neurobiology</i>. https://doi.org/10.1016/j.conb.2014.09.007</p>
-          <p>3. Peterson, R. L., & Pennington, B. F. (2015). "Developmental dyslexia." <i>The Lancet</i>. https://doi.org/10.1016/S0140-6736(12)60198-6</p>
-          <p>4. Shaywitz, B. A., Shaywitz, S. E., Pugh, K. R., et al. (2002). "Disruption of system for reading in dyslexic children." <i>Biological Psychiatry</i>. https://doi.org/10.1016/S0006-3223(02)01365-3</p>
-          <p>5. Moats, L. C. (2020). "Speech to print: Language essentials for teachers." <i>Paul H. Brookes Publishing Co</i>.</p>
+          <p>1. Shaywitz, S. E. (1998). Dyslexia. <i>New England Journal of Medicine</i>.</p>
+          <p>2. Norton, E. S., Beach, S. D., & Gabrieli, J. D. (2015). Neurobiology of dyslexia. <i>Current Opinion in Neurobiology</i>.</p>
+          <p>3. Peterson, R. L., & Pennington, B. F. (2015). Developmental dyslexia. <i>The Lancet</i>.</p>
+          <p>4. Shaywitz, B. A., Shaywitz, S. E., Pugh, K. R., et al. (2002). Disruption of system for reading in dyslexic children. <i>Biological Psychiatry</i>.</p>
+          <p>5. Moats, L. C. (2020). <i>Speech to print: Language essentials for teachers</i>. Paul H. Brookes Publishing Co.</p>
         </div>
       </div>
 
@@ -266,7 +266,7 @@ export function ArticleDyslexia({ setCurrentArticle }: ArticleDyslexiaProps) {
         </h4>
         <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
           <li>Eide, B. L., & Eide, F. F. (2011). <i>The Dyslexic Advantage: Unlocking the Hidden Potential of the Dyslexic Brain</i>. Hudson Street Press.</li>
-          <li>International Dyslexia Association. (2002). "Definition of Dyslexia." https://dyslexiaida.org/definition-of-dyslexia/</li>
+          <li>International Dyslexia Association. (2002). Definition of Dyslexia.</li>
           <li>Wolf, M. (2007). <i>Proust and the Squid: The Story and Science of the Reading Brain</i>. Harper Perennial.</li>
         </ul>
       </div>
