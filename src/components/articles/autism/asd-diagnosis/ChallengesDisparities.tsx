@@ -9,9 +9,11 @@ interface ChallengesDisparitiesProps {
 /* ─── MAIN COMPONENT ─── */
 export function ChallengesDisparities({ setCurrentArticle }: ChallengesDisparitiesProps) {
   return (
-    
-    <div className="bg-[#f0f9ff] p-6 rounded-lg">
-      <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Diagnostic Challenges & Disparities</h2>
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
+      
+      <div className="bg-[#f0f9ff] p-6 rounded-lg">
+        <h2 className="text-[#0c264d] font-bold text-2xl">Diagnostic Challenges & Disparities</h2>
+      </div>
       
       {/* Gender Differences */}
       <div className="bg-white p-5 rounded-md border-l-4 border-[#0c264d] shadow-sm mb-6">
@@ -22,7 +24,7 @@ export function ChallengesDisparities({ setCurrentArticle }: ChallengesDispariti
         
         <div className="bg-[#ffd166] border-l-4 border-[#0c264d] p-3 rounded mb-4">
           <p className="text-sm">
-            <strong>The Ratio:</strong> Approximately 3-4 males are diagnosed for every 1 female.<sup className="text-green-600 font-bold ml-0.5">1</sup> 
+            <strong>The Ratio:</strong> Approximately 3-4 males are diagnosed for every 1 female.<sup>1</sup> 
             However, this likely reflects diagnostic bias rather than true prevalence differences.
           </p>
         </div>
@@ -35,7 +37,7 @@ export function ChallengesDisparities({ setCurrentArticle }: ChallengesDispariti
             </div>
             <div className="text-sm">
               Girls and women often mask or camouflage autistic traits more effectively than boys, leading to missed 
-              or delayed diagnosis.<sup className="text-green-600 font-bold ml-0.5">2</sup> This masking is exhausting and can lead to burnout, anxiety, 
+              or delayed diagnosis.<sup>2</sup> This masking is exhausting and can lead to burnout, anxiety, 
               and depression.
             </div>
           </div>
@@ -69,19 +71,17 @@ export function ChallengesDisparities({ setCurrentArticle }: ChallengesDispariti
           </div>
         </div>
       </div>
-        {/* --- CENTERED GRAPHIC SECTION --- */} 
-        <div className="text-center w-full mb-8"> 
-        <p className="text-[#0c264d] mb-4 italic"> 
-        </p> 
-
-        {/* The Wrapper: Centers the image and restricts its width */} 
+      
+      {/* --- CENTERED GRAPHIC SECTION --- */} 
+      <div className="text-center w-full mb-8"> 
         <div className="mx-auto w-48 md:w-64"> 
-        <ImageWithFallback src="/images/autism/autism-diagnosis-ChallDisptab-genderracial.webp" alt="side views of variety of females" 
-        /> 
+          <ImageWithFallback 
+            src="/images/autism/autism-diagnosis-ChallDisptab-genderracial.webp" 
+            alt="side views of variety of females" 
+          /> 
         </div> 
-        </div>
+      </div>
         
-
       {/* Racial and Ethnic Disparities */}
       <div className="bg-white p-5 rounded-md border-l-4 border-[#0c264d] shadow-sm mb-6">
         <h3 className="text-[#0c264d] font-bold mb-4 text-lg flex items-center gap-2">
@@ -389,35 +389,42 @@ export function ChallengesDisparities({ setCurrentArticle }: ChallengesDispariti
         </p>
       </div>
 
-{/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
 
+      {/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b-2 border-[#10b981] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Loomes, R., et al. (2017). "What Is the Male-to-Female Ratio in Autism Spectrum Disorder? A Systematic Review and Meta-Analysis." <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. https://doi.org/10.1016/j.jaac.2017.03.013</p>
-            <p>2. Hull, L., et al. (2017). "'Putting on my best normal': Social camouflaging in adults with autism spectrum conditions." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-017-3166-5</p>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Loomes, R., et al. (2017). What Is the Male-to-Female Ratio in Autism Spectrum Disorder? A Systematic Review and Meta-Analysis. <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>.</p>
+            <p>2. Hull, L., et al. (2017). Putting on my best normal: Social camouflaging in adults with autism spectrum conditions. <i>Journal of Autism and Developmental Disorders</i>.</p>
           </div>
         </div>
         
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b-2 border-[#2abcd4] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Lai, M. C., et al. (2014). "Autism." <i>The Lancet</i>. https://doi.org/10.1016/S0140-6736(13)61539-1</p>
-            <p>Lord, C., et al. (2018). "Autism spectrum disorder." <i>The Lancet</i>. https://doi.org/10.1016/S0140-6736(18)31129-2</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>Lai, M. C., et al. (2014). Autism. <i>The Lancet</i>.</li>
+            <li>Lord, C., et al. (2018). Autism spectrum disorder. <i>The Lancet</i>.</li>
+          </ul>
         </div>
       </div>
-    </div>
-  
+    </article>
   );
 }

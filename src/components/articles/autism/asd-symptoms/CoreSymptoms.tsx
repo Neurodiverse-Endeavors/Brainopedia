@@ -10,7 +10,11 @@ import {
   Repeat
 } from 'lucide-react';
 
-export function CoreSymptoms() {
+interface CoreSymptomsProps {
+  setCurrentArticle?: (article: string) => void;
+}
+
+export function CoreSymptoms({ setCurrentArticle }: CoreSymptomsProps) {
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       {/* Introduction with Image Wrap */}
@@ -120,6 +124,17 @@ export function CoreSymptoms() {
             </div>
           ))}
         </div>
+      </div>
+
+
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}

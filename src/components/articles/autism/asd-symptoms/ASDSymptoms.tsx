@@ -62,24 +62,29 @@ export function ASDSymptoms({ setCurrentArticle, initialTab }: ASDSymptomsProps)
         ))}
       </div>
 
-      {/* Tab Content Area */}
-      <div className="animate-fadeIn">
-        {activeTab === 'core' && <CoreSymptoms />}
-        {activeTab === 'social' && <SocialCommunication />}
-        {activeTab === 'repetitive' && <RepetitiveBehaviors />}
-        {activeTab === 'additional' && <AdditionalCharacteristics />}
-        {activeTab === 'strengths' && <StrengthsAbilities />}
-      </div>
+{/* How it needs to look (After) */}
+<div className="space-y-8 min-h-[400px]">
+  {activeTab === 'core' && (
+    <CoreSymptoms setCurrentArticle={setCurrentArticle} />
+  )}
+  
+  {activeTab === 'social' && (
+    <SocialCommunication setCurrentArticle={setCurrentArticle} />
+  )}
+  
+  {activeTab === 'repetitive' && (
+    <RepetitiveBehaviors setCurrentArticle={setCurrentArticle} />
+  )}
+  
+  {activeTab === 'additional' && (
+    <AdditionalCharacteristics setCurrentArticle={setCurrentArticle} />
+  )}
+  
+  {activeTab === 'strengths' && (
+    <StrengthsAbilities setCurrentArticle={setCurrentArticle} />
+  )}
+</div>
 
-      {/* Bottom back button: Simplified for cleaner exit */}
-      <div className="flex justify-end mt-12 mb-6">
-        <button 
-          onClick={() => setCurrentArticle?.('autism')}
-          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
-        >
-          <span className="text-lg">←</span>All About Autism
-        </button>
-      </div>
     </article>
   );
 }

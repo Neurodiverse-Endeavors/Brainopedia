@@ -341,7 +341,16 @@ export function AdditionalCharacteristics({ setCurrentArticle }: AdditionalChara
 
         </div>
       </div>
-      
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
+     
       {/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>

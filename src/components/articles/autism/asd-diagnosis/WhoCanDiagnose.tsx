@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from '../../../../components/figma/ImageWithFallback';
 import { Stethoscope, MessageSquare, Hand, BookOpen, XCircle, Users, User } from 'lucide-react';
 
@@ -147,7 +146,7 @@ export function WhoCanDiagnose({ setCurrentArticle }: WhoCanDiagnoseProps) {
 
   // 2. THE RENDER BLOCK
   return (
-    <div className="space-y-6 text-[#0c264d] font-spartan"> 
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]"> 
       
       {/* Intro Section */}
       <div className="bg-[#f0f9ff] p-6 rounded-lg mb-6">
@@ -329,34 +328,33 @@ export function WhoCanDiagnose({ setCurrentArticle }: WhoCanDiagnoseProps) {
           <strong className="text-[#d97706]">Financial Reality:</strong> While pediatric evaluations are often covered by health insurance or provided free by schools, adult evaluations are frequently out-of-network. Private clinical evaluations can range from $1,500 to $5,000 depending on the depth of testing.
         </p>
       </div>
+      
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
   
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
-            Cited Studies & Statistics
-          </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Hull, L., et al. (2017). "'Putting on my best normal': Social camouflaging in adults with autism spectrum conditions." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-017-3166-5</p>
-          </div>
-        </div>
-        
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>Lord, C., et al. (2018). "Autism spectrum disorder." <i>The Lancet</i>. https://doi.org/10.1016/S0140-6736(18)31129-2</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+            <li>Hull, L., et al. (2017). 'Putting on my best normal': Social camouflaging in adults with autism spectrum conditions. <i>Journal of Autism and Developmental Disorders</i>.</li>
+            <li>Lord, C., et al. (2018). Autism spectrum disorder. <i>The Lancet</i>.</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

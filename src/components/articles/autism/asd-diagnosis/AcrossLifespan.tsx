@@ -104,16 +104,19 @@ interface AcrossLifespanProps {
 /* ─── MAIN COMPONENT ─── */
 export function AcrossLifespan({ setCurrentArticle }: AcrossLifespanProps) {
   return (
-    <div className="bg-[#f0f9ff] p-6 rounded-lg">
-      <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Diagnosis Across the Lifespan</h2>
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
+      
+      <div className="bg-[#f0f9ff] p-6 rounded-lg">
+        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Diagnosis Across the Lifespan</h2>
 
-      {/* Key Fact */}
-      <div className="bg-[#ffd166] border-l-4 border-[#0c264d] p-4 rounded mb-8">
-        <p className="text-sm">
-          <strong>Key Fact:</strong> Current autism prevalence is approximately 1 in 36 children.
-          Autism can be reliably diagnosed by age 2, but many individuals — especially girls, women,
-          and those without intellectual disability — are not diagnosed until adolescence or adulthood.
-        </p>
+        {/* Key Fact */}
+        <div className="bg-[#ffd166] border-l-4 border-[#0c264d] p-4 rounded">
+          <p className="text-sm">
+            <strong>Key Fact:</strong> Current autism prevalence is approximately 1 in 36 children.
+            Autism can be reliably diagnosed by age 2, but many individuals — especially girls, women,
+            and those without intellectual disability — are not diagnosed until adolescence or adulthood.
+          </p>
+        </div>
       </div>
 
       {/* ── STAGE 1: Early Childhood ── */}
@@ -182,7 +185,7 @@ export function AcrossLifespan({ setCurrentArticle }: AcrossLifespanProps) {
 
           <SubCard icon={EyeOff} title="Important Considerations" accentColor="#f59e0b" bgColor="#fffbeb">
             Some children, particularly girls, may have developed coping strategies or "masking"
-            that hide autistic traits.<sup className="text-green-600 font-bold ml-0.5">1</sup> This can delay
+            that hide autistic traits.<sup>1</sup> This can delay
             diagnosis despite genuine struggles. Burnout from masking often becomes apparent in
             middle school or high school.
           </SubCard>
@@ -223,7 +226,7 @@ export function AcrossLifespan({ setCurrentArticle }: AcrossLifespanProps) {
           <SubCard icon={EyeOff} title="Challenges in Adult Assessment" accentColor="#f59e0b" bgColor="#fffbeb">
             <ul className="space-y-0.5 mt-1">
               <li>• Retrospective developmental history (parents may not be available or remember details)</li>
-              <li>• Learned compensation strategies mask traits<sup className="text-green-600 font-bold ml-0.5">1</sup></li>
+              <li>• Learned compensation strategies mask traits<sup>1</sup></li>
               <li>• Co-occurring conditions (anxiety, depression) developed over years of struggling</li>
               <li>• Adult life demands differ from childhood contexts</li>
             </ul>
@@ -264,35 +267,43 @@ export function AcrossLifespan({ setCurrentArticle }: AcrossLifespanProps) {
         </p>
       </div>
 
-      {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
 
+      {/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b-2 border-[#10b981] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Hull, L., et al. (2017). "'Putting on my best normal': Social camouflaging in adults with autism spectrum conditions." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-017-3166-5</p>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Hull, L., et al. (2017). Putting on my best normal: Social camouflaging in adults with autism spectrum conditions. <i>Journal of Autism and Developmental Disorders</i>.</p>
           </div>
         </div>
         
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b-2 border-[#2abcd4] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Zwaigenbaum, L., et al. (2015). "Early identification and interventions for autism spectrum disorder: Executive summary." <i>Pediatrics</i>. https://doi.org/10.1542/peds.2014-3667B</p>
-            <p>Howlin, P., et al. (2004). "Adult outcome for children with autism." <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.2004.00215.x</p>
-            <p>Lai, M. C., et al. (2014). "Autism." <i>The Lancet</i>. https://doi.org/10.1016/S0140-6736(13)61539-1</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>Howlin, P., et al. (2004). Adult outcome for children with autism. <i>Journal of Child Psychology and Psychiatry</i>.</li>
+            <li>Lai, M. C., et al. (2014). Autism. <i>The Lancet</i>.</li>
+            <li>Zwaigenbaum, L., et al. (2015). Early identification and interventions for autism spectrum disorder: Executive summary. <i>Pediatrics</i>.</li>
+          </ul>
         </div>
       </div>
       
-    </div>
+    </article>
   );
 }

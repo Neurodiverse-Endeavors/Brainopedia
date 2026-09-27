@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { ASDReferences } from '../ASDReferences';
+import { useState } from 'react';
 
 // --- ACTUAL IMPORTS ---
-// Matching your file system
 import { EnvironmentalFactors } from './EnvironmentalFactors';
 import { BrainDevelopment } from './BrainDevelopment';
 import { MythsMisconceptions } from './MythsMisconceptions';
@@ -15,13 +13,13 @@ interface ASDCausesProps {
 }
 
 export function ASDCauses({ setCurrentArticle, initialTab }: ASDCausesProps) {
-  // Initialized with 5 tabs as per project requirements
   const [activeTab, setActiveTab] = useState(initialTab || 'environmental');
 
   const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
   };
-const tabs = [
+
+  const tabs = [
     { id: 'environmental', label: 'Environmental Factors' },
     { id: 'brain', label: 'Brain Development' },
     { id: 'myths', label: 'Myths & Misconceptions' },
@@ -58,7 +56,7 @@ const tabs = [
             onClick={() => handleTabChange(tab.id)}
             className={`px-4 py-4 rounded-lg text-sm transition-colors font-normal shadow-sm ${
               activeTab === tab.id
-                ? 'bg-[#0A9DC4] text-white shadow-md' // UPDATED to standard Dark Cyan
+                ? 'bg-[#0A9DC4] text-white shadow-md' 
                 : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
             }`}
           >
@@ -69,17 +67,25 @@ const tabs = [
 
       {/* --- CONTENT SECTION --- */}
       <div className="space-y-8 min-h-[400px]">
-        {activeTab === 'environmental' && <EnvironmentalFactors />}
-        {activeTab === 'brain' && <BrainDevelopment />}
-        {activeTab === 'myths' && <MythsMisconceptions />}
+        {activeTab === 'environmental' && (
+          <EnvironmentalFactors setCurrentArticle={setCurrentArticle} />
+        )}
         
-        {/* FIXED: Merged the two lines so the prop is passed only when active */}
+        {activeTab === 'brain' && (
+          <BrainDevelopment setCurrentArticle={setCurrentArticle} />
+        )}
+        
+        {activeTab === 'myths' && (
+          <MythsMisconceptions setCurrentArticle={setCurrentArticle} />
+        )}
+        
         {activeTab === 'genetics' && (
           <GeneticsHeredity setCurrentArticle={setCurrentArticle} />
         )}
         
-        {activeTab === 'current-research' && <CurrentResearch />}
-        
+        {activeTab === 'current-research' && (
+          <CurrentResearch setCurrentArticle={setCurrentArticle} />
+        )}
       </div>
     </article>
   );

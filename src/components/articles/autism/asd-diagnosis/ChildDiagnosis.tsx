@@ -1,4 +1,3 @@
-import React from 'react';
 import { Clock, Eye, Target, Star, MessageSquare } from 'lucide-react';
 import { ImageWithFallback } from '../../../../components/figma/ImageWithFallback';
 
@@ -8,14 +7,17 @@ interface ChildDiagnosisProps {
 
 export function ChildDiagnosis({ setCurrentArticle }: ChildDiagnosisProps) {
   return (
-    <div className="space-y-6 text-[#0c264d] font-spartan">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
+      
+      
+
       <div className="bg-[#f0f9ff] p-6 rounded-lg">
         <ImageWithFallback 
           src="/images/autism/autism-diagnosis-DiagProctab-checkmark-gold.webp" 
           alt="Diagnostic Process Graphic with gold infinity and clipboard"
           className="w-36 h-auto float-right ml-6 mb-4 rounded-md border border-gray-300 shadow-sm"
         />
-        <h2 className="font-bold mb-4 text-2xl">Pediatric Diagnostic Process</h2>
+        <h2 className="font-bold mb-4 text-2xl">Early Identification & Assessment</h2>
         <p className="mb-6">
           Diagnosing autism in children relies heavily on observational play, assessing early developmental milestones, and gathering behavioral history from parents and caregivers. Early diagnosis enables earlier access to support and services, which can significantly impact outcomes.
         </p>
@@ -31,7 +33,7 @@ export function ChildDiagnosis({ setCurrentArticle }: ChildDiagnosisProps) {
                 <div className="font-bold text-[#0c264d]">Initial Screening</div>
               </div>
               <div className="text-sm space-y-1">
-                <p>• General screening at 9, 18, 24 or 30 months<sup className="text-green-700 font-bold ml-0.5 cursor-help" title="Zwaigenbaum et al. (2015)">1</sup></p>
+                <p>• General screening at 9, 18, 24 or 30 months<sup>1</sup></p>
                 <p>• Autism-specific screening at 18 and 24 months</p>
                 <p>• M-CHAT-R/F and parent questionnaires</p>
               </div>
@@ -98,7 +100,7 @@ export function ChildDiagnosis({ setCurrentArticle }: ChildDiagnosisProps) {
               </div>
               <div className="flex items-start gap-2">
                 <Star className="w-4 h-4 text-[#0A9DC4] mt-0.5 shrink-0" />
-                <div><strong>Note:</strong> Most widely used observational assessment<sup className="text-green-700 font-bold ml-0.5 cursor-help" title="Lord et al. (2012)">2</sup></div>
+                <div><strong>Note:</strong> Most widely used observational assessment<sup>2</sup></div>
               </div>
             </div>
           </div>
@@ -147,33 +149,41 @@ export function ChildDiagnosis({ setCurrentArticle }: ChildDiagnosisProps) {
         </div>
       </div>
 
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
+
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-      
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Zwaigenbaum, L., et al. (2015). "Early identification and interventions for autism spectrum disorder." <i>Pediatrics</i>. https://doi.org/10.1542/peds.2014-3667C</p>
-            <p>2. Lord, C., et al. (2012). <i>Autism Diagnostic Observation Schedule, Second Edition (ADOS-2)</i>. Western Psychological Services. https://www.wpspublish.com/ados-2-autism-diagnostic-observation-schedule-second-edition</p>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Zwaigenbaum, L., et al. (2015). Early identification and interventions for autism spectrum disorder. <i>Pediatrics</i>.</p>
+            <p>2. Lord, C., et al. (2012). <i>Autism Diagnostic Observation Schedule, Second Edition (ADOS-2)</i>. Western Psychological Services.</p>
           </div>
         </div>
 
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
