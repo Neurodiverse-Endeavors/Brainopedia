@@ -674,7 +674,7 @@ export function ADHDSymptomsTabMore({ setCurrentArticle }: TabMoreProps) {
 
 
       {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both"></div>
+  
       
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
@@ -685,21 +685,21 @@ export function ADHDSymptomsTabMore({ setCurrentArticle }: TabMoreProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Cortese, S., et al. (2020). "Associated Risks and Impacts of ADHD: An Umbrella Review." <i>Neuroscience & Biobehavioral Reviews</i>. https://doi.org/10.1016/j.neubiorev.2020.08.014</p>
-            <p>2. Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i> (4th ed.). Guilford Press. https://www.guilford.com/books/Attention-Deficit-Hyperactivity-Disorder/Russell-Barkley/9781462517725</p>
-            <p>3. Kofler, M. J., et al. (2024). "Fidgeting and cognitive enhancement in adults with ADHD." <i>Journal of Attention Disorders</i>. https://doi.org/10.1177/10870547241234567</p>
-            <p>4. Rogers, D. C., et al. (2023). "Fatigue and Burnout in ADHD." <i>Clinical Psychology Review</i>. https://doi.org/10.1016/j.cpr.2023.102284</p>
-            <p>5. Dekkers, T. J., et al. (2022). "Risk-taking behaviors in ADHD: A meta-analytic review." <i>Psychological Bulletin</i>. https://doi.org/10.1037/bul0000355</p>
-            <p>6. Skirrow, C., et al. (2013). "Mood swings and emotional instability in adults with ADHD." <i>Psychiatry Research</i>. https://doi.org/10.1016/j.psychres.2013.05.006</p>
-            <p>7. Shaw, P., et al. (2014). "Emotion dysregulation in attention deficit hyperactivity disorder." <i>American Journal of Psychiatry</i>. https://doi.org/10.1176/appi.ajp.2013.13070966</p>
-            <p>8. Ptacek, R., et al. (2019). "Clinical implications of the perception of time in attention deficit hyperactivity disorder (ADHD): A review." <i>Medical Science Monitor</i>. https://doi.org/10.12659/MSM.914225</p>
-            <p>9. Panagiotidi, M., et al. (2018). "Sensory processing traits in ADHD: A systematic review." <i>Journal of Psychiatric Research</i>. https://doi.org/10.1016/j.jpsychires.2017.11.007</p>
-            <p>10. Martinussen, R., et al. (2005). "A meta-analysis of working memory impairments in children with attention-deficit/hyperactivity disorder." <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. https://doi.org/10.1097/01.chi.0000153228.72591.73</p>
-            <p>11. Nijmeijer, J. S., et al. (2008). "Attention-deficit/hyperactivity disorder and social dysfunctioning." <i>Clinical Psychology Review</i>. https://doi.org/10.1016/j.cpr.2007.10.013</p>
-            <p>12. Brown, T. E. (2013). <i>A New Understanding of ADHD in Children and Adults: Executive Function Impairments</i>. Routledge. https://doi.org/10.4324/9780203067536</p>
+            <p>1. Cortese, S., et al. (2020). Associated Risks and Impacts of ADHD: An Umbrella Review. <i>Neuroscience & Biobehavioral Reviews</i>. </p>
+            <p>2. Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i> (4th ed.). Guilford Press. </p>
+            <p>3. Kofler, M. J., et al. (2024). Fidgeting and cognitive enhancement in adults with ADHD. <i>Journal of Attention Disorders</i>. </p>
+            <p>4. Rogers, D. C., et al. (2023). Fatigue and Burnout in ADHD. <i>Clinical Psychology Review</i>. </p>
+            <p>5. Dekkers, T. J., et al. (2022)."Risk-taking behaviors in ADHD: A meta-analytic review. <i>Psychological Bulletin</i>. </p>
+            <p>6. Skirrow, C., et al. (2013). Mood swings and emotional instability in adults with ADHD. <i>Psychiatry Research</i>. </p>
+            <p>7. Shaw, P., et al. (2014). Emotion dysregulation in attention deficit hyperactivity disorder. <i>American Journal of Psychiatry</i>. </p>
+            <p>8. Ptacek, R., et al. (2019). Clinical implications of the perception of time in attention deficit hyperactivity disorder (ADHD): A review. <i>Medical Science Monitor</i>. </p>
+            <p>9. Panagiotidi, M., et al. (2018). Sensory processing traits in ADHD: A systematic review. <i>Journal of Psychiatric Research</i>. </p>
+            <p>10. Martinussen, R., et al. (2005). A meta-analysis of working memory impairments in children with attention-deficit/hyperactivity disorder. <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. </p>
+            <p>11. Nijmeijer, J. S., et al. (2008). Attention-deficit/hyperactivity disorder and social dysfunctioning. <i>Clinical Psychology Review</i>.</p>
+            <p>12. Brown, T. E. (2013). <i>A New Understanding of ADHD in Children and Adults: Executive Function Impairments</i>. Routledge. </p>
             <p>13. Dodson, W. (2016). <i>Emotional Regulation and Rejection Sensitive Dysphoria</i>. ADDitude Clinical Whitepaper.</p>
-            <p>14. Bondü, R., & Esser, G. (2015). "Justice and rejection sensitivity in children and adolescents with ADHD symptoms." <i>European Child & Adolescent Psychiatry</i>. https://doi.org/10.1007/s00787-014-0565-x</p>
-            <p>15. Coogan, A. N., & McGowan, N. M. (2017). "A systematic review of circadian function, chronotype and sleep in Attention Deficit Hyperactivity Disorder." <i>Psychological Medicine</i>. https://doi.org/10.1017/S003329171600338X</p>
+            <p>14. Bondü, R., & Esser, G. (2015). Justice and rejection sensitivity in children and adolescents with ADHD symptoms. <i>European Child & Adolescent Psychiatry</i>. </p>
+            <p>15. Coogan, A. N., & McGowan, N. M. (2017). A systematic review of circadian function, chronotype and sleep in Attention Deficit Hyperactivity Disorder. <i>Psychological Medicine</i>. </p>
           </div>
         </div>
         
@@ -709,8 +709,8 @@ export function ADHDSymptomsTabMore({ setCurrentArticle }: TabMoreProps) {
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>CHADD (Children and Adults with Attention-Deficit/Hyperactivity Disorder). "About ADHD." General clinical overview and community resources. https://chadd.org/about-adhd/</p>
+            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). </p>
+            <p>CHADD (Children and Adults with Attention-Deficit/Hyperactivity Disorder). About ADHD. General clinical overview and community resources. </p>
           </div>
         </div>
       </div>

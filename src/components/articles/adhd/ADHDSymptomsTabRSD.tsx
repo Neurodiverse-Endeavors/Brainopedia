@@ -51,8 +51,7 @@ export function ADHDSymptomsTabRSD({ setCurrentArticle }: ADHDSymptomsTabRSDProp
             that one has been rejected, teased, or criticized by important people in their life, or that they have failed 
             to meet their own high standards or others' expectations.
           </p>          
-
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Research Behind RSD</h3>
+<h3 className="text-[#0c264d] font-bold mb-3 text-lg">Research Behind RSD</h3>
           <div className="space-y-4">
             <div>
               <div className="font-bold text-[#0c264d] mb-2">Clinical Case Series (2024):</div>
@@ -78,14 +77,6 @@ export function ADHDSymptomsTabRSD({ setCurrentArticle }: ADHDSymptomsTabRSDProp
               <div className="font-bold text-[#0c264d] mb-2">Rejection Sensitivity in Adolescents (2009):</div>
               <div className="text-sm pl-4 text-slate-700">A study examining adolescents with ADHD found that high attachment-related anxiety and 
               avoidance correlated with higher levels of sensitivity to peer rejection<sup className="text-green-600 font-bold ml-0.5">5</sup>.</div>
-            </div>
-            <div>
-              <div className="font-bold text-[#0c264d] mb-2">Clinical Observations:</div>
-              <div className="text-sm pl-4 text-slate-700">Dr. William Dodson, who coined the term RSD in the context of ADHD, has published 
-              clinical observations stating that nearly 99% of adults with ADHD experience RSD to some degree, with 30% reporting 
-              it as their most impairing symptom<sup className="text-green-600 font-bold ml-0.5">6</sup>. Researchers often point back to Dr. Paul Wender's observations in the 
-              1960s, which identified high levels of emotional dysregulation and "atypical depression" in ADHD patients, aligning 
-              with modern understandings of RSD<sup className="text-green-600 font-bold ml-0.5">7</sup>.</div>
             </div>
           </div>
         </div>
@@ -354,8 +345,6 @@ export function ADHDSymptomsTabRSD({ setCurrentArticle }: ADHDSymptomsTabRSDProp
             <p>3. Neurodivergent Experiences of Rejection Sensitive Dysphoria. (2025). <em>Journal of Neural Engineering</em>.</p>
             <p>4. Renton, T. (2022). Research on emotional regulation in ADHD examining virtual feedback responses.</p>
             <p>5. Adolescents' ADHD symptoms and adjustment: The role of attachment and rejection sensitivity. (2009). <em>Journal of Clinical Child & Adolescent Psychology</em>.</p>
-            <p>6. Dodson, W. (Clinical observations). Nearly 99% of adults with ADHD experience RSD to some degree, with 30% reporting it as their most impairing symptom. Published in ADDitude Magazine.</p>
-            <p>7. Wender, P. (1960s). Historical observations on emotional dysregulation and "atypical depression" in ADHD patients.</p>
           </div>
         </div>
         
@@ -365,10 +354,10 @@ export function ADHDSymptomsTabRSD({ setCurrentArticle }: ADHDSymptomsTabRSDProp
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0">
-            <li>Barkley, R. A. (2015). "Emotional dysregulation is a core component of ADHD." In R. A. Barkley (Ed.), <em>Attention-deficit hyperactivity disorder: A handbook for diagnosis and treatment</em> (4th ed.). Guilford Press.</li>
-            <li>Shaw, P., et al. (2014). "Emotion dysregulation in attention deficit hyperactivity disorder." <em>American Journal of Psychiatry</em>, 171(3), 276-293.</li>
-            <li>Surman, C. B., et al. (2013). "Understanding deficient emotional self-regulation in adults with ADHD: A controlled study." <em>ADHD Attention Deficit and Hyperactivity Disorders</em>, 5(3), 273-281.</li>
-            <li>Ramsay, J. R. (2017). "'I feel like I'm constantly treading water': Persistent affective problems in adults with ADHD." <em>ADHD Report</em>, 25(6), 1-7.</li>
+            <li>Barkley, R. A. (2015). Emotional dysregulation is a core component of ADHD. In R. A. Barkley (Ed.), <em>Attention-deficit hyperactivity disorder: A handbook for diagnosis and treatment</em> (4th ed.). Guilford Press.</li>
+            <li>Shaw, P., et al. (2014). Emotion dysregulation in attention deficit hyperactivity disorder. <em>American Journal of Psychiatry</em> </li>
+            <li>Surman, C. B., et al. (2013). Understanding deficient emotional self-regulation in adults with ADHD: A controlled study. <em>ADHD Attention Deficit and Hyperactivity Disorders</em> </li>
+            <li>Ramsay, J. R. (2017). "I feel like I'm constantly treading water": Persistent affective problems in adults with ADHD. <em>ADHD Report</em> .</li>
           </ul>
         </div>
       </div>

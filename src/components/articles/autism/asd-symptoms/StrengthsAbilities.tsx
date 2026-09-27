@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from '../../../../components/figma/ImageWithFallback';
 
 /* ─── THE GUEST LIST (Interface) ─── */
@@ -111,7 +110,7 @@ const strengths = [
 /* ─── MAIN COMPONENT ─── */
 export function StrengthsAbilities({ setCurrentArticle }: StrengthsAbilitiesProps) {
   return (
-    <div className="space-y-6">
+    <article className="space-y-6 max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       <div className="bg-[#f0f9ff] p-6 rounded-lg">
         <h2 className="text-[#0c264d] font-bold mb-4 text-2xl clear-both text-center">Autistic Strengths and Abilities</h2>
         
@@ -167,36 +166,24 @@ export function StrengthsAbilities({ setCurrentArticle }: StrengthsAbilitiesProp
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
-            Cited Studies & Statistics
-          </h4>
-          <p className="text-xs text-slate-600 italic">
-            No specific inline citations for this tab. Strengths profiles are derived from the foundational literature below.
-          </p>
-        </div>
-        
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>Baron-Cohen, S., et al. (2009). "Talent in autism: hyper-systemizing, hyper-attention to detail and sensory hypersensitivity." <i>Philosophical Transactions of the Royal Society B: Biological Sciences</i>. https://doi.org/10.1098/rstb.2008.0337</p>
-            <p>Grandin, T. (2006). <i>Thinking in Pictures: And Other Reports from My Life with Autism</i>. Vintage Books. https://www.penguinrandomhouse.com/books/60259/thinking-in-pictures-expanded-edition-by-temple-grandin/</p>
-            <p>Mottron, L. (2011). "Changing perceptions: The power of autism." <i>Nature</i>. https://doi.org/10.1038/479033a</p>
-            <p>Russell, G., et al. (2019). "Mapping the autistic advantage from the accounts of adults diagnosed with autism: A qualitative study." <i>Autism in Adulthood</i>. https://doi.org/10.1089/aut.2018.0035</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+            <li>Baron-Cohen, S., et al. (2009). Talent in autism: hyper-systemizing, hyper-attention to detail and sensory hypersensitivity. <i>Philosophical Transactions of the Royal Society B: Biological Sciences</i>.</li>
+            <li>Grandin, T. (2006). <i>Thinking in Pictures: And Other Reports from My Life with Autism</i>. Vintage Books.</li>
+            <li>Mottron, L. (2011). Changing perceptions: The power of autism. <i>Nature</i>.</li>
+            <li>Russell, G., et al. (2019). Mapping the autistic advantage from the accounts of adults diagnosed with autism: A qualitative study. <i>Autism in Adulthood</i>.</li>
+          </ul>
         </div>
       </div>
 
-    </div>
+    </article>
   );
 }

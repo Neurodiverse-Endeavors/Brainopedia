@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface ASDOverviewProps {
@@ -25,7 +25,7 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
   );
 
   return (
-    <article className="max-w-6xl animate-in fade-in duration-300">
+    <article className="max-w-6xl animate-in fade-in duration-300 w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       
       {/* HEADER */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 border-b-2 border-[#0c264d] pb-4">
@@ -77,7 +77,7 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
               </p>
               
               <p className="mb-4 leading-relaxed font-spartan text-[#0c264d]">
-                ASD affects approximately 1 in 36 children in the United States according to 2023 CDC data,<sup className="text-green-600 font-bold ml-0.5">1</sup> representing a significant 
+                ASD affects approximately 1 in 36 children in the United States according to 2023 CDC data,<sup>1</sup> representing a significant 
                 increase in diagnosis rates over the past two decades. This increase is largely 
                 attributed to improved awareness, expanded diagnostic criteria, and better identification 
                 rather than a true increase in prevalence.
@@ -360,7 +360,7 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
                   We are the spectrum."
                 </p>
                 <p className="text-sm font-bold uppercase tracking-wider text-[#0c264d]">
-                  — Jennifer Cook O'Toole, <em>Autism in Heels</em>
+                  — Jennifer Cook O'Toole, <i>Autism in Heels</i>
                 </p>
               </div>
             </div>
@@ -398,7 +398,7 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
               <div className="bg-white p-5 rounded-md border-l-4 border-[#0c264d] shadow-sm">
                 <h3 className="text-[#0c264d] font-bold mb-2 text-lg">Current Statistics</h3>
                 <p className="text-sm mb-3">
-                  As of 2023, the CDC estimates autism affects approximately <strong>1 in 36 children (2.8%)</strong> in the US.<sup className="text-green-600 font-bold ml-0.5">1</sup> 
+                  As of 2023, the CDC estimates autism affects approximately <strong>1 in 36 children (2.8%)</strong> in the US.<sup>1</sup> 
                 </p>
                 <p className="text-xs bg-[#ffd166]/30 p-2 rounded text-[#0c264d]">
                   <strong>Why the increase?</strong> This is largely attributed to improved awareness, expanded criteria, and better identification.
@@ -408,7 +408,7 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
               <div className="bg-white p-5 rounded-md border-l-4 border-[#0A9DC4] shadow-sm">
                 <h3 className="text-[#0c264d] font-bold mb-2 text-lg">Gender Differences</h3>
                 <p className="text-sm mb-3">
-                  Autism is diagnosed more frequently in males than females (typically <strong>3-4:1</strong>).<sup className="text-green-600 font-bold ml-0.5">2</sup>
+                  Autism is diagnosed more frequently in males than females (typically <strong>3-4:1</strong>).<sup>2</sup>
                 </p>
                 <p className="text-xs bg-[#f0f9ff] p-2 rounded text-gray-700">
                   Research suggests this reflects diagnostic bias—females often present differently and "camouflage" symptoms.
@@ -451,7 +451,7 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
             <div className="clear-both bg-[#fff0f0] rounded-md border-l-4 border-red-500 p-4">
               <h3 className="font-bold text-red-700 mb-2 text-sm uppercase tracking-wider">What Does NOT Cause Autism:</h3>
               <div className="grid grid-cols-2 gap-2 text-sm text-gray-800">
-                <div><strong>✗ Vaccines</strong> (Thoroughly debunked<sup className="text-green-600 font-bold ml-0.5">3</sup>)</div>
+                <div><strong>✗ Vaccines</strong> (Thoroughly debunked<sup>3</sup>)</div>
                 <div><strong>✗ Parenting Style</strong></div>
                 <div><strong>✗ Childhood Trauma</strong></div>
                 <div><strong>✗ Diet</strong> (Though it may affect symptoms)</div>
@@ -466,11 +466,11 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
               <div className="space-y-4">
                 <div className="border-l-2 border-[#0A9DC4] pl-4">
                   <div className="font-bold text-[#0c264d] text-sm">1943 - 1944</div>
-                  <div className="text-xs text-gray-600">Kanner & Asperger publish first descriptions.<sup className="text-green-600 font-bold ml-0.5">4,5</sup></div>
+                  <div className="text-xs text-gray-600">Kanner & Asperger publish first descriptions.<sup>4, 5</sup></div>
                 </div>
                 <div className="border-l-2 border-red-400 pl-4">
                   <div className="font-bold text-red-700 text-sm">1960s - 1980s</div>
-                  <div className="text-xs text-gray-600">Harmful "refrigerator mother" theory blamed parents.<sup className="text-green-600 font-bold ml-0.5">6</sup></div>
+                  <div className="text-xs text-gray-600">Harmful "refrigerator mother" theory blamed parents.<sup>6</sup></div>
                 </div>
                 <div className="border-l-2 border-[#0A9DC4] pl-4">
                   <div className="font-bold text-[#0c264d] text-sm">1990s</div>
@@ -502,33 +502,31 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
         <BackButton />
       </div>
 
-      <div className="clear-both"></div>
-      
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
       
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Centers for Disease Control and Prevention. (2023). "Data & Statistics on Autism Spectrum Disorder." U.S. Department of Health and Human Services. https://www.cdc.gov/ncbddd/autism/data.html</p>
-            <p>2. Loomes, R., et al. (2017). "What Is the Male-to-Female Ratio in Autism Spectrum Disorder? A Systematic Review and Meta-Analysis." <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. https://doi.org/10.1016/j.jaac.2017.03.013</p>
-            <p>3. Taylor, L. E., et al. (2014). "Vaccines are not associated with autism: an evidence-based meta-analysis of case-control and cohort studies." <i>Vaccine</i>. https://doi.org/10.1016/j.vaccine.2014.04.085</p>
-            <p>4. Kanner, L. (1943). "Autistic disturbances of affective contact." <i>Nervous Child</i>. https://neurodiversity.com/library_kanner_1943.pdf</p>
-            <p>5. Asperger, H. (1944). "Die 'Autistischen Psychopathen' im Kindesalter." <i>Archiv für Psychiatrie und Nervenkrankheiten</i>. https://doi.org/10.1007/BF01837709</p>
-            <p>6. Silverman, C. (2012). <i>Understanding Autism: Parents, Doctors, and the History of a Disorder</i>. Princeton University Press. https://press.princeton.edu/books/paperback/9780691155998/understanding-autism</p>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Centers for Disease Control and Prevention. (2023). Data & Statistics on Autism Spectrum Disorder. U.S. Department of Health and Human Services.</p>
+            <p>2. Loomes, R., et al. (2017). What Is the Male-to-Female Ratio in Autism Spectrum Disorder? A Systematic Review and Meta-Analysis. <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>.</p>
+            <p>3. Taylor, L. E., et al. (2014). Vaccines are not associated with autism: an evidence-based meta-analysis of case-control and cohort studies. <i>Vaccine</i>.</p>
+            <p>4. Kanner, L. (1943). Autistic disturbances of affective contact. <i>Nervous Child</i>.</p>
+            <p>5. Asperger, H. (1944). Die 'Autistischen Psychopathen' im Kindesalter. <i>Archiv für Psychiatrie und Nervenkrankheiten</i>.</p>
+            <p>6. Silverman, C. (2012). <i>Understanding Autism: Parents, Doctors, and the History of a Disorder</i>. Princeton University Press.</p>
           </div>
         </div>
         
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Autistic Self Advocacy Network (ASAN). "About Autism." National advocacy organization run by and for autistic individuals. https://autisticadvocacy.org/about-asan/about-autism/</p>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+            <li>Autistic Self Advocacy Network (ASAN). About Autism. National advocacy organization run by and for autistic individuals.</li>
+          </ul>
         </div>
       </div>
     </article>

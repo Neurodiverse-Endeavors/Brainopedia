@@ -383,7 +383,7 @@ export function ADHDOverview({ setCurrentArticle }: ADHDOverviewProps) {
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
+      
       
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
@@ -394,16 +394,16 @@ export function ADHDOverview({ setCurrentArticle }: ADHDOverviewProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Reuben, C., & Elgaddal, N. (2024). "ADHD in Children Ages 5–17 Years: US, 2020–2022." <i>NCHS Data Brief</i>. https://doi.org/10.15620/cdc:138214</p>
-            <p>2. Ayano, G., et al. (2023). "Prevalence of attention deficit hyperactivity disorder in adults: Umbrella review." <i>Psychiatry Research</i>. https://doi.org/10.1016/j.psychres.2023.115449</p>
-            <p>3. American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>4. Willcutt, E. G. (2012). "The prevalence of DSM-IV attention-deficit/hyperactivity disorder: a meta-analytic review." <i>Neurotherapeutics</i>. https://doi.org/10.1007/s13311-012-0135-8</p>
-            <p>5. Song, P., et al. (2021). "The global prevalence of adult attention-deficit hyperactivity disorder: A systematic review and meta-analysis." <i>Journal of Global Health</i>. https://doi.org/10.7189/jogh.11.04009</p>
-            <p>6. Larsson, H., et al. (2024). "The psychiatric comorbidity of ADHD." <i>Molecular Psychiatry</i>. https://doi.org/10.1038/s41380-024-00123-x</p>
-            <p>7. van Emmerik-van Oortmerssen, K., et al. (2012). "Prevalence of attention-deficit hyperactivity disorder in substance use disorder patients: a meta-analysis and meta-regression analysis." <i>Drug and Alcohol Dependence</i>. https://doi.org/10.1016/j.drugalcdep.2011.12.007</p>
-            <p>8. Lee, S. S., et al. (2011). "Prospective association of childhood attention-deficit/hyperactivity disorder (ADHD) and substance use and abuse/dependence: A meta-analytic review." <i>Clinical Psychology Review</i>. https://doi.org/10.1016/j.cpr.2011.01.006</p>
-            <p>9. Arican, I., et al. (2019). "Prevalence of attention deficit hyperactivity disorder symptoms in patients with schizophrenia." <i>Acta Psychiatrica Scandinavica</i>. https://doi.org/10.1111/acps.12948</p>
-            <p>10. Brikell, I., et al. (2018). "The phenotypic and genetic overlap between attention-deficit/hyperactivity disorder and schizophrenia." <i>Schizophrenia Bulletin</i>. https://doi.org/10.1093/schbul/sby046</p>
+            <p>1. Reuben, C., & Elgaddal, N. (2024). ADHD in Children Ages 5–17 Years: US, 2020–2022. <i>NCHS Data Brief</i>. </p>
+            <p>2. Ayano, G., et al. (2023). Prevalence of attention deficit hyperactivity disorder in adults: Umbrella review. <i>Psychiatry Research</i>. </p>
+            <p>3. American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.).</p>
+            <p>4. Willcutt, E. G. (2012). The prevalence of DSM-IV attention-deficit/hyperactivity disorder: a meta-analytic review. <i>Neurotherapeutics</i>. </p>
+            <p>5. Song, P., et al. (2021). The global prevalence of adult attention-deficit hyperactivity disorder: A systematic review and meta-analysis. <i>Journal of Global Health</i>. </p>
+            <p>6. Larsson, H., et al. (2024). The psychiatric comorbidity of ADHD. <i>Molecular Psychiatry</i>. </p>
+            <p>7. van Emmerik-van Oortmerssen, K., et al. (2012). Prevalence of attention-deficit hyperactivity disorder in substance use disorder patients: a meta-analysis and meta-regression analysis. <i>Drug and Alcohol Dependence</i>. </p>
+            <p>8. Lee, S. S., et al. (2011). Prospective association of childhood attention-deficit/hyperactivity disorder (ADHD) and substance use and abuse/dependence: A meta-analytic review. <i>Clinical Psychology Review</i>. </p>
+            <p>9. Arican, I., et al. (2019). Prevalence of attention deficit hyperactivity disorder symptoms in patients with schizophrenia. <i>Acta Psychiatrica Scandinavica</i>. </p>
+            <p>10. Brikell, I., et al. (2018). The phenotypic and genetic overlap between attention-deficit/hyperactivity disorder and schizophrenia. <i>Schizophrenia Bulletin</i>. </p>
           </div>
         </div>
         
@@ -413,9 +413,9 @@ export function ADHDOverview({ setCurrentArticle }: ADHDOverviewProps) {
             Background Sources
           </h4>
          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Centers for Disease Control and Prevention. (2024). "Data and Statistics About ADHD." CDC. https://www.cdc.gov/ncbddd/adhd/data.html</li>
-            <li>National Institute of Mental Health. (2024). "Attention-Deficit/Hyperactivity Disorder (ADHD)." NIMH. https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd</li>
-            <li>Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i>. Guilford Press. https://www.guilford.com/books/Attention-Deficit-Hyperactivity-Disorder/Russell-Barkley/9781462517725</li>
+            <li>Centers for Disease Control and Prevention. (2024). Data and Statistics About ADHD. CDC. </li>
+            <li>National Institute of Mental Health. (2024). Attention-Deficit/Hyperactivity Disorder (ADHD). NIMH. </li>
+            <li>Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i>. Guilford Press. </li>
           </ul>
         </div>
       </div>

@@ -201,40 +201,41 @@ export function ADHDSymptomsTabImpulsivity() {
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both"></div>
-      
+           
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
         {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
+
           <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Nigg, J. T. (2017). "Annual Research Review: On the relations among self-regulation, self-control, executive functioning, effortful control, cognitive control, impulsivity, risk-taking, and inhibition for developmental psychopathology." <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/jcpp.12675</p>
-            <p>2. Plichta, M. M., & Scheres, A. (2014). "Ventral-striatal responsiveness during reward anticipation in ADHD and its relation to trait impulsivity in the healthy population: A meta-analytic review of the fMRI literature." <i>Neuroscience & Biobehavioral Reviews</i>. https://doi.org/10.1016/j.neubiorev.2013.07.012</p>
-            <p>3. Burns, G. L., et al. (2024). "Longitudinal developmental relations of ADHD and oppositional defiant disorder symptoms with impulsivity symptoms in childhood and early adolescence." <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/jcpp.13885</p>
-            <p>4. Sonuga-Barke, E. J., & Fairchild, G. (2012). "Neuroeconomics of attention-deficit/hyperactivity disorder: differential influences of medial, dorsal, and ventral prefrontal brain networks on suboptimal decision making?" <i>Biological Psychiatry</i>. https://doi.org/10.1016/j.biopsych.2012.04.015</p>
-            <p>5. Jackson, J. N., & MacKillop, J. (2016). "Attention-deficit/hyperactivity disorder and monetary delay discounting: A meta-analysis of case-control studies." <i>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</i>. https://doi.org/10.1016/j.bpsc.2016.02.007</p>
-            <p>6. Moeller, F. G., et al. (2001). "Psychiatric aspects of impulsivity." <i>American Journal of Psychiatry</i>. https://doi.org/10.1176/appi.ajp.158.11.1783</p>
-            <p>7. Barkley, R. A., & Fischer, M. (2010). "The unique contribution of emotional impulsiveness to impairment in major life activities in hyperactive children as adults." <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. https://doi.org/10.1016/j.jaac.2010.01.018</p>
+            <p>1. Nigg, J. T. (2017). Annual Research Review: On the relations among self-regulation, self-control, executive functioning, effortful control, cognitive control, impulsivity, risk-taking, and inhibition for developmental psychopathology. <i>Journal of Child Psychology and Psychiatry</i>. </p>
+            <p>2. Plichta, M. M., & Scheres, A. (2014). Ventral-striatal responsiveness during reward anticipation in ADHD and its relation to trait impulsivity in the healthy population: A meta-analytic review of the fMRI literature. <i>Neuroscience & Biobehavioral Reviews</i>. </p>
+            <p>3. Burns, G. L., et al. (2024). Longitudinal developmental relations of ADHD and oppositional defiant disorder symptoms with impulsivity symptoms in childhood and early adolescence. <i>Journal of Child Psychology and Psychiatry</i>. </p>
+            <p>4. Sonuga-Barke, E. J., & Fairchild, G. (2012). Neuroeconomics of attention-deficit/hyperactivity disorder: differential influences of medial, dorsal, and ventral prefrontal brain networks on suboptimal decision making? <i>Biological Psychiatry</i>. </p>
+            <p>5. Jackson, J. N., & MacKillop, J. (2016). Attention-deficit/hyperactivity disorder and monetary delay discounting: A meta-analysis of case-control studies. <i>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</i>. </p>
+            <p>6. Moeller, F. G., et al. (2001). Psychiatric aspects of impulsivity. <i>American Journal of Psychiatry</i>. </p>
+            <p>7. Barkley, R. A., & Fischer, M. (2010). The unique contribution of emotional impulsiveness to impairment in major life activities in hyperactive children as adults. <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. </p>
           </div>
         </div>
         
-        {/* BACKGROUND SOURCES: CYAN (No Indentation) */}
-        <div>
+        {/* BACKGROUND SOURCES: BLUE */}
+     
+       
           <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i> (4th ed.). Guilford Press. https://www.guilford.com/books/Attention-Deficit-Hyperactivity-Disorder/Russell-Barkley/9781462517725</p>
-            <p>Dalley, J. W., & Robbins, T. W. (2017). "Fractionating impulsivity: neuropsychiatric implications." <i>Nature Reviews Neuroscience</i>. https://doi.org/10.1038/nrn.2017.8</p>
-            <p>Solanto, M. V. (2011). <i>Cognitive-Behavioral Therapy for Adult ADHD: Targeting Executive Dysfunction</i>. Guilford Press. https://www.guilford.com/books/Cognitive-Behavioral-Therapy-for-Adult-ADHD/Mary-Solanto/9781609181468</p>
+            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). </p>
+            <p>Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i> (4th ed.). Guilford Press. </p>
+            <p>Dalley, J. W., & Robbins, T. W. (2017). Fractionating impulsivity: neuropsychiatric implications. <i>Nature Reviews Neuroscience</i>. </p>
+            <p>Solanto, M. V. (2011). <i>Cognitive-Behavioral Therapy for Adult ADHD: Targeting Executive Dysfunction</i>. Guilford Press. </p>
           </div>
         </div>
-      </div>
-    </div>
+      
+    
+    
   );
 }

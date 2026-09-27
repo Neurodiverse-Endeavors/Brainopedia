@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Microscope, Zap, Brain, ShieldAlert, Beaker, Leaf } from 'lucide-react';
 
@@ -10,7 +9,7 @@ interface ADHDEpigeneticsProps {
 // 2. PASS THE PROP INTO THE COMPONENT
 export function ADHDEpigenetics({ setCurrentArticle }: ADHDEpigeneticsProps) {
   return (
-    <div className="max-w-6xl mx-auto p-4">
+    <article className="max-w-6xl mx-auto p-4 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       
       {/* --- PAGE HEADER & TOP BACK BUTTON --- */}
       <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-4">
@@ -44,7 +43,7 @@ export function ADHDEpigenetics({ setCurrentArticle }: ADHDEpigeneticsProps) {
         </div>
         
         <p className="leading-relaxed font-spartan text-lg mt-2">
-          Epigenetics—the study of how environmental factors alter the way our genes work without changing the underlying DNA sequence—is revolutionizing our understanding of ADHD. While ADHD is highly heritable, genetics alone do not tell the whole story. Epigenetic mechanisms act as a molecular switchboard, turning specific genes "on" or "off" in response to environmental exposures during early development. This helps explain the wide variability in ADHD symptoms and why certain environmental factors can increase the likelihood of ADHD traits expressing themselves.<sup className="text-green-600 font-bold ml-0.5">1,2</sup>
+          Epigenetics—the study of how environmental factors alter the way our genes work without changing the underlying DNA sequence—is revolutionizing our understanding of ADHD. While ADHD is highly heritable, genetics alone do not tell the whole story. Epigenetic mechanisms act as a molecular switchboard, turning specific genes "on" or "off" in response to environmental exposures during early development. This helps explain the wide variability in ADHD symptoms and why certain environmental factors can increase the likelihood of ADHD traits expressing themselves.<sup>1, 2</sup>
         </p>
       </div>
 
@@ -56,7 +55,7 @@ export function ADHDEpigenetics({ setCurrentArticle }: ADHDEpigeneticsProps) {
             <h3 className="font-bold font-spartan text-[#0c264d]">Dopamine Pathways</h3>
           </div>
           <p className="text-sm font-spartan leading-relaxed text-gray-700">
-            Epigenetic marks frequently target genes responsible for dopamine regulation (like DAT1 and DRD4), directly influencing executive function and reward processing networks.<sup className="text-green-600 font-bold ml-0.5">3</sup>
+            Epigenetic marks frequently target genes responsible for dopamine regulation (like DAT1 and DRD4), directly influencing executive function and reward processing networks.<sup>3</sup>
           </p>
         </div>
 
@@ -91,7 +90,7 @@ export function ADHDEpigenetics({ setCurrentArticle }: ADHDEpigeneticsProps) {
           </h3>
           <ul className="space-y-4 font-spartan text-sm text-gray-700">
             <li>
-              <strong className="font-bold text-[#0c264d]">DNA Methylation:</strong> The most studied mechanism in ADHD. Research shows distinct methylation patterns in genes related to neurotransmitter signaling, which can reduce the production of essential proteins needed for sustained attention.<sup className="text-green-600 font-bold ml-0.5">4</sup>
+              <strong className="font-bold text-[#0c264d]">DNA Methylation:</strong> The most studied mechanism in ADHD. Research shows distinct methylation patterns in genes related to neurotransmitter signaling, which can reduce the production of essential proteins needed for sustained attention.<sup>4</sup>
             </li>
             <li>
               <strong className="font-bold text-[#0c264d]">Histone Modification:</strong> Changes in how tightly DNA is spooled around histone proteins can limit the brain's ability to express genes necessary for rapid neural adaptability and learning.
@@ -106,7 +105,7 @@ export function ADHDEpigenetics({ setCurrentArticle }: ADHDEpigeneticsProps) {
           </h3>
           <ul className="space-y-4 font-spartan text-sm text-gray-700">
             <li>
-              <strong className="font-bold text-red-600">Prenatal Exposures:</strong> Exposure to maternal stress, tobacco smoke, or heavy metals (like lead) during pregnancy has been shown to alter DNA methylation at specific ADHD-risk gene sites.<sup className="text-green-600 font-bold ml-0.5">5</sup>
+              <strong className="font-bold text-red-600">Prenatal Exposures:</strong> Exposure to maternal stress, tobacco smoke, or heavy metals (like lead) during pregnancy has been shown to alter DNA methylation at specific ADHD-risk gene sites.<sup>5</sup>
             </li>
             <li>
               <strong className="font-bold text-red-600">Early Life Stress:</strong> Significant psychosocial adversity in early childhood can induce epigenetic changes that alter the reactivity of the HPA axis (the body's stress response system), compounding ADHD symptoms.
@@ -148,7 +147,7 @@ export function ADHDEpigenetics({ setCurrentArticle }: ADHDEpigeneticsProps) {
           Diagnosis & Targeted Therapies
         </h3>
         <p className="text-sm leading-relaxed font-spartan mb-4 text-gray-700">
-          The future of ADHD treatment may lie in the epigenome. Researchers are actively mapping epigenetic "signatures" in peripheral blood that could serve as objective biomarkers for ADHD subtypes. Furthermore, because epigenetic changes are reversible, nutritional interventions (like specific methyl-donor diets) and novel behavioral therapies are being studied for their ability to positively re-regulate epigenetic markers associated with ADHD.<sup className="text-green-600 font-bold ml-0.5">6</sup>
+          The future of ADHD treatment may lie in the epigenome. Researchers are actively mapping epigenetic "signatures" in peripheral blood that could serve as objective biomarkers for ADHD subtypes. Furthermore, because epigenetic changes are reversible, nutritional interventions (like specific methyl-donor diets) and novel behavioral therapies are being studied for their ability to positively re-regulate epigenetic markers associated with ADHD.<sup>6</sup>
         </p>
       </div>
 
@@ -160,29 +159,29 @@ export function ADHDEpigenetics({ setCurrentArticle }: ADHDEpigeneticsProps) {
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-green-700 font-bold mb-3 border-b border-green-700 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed">
-            <p>1. Nigg, J. T., et al. (2020). "DNA methylation and attention-deficit/hyperactivity disorder." <em>Journal of Child Psychology and Psychiatry</em>, 61(1), 99-109.</p>
-            <p>2. Heinrich, H., et al. (2017). "Epigenetic mechanisms in ADHD: A current perspective." <em>Translational Psychiatry</em>, 7(4), e1090.</p>
-            <p>3. Walton, E., et al. (2017). "Epigenetic profiling of ADHD symptoms trajectories: A prospective, methylome-wide study." <em>Molecular Psychiatry</em>, 22(2), 250-256.</p>
-            <p>4. Mooney, M. A., et al. (2020). "Epigenome-wide association study of ADHD symptom severity." <em>American Journal of Medical Genetics Part B: Neuropsychiatric Genetics</em>, 183(2), 117-127.</p>
-            <p>5. Cecil, C. A., et al. (2014). "Environmental risk, Oxytocin Receptor Gene (OXTR) methylation and youth callous-unemotional traits." <em>Development and Psychopathology</em>, 26(4), 1105-1126.</p>
-            <p>6. Mill, J., & Heijmans, B. T. (2013). "From promises to practical strategies in epigenetic epidemiology." <em>Nature Reviews Genetics</em>, 14(8), 585-594.</p>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Nigg, J. T., et al. (2020). DNA methylation and attention-deficit/hyperactivity disorder. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+            <p>2. Heinrich, H., et al. (2017). Epigenetic mechanisms in ADHD: A current perspective. <i>Translational Psychiatry</i>.</p>
+            <p>3. Walton, E., et al. (2017). Epigenetic profiling of ADHD symptoms trajectories: A prospective, methylome-wide study. <i>Molecular Psychiatry</i>.</p>
+            <p>4. Mooney, M. A., et al. (2020). Epigenome-wide association study of ADHD symptom severity. <i>American Journal of Medical Genetics Part B: Neuropsychiatric Genetics</i>.</p>
+            <p>5. Cecil, C. A., et al. (2014). Environmental risk, Oxytocin Receptor Gene (OXTR) methylation and youth callous-unemotional traits. <i>Development and Psychopathology</i>.</p>
+            <p>6. Mill, J., & Heijmans, B. T. (2013). From promises to practical strategies in epigenetic epidemiology. <i>Nature Reviews Genetics</i>.</p>
           </div>
         </div>
         
         {/* BACKGROUND SOURCES: CYAN (No Indentation) */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed">
-            <p>Barkley, R. A. (2015). <em>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</em> (4th ed.). Guilford Press.</p>
-            <p>Faraone, S. V., & Larsson, H. (2019). "Genetics of attention deficit hyperactivity disorder." <em>Molecular Psychiatry</em>, 24(4), 562-575.</p>
-            <p>Thapar, A., et al. (2013). "Gene-environment interplay in attention-deficit hyperactivity disorder and the importance of a developmental perspective." <em>British Journal of Psychiatry</em>, 202(6), 414-415.</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i> (4th ed.). Guilford Press.</li>
+            <li>Faraone, S. V., & Larsson, H. (2019). Genetics of attention deficit hyperactivity disorder. <i>Molecular Psychiatry</i>.</li>
+            <li>Thapar, A., et al. (2013). Gene-environment interplay in attention-deficit hyperactivity disorder and the importance of a developmental perspective. <i>British Journal of Psychiatry</i>.</li>
+          </ul>
         </div>
       </div>
 
@@ -196,6 +195,6 @@ export function ADHDEpigenetics({ setCurrentArticle }: ADHDEpigeneticsProps) {
         </button>
       </div>
 
-    </div>
+    </article>
   );
 }

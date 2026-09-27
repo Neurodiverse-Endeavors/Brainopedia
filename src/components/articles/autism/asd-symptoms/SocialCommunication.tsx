@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from '../../../../components/figma/ImageWithFallback';
 
 /* ─── THE GUEST LIST (Interface) ─── */
@@ -9,7 +8,7 @@ interface SocialCommunicationProps {
 /* ─── MAIN COMPONENT ─── */
 export function SocialCommunication({ setCurrentArticle }: SocialCommunicationProps) {
   return (
-    <div className="space-y-6">
+    <article className="space-y-6 max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       <div className="bg-[#f0f9ff] p-4 sm:p-8 rounded-lg">
         <h2 className="text-[#0c264d] font-bold mb-8 text-2xl sm:text-3xl text-center">Social Communication & Interaction</h2>
 
@@ -141,35 +140,23 @@ export function SocialCommunication({ setCurrentArticle }: SocialCommunicationPr
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b-2 border-[#10b981] pb-1">
-            Cited Studies & Statistics
-          </h4>
-          <p className="text-xs text-slate-600 italic pl-2">
-            No inline citations for this tab.
-          </p>
-        </div>
-        
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b-2 border-[#2abcd4] pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>Chevallier, C., et al. (2012). "The social motivation theory of autism." <i>Trends in Cognitive Sciences</i>. https://doi.org/10.1016/j.tics.2012.02.007</p>
-            <p>Milton, D. E. M. (2012). "On the ontological status of autism: The 'double empathy problem'." <i>Disability & Society</i>. https://doi.org/10.1080/09687599.2012.710008</p>
-            <p>Scheeren, A. M., et al. (2012). "Social interaction style of children and adolescents with high-functioning autism spectrum disorder." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-012-1456-3</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+            <li>Chevallier, C., et al. (2012). The social motivation theory of autism. <i>Trends in Cognitive Sciences</i>.</li>
+            <li>Milton, D. E. M. (2012). On the ontological status of autism: The 'double empathy problem'. <i>Disability & Society</i>.</li>
+            <li>Scheeren, A. M., et al. (2012). Social interaction style of children and adolescents with high-functioning autism spectrum disorder. <i>Journal of Autism and Developmental Disorders</i>.</li>
+          </ul>
         </div>
       </div>
       
-    </div>
+    </article>
   );
 }
