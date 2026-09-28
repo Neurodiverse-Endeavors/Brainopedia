@@ -10,31 +10,22 @@ export function DysgraphiaLiving({ setCurrentArticle, initialTab }: DysgraphiaLi
   const [activeTab, setActiveTab] = useState(initialTab || 'daily-life');
 
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300 w-full min-w-0">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* HEADER */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Living with Dysgraphia
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           Back to Dysgraphia
         </button>
       </div>
-
-      {/* Mobile Back Button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dysgraphia')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        Back to Dysgraphia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -91,7 +82,7 @@ export function DysgraphiaLiving({ setCurrentArticle, initialTab }: DysgraphiaLi
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Dysgraphia impacts far more than academic testing, often seeping into the foundational logistics of adult independence and daily communication. Routine tasks that neurotypical individuals process automatically often require intense cognitive effort or digital workarounds.
+              Dyscalculia impacts far more than academic testing, often seeping into the foundational logistics of adult independence and daily communication. Routine tasks that neurotypical individuals process automatically often require intense cognitive effort or digital workarounds.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -329,12 +320,12 @@ export function DysgraphiaLiving({ setCurrentArticle, initialTab }: DysgraphiaLi
       )}
 
       {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           Back to Dysgraphia
         </button>
       </div>
@@ -343,36 +334,50 @@ export function DysgraphiaLiving({ setCurrentArticle, initialTab }: DysgraphiaLi
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
+        {/* CITED STUDIES: GREEN */}
+        <div className="mb-6">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
+            Cited Studies & Statistics
+          </h4>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+            <p>1. Butterworth, B., et al. (2011). Dyscalculia: From brain to education. <i>Science</i>.</p>
+            <p>2. Parsons, S., & Bynner, J. (2005). Does numeracy matter more? <i>National Research and Development Centre for Adult Literacy and Numeracy</i>.</p>
+            <p>3. Kaufmann, L., et al. (2013). Dyscalculia from a developmental and differential perspective. <i>Frontiers in Psychology</i>.</p>
+            <p>4. Burny, E., et al. (2012). Clock reading: An underestimated topic in children with mathematics difficulties. <i>Journal of Learning Disabilities</i>.</p>
+            <p>5. Desoete, A., et al. (2012). Can we predict mathematical learning disabilities from symbolic and non-symbolic comparison tasks in kindergarten? <i>British Journal of Educational Psychology</i>.</p>
+          </div>
+        </div>
+
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
             <li>Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq.</li>
-            <li>Anderson-Inman, L., & Horney, M. A. (1998). Transforming text for at-risk readers. In D. Reinking et al. (Eds.), <i>Handbook of literacy and technology</i>. Erlbaum.</li>
+            <li>Anderson-Inman, L., & Horney, M. A. (1998). Transforming text for at-risk readers. In <i>Handbook of literacy and technology</i>. Erlbaum.</li>
             <li>Association on Higher Education and Disability. (2012). <i>Supporting accommodation requests</i>.</li>
-            <li>Bargh, J. A., & McKenna, K. Y. (2004). The Internet and social life. <i>Annual Review of Psychology</i>. https://doi.org/10.1146/annurev.psych.55.090902.141922</li>
-            <li>Berninger, V. W. (2009). Highlights of programmatic, interdisciplinary research on writing. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00281.x</li>
-            <li>Berninger, V. W., & Fuller, F. (1992). Gender differences in orthographic, verbal, and compositional fluency. <i>Journal of School Psychology</i>. https://doi.org/10.1016/0022-4405(92)90004-O</li>
+            <li>Bargh, J. A., & McKenna, K. Y. (2004). The Internet and social life. <i>Annual Review of Psychology</i>.</li>
+            <li>Berninger, V. W. (2009). Highlights of programmatic, interdisciplinary research on writing. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Berninger, V. W., & Fuller, F. (1992). Gender differences in orthographic, verbal, and compositional fluency. <i>Journal of School Psychology</i>.</li>
             <li>Berninger, V. W., & Wolf, B. J. (2009). <i>Teaching students with dyslexia and dysgraphia: Lessons from teaching and science</i>. Brookes Publishing.</li>
             <li>Brooks, R., & Goldstein, S. (2001). <i>Raising resilient children</i>. McGraw-Hill.</li>
-            <li>Case-Smith, J. (2002). Effectiveness of school-based occupational therapy intervention on handwriting. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.56.1.17</li>
-            <li>Connelly, V., Campbell, S., MacLean, M., & Barnes, J. (2006). Contribution of lower order letter writing skills. <i>Developmental Neuropsychology</i>. https://doi.org/10.1207/s15326942dn2901_9</li>
+            <li>Case-Smith, J. (2002). Effectiveness of school-based occupational therapy intervention on handwriting. <i>American Journal of Occupational Therapy</i>.</li>
+            <li>Connelly, V., et al. (2006). Contribution of lower order letter writing skills. <i>Developmental Neuropsychology</i>.</li>
             <li>Dweck, C. S. (2006). <i>Mindset: The new psychology of success</i>. Random House.</li>
             <li>Edyburn, D. L. (2000). Assistive technology and students with mild disabilities. <i>Focus on Exceptional Children</i>.</li>
             <li>Epstein, J. L. (2001). <i>School, family, and community partnerships</i>. Westview Press.</li>
-            <li>Gerber, P. J. (2012). The impact of learning disabilities on adulthood. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219411426858</li>
-            <li>Graham, S., & Harris, K. R. (2009). Almost 30 years of writing research. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00284.x</li>
-            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research. <i>Educational Psychology Review</i>. https://doi.org/10.1007/BF01464047</li>
+            <li>Gerber, P. J. (2012). The impact of learning disabilities on adulthood. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Graham, S., & Harris, K. R. (2009). Almost 30 years of writing research. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research. <i>Educational Psychology Review</i>.</li>
             <li>Gregg, N. (2009). <i>Adolescents and adults with learning disabilities and ADHD</i>. Guilford Press.</li>
             <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400. (2004).</li>
-            <li>Katusic, S. K., Colligan, R. C., Weaver, A. L., & Barbaresi, W. J. (2009). The forgotten learning disability. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2008-2098</li>
-            <li>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00286.x</li>
-            <li>Mayes, S. D., Calhoun, S. L., Bixler, E. O., & Zimmerman, D. N. (2009). IQ and neuropsychological predictors of academic achievement. <i>Learning and Individual Differences</i>. https://doi.org/10.1016/j.lindif.2008.09.001</li>
-            <li>Nelson, J. M., & Harwood, H. (2011). Learning disabilities and anxiety: A meta-analysis. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219409359939</li>
-            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>. https://doi.org/10.1207/s15326942dn2901_10</li>
-            <li>Sireci, S. G., Scarpati, S. E., & Li, S. (2005). Test accommodations for students with disabilities. <i>Review of Educational Research</i>. https://doi.org/10.3102/00346543075004457</li>
+            <li>Katusic, S. K., et al. (2009). The forgotten learning disability. <i>Pediatrics</i>.</li>
+            <li>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Mayes, S. D., et al. (2009). IQ and neuropsychological predictors of academic achievement. <i>Learning and Individual Differences</i>.</li>
+            <li>Nelson, J. M., & Harwood, H. (2011). Learning disabilities and anxiety: A meta-analysis. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>.</li>
+            <li>Sireci, S. G., et al. (2005). Test accommodations for students with disabilities. <i>Review of Educational Research</i>.</li>
             <li>West, T. G. (1997). <i>In the mind's eye: Visual thinkers, gifted people with dyslexia</i>. Prometheus Books.</li>
           </ul>
         </div>

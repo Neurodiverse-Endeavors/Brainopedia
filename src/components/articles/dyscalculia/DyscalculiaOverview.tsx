@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DyscalculiaOverviewProps {
@@ -10,30 +10,21 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
   const [activeTab, setActiveTab] = useState(initialTab || 'what');
 
   return (
-    <article className="max-w-6xl font-spartan">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-fadeIn">
       {/* Header Area */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <h1 className="text-3xl text-[#0c264d] font-normal">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <h1 className="text-[#0c264d] text-3xl font-normal">
           Dyscalculia: Overview
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dyscalculia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap md:block hidden"
+          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shrink-0"
         >
           <span className="text-xl">←</span>
           All About Dyscalculia
         </button>
       </div>
-
-      {/* Mobile button - shows only on small screens below title */}
-      <button 
-        onClick={() => setCurrentArticle?.('dyscalculia')}
-        className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        All About Dyscalculia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-8 clear-both">
@@ -141,8 +132,8 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
             />
 
             <ul className="list-disc ml-6 space-y-2 text-sm text-slate-700 leading-relaxed">
-              <li><strong>Prevalence:</strong> Dyscalculia affects approximately 3-7% of the global population.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></li>
-              <li><strong>Equally affects all genders:</strong> Current research suggests very similar rates across males and females.<sup className="text-[#10b981] font-bold ml-0.5">2</sup></li>
+              <li><strong>Prevalence:</strong> Dyscalculia affects approximately 3-7% of the global population.<sup>1</sup></li>
+              <li><strong>Equally affects all genders:</strong> Current research suggests very similar rates across males and females.<sup>2</sup></li>
               <li><strong>Cross-cultural:</strong> It occurs persistently across all cultures, countries, and languages.</li>
               <li><strong>Socioeconomic distribution:</strong> It affects individuals across all socioeconomic levels equally.</li>
               <li><strong>Often undiagnosed:</strong> Compared to dyslexia, dyscalculia is vastly under-identified in school systems.</li>
@@ -192,7 +183,7 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
               Neurodivergence rarely exists in a vacuum. Dyscalculia frequently co-occurs alongside other learning differences and conditions:
             </p>
             <ul className="list-disc ml-6 space-y-2 text-sm text-slate-700 leading-relaxed">
-              <li><strong>Dyslexia:</strong> Up to 60% of individuals with dyslexia also show symptoms of dyscalculia.<sup className="text-[#10b981] font-bold ml-0.5">3</sup></li>
+              <li><strong>Dyslexia:</strong> Up to 60% of individuals with dyslexia also show symptoms of dyscalculia.<sup>3</sup></li>
               <li><strong>ADHD:</strong> There are significantly higher rates of math difficulties in individuals with ADHD due to working memory impacts.</li>
               <li><strong>Anxiety disorders:</strong> Math anxiety and generalized anxiety disorders frequently co-occur.</li>
               <li><strong>Working memory deficits:</strong> Challenges holding and manipulating information in real-time are incredibly common.</li>
@@ -216,7 +207,7 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
             />
             
             <p className="mb-4 text-sm text-slate-700 leading-relaxed">
-              Brain imaging studies show that individuals with dyscalculia exhibit different patterns of brain activation and structural connectivity, specifically within the parietal lobe.<sup className="text-[#10b981] font-bold ml-0.5">4</sup>
+              Brain imaging studies show that individuals with dyscalculia exhibit different patterns of brain activation and structural connectivity, specifically within the parietal lobe.<sup>4</sup>
             </p>
             
             <h3 className="text-[#0c264d] font-bold mb-2 mt-4 text-lg">Key Neurological Differences:</h3>
@@ -260,14 +251,13 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
         </div>
       )}
 
-      {/* Bottom navigation button */}
-      <div className="mt-12 mb-6 flex flex-col md:flex-row md:justify-end clear-both">
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dyscalculia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
         >
-          <span className="text-xl">←</span>
-          All About Dyscalculia
+          <span className="text-lg">←</span>All About Dyscalculia
         </button>
       </div>
 
@@ -276,27 +266,27 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-green-700 font-bold mb-3 border-b border-green-700 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b-2 border-[#10b981] pb-1">
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Shalev, R. S., Auerbach, J., Manor, O., & Gross-Tsur, V. (2000). "Developmental dyscalculia: Prevalence and prognosis." <em>European Child & Adolescent Psychiatry</em>. https://doi.org/10.1007/s007870070009</p>
-            <p>2. Devine, A., Soltész, F., Nobes, A., Goswami, U., & Szűcs, D. (2013). "Gender differences in developmental dyscalculia depend on diagnostic criteria." <em>Learning and Instruction</em>. https://doi.org/10.1016/j.learninstruc.2013.02.004</p>
-            <p>3. Landerl, K., & Moll, K. (2010). "Comorbidity of learning disorders: Prevalence and familial transmission." <em>Journal of Child Psychology and Psychiatry</em>. https://doi.org/10.1111/j.1469-7610.2009.02164.x</p>
-            <p>4. Arsalidou, M., & Taylor, M. J. (2011). "Is 2+2=4? Meta-analyses of brain areas needed for numbers and calculations." <em>NeuroImage</em>. https://doi.org/10.1016/j.neuroimage.2010.10.009</p>
+            <p>1. Shalev, R. S., Auerbach, J., Manor, O., & Gross-Tsur, V. (2000). Developmental dyscalculia: Prevalence and prognosis. <i>European Child & Adolescent Psychiatry</i>.</p>
+            <p>2. Devine, A., Soltész, F., Nobes, A., Goswami, U., & Szűcs, D. (2013). Gender differences in developmental dyscalculia depend on diagnostic criteria. <i>Learning and Instruction</i>.</p>
+            <p>3. Landerl, K., & Moll, K. (2010). Comorbidity of learning disorders: Prevalence and familial transmission. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+            <p>4. Arsalidou, M., & Taylor, M. J. (2011). Is 2+2=4? Meta-analyses of brain areas needed for numbers and calculations. <i>NeuroImage</i>.</p>
           </div>
         </div>
 
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b-2 border-[#2abcd4] pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>American Psychiatric Association. (2022). Diagnostic and Statistical Manual of Mental Disorders (5th ed., text rev.). American Psychiatric Association.</li>
-            <li>Butterworth, B., Varma, S., & Laurillard, D. (2011). "Dyscalculia: From brain to education." Science.</li>
-            <li>Mazzocco, M. M. (2007). "Defining and differentiating mathematical learning disabilities and difficulties." Why is math so hard for some children?. Paul H. Brookes Publishing.</li>
-            <li>Wilson, A. J., & Dehaene, S. (2007). "Number sense and developmental dyscalculia." Human behavior, learning, and the developing brain. Guilford Press.</li>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Association.</li>
+            <li>Butterworth, B., Varma, S., & Laurillard, D. (2011). Dyscalculia: From brain to education. <i>Science</i>.</li>
+            <li>Mazzocco, M. M. (2007). Defining and differentiating mathematical learning disabilities and difficulties. <i>Why is math so hard for some children?</i>. Paul H. Brookes Publishing.</li>
+            <li>Wilson, A. J., & Dehaene, S. (2007). Number sense and developmental dyscalculia. <i>Human behavior, learning, and the developing brain</i>. Guilford Press.</li>
           </ul>
         </div>
       </div>

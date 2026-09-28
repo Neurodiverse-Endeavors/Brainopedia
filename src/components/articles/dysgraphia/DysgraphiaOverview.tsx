@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DysgraphiaOverviewProps {
@@ -7,31 +6,22 @@ interface DysgraphiaOverviewProps {
 
 export function DysgraphiaOverview({ setCurrentArticle }: DysgraphiaOverviewProps) {
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* HEADER */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Dysgraphia: Overview
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           All About Dysgraphia
         </button>
       </div>
-
-      {/* Mobile Back Button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dysgraphia')}
-        className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        All About Dysgraphia
-      </button>
 
       <div className="space-y-8 animate-fadeIn">
         
@@ -137,7 +127,7 @@ export function DysgraphiaOverview({ setCurrentArticle }: DysgraphiaOverviewProp
           />
           
           <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-            Exact prevalence is difficult to determine due to varying definitions, but studies suggest it affects approximately 5-20% of children.<sup className="text-green-600 font-bold ml-0.5">1</sup> It is a lifelong condition that persists into adulthood if not addressed, occurring across all intelligence levels.
+            Exact prevalence is difficult to determine due to varying definitions, but studies suggest it affects approximately 5-20% of children.<sup>1</sup> It is a lifelong condition that persists into adulthood if not addressed, occurring across all intelligence levels.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -145,15 +135,15 @@ export function DysgraphiaOverview({ setCurrentArticle }: DysgraphiaOverviewProp
               <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">Gender Differences</h3>
               <p className="text-sm text-slate-700 leading-relaxed">
                 Research on gender prevalence is limited, but some studies suggest boys may be more frequently 
-                identified, possibly due to motor skill development differences or reporting biases.<sup className="text-green-600 font-bold ml-0.5">2</sup>
+                identified, possibly due to motor skill development differences or reporting biases.<sup>2</sup>
               </p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
               <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">Co-occurring Conditions</h3>
               <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                <li><strong>Dyslexia:</strong> Reading and writing difficulties often overlap.<sup className="text-green-600 font-bold ml-0.5">3</sup></li>
-                <li><strong>ADHD:</strong> Attention difficulties compound writing challenges.<sup className="text-green-600 font-bold ml-0.5">4</sup></li>
+                <li><strong>Dyslexia:</strong> Reading and writing difficulties often overlap.<sup>3</sup></li>
+                <li><strong>ADHD:</strong> Attention difficulties compound writing challenges.<sup>4</sup></li>
                 <li><strong>Autism Spectrum Disorder:</strong> Motor and executive function challenges.</li>
                 <li><strong>Dyspraxia:</strong> Broader motor planning difficulties.</li>
               </ul>
@@ -283,58 +273,55 @@ export function DysgraphiaOverview({ setCurrentArticle }: DysgraphiaOverviewProp
       </div>
 
       {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
         >
-          <span className="text-xl">←</span>
-          All About Dysgraphia
+          <span className="text-lg">←</span>All About Dysgraphia
         </button>
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-      
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-green-700 font-bold mb-3 border-b border-green-700 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Katusic, S. K., Colligan, R. C., Weaver, A. L., & Barbaresi, W. J. (2009). The forgotten learning disability: Epidemiology of written language disorder in a population-based birth cohort. <i>Pediatrics</i>, <i>123</i>(5), 1306-1313. https://doi.org/10.1542/peds.2008-2098</p>
-            <p>2. Berninger, V. W., & Fuller, F. (1992). Gender differences in orthographic, verbal, and compositional fluency: Implications for assessing writing disabilities in primary grade children. <i>Journal of School Psychology</i>, <i>30</i>(4), 363-382. https://doi.org/10.1016/0022-4405(92)90004-O</p>
-            <p>3. Berninger, V. W., Nielsen, K. H., Abbott, R. D., Wijsman, E., & Raskind, W. (2008). Writing problems in developmental dyslexia: Under-recognized and under-treated. <i>Journal of School Psychology</i>, <i>46</i>(1), 1-21. https://doi.org/10.1016/j.jsp.2007.11.002</p>
-            <p>4. Willcutt, E. G., Pennington, B. F., Olson, R. K., & DeFries, J. C. (2007). Understanding comorbidity: A twin study of reading disability and attention-deficit/hyperactivity disorder. <i>Developmental Neuropsychology</i>, <i>31</i>(2), 129-153. https://doi.org/10.1080/87565640701190793</p>
+            <p>1. Katusic, S. K., et al. (2009). The forgotten learning disability: Epidemiology of written language disorder in a population-based birth cohort. <i>Pediatrics</i>.</p>
+            <p>2. Berninger, V. W., & Fuller, F. (1992). Gender differences in orthographic, verbal, and compositional fluency: Implications for assessing writing disabilities in primary grade children. <i>Journal of School Psychology</i>.</p>
+            <p>3. Berninger, V. W., et al. (2008). Writing problems in developmental dyslexia: Under-recognized and under-treated. <i>Journal of School Psychology</i>.</p>
+            <p>4. Willcutt, E. G., et al. (2007). Understanding comorbidity: A twin study of reading disability and attention-deficit/hyperactivity disorder. <i>Developmental Neuropsychology</i>.</p>
           </div>
         </div>
         
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). https://doi.org/10.1176/appi.books.9780890425596</li>
-            <li>Berninger, V. W. (2004). Understanding the 'graphia' in developmental dysgraphia. In D. Dewey & D. E. Tupper (Eds.), <i>Developmental motor disorders: A neuropsychological perspective</i>. Guilford Press.</li>
-            <li>Berninger, V. W., & May, M. O. (2011). Evidence-based diagnosis and treatment for specific learning disabilities involving impairments in written and/or oral language. <i>Journal of Learning Disabilities</i>, <i>44</i>(2), 167-183. https://doi.org/10.1177/0022219410391189</li>
-            <li>Berninger, V. W., & Richards, T. L. (2010). Inter-relationships among behavioral markers, genes, brain, and treatment in dyslexia and dysgraphia. <i>Future Neurology</i>, <i>5</i>(4), 597-617. https://doi.org/10.2217/fnl.10.22</li>
+            <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.).</li>
+            <li>Berninger, V. W. (2004). Understanding the 'graphia' in developmental dysgraphia. In <i>Developmental motor disorders: A neuropsychological perspective</i>. Guilford Press.</li>
+            <li>Berninger, V. W., & May, M. O. (2011). Evidence-based diagnosis and treatment for specific learning disabilities involving impairments in written and/or oral language. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Berninger, V. W., & Richards, T. L. (2010). Inter-relationships among behavioral markers, genes, brain, and treatment in dyslexia and dysgraphia. <i>Future Neurology</i>.</li>
             <li>Berninger, V. W., & Wolf, B. J. (2009). <i>Teaching students with dyslexia and dysgraphia: Lessons from teaching and science</i>. Paul H. Brookes Publishing.</li>
-            <li>Connelly, V., Campbell, S., MacLean, M., & Barnes, J. (2006). Contribution of lower order letter writing skills to the written composition of college students with and without dyslexia. <i>Developmental Neuropsychology</i>, <i>29</i>(1), 175-196. https://doi.org/10.1207/s15326942dn2901_9</li>
-            <li>Deuel, R. K. (1995). Developmental dysgraphia and motor skills disorders. <i>Journal of Child Neurology</i>, <i>10</i>(1_suppl), S6-S8. https://doi.org/10.1177/0883073895010001031</li>
-            <li>Fuentes, C. T., Mostofsky, S. H., & Bastian, A. J. (2009). Children with autism show specific handwriting impairments. <i>Neurology</i>, <i>73</i>(19), 1532-1537. https://doi.org/10.1212/WNL.0b013e3181c0d48c</li>
-            <li>Gerber, P. J. (2012). The impact of learning disabilities on adulthood: A review of the evidenced-based literature for research and practice in adult education. <i>Journal of Learning Disabilities</i>, <i>45</i>(1), 31-46. https://doi.org/10.1177/0022219411426858</li>
-            <li>Graham, S., Berninger, V. W., Abbott, R. D., Abbott, S. P., & Whitaker, D. (1997). Role of mechanics in composing of elementary school students: A new methodological approach. <i>Journal of Educational Psychology</i>, <i>89</i>(1), 170-182. https://doi.org/10.1037/0022-0663.89.1.170</li>
-            <li>Graham, S., & Harris, K. R. (2009). Almost 30 years of writing research: Making sense of it all with The Wrath of Khan. <i>Learning Disabilities Research & Practice</i>, <i>24</i>(2), 63-77. https://doi.org/10.1111/j.1540-5826.2009.00284.x</li>
-            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research: Progress and prospects from 1980 to 1994. <i>Educational Psychology Review</i>, <i>8</i>(1), 7-87. https://doi.org/10.1007/BF01464047</li>
-            <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400. (2004). https://sites.ed.gov/idea/</li>
-            <li>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>, <i>24</i>(2), 93-103. https://doi.org/10.1111/j.1540-5826.2009.00286.x</li>
-            <li>Nelson, J. M., & Harwood, H. (2011). Learning disabilities and anxiety: A meta-analysis. <i>Journal of Learning Disabilities</i>, <i>44</i>(1), 3-17. https://doi.org/10.1177/0022219409359939</li>
-            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>, <i>29</i>(1), 197-216. https://doi.org/10.1207/s15326942dn2901_10</li>
-            <li>Rosenblum, S., Weiss, P. L., & Parush, S. (2003). Product and process evaluation of handwriting difficulties. <i>Educational Psychology Review</i>, <i>15</i>(1), 41-81. https://doi.org/10.1023/A:1021371425220</li>
+            <li>Connelly, V., et al. (2006). Contribution of lower order letter writing skills to the written composition of college students with and without dyslexia. <i>Developmental Neuropsychology</i>.</li>
+            <li>Deuel, R. K. (1995). Developmental dysgraphia and motor skills disorders. <i>Journal of Child Neurology</i>.</li>
+            <li>Fuentes, C. T., et al. (2009). Children with autism show specific handwriting impairments. <i>Neurology</i>.</li>
+            <li>Gerber, P. J. (2012). The impact of learning disabilities on adulthood: A review of the evidenced-based literature for research and practice in adult education. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Graham, S., et al. (1997). Role of mechanics in composing of elementary school students: A new methodological approach. <i>Journal of Educational Psychology</i>.</li>
+            <li>Graham, S., & Harris, K. R. (2009). Almost 30 years of writing research: Making sense of it all with The Wrath of Khan. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research: Progress and prospects from 1980 to 1994. <i>Educational Psychology Review</i>.</li>
+            <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400. (2004).</li>
+            <li>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Nelson, J. M., & Harwood, H. (2011). Learning disabilities and anxiety: A meta-analysis. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>.</li>
+            <li>Rosenblum, S., Weiss, P. L., & Parush, S. (2003). Product and process evaluation of handwriting difficulties. <i>Educational Psychology Review</i>.</li>
             <li>West, T. G. (1997). <i>In the mind's eye: Visual thinkers, gifted people with dyslexia and other learning difficulties, computer images, and the ironies of creativity</i>. Prometheus Books.</li>
           </ul>
         </div>

@@ -10,31 +10,22 @@ export function DysgraphiaCauses({ setCurrentArticle, initialTab }: DysgraphiaCa
   const [activeTab, setActiveTab] = useState(initialTab || 'biology');
 
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300 w-full min-w-0">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* HEADER */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Dysgraphia: Causes & Origins
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           Back to Dysgraphia
         </button>
       </div>
-
-      {/* Mobile Back Button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dysgraphia')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        Back to Dysgraphia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -91,7 +82,7 @@ export function DysgraphiaCauses({ setCurrentArticle, initialTab }: DysgraphiaCa
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Writing is a complex cognitive task requiring precise coordination between the brain's language, motor, and spatial processing centers. Neuroimaging studies reveal that individuals with dysgraphia exhibit reduced activation in left hemisphere regions and altered white matter connectivity during writing tasks.<sup className="text-green-600 font-bold ml-0.5">1</sup>
+              Writing is a complex cognitive task requiring precise coordination between the brain's language, motor, and spatial processing centers. Neuroimaging studies reveal that individuals with dysgraphia exhibit reduced activation in left hemisphere regions and altered white matter connectivity during writing tasks.<sup>1</sup>
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -128,7 +119,7 @@ export function DysgraphiaCauses({ setCurrentArticle, initialTab }: DysgraphiaCa
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Research indicates that dysgraphia is highly heritable, frequently clustering within families and demonstrating high concordance rates in identical twins.<sup className="text-green-600 font-bold ml-0.5">2</sup> This condition is highly polygenic, meaning multiple genes interact to shape how the brain's transcription centers develop.
+              Research indicates that dysgraphia is highly heritable, frequently clustering within families and demonstrating high concordance rates in identical twins.<sup>2</sup> This condition is highly polygenic, meaning multiple genes interact to shape how the brain's transcription centers develop.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -410,12 +401,12 @@ export function DysgraphiaCauses({ setCurrentArticle, initialTab }: DysgraphiaCa
       )}
 
       {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           Back to Dysgraphia
         </button>
       </div>
@@ -426,35 +417,35 @@ export function DysgraphiaCauses({ setCurrentArticle, initialTab }: DysgraphiaCa
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-green-700 font-bold mb-3 border-b border-green-700 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Richards, T. L., Berninger, V. W., & Fayol, M. (2009). fMRI activation differences between 11-year-old good and poor spellers' access in working memory to temporary and long-term orthographic representations. <i>Journal of Neurolinguistics</i>. https://doi.org/10.1016/j.jneuroling.2008.11.004</p>
-            <p>2. Fisher, S. E., & DeFries, J. C. (2002). Developmental dyslexia: Genetic dissection of a complex cognitive trait. <i>Nature Reviews Neuroscience</i>. https://doi.org/10.1038/nrn936</p>
+            <p>1. Richards, T. L., et al. (2009). fMRI activation differences between 11-year-old good and poor spellers' access in working memory to temporary and long-term orthographic representations. <i>Journal of Neurolinguistics</i>.</p>
+            <p>2. Fisher, S. E., & DeFries, J. C. (2002). Developmental dyslexia: Genetic dissection of a complex cognitive trait. <i>Nature Reviews Neuroscience</i>.</p>
           </div>
         </div>
         
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Barnett, A. L., & Prunty, M. (2021). Handwriting difficulties in developmental coordination disorder (DCD). In A. Kirby, D. Sugden, & D. Purcell (Eds.), <i>Developmental coordination disorder</i> (pp. 145-167). Wiley.</li>
-            <li>Berninger, V. W. (2004). Understanding the 'graphia' in developmental dysgraphia. In D. Dewey & D. E. Tupper (Eds.), <i>Developmental motor disorders: A neuropsychological perspective</i>. Guilford Press.</li>
-            <li>Berninger, V. W., & Wolf, B. J. (2009). Teaching students with dyslexia and dysgraphia: Lessons from teaching and science. <i>Paul H. Brookes Publishing</i>.</li>
-            <li>Deuel, R. K. (1995). Developmental dysgraphia and motor skills disorders. <i>Journal of Child Neurology</i>. https://doi.org/10.1177/0883073895010001031</li>
-            <li>Fuentes, C. T., Mostofsky, S. H., & Bastian, A. J. (2009). Children with autism show specific handwriting impairments. <i>Neurology</i>. https://doi.org/10.1212/WNL.0b013e3181c0d48c</li>
-            <li>Graham, S., & Harris, K. R. (2000). The role of self-regulation and transcription skills in writing and writing development. <i>Educational Psychologist</i>. https://doi.org/10.1207/S15326985EP3501_2</li>
-            <li>Greven, C. U., Harlaar, N., Kovas, Y., Chamorro-Premuzic, T., & Plomin, R. (2009). More than just IQ. <i>Psychological Science</i>. https://doi.org/10.1111/j.1467-9280.2009.02271.x</li>
-            <li>Heilman, K. M., Coenen, A., & Kluger, B. (2008). Agraphia and micrographia. In G. Goldenberg & B. L. Miller (Eds.), <i>Handbook of clinical neurology</i>. Elsevier.</li>
-            <li>Katusic, S. K., Colligan, R. C., Weaver, A. L., & Barbaresi, W. J. (2009). The forgotten learning disability: Epidemiology of written language disorder in a population-based birth cohort. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2008-2098</li>
-            <li>McCutchen, D. (1996). A capacity theory of writing: Working memory in composition. <i>Educational Psychology Review</i>. https://doi.org/10.1007/BF01464076</li>
-            <li>Moats, L. C. (1995). Spelling: Development, disability, and instruction. <i>York Press</i>.</li>
-            <li>Roux, F. E., Draper, L., Köpke, B., & Demonet, J. F. (2010). Who actually read Exner? <i>Brain</i>. https://doi.org/10.1093/brain/awq077</li>
-            <li>Schulte-Körne, G., Deimel, W., Müller, K., Gutenbrunner, C., & Remschmidt, H. (1996). Familial aggregation of spelling disability. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.1996.tb01483.x</li>
-            <li>Willcutt, E. G., Pennington, B. F., Olson, R. K., & DeFries, J. C. (2007). Understanding comorbidity: A twin study of reading disability and attention-deficit/hyperactivity disorder. <i>Developmental Neuropsychology</i>. https://doi.org/10.1080/87565640701190793</li>
+            <li>Barnett, A. L., & Prunty, M. (2021). Handwriting difficulties in developmental coordination disorder (DCD). In <i>Developmental coordination disorder</i>. Wiley.</li>
+            <li>Berninger, V. W. (2004). Understanding the 'graphia' in developmental dysgraphia. In <i>Developmental motor disorders: A neuropsychological perspective</i>. Guilford Press.</li>
+            <li>Berninger, V. W., & Wolf, B. J. (2009). <i>Teaching students with dyslexia and dysgraphia: Lessons from teaching and science</i>. Paul H. Brookes Publishing.</li>
+            <li>Deuel, R. K. (1995). Developmental dysgraphia and motor skills disorders. <i>Journal of Child Neurology</i>.</li>
+            <li>Fuentes, C. T., et al. (2009). Children with autism show specific handwriting impairments. <i>Neurology</i>.</li>
+            <li>Graham, S., & Harris, K. R. (2000). The role of self-regulation and transcription skills in writing and writing development. <i>Educational Psychologist</i>.</li>
+            <li>Greven, C. U., et al. (2009). More than just IQ. <i>Psychological Science</i>.</li>
+            <li>Heilman, K. M., et al. (2008). Agraphia and micrographia. In <i>Handbook of clinical neurology</i>. Elsevier.</li>
+            <li>Katusic, S. K., et al. (2009). The forgotten learning disability: Epidemiology of written language disorder in a population-based birth cohort. <i>Pediatrics</i>.</li>
+            <li>McCutchen, D. (1996). A capacity theory of writing: Working memory in composition. <i>Educational Psychology Review</i>.</li>
+            <li>Moats, L. C. (1995). <i>Spelling: Development, disability, and instruction</i>. York Press.</li>
+            <li>Roux, F. E., et al. (2010). Who actually read Exner? <i>Brain</i>.</li>
+            <li>Schulte-Körne, G., et al. (1996). Familial aggregation of spelling disability. <i>Journal of Child Psychology and Psychiatry</i>.</li>
+            <li>Willcutt, E. G., et al. (2007). Understanding comorbidity: A twin study of reading disability and attention-deficit/hyperactivity disorder. <i>Developmental Neuropsychology</i>.</li>
           </ul>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DysgraphiaSymptomsProps {
@@ -10,31 +10,22 @@ export function DysgraphiaSymptoms({ setCurrentArticle, initialTab }: Dysgraphia
   const [activeTab, setActiveTab] = useState(initialTab || 'physical');
 
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300 w-full min-w-0">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* HEADER */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Dysgraphia: Symptoms & Characteristics
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           Back to Dysgraphia
         </button>
       </div>
-
-      {/* Mobile Back Button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dysgraphia')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        Back to Dysgraphia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -371,14 +362,13 @@ export function DysgraphiaSymptoms({ setCurrentArticle, initialTab }: Dysgraphia
         </div>
       )}
 
-      {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
         >
-          <span className="text-xl">←</span>
-          Back to Dysgraphia
+          <span className="text-lg">←</span>Back to Dysgraphia
         </button>
       </div>
 
@@ -388,34 +378,34 @@ export function DysgraphiaSymptoms({ setCurrentArticle, initialTab }: Dysgraphia
         
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Al-Yagon, M., & Mikulincer, M. (2004). Patterns of close relationships and socioemotional and academic adjustment among school-age children with learning disabilities. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2004.00088.x</li>
-            <li>Berninger, V. W. (2004). Understanding the graphia in developmental dysgraphia. In D. Dewey & D. E. Tupper (Eds.), <i>Developmental motor disorders: A neuropsychological perspective</i>. Guilford Press.</li>
-            <li>Berninger, V. W., & Fuller, F. (1992). Gender differences in orthographic, verbal, and compositional fluency: Implications for assessing writing disabilities in primary grade children. <i>Journal of School Psychology</i>. https://doi.org/10.1016/0022-4405(92)90004-O</li>
-            <li>Berninger, V. W., & Wolf, B. J. (2009). Teaching students with dyslexia and dysgraphia: Lessons from teaching and science. <i>Paul H. Brookes Publishing</i>.</li>
-            <li>Berninger, V. W., Nielsen, K. H., Abbott, R. D., Wijsman, E., & Raskind, W. (2008). Writing problems in developmental dyslexia: Under-recognized and under-treated. <i>Journal of School Psychology</i>. https://doi.org/10.1016/j.jsp.2007.11.002</li>
-            <li>Berninger, V. W., Vaughan, K. B., Abbott, R. D., Abbott, S. P., Rogan, L. W., Brooks, A., ... & Graham, S. (1997). Treatment of handwriting problems in beginning writers: Transfer from handwriting to composition. <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.89.4.652</li>
-            <li>Connelly, V., Campbell, S., MacLean, M., & Barnes, J. (2006). Contribution of lower order letter writing skills to the written composition of college students with and without dyslexia. <i>Developmental Neuropsychology</i>. https://doi.org/10.1207/s15326942dn2901_9</li>
-            <li>Feder, K. P., & Majnemer, A. (2007). Handwriting development, competency, and intervention. <i>Developmental Medicine & Child Neurology</i>. https://doi.org/10.1111/j.1469-8749.2007.00312.x</li>
-            <li>Graham, S., & Harris, K. R. (2000). The role of self-regulation and transcription skills in writing and writing development. <i>Educational Psychologist</i>. https://doi.org/10.1207/S15326985EP3501_2</li>
-            <li>Graham, S., & Perin, D. (2007). A meta-analysis of writing instruction for adolescent students. <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.99.3.445</li>
-            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research: Progress and prospects from 1980 to 1994. <i>Educational Psychology Review</i>. https://doi.org/10.1007/BF01464047</li>
-            <li>Graham, S., Berninger, V. W., Abbott, R. D., Abbott, S. P., & Whitaker, D. (1997). Role of mechanics in composing of elementary school students: A new methodological approach. <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.89.1.170</li>
-            <li>Graham, S., Berninger, V., & Weintraub, N. (2001). Which manuscript letters do primary grade children write legibly? <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.93.3.488</li>
-            <li>Gregg, N. (2009). Adolescents and adults with learning disabilities and ADHD: Assessment and accommodation. <i>Guilford Press</i>.</li>
-            <li>Hamstra-Bletz, L., & Blote, A. W. (1993). A longitudinal study on dysgraphic handwriting in primary school. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949302601007</li>
-            <li>Hayes, J. R., & Flower, L. S. (1980). Identifying the organization of writing processes. In L. W. Gregg & E. R. Steinberg (Eds.), <i>Cognitive processes in writing</i>. Lawrence Erlbaum.</li>
-            <li>Katusic, S. K., Colligan, R. C., Weaver, A. L., & Barbaresi, W. J. (2009). The forgotten learning disability: Epidemiology of written language disorder in a population-based birth cohort. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2008-2098</li>
-            <li>Marr, D., & Cermak, S. (2002). Predicting handwriting performance of early elementary students with the Developmental Test of Visual-Motor Integration. <i>Perceptual and Motor Skills</i>. https://doi.org/10.2466/pms.2002.95.2.661</li>
-            <li>Moats, L. C. (1995). Spelling: Development, disability, and instruction. <i>York Press</i>.</li>
-            <li>Nelson, J. M., & Harwood, H. (2011). Learning disabilities and anxiety: A meta-analysis. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219409359939</li>
-            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>. https://doi.org/10.1207/s15326942dn2901_10</li>
-            <li>Rosenblum, S., Parush, S., & Weiss, P. L. (2003). Computerized temporal handwriting characteristics of proficient and non-proficient handwriters. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.57.2.129</li>
-            <li>Rosenblum, S., Weiss, P. L., & Parush, S. (2003). Product and process evaluation of handwriting difficulties. <i>Educational Psychology Review</i>. https://doi.org/10.1023/A:1021371425220</li>
-            <li>Tseng, M. H., & Cermak, S. A. (1993). The influence of ergonomic factors and perceptual-motor abilities on handwriting performance. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.47.10.919</li>
+            <li>Al-Yagon, M., & Mikulincer, M. (2004). Patterns of close relationships and socioemotional and academic adjustment among school-age children with learning disabilities. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Berninger, V. W. (2004). Understanding the graphia in developmental dysgraphia. In <i>Developmental motor disorders: A neuropsychological perspective</i>. Guilford Press.</li>
+            <li>Berninger, V. W., & Fuller, F. (1992). Gender differences in orthographic, verbal, and compositional fluency: Implications for assessing writing disabilities in primary grade children. <i>Journal of School Psychology</i>.</li>
+            <li>Berninger, V. W., & Wolf, B. J. (2009). <i>Teaching students with dyslexia and dysgraphia: Lessons from teaching and science</i>. Paul H. Brookes Publishing.</li>
+            <li>Berninger, V. W., et al. (2008). Writing problems in developmental dyslexia: Under-recognized and under-treated. <i>Journal of School Psychology</i>.</li>
+            <li>Berninger, V. W., et al. (1997). Treatment of handwriting problems in beginning writers: Transfer from handwriting to composition. <i>Journal of Educational Psychology</i>.</li>
+            <li>Connelly, V., et al. (2006). Contribution of lower order letter writing skills to the written composition of college students with and without dyslexia. <i>Developmental Neuropsychology</i>.</li>
+            <li>Feder, K. P., & Majnemer, A. (2007). Handwriting development, competency, and intervention. <i>Developmental Medicine & Child Neurology</i>.</li>
+            <li>Graham, S., & Harris, K. R. (2000). The role of self-regulation and transcription skills in writing and writing development. <i>Educational Psychologist</i>.</li>
+            <li>Graham, S., & Perin, D. (2007). A meta-analysis of writing instruction for adolescent students. <i>Journal of Educational Psychology</i>.</li>
+            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research: Progress and prospects from 1980 to 1994. <i>Educational Psychology Review</i>.</li>
+            <li>Graham, S., et al. (1997). Role of mechanics in composing of elementary school students: A new methodological approach. <i>Journal of Educational Psychology</i>.</li>
+            <li>Graham, S., et al. (2001). Which manuscript letters do primary grade children write legibly? <i>Journal of Educational Psychology</i>.</li>
+            <li>Gregg, N. (2009). <i>Adolescents and adults with learning disabilities and ADHD: Assessment and accommodation</i>. Guilford Press.</li>
+            <li>Hamstra-Bletz, L., & Blote, A. W. (1993). A longitudinal study on dysgraphic handwriting in primary school. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Hayes, J. R., & Flower, L. S. (1980). Identifying the organization of writing processes. In <i>Cognitive processes in writing</i>. Lawrence Erlbaum.</li>
+            <li>Katusic, S. K., et al. (2009). The forgotten learning disability: Epidemiology of written language disorder in a population-based birth cohort. <i>Pediatrics</i>.</li>
+            <li>Marr, D., & Cermak, S. (2002). Predicting handwriting performance of early elementary students with the Developmental Test of Visual-Motor Integration. <i>Perceptual and Motor Skills</i>.</li>
+            <li>Moats, L. C. (1995). <i>Spelling: Development, disability, and instruction</i>. York Press.</li>
+            <li>Nelson, J. M., & Harwood, H. (2011). Learning disabilities and anxiety: A meta-analysis. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>.</li>
+            <li>Rosenblum, S., et al. (2003). Computerized temporal handwriting characteristics of proficient and non-proficient handwriters. <i>American Journal of Occupational Therapy</i>.</li>
+            <li>Rosenblum, S., et al. (2003). Product and process evaluation of handwriting difficulties. <i>Educational Psychology Review</i>.</li>
+            <li>Tseng, M. H., & Cermak, S. A. (1993). The influence of ergonomic factors and perceptual-motor abilities on handwriting performance. <i>American Journal of Occupational Therapy</i>.</li>
             <li>Weintraub, N., & Graham, S. (1998). Writing legibly and quickly: A study of children's ability to adjust their handwriting to meet common classroom demands. <i>Learning Disabilities Research & Practice</i>.</li>
           </ul>
         </div>

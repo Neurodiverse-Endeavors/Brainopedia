@@ -10,31 +10,22 @@ export function DysgraphiaSupport({ setCurrentArticle, initialTab }: DysgraphiaS
   const [activeTab, setActiveTab] = useState(initialTab || 'interventions');
 
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300 w-full min-w-0">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* HEADER */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Dysgraphia: Support & Management
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           Back to Dysgraphia
         </button>
       </div>
-
-      {/* Mobile Back Button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dysgraphia')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        Back to Dysgraphia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -430,12 +421,12 @@ export function DysgraphiaSupport({ setCurrentArticle, initialTab }: DysgraphiaS
       )}
 
       {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           Back to Dysgraphia
         </button>
       </div>
@@ -446,95 +437,95 @@ export function DysgraphiaSupport({ setCurrentArticle, initialTab }: DysgraphiaS
         
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Anderson-Inman, L., & Horney, M. A. (1998). Transforming text for at-risk readers. In D. Reinking et al. (Eds.), <i>Handbook of literacy and technology</i>. Erlbaum.</li>
+            <li>Anderson-Inman, L., & Horney, M. A. (1998). Transforming text for at-risk readers. In <i>Handbook of literacy and technology</i>. Erlbaum.</li>
             <li>Beery, K. E., & Beery, N. A. (2010). <i>The Beery-Buktenica developmental test of visual-motor integration</i>. Pearson.</li>
-            <li>Berninger, V. W. (2009). Highlights of programmatic, interdisciplinary research on writing. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00281.x</li>
-            <li>Berninger, V. W., Abbott, R. D., Augsburger, A., & Garcia, N. (2009). Comparison of pen and keyboard transcription modes. <i>Learning Disability Quarterly</i>. https://doi.org/10.2307/27740364</li>
-            <li>Berninger, V. W., Vaughan, K. B., Abbott, R. D., Abbott, S. P., Rogan, L. W., Brooks, A., ... & Graham, S. (1997). Treatment of handwriting problems in beginning writers. <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.89.4.652</li>
-            <li>Berninger, V. W., & Richards, T. L. (2010). Inter-relationships among behavioral markers, genes, brain, and treatment. <i>Future Neurology</i>. https://doi.org/10.2217/fnl.10.22</li>
+            <li>Berninger, V. W. (2009). Highlights of programmatic, interdisciplinary research on writing. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Berninger, V. W., et al. (2009). Comparison of pen and keyboard transcription modes. <i>Learning Disability Quarterly</i>.</li>
+            <li>Berninger, V. W., et al. (1997). Treatment of handwriting problems in beginning writers. <i>Journal of Educational Psychology</i>.</li>
+            <li>Berninger, V. W., & Richards, T. L. (2010). Inter-relationships among behavioral markers, genes, brain, and treatment. <i>Future Neurology</i>.</li>
             <li>Berninger, V. W., & Wolf, B. J. (2009). <i>Teaching students with dyslexia and dysgraphia</i>. Brookes Publishing.</li>
-            <li>Boyle, J. R. (2001). Enhancing the note-taking skills of students with mild disabilities. <i>Intervention in School and Clinic</i>. https://doi.org/10.1177/105345120103600405</li>
+            <li>Boyle, J. R. (2001). Enhancing the note-taking skills of students with mild disabilities. <i>Intervention in School and Clinic</i>.</li>
             <li>Boyle, J. R., & Weishaar, M. (1997). The effects of expert-generated versus student-generated cognitive organizers on the reading comprehension of students with learning disabilities. <i>Learning Disabilities Research & Practice</i>.</li>
-            <li>Cahill, S. M. (2009). Where does handwriting fit in? <i>Intervention in School and Clinic</i>. https://doi.org/10.1177/1053451208328826</li>
-            <li>Calhoon, M. B., & Fuchs, L. S. (2003). The effects of peer-assisted learning strategies and curriculum-based measurement on the mathematics performance of secondary students with disabilities. <i>Remedial and Special Education</i>. https://doi.org/10.1177/07419325030240040601</li>
-            <li>Carlisle, J. F. (2010). Effects of instruction in morphological awareness on literacy achievement. <i>Reading Research Quarterly</i>. https://doi.org/10.1598/RRQ.45.4.5</li>
-            <li>Case-Smith, J. (2002). Effectiveness of school-based occupational therapy intervention on handwriting. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.56.1.17</li>
-            <li>Case-Smith, J., & O'Brien, V. (2010). Occupational therapy for children and adolescents. <i>Mosby/Elsevier</i>.</li>
-            <li>Connelly, V., Campbell, S., MacLean, M., & Barnes, J. (2006). Contribution of lower order letter writing skills. <i>Developmental Neuropsychology</i>. https://doi.org/10.1207/s15326942dn2901_9</li>
-            <li>Cooper, H., Robinson, J. C., & Patall, E. A. (2006). Does homework improve academic achievement? <i>Review of Educational Research</i>. https://doi.org/10.3102/00346543076001001</li>
+            <li>Cahill, S. M. (2009). Where does handwriting fit in? <i>Intervention in School and Clinic</i>.</li>
+            <li>Calhoon, M. B., & Fuchs, L. S. (2003). The effects of peer-assisted learning strategies and curriculum-based measurement on the mathematics performance of secondary students with disabilities. <i>Remedial and Special Education</i>.</li>
+            <li>Carlisle, J. F. (2010). Effects of instruction in morphological awareness on literacy achievement. <i>Reading Research Quarterly</i>.</li>
+            <li>Case-Smith, J. (2002). Effectiveness of school-based occupational therapy intervention on handwriting. <i>American Journal of Occupational Therapy</i>.</li>
+            <li>Case-Smith, J., & O'Brien, V. (2010). <i>Occupational therapy for children and adolescents</i>. Mosby/Elsevier.</li>
+            <li>Connelly, V., et al. (2006). Contribution of lower order letter writing skills. <i>Developmental Neuropsychology</i>.</li>
+            <li>Cooper, H., et al. (2006). Does homework improve academic achievement? <i>Review of Educational Research</i>.</li>
             <li>Cudd, E. T., & Roberts, L. L. (1989). Using writing to enhance content area learning in the primary grades. <i>The Reading Teacher</i>.</li>
             <li>De La Paz, S. (1999). Self-regulated strategy instruction in regular education settings. <i>Learning Disabilities Research & Practice</i>.</li>
-            <li>Denton, P. L., Cope, S., & Moser, C. (2006). The effects of sensorimotor-based intervention versus therapeutic practice on improving handwriting performance in 6- to 11-year-old children. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.60.1.16</li>
-            <li>DiPardo, A., & Freedman, S. W. (1988). Peer response groups in the writing classroom. <i>Review of Educational Research</i>. https://doi.org/10.3102/00346543058002119</li>
+            <li>Denton, P. L., et al. (2006). The effects of sensorimotor-based intervention versus therapeutic practice on improving handwriting performance in 6- to 11-year-old children. <i>American Journal of Occupational Therapy</i>.</li>
+            <li>DiPardo, A., & Freedman, S. W. (1988). Peer response groups in the writing classroom. <i>Review of Educational Research</i>.</li>
             <li>Dweck, C. S. (2006). <i>Mindset: The new psychology of success</i>. Random House.</li>
             <li>Edyburn, D. L. (2000). Assistive technology and students with mild disabilities. <i>Focus on Exceptional Children</i>.</li>
-            <li>Englert, C. S., & Mariage, T. V. (1991). Making students partners in the comprehension process. <i>Learning Disability Quarterly</i>. https://doi.org/10.2307/1510847</li>
+            <li>Englert, C. S., & Mariage, T. V. (1991). Making students partners in the comprehension process. <i>Learning Disability Quarterly</i>.</li>
             <li>Epstein, J. L. (2001). <i>School, family, and community partnerships</i>. Westview Press.</li>
-            <li>Exner, C. E. (2001). Development of hand skills. In J. Case-Smith (Ed.), <i>Occupational therapy for children</i>. Mosby.</li>
-            <li>Feder, K., Majnemer, A., & Synnes, A. (2000). Handwriting: Current trends in occupational therapy practice. <i>Canadian Journal of Occupational Therapy</i>. https://doi.org/10.1177/000841740006700305</li>
+            <li>Exner, C. E. (2001). Development of hand skills. In <i>Occupational therapy for children</i>. Mosby.</li>
+            <li>Feder, K., et al. (2000). Handwriting: Current trends in occupational therapy practice. <i>Canadian Journal of Occupational Therapy</i>.</li>
             <li>Fernald, G. M. (1943). <i>Remedial techniques in basic school subjects</i>. McGraw-Hill.</li>
-            <li>Fitzgerald, J. (1987). Research on revision in writing. <i>Review of Educational Research</i>. https://doi.org/10.3102/00346543057004481</li>
+            <li>Fitzgerald, J. (1987). Research on revision in writing. <i>Review of Educational Research</i>.</li>
             <li>Fuchs, L. S., & Fuchs, D. (2002). <i>What is scientifically-based research on progress monitoring?</i> National Center on Student Progress Monitoring.</li>
             <li>Gillingham, A., & Stillman, B. W. (1997). <i>The Gillingham manual</i>. Educators Publishing Service.</li>
             <li>Graham, S., & Harris, K. R. (2005). <i>Writing better: Effective strategies for teaching students with learning difficulties</i>. Brookes Publishing.</li>
-            <li>Graham, S., & Harris, K. R. (2009). Almost 30 years of writing research. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00284.x</li>
+            <li>Graham, S., & Harris, K. R. (2009). Almost 30 years of writing research. <i>Learning Disabilities Research & Practice</i>.</li>
             <li>Graham, S., & Miller, L. (1980). Handwriting research and practice: A unified approach. <i>Focus on Exceptional Children</i>.</li>
-            <li>Graham, S., & Perin, D. (2007). A meta-analysis of writing instruction for adolescent students. <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.99.3.445</li>
-            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research. <i>Educational Psychology Review</i>. https://doi.org/10.1007/BF01464047</li>
-            <li>Graham, S., Berninger, V. W., Abbott, R. D., Abbott, S. P., & Whitaker, D. (1997). Role of mechanics in composing. <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.89.1.170</li>
-            <li>Graham, S., Berninger, V., & Weintraub, N. (2001). Which manuscript letters do primary grade children write legibly? <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.93.3.488</li>
-            <li>Graham, S., Harris, K. R., & Fink, B. (2000). Is handwriting causally related to learning to write? <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.92.4.620</li>
-            <li>Graham, S., Harris, K. R., & Hebert, M. (2011). <i>Informing writing: The benefits of formative assessment</i>. Alliance for Excellent Education.</li>
-            <li>Graham, S., Harris, K. R., & Mason, L. (2005). Improving the writing performance, knowledge, and self-efficacy of struggling young writers. <i>Contemporary Educational Psychology</i>. https://doi.org/10.1016/j.cedpsych.2004.08.001</li>
-            <li>Gregg, N., Coleman, C., Davis, M., & Chalk, J. C. (2007). Timed essay writing: Implications for high-stakes tests. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/00222194070400040301</li>
+            <li>Graham, S., & Perin, D. (2007). A meta-analysis of writing instruction for adolescent students. <i>Journal of Educational Psychology</i>.</li>
+            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research. <i>Educational Psychology Review</i>.</li>
+            <li>Graham, S., et al. (1997). Role of mechanics in composing. <i>Journal of Educational Psychology</i>.</li>
+            <li>Graham, S., et al. (2001). Which manuscript letters do primary grade children write legibly? <i>Journal of Educational Psychology</i>.</li>
+            <li>Graham, S., et al. (2000). Is handwriting causally related to learning to write? <i>Journal of Educational Psychology</i>.</li>
+            <li>Graham, S., et al. (2011). <i>Informing writing: The benefits of formative assessment</i>. Alliance for Excellent Education.</li>
+            <li>Graham, S., et al. (2005). Improving the writing performance, knowledge, and self-efficacy of struggling young writers. <i>Contemporary Educational Psychology</i>.</li>
+            <li>Gregg, N., et al. (2007). Timed essay writing: Implications for high-stakes tests. <i>Journal of Learning Disabilities</i>.</li>
             <li>Grimes, D., & Warschauer, M. (2010). Utility in a fallible tool: A multi-site case study of automated writing evaluation. <i>Journal of Technology, Learning, and Assessment</i>.</li>
             <li>Harris, K. R., & Graham, S. (1996). <i>Making the writing process work: Strategies for composition and self-regulation</i>. Brookline Books.</li>
-            <li>Hattie, J., & Timperley, H. (2007). The power of feedback. <i>Review of Educational Research</i>. https://doi.org/10.3102/003465430298487</li>
-            <li>Hayes, J. R., & Flower, L. S. (1980). Identifying the organization of writing processes. In L. W. Gregg & E. R. Steinberg (Eds.), <i>Cognitive processes in writing</i>. Lawrence Erlbaum.</li>
-            <li>Higgins, E. L., & Raskind, M. H. (2005). The compensatory effectiveness of the Quicktionary Reading Pen II. <i>Journal of Special Education Technology</i>. https://doi.org/10.1177/016264340502000103</li>
-            <li>Howe, T. H., Roston, K. L., Sheu, C. F., & Hinojosa, J. (2013). Assessing handwriting intervention effectiveness in elementary school students. <i>OTJR: Occupation, Participation and Health</i>. https://doi.org/10.3928/15394492-20130222-02</li>
-            <li>Hoy, M. M., Egan, M. Y., & Feder, K. P. (2011). A systematic review of interventions to improve handwriting. <i>Canadian Journal of Occupational Therapy</i>. https://doi.org/10.2182/cjot.2011.78.1.3</li>
+            <li>Hattie, J., & Timperley, H. (2007). The power of feedback. <i>Review of Educational Research</i>.</li>
+            <li>Hayes, J. R., & Flower, L. S. (1980). Identifying the organization of writing processes. In <i>Cognitive processes in writing</i>. Lawrence Erlbaum.</li>
+            <li>Higgins, E. L., & Raskind, M. H. (2005). The compensatory effectiveness of the Quicktionary Reading Pen II. <i>Journal of Special Education Technology</i>.</li>
+            <li>Howe, T. H., et al. (2013). Assessing handwriting intervention effectiveness in elementary school students. <i>OTJR: Occupation, Participation and Health</i>.</li>
+            <li>Hoy, M. M., et al. (2011). A systematic review of interventions to improve handwriting. <i>Canadian Journal of Occupational Therapy</i>.</li>
             <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400. (2004).</li>
-            <li>Katusic, S. K., Colligan, R. C., Weaver, A. L., & Barbaresi, W. J. (2009). The forgotten learning disability. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2008-2098</li>
-            <li>Kawano, S., Yamaguchi, M., & Kawaguchi, N. (2018). Handwriting input and recognition for tablet PCs. In <i>Proceedings of the 2018 ACM International Conference</i>. https://doi.org/10.1145/3279778.3279803</li>
-            <li>Kiewra, K. A. (1989). A review of note-taking: The encoding-storage paradigm. <i>Educational Psychology Review</i>. https://doi.org/10.1007/BF01326640</li>
-            <li>Lindstrom, J. H. (2007). Determining appropriate accommodations for postsecondary students with reading and written expression disorders. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2007.00251.x</li>
-            <li>MacArthur, C. A. (1998). Word processing with speech synthesis and word prediction. <i>Learning Disability Quarterly</i>. https://doi.org/10.2307/1511342</li>
-            <li>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00286.x</li>
-            <li>MacArthur, C. A., Graham, S., Haynes, J. B., & De La Paz, S. (1996). Spelling checkers and students with learning disabilities. <i>Learning Disabilities Research & Practice</i>.</li>
-            <li>Mayes, S. D., Calhoun, S. L., Bixler, E. O., & Zimmerman, D. N. (2009). IQ and neuropsychological predictors of academic achievement. <i>Learning and Individual Differences</i>. https://doi.org/10.1016/j.lindif.2008.09.001</li>
-            <li>McMaster, K. L., & Campbell, H. (2008). New and existing curriculum-based writing measures. <i>Exceptional Children</i>. https://doi.org/10.1177/001440290807400204</li>
+            <li>Katusic, S. K., et al. (2009). The forgotten learning disability. <i>Pediatrics</i>.</li>
+            <li>Kawano, S., et al. (2018). Handwriting input and recognition for tablet PCs. In <i>Proceedings of the 2018 ACM International Conference</i>.</li>
+            <li>Kiewra, K. A. (1989). A review of note-taking: The encoding-storage paradigm. <i>Educational Psychology Review</i>.</li>
+            <li>Lindstrom, J. H. (2007). Determining appropriate accommodations for postsecondary students with reading and written expression disorders. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>MacArthur, C. A. (1998). Word processing with speech synthesis and word prediction. <i>Learning Disability Quarterly</i>.</li>
+            <li>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>MacArthur, C. A., et al. (1996). Spelling checkers and students with learning disabilities. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Mayes, S. D., et al. (2009). IQ and neuropsychological predictors of academic achievement. <i>Learning and Individual Differences</i>.</li>
+            <li>McMaster, K. L., & Campbell, H. (2008). New and existing curriculum-based writing measures. <i>Exceptional Children</i>.</li>
             <li>Moats, L. C. (1995). <i>Spelling: Development, disability, and instruction</i>. York Press.</li>
-            <li>Montague, M. (2008). Self-regulation strategies to improve mathematical problem solving for students with learning disabilities. <i>Learning Disability Quarterly</i>. https://doi.org/10.2307/30035524</li>
+            <li>Montague, M. (2008). Self-regulation strategies to improve mathematical problem solving for students with learning disabilities. <i>Learning Disability Quarterly</i>.</li>
             <li>Olsen, J. Z., & Knapton, E. F. (2008). <i>Handwriting Without Tears</i>. Handwriting Without Tears.</li>
-            <li>Patton, J. R. (1994). Practical recommendations for using homework with students with learning disabilities. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949402700905</li>
+            <li>Patton, J. R. (1994). Practical recommendations for using homework with students with learning disabilities. <i>Journal of Learning Disabilities</i>.</li>
             <li>Pauk, W., & Owens, R. J. Q. (2010). <i>How to study in college</i>. Wadsworth.</li>
-            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>. https://doi.org/10.1207/s15326942dn2901_10</li>
-            <li>Ratzon, N. Z., Efraim, D., & Bart, O. (2007). A short-term graphomotor program for improving writing readiness skills of first-grade students. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.61.4.399</li>
-            <li>Re, A. M., Pedron, M., & Cornoldi, C. (2007). Expressive writing difficulties in children described as exhibiting ADHD symptoms. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/00222194070400030501</li>
-            <li>Rello, L., & Baeza-Yates, R. (2013). Good fonts for dyslexia. In <i>Proceedings of the 15th International ACM SIGACCESS Conference</i>. https://doi.org/10.1145/2513383.2513447</li>
-            <li>Russell, M., & Plati, T. (2001). Effects of computer versus paper administration of a state-mandated writing assessment. <i>Teachers College Record</i>. https://doi.org/10.1111/0161-4681.00122</li>
-            <li>Saddler, B., & Graham, S. (2005). The effects of peer-assisted sentence-combining instruction on the writing performance of more and less skilled young writers. <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.97.1.43</li>
-            <li>Schilling, D. L., Washington, K., Billingsley, F. F., & Deitz, J. (2003). Classroom seating for children with attention deficit hyperactivity disorder. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.57.5.534</li>
-            <li>Schumaker, J. B., & Deshler, D. D. (2003). Can students with LD become competent writers? <i>Learning Disability Quarterly</i>. https://doi.org/10.2307/1593595</li>
-            <li>Schwellnus, H., Carnahan, H., Kushki, A., Polatajko, H., Missiuna, C., & Chau, T. (2012). Effect of pencil grasp on the speed and legibility of handwriting. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.2012.004515</li>
+            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>.</li>
+            <li>Ratzon, N. Z., et al. (2007). A short-term graphomotor program for improving writing readiness skills of first-grade students. <i>American Journal of Occupational Therapy</i>.</li>
+            <li>Re, A. M., et al. (2007). Expressive writing difficulties in children described as exhibiting ADHD symptoms. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Rello, L., & Baeza-Yates, R. (2013). Good fonts for dyslexia. In <i>Proceedings of the 15th International ACM SIGACCESS Conference</i>.</li>
+            <li>Russell, M., & Plati, T. (2001). Effects of computer versus paper administration of a state-mandated writing assessment. <i>Teachers College Record</i>.</li>
+            <li>Saddler, B., & Graham, S. (2005). The effects of peer-assisted sentence-combining instruction on the writing performance of more and less skilled young writers. <i>Journal of Educational Psychology</i>.</li>
+            <li>Schilling, D. L., et al. (2003). Classroom seating for children with attention deficit hyperactivity disorder. <i>American Journal of Occupational Therapy</i>.</li>
+            <li>Schumaker, J. B., & Deshler, D. D. (2003). Can students with LD become competent writers? <i>Learning Disability Quarterly</i>.</li>
+            <li>Schwellnus, H., et al. (2012). Effect of pencil grasp on the speed and legibility of handwriting. <i>American Journal of Occupational Therapy</i>.</li>
             <li>Sheridan, S. M., & Kratochwill, T. R. (2007). <i>Conjoint behavioral consultation</i>. Springer.</li>
-            <li>Sireci, S. G., Scarpati, S. E., & Li, S. (2005). Test accommodations for students with disabilities. <i>Review of Educational Research</i>. https://doi.org/10.3102/00346543075004457</li>
-            <li>Stickney, E. M., Sharp, L. B., & Kenyon, A. S. (2012). Technology-enhanced assessment of math fact automaticity. <i>Assessment for Effective Intervention</i>. https://doi.org/10.1177/1534508411430321</li>
-            <li>Sturm, J. M., & Rankin-Erickson, J. L. (2002). Effects of hand-drawn and computer-generated concept mapping on the expository writing of middle school students with learning disabilities. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/1540-5826.00039</li>
+            <li>Sireci, S. G., et al. (2005). Test accommodations for students with disabilities. <i>Review of Educational Research</i>.</li>
+            <li>Stickney, E. M., et al. (2012). Technology-enhanced assessment of math fact automaticity. <i>Assessment for Effective Intervention</i>.</li>
+            <li>Sturm, J. M., & Rankin-Erickson, J. L. (2002). Effects of hand-drawn and computer-generated concept mapping on the expository writing of middle school students with learning disabilities. <i>Learning Disabilities Research & Practice</i>.</li>
             <li>Thurber, D. N. (1993). <i>D'Nealian handwriting</i>. Scott Foresman.</li>
             <li>Tindal, G., & Fuchs, L. (2000). <i>A summary of research on test changes: An empirical basis for defining accommodations</i>. Mid-South Regional Resource Center.</li>
-            <li>Troia, G. A. (2006). Writing instruction for students with learning disabilities. In C. A. MacArthur, S. Graham, & J. Fitzgerald (Eds.), <i>Handbook of writing research</i>. Guilford Press.</li>
-            <li>Troia, G. A., & Graham, S. (2002). The effectiveness of a highly explicit, teacher-directed strategy instruction routine. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/00222194020350040101</li>
+            <li>Troia, G. A. (2006). Writing instruction for students with learning disabilities. In <i>Handbook of writing research</i>. Guilford Press.</li>
+            <li>Troia, G. A., & Graham, S. (2002). The effectiveness of a highly explicit, teacher-directed strategy instruction routine. <i>Journal of Learning Disabilities</i>.</li>
             <li>Vygotsky, L. S. (1978). <i>Mind in society: The development of higher psychological processes</i>. Harvard University Press.</li>
             <li>West, T. G. (1997). <i>In the mind's eye: Visual thinkers, gifted people with dyslexia</i>. Prometheus Books.</li>
-            <li>Wood, D., Bruner, J. S., & Ross, G. (1976). The role of tutoring in problem solving. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.1976.tb00381.x</li>
+            <li>Wood, D., et al. (1976). The role of tutoring in problem solving. <i>Journal of Child Psychology and Psychiatry</i>.</li>
             <li>Wright, P. W. D., & Wright, P. D. (2006). <i>Wrightslaw: Special education law</i>. Harbor House Law Press.</li>
-            <li>Zimmerman, B. J., & Risemberg, R. (1997). Becoming a self-regulated writer. <i>Contemporary Educational Psychology</i>. https://doi.org/10.1006/ceps.1997.0919</li>
+            <li>Zimmerman, B. J., & Risemberg, R. (1997). Becoming a self-regulated writer. <i>Contemporary Educational Psychology</i>.</li>
           </ul>
         </div>
       </div>

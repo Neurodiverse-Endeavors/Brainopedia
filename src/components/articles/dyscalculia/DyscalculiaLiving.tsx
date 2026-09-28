@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DyscalculiaLivingProps {
@@ -10,39 +10,22 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
   const [activeTab, setActiveTab] = useState(initialTab || 'daily-life');
 
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-            font-weight: bold;
-          }
-        `}
-      </style>
-
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
+      
       {/* Header Area */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <h1 className="text-3xl text-[#0c264d] font-normal">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <h1 className="text-3xl text-[#0c264d] font-bold">
           Living with Dyscalculia
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dyscalculia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
-          Back to Dyscalculia
+          <span className="text-lg">←</span>
+          All About Dyscalculia
         </button>
       </div>
-
-      {/* Mobile button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dyscalculia')}
-        className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        Back to Dyscalculia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -86,7 +69,7 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
           
           {/* Centered Intro Paragraph */}
           <p className="text-slate-700 leading-relaxed text-sm text-center max-w-4xl mx-auto mb-8">
-            Living with dyscalculia presents unique challenges in a world driven by numbers, schedules, and financial transactions.<sup className="text-green-600 font-bold ml-0.5">1</sup> However, with self-awareness, targeted strategies, and a supportive environment, individuals can successfully navigate these daily hurdles and lead fulfilling lives.<sup className="text-green-600 font-bold ml-0.5">2</sup>
+            Living with dyscalculia presents unique challenges in a world driven by numbers, schedules, and financial transactions.<sup>1</sup> However, with self-awareness, targeted strategies, and a supportive environment, individuals can successfully navigate these daily hurdles and lead fulfilling lives.<sup>2</sup>
           </p>
 
           {/* Daily Challenges Card (Cyan) */}
@@ -100,14 +83,14 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Dyscalculia impacts far more than academic testing; it seeps into the foundational logistics of adult independence.<sup className="text-green-600 font-bold ml-0.5">3</sup> Routine tasks that neurotypical individuals process automatically often require intense cognitive effort and careful planning.
+              Dyscalculia impacts far more than academic testing; it seeps into the foundational logistics of adult independence.<sup>3</sup> Routine tasks that neurotypical individuals process automatically often require intense cognitive effort and careful planning.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-cyan-100 pb-2">Time Management</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>Reading clocks:</strong> Extreme difficulty quickly interpreting analog clocks, making digital displays essential.<sup className="text-green-600 font-bold ml-0.5">4</sup></li>
+                  <li><strong>Reading clocks:</strong> Extreme difficulty quickly interpreting analog clocks, making digital displays essential.<sup>4</sup></li>
                   <li><strong>Estimating time:</strong> A poor internal sense of time passage, leading to chronic lateness or over-scheduling.</li>
                   <li><strong>Scheduling:</strong> Trouble coordinating multiple appointments and mentally calculating travel times between them.</li>
                 </ul>
@@ -116,7 +99,7 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
               <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-cyan-100 pb-2">Financial Tasks</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>Counting change:</strong> Difficulty quickly calculating or verifying correct change at physical registers.<sup className="text-green-600 font-bold ml-0.5">5</sup></li>
+                  <li><strong>Counting change:</strong> Difficulty quickly calculating or verifying correct change at physical registers.<sup>5</sup></li>
                   <li><strong>Budgeting:</strong> Tracking daily spending and projecting monthly savings is mentally exhausting.</li>
                   <li><strong>Tipping:</strong> Mentally calculating 15% or 20% tips in social settings causes significant anxiety.</li>
                 </ul>
@@ -209,7 +192,7 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Early realization:</strong> Watching peers easily grasp concepts while the student struggles to memorize basic facts.</li>
                   <li><strong>Homework disparity:</strong> Spending hours longer on math assignments compared to classmates.</li>
-                  <li><strong>Testing trauma:</strong> Timed arithmetic tests causing significant, lasting anxiety and mental blocks.<sup className="text-green-600 font-bold ml-0.5">4</sup></li>
+                  <li><strong>Testing trauma:</strong> Timed arithmetic tests causing significant, lasting anxiety and mental blocks.<sup>4</sup></li>
                   <li><strong>Gatekeeping:</strong> Standardized tests (SAT, ACT) presenting massive barriers to college admission without accommodations.</li>
                 </ul>
               </div>
@@ -368,47 +351,44 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
         </div>
       )}
 
-      {/* Bottom navigation button */}
-      <div className="mt-12 mb-6 flex flex-col md:flex-row md:justify-end clear-both">
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dyscalculia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
         >
-          <span className="text-xl">←</span>
-          Back to Dyscalculia
+          <span className="text-lg">←</span>All About Dyscalculia
         </button>
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-      
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-green-700 font-bold mb-3 border-b border-green-700 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Butterworth, B., Varma, S., & Laurillard, D. (2011). Dyscalculia: From brain to education. <i>Science</i>, <i>332</i>(6033), 1049-1053. https://doi.org/10.1126/science.1201536</p>
-            <p>2. Parsons, S., & Bynner, J. (2005). Does numeracy matter more? <i>National Research and Development Centre for Adult Literacy and Numeracy</i>. https://dera.ioe.ac.uk/id/eprint/22464/</p>
-            <p>3. Kaufmann, L., Mazzocco, M. M., Dowker, A., von Aster, M., Göbel, S. M., Grabner, R. H., ... & Nuerk, H. C. (2013). Dyscalculia from a developmental and differential perspective. <i>Frontiers in Psychology</i>, <i>4</i>, 516. https://doi.org/10.3389/fpsyg.2013.00516</p>
-            <p>4. Burny, E., Valcke, M., & Desoete, A. (2012). Clock reading: An underestimated topic in children with mathematics difficulties. <i>Journal of Learning Disabilities</i>, <i>45</i>(4), 351-360. https://doi.org/10.1177/0022219411422262</p>
-            <p>5. Desoete, A., Ceulemans, A., De Weerdt, F., & Pieters, S. (2012). Can we predict mathematical learning disabilities from symbolic and non-symbolic comparison tasks in kindergarten? <i>British Journal of Educational Psychology</i>, <i>82</i>(1), 64-81. https://doi.org/10.1111/j.2044-8279.2011.02059.x</p>
+            <p>1. Butterworth, B., Varma, S., & Laurillard, D. (2011). Dyscalculia: From brain to education. <i>Science</i>.</p>
+            <p>2. Parsons, S., & Bynner, J. (2005). Does numeracy matter more? <i>National Research and Development Centre for Adult Literacy and Numeracy</i>.</p>
+            <p>3. Kaufmann, L., et al. (2013). Dyscalculia from a developmental and differential perspective. <i>Frontiers in Psychology</i>.</p>
+            <p>4. Burny, E., Valcke, M., & Desoete, A. (2012). Clock reading: An underestimated topic in children with mathematics difficulties. <i>Journal of Learning Disabilities</i>.</p>
+            <p>5. Desoete, A., et al. (2012). Can we predict mathematical learning disabilities from symbolic and non-symbolic comparison tasks in kindergarten? <i>British Journal of Educational Psychology</i>.</p>
           </div>
         </div>
 
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Chinn, S. (2012). <i>The trouble with maths: A practical guide to helping learners with numeracy difficulties</i> (2nd ed.). Routledge. https://doi.org/10.4324/9780203115459</li>
-            <li>Dweck, C. S. (2006). <i>Mindset: The new psychology of success</i>. Random House. https://doi.org/10.1037/10510-000</li>
-            <li>Geary, D. C. (2004). Mathematics and learning disabilities. <i>Journal of Learning Disabilities</i>, <i>37</i>(1), 4-15. https://doi.org/10.1177/00222194040370010201</li>
-            <li>Gerber, P. J., Ginsberg, R., & Reiff, H. B. (1992). Identifying alterable patterns in employment success for highly successful adults with learning disabilities. <i>Journal of Learning Disabilities</i>, <i>25</i>(8), 475-487. https://doi.org/10.1177/002221949202500803</li>
+            <li>Chinn, S. (2012). <i>The trouble with maths: A practical guide to helping learners with numeracy difficulties</i> (2nd ed.). Routledge.</li>
+            <li>Dweck, C. S. (2006). <i>Mindset: The new psychology of success</i>. Random House.</li>
+            <li>Geary, D. C. (2004). Mathematics and learning disabilities. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Gerber, P. J., et al. (1992). Identifying alterable patterns in employment success for highly successful adults with learning disabilities. <i>Journal of Learning Disabilities</i>.</li>
           </ul>
         </div>
       </div>

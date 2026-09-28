@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DyscalculiaCausesProps {
@@ -10,39 +10,22 @@ export function DyscalculiaCauses({ setCurrentArticle, initialTab }: Dyscalculia
   const [activeTab, setActiveTab] = useState(initialTab || 'biology');
 
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300">
-      <style>
-        {`
-          sup {
-            color: #10b981;
-            font-weight: bold;
-          }
-        `}
-      </style>
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* Header Area */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl text-[#0c264d] font-normal">
           Dyscalculia: Causes & Origins
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dyscalculia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap md:block hidden shadow-sm shrink-0"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
-          Back to Dyscalculia
+          <span className="text-lg">←</span>
+          All About Dyscalculia
         </button>
       </div>
-
-      {/* Mobile button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dyscalculia')}
-        className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap md:hidden mb-6 shadow-sm shrink-0"
-      >
-        <span className="text-xl">←</span>
-        Back to Dyscalculia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -363,46 +346,43 @@ export function DyscalculiaCauses({ setCurrentArticle, initialTab }: Dyscalculia
         </div>
       )}
 
-      {/* Bottom navigation button */}
-      <div className="mt-12 mb-6 flex flex-col md:flex-row md:justify-end clear-both">
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dyscalculia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
         >
-          <span className="text-xl">←</span>
-          Back to Dyscalculia
+          <span className="text-lg">←</span>All About Dyscalculia
         </button>
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-      
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-green-700 font-bold mb-3 border-b border-green-700 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Shalev, R. S., Auerbach, J., Manor, O., & Gross-Tsur, V. (2000). Developmental dyscalculia: prevalence and prognosis. <em>European Child & Adolescent Psychiatry</em>, <em>9</em>, S58-S64. https://doi.org/10.1007/s007870070009</p>
-            <p>2. Landerl, K., & Moll, K. (2010). Comorbidity of learning disorders: prevalence and familial transmission. <em>Journal of Child Psychology and Psychiatry</em>, <em>51</em>, 287-294. https://doi.org/10.1111/j.1469-7610.2009.02164.x</p>
-            <p>3. Hannula-Jouppi, K., Kaminen-Ahola, N., Taipale, M., et al. (2005). The Axon Guidance Receptor Gene ROBO1 Is a Candidate Gene for Developmental Dyslexia. <em>PLoS Genetics</em>, <em>1</em>, e50. https://doi.org/10.1371/journal.pgen.0010050</p>
-            <p>4. McCaskey, U., von Aster, M., O’Gorman Tuura, R., & Kucian, K. (2017). Adolescents with Developmental Dyscalculia Do Not Have a Generalized Magnitude Deficit – Processing of Discrete and Continuous Magnitudes. <em>Frontiers in Human Neuroscience</em>, <em>11</em>. https://doi.org/10.3389/fnhum.2017.00102</p>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Shalev, R. S., Auerbach, J., Manor, O., & Gross-Tsur, V. (2000). Developmental dyscalculia: prevalence and prognosis. <i>European Child & Adolescent Psychiatry</i>.</p>
+            <p>2. Landerl, K., & Moll, K. (2010). Comorbidity of learning disorders: prevalence and familial transmission. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+            <p>3. Hannula-Jouppi, K., Kaminen-Ahola, N., Taipale, M., et al. (2005). The Axon Guidance Receptor Gene ROBO1 Is a Candidate Gene for Developmental Dyslexia. <i>PLoS Genetics</i>.</p>
+            <p>4. McCaskey, U., von Aster, M., O'Gorman Tuura, R., & Kucian, K. (2017). Adolescents with Developmental Dyscalculia Do Not Have a Generalized Magnitude Deficit – Processing of Discrete and Continuous Magnitudes. <i>Frontiers in Human Neuroscience</i>.</p>
           </div>
         </div>
 
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>American Psychiatric Association. (2022). Diagnostic and Statistical Manual of Mental Disorders (5th ed., text rev.). American Psychiatric Association.</li>
-            <li>Butterworth, B., Varma, S., & Laurillard, D. (2011). "Dyscalculia: From brain to education." Science.</li>
-            <li>Mazzocco, M. M. (2007). "Defining and differentiating mathematical learning disabilities and difficulties." Why is math so hard for some children?. Paul H. Brookes Publishing.</li>
-            <li>Wilson, A. J., & Dehaene, S. (2007). "Number sense and developmental dyscalculia." Human behavior, learning, and the developing brain. Guilford Press.</li>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Association.</li>
+            <li>Butterworth, B., Varma, S., & Laurillard, D. (2011). Dyscalculia: From brain to education. <i>Science</i>.</li>
+            <li>Mazzocco, M. M. (2007). Defining and differentiating mathematical learning disabilities and difficulties. <i>Why is math so hard for some children?</i>. Paul H. Brookes Publishing.</li>
+            <li>Wilson, A. J., & Dehaene, S. (2007). Number sense and developmental dyscalculia. <i>Human behavior, learning, and the developing brain</i>. Guilford Press.</li>
           </ul>
         </div>
       </div>

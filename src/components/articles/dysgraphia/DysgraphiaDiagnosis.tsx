@@ -10,31 +10,22 @@ export function DysgraphiaDiagnosis({ setCurrentArticle, initialTab }: Dysgraphi
   const [activeTab, setActiveTab] = useState(initialTab || 'who');
 
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300 w-full min-w-0">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* HEADER */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Dysgraphia: Testing & Diagnosing
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dysgraphia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           Back to Dysgraphia
         </button>
       </div>
-
-      {/* Mobile Back Button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dysgraphia')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        Back to Dysgraphia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -392,87 +383,87 @@ export function DysgraphiaDiagnosis({ setCurrentArticle, initialTab }: Dysgraphi
         
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>American Occupational Therapy Association. (2014). Occupational therapy practice framework. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.2014.682006</li>
-            <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). https://doi.org/10.1176/appi.books.9780890425596</li>
+            <li>American Occupational Therapy Association. (2014). Occupational therapy practice framework. <i>American Journal of Occupational Therapy</i>.</li>
+            <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.).</li>
             <li>Amundson, S. J. (1995). <i>Evaluation Tool of Children's Handwriting</i>. O.T. KIDS.</li>
             <li>Association on Higher Education and Disability. (2012). <i>Supporting accommodation requests: Guidance on documentation practices</i>.</li>
             <li>Ayres, A. J. (1989). <i>Sensory Integration and Praxis Tests</i>. Western Psychological Services.</li>
-            <li>Barnett, A. L., Henderson, S. E., Scheib, B., & Schulz, J. (2007). <i>Detailed Assessment of Speed of Handwriting</i>. Pearson.</li>
+            <li>Barnett, A. L., et al. (2007). <i>Detailed Assessment of Speed of Handwriting</i>. Pearson.</li>
             <li>Beery, K. E., & Beery, N. A. (2010). <i>The Beery-Buktenica developmental test of visual-motor integration</i>. Pearson.</li>
             <li>Berninger, V. W. (2007). <i>Process Assessment of the Learner, Second Edition: Diagnostic for Reading and Writing (PAL-II RW)</i>. Pearson.</li>
-            <li>Berninger, V. W. (2009). Highlights of programmatic, interdisciplinary research on writing. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00281.x</li>
-            <li>Berninger, V. W., & Fuller, F. (1992). Gender differences in orthographic, verbal, and compositional fluency. <i>Journal of School Psychology</i>. https://doi.org/10.1016/0022-4405(92)90004-O</li>
-            <li>Berninger, V. W., & May, M. O. (2011). Evidence-based diagnosis and treatment for specific learning disabilities. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219410391189</li>
-            <li>Berninger, V. W., & Richards, T. L. (2010). Inter-relationships among behavioral markers, genes, brain, and treatment. <i>Future Neurology</i>. https://doi.org/10.2217/fnl.10.22</li>
+            <li>Berninger, V. W. (2009). Highlights of programmatic, interdisciplinary research on writing. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Berninger, V. W., & Fuller, F. (1992). Gender differences in orthographic, verbal, and compositional fluency. <i>Journal of School Psychology</i>.</li>
+            <li>Berninger, V. W., & May, M. O. (2011). Evidence-based diagnosis and treatment for specific learning disabilities. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Berninger, V. W., & Richards, T. L. (2010). Inter-relationships among behavioral markers, genes, brain, and treatment. <i>Future Neurology</i>.</li>
             <li>Berninger, V. W., & Wolf, B. J. (2009). <i>Teaching students with dyslexia and dysgraphia</i>. Brookes Publishing.</li>
-            <li>Berninger, V. W., Nielsen, K. H., Abbott, R. D., Wijsman, E., & Raskind, W. (2008). Writing problems in developmental dyslexia. <i>Journal of School Psychology</i>. https://doi.org/10.1016/j.jsp.2007.11.002</li>
-            <li>Connelly, V., Campbell, S., MacLean, M., & Barnes, J. (2006). Contribution of lower order letter writing skills. <i>Developmental Neuropsychology</i>. https://doi.org/10.1207/s15326942dn2901_9</li>
-            <li>Deuel, R. K. (1995). Developmental dysgraphia and motor skills disorders. <i>Journal of Child Neurology</i>. https://doi.org/10.1177/0883073895010001031</li>
-            <li>Dewey, D., Kaplan, B. J., Crawford, S. G., & Wilson, B. N. (2002). Developmental coordination disorder. <i>Human Movement Science</i>. https://doi.org/10.1016/S0167-9457(02)00153-0</li>
-            <li>Feder, K. P., & Majnemer, A. (2007). Handwriting development, competency, and intervention. <i>Developmental Medicine & Child Neurology</i>. https://doi.org/10.1111/j.1469-8749.2007.00312.x</li>
-            <li>Fletcher, J. M., Lyon, G. R., Fuchs, L. S., & Barnes, M. A. (2018). <i>Learning disabilities: From identification to intervention</i> (2nd ed.). Guilford Press.</li>
-            <li>Fuchs, D., & Fuchs, L. S. (2006). Introduction to response to intervention. <i>Reading Research Quarterly</i>. https://doi.org/10.1598/RRQ.41.1.4</li>
+            <li>Berninger, V. W., et al. (2008). Writing problems in developmental dyslexia. <i>Journal of School Psychology</i>.</li>
+            <li>Connelly, V., et al. (2006). Contribution of lower order letter writing skills. <i>Developmental Neuropsychology</i>.</li>
+            <li>Deuel, R. K. (1995). Developmental dysgraphia and motor skills disorders. <i>Journal of Child Neurology</i>.</li>
+            <li>Dewey, D., et al. (2002). Developmental coordination disorder. <i>Human Movement Science</i>.</li>
+            <li>Feder, K. P., & Majnemer, A. (2007). Handwriting development, competency, and intervention. <i>Developmental Medicine & Child Neurology</i>.</li>
+            <li>Fletcher, J. M., et al. (2018). <i>Learning disabilities: From identification to intervention</i> (2nd ed.). Guilford Press.</li>
+            <li>Fuchs, D., & Fuchs, L. S. (2006). Introduction to response to intervention. <i>Reading Research Quarterly</i>.</li>
             <li>Fuchs, L. S., & Fuchs, D. (2002). <i>What is scientifically-based research on progress monitoring?</i> National Center on Student Progress Monitoring.</li>
-            <li>Fuentes, C. T., Mostofsky, S. H., & Bastian, A. J. (2009). Children with autism show specific handwriting impairments. <i>Neurology</i>. https://doi.org/10.1212/WNL.0b013e3181c0d48c</li>
-            <li>Gerber, P. J. (2012). The impact of learning disabilities on adulthood. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219411426858</li>
-            <li>Glascoe, F. P. (2005). Screening for developmental and behavioral problems. <i>Mental Retardation and Developmental Disabilities Research Reviews</i>. https://doi.org/10.1002/mrdd.20068</li>
-            <li>Graham, S., & Harris, K. R. (2009). Almost 30 years of writing research. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00284.x</li>
-            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research. <i>Educational Psychology Review</i>. https://doi.org/10.1007/BF01464047</li>
-            <li>Graham, S., Berninger, V. W., Abbott, R. D., Abbott, S. P., & Whitaker, D. (1997). Role of mechanics in composing. <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.89.1.170</li>
-            <li>Graham, S., Berninger, V., & Weintraub, N. (2001). Which manuscript letters do primary grade children write legibly? <i>Journal of Educational Psychology</i>. https://doi.org/10.1037/0022-0663.93.3.488</li>
+            <li>Fuentes, C. T., et al. (2009). Children with autism show specific handwriting impairments. <i>Neurology</i>.</li>
+            <li>Gerber, P. J. (2012). The impact of learning disabilities on adulthood. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Glascoe, F. P. (2005). Screening for developmental and behavioral problems. <i>Mental Retardation and Developmental Disabilities Research Reviews</i>.</li>
+            <li>Graham, S., & Harris, K. R. (2009). Almost 30 years of writing research. <i>Learning Disabilities Research & Practice</i>.</li>
+            <li>Graham, S., & Weintraub, N. (1996). A review of handwriting research. <i>Educational Psychology Review</i>.</li>
+            <li>Graham, S., et al. (1997). Role of mechanics in composing. <i>Journal of Educational Psychology</i>.</li>
+            <li>Graham, S., et al. (2001). Which manuscript letters do primary grade children write legibly? <i>Journal of Educational Psychology</i>.</li>
             <li>Gregg, N. (2009). <i>Adolescents and adults with learning disabilities and ADHD</i>. Guilford Press.</li>
-            <li>Gregg, N., Coleman, C., Davis, M., & Chalk, J. C. (2007). Timed essay writing: Implications for high-stakes tests. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/00222194070400040301</li>
-            <li>Gureasko-Moore, S., DuPaul, G. J., & White, G. P. (2007). Self-management of classroom preparedness and homework. <i>School Psychology Review</i>. https://doi.org/10.1080/02796015.2007.12087923</li>
-            <li>Hallahan, D. P., Pullen, P. C., & Ward, D. (2013). A brief history of the field of learning disabilities. In H. L. Swanson, K. R. Harris, & S. Graham (Eds.), <i>Handbook of learning disabilities</i> (2nd ed., pp. 15-32). Guilford Press.</li>
+            <li>Gregg, N., et al. (2007). Timed essay writing: Implications for high-stakes tests. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Gureasko-Moore, S., et al. (2007). Self-management of classroom preparedness and homework. <i>School Psychology Review</i>.</li>
+            <li>Hallahan, D. P., et al. (2013). A brief history of the field of learning disabilities. In <i>Handbook of learning disabilities</i> (2nd ed.). Guilford Press.</li>
             <li>Hammill, D. D., & Larsen, S. C. (2009). <i>Test of Written Language</i> (4th ed.). Pro-Ed.</li>
-            <li>Hammill, D. D., Pearson, N. A., & Voress, J. K. (2014). <i>Developmental Test of Visual Perception</i> (3rd ed.). Pro-Ed.</li>
-            <li>Hamstra-Bletz, L., & Blöte, A. W. (1993). A longitudinal study on dysgraphic handwriting in primary school. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221949302601007</li>
-            <li>Handler, S. M., & Fierson, W. M. (2011). Learning disabilities, dyslexia, and vision. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2010-3670</li>
-            <li>Hooper, S. R., Swartz, C. W., Wakely, M. B., de Kruif, R. E., & Montgomery, J. W. (2002). Executive functions in elementary school children. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/002221940203500105</li>
-            <li>Hoy, M. M., Egan, M. Y., & Feder, K. P. (2011). A systematic review of interventions to improve handwriting. <i>Canadian Journal of Occupational Therapy</i>. https://doi.org/10.2182/cjot.2011.78.1.3</li>
+            <li>Hammill, D. D., et al. (2014). <i>Developmental Test of Visual Perception</i> (3rd ed.). Pro-Ed.</li>
+            <li>Hamstra-Bletz, L., & Blöte, A. W. (1993). A longitudinal study on dysgraphic handwriting in primary school. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Handler, S. M., & Fierson, W. M. (2011). Learning disabilities, dyslexia, and vision. <i>Pediatrics</i>.</li>
+            <li>Hooper, S. R., et al. (2002). Executive functions in elementary school children. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Hoy, M. M., et al. (2011). A systematic review of interventions to improve handwriting. <i>Canadian Journal of Occupational Therapy</i>.</li>
             <li>Individuals with Disabilities Education Act, 20 U.S.C. § 1400. (2004).</li>
-            <li>Karlsdottir, R., & Stefansson, T. (2002). Problems in developing functional handwriting. <i>Perceptual and Motor Skills</i>. https://doi.org/10.2466/pms.2002.94.2.623</li>
-            <li>Katusic, S. K., Colligan, R. C., Weaver, A. L., & Barbaresi, W. J. (2009). The forgotten learning disability. <i>Pediatrics</i>. https://doi.org/10.1542/peds.2008-2098</li>
-            <li>Larsen, S. C., Hammill, D. D., & Moats, L. C. (2013). <i>Test of Written Spelling</i> (5th ed.). Pro-Ed.</li>
+            <li>Karlsdottir, R., & Stefansson, T. (2002). Problems in developing functional handwriting. <i>Perceptual and Motor Skills</i>.</li>
+            <li>Katusic, S. K., et al. (2009). The forgotten learning disability. <i>Pediatrics</i>.</li>
+            <li>Larsen, S. C., et al. (2013). <i>Test of Written Spelling</i> (5th ed.). Pro-Ed.</li>
             <li>Learning Disabilities Association of America. (2020). <i>Testing and evaluation</i>.</li>
             <li>Lerner, J., & Johns, B. (2015). <i>Learning disabilities and related disabilities</i> (13th ed.). Cengage Learning.</li>
             <li>Levine, M. D. (1987). <i>Developmental variation and learning disorders</i>. Educators Publishing Service.</li>
-            <li>Lichtenstein, R., & Karge, B. D. (1997). Consultation and collaboration in education. In A. Thomas & J. Grimes (Eds.), <i>Best practices in school psychology III</i>. NASP.</li>
-            <li>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>. https://doi.org/10.1111/j.1540-5826.2009.00286.x</li>
+            <li>Lichtenstein, R., & Karge, B. D. (1997). Consultation and collaboration in education. In <i>Best practices in school psychology III</i>. NASP.</li>
+            <li>MacArthur, C. A. (2009). Reflections on research on writing and technology for struggling writers. <i>Learning Disabilities Research & Practice</i>.</li>
             <li>Mather, N., & Wendling, B. J. (2012). <i>Essentials of evidence-based academic interventions</i>. John Wiley & Sons.</li>
             <li>Mather, N., & Wendling, B. J. (2014). <i>Essentials of dyslexia assessment and intervention</i>. John Wiley & Sons.</li>
-            <li>McCutchen, D. (1996). A capacity theory of writing: Working memory in composition. <i>Educational Psychology Review</i>. https://doi.org/10.1007/BF01464076</li>
+            <li>McCutchen, D. (1996). A capacity theory of writing: Working memory in composition. <i>Educational Psychology Review</i>.</li>
             <li>Moats, L. C. (1995). <i>Spelling: Development, disability, and instruction</i>. York Press.</li>
             <li>National Association of School Psychologists. (2015). <i>Position statement on private school placement and services</i>.</li>
             <li>National Association of School Psychologists. (2020). <i>Model for comprehensive and integrated school psychological services</i>.</li>
             <li>National Center for Learning Disabilities. (2014). <i>The state of learning disabilities</i> (3rd ed.).</li>
-            <li>Nelson, J. M., & Harwood, H. (2011). Learning disabilities and anxiety: A meta-analysis. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219409359939</li>
-            <li>Ortiz, S. O., & Dynda, A. M. (2005). Use of intelligence tests with culturally and linguistically diverse populations. In D. P. Flanagan & P. L. Harrison (Eds.), <i>Contemporary intellectual assessment</i>. Guilford Press.</li>
-            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>. https://doi.org/10.1207/s15326942dn2901_10</li>
+            <li>Nelson, J. M., & Harwood, H. (2011). Learning disabilities and anxiety: A meta-analysis. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Ortiz, S. O., & Dynda, A. M. (2005). Use of intelligence tests with culturally and linguistically diverse populations. In <i>Contemporary intellectual assessment</i>. Guilford Press.</li>
+            <li>Peverly, S. T. (2006). The importance of handwriting speed in adult writing. <i>Developmental Neuropsychology</i>.</li>
             <li>Reisman, J. E. (1999). <i>Minnesota Handwriting Assessment</i>. Harcourt Assessment.</li>
             <li>Reynolds, C. R., & Kamphaus, R. W. (2015). <i>BASC-3: Behavior assessment system for children</i> (3rd ed.). Pearson.</li>
-            <li>Rosenblum, S., Parush, S., & Weiss, P. L. (2003). Computerized temporal handwriting characteristics. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.57.2.129</li>
-            <li>Rosenblum, S., Weiss, P. L., & Parush, S. (2003). Product and process evaluation of handwriting difficulties. <i>Educational Psychology Review</i>. https://doi.org/10.1023/A:1021371425220</li>
-            <li>Salvia, J., Ysseldyke, J. E., & Witmer, S. (2016). <i>Assessment in special and inclusive education</i> (13th ed.). Cengage Learning.</li>
+            <li>Rosenblum, S., et al. (2003). Computerized temporal handwriting characteristics. <i>American Journal of Occupational Therapy</i>.</li>
+            <li>Rosenblum, S., et al. (2003). Product and process evaluation of handwriting difficulties. <i>Educational Psychology Review</i>.</li>
+            <li>Salvia, J., et al. (2016). <i>Assessment in special and inclusive education</i> (13th ed.). Cengage Learning.</li>
             <li>Sattler, J. M. (2008). <i>Assessment of children: Cognitive foundations</i> (5th ed.). Jerome M. Sattler Publisher.</li>
             <li>Sattler, J. M., & Hoge, R. D. (2006). <i>Assessment of children: Behavioral, social, and clinical foundations</i> (5th ed.). Jerome M. Sattler Publisher.</li>
-            <li>Schulte-Körne, G., Deimel, W., Müller, K., Gutenbrunner, C., & Remschmidt, H. (1996). Familial aggregation of spelling disability. <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.1996.tb01483.x</li>
+            <li>Schulte-Körne, G., et al. (1996). Familial aggregation of spelling disability. <i>Journal of Child Psychology and Psychiatry</i>.</li>
             <li>Shapiro, E. S. (2011). <i>Academic skills problems: Direct assessment and intervention</i> (4th ed.). Guilford Press.</li>
-            <li>Smits-Engelsman, B. C., Niemeijer, A. S., & van Galen, G. P. (2001). Fine motor deficiencies in children diagnosed as DCD. <i>Human Movement Science</i>. https://doi.org/10.1016/S0167-9457(01)00033-5</li>
-            <li>Tannock, R. (2013). Rethinking ADHD and LD in DSM-5. <i>Journal of Learning Disabilities</i>. https://doi.org/10.1177/0022219412464341</li>
-            <li>Tiffin, J., & Asher, E. J. (1948). The Purdue pegboard. <i>Journal of Applied Psychology</i>. https://doi.org/10.1037/h0061266</li>
+            <li>Smits-Engelsman, B. C., et al. (2001). Fine motor deficiencies in children diagnosed as DCD. <i>Human Movement Science</i>.</li>
+            <li>Tannock, R. (2013). Rethinking ADHD and LD in DSM-5. <i>Journal of Learning Disabilities</i>.</li>
+            <li>Tiffin, J., & Asher, E. J. (1948). The Purdue pegboard. <i>Journal of Applied Psychology</i>.</li>
             <li>Treiman, R. (1993). <i>Beginning to spell: A study of first-grade children</i>. Oxford University Press.</li>
-            <li>Tseng, M. H., & Cermak, S. A. (1993). The influence of ergonomic factors on handwriting performance. <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.47.10.919</li>
+            <li>Tseng, M. H., & Cermak, S. A. (1993). The influence of ergonomic factors on handwriting performance. <i>American Journal of Occupational Therapy</i>.</li>
             <li>U.S. Department of Education. (2006). <i>Identification of specific learning disabilities</i>.</li>
             <li>Wechsler, D. (2014). <i>Wechsler Intelligence Scale for Children</i> (5th ed.). Pearson.</li>
             <li>Wechsler, D. (2020). <i>Wechsler Individual Achievement Test</i> (4th ed.). Pearson.</li>
             <li>Weintraub, N., & Graham, S. (1998). Writing legibly and quickly. <i>Learning Disabilities Research & Practice</i>.</li>
             <li>Wendling, B. J., & Mather, N. (2009). <i>Essentials of evidence-based academic interventions</i>. John Wiley & Sons.</li>
-            <li>Wilson, M. S., & Reschly, D. J. (1996). Assessment in school psychology training and practice. <i>School Psychology Review</i>. https://doi.org/10.1080/02796015.1996.12085799</li>
+            <li>Wilson, M. S., & Reschly, D. J. (1996). Assessment in school psychology training and practice. <i>School Psychology Review</i>.</li>
             <li>Wright, P. W. D., & Wright, P. D. (2006). <i>Wrightslaw: Special education law</i> (2nd ed.). Harbor House Law Press.</li>
             <li>Yell, M. L. (2016). <i>The law and special education</i> (4th ed.). Pearson.</li>
           </ul>

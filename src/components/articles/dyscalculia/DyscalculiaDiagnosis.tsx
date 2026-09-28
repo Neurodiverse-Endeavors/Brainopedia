@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DyscalculiaDiagnosisProps {
@@ -10,31 +10,22 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
   const [activeTab, setActiveTab] = useState(initialTab || 'who');
 
   return (
-    <article className="max-w-6xl font-spartan animate-in fade-in duration-300">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* Header Area */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <h1 className="text-3xl text-[#0c264d] font-normal">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <h1 className="text-3xl text-[#0c264d] font-bold">
           Dyscalculia: Testing & Diagnosing
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dyscalculia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap md:block hidden shadow-sm shrink-0"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
-          Back to Dyscalculia
+          <span className="text-lg">←</span>
+          All About Dyscalculia
         </button>
       </div>
-
-      {/* Mobile button */}
-      <button 
-        onClick={() => setCurrentArticle?.('dyscalculia')}
-        className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap md:hidden mb-6 shadow-sm shrink-0"
-      >
-        <span className="text-xl">←</span>
-        Back to Dyscalculia
-      </button>
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -78,7 +69,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
           
           {/* Centered Intro Paragraph */}
           <p className="text-slate-700 leading-relaxed text-sm text-center max-w-4xl mx-auto mb-8">
-            Accurate diagnosis of dyscalculia requires a comprehensive, multi-disciplinary assessment conducted by qualified educational or clinical professionals. Early identification is highly critical, but pursuing an evaluation at any age provides invaluable insights and opens doors to legally protected academic accommodations.
+            Despite affecting roughly 3-7% of the global population, dyscalculia is vastly under-diagnosed compared to dyslexia, often being dismissed as simple "math anxiety."<sup>1</sup> Accurate diagnosis requires a comprehensive, multi-disciplinary assessment conducted by qualified educational or clinical professionals. Early identification is highly critical, but pursuing an evaluation at any age provides invaluable insights and opens doors to legally protected academic accommodations.
           </p>
 
           {/* When to Seek Evaluation Card (Cyan) */}
@@ -119,7 +110,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-yellow-200 pb-2">DSM-5 Classification</h3>
-                <p className="text-sm text-slate-700 mb-2 font-bold italic">"Specific Learning Disorder with Impairment in Mathematics"</p>
+                <p className="text-sm text-slate-700 mb-2 font-bold italic">"Specific Learning Disorder with Impairment in Mathematics"<sup>2</sup></p>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li>Difficulties learning academic skills for at least 6 months despite targeted interventions.</li>
                   <li>Specific trouble with number sense, math fact retrieval, calculation, or quantitative reasoning.</li>
@@ -130,7 +121,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-yellow-200 pb-2">ICD-11 Classification</h3>
-                <p className="text-sm text-slate-700 mb-2 font-bold italic">"Developmental learning disorder with impairment in mathematics"</p>
+                <p className="text-sm text-slate-700 mb-2 font-bold italic">"Developmental learning disorder with impairment in mathematics"<sup>3</sup></p>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li>Significant and persistent difficulties in learning academic skills related to mathematics.</li>
                   <li>Performance is markedly below what would be expected for age and level of intellectual functioning.</li>
@@ -218,8 +209,8 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
               <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">Cognitive & Achievement</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>IQ Testing:</strong> Standardized tests (WISC-V, WAIS-IV) to assess verbal reasoning, visuospatial processing, and overall cognitive profile.</li>
-                  <li><strong>Math Achievement Tests:</strong> Tools like the WIAT-III, KeyMath-3, or WJ-IV to accurately measure exact mathematical knowledge and grade-level skills.</li>
+                  <li><strong>IQ Testing:</strong> Standardized tests (WISC-V, WAIS-IV) to assess verbal reasoning, visuospatial processing, and overall cognitive profile.<sup>4</sup></li>
+                  <li><strong>Math Achievement Tests:</strong> Tools like the WIAT-III, KeyMath-3, or WJ-IV to accurately measure exact mathematical knowledge and grade-level skills.<sup>4</sup></li>
                 </ul>
               </div>
             </div>
@@ -373,35 +364,42 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
         </div>
       )}
 
-      {/* Bottom navigation button */}
-      <div className="mt-12 mb-6 flex flex-col md:flex-row md:justify-end clear-both">
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('dyscalculia')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
         >
-          <span className="text-xl">←</span>
-          Back to Dyscalculia
+          <span className="text-lg">←</span>All About Dyscalculia
         </button>
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-      
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
+        {/* CITED STUDIES: GREEN */}
+        <div className="mb-6">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
+            Cited Studies & Statistics
+          </h4>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Shalev, R. S., Auerbach, J., Manor, O., & Gross-Tsur, V. (2000). Developmental dyscalculia: Prevalence and prognosis. <i>European Child & Adolescent Psychiatry</i>.</p>
+            <p>2. American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</p>
+            <p>3. World Health Organization. (2019). <i>International statistical classification of diseases and related health problems</i> (11th ed.). WHO.</p>
+            <p>4. Flanagan, D. P., & Alfonso, V. C. (2017). <i>Essentials of specific learning disability identification</i> (2nd ed.). John Wiley & Sons.</p>
+          </div>
+        </div>
+
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-cyan-500 font-bold mb-3 border-b border-cyan-500 border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed.). American Psychiatric Publishing.</li>
-            <li>World Health Organization. (2019). <i>International statistical classification of diseases and related health problems</i> (11th ed.). WHO.</li>
-            <li>Kaufmann, L., & von Aster, M. (2012). "The diagnosis and management of dyscalculia." <i>Deutsches Ärzteblatt International</i>. https://doi.org/10.3238/arztebl.2012.0767</li>
             <li>Fletcher, J. M., Lyon, G. R., Fuchs, L. S., & Barnes, M. A. (2018). <i>Learning disabilities: From identification to intervention</i> (2nd ed.). Guilford Press.</li>
-            <li>Mazzocco, M. M., & Myers, G. F. (2003). "Complexities in identifying and defining mathematics learning disability in the primary school-age years." <i>Annals of Dyslexia</i>. https://doi.org/10.1007/s11881-003-0011-7</li>
-            <li>Flanagan, D. P., & Alfonso, V. C. (2017). <i>Essentials of specific learning disability identification</i> (2nd ed.). John Wiley & Sons.</li>
+            <li>Kaufmann, L., & von Aster, M. (2012). The diagnosis and management of dyscalculia. <i>Deutsches Ärzteblatt International</i>.</li>
+            <li>Mazzocco, M. M., & Myers, G. F. (2003). Complexities in identifying and defining mathematics learning disability in the primary school-age years. <i>Annals of Dyslexia</i>.</li>
           </ul>
         </div>
       </div>
