@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from "../../../figma/ImageWithFallback";
 
 interface SafetyContentProps {
@@ -7,7 +6,7 @@ interface SafetyContentProps {
 
 export function SafetyContent({ setCurrentArticle }: SafetyContentProps) {
   return (
-    <>
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       <div>
         <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Autism Safety: Across the Lifespan</h2>
         
@@ -128,9 +127,18 @@ export function SafetyContent({ setCurrentArticle }: SafetyContentProps) {
             /> 
           </div> 
         </div>
+
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
+
       {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both"></div>
-      
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -139,12 +147,12 @@ export function SafetyContent({ setCurrentArticle }: SafetyContentProps) {
           <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>National Autism Association. "Autism & Wandering." https://nationalautismassociation.org/resources/autism-safety-facts/wandering/</p>
-            <p>Autism Society. "Safety in the Community." https://autismsociety.org/resources/safety-in-the-community/</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>Autism Society. Safety in the Community.</li>
+            <li>National Autism Association. Autism & Wandering.</li>
+          </ul>
         </div>
       </div>
-    </>
+    </article>
   );
 }

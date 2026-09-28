@@ -1,4 +1,3 @@
-import React from 'react';
 import { Activity, Brain, Layers, Users, Hand, Sun, CheckCircle, Home, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
 import { SectionActions } from '../../../SectionActions';
 import { ImageWithFallback } from '../../../figma/ImageWithFallback';
@@ -11,7 +10,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
   const responsiveImageClass = "w-full h-auto rounded-md border border-gray-300 shadow-sm";
 
   return (
-    <div id="full-ot-article" className="space-y-6 text-[#0c264d] font-spartan animate-in fade-in duration-300">
+    <article id="full-ot-article" className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* Header with Back Button */}
       <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -23,7 +22,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
           onClick={() => setCurrentArticle?.('autism-support-therapies')}
           className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shrink-0"
         >
-          <span className="text-xl">&larr;</span>
+          <span className="text-xl">←</span>
           Back to Therapies
         </button>
       </div>
@@ -33,13 +32,13 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
         sectionTitle="Complete Guide to Occupational Therapy" 
       />
   
-          {/* Introduction (Floated Image) */}
-          <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 mb-8 flow-root">
-          <ImageWithFallback 
-            src="/images/autism/autism-support-TTtab-OT-intro.webp"
-            alt="Occupational Therapy Intro"
-            className="w-64 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm"
-          />
+      {/* Introduction (Floated Image) */}
+      <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 mb-8 flow-root">
+        <ImageWithFallback 
+          src="/images/autism/autism-support-TTtab-OT-intro.webp"
+          alt="Occupational Therapy Intro"
+          className="w-64 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm"
+        />
         <p className="text-base leading-relaxed mb-4">
           Occupational therapy (OT) helps people of all ages regain or build the skills needed for daily living. Rather than focusing strictly on physical movement, OT focuses on functional independence, supporting "occupations"—the meaningful activities that occupy your time, such as working, self-care, or play.
         </p>
@@ -54,18 +53,18 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
           <Activity className="text-[#ff6b6b]" size={24} /> 
           Core Intervention Areas
         </h2>
-              <ImageWithFallback 
+        <ImageWithFallback 
           src="/images/autism/autism-support-TTtab-OT-core-areas.webp"
           alt="OT Core Intervention Areas"
           className={responsiveImageClass}
-      />
+        />
         <div className="grid md:grid-cols-2 gap-4 mt-4">
           <div className="bg-[#fff5f5] p-4 rounded-lg border border-[#ff6b6b]/20">
             <h4 className="font-bold text-[#0c264d] mb-2 flex items-center gap-2">
               <Sun className="text-[#ff6b6b]" size={18} /> Sensory Integration
             </h4>
             <p className="text-sm text-gray-700">
-              Developing personalized "sensory diets" to help individuals process noise, lights, or textures, minimizing sensory meltdowns and maximizing comfort<sup className="text-green-600 font-bold ml-0.5">2</sup>.
+              Developing personalized "sensory diets" to help individuals process noise, lights, or textures, minimizing sensory meltdowns and maximizing comfort<sup>2</sup>.
             </p>
           </div>
           
@@ -124,11 +123,11 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
           </div>
         </div>
 
-      <ImageWithFallback 
-          src="/images/autism/autism-support-TTtab-OT-sensory-diet.webp"
-          alt="Communication Environment"
-          className={responsiveImageClass}
-      />
+        <ImageWithFallback 
+            src="/images/autism/autism-support-TTtab-OT-sensory-diet.webp"
+            alt="Communication Environment"
+            className={responsiveImageClass}
+        />
         <h4 className="font-bold text-[#0c264d] mb-3 border-b border-[#0A9DC4]/20 pb-2">How to Build a Proactive, Affirming Sensory Diet</h4>
         
         <div className="space-y-4">
@@ -269,7 +268,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
         </h2>
         
         <p className="text-sm text-gray-700 mb-6">
-          When interviewing or evaluating a new occupational therapist, it is vital to ensure they utilize modern, neurodiversity-affirming approaches. Here are specific clinical methodologies and questions you can ask to gauge their practice style<sup className="text-green-600 font-bold ml-0.5">3</sup>.
+          When interviewing or evaluating a new occupational therapist, it is vital to ensure they utilize modern, neurodiversity-affirming approaches. Here are specific clinical methodologies and questions you can ask to gauge their practice style<sup>3</sup>.
         </p>
 
         <div className="space-y-4">
@@ -327,19 +326,17 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
       </div>
 
       {/* Back Button Bottom */}
-      <div className="flex justify-end mt-8 mb-6">
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('autism-support-therapies')}
           className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2"
         >
-          <span className="text-xl">&larr;</span>
+          <span className="text-xl">←</span>
           Back to Therapies
         </button>
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -349,9 +346,9 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Case-Smith, J., & Arbesman, M. (2008). "Evidence-based review of interventions for autism used in or of relevance to occupational therapy." <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.62.4.416</p>
-            <p>2. Schaaf, R. C., et al. (2014). "An intervention for sensory difficulties in children with autism: A randomized trial." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-013-1983-8</p>
-            <p>3. Dallman, A. R., et al. (2022). "Neurodiversity-Affirming Practices are a Moral Imperative for Occupational Therapy." <i>The Open Journal of Occupational Therapy</i>. https://doi.org/10.15453/2168-6408.1937</p>
+            <p>1. Case-Smith, J., & Arbesman, M. (2008). Evidence-based review of interventions for autism used in or of relevance to occupational therapy. <i>American Journal of Occupational Therapy</i>.</p>
+            <p>2. Schaaf, R. C., et al. (2014). An intervention for sensory difficulties in children with autism: A randomized trial. <i>Journal of Autism and Developmental Disorders</i>.</p>
+            <p>3. Dallman, A. R., et al. (2022). Neurodiversity-Affirming Practices are a Moral Imperative for Occupational Therapy. <i>The Open Journal of Occupational Therapy</i>.</p>
           </div>
         </div>
         
@@ -360,17 +357,16 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
           <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b-2 border-[#2abcd4] pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Ayres, A. J. (2005). <i>Sensory Integration and the Child: Understanding Hidden Sensory Challenges</i>. Western Psychological Services. https://www.wpspublish.com/sensory-integration-and-the-child-25th-anniversary-edition</p>
-            <p>Dunn, W. (2014). <i>Sensory Profile 2: User's Manual and Assessing Sensory Processing</i>. Pearson Clinical Assessment. https://www.pearsonassessments.com/store/usassessments/en/Store/Professional-Assessments/Motor-Sensory/Sensory-Profile-2/p/100000822.html</p>
-            <p>Kramer, P., Hinojosa, J., & Royeen, C. B. (2020). <i>Perspectives in Human Occupation: Participation in Life</i>. F.A. Davis Company. https://fadavis.com/product/occupational-therapy-perspectives-human-occupation-kramer-hinojosa-2</p>
-            <p>Mahler, K. (2015). <i>Interoception: The Eighth Sensory System</i>. AAPC Publishing. https://www.kelly-mahler.com/what-is-interoception/</p>
-            <p>Polatajko, H. J., & Mandich, A. (2004). <i>Enabling occupation in children: The cognitive orientation to daily occupational performance (CO-OP) approach</i>. CAOT Publications ACE. https://caot.ca/document/3655/Enabling%20Occupation%20in%20Children.pdf</p>
-            <p>Roley, S. S., et al. (2008). "Understanding occupational therapy using the AOTA Practice Framework." <i>American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.62.6.625</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>Ayres, A. J. (2005). <i>Sensory Integration and the Child: Understanding Hidden Sensory Challenges</i>. Western Psychological Services.</li>
+            <li>Dunn, W. (2014). <i>Sensory Profile 2: User's Manual and Assessing Sensory Processing</i>. Pearson Clinical Assessment.</li>
+            <li>Kramer, P., Hinojosa, J., & Royeen, C. B. (2020). <i>Perspectives in Human Occupation: Participation in Life</i>. F.A. Davis Company.</li>
+            <li>Mahler, K. (2015). <i>Interoception: The Eighth Sensory System</i>. AAPC Publishing.</li>
+            <li>Polatajko, H. J., & Mandich, A. (2004). <i>Enabling occupation in children: The cognitive orientation to daily occupational performance (CO-OP) approach</i>. CAOT Publications ACE.</li>
+            <li>Roley, S. S., et al. (2008). Understanding occupational therapy using the AOTA Practice Framework. <i>American Journal of Occupational Therapy</i>.</li>
+          </ul>
         </div>
       </div>
-
-    </div>
+    </article>
   );
 }

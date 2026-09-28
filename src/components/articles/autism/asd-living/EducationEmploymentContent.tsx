@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from "../../../figma/ImageWithFallback";
 
 /* ─── THE GUEST LIST (Interface) ─── */
@@ -9,7 +8,7 @@ interface EducationEmploymentContentProps {
 /* ─── MAIN COMPONENT ─── */
 export function EducationEmploymentContent({ setCurrentArticle }: EducationEmploymentContentProps) {
   return (
-    <div className="animate-fadeIn">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-fadeIn">
       <section className="mb-10">
         <div className="bg-[#f0f9ff] p-6 rounded-lg">
           <h2 className="text-[#0c264d] font-bold mb-4 text-2xl border-b border-[#ffd166] pb-2 inline-block">
@@ -34,7 +33,7 @@ export function EducationEmploymentContent({ setCurrentArticle }: EducationEmplo
               </div>
 
               <p className="mb-4 text-sm text-gray-700">
-                Increasing numbers of autistic students are pursuing college degrees, bringing deep focus and original thinking to academia:<sup className="text-green-600 font-bold ml-0.5">1</sup>
+                Increasing numbers of autistic students are pursuing college degrees, bringing deep focus and original thinking to academia:<sup>1</sup>
               </p>
               <ul className="list-disc ml-5 space-y-2 text-sm text-gray-700">
                 <li><strong>Strengths:</strong> Intense dedication to subjects of interest and a high aptitude for detailed research.</li>
@@ -50,7 +49,7 @@ export function EducationEmploymentContent({ setCurrentArticle }: EducationEmplo
               </div>
               
               <div className="mx-auto w-32 md:w-64 mb-4">
-  <           div className="rounded-lg shadow-sm overflow-hidden bg-white">
+                <div className="rounded-lg shadow-sm overflow-hidden bg-white">
                   <ImageWithFallback 
                     src="/images/autism/autism-living-EEtab-workplace.webp" 
                     alt="Graphic representing employment and the workplace"
@@ -59,7 +58,7 @@ export function EducationEmploymentContent({ setCurrentArticle }: EducationEmplo
               </div>
 
               <p className="mb-4 text-sm text-gray-700">
-                Autistic adults face disproportionately high rates of un- and underemployment, despite possessing valuable skills. Standard interview processes often screen out capable autistic candidates by prioritizing neurotypical social skills over job-related competencies.<sup className="text-green-600 font-bold ml-0.5">2</sup>
+                Autistic adults face disproportionately high rates of un- and underemployment, despite possessing valuable skills. Standard interview processes often screen out capable autistic candidates by prioritizing neurotypical social skills over job-related competencies.<sup>2</sup>
               </p>
 
               {/* Nested Barrier/Accommodation Boxes */}
@@ -77,7 +76,7 @@ export function EducationEmploymentContent({ setCurrentArticle }: EducationEmplo
                 <div className="bg-green-50 p-4 rounded-lg border-l-4 border-[#10b981]">
                   <h4 className="font-bold text-[#0c264d] mb-2 text-sm">Effective Accommodations</h4>
                   <ul className="text-xs space-y-1 text-gray-700">
-                    <li>• Flexible or remote work options<sup className="text-green-600 font-bold ml-0.5">3</sup></li>
+                    <li>• Flexible or remote work options<sup>3</sup></li>
                     <li>• Written rather than verbal instructions</li>
                     <li>• Sensory-friendly workspaces</li>
                     <li>• Explicit, clear feedback loops</li>
@@ -94,9 +93,17 @@ export function EducationEmploymentContent({ setCurrentArticle }: EducationEmplo
         </div>
       </section>
 
-      {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both"></div>
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
 
+      {/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -106,9 +113,9 @@ export function EducationEmploymentContent({ setCurrentArticle }: EducationEmplo
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Van Hees, V., et al. (2015). "Higher education experiences of students with autism spectrum disorder: Challenges, benefits and support needs." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-014-2324-2</p>
-            <p>2. Hurley-Hanson, A. E., et al. (2020). "Extreme loneliness: The status of the autistic workforce." <i>Journal of Business and Management</i>.</p>
-            <p>3. Gurbuz, N., et al. (2019). "Employment outcomes for autistic adults: Enablers and barriers to employment." <i>Autism</i>. https://doi.org/10.1177/1362361318760086</p>
+            <p>1. Van Hees, V., et al. (2015). Higher education experiences of students with autism spectrum disorder: Challenges, benefits and support needs. <i>Journal of Autism and Developmental Disorders</i>.</p>
+            <p>2. Hurley-Hanson, A. E., et al. (2020). Extreme loneliness: The status of the autistic workforce. <i>Journal of Business and Management</i>.</p>
+            <p>3. Gurbuz, N., et al. (2019). Employment outcomes for autistic adults: Enablers and barriers to employment. <i>Autism</i>.</p>
           </div>
         </div>
         
@@ -117,11 +124,12 @@ export function EducationEmploymentContent({ setCurrentArticle }: EducationEmplo
           <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b-2 border-[#2abcd4] pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>Autistic Self Advocacy Network (ASAN). Transition to Adulthood: A Health Care Guide for Youth and Families.</li>
+            <li>Job Accommodation Network (JAN). Accommodation and Compliance Series: Autism Spectrum.</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

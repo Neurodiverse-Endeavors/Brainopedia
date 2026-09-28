@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { ASDReferences } from '../ASDReferences';
+import { useState, useEffect } from 'react';
 import { LifespanContent } from './LifespanContent';
 import { DailyLifeContent } from './DailyLifeContent';
 import { RelationshipsContent } from './RelationshipsContent';
@@ -25,11 +24,10 @@ export function ASDLiving({ setCurrentArticle, initialTab }: ASDLivingProps) {
     setActiveTab(tabId);
   };
 
-  // --- ADD THIS DEFINITION HERE ---
   const BackButton = () => (
     <button 
       onClick={() => setCurrentArticle?.('autism')}
-      className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap"
+      className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-8 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0"
     >
       <span className="text-xl">←</span>
       All About Autism
@@ -47,25 +45,23 @@ export function ASDLiving({ setCurrentArticle, initialTab }: ASDLivingProps) {
 
   function renderTabContent() {
     switch (activeTab) {
-      case 'lifespan': return <LifespanContent />;
-      case 'daily-life': return <DailyLifeContent />;
-      case 'relationships': return <RelationshipsContent />;
-      case 'education-employment': return <EducationEmploymentContent />;
-      case 'mental-health': return <MentalHealthContent />;
-      case 'identity-community': return <IdentityCommunityContent />;
-      default: return <LifespanContent />;
+      case 'lifespan': return <LifespanContent setCurrentArticle={setCurrentArticle} />;
+      case 'daily-life': return <DailyLifeContent setCurrentArticle={setCurrentArticle} />;
+      case 'relationships': return <RelationshipsContent setCurrentArticle={setCurrentArticle} />;
+      case 'education-employment': return <EducationEmploymentContent setCurrentArticle={setCurrentArticle} />;
+      case 'mental-health': return <MentalHealthContent setCurrentArticle={setCurrentArticle} />;
+      case 'identity-community': return <IdentityCommunityContent setCurrentArticle={setCurrentArticle} />;
+      default: return <LifespanContent setCurrentArticle={setCurrentArticle} />;
     }
   }
 
   return (
-    <article className="max-w-6xl">
+    <article className="max-w-6xl mx-auto">
       {/* --- PAGE HEADER SECTION --- */}
-      {/* Updated the text to match "Living with ASD" standards */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <h1 className="text-3xl">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b-2 border-[#0c264d] pb-2 mt-4">
+        <h1 className="text-3xl text-[#0c264d] font-spartan">
           Autism: Daily Living
         </h1>
-
         <BackButton />
       </div>
 
@@ -77,7 +73,7 @@ export function ASDLiving({ setCurrentArticle, initialTab }: ASDLivingProps) {
             onClick={() => handleTabChange(tab.id)}
             className={`px-4 py-4 rounded-lg text-sm transition-colors font-normal shadow-sm ${
               activeTab === tab.id
-                ? 'bg-[#0A9DC4] text-white shadow-md' // UPDATED to standard Dark Cyan
+                ? 'bg-[#0A9DC4] text-white shadow-md' 
                 : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
             }`}
           >
@@ -89,13 +85,6 @@ export function ASDLiving({ setCurrentArticle, initialTab }: ASDLivingProps) {
       {/* Content Area */}
       <div className="min-h-[400px]">
         {renderTabContent()}
-      </div>
-
-      {/* References Section */}
-
-
-      <div className="flex justify-end mt-12 mb-6">
-        <BackButton />
       </div>
     </article>
   );

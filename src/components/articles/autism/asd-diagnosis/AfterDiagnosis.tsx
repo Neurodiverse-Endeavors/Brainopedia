@@ -8,20 +8,22 @@ interface AfterDiagnosisProps {
 /* ─── MAIN COMPONENT ─── */
 export function AfterDiagnosis({ setCurrentArticle }: AfterDiagnosisProps) {
   return (
-    <div className="bg-[#f0f9ff] p-6 rounded-lg">
-      <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">After Receiving a Diagnosis</h2>
-      
-      <div className="bg-[#ffd166] border-l-4 border-[#0c264d] p-4 rounded mb-6">
-        <p className="text-sm">
-          <strong>Important:</strong> A diagnosis is a beginning, not an ending. It's a doorway 
-          to understanding, support, community, and self-advocacy.
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
+      <div className="bg-[#f0f9ff] p-6 rounded-lg">
+        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">After Receiving a Diagnosis</h2>
+        
+        <div className="bg-[#ffd166] border-l-4 border-[#0c264d] p-4 rounded mb-6">
+          <p className="text-sm">
+            <strong>Important:</strong> A diagnosis is a beginning, not an ending. It's a doorway 
+            to understanding, support, community, and self-advocacy.
+          </p>
+        </div>
+        
+        <p className="mb-6">
+          Receiving an autism diagnosis can bring a mix of emotions—relief, grief, confusion, hope, or all of the above. 
+          Whatever you're feeling is valid. Here's what typically comes next:
         </p>
       </div>
-      
-      <p className="mb-6">
-        Receiving an autism diagnosis can bring a mix of emotions—relief, grief, confusion, hope, or all of the above. 
-        Whatever you're feeling is valid. Here's what typically comes next:
-      </p>
 
       {/* Benefits of Diagnosis */}
       <div className="bg-white p-5 rounded-md border-l-4 border-[#0c264d] shadow-sm mb-6">
@@ -74,8 +76,6 @@ export function AfterDiagnosis({ setCurrentArticle }: AfterDiagnosisProps) {
 
       {/* --- CENTERED GRAPHIC SECTION 1 --- */} 
       <div className="text-center w-full mb-8"> 
-        <p className="text-[#0c264d] mb-4 italic"></p> 
-        {/* The Wrapper: Centers the image and restricts its width */} 
         <div className="mx-auto w-48 md:w-64"> 
           <ImageWithFallback 
             src="/images/autism/autism-diagnosis-AfterDxtab-GoldInfinity-LightBulb.webp" 
@@ -145,8 +145,6 @@ export function AfterDiagnosis({ setCurrentArticle }: AfterDiagnosisProps) {
 
       {/* --- CENTERED GRAPHIC SECTION 2 --- */} 
       <div className="text-center w-full mb-8"> 
-        <p className="text-[#0c264d] mb-4 italic"></p> 
-        {/* The Wrapper: Centers the image and restricts its width */} 
         <div className="mx-auto w-48 md:w-64"> 
           <ImageWithFallback 
             src="/images/autism/autism-diagnosis-AfterDxtab-EducPlan.webp" 
@@ -232,7 +230,8 @@ export function AfterDiagnosis({ setCurrentArticle }: AfterDiagnosisProps) {
           not just identifying deficits.
         </p>
       </div>
-     {/* --- BOTTOM BACK BUTTON --- */}
+
+      {/* --- BOTTOM BACK BUTTON --- */}
       <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('autism')}
@@ -243,39 +242,27 @@ export function AfterDiagnosis({ setCurrentArticle }: AfterDiagnosisProps) {
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-     
-
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
-            Cited Studies & Statistics
-          </h4>
-          
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Reuben, C., & Elgaddal, N. (2024). "ADHD in Children Ages 5–17 Years: US, 2020–2022." <i>NCHS Data Brief</i>. https://www.cdc.gov/nchs/products/databriefs.htm</p>
-            <p>2. Ayano, G., et al. (2023). "Prevalence of attention deficit hyperactivity disorder in adults: Umbrella review." <i>Psychiatry Research</i>. https://doi.org/10.1016/j.psychres.2023.115449</p>
-            <p>3. American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>4. Willcutt, E. G. (2012). "The prevalence of DSM-IV attention-deficit/hyperactivity disorder: a meta-analytic review." <i>Neurotherapeutics</i>. https://doi.org/10.1007/s13311-012-0135-8</p>
-            <p>5. Song, P., et al. (2021). "The global prevalence of adult attention-deficit hyperactivity disorder: A systematic review and meta-analysis." <i>Journal of Global Health</i>. https://doi.org/10.7189/jogh.11.04009</p>
-            <p>6. Larsson, H., et al. (2024). "The psychiatric comorbidity of ADHD." <i>Molecular Psychiatry</i>. https://doi.org/10.1038/s41380-024-02434-6</p>
-          </div>
-        </div>
-        
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-        <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
-        </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Centers for Disease Control and Prevention. (2024). "Data and Statistics About ADHD." CDC. https://www.cdc.gov/ncbddd/adhd/data.html</p>
-            <p>National Institute of Mental Health. (2024). "Attention-Deficit/Hyperactivity Disorder (ADHD)." NIMH. https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd</p>
-            <p>Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i> (4th ed.). Guilford Press. https://www.guilford.com/books/Attention-Deficit-Hyperactivity-Disorder/Russell-Barkley/9781462517725</p>
-          </div>
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+            <li>Ayano, G., et al. (2023). Prevalence of attention deficit hyperactivity disorder in adults: Umbrella review. <i>Psychiatry Research</i>.</li>
+            <li>Barkley, R. A. (2015). <i>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</i> (4th ed.). Guilford Press.</li>
+            <li>Centers for Disease Control and Prevention. (2024). Data and Statistics About ADHD. CDC.</li>
+            <li>Larsson, H., et al. (2024). The psychiatric comorbidity of ADHD. <i>Molecular Psychiatry</i>.</li>
+            <li>National Institute of Mental Health. (2024). Attention-Deficit/Hyperactivity Disorder (ADHD). NIMH.</li>
+            <li>Reuben, C., & Elgaddal, N. (2024). ADHD in Children Ages 5–17 Years: US, 2020–2022. <i>NCHS Data Brief</i>.</li>
+            <li>Song, P., et al. (2021). The global prevalence of adult attention-deficit hyperactivity disorder: A systematic review and meta-analysis. <i>Journal of Global Health</i>.</li>
+            <li>Willcutt, E. G. (2012). The prevalence of DSM-IV attention-deficit/hyperactivity disorder: a meta-analytic review. <i>Neurotherapeutics</i>.</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

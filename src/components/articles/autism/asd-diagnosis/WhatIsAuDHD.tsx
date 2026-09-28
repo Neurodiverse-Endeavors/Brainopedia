@@ -8,21 +8,20 @@ interface WhatIsAuDHDProps {
 /* ─── MAIN COMPONENT ─── */
 export function WhatIsAuDHD({ setCurrentArticle }: WhatIsAuDHDProps) {
   return (
-
-    <div className="bg-[#f0f9ff] p-6 rounded-lg">
-      <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">What is AuDHD?</h2>
-      
-      <p className="mb-6">
-        "AuDHD" is a community-created term used primarily within neurodivergent communities to describe individuals 
-        who are both autistic and have ADHD. While not an official medical diagnosis in the DSM-5-TR, this dual diagnosis 
-        is increasingly recognized by clinicians and researchers as a very real and common pattern with unique characteristics 
-        and support needs.
-      </p>
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
+      <div className="bg-[#f0f9ff] p-6 rounded-lg">
+        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">What is AuDHD?</h2>
+        
+        <p className="mb-6">
+          "AuDHD" is a community-created term used primarily within neurodivergent communities to describe individuals 
+          who are both autistic and have ADHD. While not an official medical diagnosis in the DSM-5-TR, this dual diagnosis 
+          is increasingly recognized by clinicians and researchers as a very real and common pattern with unique characteristics 
+          and support needs.
+        </p>
+      </div>
 
       {/* --- CENTERED GRAPHIC SECTION 1 --- */} 
       <div className="text-center w-full mb-8"> 
-        <p className="text-[#0c264d] mb-4 italic"></p> 
-        {/* The Wrapper: Centers the image and restricts its width */} 
         <div className="mx-auto w-48 md:w-64"> 
           <ImageWithFallback 
             src="/images/autism/autism-diagnosis-WhatAuDHDtab-Lightning-Gold Infinity.webp" 
@@ -40,10 +39,10 @@ export function WhatIsAuDHD({ setCurrentArticle }: WhatIsAuDHDProps) {
         </p>
         
         <ul className="text-sm space-y-2 ml-6 mb-4">
-          <li className="mb-2">• <strong>50-70%</strong> of autistic individuals meet criteria for ADHD<sup className="text-green-600 font-bold ml-0.5">1</sup></li>
-          <li className="mb-2">• <strong>30-50%</strong> of individuals with ADHD meet criteria for autism<sup className="text-green-600 font-bold ml-0.5">2</sup></li>
+          <li className="mb-2">• <strong>50-70%</strong> of autistic individuals meet criteria for ADHD<sup>1</sup></li>
+          <li className="mb-2">• <strong>30-50%</strong> of individuals with ADHD meet criteria for autism<sup>2</sup></li>
           <li className="mb-2">• Until the DSM-5 (2013), dual diagnosis was not officially permitted, leading to historical underdiagnosis</li>
-          <li className="mb-2">• Studies indicate AuDHD may represent one of the most common forms of neurodevelopmental comorbidity<sup className="text-green-600 font-bold ml-0.5">3</sup></li>
+          <li className="mb-2">• Studies indicate AuDHD may represent one of the most common forms of neurodevelopmental comorbidity<sup>3</sup></li>
         </ul>
 
         <div className="bg-[#f0f9ff] p-4 rounded-md border border-[#2abcd4]">
@@ -97,8 +96,6 @@ export function WhatIsAuDHD({ setCurrentArticle }: WhatIsAuDHDProps) {
 
       {/* --- 2nd CENTERED GRAPHIC SECTION --- */} 
       <div className="text-center w-full mb-8"> 
-        <p className="text-[#0c264d] mb-4 italic"></p> 
-        {/* The Wrapper: Centers the image and restricts its width */} 
         <div className="mx-auto w-48 md:w-64"> 
           <ImageWithFallback 
             src="/images/autism/autism-diagnosis-WhatAuDHDtab-gold-blue-splitface.webp" 
@@ -259,7 +256,7 @@ export function WhatIsAuDHD({ setCurrentArticle }: WhatIsAuDHDProps) {
           <strong>Best Practice:</strong> Comprehensive evaluation should systematically assess for both conditions, 
           especially when initial interventions for one diagnosis don't fully address the individual's challenges. 
           Studies show that many autistic individuals benefit from ADHD-specific interventions once ADHD is 
-          properly identified.<sup className="text-green-600 font-bold ml-0.5">4</sup>
+          properly identified.<sup>4</sup>
         </p>
       </div>
 
@@ -287,7 +284,6 @@ export function WhatIsAuDHD({ setCurrentArticle }: WhatIsAuDHDProps) {
  
  {/* --- 3rd CENTERED GRAPHIC SECTION 1 --- */}
      <div className="text-center w-full mb-8">
-       <p className="text-[#0c264d] mb-4 italic"></p>
        {/* The Wrapper: Centers the image and restricts its width */}
        <div className="mx-auto w-48 md:w-64">
          <ImageWithFallback
@@ -349,7 +345,7 @@ export function WhatIsAuDHD({ setCurrentArticle }: WhatIsAuDHDProps) {
         </ul>
       </div>
       
-     {/* --- BOTTOM BACK BUTTON --- */}
+      {/* --- BOTTOM BACK BUTTON --- */}
       <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('autism')}
@@ -360,35 +356,33 @@ export function WhatIsAuDHD({ setCurrentArticle }: WhatIsAuDHDProps) {
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-    
-
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
             Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Antshel, K. M., & Russo, N. (2019). "Autism spectrum disorders and ADHD: Overlapping phenomenology, diagnostic issues, and treatment considerations." <i>Current Psychiatry Reports</i>. https://doi.org/10.1007/s11920-019-1020-5</p>
-            <p>2. Leitner, Y. (2014). "The co-occurrence of autism and attention deficit hyperactivity disorder in children–what do we know?" <i>Frontiers in Human Neuroscience</i>. https://doi.org/10.3389/fnhum.2014.00268</p>
-            <p>3. Jang, J., et al. (2013). "Rates of comorbid symptoms in children with ASD, ADHD, and comorbid ASD and ADHD." <i>Research in Developmental Disabilities</i>. https://doi.org/10.1016/j.ridd.2013.04.021</p>
-            <p>4. Mulligan, A., et al. (2009). "Autism symptoms in attention-deficit/hyperactivity disorder: A familial trait which correlates with conduct, oppositional defiant, language and motor disorders." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-008-0621-3</p>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Antshel, K. M., & Russo, N. (2019). Autism spectrum disorders and ADHD: Overlapping phenomenology, diagnostic issues, and treatment considerations. <i>Current Psychiatry Reports</i>.</p>
+            <p>2. Leitner, Y. (2014). The co-occurrence of autism and attention deficit hyperactivity disorder in children–what do we know? <i>Frontiers in Human Neuroscience</i>.</p>
+            <p>3. Jang, J., et al. (2013). Rates of comorbid symptoms in children with ASD, ADHD, and comorbid ASD and ADHD. <i>Research in Developmental Disabilities</i>.</p>
+            <p>4. Mulligan, A., et al. (2009). Autism symptoms in attention-deficit/hyperactivity disorder: A familial trait which correlates with conduct, oppositional defiant, language and motor disorders. <i>Journal of Autism and Developmental Disorders</i>.</p>
           </div>
         </div>
 
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}> 
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>Lord, C., et al. (2018). "Autism spectrum disorder." <i>The Lancet</i>. https://doi.org/10.1016/S0140-6736(18)31129-2</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}> 
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+            <li>Lord, C., et al. (2018). Autism spectrum disorder. <i>The Lancet</i>.</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

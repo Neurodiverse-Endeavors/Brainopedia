@@ -1,12 +1,10 @@
-import React from 'react';
-
 interface SocialSkillsProps {
   setCurrentArticle?: (article: string) => void;
 }
 
 export function SocialSkills({ setCurrentArticle }: SocialSkillsProps) {
   return (
-    <div className="animate-fadeIn font-spartan text-[#0c264d] space-y-6">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-fadeIn">
       
       {/* Header with Back Button */}
       <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -16,7 +14,7 @@ export function SocialSkills({ setCurrentArticle }: SocialSkillsProps) {
           onClick={() => setCurrentArticle?.('autism-support-therapies')}
           className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shrink-0"
         >
-          <span className="text-xl">&larr;</span>
+          <span className="text-xl">←</span>
           Back to Therapies
         </button>
       </div>
@@ -24,7 +22,7 @@ export function SocialSkills({ setCurrentArticle }: SocialSkillsProps) {
       {/* Intro */}
       <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 mb-8">
         <p className="text-base mb-4 text-gray-700 leading-relaxed">
-          Traditional social skills therapy for autism often creates a normalization issue by forcing autistic individuals to suppress natural traits and adopt neurotypical behaviors. This approach prioritizes conformity over authentic communication, leading to serious mental health consequences.<sup className="text-green-600 font-bold ml-0.5">1</sup>
+          Traditional social skills therapy for autism often creates a normalization issue by forcing autistic individuals to suppress natural traits and adopt neurotypical behaviors. This approach prioritizes conformity over authentic communication, leading to serious mental health consequences.<sup>1</sup>
         </p>
         <p className="text-base text-gray-700 leading-relaxed">
           Support in this area is actively shifting toward social navigation, building meaningful relationships, and understanding social nuances in a way that respects the individual's autonomy.
@@ -37,7 +35,7 @@ export function SocialSkills({ setCurrentArticle }: SocialSkillsProps) {
         <div className="space-y-4">
           <div className="border-l-2 border-red-200 pl-3">
             <div className="font-bold text-[#0c264d] mb-1">Forced Masking</div>
-            <div className="text-sm text-gray-700">Therapy often trains individuals to mimic neurotypical body language, facial expressions, and eye contact, which drains mental energy and causes chronic stress.<sup className="text-green-600 font-bold ml-0.5">2</sup></div>
+            <div className="text-sm text-gray-700">Therapy often trains individuals to mimic neurotypical body language, facial expressions, and eye contact, which drains mental energy and causes chronic stress.<sup>2</sup></div>
           </div>
           <div className="border-l-2 border-red-200 pl-3">
             <div className="font-bold text-[#0c264d] mb-1">Suppression of Autistic Traits</div>
@@ -45,7 +43,7 @@ export function SocialSkills({ setCurrentArticle }: SocialSkillsProps) {
           </div>
           <div className="border-l-2 border-red-200 pl-3">
             <div className="font-bold text-[#0c264d] mb-1">Mental Health Impact</div>
-            <div className="text-sm text-gray-700">Trying to appear "indistinguishable from peers" is linked to high rates of anxiety, depression, and autistic burnout.<sup className="text-green-600 font-bold ml-0.5">1</sup></div>
+            <div className="text-sm text-gray-700">Trying to appear "indistinguishable from peers" is linked to high rates of anxiety, depression, and autistic burnout.<sup>1</sup></div>
           </div>
         </div>
       </div>
@@ -76,7 +74,7 @@ export function SocialSkills({ setCurrentArticle }: SocialSkillsProps) {
           <ul className="text-sm space-y-3 text-gray-700">
             <li>• <strong>Social Stories & Scripts:</strong> Tools for preparing for specific social interactions.</li>
             <li>• <strong>Peer-Mediated Support:</strong> Inclusive settings that foster natural connection.</li>
-            <li>• <strong>Double Empathy Training:</strong> Helping both neurodivergent and neurotypical people understand each other.<sup className="text-green-600 font-bold ml-0.5">1</sup></li>
+            <li>• <strong>Double Empathy Training:</strong> Helping both neurodivergent and neurotypical people understand each other.<sup>1</sup></li>
           </ul>
         </div>
         <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm border-l-4 border-l-[#0A9DC4]">
@@ -89,19 +87,17 @@ export function SocialSkills({ setCurrentArticle }: SocialSkillsProps) {
       </div>
 
       {/* Back Button Bottom */}
-      <div className="flex justify-end mt-8 mb-6">
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('autism-support-therapies')}
           className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2"
         >
-          <span className="text-xl">&larr;</span>
+          <span className="text-xl">←</span>
           Back to Therapies
         </button>
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both"></div>
-
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -111,11 +107,11 @@ export function SocialSkills({ setCurrentArticle }: SocialSkillsProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Milton, D. E. (2012). "On the ontological status of autism: the 'double empathy problem'." <i>Disability & Society</i>. https://doi.org/10.1080/09687599.2012.710008</p>
-            <p>2. Reichow, B., et al. (2012). "Social skills groups for people aged 6 to 21 with autism spectrum disorders (ASD)." <i>Cochrane Database of Systematic Reviews</i>. https://doi.org/10.1002/14651858.CD008511.pub2</p>
+            <p>1. Milton, D. E. (2012). On the ontological status of autism: the 'double empathy problem'. <i>Disability & Society</i>.</p>
+            <p>2. Reichow, B., et al. (2012). Social skills groups for people aged 6 to 21 with autism spectrum disorders (ASD). <i>Cochrane Database of Systematic Reviews</i>.</p>
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

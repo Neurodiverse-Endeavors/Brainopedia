@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // Updated paths based on your articleMap directory structure
 import { OverviewContent } from './OverviewContent';
@@ -27,7 +27,7 @@ export function ASDSupport({ setCurrentArticle, initialTab }: ASDSupportProps) {
   }, [initialTab]);
   // ---------------
 
-const handleTabChange = (tabId: string) => {
+  const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
     
     // Quietly clean up the URL bar if it is stuck on the backdoor route
@@ -51,8 +51,7 @@ const handleTabChange = (tabId: string) => {
   const BackButton = () => (
     <button 
       onClick={() => setCurrentArticle?.('autism')}
-
-      className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2"
+      className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-8 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0"
     >
       <span className="text-xl">←</span>
       All About Autism
@@ -60,9 +59,9 @@ const handleTabChange = (tabId: string) => {
   );
 
   return (
-    <article className="max-w-6xl">
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex items-center justify-between">
-        <h1 className="text-3xl">
+    <article className="max-w-6xl mx-auto">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b-2 border-[#0c264d] pb-2 mt-4">
+        <h1 className="text-3xl text-[#0c264d] font-spartan">
           Autism: Support & Management
         </h1>
         <BackButton />
@@ -70,12 +69,12 @@ const handleTabChange = (tabId: string) => {
 
       {/* --- TAB NAVIGATION --- */}
       {/* Kept your original md:grid-cols-3! */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-10">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => handleTabChange(tab.id)}
-            className={`px-6 py-3 rounded-md text-sm transition-colors font-medium ${
+            className={`px-4 py-3 rounded-lg text-sm transition-colors font-normal shadow-sm ${
               activeTab === tab.id
                 ? 'bg-[#0A9DC4] text-white shadow-md' // UPDATED to standard Dark Cyan
                 : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
@@ -87,19 +86,38 @@ const handleTabChange = (tabId: string) => {
       </div>
 
       {/* --- CONTENT SECTION --- */}
-      <div className="space-y-8">
-        {activeTab === 'overview' && <OverviewContent setCurrentArticle={setCurrentArticle} />}
-        {activeTab === 'early-intervention' && <EarlyInterventionContent setCurrentArticle={setCurrentArticle} />}
-        {activeTab === 'therapies' && <TherapiesContent setCurrentArticle={setCurrentArticle} />}
-        {activeTab === 'educational' && <EducationalContent setCurrentArticle={setCurrentArticle} />}
-        {activeTab === 'medical' && <MedicalContent setCurrentArticle={setCurrentArticle} />}
-        {activeTab === 'environmental' && <EnvironmentalContent setCurrentArticle={setCurrentArticle} />}
-        {activeTab === 'family' && <FamilyPrinciplesContent setCurrentArticle={setCurrentArticle} />}
-        {activeTab === 'safety' && <SafetyContent setCurrentArticle={setCurrentArticle} />} {/* <-- New Render! */}
-      </div>
-
-      <div className="flex justify-end mt-8 mb-6">
-        <BackButton />
+      <div className="space-y-8 min-h-[400px]">
+        {activeTab === 'overview' && (
+          <OverviewContent setCurrentArticle={setCurrentArticle} />
+        )}
+        
+        {activeTab === 'early-intervention' && (
+          <EarlyInterventionContent setCurrentArticle={setCurrentArticle} />
+        )}
+        
+        {activeTab === 'therapies' && (
+          <TherapiesContent setCurrentArticle={setCurrentArticle} />
+        )}
+        
+        {activeTab === 'educational' && (
+          <EducationalContent setCurrentArticle={setCurrentArticle} />
+        )}
+        
+        {activeTab === 'medical' && (
+          <MedicalContent setCurrentArticle={setCurrentArticle} />
+        )}
+        
+        {activeTab === 'environmental' && (
+          <EnvironmentalContent setCurrentArticle={setCurrentArticle} />
+        )}
+        
+        {activeTab === 'family' && (
+          <FamilyPrinciplesContent setCurrentArticle={setCurrentArticle} />
+        )}
+        
+        {activeTab === 'safety' && (
+          <SafetyContent setCurrentArticle={setCurrentArticle} />
+        )}
       </div>
     </article>
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from "../../../figma/ImageWithFallback";
 
 /* ─── THE GUEST LIST (Interface) ─── */
@@ -9,7 +8,7 @@ interface LifespanContentProps {
 /* ─── MAIN COMPONENT ─── */
 export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
   return (
-    <div className="animate-fadeIn">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-fadeIn">
       <section>
         <p className="mb-4 text-gray-800 leading-relaxed">
           Living with autism means experiencing the world differently—processing information, communicating, and 
@@ -48,7 +47,7 @@ export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
               </div>
 
               <p className="mb-4 text-sm text-gray-700">
-                Early signs often appear before age 2, though diagnosis may come later.<sup className="text-green-600 font-bold ml-0.5">1</sup>
+                Early signs often appear before age 2, though diagnosis may come later.<sup>1</sup>
               </p>
               <ul className="list-disc ml-5 space-y-1 text-sm text-gray-700">
                 <li>Focus on early intervention and developmental therapies</li>
@@ -78,7 +77,7 @@ export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
               <ul className="list-disc ml-5 space-y-1 text-sm text-gray-700">
                 <li>Navigating Special Education (IEPs/504 Plans)</li>
                 <li>Social difficulties often become more apparent</li>
-                <li>Many develop coping mechanisms, leading to masking and autistic burnout<sup className="text-green-600 font-bold ml-0.5">2</sup></li>
+                <li>Many develop coping mechanisms, leading to masking and autistic burnout<sup>2</sup></li>
               </ul>
             </div>
 
@@ -101,7 +100,7 @@ export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
                 A complex period combining puberty with changing social landscapes.
               </p>
               <ul className="list-disc ml-5 space-y-1 text-sm text-gray-700">
-                <li>High rates of co-occurring anxiety and depression emerge<sup className="text-green-600 font-bold ml-0.5">3</sup></li>
+                <li>High rates of co-occurring anxiety and depression emerge<sup>3</sup></li>
                 <li>Executive functioning demands increase significantly</li>
                 <li>Critical period for transition planning toward adulthood</li>
               </ul>
@@ -127,7 +126,7 @@ export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
                 Autism is a lifelong condition; autistic children become autistic adults.
               </p>
               <ul className="list-disc ml-5 space-y-1 text-sm text-gray-700">
-                <li>Navigating higher education and employment<sup className="text-green-600 font-bold ml-0.5">4</sup></li>
+                <li>Navigating higher education and employment<sup>4</sup></li>
                 <li>Relationships: Friendships, romantic partnerships, and family dynamics</li>
                 <li>Self-understanding: Late diagnosis often leads to profound self-discovery</li>
               </ul>
@@ -139,7 +138,7 @@ export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
             <h3 className="text-[#0c264d] font-bold mb-4 text-lg text-center">Aging</h3>
             
             <p className="mb-4 text-sm text-gray-700 text-center w-full max-w-2xl">
-              Research on aging autistic adults is limited but growing:<sup className="text-green-600 font-bold ml-0.5">5</sup>
+              Research on aging autistic adults is limited but growing:<sup>5</sup>
             </p>
             <ul className="list-disc ml-6 space-y-2 text-sm text-gray-700 w-full max-w-2xl">
               <li>Autism doesn't disappear; core characteristics persist throughout life</li>
@@ -150,9 +149,17 @@ export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
         </div>
       </section>
 
-      {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both"></div>
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
 
+      {/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -162,11 +169,11 @@ export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Zwaigenbaum, L., et al. (2015). "Early identification and interventions for autism spectrum disorder: Executive summary." <i>Pediatrics</i>. https://doi.org/10.1542/peds.2014-3667B</p>
-            <p>2. Hull, L., et al. (2017). "'Putting on my best normal': Social camouflaging in adults with autism spectrum conditions." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-017-3166-5</p>
-            <p>3. Simonoff, E., et al. (2008). "Psychiatric disorders in children with autism spectrum disorders: Prevalence, comorbidity, and associated factors in a population-derived sample." <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. https://doi.org/10.1097/CHI.0b013e318179964f</p>
-            <p>4. Howlin, P., et al. (2004). "Adult outcome for children with autism." <i>Journal of Child Psychology and Psychiatry</i>. https://doi.org/10.1111/j.1469-7610.2004.00215.x</p>
-            <p>5. Happé, F., & Charlton, R. A. (2012). "Aging in autism spectrum disorders: A mini-review." <i>Gerontology</i>. https://doi.org/10.1159/000329720</p>
+            <p>1. Zwaigenbaum, L., et al. (2015). Early identification and interventions for autism spectrum disorder: Executive summary. <i>Pediatrics</i>.</p>
+            <p>2. Hull, L., et al. (2017). 'Putting on my best normal': Social camouflaging in adults with autism spectrum conditions. <i>Journal of Autism and Developmental Disorders</i>.</p>
+            <p>3. Simonoff, E., et al. (2008). Psychiatric disorders in children with autism spectrum disorders: Prevalence, comorbidity, and associated factors in a population-derived sample. <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>.</p>
+            <p>4. Howlin, P., et al. (2004). Adult outcome for children with autism. <i>Journal of Child Psychology and Psychiatry</i>.</p>
+            <p>5. Happé, F., & Charlton, R. A. (2012). Aging in autism spectrum disorders: A mini-review. <i>Gerontology</i>.</p>
           </div>
         </div>
         
@@ -175,12 +182,12 @@ export function LifespanContent({ setCurrentArticle }: LifespanContentProps) {
           <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-            <p>National Institute of Mental Health. (2023). <i>Autism Spectrum Disorder Throughout the Life Course</i>. https://www.nimh.nih.gov/health/topics/autism-spectrum-disorder-asd</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+            <li>National Institute of Mental Health. (2023). <i>Autism Spectrum Disorder Throughout the Life Course</i>.</li>
+          </ul>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

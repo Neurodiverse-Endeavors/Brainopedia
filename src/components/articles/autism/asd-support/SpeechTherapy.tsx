@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessageSquare, Repeat, MonitorSmartphone, HandMetal, Eye, Heart, Volume2, LayoutGrid, Users, Activity, CheckCircle, XCircle, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from '../../../figma/ImageWithFallback';
 
@@ -16,7 +15,7 @@ export function SpeechTherapy({ setCurrentArticle }: SpeechTherapyProps) {
   const floatedImageClass = "w-full h-auto rounded-md block";
   
   return (
-    <div id="full-speech-article" className="space-y-6 text-[#0c264d] font-spartan animate-in fade-in duration-300 w-full min-w-0">
+    <article id="full-speech-article" className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* ===== HEADER ROW ===== */}
       <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -28,8 +27,8 @@ export function SpeechTherapy({ setCurrentArticle }: SpeechTherapyProps) {
           onClick={() => setCurrentArticle?.('autism-support-therapies')}
           className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm shrink-0"
         >
-          <span className="text-lg">&larr;</span>
-          All About Autism
+          <span className="text-lg">←</span>
+          Back to Therapies
         </button>
       </div>
 
@@ -362,7 +361,7 @@ export function SpeechTherapy({ setCurrentArticle }: SpeechTherapyProps) {
 
 
         <p className="text-sm mb-6 text-gray-700 leading-relaxed text-left">
-          Many autistic individuals are <strong>Gestalt Language Processors (GLP)</strong>. They acquire language "top-down," understanding and using language as whole units or phrases (often learned from movies or conversations) rather than breaking down individual words or grammar.<sup className="text-[#10b981] font-bold ml-0.5">1</sup> This approach emphasizes the emotional and relational aspects of communication.
+          Many autistic individuals are <strong>Gestalt Language Processors (GLP)</strong>. They acquire language "top-down," understanding and using language as whole units or phrases (often learned from movies or conversations) rather than breaking down individual words or grammar.<sup>1</sup> This approach emphasizes the emotional and relational aspects of communication.
         </p>
 
         {/* Gestalts in Action (Children) */}
@@ -671,20 +670,17 @@ export function SpeechTherapy({ setCurrentArticle }: SpeechTherapyProps) {
 
       </div>
 
-      {/* Back Button Bottom */}
-      <div className="flex justify-end mt-8 mb-6">
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
           onClick={() => setCurrentArticle?.('autism-support-therapies')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0"
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
         >
-          <span className="text-lg">&larr;</span>
-          All About Autism
+          <span className="text-lg">←</span>Back to Therapies
         </button>
       </div>
 
       {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
-
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -694,9 +690,9 @@ export function SpeechTherapy({ setCurrentArticle }: SpeechTherapyProps) {
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Blanc, M. (2012). <i>Natural Language Acquisition on the Autism Spectrum: The Journey from Echolalia to Self-Generated Language</i>. Communication Development Center. https://communicationdevelopmentcenter.com/</p>
-            <p>2. Prizant, B. M. (1983). "Language acquisition and communicative behavior in autism: Toward an understanding of the 'whole' of it." <i>Journal of Speech and Hearing Disorders</i>. https://doi.org/10.1044/jshd.4803.296</p>
-            <p>3. Stiegler, L. N. (2015). "Examining the echolalia literature: Where do we go from here?" <i>American Journal of Speech-Language Pathology</i>. https://doi.org/10.1044/2015_AJSLP-14-0166</p>
+            <p>1. Blanc, M. (2012). <i>Natural Language Acquisition on the Autism Spectrum: The Journey from Echolalia to Self-Generated Language</i>. Communication Development Center.</p>
+            <p>2. Prizant, B. M. (1983). Language acquisition and communicative behavior in autism: Toward an understanding of the 'whole' of it. <i>Journal of Speech and Hearing Disorders</i>.</p>
+            <p>3. Stiegler, L. N. (2015). Examining the echolalia literature: Where do we go from here? <i>American Journal of Speech-Language Pathology</i>.</p>
           </div>
         </div>
         
@@ -705,13 +701,13 @@ export function SpeechTherapy({ setCurrentArticle }: SpeechTherapyProps) {
           <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b-2 border-[#2abcd4] pb-1">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Beukelman, D. R., & Light, J. C. (2020). <i>Augmentative & Alternative Communication: Supporting Children and Adults with Complex Communication Needs</i> (5th ed.). Brookes Publishing. https://brookespublishing.com/product/augmentative-and-alternative-communication/</p>
-            <p>Zisk, A. H., & Dalton, E. (2019). "Augmentative and Alternative Communication for Speaking Autistic Adults: Overview and Recommendations." <i>Autism in Adulthood</i>. https://doi.org/10.1089/aut.2018.0007</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>Beukelman, D. R., & Light, J. C. (2020). <i>Augmentative & Alternative Communication: Supporting Children and Adults with Complex Communication Needs</i> (5th ed.). Brookes Publishing.</li>
+            <li>Zisk, A. H., & Dalton, E. (2019). Augmentative and Alternative Communication for Speaking Autistic Adults: Overview and Recommendations. <i>Autism in Adulthood</i>.</li>
+          </ul>
         </div>
       </div>
 
-    </div>
+    </article>
   );
 }

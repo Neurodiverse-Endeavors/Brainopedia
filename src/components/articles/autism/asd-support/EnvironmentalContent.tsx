@@ -6,13 +6,13 @@ interface EnvironmentalContentProps {
 
 export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContentProps) {
   return (
-    <>
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       <div>
         <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Environmental Modifications and Accommodations</h2>
 
         <p className="mb-6">
           Creating supportive environments reduces barriers and allows autistic individuals to thrive by addressing 
-          sensory needs, providing clear communication, and establishing predictable structures.<sup className="text-green-600 font-bold ml-0.5">1</sup>
+          sensory needs, providing clear communication, and establishing predictable structures.<sup>1</sup>
         </p>
 
         {/* Sensory Accommodations */}
@@ -95,7 +95,7 @@ export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContent
           <p className="mt-6 text-sm bg-white p-4 rounded border-2 border-[#2abcd4]">
             <strong>Note:</strong> Sensory needs are highly individualized. What is calming to one autistic person 
             (e.g., deep pressure) might be overwhelming to another. A personalized sensory profile is essential because 
-            environmental modifications can significantly improve participation and well-being.<sup className="text-green-600 font-bold ml-0.5">2</sup>
+            environmental modifications can significantly improve participation and well-being.<sup>2</sup>
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContent
           
           <p className="mb-4 text-sm">
             Many autistic individuals experience less anxiety when the environment is predictable and expectations are clear. 
-            Visual supports and structured routines help individuals understand expectations, navigate transitions, and manage anxiety.<sup className="text-green-600 font-bold ml-0.5">3</sup>
+            Visual supports and structured routines help individuals understand expectations, navigate transitions, and manage anxiety.<sup>3</sup>
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -163,11 +163,19 @@ export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContent
           </p>
         </div>
 
-        {/* ===== REFERENCES SECTION ===== */}
-        <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
+        {/* --- BOTTOM BACK BUTTON --- */}
+        <div className="flex justify-end mt-8 mb-6 clear-both">
+          <button 
+            onClick={() => setCurrentArticle?.('autism')}
+            className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+          >
+            <span className="text-lg">←</span>All About Autism
+          </button>
+        </div>
 
-        <div className="bg-white bg-opacity-50 p-6 rounded-lg shadow-inner">
-          <h3 className="font-bold mb-5 text-xl font-spartan text-[#0c264d]">References</h3>
+        {/* ===== REFERENCES SECTION ===== */}
+        <div className="clear-both mt-16 font-spartan">
+          <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
           
           {/* CITED STUDIES: GREEN */}
           <div className="mb-6">
@@ -175,9 +183,9 @@ export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContent
               Cited Studies & Statistics
             </h4>
             <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-              <p>1. Martin, C. S. (2014). "Exploring the impact of the design of the physical environment on children with autism spectrum disorders." <i>Journal of Child and Family Studies</i>. https://doi.org/10.1007/s10826-013-9726-7</p>
-              <p>2. Tomchek, S. D., & Dunn, W. (2007). "Sensory processing in children with and without autism: A comparative study using the short sensory profile." <i>The American Journal of Occupational Therapy</i>. https://doi.org/10.5014/ajot.61.2.190</p>
-              <p>3. Mesibov, G. B., & Shea, V. (2010). "The TEACCH program in the era of evidence-based practice." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-009-0901-6</p>
+              <p>1. Martin, C. S. (2014). Exploring the impact of the design of the physical environment on children with autism spectrum disorders. <i>Journal of Child and Family Studies</i>.</p>
+              <p>2. Tomchek, S. D., & Dunn, W. (2007). Sensory processing in children with and without autism: A comparative study using the short sensory profile. <i>The American Journal of Occupational Therapy</i>.</p>
+              <p>3. Mesibov, G. B., & Shea, V. (2010). The TEACCH program in the era of evidence-based practice. <i>Journal of Autism and Developmental Disorders</i>.</p>
             </div>
           </div>
           
@@ -186,13 +194,13 @@ export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContent
             <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
               Background Sources
             </h4>
-            <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-              <p>American Psychiatric Association. (2013). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425596</p>
-            </div>
+            <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+              <li>American Psychiatric Association. (2013). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed.). American Psychiatric Publishing.</li>
+            </ul>
           </div>
         </div>
 
       </div>
-    </>
+    </article>
   );
 }

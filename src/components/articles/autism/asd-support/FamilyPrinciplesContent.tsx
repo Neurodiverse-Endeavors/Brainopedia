@@ -6,14 +6,14 @@ interface FamilyPrinciplesContentProps {
 
 export function FamilyPrinciplesContent({ setCurrentArticle }: FamilyPrinciplesContentProps) {
   return (
-    <>
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       {/* Family Support Section */}
       <div>
         <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Family Support</h2>
 
         <p className="mb-6">
           Supporting an autistic family member impacts the whole family. Families need support, resources, 
-          and understanding to thrive alongside their autistic loved ones.<sup className="text-green-600 font-bold ml-0.5">1</sup>
+          and understanding to thrive alongside their autistic loved ones.<sup>1</sup>
         </p>
                 {/* --- CENTERED GRAPHIC SECTION 1 --- */} 
           <div className="text-center w-full mb-8"> 
@@ -35,14 +35,14 @@ export function FamilyPrinciplesContent({ setCurrentArticle }: FamilyPrinciplesC
               <div className="flex items-center gap-3 mb-3">
                 <h4 className="text-[#0c264d] font-bold text-lg">Parent Training Programs</h4>
               </div>
-              <p className="text-sm">Evidence-based programs teaching strategies to support child development and behavior<sup className="text-green-600 font-bold ml-0.5">2</sup></p>
+              <p className="text-sm">Evidence-based programs teaching strategies to support child development and behavior<sup>2</sup></p>
             </div>
 
             <div className="bg-white p-5 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <h4 className="text-[#0c264d] font-bold text-lg">Respite Care</h4>
               </div>
-              <p className="text-sm">Temporary relief care allowing families necessary breaks to rest and recharge<sup className="text-green-600 font-bold ml-0.5">3</sup></p>
+              <p className="text-sm">Temporary relief care allowing families necessary breaks to rest and recharge<sup>3</sup></p>
             </div>
 
             <div className="bg-white p-5 rounded-md border-l-4 border-[#ffd166] shadow-sm">
@@ -56,7 +56,7 @@ export function FamilyPrinciplesContent({ setCurrentArticle }: FamilyPrinciplesC
               <div className="flex items-center gap-3 mb-3">
                 <h4 className="text-[#0c264d] font-bold text-lg">Sibling Support</h4>
               </div>
-              <p className="text-sm">Programs and resources specifically for siblings of autistic children<sup className="text-green-600 font-bold ml-0.5">4</sup></p>
+              <p className="text-sm">Programs and resources specifically for siblings of autistic children<sup>4</sup></p>
             </div>
 
             <div className="bg-white p-5 rounded-md border-l-4 border-[#0c264d] shadow-sm">
@@ -146,7 +146,7 @@ export function FamilyPrinciplesContent({ setCurrentArticle }: FamilyPrinciplesC
               <div key={item.label} className="flex items-start gap-3">
                 <div className="bg-[#10b981] text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-sm font-bold">✓</div>
                 <div>
-                  <div className="font-bold text-[#0c264d] mb-1">{item.label}{item.sup && <sup className="text-green-600 font-bold ml-0.5">{item.sup}</sup>}</div>
+                  <div className="font-bold text-[#0c264d] mb-1">{item.label}{item.sup && <sup>{item.sup}</sup>}</div>
                   <div className="text-sm">{item.desc}</div>
                 </div>
               </div>
@@ -166,9 +166,17 @@ export function FamilyPrinciplesContent({ setCurrentArticle }: FamilyPrinciplesC
         </div>
       </div>
 
-      {/* ===== REFERENCES SECTION ===== */}
-      <hr className="border-t-2 border-[#0c264d] border-opacity-10 my-8" />
+      {/* --- BOTTOM BACK BUTTON --- */}
+      <div className="flex justify-end mt-8 mb-6 clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('autism')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>All About Autism
+        </button>
+      </div>
 
+      {/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -177,12 +185,12 @@ export function FamilyPrinciplesContent({ setCurrentArticle }: FamilyPrinciplesC
           <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-4 border-b-2 border-[#10b981] pb-2">
             Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Karst, J. S., & Van Hecke, A. V. (2012). "Parent and family impact of autism spectrum disorders: A review and proposed model for intervention evaluation." <i>Clinical Child and Family Psychology Review</i>. https://doi.org/10.1007/s10567-012-0119-6</p>
-            <p>2. Bearss, K., et al. (2015). "Effect of parent training vs parent education on behavioral problems in children with autism spectrum disorder: A randomized clinical trial." <i>JAMA</i>. https://doi.org/10.1001/jama.2015.3150</p>
-            <p>3. Whitmore, K. E. (2016). "Respite care and stress among caregivers of children with autism spectrum disorder: An integrative review." <i>Journal of Pediatric Nursing</i>. https://doi.org/10.1016/j.pedn.2016.07.009</p>
-            <p>4. Mead, J., et al. (2011). "A systematic review of the psychosocial needs of siblings of children with autism spectrum disorders." <i>Journal of Autism and Developmental Disorders</i>. https://doi.org/10.1007/s10803-010-1150-4</p>
-            <p>5. Leadbitter, K., et al. (2021). "Autistic self-advocacy and the neurodiversity movement: Implications for autism early intervention and childhood education." <i>Frontiers in Psychology</i>. https://doi.org/10.3389/fpsyg.2021.635690</p>
+          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Karst, J. S., & Van Hecke, A. V. (2012). Parent and family impact of autism spectrum disorders: A review and proposed model for intervention evaluation. <i>Clinical Child and Family Psychology Review</i>.</p>
+            <p>2. Bearss, K., et al. (2015). Effect of parent training vs parent education on behavioral problems in children with autism spectrum disorder: A randomized clinical trial. <i>JAMA</i>.</p>
+            <p>3. Whitmore, K. E. (2016). Respite care and stress among caregivers of children with autism spectrum disorder: An integrative review. <i>Journal of Pediatric Nursing</i>.</p>
+            <p>4. Mead, J., et al. (2011). A systematic review of the psychosocial needs of siblings of children with autism spectrum disorders. <i>Journal of Autism and Developmental Disorders</i>.</p>
+            <p>5. Leadbitter, K., et al. (2021). Autistic self-advocacy and the neurodiversity movement: Implications for autism early intervention and childhood education. <i>Frontiers in Psychology</i>.</p>
           </div>
         </div>
         
@@ -191,11 +199,11 @@ export function FamilyPrinciplesContent({ setCurrentArticle }: FamilyPrinciplesC
           <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-4 border-b-2 border-[#2abcd4] pb-2">
             Background Sources
           </h4>
-          <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing. https://doi.org/10.1176/appi.books.9780890425787</p>
-          </div>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+          </ul>
         </div>
       </div>
-    </>
+    </article>
   );
 }
