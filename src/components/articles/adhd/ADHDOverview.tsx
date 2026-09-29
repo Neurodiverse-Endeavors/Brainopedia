@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Clock, Brain, LayoutGrid, Activity, Users, AlertCircle } from 'lucide-react';
+import { Clock, Brain, LayoutGrid, Activity, Users, AlertCircle, Lightbulb } from 'lucide-react';
 
 interface ADHDOverviewProps {
   setCurrentArticle?: (article: string) => void;
@@ -226,88 +226,100 @@ export function ADHDOverview({ setCurrentArticle }: ADHDOverviewProps) {
             </div>
           </div>
 
-          <div className="border-2 border-[#0c264d] rounded-xl p-6 bg-white shadow-sm mt-8 w-full max-w-4xl mx-auto clear-both">
+ <div className="border-2 border-[#0c264d] rounded-xl p-6 bg-white shadow-sm mt-8 w-full max-w-4xl mx-auto clear-both">
             <h3 className="text-center font-bold text-[#0c264d] text-lg mb-6">
-              ADHD in Adults<sup className="text-green-600 font-bold ml-0.5">5</sup>
+              ADHD in Adults
             </h3>
 
-            <div className="flex flex-col lg:flex-row flex-wrap gap-6 items-center justify-between w-full">
-              <div className="flex gap-6 lg:border-r-2 border-gray-100 lg:pr-6 w-full lg:w-auto justify-center">
+            {/* Tight 3-Column Grid Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-stretch w-full">
+              
+              {/* Column 1: Prevalence Panel */}
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 flex flex-col justify-center gap-4 h-full shadow-sm">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-[#0A9DC4] mb-1">2.6%</div>
-                  <div className="text-xs text-gray-600 leading-tight">Persistent<br/>(childhood-onset)</div>
+                  <div className="text-xs text-slate-700 leading-tight">Persistent<br/>(childhood-onset)</div>
                 </div>
+                <div className="w-12 h-px bg-slate-300 mx-auto"></div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-[#ffd166] mb-1">6.8%</div>
-                  <div className="text-xs text-gray-600 leading-tight">Symptomatic<br/>(any onset)</div>
+                  <div className="text-xs text-slate-700 leading-tight">Symptomatic<br/>(any onset)</div>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3 lg:border-r-2 border-gray-100 lg:pr-6 w-full lg:w-auto">
-                <div className="bg-[#0c264d] text-white rounded-md p-3 flex items-center gap-3">
-                  <div className="font-bold text-lg">50-70%</div>
+              {/* Column 2: Persistence & Comorbidity */}
+              <div className="flex flex-col gap-3 justify-center h-full">
+                <div className="bg-[#0c264d] text-white rounded-lg p-4 flex items-center gap-4 flex-1 shadow-sm">
+                  <div className="font-bold text-xl shrink-0">50-70%</div>
                   <div className="text-xs leading-tight border-l border-white/30 pl-3">of childhood cases<br/>persist into adulthood</div>
                 </div>
-                <div className="bg-[#0c264d] text-white rounded-md p-3 flex items-center gap-3">
-                  <div className="font-bold text-lg">~70%</div>
+                <div className="bg-[#0c264d] text-white rounded-lg p-4 flex items-center gap-4 flex-1 shadow-sm">
+                  <div className="font-bold text-xl shrink-0">~70%</div>
                   <div className="text-xs leading-tight border-l border-white/30 pl-3">have ≥1 comorbid<br/>mental health condition</div>
                 </div>
               </div>
 
-              <div className="w-full lg:w-auto min-w-0">
-                <h4 className="text-sm font-bold text-[#0c264d] text-center mb-3">Gender Differences in Comorbidity</h4>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                  <div className="flex flex-col gap-2 w-full sm:flex-1 max-w-[200px]">
-                    <div className="text-xs font-bold text-[#ffd166] text-center">Females: Higher In</div>
-                    <div className="bg-[#fff9e6] border border-[#ffd166] rounded py-1.5 px-2 text-center text-xs text-[#0c264d]">
-                      <strong>47-50%</strong> Anxiety
+              {/* Column 3: Gender Differences Panel */}
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 h-full flex flex-col shadow-sm">
+                <h4 className="text-xs font-bold text-[#0c264d] text-center mb-3 uppercase tracking-wider border-b border-slate-200 pb-2">Gender Comorbidity</h4>
+                <div className="flex flex-col gap-3 flex-1 justify-center">
+                  
+                  {/* Females Section */}
+                  <div className="flex flex-col gap-1.5">
+                    <div className="text-[10px] font-bold text-[#d4a017] uppercase tracking-wide">Females Higher In:</div>
+                    <div className="bg-[#fffbeb] border border-[#ffd166] rounded py-1 px-2 flex justify-between items-center text-xs text-[#0c264d]">
+                      <span>Anxiety</span> <strong>47-50%</strong>
                     </div>
-                    <div className="bg-[#fff9e6] border border-[#ffd166] rounded py-1.5 px-2 text-center text-xs text-[#0c264d]">
-                      <strong>19-53%</strong> Depression
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2 w-full sm:flex-1 max-w-[200px]">
-                    <div className="text-xs font-bold text-[#0A9DC4] text-center">Males: Higher In</div>
-                    <div className="bg-[#f0f9ff] border border-[#0A9DC4] rounded py-1.5 px-2 text-center text-xs text-[#0c264d]">
-                      <strong>15-40%</strong> Substance Use
-                    </div>
-                    <div className="bg-[#f0f9ff] border border-[#0A9DC4] rounded py-1.5 px-2 text-center text-xs text-[#0c264d]">
-                      <strong>2-3%</strong> Schizophrenia
+                    <div className="bg-[#fffbeb] border border-[#ffd166] rounded py-1 px-2 flex justify-between items-center text-xs text-[#0c264d]">
+                      <span>Depression</span> <strong>19-53%</strong>
                     </div>
                   </div>
+                  
+                  {/* Males Section */}
+                  <div className="flex flex-col gap-1.5">
+                    <div className="text-[10px] font-bold text-[#0A9DC4] uppercase tracking-wide">Males Higher In:</div>
+                    <div className="bg-[#f0f9ff] border border-[#0A9DC4] rounded py-1 px-2 flex justify-between items-center text-xs text-[#0c264d]">
+                      <span>Substance Use</span> <strong>15-40%</strong>
+                    </div>
+                    <div className="bg-[#f0f9ff] border border-[#0A9DC4] rounded py-1 px-2 flex justify-between items-center text-xs text-[#0c264d]">
+                      <span>Schizophrenia</span> <strong>2-3%</strong>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
-          </div>
+          </div>     
         </section>
 
-        {/* IMPACT ON DAILY LIFE */}
-        <section className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20">
-          <h2 className="text-[#0c264d] font-bold mb-6 text-2xl flex items-center gap-2">
-            <AlertCircle className="text-[#ff6b6b] shrink-0" size={28} />
+{/* IMPACT ON DAILY LIFE */}
+        <section className="bg-gray-200 p-6 rounded-lg shadow-sm border-2 border-[#be185d]">
+          <h2 className="text-[#831843] font-bold mb-6 text-2xl flex items-center gap-2">
+            <AlertCircle className="text-[#be185d] shrink-0" size={28} />
             Impact on Daily Life
           </h2>
           
           <div className="grid sm:grid-cols-2 gap-4 mb-6">
-            <div className="bg-white p-4 rounded-lg border-l-4 border-[#ff6b6b] shadow-sm">
-              <h3 className="font-bold text-[#0c264d] mb-1 text-sm uppercase tracking-wider">Academic/Work</h3>
-              <p className="text-xs text-gray-700 leading-relaxed">Difficulty completing assignments, meeting deadlines, staying organized, and maintaining consistent performance.</p>
+            <div className="bg-white p-4 rounded-lg border-l-4 border-[#be185d] shadow-sm">
+              <h3 className="font-bold text-[#831843] mb-1 text-sm uppercase tracking-wider">Academic/Work</h3>
+              <p className="text-xs text-slate-700 leading-relaxed">Difficulty completing assignments, meeting deadlines, staying organized, and maintaining consistent performance.</p>
             </div>
-            <div className="bg-white p-4 rounded-lg border-l-4 border-[#ff6b6b] shadow-sm">
-              <h3 className="font-bold text-[#0c264d] mb-1 text-sm uppercase tracking-wider">Relationships</h3>
-              <p className="text-xs text-gray-700 leading-relaxed">Challenges with listening, following through on commitments, emotional regulation, and managing conflict.</p>
+            <div className="bg-white p-4 rounded-lg border-l-4 border-[#be185d] shadow-sm">
+              <h3 className="font-bold text-[#831843] mb-1 text-sm uppercase tracking-wider">Relationships</h3>
+              <p className="text-xs text-slate-700 leading-relaxed">Challenges with listening, following through on commitments, emotional regulation, and managing conflict.</p>
             </div>
-            <div className="bg-white p-4 rounded-lg border-l-4 border-[#ff6b6b] shadow-sm">
-              <h3 className="font-bold text-[#0c264d] mb-1 text-sm uppercase tracking-wider">Self-esteem</h3>
-              <p className="text-xs text-gray-700 leading-relaxed">Repeated experiences of failure or criticism can lead to low self-confidence and negative self-perception.</p>
+            <div className="bg-white p-4 rounded-lg border-l-4 border-[#be185d] shadow-sm">
+              <h3 className="font-bold text-[#831843] mb-1 text-sm uppercase tracking-wider">Self-esteem</h3>
+              <p className="text-xs text-slate-700 leading-relaxed">Repeated experiences of failure or criticism can lead to low self-confidence and negative self-perception.</p>
             </div>
-            <div className="bg-white p-4 rounded-lg border-l-4 border-[#ff6b6b] shadow-sm">
-              <h3 className="font-bold text-[#0c264d] mb-1 text-sm uppercase tracking-wider">Daily functioning</h3>
-              <p className="text-xs text-gray-700 leading-relaxed">Struggles with routine tasks like paying bills, household management, and personal organization.</p>
+            <div className="bg-white p-4 rounded-lg border-l-4 border-[#be185d] shadow-sm">
+              <h3 className="font-bold text-[#831843] mb-1 text-sm uppercase tracking-wider">Daily functioning</h3>
+              <p className="text-xs text-slate-700 leading-relaxed">Struggles with routine tasks like paying bills, household management, and personal organization.</p>
             </div>
           </div>
           
-          <p className="text-sm text-gray-700 leading-relaxed bg-white p-4 rounded-lg border border-gray-200 shadow-sm text-center">
+<p className="text-sm text-slate-700 leading-relaxed bg-white p-4 rounded-lg border-2 border-[#ffd166] shadow-sm text-center max-w-4xl mx-auto">
+            <Lightbulb className="inline-block w-5 h-5 text-[#d4a017] mr-1.5 -mt-1" />
             However, it's important to recognize that many individuals with ADHD also describe unique strengths, 
             including creativity, ability to hyperfocus on interesting tasks, high energy, resilience, and 
             thinking outside the box.

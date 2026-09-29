@@ -83,7 +83,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
             <ImageWithFallback 
               src="/images/dld/dld-causes-genetics.webp"
               alt="DNA helix representing the hereditary nature of language development"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -117,7 +117,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
             <ImageWithFallback 
               src="/images/dld/dld-causes-neurobiology-hero.webp"
               alt="Brain scan highlighting language processing regions"
-              className="block mx-auto w-64 h-auto mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-full max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -193,7 +193,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
             <ImageWithFallback 
               src="/images/dld/dld-causes-cognition.webp"
               alt="Abstract representation of working memory and processing speed"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
+              className="w-full max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-gray-300"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -227,7 +227,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
             <ImageWithFallback 
               src="/images/dld/dld-causes-environment-hero.webp"
               alt="A warm, supportive early childhood environment"
-              className="block mx-auto w-64 h-auto mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -294,7 +294,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
             <ImageWithFallback 
               src="/images/dld/dld-causes-myths.webp"
               alt="Magnifying glass focusing on facts and shattering misconceptions"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -332,7 +332,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
             <ImageWithFallback 
               src="/images/dld/dld-causes-research-hero.webp"
               alt="Modern research setting analyzing genomic data"
-              className="block mx-auto w-64 h-auto mb-8 rounded-lg shadow-sm border border-gray-300"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-gray-300"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">

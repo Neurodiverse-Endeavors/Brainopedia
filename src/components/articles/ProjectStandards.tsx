@@ -234,11 +234,23 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <li><strong>Cyan Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-cyan-50 border-2 border-[#2abcd4]</code></li>
             <li><strong>Yellow/Gold Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-yellow-50 border-2 border-[#ffd166]</code></li>
             <li><strong>Navy/Gray Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-slate-50 border-2 border-[#0c264d]</code></li>
-            <li className="text-red-700 font-bold mt-4 pt-2 border-t border-gray-100"><strong>Warning Cards:</strong> <code className="bg-red-50 px-2 py-1 rounded border border-red-200 text-red-700 break-words">bg-red-50 border-4 border-red-500</code></li>
           </ul>
+          
         </div>
 
-        <div className="bg-[#f0f9ff] border-l-4 border-[#2abcd4] p-5 mb-6 rounded-r-xl shadow-sm mb-6">
+        <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 rounded-r-lg shadow-sm mb-6">
+          <h3 className="font-bold text-[#831843] mb-2 uppercase text-xs">Accessible Warning & Myth Cards</h3>
+          <p className="text-sm text-slate-700 mb-3">
+            Standard bright red is banned due to harsh contrast and accessibility concerns. For "What it is NOT" sections, debunked myths, or critical impacts, strictly use the Maroon/Pink accessible palette:
+          </p>
+          <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+            <li><strong>Background:</strong> Soft Pink (<code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">bg-[#fdf2f8]</code>)</li>
+            <li><strong>Outer Borders & Icons:</strong> Deep Maroon (<code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">border-[#be185d]</code> or <code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">text-[#be185d]</code>)</li>
+            <li><strong>Text & Headers:</strong> Dark Maroon (<code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">text-[#831843]</code>)</li>
+            <li><strong>Inner Grid Cards:</strong> Use a white background with a thick left accent border (<code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">bg-white border-l-4 border-[#be185d]</code>).</li>
+          </ul>
+        </div>
+                <div className="bg-[#f0f9ff] border-l-4 border-[#2abcd4] p-5 mb-6 rounded-r-xl shadow-sm mb-6">
           <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">Typography Sizing: Paragraphs vs. Mini-Card Lists</h3>
           <ul className="list-disc ml-5 text-sm text-slate-700 space-y-3">
             <li><strong>Intro & Hero Paragraphs (<code className="bg-white px-1 text-green-700 rounded border border-gray-200">text-sm</code>):</strong> Any standard paragraph text floating next to an image or below a hero graphic must remain <code className="bg-white px-1 rounded">text-sm</code>.</li>

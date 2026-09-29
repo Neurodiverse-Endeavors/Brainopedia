@@ -377,19 +377,19 @@ export function DysgraphiaCauses({ setCurrentArticle, initialTab }: DysgraphiaCa
             </div>
           </div>
 
-          {/* What Dysgraphia is NOT Card (Red Warning) */}
-          <div className="bg-white border-4 border-red-500 rounded-xl p-6 shadow-sm">
-            <h2 className="text-red-700 font-bold mb-6 text-2xl flex items-center justify-center gap-2">
+{/* What Dysgraphia is NOT Card (Soft Pink Warning) */}
+          <div className="bg-[#fdf2f8] border-2 border-[#be185d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#831843] font-bold mb-6 text-2xl flex items-center justify-center gap-2">
               <span>⚠</span> What Dysgraphia is NOT
             </h2>
             
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+            <p className="text-sm text-slate-800 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Dysgraphia is a legitimate, brain-based neurological difference that requires targeted academic accommodations. It is explicitly not a behavioral choice, a result of laziness, or an indicator of low intelligence.
             </p>
 
-            <div className="bg-red-50 p-5 rounded-xl border border-red-200 max-w-4xl mx-auto">
-              <h3 className="text-red-800 font-bold mb-3 text-lg border-b border-red-200 pb-2">Debunked Myths</h3>
-              <ul className="list-disc ml-5 text-sm text-red-900 space-y-2">
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[#fbcfe8] max-w-4xl mx-auto">
+              <h3 className="text-[#831843] font-bold mb-3 text-lg border-b border-[#fbcfe8] pb-2">Debunked Myths</h3>
+              <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                 <li><strong>"They are just lazy":</strong> Students with dysgraphia expend vastly more energy to write than their peers.</li>
                 <li><strong>"They aren't trying hard enough":</strong> The physical and cognitive barriers are involuntary and beyond the student's control.</li>
                 <li><strong>"They are not intelligent":</strong> Writing difficulties occur across all IQ levels and do not reflect intellectual capacity.</li>

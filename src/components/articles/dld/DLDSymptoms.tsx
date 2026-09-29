@@ -83,7 +83,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
             <ImageWithFallback 
               src="/images/dld/dld-symptoms-early.webp"
               alt="Toddler attempting to communicate"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm..."
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -125,7 +125,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
             <ImageWithFallback 
               src="/images/dld/dld-symptoms-grammar-hero.webp"
               alt="Abstract representation of searching for the right words and grammar"
-              className="block mx-auto w-64 h-auto mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-full max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm..."
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
@@ -215,7 +215,8 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
             <ImageWithFallback 
               src="/images/dld/dld-symptoms-receptive.webp"
               alt="Child listening but looking overwhelmed by complex instructions"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
+              className="w-full max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm..."
+            
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -257,7 +258,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
             <ImageWithFallback 
               src="/images/dld/dld-symptoms-social-hero.webp"
               alt="Group of children talking where one child struggles to enter the fast-paced conversation"
-              className="block mx-auto w-64 h-auto mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -324,7 +325,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
             <ImageWithFallback 
               src="/images/dld/dld-symptoms-academic.webp"
               alt="Student struggling with complex textbook vocabulary"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -366,12 +367,12 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
             <ImageWithFallback 
               src="/images/dld/dld-symptoms-lifespan-hero.webp"
               alt="Timeline of DLD symptoms evolving from preschool into adulthood"
-              className="block mx-auto w-64 h-auto mb-8 rounded-lg shadow-sm border border-gray-300"
+              className="w-full max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-gray-300"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+              <div className="bg-cyan-200 p-4 rounded-xl shadow-sm border border-gray-200">
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Preschool (3-5)</h3>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
                   <li>Limited vocabulary and short, simple sentences.</li>
@@ -379,7 +380,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
                 </ul>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+              <div className="bg-cyan-200 p-4 rounded-xl shadow-sm border border-gray-200">
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">School Age (6-12)</h3>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
                   <li>Persistent grammatical difficulties.</li>
@@ -387,7 +388,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
                 </ul>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+              <div className="bg-cyan-200 p-4 rounded-xl shadow-sm border border-gray-200">
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Adolescence (13-18)</h3>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
                   <li>Language issues may become less obvious but still impact complex text comprehension.</li>
@@ -395,7 +396,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
                 </ul>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+              <div className="bg-cyan-200 p-4 rounded-xl shadow-sm border border-gray-200">
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Adulthood</h3>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
                   <li>Subtle but persistent difficulties in fast-paced education or employment settings.</li>
@@ -404,7 +405,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-40 max-w-4xl mx-auto relative overflow-hidden">
+            <div className="bg-[#ffd166]/30 p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-40 max-w-4xl mx-auto relative overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
               <div className="pl-2">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-sm">
