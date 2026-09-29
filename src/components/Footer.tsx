@@ -39,7 +39,10 @@ export function Footer({ setCurrentArticle }: FooterProps) {
         {/* Additional Info */}
         <div className="mt-6 pt-6 border-t border-gray-700 text-center text-xs text-gray-400">
           <p>
-            Brainopedia is a comprehensive encyclopedia dedicated to neurodivergent conditions and brain differences.
+            <ul>
+              <li>Brainopedia.org is an official project of Neurodiverse Endeavors, a registered 501(c)(3) non-profit organization.</li>
+              <li>Brainopedia serves as a free, comprehensive encyclopedia dedicated to neurodivergent conditions and brain differences.</li>
+            </ul>
           </p>
         </div>
       </div>

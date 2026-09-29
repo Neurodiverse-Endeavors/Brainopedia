@@ -365,60 +365,7 @@ export function Home({ setCurrentArticle }: HomeProps) {
               </div>
             </div>
 
-            {/* Volume VII: Acquired Neurodivergence */}
-            <div 
-              className="group relative bg-[#f4f4f4] bg-cover bg-center rounded-r-lg rounded-l-md shadow-[3px_3px_0px_#cbd5e1,5px_5px_12px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_#cbd5e1,7px_7px_15px_rgba(0,0,0,0.08)] duration-300 flex flex-col border border-gray-300"
-              style={{ backgroundImage: "url('/images/home-beige-background.webp')" }}
-            >
-              <div className="absolute top-0 bottom-0 left-0 w-6 sm:w-8 bg-[#0A9DC4] rounded-l-md shadow-[inset_-3px_0_6px_rgba(0,0,0,0.25),inset_3px_0_6px_rgba(255,255,255,0.2)] z-10 flex flex-col justify-evenly py-6">
-                {[1, 2, 3, 4, 5].map(i => (
-                  <div key={i} className="w-full h-1 bg-black/20 shadow-[0_1px_1px_rgba(255,255,255,0.2)]"></div>
-                ))}
-              </div>
-              
-              <div className="absolute top-0 bottom-0 left-6 sm:left-8 w-3 sm:w-4 bg-gradient-to-r from-black/10 via-black/5 to-transparent z-10"></div>
-              
-              <div className="absolute top-[2px] bottom-[2px] right-0 w-3 sm:w-5 bg-[#f8fafc] border-l border-gray-300 rounded-r-lg z-10 overflow-hidden shadow-[inset_1px_0_2px_rgba(0,0,0,0.03)]">
-                <div className="w-full h-full bg-[repeating-linear-gradient(to_right,transparent,transparent_1px,#cbd5e1_1px,#cbd5e1_2px)] opacity-70"></div>
-                <div className="absolute inset-0 shadow-[inset_-1px_0_3px_rgba(0,0,0,0.06)] pointer-events-none"></div>
-              </div>
-
-              <div className="pl-12 sm:pl-16 pr-8 sm:pr-12 py-8 flex flex-col items-center text-center z-20">
-                <div className="flex items-center gap-3 w-full mb-5">
-                  <div className="h-[2px] bg-gradient-to-r from-transparent to-[#0A9DC4] flex-1"></div>
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#0A9DC4]">
-                    Volume VII
-                  </span>
-                  <div className="h-[2px] bg-gradient-to-l from-transparent to-[#0A9DC4] flex-1"></div>
-                </div>
-                
-                <img src="/images/home-acquired-brain.webp" alt="Injury" className="w-20 sm:w-24 h-auto rounded-lg shadow-sm mb-4 border border-gray-100" />
-                
-                <h3 className="text-xl sm:text-2xl font-bold text-[#0c264d] mb-3 leading-tight">
-                  Acquired Neurodivergence
-                </h3>
-                
-                <p className="text-xs sm:text-sm text-slate-700 max-w-lg mb-6">
-                  Neurological differences that can develop at any point across the lifespan due to injury, illness, or external factors.
-                </p>
-                
-                <div className="w-full border-t border-dashed border-slate-300 pt-5 mt-auto">
-                  <span className="text-[10px] sm:text-[12px] uppercase font-bold text-slate-500 mb-4 block tracking-widest">Included Topics</span>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {[
-                      { id: 'tbi', label: 'Traumatic Brain Injury or "TBI"' },
-                      { id: 'cte', label: 'Chronic Traumatic Encephalopathy or "CTE"' },
-                      { id: 'pandas', label: '"PANS" or "PANDAS"' }
-                    ].map(item => (
-                      <button key={item.id} onClick={() => setCurrentArticle?.(item.id)} className="px-4 py-1.5 bg-white border border-slate-200 rounded-full text-xs hover:bg-[#0A9DC4] hover:border-[#0A9DC4] hover:text-white shadow-sm transition-all font-normal text-slate-700">
-                        {item.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
+  
           </div>
         </section>
       </div>

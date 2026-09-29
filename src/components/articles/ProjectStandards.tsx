@@ -80,6 +80,26 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
               className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm"
             </code>
           </div>
+
+          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <h3 className="font-bold text-[#0c264d] text-sm mb-2">3. The Wide Centered (w-96)</h3>
+            <p className="text-xs mb-3 text-gray-600">Used for wider diagrams or detailed infographics where the standard w-64 is too small to read comfortably.</p>
+            <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm"
+            </code>
+          </div>
+
+          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <h3 className="font-bold text-[#0c264d] text-sm mb-2">4. The Full Width Hero (w-full)</h3>
+            <p className="text-xs mb-3 text-gray-600">Used only when a complex chart or visual needs to stretch across the absolute entire width of its container.</p>
+            <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
+              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm"
+            </code>
+          </div>
+        </div>
+
+        <div className="text-xs text-gray-500 mt-3 mb-6 italic">
+          *Note: Always append the specific card's border color to the end of the class string (e.g., <code className="bg-gray-100 px-1 rounded not-italic">border border-[#ffd166]</code>).
         </div>
 
         <div className="bg-blue-50 border-l-4 border-blue-500 p-5 mt-6 rounded-r-lg shadow-sm">
@@ -91,36 +111,23 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
       </section>
 
       {/* 3. CITATION SYSTEM & ROOT STYLING */}
-      <section className="mb-12">
-        <h2 className="text-[#0c264d] text-2xl font-bold mb-6 flex items-center gap-2 border-b pb-2">
-          <FileText className="text-[#2abcd4]" /> CITATION SYSTEM
-        </h2>
-        
-        <div className="bg-white border-2 border-[#2abcd4] p-5 rounded-xl shadow-sm mb-6">
-          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">The Root Tailwind Fix (No Naked Classes)</h3>
-          <p className="text-sm text-slate-700 mb-4">
-            We NO LONGER apply manual classes to individual <code className="bg-gray-100 px-1 rounded">sup</code> tags. Instead, the very top <code className="bg-gray-100 px-1 rounded">&lt;article&gt;</code> wrapper of every page must contain the following arbitrary Tailwind variants to auto-style all citations seamlessly:
-          </p>
-          <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded break-words whitespace-pre-wrap">
-            [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]
-          </code>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4 mb-6">
-           <div className="bg-[#ffd166] bg-opacity-20 border-l-4 border-[#ffd166] p-4 text-sm">
+        <section>
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+           <div className="bg-green-300 bg-opacity-20 border-l-4 border-green p-4 text-sm">
             <p className="font-bold mb-2 uppercase text-[#0c264d]">ONLY Use Inline Citations When:</p>
             <ul className="list-disc ml-4 space-y-2 text-slate-700">
-              <li>The text cites hard statistics, explicitly named theories, or specific clinical protocols.</li>
+              <li>The text cites hard statistics, explicitly named theories, or spcific clinical protocols.</li>
               <li>These items go into the <strong>Cited Studies & Statistics</strong> reference list.</li>
               <li><strong>Tab Rule:</strong> Inline citations must restart at 1 for each individual tab and flow chronologically top-to-bottom.</li>
             </ul>
           </div>
-          <div className="bg-red-50 border-l-4 border-red-500 p-4 text-sm">
-            <p className="font-bold mb-2 uppercase text-red-800">NEVER Use Inline Citations For:</p>
+          <div className="bg-cyan-500 border-l-4 border-cyan p-4 text-sm">
+            <p className="font-bold mb-2 uppercase text-cyan-800">NEVER Use Inline Citations For:</p>
             <ul className="list-disc ml-4 space-y-2 text-slate-700">
               <li>General foundational knowledge.</li>
               <li>Descriptive symptom lists.</li>
               <li>These items must be placed directly into the <strong>Background Sources</strong> list with NO inline superscript.</li>
+              <li>ALL PAGES MUST HAVE BACKGROUND SOURCES as it is not possible to just have stats and studies cited and no mention of how the background info was obtained</li>
             </ul>
           </div>
         </div>
@@ -133,6 +140,10 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         </h2>
 
         <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 text-sm text-gray-800">
+          <strong>EACH TAB HAS ITS OWN SET OF REFERENCES:</strong> Each tab must have its own unique reference section. Do not combine references across multiple tabs. Each tab's reference section must be placed at the very bottom of the tab content, after all text, images, and mini-cards.
+        </div>
+
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 text-sm text-gray-800">
           <strong>Mandatory Layout Rule:</strong> References must <strong>NOT</strong> be contained within a box, card, or styled background container. They sit flush on the page. Always use <code className="bg-white px-1 rounded text-xs break-words">{`<div className="clear-both mt-16 font-spartan">`}</code> as the main wrapper to clear floated images and provide exactly 64px of top margin spacing.
         </div>
 
@@ -142,6 +153,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
 
         <div className="bg-gray-900 p-6 rounded-xl overflow-hidden min-w-0">
           <pre className="text-green-400 text-xs overflow-x-auto block break-words whitespace-pre-wrap">
+
 {`{/* ===== REFERENCES SECTION ===== */}
 <div className="clear-both mt-16 font-spartan">
   <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
@@ -383,18 +395,6 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
               <li><strong>Bottom:</strong> Right-aligned just above the references section using <code className="bg-gray-100 px-1 rounded">flex justify-end mt-8 mb-6 clear-both</code>.</li>
             </ul>
           </div>
-        </div>
-
-        <div className="bg-yellow-50 border-l-4 border-[#ffd166] p-5 rounded-r-xl shadow-sm">
-          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">Tab-Isolated Reference Numbering</h3>
-          <p className="text-sm text-slate-700 mb-3">
-            Because tabs hide and show content dynamically, inline citation numbering cannot flow globally across the entire file.
-          </p>
-          <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-            <li><strong>Restart at 1:</strong> Inline superscripts must restart at <code className="bg-white px-1 rounded">1</code> at the top of <strong>each individual tab</strong>.</li>
-            <li><strong>Chronological Flow:</strong> Within a single tab, numbers flow chronologically top-to-bottom.</li>
-            <li><strong>The Master List:</strong> The "Cited Studies & Statistics" section at the bottom of the page combines all citations from all tabs into one master numbered list. The numbered superscripts in the text must map to this master bottom list.</li>
-          </ul>
         </div>
       </section>
       {/* 9. INFORMATION ARCHITECTURE */}

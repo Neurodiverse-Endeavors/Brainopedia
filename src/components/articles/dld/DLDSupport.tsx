@@ -84,7 +84,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
             <ImageWithFallback 
               src="/images/dld/dld-support-therapy.webp"
               alt="Speech-Language Pathologist working with a child"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -212,7 +212,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
             <ImageWithFallback 
               src="/images/dld/dld-support-classroom.webp"
               alt="Teacher providing simplified, direct instruction with visual supports"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -358,7 +358,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
             <ImageWithFallback 
               src="/images/dld/dld-support-home.webp"
               alt="Parent and child engaging in shared dialogic reading"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
