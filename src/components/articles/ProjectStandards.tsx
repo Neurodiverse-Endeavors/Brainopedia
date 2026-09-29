@@ -234,9 +234,11 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <li><strong>Cyan Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-cyan-50 border-2 border-[#2abcd4]</code></li>
             <li><strong>Yellow/Gold Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-yellow-50 border-2 border-[#ffd166]</code></li>
             <li><strong>Navy/Gray Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-slate-50 border-2 border-[#0c264d]</code></li>
+            <li><strong>Muted Gray Cards:</strong> <code className="bg-[#f0f9ff] px-2 py-1 rounded break-words">bg-[#f0f9ff] border-2 border-[#be185d]</code></li>
           </ul>
-          
         </div>
+          
+      
 
         <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 rounded-r-lg shadow-sm mb-6">
           <h3 className="font-bold text-[#831843] mb-2 uppercase text-xs">Accessible Warning & Myth Cards</h3>
@@ -247,7 +249,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <li><strong>Background:</strong> Soft Pink (<code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">bg-[#fdf2f8]</code>)</li>
             <li><strong>Outer Borders & Icons:</strong> Deep Maroon (<code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">border-[#be185d]</code> or <code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">text-[#be185d]</code>)</li>
             <li><strong>Text & Headers:</strong> Dark Maroon (<code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">text-[#831843]</code>)</li>
-            <li><strong>Inner Grid Cards:</strong> Use a white background with a thick left accent border (<code className="bg-white px-1 rounded text-[#831843] border border-[#fbcfe8]">bg-white border-l-4 border-[#be185d]</code>).</li>
+            <li><strong>Inner Grid Cards:</strong> Use a muted gray background with a thick left accent border (<code className="bg-[#f0f9ff] px-1 rounded text-[#831843] border border-[#fbcfe8]">bg-[#f0f9ff] border-l-4 border-[#be185d]</code>).</li>
           </ul>
         </div>
                 <div className="bg-[#f0f9ff] border-l-4 border-[#2abcd4] p-5 mb-6 rounded-r-xl shadow-sm mb-6">

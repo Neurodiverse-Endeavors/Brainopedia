@@ -11,17 +11,17 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
   const [activeTab, setActiveTab] = useState(initialTab || 'process');
 
   return (
-    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* HEADER & DESKTOP BACK BUTTON */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl text-[#0c264d] font-normal">
           DLD: Testing & Diagnosing
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('dld')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap hidden md:flex"
         >
           <span className="text-xl">←</span>
           All About DLD
@@ -31,7 +31,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
       {/* MOBILE BACK BUTTON */}
       <button 
         onClick={() => setCurrentArticle?.('dld')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap md:hidden mb-6"
       >
         <span className="text-xl">←</span>
         All About DLD
@@ -77,21 +77,21 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
       {activeTab === 'process' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Professionals Card (Cyan) - Uses Float Image */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
+          {/* Professionals Card (Cyan) */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Diagnostic Team & Process</h2>
             
             <ImageWithFallback 
               src="/images/dld/dld-diagnosis-professionals.webp"
               alt="Speech-Language Pathologist working with a child"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-80 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
               Diagnosing Developmental Language Disorder requires a comprehensive assessment. Because language impacts so many areas of development, the diagnostic process involves a multidisciplinary approach, standardized testing, and careful observation of the child's language use in everyday contexts.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
                 <UserCheck className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
                 <div>
@@ -118,18 +118,18 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
             </div>
           </div>
 
-          {/* CATALISE Criteria Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          {/* CATALISE Criteria Card (Yellow) */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The CATALISE Diagnostic Criteria</h2>
             
             <ImageWithFallback 
               src="/images/dld/dld-diagnosis-catalise-hero.webp"
               alt="Visual representation of international consensus criteria"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              In 2017, the multinational CATALISE consortium established the definitive, modern diagnostic criteria for DLD, moving the clinical world away from strict, arbitrary cutoff scores and toward functional, real-world impact.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>
+              In 2017, the multinational CATALISE consortium established the definitive, modern diagnostic criteria for DLD, moving the clinical world away from strict, arbitrary cutoff scores and toward functional, real-world impact.<sup>1</sup>
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -191,21 +191,21 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
       {activeTab === 'testing' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Standardized Testing Card (Slate) - Uses Float Image */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+          {/* Standardized Testing Card (Slate) */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Standardized Language Testing</h2>
             
             <ImageWithFallback 
               src="/images/dld/dld-diagnosis-testing.webp"
               alt="Child engaging in a receptive language test with an SLP"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-80 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-slate-200"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
               To accurately map a child's language profile, Speech-Language Pathologists utilize comprehensive test batteries that separate language into specific, measurable domains.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
                 <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
                   <Ear className="text-[#0c264d] w-5 h-5" />
@@ -242,14 +242,14 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
             </div>
           </div>
 
-          {/* Specialized Assessments Card (Cyan) - Uses Hero Image */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+          {/* Specialized Assessments Card (Cyan) */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Language Sampling & Additional Testing</h2>
             
             <ImageWithFallback 
               src="/images/dld/dld-diagnosis-assessments-hero.webp"
               alt="Visualizing natural language sampling and speech analysis"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="w-80 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -303,21 +303,21 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
       {activeTab === 'criteria' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Differential Diagnosis Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          {/* Differential Diagnosis Card (Yellow) */}
+          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
             
             <ImageWithFallback 
               src="/images/dld/dld-diagnosis-differential.webp"
               alt="Conceptual visual of sorting different diagnostic profiles"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-80 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
               Because language delays are a symptom of many different conditions, the diagnostic team must carefully distinguish primary DLD from other neurodevelopmental profiles. It is also critical to identify co-occurring conditions, as ADHD and Dyslexia frequently present alongside DLD.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Distinguishing Profiles</h3>
                 <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
@@ -337,14 +337,14 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
             </div>
           </div>
 
-          {/* Outcomes Card (Slate) - Uses Hero Image */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+          {/* Outcomes Card (Slate) */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Educational Classification & The Report</h2>
             
             <ImageWithFallback 
               src="/images/dld/dld-diagnosis-report-hero.webp"
               alt="Formal educational support meeting and IEP planning"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="w-80 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

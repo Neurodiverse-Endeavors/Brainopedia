@@ -293,7 +293,7 @@ export function ADHDOverview({ setCurrentArticle }: ADHDOverviewProps) {
         </section>
 
 {/* IMPACT ON DAILY LIFE */}
-        <section className="bg-gray-200 p-6 rounded-lg shadow-sm border-2 border-[#be185d]">
+        <section className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border-2 border-[#be185d]">
           <h2 className="text-[#831843] font-bold mb-6 text-2xl flex items-center gap-2">
             <AlertCircle className="text-[#be185d] shrink-0" size={28} />
             Impact on Daily Life

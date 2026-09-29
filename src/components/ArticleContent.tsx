@@ -11,8 +11,11 @@ import { mentalHealthRoutes } from './articles/routes/mentalHealthRoutes';
 import { geneticEnvironmentalRoutes } from './articles/routes/geneticEnvironmentalRoutes';
 import { acquiredNeurodivergenceRoutes } from './articles/routes/acquiredNeurodivergenceRoutes';
 
+// IMPORT THE HIDDEN BOARD PAGE
+import { BoardOfDirectors } from './articles/BoardOfDirectors'; // Adjust this path if you saved it elsewhere
+
 // --- THE SEO MASTER DICTIONARY ---
-const seoMap: Record<string, { title: string; description: string }> = {
+const seoMap: Record<string, { title: string; description: string; noindex?: boolean }> = {
   // Core Site Pages
   'home': { 
     title: 'Brainopedia | The Neurodivergence Encyclopedia', 
@@ -169,6 +172,13 @@ const seoMap: Record<string, { title: string; description: string }> = {
   'project-standards': { 
     title: 'Project Standards & Guidelines | Brainopedia', 
     description: 'Review the technical and editorial guidelines used to build and maintain the Brainopedia digital encyclopedia.' 
+  },
+  
+  // HIDDEN ROUTES (Not indexed by Google)
+  'board-verification': {
+    title: 'Board of Directors | Neurodiverse Endeavors',
+    description: 'Official Board of Directors for Neurodiverse Endeavors 501(c)(3).',
+    noindex: true // This flag triggers the hidden SEO tag!
   }
 };
 
@@ -208,6 +218,9 @@ const articleMap: RouteMap = {
   'donate': lazy(() => import('./articles/ArticleDonate').then(m => ({ default: m.ArticleDonate }))),
   'blog': lazy(() => import('./articles/ArticleBlog').then(m => ({ default: m.ArticleBlog }))),
   'rsd-deep-dive': lazy(() => import('./articles/adhd/ADHDSymptomsTabRSD').then(m => ({ default: m.ADHDSymptomsTabRSD }))),
+  
+  // MAP THE HIDDEN BOARD PAGE HERE (Loading it directly instead of lazily prevents routing blips)
+  'board-verification': BoardOfDirectors,
 };
 
 interface ArticleContentProps {
@@ -251,6 +264,8 @@ export function ArticleContent({ articleId, setCurrentArticle }: ArticleContentP
       <Helmet>
         <title>{seoData.title}</title>
         <meta name="description" content={seoData.description} />
+        {/* If the seoMap specifically flags this as noindex (like the board page), inject the tag! */}
+        {seoData.noindex && <meta name="robots" content="noindex, nofollow" />}
       </Helmet>
 
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
