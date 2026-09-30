@@ -145,7 +145,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
             <ImageWithFallback 
               src="/images/dld/dld-support-social-hero.webp"
               alt="Small peer group practicing structured social communication"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -284,7 +284,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
             <ImageWithFallback 
               src="/images/dld/dld-support-literacy-hero.webp"
               alt="Student using text-to-speech software and graphic organizers"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -397,7 +397,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
             <ImageWithFallback 
               src="/images/dld/dld-support-wholechild-hero.webp"
               alt="Confident child thriving in an area of strength like art or building"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">

@@ -77,17 +77,17 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
       {activeTab === 'reading' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Reading Card (Cyan) - Uses Float Image */}
+          {/* Reading Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Reading Characteristics</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-symptoms-reading.webp"
               alt="Toddler reading environmental print and complex text"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               Hyperlexia presents with a highly distinctive pattern. The most visible symptom is an astonishing, advanced reading ability that emerges years before neurotypical expectations, almost always driven by an intense internal fascination rather than external teaching.
             </p>
 
@@ -118,14 +118,14 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
             </div>
           </div>
 
-          {/* Comprehension Card (Yellow) - Uses Hero Image */}
+          {/* Comprehension Card (Yellow) */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Comprehension Difficulties</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-symptoms-comprehension-hero.webp"
               alt="Visual representing the split between perfect decoding and lacking meaning"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -181,17 +181,17 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
       {activeTab === 'language' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Language Card (Slate) - Uses Float Image */}
+          {/* Language Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Language Development</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-symptoms-language.webp"
               alt="Child scripting or repeating phrases rather than engaging in conversation"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-slate-200"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               Paradoxically, despite their advanced mastery of written letters, children with hyperlexia almost always present with delayed, disordered, or highly atypical spoken language development.
             </p>
 
@@ -222,14 +222,14 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
             </div>
           </div>
 
-          {/* Social & Behavioral Card (Cyan) - Uses Hero Image */}
+          {/* Social & Behavioral Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social & Behavioral Traits</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-symptoms-social-hero.webp"
               alt="Child retreating into the comfort of a book during a social setting"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
@@ -290,17 +290,17 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
       {activeTab === 'cognition' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Cognitive Profile Card (Yellow) - Uses Float Image */}
+          {/* Cognitive Profile Card (Yellow) */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Cognitive Profile</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-symptoms-cognition.webp"
               alt="Glowing brain highlighting visual memory and pattern recognition"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               Hyperlexia is defined by a sharply uneven "spiky" cognitive profile. The brain is uniquely wired to excel in visual domains while struggling heavily with auditory and abstract processing.
             </p>
 
@@ -335,14 +335,14 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
             </div>
           </div>
 
-          {/* Lifespan Progression Card (Slate) - Uses Hero Image */}
+          {/* Lifespan Progression Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Progression & Key Indicators</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-symptoms-lifespan-hero.webp"
               alt="Timeline of hyperlexic traits evolving from toddlerhood to school age"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-slate-200"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">

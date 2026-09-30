@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { BookOpen, Split, Brain, LayoutTemplate, Activity, Network, Eye, Ear, Users, Target, History, Lightbulb, CheckCircle, Search } from 'lucide-react';
+import { BookOpen, Split, Brain, LayoutTemplate, Activity, Network, Ear, Users, Target, History, Lightbulb, CheckCircle, Search } from 'lucide-react';
 
 interface HyperlexiaOverviewProps {
   setCurrentArticle?: (article: string) => void;
@@ -77,17 +77,17 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
       {activeTab === 'definition' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Definition Card (Cyan) - Uses Float Image */}
+          {/* Definition Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">What is Hyperlexia?</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-overview-definition.webp"
               alt="Toddler intensely focused on reading a complex book"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               Hyperlexia is a fascinating neurodivergent profile characterized by an intense, precocious ability to decode and read written words at an incredibly early age—often before age 5, and entirely self-taught. However, this extraordinary reading skill exists alongside significant difficulties with spoken language comprehension and social communication. 
             </p>
 
@@ -110,14 +110,14 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
             </div>
           </div>
 
-          {/* Types Card (Yellow) - Uses Hero Image */}
+          {/* Types Card (Yellow) */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Treffert's Three Types</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-overview-types-hero.webp"
               alt="Infographic showing three diverging developmental paths"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -184,17 +184,17 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
       {activeTab === 'signs' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Signs Card (Slate) - Uses Float Image */}
+          {/* Signs Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Early Signs of Hyperlexia</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-overview-signs.webp"
               alt="Child reading flawlessly but showing confusion regarding meaning"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-slate-200"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               Hyperlexia is often first noticed when parents are stunned by a toddler's unexpected, untaught ability to read. However, these advanced reading skills are almost always accompanied by distinct delays in spoken language.
             </p>
 
@@ -229,14 +229,14 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
             </div>
           </div>
 
-          {/* Autism Card (Cyan) - Uses Hero Image */}
+          {/* Autism Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationship to Autism</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-overview-autism-hero.webp"
               alt="Venn diagram showing Hyperlexia and Autism intersecting"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -298,17 +298,17 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
       {activeTab === 'profile' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Profile Card (Yellow) - Uses Float Image */}
+          {/* Profile Card (Yellow) */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Strengths & Challenges</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-overview-profile.webp"
               alt="Visual highlighting exceptional decoding and pattern recognition"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               Hyperlexia is not just a list of deficits; it is a unique cognitive profile driven by an incredible visual memory and a hyper-focus on patterns.
             </p>
 
@@ -344,14 +344,14 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
             </div>
           </div>
 
-          {/* Outlook Card (Slate) - Uses Hero Image */}
+          {/* Outlook Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prognosis & Key Takeaways</h2>
             
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-overview-outlook-hero.webp"
               alt="Child thriving using their love of reading as a bridge to learning"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-slate-200"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

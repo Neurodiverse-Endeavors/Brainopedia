@@ -84,7 +84,7 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
             <ImageWithFallback 
               src="/images/dld/dld-living-daily.webp"
               alt="Person managing daily tasks and schedules"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -117,7 +117,7 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
             <ImageWithFallback 
               src="/images/dld/dld-living-relationships-hero.webp"
               alt="Friends or a couple engaged in patient, understanding conversation"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -189,7 +189,7 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
             <ImageWithFallback 
               src="/images/dld/dld-living-education.webp"
               alt="Student utilizing accommodations in an educational setting"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -228,7 +228,7 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
             <ImageWithFallback 
               src="/images/dld/dld-living-career-hero.webp"
               alt="Adult thriving in a structured or hands-on workplace environment"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -341,7 +341,7 @@ export function DLDLiving({ setCurrentArticle, initialTab }: DLDLivingProps) {
             <ImageWithFallback 
               src="/images/dld/dld-living-advocacy-hero.webp"
               alt="Confident individual advocating for their needs and thriving"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
