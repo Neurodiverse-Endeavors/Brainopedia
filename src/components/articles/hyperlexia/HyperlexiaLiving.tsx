@@ -84,7 +84,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-living-daily.webp"
               alt="Person finding comfort in reading in a busy environment"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -117,7 +117,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-living-relationships-hero.webp"
               alt="Friends connecting through a shared text-based interest"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -179,7 +179,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-living-education.webp"
               alt="Student navigating campus with visual and written accommodations"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -278,7 +278,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-living-advocacy.webp"
               alt="Individual confidently requesting written instructions to support their needs"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
