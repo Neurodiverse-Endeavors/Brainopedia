@@ -278,20 +278,20 @@ export function IDLiving({ setCurrentArticle, initialTab }: IDLivingProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#2abcd4]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-slate-500"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1 flex items-center gap-2">
-                    <Home className="w-4 h-4 text-[#2abcd4]" /> Family Home
+                    <Home className="w-4 h-4 text-slate" /> Family Home
                   </h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Remaining in the family home with access to community resources, respite care, and vocational programs to ensure continued growth.</p>
                 </div>
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden md:col-span-2 mt-2">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#10b981]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#2abcd4]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1 flex items-center gap-2">
-                    <Star className="w-4 h-4 text-[#10b981]" /> Universal Quality of Life
+                    <Star className="w-4 h-4 text-[#2abcd4]" /> Universal Quality of Life
                   </h3>
                   <p className="text-xs text-slate-700 leading-relaxed">When structural barriers are removed and appropriate supports are provided, people with ID contribute unique perspectives and vital talents to the world, thriving just as anyone else would.</p>
                 </div>

@@ -62,7 +62,24 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             neurodivergence-section-tab-detail-about-pic.webp
           </code>
         </div>
-        
+        <div className="bg-[#f0f9ff] border-l-4 border-[#2abcd4] p-5 mb-6 rounded-r-xl shadow-sm">
+          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">Graphic File Naming Convention</h3>
+          <p className="text-sm text-slate-700 mb-4">
+            When naming placeholder or final graphic files, <strong>NEVER use the word "hero"</strong>. Because layouts frequently change and multiple graphics may be added to a single tab, "hero" creates naming conflicts. Instead, use a sequential numbering system (`-1`, `-2`) or a precise descriptive keyword attached to the tab name.
+          </p>
+          
+          <ul className="list-disc ml-5 text-sm text-slate-700 space-y-3">
+            <li>
+              <strong>DO USE:</strong> <code className="bg-white px-2 py-0.5 text-green-700 rounded border border-gray-200">hyperlexia-diagnosis-tab2-1.webp</code>
+            </li>
+            <li>
+              <strong>DO USE:</strong> <code className="bg-white px-2 py-0.5 text-green-700 rounded border border-gray-200">hyperlexia-diagnosis-tab2-2.webp</code>
+            </li>
+            <li>
+              <strong>NEVER USE:</strong> <code className="bg-white px-2 py-0.5 text-red-700 rounded border border-red-200">hyperlexia-diagnosis-cognitive-hero.webp</code>
+            </li>
+          </ul>
+        </div>
         <p className="text-sm mb-6 text-gray-600">All graphics must be implemented using the <code className="bg-gray-100 px-1 rounded">ImageWithFallback</code> component. Use these strict layout patterns:</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

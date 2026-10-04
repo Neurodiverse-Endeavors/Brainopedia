@@ -84,7 +84,7 @@ export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaS
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-support-therapy.webp"
               alt="Speech-Language Pathologist working with a child using visual reading aids"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -128,7 +128,7 @@ export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaS
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-support-education-hero.webp"
               alt="Classroom setting highlighting visual supports and structured schedules"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -202,7 +202,7 @@ export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaS
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-support-social.webp"
               alt="Child reading a Social Story book with an adult to prepare for a playdate"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -315,7 +315,7 @@ export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaS
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-support-home.webp"
               alt="Parent pausing to ask questions during shared reading"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm hidden sm:block"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -359,7 +359,7 @@ export function HyperlexiaSupport({ setCurrentArticle, initialTab }: HyperlexiaS
             <ImageWithFallback 
               src="/images/hyperlexia/hyperlexia-support-strengths-hero.webp"
               alt="Child proudly using their advanced reading skills to learn and communicate"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
