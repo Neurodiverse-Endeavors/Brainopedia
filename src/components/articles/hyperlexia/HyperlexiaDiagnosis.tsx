@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { FileSearch, Search, Users, ClipboardList, BookOpen, Ear, Brain, Eye, Activity, Network } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface HyperlexiaDiagnosisProps {
 }
 
 export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: HyperlexiaDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'process';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('process')}
+          onClick={() => handleTabChange('process')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'process'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
           Evaluation Process
         </button>
         <button
-          onClick={() => setActiveTab('testing')}
+          onClick={() => handleTabChange('testing')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'testing'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
           Core Testing Areas
         </button>
         <button
-          onClick={() => setActiveTab('autism')}
+          onClick={() => handleTabChange('autism')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'autism'
               ? 'bg-[#0A9DC4] text-white'

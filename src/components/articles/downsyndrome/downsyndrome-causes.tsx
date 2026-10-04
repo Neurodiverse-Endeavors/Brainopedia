@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Dna, Split, ShieldAlert, Baby, AlertTriangle } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface DownSyndromeCausesProps {
 }
 
 export function DownSyndromeCauses({ setCurrentArticle, initialTab }: DownSyndromeCausesProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'origins');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'origins';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function DownSyndromeCauses({ setCurrentArticle, initialTab }: DownSyndro
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('origins')}
+          onClick={() => handleTabChange('origins')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'origins'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DownSyndromeCauses({ setCurrentArticle, initialTab }: DownSyndro
           Genetic Origins
         </button>
         <button
-          onClick={() => setActiveTab('variations')}
+          onClick={() => handleTabChange('variations')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'variations'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function DownSyndromeCauses({ setCurrentArticle, initialTab }: DownSyndro
           The Three Variations
         </button>
         <button
-          onClick={() => setActiveTab('factors')}
+          onClick={() => handleTabChange('factors')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'factors'
               ? 'bg-[#0A9DC4] text-white'

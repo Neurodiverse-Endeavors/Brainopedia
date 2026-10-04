@@ -1,9 +1,9 @@
+import { useSearchParams } from 'react-router-dom';
 import { ADHDMedicationComparison } from '../../infographics/ADHDMedicationComparison';
 import { ADHDTreatmentApproach } from '../../infographics/ADHDTreatmentApproach';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 import { Pill, BrainCircuit, GraduationCap, Heart, Users, Settings } from 'lucide-react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { useState } from 'react';
 
 interface ADHDSupportProps {
   setCurrentArticle?: (article: string) => void;
@@ -11,7 +11,12 @@ interface ADHDSupportProps {
 }
 
 export function ADHDSupport({ setCurrentArticle, initialTab }: ADHDSupportProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'overview');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'overview';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
   
   function OverviewContent() {
     return (
@@ -1024,7 +1029,7 @@ export function ADHDSupport({ setCurrentArticle, initialTab }: ADHDSupportProps)
         <span className="text-xl">←</span>
         All About ADHD
       </button>
-<Tabs defaultValue={activeTab} value={activeTab} onValueChange={(v) => setActiveTab(v)} className="w-full">
+<Tabs defaultValue={activeTab} value={activeTab} onValueChange={(v) => handleTabChange(v)} className="w-full">
         <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-12 bg-transparent h-auto p-0">
           <TabsTrigger value="overview" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
             Overview & Approach

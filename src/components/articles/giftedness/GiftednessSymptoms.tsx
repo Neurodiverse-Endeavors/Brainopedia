@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Brain, Zap, BookOpen, Search, AlertTriangle, Heart, Users, ShieldAlert, HelpCircle, Sparkles, Activity, Compass, Star } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface GiftednessSymptomsProps {
 }
 
 export function GiftednessSymptoms({ setCurrentArticle, initialTab }: GiftednessSymptomsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'cognitive');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'cognitive';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('cognitive')}
+          onClick={() => handleTabChange('cognitive')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'cognitive'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
           Cognitive & Academic
         </button>
         <button
-          onClick={() => setActiveTab('social')}
+          onClick={() => handleTabChange('social')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'social'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
           Social & Emotional
         </button>
         <button
-          onClick={() => setActiveTab('creative')}
+          onClick={() => handleTabChange('creative')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'creative'
               ? 'bg-[#0A9DC4] text-white'

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Brain, Zap, Hourglass, MessageSquare, AlertCircle, PenTool, BookOpen, Target, Heart, ShieldAlert, Users, BookX, Edit3, Puzzle, Lightbulb, EyeOff, Flag } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface TwiceExceptionalSymptomsProps {
 }
 
 export function TwiceExceptionalSymptoms({ setCurrentArticle, initialTab }: TwiceExceptionalSymptomsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'cognitive');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'cognitive';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +56,7 @@ export function TwiceExceptionalSymptoms({ setCurrentArticle, initialTab }: Twic
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('cognitive')}
+          onClick={() => handleTabChange('cognitive')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'cognitive'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +66,7 @@ export function TwiceExceptionalSymptoms({ setCurrentArticle, initialTab }: Twic
           Cognitive & Academic
         </button>
         <button
-          onClick={() => setActiveTab('social')}
+          onClick={() => handleTabChange('social')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'social'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +76,7 @@ export function TwiceExceptionalSymptoms({ setCurrentArticle, initialTab }: Twic
           Social & Behavioral
         </button>
         <button
-          onClick={() => setActiveTab('patterns')}
+          onClick={() => handleTabChange('patterns')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'patterns'
               ? 'bg-[#0A9DC4] text-white'

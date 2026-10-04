@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface SynesthesiaDiagnosisProps {
@@ -7,7 +7,12 @@ interface SynesthesiaDiagnosisProps {
 }
 
 export function SynesthesiaDiagnosis({ setCurrentArticle, initialTab }: SynesthesiaDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'traits');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'traits';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
@@ -30,7 +35,7 @@ export function SynesthesiaDiagnosis({ setCurrentArticle, initialTab }: Synesthe
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('traits')}
+          onClick={() => handleTabChange('traits')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'traits'
               ? 'bg-[#0A9DC4] text-white'
@@ -40,7 +45,7 @@ export function SynesthesiaDiagnosis({ setCurrentArticle, initialTab }: Synesthe
           Identification & Traits
         </button>
         <button
-          onClick={() => setActiveTab('assessment')}
+          onClick={() => handleTabChange('assessment')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'assessment'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function SynesthesiaDiagnosis({ setCurrentArticle, initialTab }: Synesthe
           The Assessment Process
         </button>
         <button
-          onClick={() => setActiveTab('tools')}
+          onClick={() => handleTabChange('tools')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'tools'
               ? 'bg-[#0A9DC4] text-white'

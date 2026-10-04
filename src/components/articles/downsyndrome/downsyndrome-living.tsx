@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Users, HeartHandshake, Briefcase, Home, Megaphone, Scale } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface DownSyndromeLivingProps {
 }
 
 export function DownSyndromeLiving({ setCurrentArticle, initialTab }: DownSyndromeLivingProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'community');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'community';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function DownSyndromeLiving({ setCurrentArticle, initialTab }: DownSyndro
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('community')}
+          onClick={() => handleTabChange('community')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'community'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DownSyndromeLiving({ setCurrentArticle, initialTab }: DownSyndro
           Community Inclusion
         </button>
         <button
-          onClick={() => setActiveTab('independence')}
+          onClick={() => handleTabChange('independence')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'independence'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function DownSyndromeLiving({ setCurrentArticle, initialTab }: DownSyndro
           Work & Independence
         </button>
         <button
-          onClick={() => setActiveTab('advocacy')}
+          onClick={() => handleTabChange('advocacy')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'advocacy'
               ? 'bg-[#0A9DC4] text-white'

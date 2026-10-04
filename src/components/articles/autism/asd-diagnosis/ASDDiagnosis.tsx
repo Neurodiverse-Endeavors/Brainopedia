@@ -1,4 +1,5 @@
-import { useState } from 'react'; 
+import { useSearchParams } from 'react-router-dom';
+ 
 import { GeneralProcess } from './GeneralProcess';
 import { ChildDiagnosis } from './ChildDiagnosis';
 import { AdultDiagnosis } from './AdultDiagnosis';
@@ -14,10 +15,15 @@ interface ASDDiagnosisProps {
 }
 
 export function ASDDiagnosis({ setCurrentArticle, initialTab }: ASDDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'general');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'general';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   const handleTabChange = (tabId: string) => {
-    setActiveTab(tabId);
+    handleTabChange(tabId);
   };
 
   const tabs = [

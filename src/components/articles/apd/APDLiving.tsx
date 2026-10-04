@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Eye, Ear, Heart, AlertTriangle, Users, Home, GraduationCap, Briefcase, Zap, Laptop, Clock, ShieldCheck, Compass, CheckCircle, Baby, MessageSquare } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface APDLivingProps {
 }
 
 export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'life');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'life';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +56,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('life')}
+          onClick={() => handleTabChange('life')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'life'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +66,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
           Life & Relationships
         </button>
         <button
-          onClick={() => setActiveTab('work')}
+          onClick={() => handleTabChange('work')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'work'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +76,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
           Work & Strategies
         </button>
         <button
-          onClick={() => setActiveTab('future')}
+          onClick={() => handleTabChange('future')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'future'
               ? 'bg-[#0A9DC4] text-white'

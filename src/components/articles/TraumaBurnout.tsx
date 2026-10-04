@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import React, { useState } from 'react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
@@ -7,7 +8,12 @@ interface TraumaBurnoutProps {
 }
 
 export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'burnout');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'burnout';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -39,7 +45,7 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('burnout')}
+          onClick={() => handleTabChange('burnout')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'burnout'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +55,7 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
           Neurodivergent Burnout
         </button>
         <button
-          onClick={() => setActiveTab('cptsd')}
+          onClick={() => handleTabChange('cptsd')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'cptsd'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +65,7 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
           Complex PTSD
         </button>
         <button
-          onClick={() => setActiveTab('masking')}
+          onClick={() => handleTabChange('masking')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'masking'
               ? 'bg-[#0A9DC4] text-white'

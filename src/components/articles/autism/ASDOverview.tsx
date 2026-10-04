@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface ASDOverviewProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
 export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
-  const [activeTab, setActiveTab] = useState('basics');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || 'basics';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   const tabs = [
     { id: 'basics', label: 'Basics & Features' },
@@ -40,7 +46,7 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
         {tabs.map((tab) => (
 <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => handleTabChange(tab.id)}
             className={`px-6 py-3 rounded-md text-sm transition-colors font-medium ${
               activeTab === tab.id
                 ? 'bg-[#0A9DC4] text-white'

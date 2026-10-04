@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Dna, Network, Brain, Zap, Activity, Home, Puzzle, Target, TrendingUp, Globe, Lightbulb, Sparkles, Layers, Compass } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface GiftednessCausesProps {
 }
 
 export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCausesProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'biology');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'biology';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('biology')}
+          onClick={() => handleTabChange('biology')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'biology'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
           Genetics & Neurobiology
         </button>
         <button
-          onClick={() => setActiveTab('environment')}
+          onClick={() => handleTabChange('environment')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'environment'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
           Environment & Development
         </button>
         <button
-          onClick={() => setActiveTab('theories')}
+          onClick={() => handleTabChange('theories')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'theories'
               ? 'bg-[#0A9DC4] text-white'

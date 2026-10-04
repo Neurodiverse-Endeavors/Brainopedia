@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Activity, Volume2, Layers, TrendingUp, Clock, Brain, AlertCircle, BookOpen } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface TouretteSymptomsProps {
 }
 
 export function TouretteSymptoms({ setCurrentArticle, initialTab }: TouretteSymptomsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'tics');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'tics';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
@@ -31,7 +36,7 @@ export function TouretteSymptoms({ setCurrentArticle, initialTab }: TouretteSymp
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('tics')}
+          onClick={() => handleTabChange('tics')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'tics'
               ? 'bg-[#0A9DC4] text-white'
@@ -41,7 +46,7 @@ export function TouretteSymptoms({ setCurrentArticle, initialTab }: TouretteSymp
           Motor & Vocal Tics
         </button>
         <button
-          onClick={() => setActiveTab('patterns')}
+          onClick={() => handleTabChange('patterns')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'patterns'
               ? 'bg-[#0A9DC4] text-white'
@@ -51,7 +56,7 @@ export function TouretteSymptoms({ setCurrentArticle, initialTab }: TouretteSymp
           Patterns & Modifiers
         </button>
         <button
-          onClick={() => setActiveTab('co-occurring')}
+          onClick={() => handleTabChange('co-occurring')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'co-occurring'
               ? 'bg-[#0A9DC4] text-white'

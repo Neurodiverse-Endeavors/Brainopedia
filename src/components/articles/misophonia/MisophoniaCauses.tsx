@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface MisophoniaCausesProps {
@@ -7,7 +7,12 @@ interface MisophoniaCausesProps {
 }
 
 export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCausesProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'neurology');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'neurology';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
@@ -39,7 +44,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
-          onClick={() => setActiveTab('neurology')}
+          onClick={() => handleTabChange('neurology')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'neurology'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +54,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
           Neurology & Brain
         </button>
         <button
-          onClick={() => setActiveTab('motor')}
+          onClick={() => handleTabChange('motor')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'motor'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +64,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
           The Motor Basis
         </button>
         <button
-          onClick={() => setActiveTab('genetics')}
+          onClick={() => handleTabChange('genetics')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'genetics'
               ? 'bg-[#0A9DC4] text-white'

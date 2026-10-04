@@ -5,11 +5,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 
 interface DyslexiaOverviewProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
 export function DyslexiaOverview({ setCurrentArticle }: DyslexiaOverviewProps) {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('what-is');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || 'what-is';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   function WhatIsContent() {
     return (

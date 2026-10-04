@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Eye, Search, Image as ImageIcon, List, Brain, Map, PenTool, Puzzle, BookOpen, Calculator, Home, Heart, Users, AlertTriangle, Baby, GraduationCap, Briefcase, Clock, LayoutGrid } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface VPDSymptomsProps {
 }
 
 export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'visual');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'visual';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +56,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('visual')}
+          onClick={() => handleTabChange('visual')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'visual'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +66,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
           Visual Skills Profile
         </button>
         <button
-          onClick={() => setActiveTab('academic')}
+          onClick={() => handleTabChange('academic')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'academic'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +76,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
           Academic & Daily Impact
         </button>
         <button
-          onClick={() => setActiveTab('lifespan')}
+          onClick={() => handleTabChange('lifespan')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'lifespan'
               ? 'bg-[#0A9DC4] text-white'

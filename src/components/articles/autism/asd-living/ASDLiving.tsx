@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { LifespanContent } from './LifespanContent';
 import { DailyLifeContent } from './DailyLifeContent';
@@ -12,16 +13,21 @@ interface ASDLivingProps {
 }
 
 export function ASDLiving({ setCurrentArticle, initialTab }: ASDLivingProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'lifespan');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'lifespan';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   useEffect(() => {
     if (initialTab) {
-      setActiveTab(initialTab);
+      handleTabChange(initialTab);
     }
   }, [initialTab]);
 
   const handleTabChange = (tabId: string) => {
-    setActiveTab(tabId);
+    handleTabChange(tabId);
   };
 
   const BackButton = () => (

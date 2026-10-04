@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Dna, Network, ShieldAlert, Baby, Activity, AlertTriangle, Wind, Brain, HelpCircle, HeartPulse } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface IDCausesProps {
 }
 
 export function IDCauses({ setCurrentArticle, initialTab }: IDCausesProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'genetics');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'genetics';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function IDCauses({ setCurrentArticle, initialTab }: IDCausesProps) {
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('genetics')}
+          onClick={() => handleTabChange('genetics')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'genetics'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function IDCauses({ setCurrentArticle, initialTab }: IDCausesProps) {
           Genetic Factors
         </button>
         <button
-          onClick={() => setActiveTab('prenatal')}
+          onClick={() => handleTabChange('prenatal')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'prenatal'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function IDCauses({ setCurrentArticle, initialTab }: IDCausesProps) {
           Prenatal Influences
         </button>
         <button
-          onClick={() => setActiveTab('perinatal')}
+          onClick={() => handleTabChange('perinatal')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'perinatal'
               ? 'bg-[#0A9DC4] text-white'

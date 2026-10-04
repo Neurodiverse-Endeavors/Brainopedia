@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface MisophoniaDiagnosisProps {
@@ -7,7 +7,12 @@ interface MisophoniaDiagnosisProps {
 }
 
 export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: MisophoniaDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'challenge');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'challenge';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
@@ -39,7 +44,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
-          onClick={() => setActiveTab('challenge')}
+          onClick={() => handleTabChange('challenge')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'challenge'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +54,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
           The Diagnostic Challenge
         </button>
         <button
-          onClick={() => setActiveTab('tools')}
+          onClick={() => handleTabChange('tools')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'tools'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +64,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
           Tools & Scales
         </button>
         <button
-          onClick={() => setActiveTab('process')}
+          onClick={() => handleTabChange('process')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'process'
               ? 'bg-[#0A9DC4] text-white'

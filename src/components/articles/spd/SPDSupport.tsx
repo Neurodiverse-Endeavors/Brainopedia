@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Activity, Brain, CheckCircle, Hand, Settings, Heart, Home, GraduationCap, Clock, Headphones, Anchor, Users, MessageSquare, ListChecks, ShieldCheck } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface SPDSupportProps {
 }
 
 export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'therapy');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'therapy';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
@@ -40,7 +45,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
-          onClick={() => setActiveTab('therapy')}
+          onClick={() => handleTabChange('therapy')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'therapy'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
           Therapies & Techniques
         </button>
         <button
-          onClick={() => setActiveTab('environment')}
+          onClick={() => handleTabChange('environment')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'environment'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
           Environment & Tech
         </button>
         <button
-          onClick={() => setActiveTab('family')}
+          onClick={() => handleTabChange('family')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'family'
               ? 'bg-[#0A9DC4] text-white'

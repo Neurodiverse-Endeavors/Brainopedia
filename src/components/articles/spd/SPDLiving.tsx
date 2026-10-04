@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Home, Brain, Clock, Zap, MessageSquare, GraduationCap, Briefcase, Heart, Users, Smartphone, Compass, ShieldCheck, AlertTriangle } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface SPDLivingProps {
 }
 
 export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'daily');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'daily';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
@@ -40,7 +45,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
-          onClick={() => setActiveTab('daily')}
+          onClick={() => handleTabChange('daily')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'daily'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
           Daily Life & Coping
         </button>
         <button
-          onClick={() => setActiveTab('social')}
+          onClick={() => handleTabChange('social')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'social'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
           Social, School & Work
         </button>
         <button
-          onClick={() => setActiveTab('lifespan')}
+          onClick={() => handleTabChange('lifespan')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'lifespan'
               ? 'bg-[#0A9DC4] text-white'

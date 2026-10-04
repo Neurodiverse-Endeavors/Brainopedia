@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DLDSymptomsProps {
@@ -7,7 +7,12 @@ interface DLDSymptomsProps {
 }
 
 export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'early');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'early';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
@@ -39,7 +44,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('early')}
+          onClick={() => handleTabChange('early')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'early'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +54,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
           Early Signs & Grammar
         </button>
         <button
-          onClick={() => setActiveTab('social')}
+          onClick={() => handleTabChange('social')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'social'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +64,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
           Receptive & Social
         </button>
         <button
-          onClick={() => setActiveTab('academic')}
+          onClick={() => handleTabChange('academic')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'academic'
               ? 'bg-[#0A9DC4] text-white'

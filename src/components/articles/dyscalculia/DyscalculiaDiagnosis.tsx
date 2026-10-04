@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DyscalculiaDiagnosisProps {
@@ -7,7 +7,12 @@ interface DyscalculiaDiagnosisProps {
 }
 
 export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: DyscalculiaDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'who');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'who';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
@@ -30,7 +35,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('who')}
+          onClick={() => handleTabChange('who')}
           className={`px-6 py-3 rounded-md transition-colors font-normal shadow-sm ${
             activeTab === 'who'
               ? 'bg-[#0A9DC4] text-white'
@@ -40,7 +45,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
           When & Who
         </button>
         <button
-          onClick={() => setActiveTab('assessment')}
+          onClick={() => handleTabChange('assessment')}
           className={`px-6 py-3 rounded-md transition-colors font-normal shadow-sm ${
             activeTab === 'assessment'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
           The Assessment
         </button>
         <button
-          onClick={() => setActiveTab('results')}
+          onClick={() => handleTabChange('results')}
           className={`px-6 py-3 rounded-md transition-colors font-normal shadow-sm ${
             activeTab === 'results'
               ? 'bg-[#0A9DC4] text-white'

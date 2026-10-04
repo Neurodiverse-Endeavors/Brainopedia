@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { VolumeX, Star, FileVolume, Ear, Flower2Icon, SunMoon, MessageCircle, CheckCircle2, ChevronRight, ChevronDownSquare, ChevronUpCircle, Flower2} from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface MisophoniaSupportProps {
 }
 
 export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaSupportProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'environment');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'environment';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +56,7 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('environment')}
+          onClick={() => handleTabChange('environment')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'environment'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +66,7 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
           Environment & Advocacy
         </button>
         <button
-          onClick={() => setActiveTab('therapy')}
+          onClick={() => handleTabChange('therapy')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'therapy'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +76,7 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
           Therapies & Regulation
         </button>
         <button
-          onClick={() => setActiveTab('communication')}
+          onClick={() => handleTabChange('communication')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'communication'
               ? 'bg-[#0A9DC4] text-white'

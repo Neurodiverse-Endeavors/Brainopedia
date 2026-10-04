@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { ClipboardCheck, Activity, Clock, Brain, FileText, Search, Star, Target } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface IDDiagnosisProps {
 }
 
 export function IDDiagnosis({ setCurrentArticle, initialTab }: IDDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'criteria');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'criteria';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function IDDiagnosis({ setCurrentArticle, initialTab }: IDDiagnosisProps)
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('criteria')}
+          onClick={() => handleTabChange('criteria')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'criteria'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function IDDiagnosis({ setCurrentArticle, initialTab }: IDDiagnosisProps)
           Diagnostic Criteria
         </button>
         <button
-          onClick={() => setActiveTab('process')}
+          onClick={() => handleTabChange('process')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'process'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function IDDiagnosis({ setCurrentArticle, initialTab }: IDDiagnosisProps)
           The Evaluation Process
         </button>
         <button
-          onClick={() => setActiveTab('earlyid')}
+          onClick={() => handleTabChange('earlyid')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'earlyid'
               ? 'bg-[#0A9DC4] text-white'

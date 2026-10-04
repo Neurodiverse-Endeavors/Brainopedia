@@ -1,8 +1,8 @@
+import { useSearchParams } from 'react-router-dom';
 import { ADHDComorbidities } from '../../infographics/ADHDComorbidities';
 import { ADHDDiagnosticProfessionals } from '../../infographics/ADHDDiagnosticProfessionals';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { useState } from 'react';
 
 interface ADHDDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
@@ -10,7 +10,12 @@ interface ADHDDiagnosisProps {
 }
 
 export function ADHDDiagnosis({ setCurrentArticle, initialTab }: ADHDDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'process';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">

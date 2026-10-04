@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import React, { useState } from 'react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
@@ -7,7 +8,12 @@ interface CompulsionsCopingProps {
 }
 
 export function CompulsionsCoping({ setCurrentArticle, initialTab }: CompulsionsCopingProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'ocd');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'ocd';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -39,7 +45,7 @@ export function CompulsionsCoping({ setCurrentArticle, initialTab }: Compulsions
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('ocd')}
+          onClick={() => handleTabChange('ocd')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'ocd'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +55,7 @@ export function CompulsionsCoping({ setCurrentArticle, initialTab }: Compulsions
           Obsessive-Compulsive (OCD)
         </button>
         <button
-          onClick={() => setActiveTab('bfrbs')}
+          onClick={() => handleTabChange('bfrbs')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'bfrbs'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +65,7 @@ export function CompulsionsCoping({ setCurrentArticle, initialTab }: Compulsions
           Body-Focused Behaviors
         </button>
         <button
-          onClick={() => setActiveTab('arfid')}
+          onClick={() => handleTabChange('arfid')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'arfid'
               ? 'bg-[#0A9DC4] text-white'

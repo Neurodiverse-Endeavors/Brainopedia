@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // Updated paths based on your articleMap directory structure
@@ -16,19 +17,24 @@ interface ASDSupportProps {
 }
 
 export function ASDSupport({ setCurrentArticle, initialTab }: ASDSupportProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'overview');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'overview';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   // --- THE FIX ---
   // This forces React to change the tab if the router sends a new instruction
   useEffect(() => {
     if (initialTab) {
-      setActiveTab(initialTab);
+      handleTabChange(initialTab);
     }
   }, [initialTab]);
   // ---------------
 
   const handleTabChange = (tabId: string) => {
-    setActiveTab(tabId);
+    handleTabChange(tabId);
     
     // Quietly clean up the URL bar if it is stuck on the backdoor route
     if (window.location.pathname.includes('autism-support-therapies')) {

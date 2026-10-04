@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 // --- ACTUAL IMPORTS ---
 import { EnvironmentalFactors } from './EnvironmentalFactors';
@@ -13,10 +13,15 @@ interface ASDCausesProps {
 }
 
 export function ASDCauses({ setCurrentArticle, initialTab }: ASDCausesProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'environmental');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'environmental';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   const handleTabChange = (tabId: string) => {
-    setActiveTab(tabId);
+    handleTabChange(tabId);
   };
 
   const tabs = [

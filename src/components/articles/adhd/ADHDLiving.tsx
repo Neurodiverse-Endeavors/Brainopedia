@@ -1,6 +1,6 @@
+import { useSearchParams } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { useState } from 'react';
 import { Sparkles, Home, Heart, Briefcase, Shield, Users, CheckCircle, TrendingUp } from 'lucide-react';
 
 interface ADHDLivingProps {
@@ -9,7 +9,12 @@ interface ADHDLivingProps {
 }
 
 export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'overview');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'overview';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
   
   // Reusable styling variables
   const centeredMediumImageClass = "w-full sm:w-96 h-auto rounded-md border border-gray-300 block mx-auto mb-6 shadow-sm";

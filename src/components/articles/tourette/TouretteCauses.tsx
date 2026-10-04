@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Users, Share2, Layers, Brain, ShieldAlert, Zap, Activity, Microscope } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface TouretteCausesProps {
 }
 
 export function TouretteCauses({ setCurrentArticle, initialTab }: TouretteCausesProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'genetics');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'genetics';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
@@ -31,7 +36,7 @@ export function TouretteCauses({ setCurrentArticle, initialTab }: TouretteCauses
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('genetics')}
+          onClick={() => handleTabChange('genetics')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'genetics'
               ? 'bg-[#0A9DC4] text-white'
@@ -41,7 +46,7 @@ export function TouretteCauses({ setCurrentArticle, initialTab }: TouretteCauses
           Genetics & Heredity
         </button>
         <button
-          onClick={() => setActiveTab('neurology')}
+          onClick={() => handleTabChange('neurology')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'neurology'
               ? 'bg-[#0A9DC4] text-white'
@@ -51,7 +56,7 @@ export function TouretteCauses({ setCurrentArticle, initialTab }: TouretteCauses
           Neurology & Brain
         </button>
         <button
-          onClick={() => setActiveTab('environment')}
+          onClick={() => handleTabChange('environment')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'environment'
               ? 'bg-[#0A9DC4] text-white'

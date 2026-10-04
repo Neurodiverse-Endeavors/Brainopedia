@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { MessageSquare, Ear, BookOpen, Headphones } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface NVLDOverviewProps {
 }
 
 export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'definition');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'definition';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('definition')}
+          onClick={() => handleTabChange('definition')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'definition'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
           Definition & Core Features
         </button>
         <button
-          onClick={() => setActiveTab('comparisons')}
+          onClick={() => handleTabChange('comparisons')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'comparisons'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
           Prevalence & Comparisons
         </button>
         <button
-          onClick={() => setActiveTab('lifespan')}
+          onClick={() => handleTabChange('lifespan')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'lifespan'
               ? 'bg-[#0A9DC4] text-white'

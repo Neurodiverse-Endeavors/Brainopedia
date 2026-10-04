@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Activity, Target, MessageSquare, Brain, Users, LayoutTemplate, GraduationCap, Compass, Stethoscope, Network, UserCheck, HeartPulse } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface DownSyndromeSupportProps {
 }
 
 export function DownSyndromeSupport({ setCurrentArticle, initialTab }: DownSyndromeSupportProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'therapies');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'therapies';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function DownSyndromeSupport({ setCurrentArticle, initialTab }: DownSyndr
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('therapies')}
+          onClick={() => handleTabChange('therapies')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'therapies'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DownSyndromeSupport({ setCurrentArticle, initialTab }: DownSyndr
           Therapies & Intervention
         </button>
         <button
-          onClick={() => setActiveTab('education')}
+          onClick={() => handleTabChange('education')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'education'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function DownSyndromeSupport({ setCurrentArticle, initialTab }: DownSyndr
           Educational Support
         </button>
         <button
-          onClick={() => setActiveTab('healthcare')}
+          onClick={() => handleTabChange('healthcare')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'healthcare'
               ? 'bg-[#0A9DC4] text-white'

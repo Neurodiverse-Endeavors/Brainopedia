@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import React, { useState } from 'react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
@@ -7,7 +8,12 @@ interface MoodEmotionsProps {
 }
 
 export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'depression');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'depression';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -39,7 +45,7 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('depression')}
+          onClick={() => handleTabChange('depression')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'depression'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +55,7 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
           Depression
         </button>
         <button
-          onClick={() => setActiveTab('rsd')}
+          onClick={() => handleTabChange('rsd')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'rsd'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +65,7 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
           Rejection Sensitive Dysphoria
         </button>
         <button
-          onClick={() => setActiveTab('bipolar')}
+          onClick={() => handleTabChange('bipolar')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'bipolar'
               ? 'bg-[#0A9DC4] text-white'

@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import React, { useState } from 'react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
@@ -7,7 +8,12 @@ interface AnxietyStressProps {
 }
 
 export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'generalized');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'generalized';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -39,7 +45,7 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('generalized')}
+          onClick={() => handleTabChange('generalized')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'generalized'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +55,7 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
           Generalized Anxiety
         </button>
         <button
-          onClick={() => setActiveTab('social')}
+          onClick={() => handleTabChange('social')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'social'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +65,7 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
           Social Anxiety
         </button>
         <button
-          onClick={() => setActiveTab('phobias')}
+          onClick={() => handleTabChange('phobias')}
           className={`px-6 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'phobias'
               ? 'bg-[#0A9DC4] text-white'

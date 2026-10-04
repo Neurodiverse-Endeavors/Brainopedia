@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Brain, ShieldAlert, Users, Heart, MessageSquare, GraduationCap, Target, Briefcase, Laptop, Compass, Activity, CheckCircle, Smartphone, Sparkles } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface TwiceExceptionalLivingProps {
 }
 
 export function TwiceExceptionalLiving({ setCurrentArticle, initialTab }: TwiceExceptionalLivingProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'identity');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'identity';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +56,7 @@ export function TwiceExceptionalLiving({ setCurrentArticle, initialTab }: TwiceE
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('identity')}
+          onClick={() => handleTabChange('identity')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'identity'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +66,7 @@ export function TwiceExceptionalLiving({ setCurrentArticle, initialTab }: TwiceE
           Identity & Relationships
         </button>
         <button
-          onClick={() => setActiveTab('career')}
+          onClick={() => handleTabChange('career')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'career'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +76,7 @@ export function TwiceExceptionalLiving({ setCurrentArticle, initialTab }: TwiceE
           Education & Career
         </button>
         <button
-          onClick={() => setActiveTab('wellbeing')}
+          onClick={() => handleTabChange('wellbeing')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'wellbeing'
               ? 'bg-[#0A9DC4] text-white'

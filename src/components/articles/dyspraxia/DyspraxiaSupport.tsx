@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DyspraxiaSupportProps {
@@ -7,7 +7,12 @@ interface DyspraxiaSupportProps {
 }
 
 export function DyspraxiaSupport({ setCurrentArticle, initialTab }: DyspraxiaSupportProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'therapy');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'therapy';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
@@ -30,7 +35,7 @@ export function DyspraxiaSupport({ setCurrentArticle, initialTab }: DyspraxiaSup
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('therapy')}
+          onClick={() => handleTabChange('therapy')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'therapy'
               ? 'bg-[#0A9DC4] text-white'
@@ -40,7 +45,7 @@ export function DyspraxiaSupport({ setCurrentArticle, initialTab }: DyspraxiaSup
           Therapy & Interventions
         </button>
         <button
-          onClick={() => setActiveTab('accommodations')}
+          onClick={() => handleTabChange('accommodations')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'accommodations'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DyspraxiaSupport({ setCurrentArticle, initialTab }: DyspraxiaSup
           Accommodations & Tech
         </button>
         <button
-          onClick={() => setActiveTab('daily')}
+          onClick={() => handleTabChange('daily')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'daily'
               ? 'bg-[#0A9DC4] text-white'

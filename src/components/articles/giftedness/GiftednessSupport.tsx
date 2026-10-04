@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Zap, BookOpen, Users, Brain, Heart, ShieldCheck, Award, Laptop, Home, Wrench, CheckCircle, Lightbulb } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface GiftednessSupportProps {
 }
 
 export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessSupportProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'acceleration');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'acceleration';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('acceleration')}
+          onClick={() => handleTabChange('acceleration')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'acceleration'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
           Acceleration & Enrichment
         </button>
         <button
-          onClick={() => setActiveTab('emotional')}
+          onClick={() => handleTabChange('emotional')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'emotional'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
           Grouping & Social-Emotional
         </button>
         <button
-          onClick={() => setActiveTab('programs')}
+          onClick={() => handleTabChange('programs')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'programs'
               ? 'bg-[#0A9DC4] text-white'

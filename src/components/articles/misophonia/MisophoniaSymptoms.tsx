@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface MisophoniaSymptomsProps {
@@ -7,7 +7,12 @@ interface MisophoniaSymptomsProps {
 }
 
 export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: MisophoniaSymptomsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'emotions');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'emotions';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
@@ -39,7 +44,7 @@ export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: Misophonia
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
-          onClick={() => setActiveTab('emotions')}
+          onClick={() => handleTabChange('emotions')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'emotions'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +54,7 @@ export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: Misophonia
           Emotional Reactions
         </button>
         <button
-          onClick={() => setActiveTab('physical')}
+          onClick={() => handleTabChange('physical')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'physical'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +64,7 @@ export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: Misophonia
           Physiological Symptoms
         </button>
         <button
-          onClick={() => setActiveTab('behavior')}
+          onClick={() => handleTabChange('behavior')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'behavior'
               ? 'bg-[#0A9DC4] text-white'

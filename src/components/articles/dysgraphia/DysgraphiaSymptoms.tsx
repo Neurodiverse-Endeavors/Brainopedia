@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DysgraphiaSymptomsProps {
@@ -7,7 +7,12 @@ interface DysgraphiaSymptomsProps {
 }
 
 export function DysgraphiaSymptoms({ setCurrentArticle, initialTab }: DysgraphiaSymptomsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'physical');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'physical';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
@@ -30,7 +35,7 @@ export function DysgraphiaSymptoms({ setCurrentArticle, initialTab }: Dysgraphia
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('physical')}
+          onClick={() => handleTabChange('physical')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'physical'
               ? 'bg-[#0A9DC4] text-white'
@@ -40,7 +45,7 @@ export function DysgraphiaSymptoms({ setCurrentArticle, initialTab }: Dysgraphia
           Physical & Motor
         </button>
         <button
-          onClick={() => setActiveTab('expression')}
+          onClick={() => handleTabChange('expression')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'expression'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DysgraphiaSymptoms({ setCurrentArticle, initialTab }: Dysgraphia
           Expression & Spelling
         </button>
         <button
-          onClick={() => setActiveTab('impact')}
+          onClick={() => handleTabChange('impact')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'impact'
               ? 'bg-[#0A9DC4] text-white'

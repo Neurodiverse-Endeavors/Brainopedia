@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Stethoscope, Brain, ClipboardList, UserCheck, FileSearch, Ear, MessageSquare, FileText, Layers, Search, AlertTriangle, GraduationCap, CheckCircle, Mic } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface DLDDiagnosisProps {
 }
 
 export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'process';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
@@ -40,7 +45,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('process')}
+          onClick={() => handleTabChange('process')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'process'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
           Evaluation Process
         </button>
         <button
-          onClick={() => setActiveTab('testing')}
+          onClick={() => handleTabChange('testing')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'testing'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
           Core Testing Areas
         </button>
         <button
-          onClick={() => setActiveTab('criteria')}
+          onClick={() => handleTabChange('criteria')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'criteria'
               ? 'bg-[#0A9DC4] text-white'

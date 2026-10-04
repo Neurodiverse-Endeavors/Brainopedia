@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Home, Brain, Activity, Ear, Hand, Network, Search, Layers, ShieldAlert, Heart, Users, RefreshCw, CheckCircle } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface SPDOverviewProps {
 }
 
 export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'definition');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'definition';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +56,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
-          onClick={() => setActiveTab('definition')}
+          onClick={() => handleTabChange('definition')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'definition'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +66,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
           Definition & Senses
         </button>
         <button
-          onClick={() => setActiveTab('patterns')}
+          onClick={() => handleTabChange('patterns')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'patterns'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +76,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
           Patterns & Prevalence
         </button>
         <button
-          onClick={() => setActiveTab('impact')}
+          onClick={() => handleTabChange('impact')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'impact'
               ? 'bg-[#0A9DC4] text-white'

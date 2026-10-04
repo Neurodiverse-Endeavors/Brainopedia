@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Brain, Lightbulb, BookOpen, MessageCircle, Activity, Users, Briefcase, Layers, Star } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface IDSymptomsProps {
 }
 
 export function IDSymptoms({ setCurrentArticle, initialTab }: IDSymptomsProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'intellectual');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'intellectual';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function IDSymptoms({ setCurrentArticle, initialTab }: IDSymptomsProps) {
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('intellectual')}
+          onClick={() => handleTabChange('intellectual')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'intellectual'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function IDSymptoms({ setCurrentArticle, initialTab }: IDSymptomsProps) {
           Intellectual Functioning
         </button>
         <button
-          onClick={() => setActiveTab('adaptive')}
+          onClick={() => handleTabChange('adaptive')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'adaptive'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function IDSymptoms({ setCurrentArticle, initialTab }: IDSymptomsProps) {
           Adaptive Behavior
         </button>
         <button
-          onClick={() => setActiveTab('support')}
+          onClick={() => handleTabChange('support')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'support'
               ? 'bg-[#0A9DC4] text-white'

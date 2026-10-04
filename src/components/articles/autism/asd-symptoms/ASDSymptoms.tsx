@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { CoreSymptoms } from './CoreSymptoms';
 import { SocialCommunication } from './SocialCommunication';
@@ -12,10 +13,15 @@ interface ASDSymptomsProps {
 
 export function ASDSymptoms({ setCurrentArticle, initialTab }: ASDSymptomsProps) {
   // FIX: Default to 'core' so the landing page isn't empty
-  const [activeTab, setActiveTab] = useState(initialTab || 'core');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'core';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   const handleTabChange = (tabId: string) => {
-    setActiveTab(tabId);
+    handleTabChange(tabId);
   };
 
   const tabs = [

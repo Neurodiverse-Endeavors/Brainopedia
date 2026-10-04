@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Stethoscope, ClipboardList, Users, Brain, Ear, Activity, FileText, CheckCircle, Search, AlertTriangle, Building, ShieldCheck, Heart, Headphones } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface APDDiagnosisProps {
 }
 
 export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'process';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +56,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('process')}
+          onClick={() => handleTabChange('process')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'process'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +66,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
           The Diagnostic Process
         </button>
         <button
-          onClick={() => setActiveTab('tests')}
+          onClick={() => handleTabChange('tests')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'tests'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +76,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
           Tests & Measures
         </button>
         <button
-          onClick={() => setActiveTab('differential')}
+          onClick={() => handleTabChange('differential')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'differential'
               ? 'bg-[#0A9DC4] text-white'

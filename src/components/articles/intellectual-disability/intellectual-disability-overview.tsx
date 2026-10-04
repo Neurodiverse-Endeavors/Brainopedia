@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { BookOpen, Users, Brain, Activity, Globe, Scale, ShieldCheck, Lightbulb, Clock } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface IDOverviewProps {
 }
 
 export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'what');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'what';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('what')}
+          onClick={() => handleTabChange('what')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'what'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
           What is ID?
         </button>
         <button
-          onClick={() => setActiveTab('characteristics')}
+          onClick={() => handleTabChange('characteristics')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'characteristics'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
           Key Characteristics
         </button>
         <button
-          onClick={() => setActiveTab('neurodiversity')}
+          onClick={() => handleTabChange('neurodiversity')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'neurodiversity'
               ? 'bg-[#0A9DC4] text-white'

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Activity, ShieldAlert, HeartPulse, Eye, Brain, Stethoscope, Dna, FileSearch } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface DownSyndromeDiagnosisProps {
 }
 
 export function DownSyndromeDiagnosis({ setCurrentArticle, initialTab }: DownSyndromeDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'prenatal');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'prenatal';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -40,7 +45,7 @@ export function DownSyndromeDiagnosis({ setCurrentArticle, initialTab }: DownSyn
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('prenatal')}
+          onClick={() => handleTabChange('prenatal')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'prenatal'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DownSyndromeDiagnosis({ setCurrentArticle, initialTab }: DownSyn
           Prenatal Testing
         </button>
         <button
-          onClick={() => setActiveTab('birth')}
+          onClick={() => handleTabChange('birth')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'birth'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function DownSyndromeDiagnosis({ setCurrentArticle, initialTab }: DownSyn
           Birth Diagnosis
         </button>
         <button
-          onClick={() => setActiveTab('evaluation')}
+          onClick={() => handleTabChange('evaluation')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'evaluation'
               ? 'bg-[#0A9DC4] text-white'

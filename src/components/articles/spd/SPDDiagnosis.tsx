@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Users, Stethoscope, Activity, FileText, CheckSquare, MessageSquare, ClipboardList, Home, Eye, Puzzle, Brain, GitMerge, AlertTriangle, Heart, ShieldAlert, ListChecks } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface SPDDiagnosisProps {
 }
 
 export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'process');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'process';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
@@ -40,7 +45,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
-          onClick={() => setActiveTab('process')}
+          onClick={() => handleTabChange('process')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'process'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
           The Assessment Process
         </button>
         <button
-          onClick={() => setActiveTab('tools')}
+          onClick={() => handleTabChange('tools')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'tools'
               ? 'bg-[#0A9DC4] text-white'
@@ -60,7 +65,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
           Tools & Measures
         </button>
         <button
-          onClick={() => setActiveTab('diagnosis')}
+          onClick={() => handleTabChange('diagnosis')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'diagnosis'
               ? 'bg-[#0A9DC4] text-white'

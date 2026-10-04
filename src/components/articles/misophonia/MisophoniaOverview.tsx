@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface MisophoniaOverviewProps {
@@ -7,7 +7,12 @@ interface MisophoniaOverviewProps {
 }
 
 export function MisophoniaOverview({ setCurrentArticle, initialTab }: MisophoniaOverviewProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'definition');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'definition';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px]">
@@ -39,7 +44,7 @@ export function MisophoniaOverview({ setCurrentArticle, initialTab }: Misophonia
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
-          onClick={() => setActiveTab('definition')}
+          onClick={() => handleTabChange('definition')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'definition'
               ? 'bg-[#0A9DC4] text-white'
@@ -49,7 +54,7 @@ export function MisophoniaOverview({ setCurrentArticle, initialTab }: Misophonia
           Definition & Prevalence
         </button>
         <button
-          onClick={() => setActiveTab('triggers')}
+          onClick={() => handleTabChange('triggers')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'triggers'
               ? 'bg-[#0A9DC4] text-white'
@@ -59,7 +64,7 @@ export function MisophoniaOverview({ setCurrentArticle, initialTab }: Misophonia
           Common Triggers
         </button>
         <button
-          onClick={() => setActiveTab('brain')}
+          onClick={() => handleTabChange('brain')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'brain'
               ? 'bg-[#0A9DC4] text-white'

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Brain, Activity, Zap, Dna, Network, FlaskConical, Baby, Clock, Ear, AlertTriangle, ShieldAlert, Layers, TrendingUp, Link, BookOpen, XCircle } from 'lucide-react';
 
@@ -8,7 +8,12 @@ interface APDCausesProps {
 }
 
 export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'biology');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'biology';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +56,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('biology')}
+          onClick={() => handleTabChange('biology')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'biology'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +66,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
           Genetics & Neurology
         </button>
         <button
-          onClick={() => setActiveTab('environment')}
+          onClick={() => handleTabChange('environment')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'environment'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +76,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
           Environment & Development
         </button>
         <button
-          onClick={() => setActiveTab('models')}
+          onClick={() => handleTabChange('models')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'models'
               ? 'bg-[#0A9DC4] text-white'

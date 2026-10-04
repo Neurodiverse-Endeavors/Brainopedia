@@ -1,6 +1,6 @@
+import { useSearchParams } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { useState } from 'react';
 
 interface ADHDCausesProps {
   setCurrentArticle?: (article: string) => void;
@@ -8,7 +8,12 @@ interface ADHDCausesProps {
 }
 
 export function ADHDCauses({ setCurrentArticle, initialTab }: ADHDCausesProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'overview');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'overview';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
   
   function OverviewContent() {
     return (

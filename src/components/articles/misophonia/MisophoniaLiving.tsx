@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import React, { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Brain, Heart, ShieldCheck, Users, MessageCircle, VolumeX, Headphones, BatteryCharging, ChevronRight, Megaphone } from 'lucide-react';
@@ -8,7 +9,12 @@ interface MisophoniaLivingProps {
 }
 
 export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLivingProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'mindset');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'mindset';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
@@ -51,7 +57,7 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('mindset')}
+          onClick={() => handleTabChange('mindset')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'mindset'
               ? 'bg-[#0A9DC4] text-white'
@@ -61,7 +67,7 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
           Self-Compassion & Mindset
         </button>
         <button
-          onClick={() => setActiveTab('social')}
+          onClick={() => handleTabChange('social')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'social'
               ? 'bg-[#0A9DC4] text-white'
@@ -71,7 +77,7 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
           Social & Advocacy
         </button>
         <button
-          onClick={() => setActiveTab('strategies')}
+          onClick={() => handleTabChange('strategies')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'strategies'
               ? 'bg-[#0A9DC4] text-white'

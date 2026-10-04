@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface DyspraxiaOverviewProps {
@@ -7,7 +7,12 @@ interface DyspraxiaOverviewProps {
 }
 
 export function DyspraxiaOverview({ setCurrentArticle, initialTab }: DyspraxiaOverviewProps) {
-  const [activeTab, setActiveTab] = useState(initialTab || 'what');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'what';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
 
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
@@ -30,7 +35,7 @@ export function DyspraxiaOverview({ setCurrentArticle, initialTab }: DyspraxiaOv
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
         <button
-          onClick={() => setActiveTab('what')}
+          onClick={() => handleTabChange('what')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'what'
               ? 'bg-[#0A9DC4] text-white'
@@ -40,7 +45,7 @@ export function DyspraxiaOverview({ setCurrentArticle, initialTab }: DyspraxiaOv
           What is Dyspraxia?
         </button>
         <button
-          onClick={() => setActiveTab('mechanics')}
+          onClick={() => handleTabChange('mechanics')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'mechanics'
               ? 'bg-[#0A9DC4] text-white'
@@ -50,7 +55,7 @@ export function DyspraxiaOverview({ setCurrentArticle, initialTab }: DyspraxiaOv
           The Brain & Movement
         </button>
         <button
-          onClick={() => setActiveTab('facts')}
+          onClick={() => handleTabChange('facts')}
           className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
             activeTab === 'facts'
               ? 'bg-[#0A9DC4] text-white'
