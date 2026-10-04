@@ -14,7 +14,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         <h1 className="text-4xl text-[#0c264d] font-normal mb-2">
           Brainopedia Project Standards & Design System
         </h1>
-        <p className="text-sm text-gray-500 font-bold uppercase tracking-widest">Last Updated: August 2026</p>
+        <p className="text-sm text-gray-500 font-bold uppercase tracking-widest">Last Updated: October 2026</p>
         <p className="mt-4 text-[#0c264d]">
           The definitive technical and editorial manual for the Brainopedia digital encyclopedia.
         </p>
@@ -138,7 +138,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <ul className="list-disc ml-4 space-y-2 text-slate-700">
               <li>The text cites hard statistics, explicitly named theories, or specific clinical protocols.</li>
               <li>These items go into the <strong>Cited Studies & Statistics</strong> reference list.</li>
-              <li><strong>Tab Rule:</strong> Inline citations must restart at 1 for each individual tab and flow chronologically top-to-bottom.</li>
+              <li><strong>Tab Rule:</strong> Inline citations must restart at 1 for individual tabs and flow chronologically.</li>
             </ul>
           </div>
           <div className="bg-cyan-50 border-l-4 border-[#2abcd4] p-4 text-sm">
@@ -147,7 +147,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
               <li>General foundational knowledge.</li>
               <li>Descriptive symptom lists.</li>
               <li>These items must be placed directly into the <strong>Background Sources</strong> list with NO inline superscript.</li>
-              <li>ALL PAGES MUST HAVE BACKGROUND SOURCES as it is not possible to just have stats and studies cited and no mention of how the background info was obtained.</li>
+              <li>ALL PAGES MUST HAVE BACKGROUND SOURCES.</li>
             </ul>
           </div>
         </div>
@@ -158,15 +158,6 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           <code className="block bg-black p-3 rounded text-xs break-words whitespace-pre-wrap">
             {`Statistics show 10%<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>`}
           </code>
-        </div>
-
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg shadow-sm">
-          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">Web-Adapted Citation Formatting</h3>
-          <p className="text-sm text-gray-700 mb-2">We use a "Digital-First" APA 7th style for references. <strong>Do not use archaic print-publishing artifacts.</strong></p>
-          <ul className="list-disc ml-5 text-sm text-gray-700 space-y-1">
-            <li><strong>REMOVE:</strong> Journal volume numbers, issue numbers, and page ranges.</li>
-            <li><strong>KEEP:</strong> Author, Year, Article Title, Journal Title, and the direct DOI or URL.</li>
-          </ul>
         </div>
       </section>
 
@@ -196,7 +187,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
       Cited Studies & Statistics
     </h4>
     <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-      <p>1. Author. (Year). "Title." <i>Journal</i>. https://doi.org/10.xxxx/xxxxx</p>
+      <p>1. Author. (Year). "Title." <i>Journal</i>.</p>
     </div>
   </div>
   
@@ -277,13 +268,17 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#0c264d'}}></div>
             <p><strong>Dark Navy Blue (Text/Headers):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#0c264d</code> - Primary text color, headers, hover states</p>
           </div>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#d4a017'}}></div>
+            <p><strong>Dark Gold (Accent):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#d4a017</code> - Used for icons inside yellow/beige cards</p>
+          </div>
         </div>
 
         <h3 className="text-[#0c264d] font-bold text-lg mb-3 mt-6">Secondary Colors</h3>
         <div className="space-y-2 mb-4 ml-4">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#10b981'}}></div>
-            <p><strong>Bright Green (Citations):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#10b981</code> - ONLY for citation superscript numbers</p>
+            <p><strong>Bright Green (Citations ONLY):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#10b981</code> - ONLY for citation superscript numbers. NEVER use for borders or icons.</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#ffffff'}}></div>
@@ -294,14 +289,6 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <p><strong>Light Blue Background:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#f0f9ff</code> - Alternate section backgrounds</p>
           </div>
         </div>
-
-        <h3 className="text-[#0c264d] font-bold text-lg mb-3 mt-6">Color Usage Rules</h3>
-        <ul className="list-disc ml-8 space-y-2">
-          <li>Citation numbers must ALWAYS be <code className="bg-gray-100 px-2 py-1 rounded break-words">#10b981</code> (bright green)</li>
-          <li>Tab active states: Always Dark Cyan (<code className="bg-gray-100 px-2 py-1 rounded break-words">#0A9DC4</code>) with white text</li>
-          <li>Tab/Button hover states: Always Navy (<code className="bg-gray-100 px-2 py-1 rounded break-words">#0c264d</code>) with white text</li>
-          <li>Tab resting states: Always Yellow (<code className="bg-gray-100 px-2 py-1 rounded break-words">#ffd166</code>) with Navy text</li>
-        </ul>
       </section>
 
       {/* CARD STYLING & CONTAINERS */}
@@ -309,19 +296,44 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         <h2 className="text-[#0c264d] text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
           <Layout className="text-[#2abcd4]" /> CARD STYLING & CONTAINERS
         </h2>
-        
-        <div className="bg-white border border-gray-200 p-5 rounded-lg shadow-sm mb-6">
+<div className="bg-white border border-gray-200 p-5 rounded-lg shadow-sm mb-6">
           <h3 className="font-bold text-[#0c264d] mb-3 uppercase text-xs">Standard Card Color Rules</h3>
           <p className="text-sm text-gray-700 mb-4">
-            To break up dense text, content sections should be wrapped in colorful, styled cards. Card backgrounds must <strong>always</strong> be a lightened/pastel version of our core colors, paired with a darker, thicker border of the same color family. Use these exact combinations unless otherwise specified:
+            To break up dense text, content sections should be wrapped in colorful, styled cards. Card backgrounds must <strong>always</strong> be a lightened/pastel version of our core colors, paired with a darker, thicker border of the same color family. Use these exact combinations and inner-card pairings unless otherwise specified:
           </p>
-          <ul className="list-disc ml-5 text-sm text-gray-700 space-y-3">
-            <li><strong>Cyan Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-cyan-50 border-2 border-[#2abcd4]</code></li>
-            <li><strong>Yellow/Gold Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-yellow-50 border-2 border-[#ffd166]</code></li>
-            <li><strong>Navy/Gray Cards:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-slate-50 border-2 border-[#0c264d]</code> (Navy border) or <code className="bg-gray-100 px-2 py-1 rounded break-words">border-slate-200</code> (Gray border)</li>
+
+          <div className="bg-blue-50 border-l-4 border-[#0A9DC4] p-4 mb-5 rounded-r-lg shadow-sm">
+            <h4 className="text-xs font-bold text-[#0c264d] uppercase mb-1">Standard Tab Sequence & Layout Rule</h4>
+            <p className="text-xs text-slate-700 leading-relaxed mb-2">
+              For standard 3-tab pages, strictly follow this styling sequence to maintain visual rhythm: <strong>Tab 1 = Cyan, Tab 2 = Slate, Tab 3 = Yellow.</strong> 
+            </p>
+            <p className="text-xs text-slate-700 leading-relaxed">
+              <strong>Multiple Cards Per Tab:</strong> If a single tab has more than one large container card on it, you can mix styles from the other primary cards on the subsequent container cards (alternating Cyan, Slate, or Yellow) to provide visual variety.
+            </p>
+          </div>
+
+          <ul className="list-disc ml-5 text-sm text-gray-700 space-y-4">
+            <li>
+              <strong>Cyan Cards (Tab 1 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-cyan-50 border-2 border-[#2abcd4]</code>
+              <p className="mt-1 text-slate-600">
+                Inner cards must use standard <strong>Lucide Icons</strong> stacked <strong>directly above the text</strong> (using <code className="bg-gray-100 px-1 rounded text-xs">flex flex-col items-center text-center</code>). Do not place icons to the left, as it forces text into narrow columns.
+              </p>
+            </li>
+            <li>
+              <strong>Navy/Slate Cards (Tab 2 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-slate-100 border-2 border-slate-600 rounded-xl</code>
+              <p className="mt-1 text-slate-600">
+                Inner cards <em>MUST</em> utilize the <strong>3D Accent Border</strong> (colored left stripe) on a stark white background using Navy, Gold, Cyan, or Dark Cyan. Inside these 3D mini cards, use a <strong>Custom CSS Dot Bullet</strong> instead of a standard icon.
+              </p>
+            </li>
+            <li>
+              <strong>Yellow/Gold Cards (Tab 3 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-yellow-50 border-2 border-[#ffd166]</code>
+              <p className="mt-1 text-slate-600">
+                Inner cards must use <strong>Icon Badges (Circular Backgrounds)</strong> stacked <strong>directly above the text</strong>.
+              </p>
+            </li>
           </ul>
         </div>
-
+        
         <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 rounded-r-lg shadow-sm mb-6">
           <h3 className="font-bold text-[#831843] mb-2 uppercase text-xs">Accessible Warning & Myth Cards</h3>
           <p className="text-sm text-slate-700 mb-3">
@@ -335,18 +347,20 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           </ul>
         </div>
 
-        <div className="bg-slate-50 border-2 border-slate-200 p-5 rounded-lg shadow-sm mb-6">
-          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-200 pb-2">3D Accent Border Cards (No Lucide Icons)</h3>
+        <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm clear-both mb-6">
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">3D Accent Border Cards (No Lucide Icons)</h3>
           <p className="text-sm text-slate-700 mb-4">
-            When a section has too many repetitive Lucide icons, use this "3D stripe" design pattern to create visual hierarchy. It uses absolute positioning to paint a thick accent stripe down the left edge.
+            When a section has too many repetitive Lucide icons, or when placing inner cards inside a Slate container, use this "3D stripe" design pattern to create visual hierarchy. It uses absolute positioning to paint a thick accent stripe down the left edge.
           </p>
+
           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden max-w-sm mb-4">
             <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
             <div className="pl-2">
               <h3 className="text-[#0c264d] font-bold text-sm mb-1">Card Title</h3>
-              <p className="text-xs text-slate-700 leading-relaxed">This is the inner card content with the thick cyan accent stripe on the left.</p>
+              <p className="text-xs text-slate-700 leading-relaxed">This is the inner card content with the thick Dark Cyan accent stripe on the left.</p>
             </div>
           </div>
+          
           <code className="text-xs block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
             {`<div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
   <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
@@ -358,24 +372,24 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           </code>
         </div>
 
-        <div className="bg-slate-50 border-2 border-slate-200 p-5 rounded-lg shadow-sm mb-6">
-          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-200 pb-2">Custom CSS Dot Bullets</h3>
+        <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm clear-both mb-6">
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">Custom CSS Dot Bullets</h3>
           <p className="text-sm text-slate-700 mb-4">
-            Instead of standard Lucide icons, use a solid CSS circle for a clean, minimalist bullet point. Perfect for lists that need to look like standalone cards without distracting imagery.
+            Instead of standard Lucide icons, use a solid CSS circle using the primary color palette for a clean, minimalist bullet point.
           </p>
           
           {/* VISUAL EXAMPLE */}
           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-3 mb-4 max-w-sm">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#0A9DC4] mt-1.5 shrink-0"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
             <div>
               <h3 className="text-[#0c264d] font-bold text-sm mb-1">Bullet Header</h3>
-              <p className="text-xs text-slate-700 leading-relaxed">This card uses a colored CSS dot instead of an icon.</p>
+              <p className="text-xs text-slate-700 leading-relaxed">This card uses a colored Navy CSS dot instead of an icon.</p>
             </div>
           </div>
 
           <code className="text-xs block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
             {`<div className="flex items-start gap-3">
-  <div className="w-2.5 h-2.5 rounded-full bg-[#0A9DC4] mt-1.5 shrink-0"></div>
+  <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
   <div>
     <h3 className="text-[#0c264d] font-bold text-sm mb-1">Title</h3>
     <p className="text-xs text-slate-700">Content goes here.</p>
@@ -384,8 +398,8 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           </code>
         </div>
 
-        <div className="bg-slate-50 border-2 border-slate-200 p-5 rounded-lg shadow-sm mb-6">
-          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-200 pb-2">Numbered Steps & Circular Badges</h3>
+        <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm clear-both mb-6">
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">Numbered Steps & Circular Badges</h3>
           <p className="text-sm text-slate-700 mb-4">
             Use perfect flexbox circles (<code className="bg-white px-1 rounded border border-gray-200">rounded-full flex items-center justify-center</code>) to wrap numbers or icons for step-by-step processes, rankings, or prominent list items.
           </p>
@@ -413,9 +427,9 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
 </div>`}
           </code>
         </div>
-      </section>
-<div className="bg-slate-50 border-2 border-slate-200 p-5 rounded-lg shadow-sm mb-6">
-          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-200 pb-2">Icon Badges (Circular Backgrounds)</h3>
+
+        <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm clear-both mb-6">
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">Icon Badges (Circular Backgrounds)</h3>
           <p className="text-sm text-slate-700 mb-4">
             You can use the exact same circular flexbox container, but swap the text number for a Lucide icon sized to <code className="bg-white px-1 rounded border border-gray-200">w-4 h-4</code> or <code className="bg-white px-1 rounded border border-gray-200">w-5 h-5</code>.
           </p>
@@ -443,6 +457,8 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
 </div>`}
           </code>
         </div>
+      </section>
+
       {/* TYPOGRAPHY SIZING RULE */}
       <section className="mb-12">
         <h2 className="text-[#0c264d] text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">

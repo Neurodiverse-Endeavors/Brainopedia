@@ -114,6 +114,17 @@ export function DownSyndromeOverview({ setCurrentArticle, initialTab }: DownSynd
             </div>
           </div>
 
+          {/* FOOTER BUTTON - PLACED BEFORE REFERENCES */}
+          <div className="flex justify-end my-8 w-full clear-both">
+            <button 
+              onClick={() => setCurrentArticle?.('downsyndrome')}
+              className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+            >
+              <span className="text-xl">←</span>
+              All About Down Syndrome
+            </button>
+          </div>
+
           {/* TAB 1 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
@@ -161,34 +172,45 @@ export function DownSyndromeOverview({ setCurrentArticle, initialTab }: DownSynd
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Intellectual Range</h3>
-                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
-                    <li>The range of cognitive functioning varies widely from person to person.</li>
-                    <li>While most fall into the mild to moderate range of intellectual disability, some individuals experience borderline differences.</li>
-                    <li>Developmental milestones are typically reached, though on a delayed timeline compared to neurotypical peers.</li>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                    <Target className="w-4 h-4 text-[#0A9DC4]" /> Relative Strengths
+                  </h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                    <li><strong>Visual Learning:</strong> Extremely strong visual-spatial processing and visual memory.</li>
+                    <li><strong>Social Intelligence:</strong> High empathy, social awareness, and observational learning.</li>
+                    <li><strong>Vocabulary:</strong> Receptive language (understanding what is said) is typically much stronger than expressive language.</li>
                   </ul>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Target className="text-[#d4a017] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Learning & Processing</h3>
-                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
-                    <li>Often display strong visual-spatial learning abilities compared to auditory processing.</li>
-                    <li>Social understanding and empathy are frequently noted as significant cognitive strengths.</li>
-                    <li>Expressive language (speaking) may lag behind receptive language (understanding).</li>
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
+                    <Brain className="w-4 h-4 text-[#d4a017]" /> Common Challenges
+                  </h3>
+                  <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
+                    <li><strong>Auditory Memory:</strong> Verbal short-term memory is often a significant vulnerability.</li>
+                    <li><strong>Expressive Speech:</strong> Motor planning required for speaking can delay expressive language.</li>
+                    <li><strong>Information Processing:</strong> May require more time to process complex verbal instructions.</li>
                   </ul>
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* FOOTER BUTTON - PLACED BEFORE REFERENCES */}
+          <div className="flex justify-end my-8 w-full clear-both">
+            <button 
+              onClick={() => setCurrentArticle?.('downsyndrome')}
+              className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+            >
+              <span className="text-xl">←</span>
+              All About Down Syndrome
+            </button>
           </div>
 
           {/* TAB 2 REFERENCES */}
@@ -258,6 +280,17 @@ export function DownSyndromeOverview({ setCurrentArticle, initialTab }: DownSynd
             </div>
           </div>
 
+          {/* FOOTER BUTTON - PLACED BEFORE REFERENCES */}
+          <div className="flex justify-end my-8 w-full clear-both">
+            <button 
+              onClick={() => setCurrentArticle?.('downsyndrome')}
+              className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+            >
+              <span className="text-xl">←</span>
+              All About Down Syndrome
+            </button>
+          </div>
+
           {/* TAB 3 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
@@ -283,17 +316,6 @@ export function DownSyndromeOverview({ setCurrentArticle, initialTab }: DownSynd
           </div>
         </div>
       )}
-
-      {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
-        <button 
-          onClick={() => setCurrentArticle?.('downsyndrome')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
-        >
-          <span className="text-xl">←</span>
-          All About Down Syndrome
-        </button>
-      </div>
 
     </article>
   );
