@@ -21,10 +21,6 @@ export function ADHDSymptoms({ setCurrentArticle, initialTab }: ASDSymptomsProps
     setSearchParams({ tab: newTab });
   };
 
-  const handleTabChange = (value: string) => {
-    handleTabChange(value);
-  };
-
   return (
     <article className="max-w-full w-full">
       <style>
