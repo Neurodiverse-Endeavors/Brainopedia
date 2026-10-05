@@ -20,9 +20,7 @@ export function ASDCauses({ setCurrentArticle, initialTab }: ASDCausesProps) {
     setSearchParams({ tab: newTab });
   };
 
-  const handleTabChange = (tabId: string) => {
-    handleTabChange(tabId);
-  };
+  
 
   const tabs = [
     { id: 'environmental', label: 'Environmental Factors' },

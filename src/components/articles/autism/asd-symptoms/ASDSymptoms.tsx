@@ -20,9 +20,7 @@ export function ASDSymptoms({ setCurrentArticle, initialTab }: ASDSymptomsProps)
     setSearchParams({ tab: newTab });
   };
 
-  const handleTabChange = (tabId: string) => {
-    handleTabChange(tabId);
-  };
+  
 
   const tabs = [
     { id: 'core', label: 'Core Symptoms' },

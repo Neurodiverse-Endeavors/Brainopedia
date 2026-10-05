@@ -22,9 +22,7 @@ export function ASDDiagnosis({ setCurrentArticle, initialTab }: ASDDiagnosisProp
     setSearchParams({ tab: newTab });
   };
 
-  const handleTabChange = (tabId: string) => {
-    handleTabChange(tabId);
-  };
+  
 
   const tabs = [
     { id: 'general', label: 'General Process' },

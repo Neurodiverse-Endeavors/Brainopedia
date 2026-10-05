@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 // Updated paths based on your articleMap directory structure
 import { OverviewContent } from './OverviewContent';
@@ -22,6 +22,11 @@ export function ASDSupport({ setCurrentArticle, initialTab }: ASDSupportProps) {
 
   const handleTabChange = (newTab: string) => {
     setSearchParams({ tab: newTab });
+    
+    // Quietly clean up the URL bar if it is stuck on the backdoor route
+    if (window.location.pathname.includes('autism-support-therapies')) {
+      window.history.replaceState(null, '', '/autism-support');
+    }
   };
 
   // --- THE FIX ---
@@ -32,15 +37,6 @@ export function ASDSupport({ setCurrentArticle, initialTab }: ASDSupportProps) {
     }
   }, [initialTab]);
   // ---------------
-
-  const handleTabChange = (tabId: string) => {
-    handleTabChange(tabId);
-    
-    // Quietly clean up the URL bar if it is stuck on the backdoor route
-    if (window.location.pathname.includes('autism-support-therapies')) {
-      window.history.replaceState(null, '', '/autism-support');
-    }
-  };
 
   const tabs = [
     { id: 'overview', label: 'Overview & Philosophy' },

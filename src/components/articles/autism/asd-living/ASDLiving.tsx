@@ -26,9 +26,7 @@ export function ASDLiving({ setCurrentArticle, initialTab }: ASDLivingProps) {
     }
   }, [initialTab]);
 
-  const handleTabChange = (tabId: string) => {
-    handleTabChange(tabId);
-  };
+  
 
   const BackButton = () => (
     <button 
