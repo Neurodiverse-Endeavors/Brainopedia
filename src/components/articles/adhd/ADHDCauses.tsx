@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
+import { useEffect } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 
 interface ADHDCausesProps {
@@ -14,7 +14,18 @@ export function ADHDCauses({ setCurrentArticle, initialTab }: ADHDCausesProps) {
   const handleTabChange = (newTab: string) => {
     setSearchParams({ tab: newTab });
   };
-  
+
+  useEffect(() => {
+    if (initialTab) {
+      handleTabChange(initialTab);
+    }
+  }, [initialTab]);
+
+  const tabs = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'genetics', label: 'Genetics' },
+    { id: 'brain', label: 'Brain Structure' }
+  ];
   function OverviewContent() {
     return (
       <>
@@ -553,20 +564,20 @@ export function ADHDCauses({ setCurrentArticle, initialTab }: ADHDCausesProps) {
     );
   }
   
-  return (
+return (
     <article className="max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <h1 className="text-3xl">
           ADHD: Causes & Origins
         </h1>
 
-<button 
-  onClick={() => setCurrentArticle?.('adhd')}
-  className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm shrink-0"
->
-  <span className="text-lg">←</span>
-  All About ADHD
-</button>
+        <button 
+          onClick={() => setCurrentArticle?.('adhd')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm shrink-0"
+        >
+          <span className="text-lg">←</span>
+          All About ADHD
+        </button>
       </div>
 
       {/* Mobile button - shows only on small screens below title */}
@@ -578,41 +589,38 @@ export function ADHDCauses({ setCurrentArticle, initialTab }: ADHDCausesProps) {
         All About ADHD
       </button>
 
-      {/* Implemented the smart VS Code suggestion while keeping your Tailwind styles */}
- <Tabs defaultValue={activeTab} value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-12 bg-transparent h-auto p-0">
-          <TabsTrigger value="overview" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Overview
-          </TabsTrigger>
-          <TabsTrigger value="genetics" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Genetics
-          </TabsTrigger>
-          <TabsTrigger value="brain" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Brain Structure
-          </TabsTrigger>
-        </TabsList>
+      {/* --- NEW BUTTON NAVIGATION --- */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-10">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => handleTabChange(tab.id)}
+            className={`px-4 py-3 rounded-lg text-sm transition-colors font-normal shadow-sm ${
+              activeTab === tab.id
+                ? 'bg-[#0A9DC4] text-white shadow-md'
+                : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
 
-        <TabsContent value="overview" className="space-y-8">
-          {OverviewContent()}
-        </TabsContent>
-
-        <TabsContent value="genetics" className="space-y-8">
-          {GeneticsContent()}
-        </TabsContent>
-
-        <TabsContent value="brain" className="space-y-8">
-          {BrainContent()}
-        </TabsContent>
-      </Tabs>
+      {/* --- NEW CONTENT RENDERING --- */}
+      <div className="space-y-8 min-h-[400px]">
+        {activeTab === 'overview' && OverviewContent()}
+        {activeTab === 'genetics' && GeneticsContent()}
+        {activeTab === 'brain' && BrainContent()}
+      </div>
 
       <div className="flex justify-end my-8 clear-both">
-<button 
-  onClick={() => setCurrentArticle?.('adhd')}
-  className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm shrink-0"
->
-  <span className="text-lg">←</span>
-  All About ADHD
-</button>
+        <button 
+          onClick={() => setCurrentArticle?.('adhd')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm shrink-0"
+        >
+          <span className="text-lg">←</span>
+          All About ADHD
+        </button>
       </div>
     </article>
   );

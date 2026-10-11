@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
+import { useEffect } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
 import { Sparkles, Home, Heart, Briefcase, Shield, Users, CheckCircle, TrendingUp } from 'lucide-react';
 
@@ -15,12 +15,26 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
   const handleTabChange = (newTab: string) => {
     setSearchParams({ tab: newTab });
   };
+
+  useEffect(() => {
+    if (initialTab) {
+      handleTabChange(initialTab);
+    }
+  }, [initialTab]);
+
+  const tabs = [
+    { id: 'overview', label: 'Overview & Strengths' },
+    { id: 'daily-life', label: 'Daily Life & Routines' },
+    { id: 'relationships', label: 'Relationships' },
+    { id: 'career', label: 'Education & Career' },
+    { id: 'mental-health', label: 'Mental Health & Stigma' },
+    { id: 'community', label: 'Community & Future' }
+  ];
   
   // Reusable styling variables
   const centeredMediumImageClass = "w-full sm:w-96 h-auto rounded-md border border-gray-300 block mx-auto mb-6 shadow-sm";
-  const responsiveImageClass = "w-full sm:w-96 md:w-[28rem] h-auto rounded-md border border-gray-300 block mx-auto mb-6 shadow-sm";
   const floatedCardContainer = "float-right ml-6 mb-4 bg-white p-2 rounded-lg shadow-sm border border-gray-200 w-64 shrink-0";
-  const floatedImageClass = "w-full h-auto rounded-md block";
+  const floatedImageClass = "w-64 h-auto rounded-md block";
 
   function OverviewContent() {
     return (
@@ -268,16 +282,15 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           </ul>
         </div>
 
-        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 flow-root">
-          <div className={floatedCardContainer}>
-            <ImageWithFallback 
-              src="/images/adhd/adhd-living-relationships-read-kids-books.webp"
-              alt="Parent reading to children - parenting with ADHD"
-              className={floatedImageClass}
-            />
-          </div>
+<div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 flow-root">
+          <h3 className="text-[#0c264d] font-bold mb-4 text-lg text-center">Parenting with ADHD</h3>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Parenting with ADHD</h3>
+          <ImageWithFallback 
+            src="/images/adhd/adhd-living-relationships-read-kids-books.webp"
+            alt="Parent reading to children - parenting with ADHD"
+            className="w-64 h-auto rounded-md border border-gray-300 block mx-auto mb-6 bg-white p-2 shadow-sm"
+          />
+
           <p className="mb-4 text-sm text-gray-700 leading-relaxed">
             Parents with ADHD face unique challenges and bring unique strengths to parenting. 
             Research shows that parental ADHD symptoms are associated with differences in parenting 
@@ -286,7 +299,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
             well-adjusted children with the right strategies and support.
           </p>
           
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-[#2abcd4]/30 mt-4">
+          <div className="bg-white p-4 rounded-lg shadow-sm border border-[#2abcd4]/30 mt-4 clear-both">
             <h4 className="font-bold text-[#0c264d] mb-2 text-sm uppercase tracking-wider">Effective Parenting Strategies</h4>
             <div className="grid sm:grid-cols-2 gap-2">
               <div className="flex gap-2 text-xs text-gray-700"><CheckCircle size={14} className="text-[#2abcd4] shrink-0" /> <span>Use visual schedules for the family</span></div>
@@ -568,7 +581,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           </p>
         </div>
 
-        <div className="mt-8 p-5 bg-[#ffd166]/20 border-l-4 border-[#ffd166] rounded-lg shadow-sm">
+        <div className="mt-8 p-5 bg-[#2abcd4]/20 border-l-4 border-[#2abcd4] rounded-lg shadow-sm">
           <p className="text-sm text-[#0c264d] leading-relaxed">
             <strong>Remember:</strong> Living well with ADHD looks different for everyone. Be patient with 
             yourself as you discover what works for you, and don't hesitate to seek support from healthcare 
@@ -595,8 +608,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
       </div>
     );
   }
-
-  return (
+return (
     <article className="max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <h1 className="text-3xl text-[#0c264d] font-normal">
@@ -621,58 +633,32 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
         All About ADHD
       </button>
 
-      <Tabs defaultValue={activeTab} value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-12 bg-transparent h-auto p-0">
-          <TabsTrigger value="overview" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Overview & Strengths
-          </TabsTrigger>
-          <TabsTrigger value="daily-life" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Daily Life & Routines
-          </TabsTrigger>
-          <TabsTrigger value="relationships" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Relationships
-          </TabsTrigger>
-          <TabsTrigger value="career" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Education & Career
-          </TabsTrigger>
-          <TabsTrigger value="mental-health" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Mental Health & Stigma
-          </TabsTrigger>
-          <TabsTrigger value="community" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
-            Community & Future
-          </TabsTrigger>
-        </TabsList>
+      {/* --- NEW BUTTON NAVIGATION --- */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-10">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => handleTabChange(tab.id)}
+            className={`px-4 py-3 rounded-lg text-sm transition-colors font-normal shadow-sm ${
+              activeTab === tab.id
+                ? 'bg-[#0A9DC4] text-white shadow-md'
+                : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
 
-        {/* Overview Tab */}
-        <TabsContent value="overview" className="space-y-8">
-          {OverviewContent()}
-        </TabsContent>
-
-        {/* Daily Life Tab */}
-        <TabsContent value="daily-life" className="space-y-8">
-          {DailyLifeContent()}
-        </TabsContent>
-
-        {/* Relationships Tab */}
-        <TabsContent value="relationships" className="space-y-8">
-          {RelationshipsContent()}
-        </TabsContent>
-
-        {/* Career Tab */}
-        <TabsContent value="career" className="space-y-8">
-          {CareerContent()}
-        </TabsContent>
-
-        {/* Mental Health Tab */}
-        <TabsContent value="mental-health" className="space-y-8">
-          {MentalHealthContent()}
-        </TabsContent>
-
-        {/* Community Tab */}
-        <TabsContent value="community" className="space-y-8">
-          {CommunityContent()}
-        </TabsContent>
-      </Tabs>
+      {/* --- NEW CONTENT RENDERING --- */}
+      <div className="space-y-8 min-h-[400px]">
+        {activeTab === 'overview' && OverviewContent()}
+        {activeTab === 'daily-life' && DailyLifeContent()}
+        {activeTab === 'relationships' && RelationshipsContent()}
+        {activeTab === 'career' && CareerContent()}
+        {activeTab === 'mental-health' && MentalHealthContent()}
+        {activeTab === 'community' && CommunityContent()}
+      </div>
 
       <div className="flex justify-end my-8 clear-both">
         <button 
