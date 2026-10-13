@@ -82,14 +82,14 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
       {activeTab === 'cognitive' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Cognitive Card (Cyan) - Uses Float Image */}
+          {/* Cognitive Card (Cyan) - Centered Hero Image */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Cognitive Characteristics</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-symptoms-cognitive.webp"
               alt="Child deeply focused on solving a complex puzzle or pattern"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -123,14 +123,14 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
             </div>
           </div>
 
-          {/* Academic Card (Yellow) - Uses Hero Image */}
+          {/* Academic Card (Yellow) - Centered Hero Image */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Learning & Academic Profile</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-symptoms-academic-hero.webp"
               alt="Advanced student studying independently with diverse materials"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -188,14 +188,14 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
       {activeTab === 'social' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Emotional Card (Slate) - Uses Float Image */}
+          {/* Emotional Card (Slate) - Centered Hero Image */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Emotional Intensity & Sensitivity</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-symptoms-social.webp"
               alt="Child showing deep empathy or having an intense conversation with an older peer"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-gray-300 mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -233,14 +233,14 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
             </div>
           </div>
 
-          {/* Challenges Card (Cyan) - Uses Hero Image */}
+          {/* Challenges Card (Cyan) - Centered Hero Image */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Challenges & Vulnerabilities</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-symptoms-challenges-hero.webp"
               alt="Student looking overwhelmed by perfectionism or isolated in a classroom"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -298,14 +298,14 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
       {activeTab === 'creative' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Creativity Card (Yellow) - Uses Float Image */}
+          {/* Creativity Card (Yellow) - Centered Hero Image */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Creativity & Innovation</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-symptoms-creative.webp"
               alt="Child creating a highly imaginative, unconventional art project or invention"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#ffd166] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -343,14 +343,14 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
             </div>
           </div>
 
-          {/* Domains Card (Slate) - Uses Hero Image */}
+          {/* Domains Card (Slate) - Centered Hero Image */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Domain-Specific Talents</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-symptoms-domains-hero.webp"
               alt="Collage showing children excelling in math, science, and the arts"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">

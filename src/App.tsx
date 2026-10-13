@@ -83,10 +83,6 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
         />
       </div>
 
-      <div className="print:hidden">
-        <DonationBanner onNavigateTo={() => setCurrentArticle('')} />
-      </div>
-
       <div className="flex print:block">
         <div className="print:hidden">
           <Sidebar
@@ -103,6 +99,7 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
       </div>
 
       <div className="print:hidden">
+        <DonationBanner onNavigateTo={() => setCurrentArticle('')} />
         <Footer setCurrentArticle={setCurrentArticle} />
       </div>
     </div>

@@ -33,6 +33,18 @@ const seoMap: Record<string, { title: string; description: string; noindex?: boo
     title: 'Brainopedia Blog | Neurodiversity Updates', 
     description: 'Stay informed with the latest research, insights, and stories from the neurodiversity community on the official Brainopedia blog.' 
   },
+  'privacy': {
+    title: 'Privacy Policy | Brainopedia',
+    description: 'Read Brainopedia\'s privacy policy to learn how we protect visitor privacy and handle data responsibly.'
+  },
+  'terms': {
+    title: 'Terms of Use & Medical Disclaimer | Brainopedia',
+    description: 'Review Brainopedia\'s Terms of Use, educational usage guidelines, and medical disclaimer.'
+  },
+  'contact': {
+    title: 'Contact Us | Brainopedia',
+    description: 'Get in touch with Brainopedia and Neurodiverse Endeavors for general inquiries, editorial feedback, or partnership opportunities.'
+  },
   
   // Volume I: Core Neurodevelopmental
   'adhd': { 
@@ -217,6 +229,9 @@ const articleMap: RouteMap = {
   'about': lazy(() => import('./articles/ArticleAbout').then(m => ({ default: m.ArticleAbout }))),
   'donate': lazy(() => import('./articles/ArticleDonate').then(m => ({ default: m.ArticleDonate }))),
   'blog': lazy(() => import('./articles/ArticleBlog').then(m => ({ default: m.ArticleBlog }))),
+  'privacy': lazy(() => import('./articles/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy }))),
+  'terms': lazy(() => import('./articles/TermsOfUse').then(m => ({ default: m.TermsOfUse }))),
+  'contact': lazy(() => import('./articles/Contact').then(m => ({ default: m.Contact }))),
   'rsd-deep-dive': lazy(() => import('./articles/adhd/ADHDSymptomsTabRSD').then(m => ({ default: m.ADHDSymptomsTabRSD }))),
   
   // MAP THE HIDDEN BOARD PAGE HERE (Loading it directly instead of lazily prevents routing blips)

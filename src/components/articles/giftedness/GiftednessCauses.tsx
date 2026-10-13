@@ -82,14 +82,14 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
       {activeTab === 'biology' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Genetics Card (Cyan) - Uses Float Image */}
+          {/* Genetics Card (Cyan) - Centered Hero Image */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Genetic Factors</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-causes-genetics.webp"
               alt="DNA strand interwoven with abstract patterns representing polygenic heritability"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -115,14 +115,14 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
             </div>
           </div>
 
-          {/* Neurobiology Card (Yellow) - Uses Hero Image */}
+          {/* Neurobiology Card (Yellow) - Centered Hero Image */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Neurobiological Basis</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-causes-neuro-hero.webp"
               alt="Highly active brain scan highlighting efficient neural pathways"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -189,14 +189,14 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
       {activeTab === 'environment' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Environment Card (Slate) - Uses Float Image */}
+          {/* Environment Card (Slate) - Centered Hero Image */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Environmental Influences</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-causes-environment.webp"
               alt="Rich early childhood environment with parent scaffolding learning"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-gray-300 mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -226,14 +226,14 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
             </div>
           </div>
 
-          {/* Practice & Opportunity Card (Cyan) - Uses Hero Image */}
+          {/* Practice & Opportunity Card (Cyan) - Centered Hero Image */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Practice, Chance & Opportunity</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-causes-practice-hero.webp"
               alt="Child intensely practicing a complex skill like chess or music"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -296,14 +296,14 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
       {activeTab === 'theories' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Psychology Card (Yellow) - Uses Float Image */}
+          {/* Psychology Card (Yellow) - Centered Hero Image */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Psychological Factors</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-causes-psychology.webp"
               alt="Student demonstrating intense task commitment and focus"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -333,14 +333,14 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
             </div>
           </div>
 
-          {/* Models Card (Slate) - Uses Hero Image */}
+          {/* Models Card (Slate) - Centered Hero Image */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Integrative Models of Giftedness</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-causes-models-hero.webp"
               alt="Infographic showing Gagné's DMGT model of gifts transforming into talents"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

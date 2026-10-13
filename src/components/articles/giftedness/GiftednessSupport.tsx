@@ -82,14 +82,14 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
       {activeTab === 'acceleration' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Acceleration Card (Cyan) - Uses Float Image */}
+          {/* Acceleration Card (Cyan) - Centered Hero Image */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Acceleration Strategies</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-support-acceleration.webp"
               alt="Student accessing advanced, higher-level content"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -121,14 +121,14 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
             </div>
           </div>
 
-          {/* Enrichment Card (Yellow) - Uses Hero Image */}
+          {/* Enrichment Card (Yellow) - Centered Hero Image */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Enrichment & Curriculum Frameworks</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-support-enrichment-hero.webp"
               alt="Classroom visual showing independent inquiry and problem-based learning"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -196,14 +196,14 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
       {activeTab === 'emotional' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Grouping Card (Slate) - Uses Float Image */}
+          {/* Grouping Card (Slate) - Centered Hero Image */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Grouping Strategies</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-support-grouping.webp"
               alt="Cluster grouping setting where high-ability peers collaborate"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-gray-300 mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -233,14 +233,14 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
             </div>
           </div>
 
-          {/* Counseling Card (Cyan) - Uses Hero Image */}
+          {/* Counseling Card (Cyan) - Centered Hero Image */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social-Emotional Support & Counseling</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-support-counseling-hero.webp"
               alt="Supportive counseling environment helping a student navigate perfectionism"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -297,14 +297,14 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
       {activeTab === 'programs' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Populations Card (Yellow) - Uses Float Image */}
+          {/* Populations Card (Yellow) - Centered Hero Image */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Supporting Specific Populations</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-support-populations.webp"
               alt="Diverse twice-exceptional students thriving with dual differentiation support"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#ffd166] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -330,14 +330,14 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
             </div>
           </div>
 
-          {/* Out-of-School Card (Slate) - Uses Hero Image */}
+          {/* Out-of-School Card (Slate) - Centered Hero Image */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Out-of-School Programming & Mentorship</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-support-outofschool-hero.webp"
               alt="Summer residential program or robotics competition with intellectual peers"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

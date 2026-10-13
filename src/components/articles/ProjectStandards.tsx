@@ -1,5 +1,5 @@
 import React from 'react';
-import { Microscope, ArrowRight, Code, Layout, Palette, FileText, CheckCircle, ImageIcon, Smartphone, Brain, AlertTriangle, Type, Move, Heart } from 'lucide-react';
+import { Code, Layout, Palette, FileText, CheckCircle, ImageIcon, Smartphone, Brain, AlertTriangle, Type, Move } from 'lucide-react';
 
 interface ProjectStandardsProps {
   setCurrentArticle?: (article: string) => void;
@@ -84,18 +84,18 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-            <h3 className="font-bold text-[#0c264d] text-sm mb-2">1. The Main Page Float (w-56)</h3>
-            <p className="text-xs mb-3 text-gray-600">Used strictly for the main introductory articles where text wraps around the image.</p>
+            <h3 className="font-bold text-[#0c264d] text-sm mb-2">1. The Main Page Float (w-56, Mobile-First)</h3>
+            <p className="text-xs mb-3 text-gray-600">Used strictly on main introductory condition pages. Centers cleanly on mobile screens and floats right with text wrap on desktop.</p>
             <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
-              className="w-56 max-w-full h-auto rounded-md float-right ml-6 mb-4 shadow-sm"
+              className="w-56 max-w-full h-auto block mx-auto float-none md:float-right md:ml-6 mb-6 md:mb-4 mt-1 rounded-lg shadow-sm"
             </code>
           </div>
 
           <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
             <h3 className="font-bold text-[#0c264d] text-sm mb-2">2. The Subpage Centered Hero (w-64)</h3>
-            <p className="text-xs mb-3 text-gray-600">Used strictly inside the colored UI cards on subpages to prevent background spooling.</p>
+            <p className="text-xs mb-3 text-gray-600">Default standard for ALL graphics inside colored UI cards on subpages. Centers on both mobile and desktop and scales via max-w-full.</p>
             <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm"
             </code>
           </div>
 
@@ -103,7 +103,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <h3 className="font-bold text-[#0c264d] text-sm mb-2">3. The Wide Centered (w-96)</h3>
             <p className="text-xs mb-3 text-gray-600">Used for wider diagrams or detailed infographics where the standard w-64 is too small to read comfortably.</p>
             <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
-              className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm"
             </code>
           </div>
 
@@ -111,7 +111,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <h3 className="font-bold text-[#0c264d] text-sm mb-2">4. The Full Width Hero (w-full)</h3>
             <p className="text-xs mb-3 text-gray-600">Used only when a complex chart or visual needs to stretch across the absolute entire width of its container.</p>
             <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
-              className="w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm"
             </code>
           </div>
         </div>
@@ -120,19 +120,36 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           *Note: Always append the specific card's border color to the end of the class string (e.g., <code className="bg-gray-100 px-1 rounded not-italic">border border-[#ffd166]</code>).
         </div>
 
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-5 mt-6 rounded-r-lg shadow-sm">
-          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">The H2 Alignment Rule</h3>
-          <p className="text-sm text-gray-700">
-            To ensure a floated image aligns perfectly flush with the top of a section header, the <code className="bg-white px-1 rounded border border-gray-200">&lt;ImageWithFallback&gt;</code> tag MUST be placed in the code <strong>immediately before</strong> the <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> tag. If the H2 comes first, it pushes the image down to the next text line.
+        {/* MOBILE GRAPHIC RESPONSIVENESS & VISIBILITY RULES */}
+        <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 mt-6 rounded-r-xl shadow-sm">
+          <h3 className="font-bold text-[#831843] mb-2 uppercase text-xs flex items-center gap-2">
+            <Smartphone className="text-[#be185d] w-4 h-4 shrink-0" />
+            Mobile Graphic Responsiveness & Visibility Rules
+          </h3>
+          <p className="text-sm text-slate-700 mb-3">
+            Every graphic on Brainopedia must be visible and properly proportioned on mobile phones without overflowing its card or squishing text into narrow columns:
           </p>
+          <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+            <li>
+              <strong>NEVER Hide Graphics on Mobile:</strong> Never use <code className="bg-white px-1.5 py-0.5 text-red-700 rounded border border-red-200">hidden sm:block</code> or <code className="bg-white px-1.5 py-0.5 text-red-700 rounded border border-red-200">hidden md:block</code> on article or subpage images. All graphics must display on mobile screens.
+            </li>
+            <li>
+              <strong>No Floats Inside Subpage Cards:</strong> Inside tabbed subpage cards (Overview, Symptoms, Causes, Diagnosis, Support, Living), <strong>never</strong> use <code className="bg-white px-1.5 py-0.5 text-red-700 rounded border border-red-200">float-right</code>. Always place the graphic immediately below the card's <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> header as a centered hero using <code className="bg-white px-1.5 py-0.5 text-green-700 rounded border border-gray-200">block mx-auto w-64 max-w-full h-auto mb-6</code>.
+            </li>
+            <li>
+              <strong>Always Include <code className="bg-white px-1 rounded border border-gray-200">max-w-full h-auto</code>:</strong> Every fixed-width image (<code className="bg-white px-1 rounded border border-gray-200">w-56</code>, <code className="bg-white px-1 rounded border border-gray-200">w-64</code>, <code className="bg-white px-1 rounded border border-gray-200">w-96</code>) must include <code className="bg-white px-1.5 py-0.5 text-green-700 rounded border border-gray-200">max-w-full h-auto</code> so it automatically shrinks if a phone screen or card padding is narrower than the image width.
+            </li>
+            <li>
+              <strong>Main Page Floats Must Be Responsive:</strong> When floating images on main condition landing pages, always use <code className="bg-white px-1.5 py-0.5 text-green-700 rounded border border-gray-200">block mx-auto float-none md:float-right md:ml-6</code> so the image centers cleanly above the paragraph on phones and only floats right on tablet/desktop (<code className="bg-white px-1 rounded border border-gray-200">md:</code> and up).
+            </li>
+          </ul>
         </div>
 
-        <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 mt-6 border-l-4 border-l-[#ffd166]">
-          <h3 className="font-bold text-[#0c264d] text-sm mb-2">The Main Page Insert (Mobile Adjustments)</h3>
-          <p className="text-xs mb-3 text-gray-600">For standard ImageWithFallback graphics on the main neurodivergence overview pages (centers on mobile screens, floats right on desktop layouts).</p>
-          <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
-            className="w-56 h-auto block mx-auto float-none md:float-right md:ml-6 mb-6 md:mb-4 mt-1 rounded-lg shadow-sm"
-          </code>
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-5 mt-6 rounded-r-lg shadow-sm">
+          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">The H2 Alignment Rule (Main Landing Pages Only)</h3>
+          <p className="text-sm text-gray-700">
+            On main condition landing pages where images float right on desktop, place the <code className="bg-white px-1 rounded border border-gray-200">&lt;ImageWithFallback&gt;</code> tag in the code <strong>immediately before</strong> the <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> tag so the floated image aligns flush with the top of the section header. On subpage cards (where images are centered <code className="bg-white px-1 rounded border border-gray-200">w-64</code> heroes), place the image <strong>immediately after</strong> the centered <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> tag.
+          </p>
         </div>
       </section>
 
@@ -313,7 +330,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         <h2 className="text-[#0c264d] text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
           <Layout className="text-[#2abcd4]" /> CARD STYLING & CONTAINERS
         </h2>
-<div className="bg-white border border-gray-200 p-5 rounded-lg shadow-sm mb-6">
+        <div className="bg-white border border-gray-200 p-5 rounded-lg shadow-sm mb-6">
           <h3 className="font-bold text-[#0c264d] mb-3 uppercase text-xs">Standard Card Color Rules</h3>
           <p className="text-sm text-gray-700 mb-4">
             To break up dense text, content sections should be wrapped in colorful, styled cards. Card backgrounds must <strong>always</strong> be a lightened/pastel version of our core colors, paired with a darker, thicker border of the same color family. Use these exact combinations and inner-card pairings unless otherwise specified:

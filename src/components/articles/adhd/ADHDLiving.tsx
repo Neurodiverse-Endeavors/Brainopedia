@@ -41,7 +41,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
       <div className="animate-in fade-in duration-300 space-y-6">
         
         {/* Intro Section */}
-        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 flow-root mb-8">
+        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border-l-4 border-[#0A9DC4] flow-root mb-8">
           <h2 className="text-[#0c264d] mb-4 text-2xl font-bold flex items-center gap-2">
             <TrendingUp className="text-[#0A9DC4]" size={28} />
             Thriving with ADHD
@@ -70,7 +70,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
         </div>
 
         {/* Strengths Section */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#ffd166] mb-8">
+        <div className="bg-[#fff9e6] p-6 rounded-lg shadow-sm border-l-4 border-[#ffd166] mb-8">
           <h2 className="text-[#0c264d] font-bold mb-4 text-2xl flex items-center justify-center gap-2">
             <Sparkles className="text-[#ffd166]" size={28} />
             Recognizing Strengths in ADHD
@@ -88,7 +88,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 mt-4">
-            <div className="bg-[#f0f9ff] p-4 rounded-lg border-t-4 border-[#2abcd4] shadow-sm">
+            <div className="bg-white p-4 rounded-lg border-t-4 border-[#2abcd4] shadow-sm">
               <h3 className="text-[#0c264d] font-bold mb-2 text-sm uppercase tracking-wider">Creativity and Innovation</h3>
               <p className="text-xs text-gray-700 leading-relaxed">
                 Many people with ADHD excel at creative thinking, making unexpected connections, and approaching 
@@ -98,7 +98,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
               </p>
             </div>
 
-            <div className="bg-[#fff9e6] p-4 rounded-lg border-t-4 border-[#ffd166] shadow-sm">
+            <div className="bg-white p-4 rounded-lg border-t-4 border-[#ffd166] shadow-sm">
               <h3 className="text-[#0c264d] font-bold mb-2 text-sm uppercase tracking-wider">Hyperfocus</h3>
               <p className="text-xs text-gray-700 leading-relaxed">
                 While sustaining attention on boring tasks can be difficult, many individuals experience 
@@ -107,7 +107,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
               </p>
             </div>
 
-            <div className="bg-green-50 p-4 rounded-lg border-t-4 border-[#10b981] shadow-sm md:col-span-2">
+            <div className="bg-white p-4 rounded-lg border-t-4 border-[#10b981] shadow-sm md:col-span-2">
               <h3 className="text-[#0c264d] font-bold mb-2 text-sm uppercase tracking-wider">Resilience</h3>
               <p className="text-xs text-gray-700 leading-relaxed">
                 Navigating a world not built for an ADHD brain requires tremendous resilience. Many individuals 
@@ -157,7 +157,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           Daily Life and Practical Considerations
         </h2>
         
-        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 flow-root mb-8">
+        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border-l-4 border-[#0A9DC4] flow-root mb-8">
           <div className={floatedCardContainer}>
             <ImageWithFallback 
               src="/images/adhd/adhd-living-routines-checkmark.webp"
@@ -189,7 +189,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           </ul>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#10b981] mb-8 flow-root">
+        <div className="bg-green-50 p-6 rounded-lg shadow-sm border-l-4 border-[#10b981] mb-8 flow-root">
           <div className={floatedCardContainer}>
             <ImageWithFallback 
               src="/images/adhd/adhd-living-table-calculator-finances.webp"
@@ -205,13 +205,13 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
             problems managing bills and debt. Protective strategies include:
           </p>
           
-          <div className="grid sm:grid-cols-2 gap-3 mt-4">
-            <div className="bg-gray-50 p-3 rounded border border-gray-200 text-xs text-gray-700 shadow-sm">Use automatic transfers to savings accounts</div>
-            <div className="bg-gray-50 p-3 rounded border border-gray-200 text-xs text-gray-700 shadow-sm">Set up all bills on autopay to avoid late fees</div>
-            <div className="bg-gray-50 p-3 rounded border border-gray-200 text-xs text-gray-700 shadow-sm">Build in waiting periods (24-48 hours) before large purchases</div>
-            <div className="bg-gray-50 p-3 rounded border border-gray-200 text-xs text-gray-700 shadow-sm">Use apps that track spending automatically</div>
-            <div className="bg-gray-50 p-3 rounded border border-gray-200 text-xs text-gray-700 shadow-sm">Work with a financial advisor or accountability partner</div>
-            <div className="bg-gray-50 p-3 rounded border border-gray-200 text-xs text-gray-700 shadow-sm">Delete shopping apps to add friction to impulse purchases</div>
+          <div className="grid sm:grid-cols-2 gap-3 mt-4 clear-both">
+            <div className="bg-white p-3 rounded border border-[#10b981]/30 text-xs text-gray-700 shadow-sm">Use automatic transfers to savings accounts</div>
+            <div className="bg-white p-3 rounded border border-[#10b981]/30 text-xs text-gray-700 shadow-sm">Set up all bills on autopay to avoid late fees</div>
+            <div className="bg-white p-3 rounded border border-[#10b981]/30 text-xs text-gray-700 shadow-sm">Build in waiting periods (24-48 hours) before large purchases</div>
+            <div className="bg-white p-3 rounded border border-[#10b981]/30 text-xs text-gray-700 shadow-sm">Use apps that track spending automatically</div>
+            <div className="bg-white p-3 rounded border border-[#10b981]/30 text-xs text-gray-700 shadow-sm">Work with a financial advisor or accountability partner</div>
+            <div className="bg-white p-3 rounded border border-[#10b981]/30 text-xs text-gray-700 shadow-sm">Delete shopping apps to add friction to impulse purchases</div>
           </div>
         </div>
 
@@ -244,7 +244,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           Relationships and Social Life
         </h2>
         
-        <div className="bg-[#fff9e6] p-6 rounded-lg shadow-sm border border-[#ffd166]/30 flow-root mb-6">
+        <div className="bg-[#fff9e6] p-6 rounded-lg shadow-sm border-l-4 border-[#ffd166] flow-root mb-6">
           <div className={floatedCardContainer}>
             <ImageWithFallback 
               src="/images/adhd/adhd-living-relationships-heart-connections.webp"
@@ -282,7 +282,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           </ul>
         </div>
 
-<div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 flow-root">
+        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border-l-4 border-[#0A9DC4] flow-root">
           <h3 className="text-[#0c264d] font-bold mb-4 text-lg text-center">Parenting with ADHD</h3>
 
           <ImageWithFallback 
@@ -350,7 +350,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           Education and Career
         </h2>
         
-        <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#2abcd4] mb-8 flow-root">
+        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border-l-4 border-[#2abcd4] mb-8 flow-root">
           <div className={floatedCardContainer}>
             <ImageWithFallback 
               src="/images/adhd/adhd-living-educ-career-paths.webp"
@@ -366,16 +366,16 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
             Consider careers that:
           </p>
           
-          <div className="grid sm:grid-cols-2 gap-3 mb-6">
-            <div className="bg-[#f0f9ff] p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Provide variety and novelty rather than repetitive tasks</div>
-            <div className="bg-[#f0f9ff] p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Allow movement and hands-on work</div>
-            <div className="bg-[#f0f9ff] p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Engage creative abilities (art, design, writing, music)</div>
-            <div className="bg-[#f0f9ff] p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Offer high-stimulation environments (emergency services, journalism)</div>
-            <div className="bg-[#f0f9ff] p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Support entrepreneurship (with strong support systems in place)</div>
-            <div className="bg-[#f0f9ff] p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Provide clear deadlines and external accountability</div>
+          <div className="grid sm:grid-cols-2 gap-3 mb-6 clear-both">
+            <div className="bg-white p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Provide variety and novelty rather than repetitive tasks</div>
+            <div className="bg-white p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Allow movement and hands-on work</div>
+            <div className="bg-white p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Engage creative abilities (art, design, writing, music)</div>
+            <div className="bg-white p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Offer high-stimulation environments (emergency services, journalism)</div>
+            <div className="bg-white p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Support entrepreneurship (with strong support systems in place)</div>
+            <div className="bg-white p-3 rounded border border-[#2abcd4]/30 text-xs text-gray-700 shadow-sm">Provide clear deadlines and external accountability</div>
           </div>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg pt-4 border-t border-gray-100">Workplace Strategies</h3>
+          <h3 className="text-[#0c264d] font-bold mb-3 text-lg pt-4 border-t border-[#2abcd4]/20">Workplace Strategies</h3>
           <p className="mb-4 text-sm text-gray-700 leading-relaxed">
             Adults with ADHD often experience workplace difficulties including problems with time management, 
             organization, and interpersonal relationships. However, targeted strategies and accommodations 
@@ -420,7 +420,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           Managing Stigma and Mental Health
         </h2>
         
-        <div className="bg-[#fff9e6] p-6 rounded-lg shadow-sm border border-[#ffd166]/30 flow-root mb-8">
+        <div className="bg-[#fff9e6] p-6 rounded-lg shadow-sm border-l-4 border-[#ffd166] flow-root mb-8">
           <div className={floatedCardContainer}>
             <ImageWithFallback 
               src="/images/adhd/adhd-living-stigma-four-faces.webp"
@@ -456,7 +456,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           </div>
         </div>
 
-        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 flow-root">
+        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border-l-4 border-[#0A9DC4] flow-root">
           <div className={floatedCardContainer}>
             <ImageWithFallback 
               src="/images/adhd/adhd-living-stigma-self-esteem.webp"
@@ -529,7 +529,7 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
           Community and Future
         </h2>
         
-        <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#10b981] mb-8 flow-root">
+        <div className="bg-green-50 p-6 rounded-lg shadow-sm border-l-4 border-[#10b981] mb-8 flow-root">
           <div className={floatedCardContainer}>
             <ImageWithFallback 
               src="/images/adhd/adhd-living-community-hands.webp"
@@ -550,15 +550,15 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
             <li className="flex gap-2 text-sm text-gray-700"><span className="text-[#10b981] font-bold mt-0.5">•</span> <span><strong>Coaching:</strong> ADHD coaches provide accountability and strategy development</span></li>
           </ul>
 
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg pt-4 border-t border-gray-100">Celebrating Neurodiversity</h3>
-          <p className="mb-4 text-sm text-gray-700 leading-relaxed bg-green-50 p-4 rounded border border-green-100">
+          <h3 className="text-[#0c264d] font-bold mb-3 text-lg pt-4 border-t border-[#10b981]/20 clear-both">Celebrating Neurodiversity</h3>
+          <p className="mb-4 text-sm text-gray-700 leading-relaxed bg-white p-4 rounded border border-[#10b981]/30 shadow-sm">
             Many individuals embrace the neurodiversity paradigm, which views ADHD as a natural variation 
             in human neurology rather than purely a disorder or deficit. This perspective honors both challenges and 
             strengths while advocating for acceptance, accommodation, and celebrating diverse ways of thinking. 
           </p>
         </div>
 
-        <div className="bg-[#fff9e6] p-6 rounded-lg shadow-sm border border-[#ffd166]/30 flow-root">
+        <div className="bg-[#fff9e6] p-6 rounded-lg shadow-sm border-l-4 border-[#ffd166] flow-root">
           <div className={floatedCardContainer}>
             <ImageWithFallback 
               src="/images/adhd/adhd-living-future-girl-cheers.webp"
@@ -608,7 +608,8 @@ export function ADHDLiving({ setCurrentArticle, initialTab }: ADHDLivingProps) {
       </div>
     );
   }
-return (
+
+  return (
     <article className="max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <h1 className="text-3xl text-[#0c264d] font-normal">

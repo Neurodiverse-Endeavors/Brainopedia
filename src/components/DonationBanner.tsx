@@ -43,8 +43,8 @@ export function DonationBanner({ onNavigateTo }: DonationBannerProps) {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-[#faf0e3] border-b-2 border-[#0c264d]/20 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-1.5 sm:px-6 lg:px-8">
+    <div className="bg-[#faf0e3] border-t-2 border-[#0c264d]/20 shadow-sm clear-both md:hidden">
+      <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-start gap-2">
             <Heart className="w-4 h-4 text-[#2abcd4] flex-shrink-0 mt-0.5" fill="#2abcd4" />

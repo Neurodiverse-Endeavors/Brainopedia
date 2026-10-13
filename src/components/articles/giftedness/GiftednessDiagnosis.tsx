@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Brain, FileText, PenTool, ClipboardList, LineChart, Globe, Users, Target, ShieldCheck, Search, Lightbulb, Activity, CheckCircle, Scale } from 'lucide-react';
+import { Brain, FileText, PenTool, ClipboardList, LineChart, Globe, Users, Target, ShieldCheck, Lightbulb, Activity, CheckCircle, Scale } from 'lucide-react';
 
 interface GiftednessDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
@@ -82,14 +82,14 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
       {activeTab === 'testing' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Intelligence & Achievement Card (Cyan) - Uses Float Image */}
+          {/* Intelligence & Achievement Card (Cyan) - Centered Hero Image */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Intelligence & Achievement</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-diagnosis-testing.webp"
               alt="Child taking a standardized cognitive assessment"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -122,14 +122,14 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
             </div>
           </div>
 
-          {/* Creativity Card (Yellow) - Uses Hero Image */}
+          {/* Creativity Card (Yellow) - Centered Hero Image */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Assessing Creativity</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-diagnosis-creativity-hero.webp"
               alt="Highly original, creative student product or invention"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -183,14 +183,14 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
       {activeTab === 'holistic' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Holistic Card (Slate) - Uses Float Image */}
+          {/* Holistic Card (Slate) - Centered Hero Image */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Portfolios & Observation</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-diagnosis-holistic.webp"
               alt="Teacher and student reviewing a rich portfolio of authentic classwork"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-gray-300 mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -227,14 +227,14 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
             </div>
           </div>
 
-          {/* Models Card (Cyan) - Uses Hero Image */}
+          {/* Models Card (Cyan) - Centered Hero Image */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Modern Identification Models</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-diagnosis-models-hero.webp"
               alt="Wide view of a diverse classroom with data points highlighting hidden potential"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -291,14 +291,14 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
       {activeTab === 'populations' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Populations Card (Yellow) - Uses Float Image */}
+          {/* Populations Card (Yellow) - Centered Hero Image */}
           <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Special Populations</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-diagnosis-populations.webp"
               alt="Culturally diverse student thriving with appropriate, responsive testing"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#ffd166] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -324,14 +324,14 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
             </div>
           </div>
 
-          {/* Guidelines Card (Slate) - Uses Hero Image */}
+          {/* Guidelines Card (Slate) - Centered Hero Image */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Best Practices & Domain Specifics</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-diagnosis-guidelines-hero.webp"
               alt="Multidisciplinary team of educators reviewing a holistic student profile"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

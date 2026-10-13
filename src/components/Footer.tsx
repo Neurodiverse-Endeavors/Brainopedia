@@ -21,29 +21,38 @@ export function Footer({ setCurrentArticle }: FooterProps) {
             </p>
           </div>
           
-          {/* Optional Links */}
+          {/* Footer Navigation Links */}
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-gray-300 hover:text-[#ffd166] transition-colors">
+            <button
+              type="button"
+              onClick={() => setCurrentArticle?.('privacy')}
+              className="text-gray-300 hover:text-[#ffd166] transition-colors cursor-pointer"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-300 hover:text-[#ffd166] transition-colors">
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrentArticle?.('terms')}
+              className="text-gray-300 hover:text-[#ffd166] transition-colors cursor-pointer"
+            >
               Terms of Use
-            </a>
-            <a href="#" className="text-gray-300 hover:text-[#ffd166] transition-colors">
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrentArticle?.('contact')}
+              className="text-gray-300 hover:text-[#ffd166] transition-colors cursor-pointer"
+            >
               Contact
-            </a>
-
+            </button>
           </div>
         </div>
         
         {/* Additional Info */}
         <div className="mt-6 pt-6 border-t border-gray-700 text-center text-xs text-gray-400">
-          <p>
-            <ul>
-              <li>Brainopedia.org is an official project of Neurodiverse Endeavors, a registered 501(c)(3) non-profit organization.</li>
-              <li>Brainopedia serves as a free, comprehensive encyclopedia dedicated to neurodivergent conditions and brain differences.</li>
-            </ul>
-          </p>
+          <ul className="space-y-1">
+            <li>Brainopedia.org is an official project of Neurodiverse Endeavors, a registered 501(c)(3) non-profit organization.</li>
+            <li>Brainopedia serves as a free, comprehensive encyclopedia dedicated to neurodivergent conditions and brain differences.</li>
+          </ul>
         </div>
       </div>
     </footer>
