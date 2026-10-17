@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { BrainCircuit, Pill, ShieldCheck, HeartHandshake, Users, School } from 'lucide-react';
+import { BrainCircuit, Pill, ShieldCheck, HeartHandshake, Users, School, AlertTriangle, Activity, Zap } from 'lucide-react';
 
 interface TouretteSupportProps {
   setCurrentArticle?: (article: string) => void;
@@ -53,7 +53,7 @@ export function TouretteSupport({ setCurrentArticle, initialTab }: TouretteSuppo
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Emerging Neurotech
+          Neuromodulation
         </button>
         <button
           onClick={() => handleTabChange('environment')}
@@ -77,7 +77,6 @@ export function TouretteSupport({ setCurrentArticle, initialTab }: TouretteSuppo
             Many individuals with mild tics do not require medical intervention. When support is requested, management plans are highly individualized and focus on reducing the distress and physical discomfort associated with tics.
           </p>
 
-          {/* Clinical Management Card (Cyan) - Uses Pure Lucide Icons */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
             <ImageWithFallback 
               src="/images/tourette/tourette-support-main.webp"
@@ -86,6 +85,15 @@ export function TouretteSupport({ setCurrentArticle, initialTab }: TouretteSuppo
             />
             
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center clear-both">Clinical Management</h2>
+
+            <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 rounded-r-xl shadow-sm mb-8 max-w-3xl mx-auto">
+              <h3 className="font-bold text-[#831843] mb-2 uppercase text-xs flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 shrink-0" /> Medical Disclaimer
+              </h3>
+              <p className="text-sm text-[#831843]">
+                All prescription medications must strictly be used under the direct guidance of a qualified medical professional. This information is for educational context and does not replace personalized clinical advice.
+              </p>
+            </div>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Treatment decisions are driven by how much the tics interfere with the individual's daily functioning and personal goals, utilizing a blend of behavioral and pharmacological approaches.<sup>1</sup>
@@ -125,57 +133,69 @@ export function TouretteSupport({ setCurrentArticle, initialTab }: TouretteSuppo
       )}
 
       {/* ==========================================
-          TAB 2: EMERGING NEUROTECH
+          TAB 2: NEUROMODULATION (COMPLIANT OVERHAUL)
       ========================================== */}
       {activeTab === 'neurotech' && (
         <div className="space-y-8 animate-fadeIn">
           
           <p className="text-slate-700 leading-relaxed text-sm text-center max-w-4xl mx-auto mb-8">
-            The landscape of Tourette's management is rapidly evolving, with breakthrough neurotechnology offering non-invasive, wearable alternatives to traditional pharmaceutical treatments.
+            The landscape of Tourette's management is rapidly evolving, with breakthrough neurotechnology offering both non-invasive and surgical alternatives to traditional pharmaceutical treatments.
           </p>
 
-          {/* Neupulse Card (Yellow) - Uses CSS Number Badges */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <ImageWithFallback 
               src="/images/tourette/tourette-support-neurotech.webp"
-              alt="Wearable neuromodulation device on a wrist"
+              alt="Neuromodulation concepts and brain networks"
               className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center clear-both">Wearable Neuromodulation</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center clear-both">Neuromodulation Technologies</h2>
+
+            <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 rounded-r-xl shadow-sm mb-8 max-w-3xl mx-auto">
+              <h3 className="font-bold text-[#831843] mb-2 uppercase text-xs flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 shrink-0" /> Regulatory & FDA Disclaimer
+              </h3>
+              <p className="text-sm text-[#831843]">
+                The information provided is strictly for general educational awareness. Many non-invasive neuromodulation devices are currently undergoing clinical trials and have not yet received FDA clearance for the treatment of Tourette syndrome. Always consult a neurologist regarding medical devices.
+              </p>
+            </div>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Devices like the developing <strong>Neupulse</strong> wearable represent a significant leap in accessible tic management, allowing individuals to utilize targeted neural stimulation throughout their daily lives.<sup>4</sup>
+              Neuromodulation involves using electrical or magnetic pulses to alter nerve activity. While some surgical approaches are established for severe cases, other external methods are currently undergoing clinical trials to provide accessible, non-drug support.
             </p>
 
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200 max-w-3xl mx-auto">
-              <h3 className="text-[#0c264d] font-bold mb-4 text-lg border-b pb-2">How It Works</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#ffd166] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</div>
-                  <p className="text-sm text-slate-700"><strong>Median Nerve Stimulation:</strong> The wearable device delivers gentle, rhythmic electrical pulses to the median nerve at the wrist, which communicates directly with the brain networks involved in motor control.<sup>4</sup></p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#ffd166] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</div>
-                  <p className="text-sm text-slate-700"><strong>Clinical Efficacy:</strong> UK-based double-blind clinical trials conducted by the University of Nottingham demonstrated that home-administered rhythmic stimulation effectively reduces both tic frequency and severity.<sup>5</sup></p>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#ffd166] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</div>
-                  <p className="text-sm text-slate-700"><strong>Discreet Support:</strong> Because the technology is integrated into a wearable wristband, it provides non-invasive, drug-free support without causing disruption in social or professional settings.</p>
-                </li>
-              </ul>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#fff9e6] flex items-center justify-center mb-3">
+                  <Activity className="text-[#ffd166] w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Peripheral Nerve Stimulation (PNS)</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Investigational wearable devices aim to deliver gentle electrical pulses to the median nerve at the wrist. Recent UK-based clinical trials demonstrate this rhythmic stimulation may effectively intercept signals and reduce tic severity without medication.<sup>4, 5</sup>
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#fff9e6] flex items-center justify-center mb-3">
+                  <BrainCircuit className="text-[#ffd166] w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Deep Brain Stimulation (DBS)</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  An established surgical intervention reserved for severe, highly treatment-resistant Tourette syndrome. It involves implanting electrodes into specific brain regions (like the thalamus) to regulate abnormal neurological impulses.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#fff9e6] flex items-center justify-center mb-3">
+                  <Zap className="text-[#ffd166] w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Transcranial Magnetic Stimulation (TMS)</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  A non-invasive, outpatient procedure that uses magnetic fields to stimulate targeted nerve cells in the brain. It is currently being heavily researched in clinical trials as a potential method for suppressing the urge to tic.
+                </p>
+              </div>
             </div>
           </div>
-          {/* BBC News Video Embed */}
-            <div className="max-w-3xl mx-auto mb-8 relative w-full aspect-video rounded-lg overflow-hidden shadow-sm border border-yellow-200">
-              <iframe 
-                src="https://www.youtube.com/embed/ZxfG0tt2vq0?rel=0" 
-                title="BBC Breakfast News: Neupulse Clinical Trial" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowFullScreen
-                className="absolute top-0 left-0 w-full h-full"
-              ></iframe>
-            </div>
         </div>
       )}
 
@@ -189,7 +209,6 @@ export function TouretteSupport({ setCurrentArticle, initialTab }: TouretteSuppo
             True management of Tourette's extends beyond the individual. Creating an educated, flexible, and supportive environment drastically reduces the stress that often exacerbates tic frequency.
           </p>
 
-          {/* Environment Card (Slate) - Uses Popped Hover Layout */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
             <ImageWithFallback 
               src="/images/tourette/tourette-support-environment.webp"
