@@ -113,7 +113,7 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
           </div>
 
           {/* Practical Hurdles Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Everyday Complexities</h2>
             
             <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
@@ -214,7 +214,7 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
           </div>
 
           {/* Career & Workplace Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Career & Employment</h2>
             
             <ImageWithFallback 
@@ -326,7 +326,7 @@ export function DyscalculiaLiving({ setCurrentArticle, initialTab }: Dyscalculia
           </div>
 
           {/* Resources Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Resources & Rights</h2>
             
             <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">

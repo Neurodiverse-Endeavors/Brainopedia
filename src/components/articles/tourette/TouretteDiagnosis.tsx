@@ -139,7 +139,7 @@ export function TouretteDiagnosis({ setCurrentArticle, initialTab }: TouretteDia
           </p>
 
           {/* Process Card (Yellow) - Uses Popped Hover Layout */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <ImageWithFallback 
               src="/images/tourette/tourette-diagnosis-process.webp"
               alt="Clinician conducting an evaluation"
@@ -163,7 +163,7 @@ export function TouretteDiagnosis({ setCurrentArticle, initialTab }: TouretteDia
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-200">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <ClipboardList className="text-[#d4a017] w-6 h-6" />
+                  <ClipboardList className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Detailed History</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">The clinician will take a comprehensive family history (looking for genetic links) and a personal developmental history, tracking exactly when and how the tics first appeared.</p>

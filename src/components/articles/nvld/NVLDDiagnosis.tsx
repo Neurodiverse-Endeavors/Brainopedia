@@ -117,7 +117,7 @@ export function NVLDDiagnosis({ setCurrentArticle, initialTab }: NVLDDiagnosisPr
           </div>
 
           {/* Process Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Evaluation Process</h2>
             
             <ImageWithFallback 
@@ -133,7 +133,7 @@ export function NVLDDiagnosis({ setCurrentArticle, initialTab }: NVLDDiagnosisPr
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <FileSearch className="text-[#d4a017] w-5 h-5" />
+                  <FileSearch className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Background & History</h3>
                 </div>
                 <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
@@ -145,7 +145,7 @@ export function NVLDDiagnosis({ setCurrentArticle, initialTab }: NVLDDiagnosisPr
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <Users className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Clinical Interviews</h3>
                 </div>
                 <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
@@ -255,7 +255,7 @@ export function NVLDDiagnosis({ setCurrentArticle, initialTab }: NVLDDiagnosisPr
         <div className="space-y-8 animate-fadeIn">
 
           {/* Criteria Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Diagnostic Criteria</h2>
             
             <ImageWithFallback 

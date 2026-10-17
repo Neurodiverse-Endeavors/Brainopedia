@@ -184,7 +184,7 @@ export function MedicalContent({ setCurrentArticle }: MedicalContentProps) {
         </table>
       </div>
 
-      <p className="mb-4 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+      <p className="mb-4 bg-[#ffd166]/20 border-l-4 border-yellow-400 p-4">
         <strong>Important:</strong> Autistic individuals may be more sensitive to medication side effects. Start low, go slow, and 
         monitor carefully.<sup>7</sup> Always work with a qualified healthcare provider who understands autism when considering medication.
       </p>

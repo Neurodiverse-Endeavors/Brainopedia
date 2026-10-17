@@ -116,7 +116,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
           </div>
 
           {/* Neurobiology Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Neurobiological Factors</h2>
             
             <ImageWithFallback 
@@ -132,7 +132,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Brain Structure</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Scans show subtle differences in the perisylvian regions (the brain's primary language centers) and altered connectivity in the white matter pathways responsible for transporting linguistic data.</p>
@@ -140,7 +140,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Brain Function</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Functional MRIs show that individuals with DLD often use different patterns of neural activation during language tasks, resulting in a less efficient, highly effortful processing network.</p>
@@ -148,7 +148,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Procedural Deficits</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">The <em>Procedural Deficit Hypothesis</em> suggests that DLD stems from dysfunction in the brain's implicit learning system, making it incredibly difficult to naturally "absorb" the subconscious rules of grammar.<sup>2</sup></p>
@@ -293,7 +293,7 @@ export function DLDCauses({ setCurrentArticle, initialTab }: DLDCausesProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Myths Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">What DLD Is NOT Caused By</h2>
             
             <ImageWithFallback 

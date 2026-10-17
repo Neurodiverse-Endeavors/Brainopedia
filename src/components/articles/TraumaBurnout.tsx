@@ -139,7 +139,7 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
           </div>
 
           {/* Recovery Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Radical Rest & Recovery</h2>
             
             <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
@@ -282,7 +282,7 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
           </div>
 
           {/* The Cost of Passing Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Cost of "Passing"</h2>
             
             <div className="flex flex-col md:flex-row items-center gap-6 mb-6">

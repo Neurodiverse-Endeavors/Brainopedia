@@ -169,7 +169,7 @@ export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: Misophonia
         <div className="space-y-8 animate-fadeIn">
 
           {/* Physical Symptoms Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Physiological Symptoms</h2>
             
             <ImageWithFallback 
@@ -186,7 +186,7 @@ export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: Misophonia
               
               {/* ACCENT BORDER INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Cardiovascular Spikes</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Immediate increases in heart rate and blood pressure occur the moment the trigger is registered, identical to the body's response to an aggressive physical threat.</p>
@@ -195,7 +195,7 @@ export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: Misophonia
 
               {/* ACCENT BORDER INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Muscle Tension</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Severe, involuntary muscle tension is extremely common, specifically manifesting as a tightly clenched jaw, tightened neck muscles, or balled fists.<sup>2</sup></p>
@@ -204,7 +204,7 @@ export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: Misophonia
 
               {/* ACCENT BORDER INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Thermal Reactions</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Individuals frequently report sweating or feeling a sudden, intense "rush" of heat flushing through their body when the sound occurs.</p>
@@ -213,7 +213,7 @@ export function MisophoniaSymptoms({ setCurrentArticle, initialTab }: Misophonia
 
               {/* ACCENT BORDER INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Chest Pressure</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">A physical sensation of constriction or heavy pressure in the chest or abdomen, often accompanying the intense feeling of panic or the urge to flee.</p>

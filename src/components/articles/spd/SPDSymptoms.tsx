@@ -140,7 +140,7 @@ export function SPDSymptoms({ setCurrentArticle, initialTab }: SPDSymptomsProps)
           </div>
 
           {/* Under-Responsivity & Seeking Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Under-Responsivity & Seeking</h2>
             
             <ImageWithFallback 
@@ -156,7 +156,7 @@ export function SPDSymptoms({ setCurrentArticle, initialTab }: SPDSymptomsProps)
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <BatteryMedium className="text-[#d4a017] w-5 h-5" />
+                  <BatteryMedium className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Sensory Under-Responsivity (SUR)</h3>
@@ -171,7 +171,7 @@ export function SPDSymptoms({ setCurrentArticle, initialTab }: SPDSymptomsProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Zap className="text-[#d4a017] w-5 h-5" />
+                  <Zap className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Sensory Seeking (Craving)</h3>
@@ -335,7 +335,7 @@ export function SPDSymptoms({ setCurrentArticle, initialTab }: SPDSymptomsProps)
         <div className="space-y-8 animate-fadeIn">
 
           {/* Emotional Impact Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Emotional & Behavioral Responses</h2>
             
             <ImageWithFallback 
@@ -351,7 +351,7 @@ export function SPDSymptoms({ setCurrentArticle, initialTab }: SPDSymptomsProps)
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <ShieldAlert className="text-[#d4a017] w-5 h-5" />
+                  <ShieldAlert className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Meltdowns & Overload</h3>
@@ -361,7 +361,7 @@ export function SPDSymptoms({ setCurrentArticle, initialTab }: SPDSymptomsProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Anxiety & Avoidance</h3>

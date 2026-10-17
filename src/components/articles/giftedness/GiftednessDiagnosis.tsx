@@ -123,7 +123,7 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
           </div>
 
           {/* Creativity Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Assessing Creativity</h2>
             
             <ImageWithFallback 
@@ -139,7 +139,7 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <Lightbulb className="text-[#d4a017] w-5 h-5" />
+                  <Lightbulb className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Torrance Tests (TTCT)</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">
@@ -149,7 +149,7 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <PenTool className="text-[#d4a017] w-5 h-5" />
+                  <PenTool className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Consensual Assessment</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">
@@ -292,7 +292,7 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
         <div className="space-y-8 animate-fadeIn">
 
           {/* Populations Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Special Populations</h2>
             
             <ImageWithFallback 
@@ -308,7 +308,7 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ShieldCheck className="text-[#d4a017] w-5 h-5" />
+                  <ShieldCheck className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Twice-Exceptional (2e)</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">2e students have both giftedness and a disability (like Dyslexia or ADHD). Their scores often show massive "scatter" (extreme highs and extreme lows). Evaluators must look beyond the average score to identify both the gift and the disability simultaneously.</p>
@@ -316,7 +316,7 @@ export function GiftednessDiagnosis({ setCurrentArticle, initialTab }: Giftednes
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Globe className="text-[#d4a017] w-5 h-5" />
+                  <Globe className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Cultural & Economic Diversity</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Poverty can mask giftedness due to limited academic vocabulary and enrichment. Culturally responsive identification heavily utilizes nonverbal reasoning tests, local norms, and dynamic assessment to identify true cognitive potential over mere developed achievement.</p>

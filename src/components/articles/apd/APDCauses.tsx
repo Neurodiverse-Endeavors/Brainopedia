@@ -136,7 +136,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
           </div>
 
           {/* Genetics Card (Yellow) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Genetics & Neurochemistry</h2>
             
             <ImageWithFallback 
@@ -152,7 +152,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Dna className="text-[#d4a017] w-5 h-5" />
+                  <Dna className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Heritability</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Basic cognitive and processing functions are highly heritable, with research estimating a 50-80% genetic contribution to intelligence and related processing speeds.<sup>1</sup> Children with APD often have parents or siblings with similar profiles.</p>
@@ -160,7 +160,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Network className="text-[#d4a017] w-5 h-5" />
+                  <Network className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Shared Genetics</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">The genes regulating overall brain development and auditory maturation are widely shared with other neurodevelopmental conditions, explaining why APD so frequently overlaps with Dyslexia and ADHD.</p>
@@ -168,7 +168,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <FlaskConical className="text-[#d4a017] w-5 h-5" />
+                  <FlaskConical className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Neurotransmitters</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">GABA (the brain's primary inhibitory neurotransmitter) plays a critical role in auditory processing by helping the brain suppress background noise. Imbalances in GABA, glutamate, and dopamine heavily impact auditory function.</p>
@@ -311,7 +311,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Models Card (Yellow) - Uses Float Image with organic text flow */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Multiple Hit Hypothesis</h2>
             
             <ImageWithFallback 
@@ -326,7 +326,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Layers className="text-[#d4a017] w-5 h-5" /> Threshold Effects
+                <Layers className="text-[#ffd166] w-5 h-5" /> Threshold Effects
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Multiple subtle risk factors (e.g., a slight genetic predisposition combined with a few early ear infections) accumulate over time. Individually, they wouldn't cause a disorder, but together they push the brain past its compensatory threshold, making APD clinically apparent.
@@ -335,7 +335,7 @@ export function APDCauses({ setCurrentArticle, initialTab }: APDCausesProps) {
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <TrendingUp className="text-[#d4a017] w-5 h-5" /> Experience-Dependent Plasticity
+                <TrendingUp className="text-[#ffd166] w-5 h-5" /> Experience-Dependent Plasticity
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 The auditory system is highly "plastic"—meaning it wires itself based on the experiences it receives. Both positive experiences (like early musical training) and negative experiences (like auditory deprivation) permanently physically alter the brain's processing capacity.

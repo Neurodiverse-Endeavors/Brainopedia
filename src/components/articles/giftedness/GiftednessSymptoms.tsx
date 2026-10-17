@@ -124,7 +124,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
           </div>
 
           {/* Academic Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Learning & Academic Profile</h2>
             
             <ImageWithFallback 
@@ -140,7 +140,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Search className="text-[#d4a017] w-5 h-5" />
+                  <Search className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Intense Curiosity</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed mb-2">A constant desire to understand the "how" and "why" behind concepts. They ask probing, complex questions and often challenge authority, traditions, or established rules if they lack logical sense.</p>
@@ -148,7 +148,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+                  <BookOpen className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Early Achievement</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed mb-2">Many teach themselves to read before formal instruction or grasp mathematical concepts years ahead of grade level. They prefer independent, self-directed learning and autonomy.</p>
@@ -156,7 +156,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <AlertTriangle className="text-[#d4a017] w-5 h-5" />
+                  <AlertTriangle className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Need for Challenge</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed mb-2">They experience intense frustration with the slow pace of regular classrooms. Repetitive drill-and-practice causes them to check out entirely, as they crave depth and complexity over breadth.</p>
@@ -299,7 +299,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
         <div className="space-y-8 animate-fadeIn">
 
           {/* Creativity Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Creativity & Innovation</h2>
             
             <ImageWithFallback 
@@ -315,7 +315,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Sparkles className="text-[#d4a017] w-5 h-5" />
+                  <Sparkles className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Originality</h3>
@@ -329,7 +329,7 @@ export function GiftednessSymptoms({ setCurrentArticle, initialTab }: Giftedness
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Zap className="text-[#d4a017] w-5 h-5" />
+                  <Zap className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Humor & Energy</h3>

@@ -37,7 +37,7 @@ const strengths = [
     desc: "The ability to hyperfocus on areas of interest for extended periods, frequently leading to profound expertise.",
     color: "border-[#ffd166]", // Gold
     bg: "bg-[#ffd166]/20",
-    iconColor: "text-[#d4a017]",
+    iconColor: "text-[#ffd166]",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

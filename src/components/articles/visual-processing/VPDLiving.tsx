@@ -131,7 +131,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
           </div>
 
           {/* Emotional Impact Card (Yellow) - Uses W-64 Centered Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Emotional & Psychological Impact</h2>
             
             <ImageWithFallback 
@@ -147,7 +147,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <AlertTriangle className="text-[#d4a017] w-5 h-5" />
+                  <AlertTriangle className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Anxiety & Frustration</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Anticipatory anxiety about visually challenging situations (like taking a written test or navigating a new building) is common. Chronic frustration frequently presents as irritability or avoidance.</p>
@@ -155,7 +155,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ShieldAlert className="text-[#d4a017] w-5 h-5" />
+                  <ShieldAlert className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Identity & Self-Esteem</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Children often internalize labels like "lazy" or "careless." Understanding that these struggles have a real neurological basis is crucial to countering negative self-perceptions.</p>
@@ -163,7 +163,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <Brain className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Building Resilience</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Developing resilience requires reframing VPD as a neurodivergent difference rather than purely a deficit. Learning to aggressively advocate for accommodations builds lifelong strength.</p>
@@ -303,7 +303,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Social Life Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships & Social Life</h2>
             
             <ImageWithFallback 
@@ -319,7 +319,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Explaining VPD</h3>
@@ -329,7 +329,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <Users className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Social Activities</h3>

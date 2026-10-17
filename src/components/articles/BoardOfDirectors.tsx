@@ -53,14 +53,14 @@ export function BoardOfDirectors({ setCurrentArticle }: ArticleProps) {
         </div>
 
         {/* MARIAN TOLEDO CANDELARIA (Yellow Card) */}
-        <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+        <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
           <ImageWithFallback 
             src="/images/board/marian-toledo-candelaria.webp"
             alt="Dr. Marian Toledo Candelaria - Board Member"
             className="w-56 max-w-full h-auto rounded-md float-right ml-6 mb-4 shadow-sm border border-yellow-300"
           />
           <h2 className="text-[#0c264d] font-bold mb-1 text-2xl">Marian Toledo Candelaria, PhD</h2>
-          <h3 className="text-[#d4a017] font-bold text-sm uppercase tracking-wider mb-6 border-b border-yellow-200 pb-2">Board Member</h3>
+          <h3 className="text-[#ffd166] font-bold text-sm uppercase tracking-wider mb-6 border-b border-yellow-200 pb-2">Board Member</h3>
           
           <p className="text-sm text-slate-700 leading-relaxed mb-4">
             Dr. Toledo Candelaria is the Head of Special Collections at the University of Missouri Libraries. Previously, she served as the Manager for Equity, Diversity, and Inclusion at the UVA School of Education and Human Development. Her professional experience also includes roles as Program Manager for Rare Book School and Writing and Multimodal Communication Specialist at the University of Waterloo.

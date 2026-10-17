@@ -116,7 +116,7 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
           </div>
 
           {/* Types & Levels Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Types & Levels of Giftedness</h2>
             
             <ImageWithFallback 
@@ -127,7 +127,7 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
 
             <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] mb-6">
               <h3 className="text-[#0c264d] font-bold mb-3 text-sm border-b border-[#ffd166] pb-2 flex items-center gap-2">
-                <Target className="text-[#d4a017] w-4 h-4" /> Domains of Giftedness
+                <Target className="text-[#ffd166] w-4 h-4" /> Domains of Giftedness
               </h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 list-disc ml-5 text-xs text-slate-700">
                 <li><strong>Intellectual:</strong> Exceptional general cognitive ability and abstract reasoning.</li>
@@ -314,7 +314,7 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
         <div className="space-y-8 animate-fadeIn">
 
           {/* Demographics Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prevalence & Special Populations</h2>
             
             <ImageWithFallback 
@@ -330,7 +330,7 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both mb-6">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <LineChart className="text-[#d4a017] w-4 h-4" />
+                  <LineChart className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Statistical Prevalence</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">If strictly defining giftedness as an IQ ≥130, roughly 2-3% of the population qualifies.<sup className="text-[#10b981] font-bold ml-0.5">1</sup> Broader models identifying domain-specific talent capture 10-15%. In the US, about 6-8% of students actually participate in funded gifted programs.<sup className="text-[#10b981] font-bold ml-0.5">2,3</sup></p>
@@ -338,7 +338,7 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ShieldCheck className="text-[#d4a017] w-4 h-4" />
+                  <ShieldCheck className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Twice-Exceptional (2e)</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">2e learners are intellectually gifted but also possess a co-occurring disability (like ADHD, Autism, or Dyslexia). Their high intelligence often masks their disability, and their disability often masks their intelligence, leaving them completely unidentified.</p>
@@ -347,7 +347,7 @@ export function GiftednessOverview({ setCurrentArticle, initialTab }: Giftedness
 
             <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
               <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                <Globe className="text-[#d4a017] w-4 h-4" />
+                <Globe className="text-[#ffd166] w-4 h-4" />
                 <h3 className="text-[#0c264d] font-bold text-sm">Underrepresented Groups</h3>
               </div>
               <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">

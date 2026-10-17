@@ -101,7 +101,7 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
           </div>
 
           {/* Sound & Taste Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Chromesthesia & Lexical-Gustatory</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
@@ -207,7 +207,7 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
           </p>
 
           {/* Tactile Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Tactile Presentations</h2>
             
             <ImageWithFallback 

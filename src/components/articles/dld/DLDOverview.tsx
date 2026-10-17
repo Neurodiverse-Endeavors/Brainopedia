@@ -132,7 +132,7 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-200">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Ear className="text-[#d4a017] w-6 h-6" />
+                  <Ear className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Receptive DLD</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Primary difficulties lie in understanding language. The child struggles to process verbal information, follow multi-step directions, or grasp the meaning of complex vocabulary. This profile often has a more severe functional impact.</p>
@@ -184,7 +184,7 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
         <div className="space-y-8 animate-fadeIn">
 
           {/* Impact Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Impact on Daily Life</h2>
             
             <ImageWithFallback 
@@ -200,7 +200,7 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+                  <BookOpen className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Academic Impact</h3>
@@ -210,7 +210,7 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <Users className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Social & Emotional Toll</h3>
@@ -330,7 +330,7 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
           </div>
 
           {/* Outlook Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prognosis and Long-term Outcomes</h2>
             
             <ImageWithFallback 
@@ -346,7 +346,7 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <Brain className="text-[#d4a017] w-5 h-5 shrink-0 mt-0.5" />
+                <Brain className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Lifelong Persistence</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">DLD is a persistent condition. While the obvious grammatical errors of childhood may fade, adults with DLD continue to experience underlying difficulties with processing speed, complex text comprehension, and rapid word retrieval.<sup className="text-[#10b981] font-bold ml-0.5">11</sup></p>
@@ -354,7 +354,7 @@ export function DLDOverview({ setCurrentArticle, initialTab }: DLDOverviewProps)
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <CheckCircle className="text-[#d4a017] w-5 h-5 shrink-0 mt-0.5" />
+                <CheckCircle className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Paths to Success</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">With consistent academic accommodations, self-advocacy, and career choices that balance language demands with other cognitive strengths, adults with DLD lead highly successful, independent, and fulfilling lives.</p>

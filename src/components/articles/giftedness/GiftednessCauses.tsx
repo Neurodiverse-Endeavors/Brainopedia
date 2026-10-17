@@ -116,7 +116,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
           </div>
 
           {/* Neurobiology Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Neurobiological Basis</h2>
             
             <ImageWithFallback 
@@ -132,7 +132,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Zap className="text-[#d4a017] w-5 h-5" />
+                  <Zap className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Neural Efficiency</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Functional MRIs reveal that gifted brains actually use <em>less</em> energy to solve moderately difficult problems than typical brains. They are highly efficient processors.</p>
@@ -140,7 +140,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <Brain className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Brain Structure</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">The Parieto-Frontal Integration Theory (P-FIT) proposes that high intelligence relies on exceptional white matter connectivity between the frontal and parietal lobes, allowing rapid integration of complex data.<sup className="text-[#10b981] font-bold ml-0.5">2</sup></p>
@@ -148,7 +148,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Activity className="text-[#d4a017] w-5 h-5" />
+                  <Activity className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Neuroplasticity</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Gifted brains often exhibit enhanced neuroplasticity—the ability to rapidly form strong, new neural connections in response to intense learning, practice, and novel experiences.</p>
@@ -297,7 +297,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
         <div className="space-y-8 animate-fadeIn">
 
           {/* Psychology Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Psychological Factors</h2>
             
             <ImageWithFallback 
@@ -313,7 +313,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Lightbulb className="text-[#d4a017] w-5 h-5" />
+                  <Lightbulb className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Task Commitment</h3>
@@ -323,7 +323,7 @@ export function GiftednessCauses({ setCurrentArticle, initialTab }: GiftednessCa
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Sparkles className="text-[#d4a017] w-5 h-5" />
+                  <Sparkles className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Growth Mindset</h3>

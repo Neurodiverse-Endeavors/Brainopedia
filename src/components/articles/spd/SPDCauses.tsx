@@ -122,7 +122,7 @@ export function SPDCauses({ setCurrentArticle, initialTab }: SPDCausesProps) {
           </div>
 
           {/* Sensory Centers Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Sensory Centers & Processing</h2>
             
             <ImageWithFallback 
@@ -134,7 +134,7 @@ export function SPDCauses({ setCurrentArticle, initialTab }: SPDCausesProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Activity className="text-[#d4a017] w-5 h-5" />
+                  <Activity className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">The Thalamus Bottleneck</h3>
@@ -144,7 +144,7 @@ export function SPDCauses({ setCurrentArticle, initialTab }: SPDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Sparkles className="text-[#d4a017] w-5 h-5" />
+                  <Sparkles className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Neurotransmitter Imbalance</h3>
@@ -288,7 +288,7 @@ export function SPDCauses({ setCurrentArticle, initialTab }: SPDCausesProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Co-occurrence Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Overlapping Conditions</h2>
             
             <ImageWithFallback 
@@ -304,7 +304,7 @@ export function SPDCauses({ setCurrentArticle, initialTab }: SPDCausesProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Network className="text-[#d4a017] w-5 h-5" />
+                  <Network className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Autism Spectrum</h3>
@@ -314,7 +314,7 @@ export function SPDCauses({ setCurrentArticle, initialTab }: SPDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Activity className="text-[#d4a017] w-5 h-5" />
+                  <Activity className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">ADHD</h3>
@@ -324,7 +324,7 @@ export function SPDCauses({ setCurrentArticle, initialTab }: SPDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Layers className="text-[#d4a017] w-5 h-5" />
+                  <Layers className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Dyspraxia</h3>

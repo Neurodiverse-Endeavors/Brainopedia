@@ -116,7 +116,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
           </div>
 
           {/* Types Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Treffert's Three Types</h2>
             
             <ImageWithFallback 
@@ -132,7 +132,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] hover:-translate-y-1 transition-transform duration-200">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+                  <BookOpen className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Type 1: Neurotypical</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Early, precocious readers who are otherwise typically developing. They have no underlying developmental or social concerns, and their reading comprehension naturally catches up to their advanced decoding over time.</p>
@@ -140,7 +140,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] hover:-translate-y-1 transition-transform duration-200">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <Network className="text-[#d4a017] w-5 h-5" />
+                  <Network className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Type 2: With Autism</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Hyperlexic reading combined with Autism Spectrum Disorder. This is the most common clinical presentation. Reading serves as an intense special interest, and social communication challenges persist.</p>
@@ -148,7 +148,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] hover:-translate-y-1 transition-transform duration-200">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <Activity className="text-[#d4a017] w-5 h-5" />
+                  <Activity className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Type 3: Transient</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Children who initially show intense "autistic-like" symptoms (such as delayed speech and social withdrawal) alongside early reading, but whose autistic traits fade dramatically as they grow older.</p>
@@ -304,7 +304,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
         <div className="space-y-8 animate-fadeIn">
 
           {/* Profile Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Strengths & Challenges</h2>
             
             <ImageWithFallback 
@@ -320,7 +320,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Target className="text-[#d4a017] w-5 h-5" />
+                  <Target className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Cognitive Strengths</h3>
@@ -335,7 +335,7 @@ export function HyperlexiaOverview({ setCurrentArticle, initialTab }: Hyperlexia
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <Users className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Challenges Beyond Reading</h3>

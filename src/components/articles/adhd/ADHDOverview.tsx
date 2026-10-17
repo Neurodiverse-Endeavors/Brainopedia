@@ -266,7 +266,7 @@ export function ADHDOverview({ setCurrentArticle }: ADHDOverviewProps) {
                   
                   {/* Females Section */}
                   <div className="flex flex-col gap-1.5">
-                    <div className="text-[10px] font-bold text-[#d4a017] uppercase tracking-wide">Females Higher In:</div>
+                    <div className="text-[10px] font-bold text-[#ffd166] uppercase tracking-wide">Females Higher In:</div>
                     <div className="bg-[#fffbeb] border border-[#ffd166] rounded py-1 px-2 flex justify-between items-center text-xs text-[#0c264d]">
                       <span>Anxiety</span> <strong>47-50%</strong>
                     </div>
@@ -319,7 +319,7 @@ export function ADHDOverview({ setCurrentArticle }: ADHDOverviewProps) {
           </div>
           
 <p className="text-sm text-slate-700 leading-relaxed bg-white p-4 rounded-lg border-2 border-[#ffd166] shadow-sm text-center max-w-4xl mx-auto">
-            <Lightbulb className="inline-block w-5 h-5 text-[#d4a017] mr-1.5 -mt-1" />
+            <Lightbulb className="inline-block w-5 h-5 text-[#ffd166] mr-1.5 -mt-1" />
             However, it's important to recognize that many individuals with ADHD also describe unique strengths, 
             including creativity, ability to hyperfocus on interesting tasks, high energy, resilience, and 
             thinking outside the box.

@@ -136,7 +136,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
           </div>
 
           {/* Academic Card (Yellow) - Uses Hero Image and Grid */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Academic & Language Profile</h2>
             
             <ImageWithFallback 
@@ -148,7 +148,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <Brain className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Following Directions</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Multi-step verbal directions are a major hurdle. By the time the third step is spoken, the first is often forgotten or misunderstood. Written directions are processed far more successfully.</p>
@@ -156,7 +156,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+                  <BookOpen className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Reading & Spelling</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Because APD severely impacts phonological processing, decoding unfamiliar words, distinguishing phonetic sounds, and phonics-based spelling are incredibly challenging.</p>
@@ -164,7 +164,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Edit3 className="text-[#d4a017] w-5 h-5" />
+                  <Edit3 className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Note-Taking</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Simultaneously listening to a lecture and writing notes is nearly impossible. By the time the brain processes the auditory information to write it down, the speaker has already moved on.</p>
@@ -298,7 +298,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
         <div className="space-y-8 animate-fadeIn">
 
           {/* Lifespan Card (Yellow) - Uses Float Image with organic text flow */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Age-Related Trajectory</h2>
             
             <ImageWithFallback 
@@ -313,7 +313,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Baby className="text-[#d4a017] w-5 h-5" /> Early Childhood
+                <Baby className="text-[#ffd166] w-5 h-5" /> Early Childhood
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Toddlers and preschoolers may show delayed language development, difficulty learning nursery rhymes, or fail to respond when their name is called, acting out frequently in noisy environments.
@@ -322,7 +322,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <GraduationCap className="text-[#d4a017] w-5 h-5" /> School Years
+                <GraduationCap className="text-[#ffd166] w-5 h-5" /> School Years
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 As classroom demands increase, severe academic difficulties emerge. Reading problems, poor note-taking, and complex social challenges become highly apparent as the instructional pace accelerates.
@@ -331,7 +331,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
 
             <div>
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Briefcase className="text-[#d4a017] w-5 h-5" /> Adulthood
+                <Briefcase className="text-[#ffd166] w-5 h-5" /> Adulthood
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Adults with APD continue experiencing difficulty in open office environments, during conference calls, or in meetings. However, they usually develop robust compensatory strategies to minimize these impacts.

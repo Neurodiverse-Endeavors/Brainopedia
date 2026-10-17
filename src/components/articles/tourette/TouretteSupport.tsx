@@ -135,7 +135,7 @@ export function TouretteSupport({ setCurrentArticle, initialTab }: TouretteSuppo
           </p>
 
           {/* Neupulse Card (Yellow) - Uses CSS Number Badges */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <ImageWithFallback 
               src="/images/tourette/tourette-support-neurotech.webp"
               alt="Wearable neuromodulation device on a wrist"
@@ -152,15 +152,15 @@ export function TouretteSupport({ setCurrentArticle, initialTab }: TouretteSuppo
               <h3 className="text-[#0c264d] font-bold mb-4 text-lg border-b pb-2">How It Works</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#d4a017] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</div>
+                  <div className="w-6 h-6 rounded-full bg-[#ffd166] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</div>
                   <p className="text-sm text-slate-700"><strong>Median Nerve Stimulation:</strong> The wearable device delivers gentle, rhythmic electrical pulses to the median nerve at the wrist, which communicates directly with the brain networks involved in motor control.<sup>4</sup></p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#d4a017] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</div>
+                  <div className="w-6 h-6 rounded-full bg-[#ffd166] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</div>
                   <p className="text-sm text-slate-700"><strong>Clinical Efficacy:</strong> UK-based double-blind clinical trials conducted by the University of Nottingham demonstrated that home-administered rhythmic stimulation effectively reduces both tic frequency and severity.<sup>5</sup></p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#d4a017] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</div>
+                  <div className="w-6 h-6 rounded-full bg-[#ffd166] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</div>
                   <p className="text-sm text-slate-700"><strong>Discreet Support:</strong> Because the technology is integrated into a wearable wristband, it provides non-invasive, drug-free support without causing disruption in social or professional settings.</p>
                 </li>
               </ul>
@@ -214,7 +214,7 @@ export function TouretteSupport({ setCurrentArticle, initialTab }: TouretteSuppo
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-200">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Users className="text-[#d4a017] w-6 h-6" />
+                  <Users className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Peer Education</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Stigma is one of the heaviest burdens of Tourette's. Educating classmates, teachers, and coworkers directly reduces bullying and transforms hostile environments into inclusive communities.</p>

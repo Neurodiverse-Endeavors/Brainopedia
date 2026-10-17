@@ -90,7 +90,7 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
           </div>
 
           {/* Characteristics Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h3 className="text-[#0c264d] font-bold mb-3 text-xl">Key Characteristics</h3>
             <ul className="list-disc ml-6 space-y-2 text-sm text-slate-700 leading-relaxed">
               <li><strong>Number sense deficits:</strong> Difficulty understanding what numbers represent or judging quantities.</li>
@@ -175,7 +175,7 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
           </div>
 
           {/* Co-occurring Conditions Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Co-occurring Conditions</h2>
             
             <ImageWithFallback 
@@ -247,7 +247,7 @@ export function DyscalculiaOverview({ setCurrentArticle, initialTab }: Dyscalcul
           </div>
 
           {/* Moving Forward Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-3 text-xl">Moving Forward</h2>
             <p className="text-sm text-slate-700 leading-relaxed">
               Dyscalculia is a well-researched, neurobiological condition that affects mathematical processing, but it absolutely does not limit a person's potential. With early identification, evidence-based instruction, and proper accommodations (like calculators and extended time), individuals with dyscalculia build functional numerical skills and thrive academically and professionally. Understanding this neurodivergence is the first step toward self-advocacy and unlocking those incredible creative strengths.

@@ -144,7 +144,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
           </div>
 
           {/* Social & Evidence Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social Communication & Efficacy</h2>
             
             <ImageWithFallback 
@@ -160,7 +160,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Users className="text-[#d4a017] w-4 h-4" />
+                  <Users className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Social Skills Training</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Explicit teaching of conversation skills, including turn-taking, repairing conversational breakdowns, and reading body language. SLPs often use role-playing and customized social stories to safely practice these scenarios.</p>
@@ -168,7 +168,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Heart className="text-[#d4a017] w-4 h-4" />
+                  <Heart className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Facilitating Friendships</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Transitioning from one-on-one therapy to small, structured peer groups allows the child to practice banter, compromise, and shared interests in a supportive environment with immediate coaching.</p>
@@ -176,7 +176,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Activity className="text-[#d4a017] w-4 h-4" />
+                  <Activity className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Evidence of Success</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Extensive meta-analyses prove that language therapy works. The key factors for success are intensity (frequency of sessions) and dosage (total amount of targeted intervention over time).</p>
@@ -357,7 +357,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Home Strategies Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Home Strategies for Parents</h2>
             
             <ImageWithFallback 
@@ -373,7 +373,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both max-w-4xl">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Volume2 className="text-[#d4a017] w-5 h-5" />
+                  <Volume2 className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Communication Strategies</h3>
                 </div>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
@@ -384,7 +384,7 @@ export function DLDSupport({ setCurrentArticle, initialTab }: DLDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Home className="text-[#d4a017] w-5 h-5" />
+                  <Home className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Daily Activities</h3>
                 </div>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">

@@ -114,7 +114,7 @@ export function DysgraphiaLiving({ setCurrentArticle, initialTab }: DysgraphiaLi
           </div>
 
           {/* Emotional Impact Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Emotional & Social Impact</h2>
             
             <ImageWithFallback 
@@ -249,7 +249,7 @@ export function DysgraphiaLiving({ setCurrentArticle, initialTab }: DysgraphiaLi
           </p>
 
           {/* Technology as an Equalizer Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Technology as an Equalizer</h2>
             
             <ImageWithFallback 

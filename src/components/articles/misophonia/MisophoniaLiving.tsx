@@ -155,7 +155,7 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
         <div className="space-y-8 animate-fadeIn">
 
           {/* Social Navigation Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social Navigation</h2>
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Socializing with misophonia requires proactive planning and clear, unapologetic communication to protect your nervous system from unexpected triggers.<sup className="text-[#10b981] font-bold ml-0.5">3</sup>
@@ -163,7 +163,7 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
               <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm">
-                <Users className="text-[#d4a017] w-5 h-5 shrink-0 mt-0.5" />
+                <Users className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">The "Dine-and-Dash" Alternative</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Choose social activities that don't center around food, or eat a meal beforehand so you can focus on the conversation rather than the terrifying anticipation of chewing noises.</p>
@@ -171,7 +171,7 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
               </div>
 
               <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm">
-                <MessageCircle className="text-[#d4a017] w-5 h-5 shrink-0 mt-0.5" />
+                <MessageCircle className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Transparent Communication</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Tell friends upfront: "I have a sensory condition that makes certain sounds very physically distressing; I might need to step away or use headphones sometimes."</p>
@@ -179,7 +179,7 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
               </div>
               
               <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm md:col-span-2 max-w-2xl mx-auto w-full">
-                <Heart className="text-[#d4a017] w-5 h-5 shrink-0 mt-0.5" />
+                <Heart className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Identifying "Safe" People</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Prioritize relationships with individuals who understand your neurological boundaries and do not take it personally when you need to abruptly leave a triggering situation.</p>

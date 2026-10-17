@@ -136,7 +136,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
           </div>
 
           {/* Steps Card (Yellow) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Diagnostic Steps</h2>
             
             <ImageWithFallback 
@@ -148,7 +148,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ClipboardList className="text-[#d4a017] w-5 h-5" />
+                  <ClipboardList className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">1. Case History</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Documents developmental milestones, academic performance, and detailed medical history—paying particularly close attention to any history of chronic ear infections.</p>
@@ -156,7 +156,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Ear className="text-[#d4a017] w-5 h-5" />
+                  <Ear className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">2. Peripheral Hearing Test</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Standard audiological evaluation must precede APD testing. APD absolutely cannot be diagnosed if a peripheral hearing loss is present and accounts for the difficulties.</p>
@@ -164,7 +164,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Headphones className="text-[#d4a017] w-5 h-5" />
+                  <Headphones className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">3. Central Auditory Testing</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">A specialized battery of tests assessing how the brain processes degraded speech, rapid timing, and competing signals. No single test can diagnose APD; a full battery is required.</p>
@@ -172,7 +172,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <CheckCircle className="text-[#d4a017] w-5 h-5" />
+                  <CheckCircle className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">4. Integration</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">The audiologist integrates the battery results with cognitive, language, and academic assessments to determine specific APD subtypes and real-world functional impacts.</p>
@@ -322,7 +322,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
         <div className="space-y-8 animate-fadeIn">
 
           {/* Differential Card (Yellow) - Uses Float Image with organic text flow */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
             
             <ImageWithFallback 
@@ -337,7 +337,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <AlertTriangle className="text-[#d4a017] w-5 h-5" /> vs. ADHD
+                <AlertTriangle className="text-[#ffd166] w-5 h-5" /> vs. ADHD
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Both involve apparent inattention and difficulty following directions. The key difference is modality: APD difficulties are strictly specific to auditory processing, whereas ADHD impairs attention across all sensory modalities (visual, auditory, tactile).
@@ -346,7 +346,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Ear className="text-[#d4a017] w-5 h-5" /> vs. ANSD
+                <Ear className="text-[#ffd166] w-5 h-5" /> vs. ANSD
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Auditory Neuropathy Spectrum Disorder (ANSD) involves dyssynchrony in the auditory nerve. Distinguishing features include absent or severely abnormal acoustic reflexes on medical testing, despite completely normal otoacoustic emissions.
@@ -355,7 +355,7 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
 
             <div>
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Users className="text-[#d4a017] w-5 h-5" /> vs. Autism
+                <Users className="text-[#ffd166] w-5 h-5" /> vs. Autism
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 While auditory processing differences are extremely common in autism, isolated APD does not present with the qualitative social-communication impairments, restricted interests, or severe repetitive behaviors required for an autism diagnosis.

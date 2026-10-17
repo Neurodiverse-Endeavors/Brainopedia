@@ -163,7 +163,7 @@ export function IDDiagnosis({ setCurrentArticle, initialTab }: IDDiagnosisProps)
       {activeTab === 'process' && (
         <div className="space-y-8 animate-fadeIn">
 
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             
             <ImageWithFallback 
               src="/images/id/id-diagnosis-tab2-evaluation.webp"
@@ -180,7 +180,7 @@ export function IDDiagnosis({ setCurrentArticle, initialTab }: IDDiagnosisProps)
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <ClipboardCheck className="w-5 h-5" />
                 </div>
                 <div>
@@ -190,7 +190,7 @@ export function IDDiagnosis({ setCurrentArticle, initialTab }: IDDiagnosisProps)
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <FileText className="w-5 h-5" />
                 </div>
                 <div>
@@ -200,7 +200,7 @@ export function IDDiagnosis({ setCurrentArticle, initialTab }: IDDiagnosisProps)
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Search className="w-5 h-5" />
                 </div>
                 <div>

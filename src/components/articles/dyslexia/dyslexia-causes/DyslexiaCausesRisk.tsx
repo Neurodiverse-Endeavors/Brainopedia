@@ -86,23 +86,23 @@ export function DyslexiaCausesRisk({ setCurrentArticle }: DyslexiaCausesRiskProp
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             
             {/* Early Environment */}
-            <div className="bg-yellow-50 p-6 rounded-xl border border-yellow-200 shadow-sm flow-root">
+            <div className="bg-[#ffd166]/20 p-6 rounded-xl border border-yellow-200 shadow-sm flow-root">
               <div className="flex flex-col h-full">
                 <h4 className="font-bold text-[#0c264d] text-lg flex items-center justify-center gap-3 mb-4 text-center">
-                  <BookOpen className="w-7 h-7 text-[#d4a017] shrink-0" />
+                  <BookOpen className="w-7 h-7 text-[#ffd166] shrink-0" />
                   <span>Early Environmental Impact</span>
                 </h4>
                 <ul className="space-y-3 text-sm text-slate-700 w-full flex-grow text-left">
                   <li className="flex items-start gap-2">
-                    <ChevronRight className="text-[#d4a017] shrink-0 mt-0.5 w-5 h-5" /> 
+                    <ChevronRight className="text-[#ffd166] shrink-0 mt-0.5 w-5 h-5" /> 
                     <span>Home literacy habits and how frequently a young child is read to significantly alter early white matter development.<sup className="text-[10px]">1</sup></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <ChevronRight className="text-[#d4a017] shrink-0 mt-0.5 w-5 h-5" /> 
+                    <ChevronRight className="text-[#ffd166] shrink-0 mt-0.5 w-5 h-5" /> 
                     <span>Socioeconomic status influences access to early, explicit phonological instruction.<sup className="text-[10px]">2</sup></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <ChevronRight className="text-[#d4a017] shrink-0 mt-0.5 w-5 h-5" /> 
+                    <ChevronRight className="text-[#ffd166] shrink-0 mt-0.5 w-5 h-5" /> 
                     <span>High-quality intervention can structurally compensate for underlying genetic risk.</span>
                   </li>
                 </ul>

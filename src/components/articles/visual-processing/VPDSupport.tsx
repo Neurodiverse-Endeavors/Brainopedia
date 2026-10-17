@@ -135,7 +135,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
           </div>
 
           {/* Vision Therapy Card (Yellow) - W-64 Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Vision Therapy</h2>
             
             <ImageWithFallback 
@@ -151,7 +151,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Eye className="text-[#d4a017] w-4 h-4" />
+                  <Eye className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Targeted Skills</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Activities are designed to specifically target eye tracking, visual discrimination, and spatial skills. It essentially acts as physical therapy for the visual system.</p>
@@ -159,7 +159,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Puzzle className="text-[#d4a017] w-4 h-4" />
+                  <Puzzle className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Systematic Growth</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Therapy progresses sequentially from easier tasks to more challenging, integrated ones, forcing the brain to build new, more efficient neurological pathways.</p>
@@ -167,7 +167,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Brain className="text-[#d4a017] w-4 h-4" />
+                  <Brain className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Clinical Evidence</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Rigorous studies, such as the Convergence Insufficiency Treatment Trial (CITT), have demonstrated the strong clinical effectiveness of vision therapy for binocular dysfunction.<sup>1</sup></p>
@@ -175,7 +175,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Clock className="text-[#d4a017] w-4 h-4" />
+                  <Clock className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Time Commitment</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Vision therapy typically requires a substantial commitment: weekly in-office visits paired with strict daily home practice over the course of several months.</p>
@@ -324,7 +324,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Home Strategies Card (Yellow) - W-64 Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Compensatory & Home Support</h2>
             
             <ImageWithFallback 
@@ -340,7 +340,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Folder className="text-[#d4a017] w-5 h-5" />
+                  <Folder className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Organizational Systems</h3>
@@ -350,7 +350,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <List className="text-[#d4a017] w-5 h-5" />
+                  <List className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">External Memory Supports</h3>
@@ -360,7 +360,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Home className="text-[#d4a017] w-5 h-5" />
+                  <Home className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Homework Routines</h3>
@@ -370,7 +370,7 @@ export function VPDSupport({ setCurrentArticle, initialTab }: VPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Family Understanding</h3>

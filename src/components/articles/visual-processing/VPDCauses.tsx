@@ -135,7 +135,7 @@ export function VPDCauses({ setCurrentArticle, initialTab }: VPDCausesProps) {
           </div>
 
           {/* Genetics Card (Yellow) - W-64 Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Genetic Factors</h2>
             
             <ImageWithFallback 
@@ -147,7 +147,7 @@ export function VPDCauses({ setCurrentArticle, initialTab }: VPDCausesProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Dna className="text-[#d4a017] w-4 h-4" />
+                  <Dna className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Familial Patterns</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Visual processing difficulties heavily run in families. Parents or siblings of children with VPD frequently possess similar visual deficits or related neurodivergent conditions.</p>
@@ -155,7 +155,7 @@ export function VPDCauses({ setCurrentArticle, initialTab }: VPDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Link className="text-[#d4a017] w-4 h-4" />
+                  <Link className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Shared Genetics</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Genes affecting broad brain development contribute to multiple conditions simultaneously. This shared genetic architecture is why VPD so frequently co-occurs with Dyslexia and Dyscalculia.</p>
@@ -163,7 +163,7 @@ export function VPDCauses({ setCurrentArticle, initialTab }: VPDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Microscope className="text-[#d4a017] w-4 h-4" />
+                  <Microscope className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Complex Architecture</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">There is no single "VPD gene." Visual processing abilities involve hundreds of genes, each contributing a small effect, which interact closely with environmental and developmental factors.</p>
@@ -290,7 +290,7 @@ export function VPDCauses({ setCurrentArticle, initialTab }: VPDCausesProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Theories Card (Yellow) - W-64 Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Theories & Models</h2>
             
             <ImageWithFallback 
@@ -302,7 +302,7 @@ export function VPDCauses({ setCurrentArticle, initialTab }: VPDCausesProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Layers className="text-[#d4a017] w-4 h-4" />
+                  <Layers className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Magnocellular Theory</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">The visual system has two parallel pathways: magnocellular (processing motion and rapid changes) and parvocellular (detail and form). This prominent theory proposes that Dyslexia and VPD involve specific deficits in the magnocellular pathway.<sup>1</sup></p>
@@ -310,7 +310,7 @@ export function VPDCauses({ setCurrentArticle, initialTab }: VPDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Search className="text-[#d4a017] w-4 h-4" />
+                  <Search className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Evidence & Controversy</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">While functional brain imaging shows many individuals with reading disabilities do possess magnocellular differences, the theory remains debated, as it does not neatly explain every single case of VPD.</p>
@@ -318,7 +318,7 @@ export function VPDCauses({ setCurrentArticle, initialTab }: VPDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Network className="text-[#d4a017] w-4 h-4" />
+                  <Network className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Multiple Pathways</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Current models agree that VPD is heterogeneous. There is no single universal cause. It likely represents a final common pathway resulting from multiple different genetic, developmental, and environmental origins.</p>

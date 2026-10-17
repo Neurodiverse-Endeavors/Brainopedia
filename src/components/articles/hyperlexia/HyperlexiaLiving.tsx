@@ -116,7 +116,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
           </div>
 
           {/* Relationships Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social Relationships</h2>
             
             <ImageWithFallback 
@@ -132,7 +132,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <Users className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Building Friendships</h3>
                 </div>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
@@ -143,7 +143,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Family Dynamics</h3>
                 </div>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
@@ -178,7 +178,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
         <div className="space-y-8 animate-fadeIn">
 
           {/* Educational Journey Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Educational Journey</h2>
             
             <ImageWithFallback 
@@ -194,7 +194,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <GraduationCap className="text-[#d4a017] w-4 h-4" />
+                  <GraduationCap className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Early Years</h3>
                 </div>
                 <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
@@ -204,7 +204,7 @@ export function HyperlexiaLiving({ setCurrentArticle, initialTab }: HyperlexiaLi
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Building className="text-[#d4a017] w-4 h-4" />
+                  <Building className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Higher Education</h3>
                 </div>
                 <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">

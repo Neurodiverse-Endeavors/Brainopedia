@@ -252,10 +252,13 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         </div>
 
         <div className="bg-white border-2 border-[#2abcd4] p-5 rounded-xl shadow-sm mt-6">
-          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">The Two-Sentence Rule:</h3>
-          <p className="text-sm text-gray-700">
-            To maintain highly scannable, digestible content, every main article section (Overview, Symptoms, Causes, Diagnosis, Support, Living) must strictly be condensed into <strong>one single paragraph containing exactly two sentences</strong>. Avoid massive walls of text or dense medical jargon.
+          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">The Two-Sentence Rule (Main Landing Pages Only):</h3>
+          <p className="text-sm text-gray-700 mb-3">
+            To maintain highly scannable, digestible content, the introductory section cards on <strong>main condition landing pages</strong> must strictly be condensed into <strong>one single paragraph containing exactly two sentences</strong>.
           </p>
+          <div className="bg-blue-50 p-3 rounded border-l-4 border-[#0A9DC4] text-xs text-slate-700">
+            <strong>CRITICAL EXCEPTION (Subpages Need Depth):</strong> This two-sentence truncation rule does <strong>NOT</strong> apply to the detailed subpage components (Overview, Symptoms, Causes, Diagnosis, Support, Living). Subpages and their respective tabs must retain their comprehensive, long-form educational paragraphs to fully serve their purpose.
+          </div>
         </div>
       </section>
 
@@ -278,7 +281,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         </div>
       </section>
 
-      {/* COLOR PALETTE */}
+{/* COLOR PALETTE */}
       <section className="mb-10">
         <h2 className="text-[#0c264d] text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
           <Palette className="text-[#2abcd4]" /> COLOR PALETTE
@@ -302,10 +305,6 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#0c264d'}}></div>
             <p><strong>Dark Navy Blue (Text/Headers):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#0c264d</code> - Primary text color, headers, hover states</p>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#d4a017'}}></div>
-            <p><strong>Dark Gold (Accent):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#d4a017</code> - Used for icons inside yellow/beige cards</p>
-          </div>
         </div>
 
         <h3 className="text-[#0c264d] font-bold text-lg mb-3 mt-6">Secondary Colors</h3>
@@ -319,10 +318,16 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <p><strong>White:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#ffffff</code> - Card backgrounds, content areas</p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#f0f9ff'}}></div>
-            <p><strong>Light Blue Background:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#f0f9ff</code> - Alternate section backgrounds</p>
+            <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#576d8e'}}></div>
+            <p><strong>Canva Slate Background:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#576d8e</code> - Used at 10% or 20% opacity for alternate section backgrounds</p>
           </div>
-        </div>
+          
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded border-2 border-gray-300 shrink-0" style={{backgroundColor: '#f4f4f4'}}></div>
+            <p><strong>Beige Background:</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">#f4f4f4</code> - Background, book covers, mini cards if variety need.</p>
+          </div>
+      </div>
+      
       </section>
 
       {/* CARD STYLING & CONTAINERS */}
@@ -330,7 +335,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         <h2 className="text-[#0c264d] text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
           <Layout className="text-[#2abcd4]" /> CARD STYLING & CONTAINERS
         </h2>
-        <div className="bg-white border border-gray-200 p-5 rounded-lg shadow-sm mb-6">
+        <div className="bg-[#576d8e]/10 border border-gray-200 p-5 rounded-lg shadow-sm mb-6">
           <h3 className="font-bold text-[#0c264d] mb-3 uppercase text-xs">Standard Card Color Rules</h3>
           <p className="text-sm text-gray-700 mb-4">
             To break up dense text, content sections should be wrapped in colorful, styled cards. Card backgrounds must <strong>always</strong> be a lightened/pastel version of our core colors, paired with a darker, thicker border of the same color family. Use these exact combinations and inner-card pairings unless otherwise specified:
@@ -339,35 +344,34 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           <div className="bg-blue-50 border-l-4 border-[#0A9DC4] p-4 mb-5 rounded-r-lg shadow-sm">
             <h4 className="text-xs font-bold text-[#0c264d] uppercase mb-1">Standard Tab Sequence & Layout Rule</h4>
             <p className="text-xs text-slate-700 leading-relaxed mb-2">
-              For standard 3-tab pages, strictly follow this styling sequence to maintain visual rhythm: <strong>Tab 1 = Cyan, Tab 2 = Slate, Tab 3 = Yellow.</strong> 
+              For standard 3-tab pages, strictly follow this styling sequence for the primary (top) card to maintain visual rhythm: <strong>Tab 1 = bg-[#2abcd4]/20, Tab 2 = bg-[#0c264d]/20, Tab 3 = bg-[#ffd166]/20.</strong> 
             </p>
             <p className="text-xs text-slate-700 leading-relaxed">
-              <strong>Multiple Cards Per Tab:</strong> If a single tab has more than one large container card on it, you can mix styles from the other primary cards on the subsequent container cards (alternating Cyan, Slate, or Yellow) to provide visual variety.
+              <strong>Multiple Cards Per Tab:</strong> Because most tabs have two or more large container cards, you should mix styles from the other primary cards on the subsequent containers (alternating Cyan, Navy, or Yellow) to provide visual variety. For example, if Tab 1 has two cards, Card 1 is Cyan, and Card 2 can be Navy or Yellow.
             </p>
           </div>
 
           <ul className="list-disc ml-5 text-sm text-gray-700 space-y-4">
             <li>
-              <strong>Cyan Cards (Tab 1 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-cyan-50 border-2 border-[#2abcd4]</code>
+              <strong>Cyan Cards (Tab 1 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-[#2abcd4]/20 border-2 border-[#2abcd4]</code>
               <p className="mt-1 text-slate-600">
                 Inner cards must use standard <strong>Lucide Icons</strong> stacked <strong>directly above the text</strong> (using <code className="bg-gray-100 px-1 rounded text-xs">flex flex-col items-center text-center</code>). Do not place icons to the left, as it forces text into narrow columns.
               </p>
             </li>
             <li>
-              <strong>Navy/Slate Cards (Tab 2 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-slate-100 border-2 border-slate-600 rounded-xl</code>
+              <strong>Navy Cards (Tab 2 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl</code>
               <p className="mt-1 text-slate-600">
-                Inner cards <em>MUST</em> utilize the <strong>3D Accent Border</strong> (colored left stripe) on a stark white background using Navy, Gold, Cyan, or Dark Cyan. Inside these 3D mini cards, use a <strong>Custom CSS Dot Bullet</strong> instead of a standard icon.
+                Inner cards <em>MUST</em> utilize the <strong>3D Accent Border</strong> (colored left stripe) on a stark white background using Navy, Cyan, or Dark Cyan. Inside these 3D mini cards, use a <strong>Custom CSS Dot Bullet</strong> instead of a standard icon.
               </p>
             </li>
             <li>
-              <strong>Yellow/Gold Cards (Tab 3 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-yellow-50 border-2 border-[#ffd166]</code>
+              <strong>Yellow Cards (Tab 3 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-[#ffd166]/20 border-2 border-[#ffd166]</code>
               <p className="mt-1 text-slate-600">
-                Inner cards must use <strong>Icon Badges (Circular Backgrounds)</strong> stacked <strong>directly above the text</strong>.
+                Inner cards must use <strong>Icon Badges (Circular Backgrounds)</strong> stacked <strong>directly above the text</strong>. Do not use gold icons against the yellow/#ffd166 backgrounds. Use navy color #0c264d instead.
               </p>
             </li>
           </ul>
         </div>
-        
         <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 rounded-r-lg shadow-sm mb-6">
           <h3 className="font-bold text-[#831843] mb-2 uppercase text-xs">Accessible Warning & Myth Cards</h3>
           <p className="text-sm text-slate-700 mb-3">
@@ -440,7 +444,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           
           {/* VISUAL EXAMPLE */}
           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-center gap-4 mb-4 max-w-sm">
-            <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center font-bold shrink-0 shadow-sm border border-[#d4a017] border-opacity-30">
+            <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center font-bold shrink-0 shadow-sm border border-[#ffd166] border-opacity-30">
               1
             </div>
             <div>

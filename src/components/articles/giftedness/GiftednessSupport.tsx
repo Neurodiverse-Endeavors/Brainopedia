@@ -122,7 +122,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
           </div>
 
           {/* Enrichment Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Enrichment & Curriculum Frameworks</h2>
             
             <ImageWithFallback 
@@ -138,7 +138,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+                  <BookOpen className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Differentiated Instruction</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Modifying content, process, and products to provide greater depth, complexity, and abstraction, as well as opportunities for independent student-led research investigations.</p>
@@ -146,7 +146,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Wrench className="text-[#d4a017] w-5 h-5" />
+                  <Wrench className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Curriculum Models</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Using frameworks like VanTassel-Baska's Integrated Curriculum Model (ICM) or Kaplan's Depth and Complexity model to explore ethics, patterns, trends, and big ideas.</p>
@@ -154,7 +154,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Lightbulb className="text-[#d4a017] w-5 h-5" />
+                  <Lightbulb className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Higher-Order Thinking</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Routinely engaging students at the highest levels of Bloom's Taxonomy—specifically focusing on analysis, evaluation, and creation rather than rote memorization.</p>
@@ -298,7 +298,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
         <div className="space-y-8 animate-fadeIn">
 
           {/* Populations Card (Yellow) - Centered Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Supporting Specific Populations</h2>
             
             <ImageWithFallback 
@@ -314,7 +314,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ShieldCheck className="text-[#d4a017] w-5 h-5" />
+                  <ShieldCheck className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Twice-Exceptional (2e)</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Requires dual differentiation: accommodating their learning disability while providing rigorous intellectual challenge in their strength areas. Collaboration between gifted and special educators is vital.</p>
@@ -322,7 +322,7 @@ export function GiftednessSupport({ setCurrentArticle, initialTab }: GiftednessS
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Home className="text-[#d4a017] w-5 h-5" />
+                  <Home className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Diversity & Disadvantaged</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Culturally responsive teaching, active mentorship, and scholarship programs (like the Jack Kent Cooke Foundation) help bridge resource gaps for low-income and minority gifted students.</p>

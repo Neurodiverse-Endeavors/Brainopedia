@@ -112,7 +112,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
           </div>
 
           {/* Process Card (Yellow Container / Centered Icon Badges) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Evaluation Team & Process</h2>
             
             <ImageWithFallback 
@@ -127,7 +127,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Users className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Qualified Professionals</h3>
@@ -135,7 +135,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <ClipboardList className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Clinical Observation</h3>
@@ -202,8 +202,8 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex items-start gap-3">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0 ml-1.5 shadow-sm"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0 ml-1.5 shadow-sm"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Spoken Language</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Receptive assessments check the child's ability to follow multi-step verbal instructions and understand vocabulary without visual cues. Expressive assessments evaluate narrative abilities and conversational skills, often revealing a reliance on scripted or echoed language.</p>
@@ -275,7 +275,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
         <div className="space-y-8 animate-fadeIn">
 
           {/* Autism Card (Yellow Container / Centered Icon Badges) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Autism Screening</h2>
             
             <ImageWithFallback 
@@ -290,7 +290,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Activity className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Observation Tools</h3>
@@ -298,7 +298,7 @@ export function HyperlexiaDiagnosis({ setCurrentArticle, initialTab }: Hyperlexi
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Network className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Differentiating Types</h3>

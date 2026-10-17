@@ -135,7 +135,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
           </div>
 
           {/* Types Card (Yellow) - Uses W-Full Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Types of Processing Skills</h2>
             
             <ImageWithFallback 
@@ -147,7 +147,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Search className="text-[#d4a017] w-4 h-4" />
+                  <Search className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Visual Discrimination</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Noticing differences between similar objects. Deficits cause confusion between "b" and "d" or missing subtle differences in pictures.</p>
@@ -155,7 +155,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ImageIcon className="text-[#d4a017] w-4 h-4" />
+                  <ImageIcon className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Figure-Ground</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Distinguishing an object from its background. A student with this deficit will be completely overwhelmed by a busy, cluttered worksheet.</p>
@@ -163,7 +163,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <List className="text-[#d4a017] w-4 h-4" />
+                  <List className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Visual Sequencing</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Remembering the order of visual data. Deficits lead to severe letter/number reversals and an inability to follow multi-step visual instructions.</p>
@@ -171,7 +171,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Brain className="text-[#d4a017] w-4 h-4" />
+                  <Brain className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Visual Memory</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Remembering visual information. Difficulties include trouble remembering what was just read on a page or failing to learn sight words.</p>
@@ -179,7 +179,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Map className="text-[#d4a017] w-4 h-4" />
+                  <Map className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Visual-Spatial</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Understanding position in space. Deficits cause deep confusion with left/right, poor physical navigation, and an inability to read maps or graphs.</p>
@@ -187,7 +187,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <PenTool className="text-[#d4a017] w-4 h-4" />
+                  <PenTool className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Motor Integration</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Coordinating visual data with physical movement (eye-hand coordination). Highly affects handwriting, cutting with scissors, and sports.</p>
@@ -195,7 +195,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Puzzle className="text-[#d4a017] w-4 h-4" />
+                  <Puzzle className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Visual Closure</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Recognizing an object when only part is visible. Deficits make it incredibly hard to predict what comes next or recognize partially obscured words.</p>
@@ -203,7 +203,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Box className="text-[#d4a017] w-4 h-4" />
+                  <Box className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Form Constancy</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Recognizing objects regardless of their size, orientation, or context. Causes struggles with recognizing the same letter if printed in a new font or size.</p>
@@ -360,7 +360,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Impact Card (Yellow) - Uses W-64 Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Impact & Strengths</h2>
             
             <ImageWithFallback 
@@ -372,7 +372,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div>
                 <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <Home className="text-[#d4a017] w-5 h-5" /> Academic & Daily Life
+                  <Home className="text-[#ffd166] w-5 h-5" /> Academic & Daily Life
                 </h3>
                 <div className="space-y-3">
                   <div className="bg-white p-3 rounded-lg border border-[#ffd166] border-opacity-50 shadow-sm">
@@ -388,7 +388,7 @@ export function VPDOverview({ setCurrentArticle }: VPDOverviewProps) {
 
               <div>
                 <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <Lightbulb className="text-[#d4a017] w-5 h-5" /> Built-In Strengths
+                  <Lightbulb className="text-[#ffd166] w-5 h-5" /> Built-In Strengths
                 </h3>
                 <div className="space-y-3">
                   <div className="bg-white p-3 rounded-lg border border-[#ffd166] border-opacity-50 shadow-sm">

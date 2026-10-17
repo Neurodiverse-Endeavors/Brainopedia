@@ -134,7 +134,7 @@ export function DyslexiaCausesGenetics({ setCurrentArticle }: DyslexiaCausesGene
             
             <div className="bg-slate-50 border-t-4 border-[#ffd166] rounded-xl p-6 shadow-sm flex flex-col flow-root">
               <h4 className="font-bold text-[#0c264d] text-lg flex items-center gap-3 mb-3">
-                <Microchip className="w-6 h-6 text-[#d4a017] shrink-0" />
+                <Microchip className="w-6 h-6 text-[#ffd166] shrink-0" />
                 <span>DCDC2</span>
               </h4>
               <p className="text-sm text-slate-700">Affects neuronal migration and structural white matter; variations here are highly associated with reading and spelling outcomes.<sup className="text-[#10b981] font-bold ml-0.5 text-xs">6</sup></p>
@@ -180,9 +180,9 @@ export function DyslexiaCausesGenetics({ setCurrentArticle }: DyslexiaCausesGene
               </p>
             </div>
 
-            <div className="bg-yellow-50 p-6 rounded-xl border border-yellow-200 shadow-sm flex flex-col flow-root">
+            <div className="bg-[#ffd166]/20 p-6 rounded-xl border border-yellow-200 shadow-sm flex flex-col flow-root">
               <h4 className="font-bold text-[#0c264d] text-lg flex items-center justify-center gap-3 mb-4 text-center">
-                <Users2 className="w-7 h-7 text-[#d4a017] shrink-0" />
+                <Users2 className="w-7 h-7 text-[#ffd166] shrink-0" />
                 <span>Twin Studies</span>
               </h4>
               <p className="text-sm text-slate-700 text-left flex-grow">

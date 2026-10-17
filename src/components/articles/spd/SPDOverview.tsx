@@ -135,7 +135,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
           </div>
 
           {/* The Senses Card (Yellow) - W-64 Centered */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Eight Sensory Systems</h2>
             
             <ImageWithFallback 
@@ -151,7 +151,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Ear className="text-[#d4a017] w-5 h-5" />
+                  <Ear className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">External Senses</h3>
@@ -161,7 +161,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <RefreshCw className="text-[#d4a017] w-5 h-5" />
+                  <RefreshCw className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Vestibular</h3>
@@ -171,7 +171,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Hand className="text-[#d4a017] w-5 h-5" />
+                  <Hand className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Proprioceptive</h3>
@@ -181,7 +181,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Interoceptive</h3>
@@ -341,7 +341,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
         <div className="space-y-8 animate-fadeIn">
 
           {/* Impact Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Impact & Co-occurrence</h2>
             
             <ImageWithFallback 
@@ -353,7 +353,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Home className="text-[#d4a017] w-4 h-4" />
+                  <Home className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Daily Life & Sleep</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Basic self-care tasks (eating, dressing, bathing) are frequently excruciating due to sensory sensitivities. Severe sleep difficulties are common, as the nervous system struggles to regulate and calm down.</p>
@@ -361,7 +361,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Heart className="text-[#d4a017] w-4 h-4" />
+                  <Heart className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Emotional Regulation</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Because the brain is constantly managing sensory overload, the individual operates in a state of high physiological stress. This frequently triggers anxiety, immense frustration, or overwhelming neurological meltdowns.</p>
@@ -369,7 +369,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Users className="text-[#d4a017] w-4 h-4" />
+                  <Users className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Co-occurrence (Autism)</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">SPD rarely exists in a vacuum. Research indicates that a massive 70-90% of individuals diagnosed with Autism Spectrum Disorder experience severe sensory processing differences.<sup>1</sup></p>

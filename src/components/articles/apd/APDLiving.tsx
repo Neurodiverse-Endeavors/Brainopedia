@@ -136,7 +136,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
           </div>
 
           {/* Relationships Card (Yellow) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships & Social Contexts</h2>
             
             <ImageWithFallback 
@@ -148,7 +148,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Users className="text-[#d4a017] w-5 h-5" />
+                  <Users className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Friendships & Dating</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Group conversations with overlapping voices are notoriously difficult. Close, one-on-one friendships in quiet settings feel far more comfortable. Romantic partners must be willing to adapt their communication style.</p>
@@ -156,7 +156,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Home className="text-[#d4a017] w-5 h-5" />
+                  <Home className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Family Dynamics</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Family members may struggle to understand why you "hear when you want to" or seem to ignore them. Open education about APD is essential to help families develop patience and use accessible communication.</p>
@@ -164,7 +164,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <GraduationCap className="text-[#d4a017] w-5 h-5" />
+                  <GraduationCap className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">School Socializing</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Cafeterias, playgrounds, and hallways are auditory nightmares. Choosing quieter social options isn't "antisocial"—it's a highly practical, healthy accommodation to preserve your energy.</p>
@@ -310,7 +310,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Lifespan Card (Yellow) - Uses Float Image with organic text flow */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Life Across the Ages</h2>
             
             <ImageWithFallback 
@@ -325,7 +325,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Baby className="text-[#d4a017] w-5 h-5" /> Childhood & School
+                <Baby className="text-[#ffd166] w-5 h-5" /> Childhood & School
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Young children benefit immensely from early language intervention. As academic demands soar during elementary and middle school, appropriate accommodations (like IEPs) are absolutely crucial for success and preserving self-esteem.
@@ -334,7 +334,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Users className="text-[#d4a017] w-5 h-5" /> Adolescence
+                <Users className="text-[#ffd166] w-5 h-5" /> Adolescence
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Teenagers face complex social dynamics and incredibly fast-paced instruction. This is the critical period where identity development occurs, and students must actively learn how to advocate for their own needs.
@@ -343,7 +343,7 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
 
             <div>
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Compass className="text-[#d4a017] w-5 h-5" /> Adulthood & Beyond
+                <Compass className="text-[#ffd166] w-5 h-5" /> Adulthood & Beyond
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Many adults report that life improves significantly after school ends because they finally gain control over their environments. While age-related hearing changes may eventually compound APD, a lifetime of compensation strategies provides immense resilience.

@@ -122,7 +122,7 @@ export function SynesthesiaCauses({ setCurrentArticle, initialTab }: Synesthesia
           </p>
 
           {/* Theories Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Cross-Wiring Debate</h2>
             
             <ImageWithFallback 

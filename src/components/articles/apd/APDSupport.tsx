@@ -136,7 +136,7 @@ export function APDSupport({ setCurrentArticle, initialTab }: APDSupportProps) {
           </div>
 
           {/* Tech Card (Yellow) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Assistive Technology</h2>
             
             <ImageWithFallback 
@@ -152,7 +152,7 @@ export function APDSupport({ setCurrentArticle, initialTab }: APDSupportProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Mic className="text-[#d4a017] w-5 h-5" />
+                  <Mic className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">FM / Remote Mic Systems</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">These systems dramatically improve the signal-to-noise ratio by transmitting the speaker's voice directly to the listener's ears, completely eliminating the negative effects of room distance and background chatter.</p>
@@ -160,7 +160,7 @@ export function APDSupport({ setCurrentArticle, initialTab }: APDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Monitor className="text-[#d4a017] w-5 h-5" />
+                  <Monitor className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Captioning & Transcripts</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Real-time captioning or automated speech-to-text apps during lectures provide instant visual access to spoken information, completely removing the heavy burden of auditory processing.</p>
@@ -168,7 +168,7 @@ export function APDSupport({ setCurrentArticle, initialTab }: APDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Eye className="text-[#d4a017] w-5 h-5" />
+                  <Eye className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Visual Supports</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Written agendas, structured PowerPoint slides, and graphic organizers provide essential structure. Always pair critical auditory instructions with a permanent visual equivalent.</p>
@@ -314,7 +314,7 @@ export function APDSupport({ setCurrentArticle, initialTab }: APDSupportProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Educational Card (Yellow) - Uses Float Image with organic text flow */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Educational & Home Support</h2>
             
             <ImageWithFallback 
@@ -329,7 +329,7 @@ export function APDSupport({ setCurrentArticle, initialTab }: APDSupportProps) {
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <FileText className="text-[#d4a017] w-5 h-5" /> IEP & 504 Plans
+                <FileText className="text-[#ffd166] w-5 h-5" /> IEP & 504 Plans
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Eligible students should receive formal documents mandating critical modifications: extended time, quiet testing locations, and written directions. Because APD eligibility varies by state, robust documentation is vital for advocacy.
@@ -338,7 +338,7 @@ export function APDSupport({ setCurrentArticle, initialTab }: APDSupportProps) {
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Home className="text-[#d4a017] w-5 h-5" /> Home Support
+                <Home className="text-[#ffd166] w-5 h-5" /> Home Support
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Families must optimize the home by reducing background noise (e.g., turning off the TV during homework). Communication requires gaining the child's attention before speaking and rephrasing rather than simply repeating louder.
@@ -347,7 +347,7 @@ export function APDSupport({ setCurrentArticle, initialTab }: APDSupportProps) {
 
             <div>
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Heart className="text-[#d4a017] w-5 h-5" /> Counseling
+                <Heart className="text-[#ffd166] w-5 h-5" /> Counseling
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 The chronic stress of communication breakdowns frequently breeds severe anxiety. Professional counseling is heavily recommended to support identity formation, build resilience, and dismantle perfectionism.

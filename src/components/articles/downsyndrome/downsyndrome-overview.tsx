@@ -163,7 +163,7 @@ export function DownSyndromeOverview({ setCurrentArticle, initialTab }: DownSynd
         <div className="space-y-8 animate-fadeIn">
 
           {/* Cognitive Profile Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Cognitive Profile</h2>
             
             <ImageWithFallback 
@@ -192,10 +192,10 @@ export function DownSyndromeOverview({ setCurrentArticle, initialTab }: DownSynd
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-[#d4a017]" /> Common Challenges
+                    <Brain className="w-4 h-4 text-[#ffd166]" /> Common Challenges
                   </h3>
                   <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
                     <li><strong>Auditory Memory:</strong> Verbal short-term memory is often a significant vulnerability.</li>

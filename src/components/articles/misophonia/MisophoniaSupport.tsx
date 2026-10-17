@@ -128,7 +128,7 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
           </div>
 
           {/* Advocacy Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-4 text-2xl text-center">Advocacy in School & Work</h2>
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
               Under 504 Plans or workplace ADA guidelines, sensory sensitivities can be legally accommodated. Crucial modifications include:
@@ -136,19 +136,19 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="flex items-start gap-2 bg-white p-4 rounded-xl border border-yellow-200 shadow-sm">
-                <CheckCircle2 className="text-[#d4a017] w-5 h-5 shrink-0" />
+                <CheckCircle2 className="text-[#ffd166] w-5 h-5 shrink-0" />
                 <p className="text-sm text-slate-700">Permission to wear discrete earplugs or noise-canceling headphones during focused work periods.</p>
               </div>
               <div className="flex items-start gap-2 bg-white p-4 rounded-xl border border-yellow-200 shadow-sm">
-                <CheckCircle2 className="text-[#d4a017] w-5 h-5 shrink-0" />
+                <CheckCircle2 className="text-[#ffd166] w-5 h-5 shrink-0" />
                 <p className="text-sm text-slate-700">Access to alternative, silent testing rooms for school exams to prevent trigger-induced panic.</p>
               </div>
               <div className="flex items-start gap-2 bg-white p-4 rounded-xl border border-yellow-200 shadow-sm">
-                <CheckCircle2 className="text-[#d4a017] w-5 h-5 shrink-0" />
+                <CheckCircle2 className="text-[#ffd166] w-5 h-5 shrink-0" />
                 <p className="text-sm text-slate-700">A physical desk location intentionally positioned away from high-traffic breakrooms, kitchens, or loud colleagues.</p>
               </div>
               <div className="flex items-start gap-2 bg-white p-4 rounded-xl border border-yellow-200 shadow-sm">
-                <CheckCircle2 className="text-[#d4a017] w-5 h-5 shrink-0" />
+                <CheckCircle2 className="text-[#ffd166] w-5 h-5 shrink-0" />
                 <p className="text-sm text-slate-700">Flexibility for remote work or hybrid scheduling to manually control sensory input.</p>
               </div>
             </div>
@@ -249,7 +249,7 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
       {activeTab === 'communication' && (
         <div className="space-y-8 animate-fadeIn">
 
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Communication & Boundaries</h2>
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Misophonia is often hardest on family dynamics and close relationships. Navigating it successfully requires mutual empathy, explicit communication, and removing personal offense from the equation.
@@ -258,7 +258,7 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
             <div className="space-y-4 max-w-4xl mx-auto">
               <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-yellow-200 shadow-sm">
                 <div className="bg-[#fffbeb] p-2 rounded-lg shrink-0">
-                  <MessageCircle className="text-[#d4a017] w-5 h-5" />
+                  <MessageCircle className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Education & Validation</h3>
@@ -268,7 +268,7 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
 
               <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-yellow-200 shadow-sm">
                 <div className="bg-[#fffbeb] p-2 rounded-lg shrink-0">
-                  <ChevronRight className="text-[#d4a017] w-5 h-5" />
+                  <ChevronRight className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Clear Safety Signals</h3>
@@ -278,7 +278,7 @@ export function MisophoniaSupport({ setCurrentArticle, initialTab }: MisophoniaS
 
               <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-yellow-200 shadow-sm">
                 <div className="bg-[#fffbeb] p-2 rounded-lg shrink-0">
-                  <ChevronDownSquare className="text-[#d4a017] w-5 h-5" />
+                  <ChevronDownSquare className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Modified Family Routines</h3>

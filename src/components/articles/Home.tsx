@@ -113,11 +113,11 @@ export function Home({ setCurrentArticle }: HomeProps) {
 
               <div className="pl-12 sm:pl-16 pr-8 sm:pr-12 py-8 flex flex-col items-center text-center z-20">
                 <div className="flex items-center gap-3 w-full mb-5">
-                  <div className="h-[2px] bg-gradient-to-r from-transparent to-[#d4a017] flex-1"></div>
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4a017]">
+                  <div className="h-[2px] bg-gradient-to-r from-transparent to-[#ffd166] flex-1"></div>
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#ffd166]">
                     Volume II
                   </span>
-                  <div className="h-[2px] bg-gradient-to-l from-transparent to-[#d4a017] flex-1"></div>
+                  <div className="h-[2px] bg-gradient-to-l from-transparent to-[#ffd166] flex-1"></div>
                 </div>
                 
                 <img src="/images/home-learning-diff.webp" alt="Gears" className="w-20 sm:w-24 h-auto rounded-lg shadow-sm mb-4 border border-gray-100" />
@@ -330,11 +330,11 @@ export function Home({ setCurrentArticle }: HomeProps) {
 
               <div className="pl-12 sm:pl-16 pr-8 sm:pr-12 py-8 flex flex-col items-center text-center z-20">
                 <div className="flex items-center gap-3 w-full mb-5">
-                  <div className="h-[2px] bg-gradient-to-r from-transparent to-[#d4a017] flex-1"></div>
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4a017]">
+                  <div className="h-[2px] bg-gradient-to-r from-transparent to-[#ffd166] flex-1"></div>
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#ffd166]">
                     Volume VI
                   </span>
-                  <div className="h-[2px] bg-gradient-to-l from-transparent to-[#d4a017] flex-1"></div>
+                  <div className="h-[2px] bg-gradient-to-l from-transparent to-[#ffd166] flex-1"></div>
                 </div>
                 
                 <img src="/images/home-genetics-or-enviro.webp" alt="DNA" className="w-20 sm:w-24 h-auto rounded-lg shadow-sm mb-4 border border-gray-100" />

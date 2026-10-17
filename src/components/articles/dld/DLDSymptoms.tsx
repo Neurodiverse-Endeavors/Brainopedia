@@ -124,7 +124,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
           </div>
 
           {/* Grammar & Vocabulary Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Grammar & Vocabulary Challenges</h2>
             
             <ImageWithFallback 
@@ -136,7 +136,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
               
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1.5 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1.5 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Grammatical Morphemes</h3>
                   <p className="text-xs text-slate-700 mb-3">Children with DLD have severe difficulty with small grammatical markers:</p>
@@ -149,7 +149,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1.5 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1.5 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Sentence Structure</h3>
                   <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
@@ -161,7 +161,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1.5 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1.5 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Limited Vocabulary</h3>
                   <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
@@ -173,7 +173,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1.5 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1.5 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Word-Finding Problems</h3>
                   <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
@@ -324,7 +324,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
         <div className="space-y-8 animate-fadeIn">
 
           {/* Academic Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Academic & Speech Symptoms</h2>
             
             <ImageWithFallback 
@@ -340,7 +340,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both max-w-4xl mx-auto">
               
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Literacy & Vocabulary</h3>
                   <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">
@@ -352,7 +352,7 @@ export function DLDSymptoms({ setCurrentArticle, initialTab }: DLDSymptomsProps)
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Phonological Awareness</h3>
                   <ul className="list-disc ml-4 text-xs text-slate-700 space-y-1">

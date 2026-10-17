@@ -143,7 +143,7 @@ export function MisophoniaOverview({ setCurrentArticle, initialTab }: Misophonia
         <div className="space-y-8 animate-fadeIn">
 
           {/* Triggers Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Trigger Profile</h2>
             
             <ImageWithFallback 
@@ -160,7 +160,7 @@ export function MisophoniaOverview({ setCurrentArticle, initialTab }: Misophonia
               
               {/* CSS SHAPE (DOT) INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Eating Sounds</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">By far the most commonly reported triggers. These include chewing, slurping, swallowing, lip-smacking, and crunching.</p>
@@ -169,7 +169,7 @@ export function MisophoniaOverview({ setCurrentArticle, initialTab }: Misophonia
 
               {/* CSS SHAPE (DOT) INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Breathing Sounds</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Nasal or throat-based noises such as heavy breathing, chronic sniffing, loud yawning, or frequent throat clearing.</p>
@@ -178,7 +178,7 @@ export function MisophoniaOverview({ setCurrentArticle, initialTab }: Misophonia
 
               {/* CSS SHAPE (DOT) INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Repetitive Noises</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Sharp, repetitive environmental noises caused by human action, such as pen clicking, aggressive keyboard typing, or foot tapping.</p>
@@ -187,7 +187,7 @@ export function MisophoniaOverview({ setCurrentArticle, initialTab }: Misophonia
 
               {/* CSS SHAPE (DOT) INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Visual Triggers (Misokinesia)</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Many individuals also experience "misokinesia," where purely visual stimuli (like seeing someone bounce their leg or chew gum silently) trigger the exact same panic response.<sup>1</sup></p>

@@ -146,7 +146,7 @@ export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
       {activeTab === 'characteristics' && (
         <div className="space-y-8 animate-fadeIn">
 
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Diagnostic Pillars</h2>
             
             <ImageWithFallback 
@@ -161,7 +161,7 @@ export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mt-0.5">
                   <Brain className="w-4 h-4" />
                 </div>
                 <div>
@@ -171,7 +171,7 @@ export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mt-0.5">
                   <Activity className="w-4 h-4" />
                 </div>
                 <div>
@@ -181,7 +181,7 @@ export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mt-0.5">
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
@@ -259,10 +259,10 @@ export function IDOverview({ setCurrentArticle, initialTab }: IDOverviewProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1 flex items-center gap-2">
-                    <Lightbulb className="w-4 h-4 text-[#d4a017]" /> Natural Variation
+                    <Lightbulb className="w-4 h-4 text-[#ffd166]" /> Natural Variation
                   </h3>
                   <p className="text-xs text-slate-700 leading-relaxed">The neurodiversity movement views intellectual disability as a natural, expected part of human cognitive diversity rather than an inherently broken state.</p>
                 </div>

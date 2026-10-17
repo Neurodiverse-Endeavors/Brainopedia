@@ -111,7 +111,7 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
           </div>
 
           {/* Core Challenges Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Primary Areas of Challenge</h2>
             <ImageWithFallback 
               src="/images/nvld/nvld-overview-challenges-hero.webp"
@@ -175,7 +175,7 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
               {/* Strength Mini-Card 2 */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4 hover:-translate-y-1 transition-transform duration-200">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Ear className="text-[#d4a017] w-6 h-6" />
+                  <Ear className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Auditory Rote Memory</h3>
@@ -216,7 +216,7 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
         <div className="space-y-8 animate-fadeIn">
 
           {/* Prevalence Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prevalence & Demographics</h2>
             
 
@@ -309,7 +309,7 @@ export function NVLDOverview({ setCurrentArticle, initialTab }: NVLDOverviewProp
         <div className="space-y-8 animate-fadeIn">
           
           {/* Lifespan Impact Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Developmental Timeline</h2>
 
             <ImageWithFallback 

@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Brain, Layers, Zap, Eye, Users, AlertTriangle, Target, Search, Activity, ShieldCheck, CheckCircle, Lightbulb, Puzzle, Network } from 'lucide-react';
+import { Brain, Zap, Search, Activity, AlertTriangle, Target, BookOpen, Heart } from 'lucide-react';
 
 interface TwiceExceptionalOverviewProps {
   setCurrentArticle?: (article: string) => void;
@@ -77,19 +77,19 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
       </div>
 
       {/* ==========================================
-          TAB 1: DEFINITION & COMBINATIONS
+          TAB 1: DEFINITION & COMBINATIONS (Standard Icons)
       ========================================== */}
       {activeTab === 'definition' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Definition Card (Cyan) - Uses Float Image */}
+          {/* Definition Card (Cyan) - Centered Hero + Stacked Icons */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">What is Twice-Exceptionality?</h2>
             
             <ImageWithFallback 
               src="/images/2e/2e-overview-definition.webp"
               alt="Student excelling in complex robotics while struggling with a basic worksheet"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -97,32 +97,28 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 clear-both">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
-                <Search className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Historical Context</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Recognition emerged in the 1980s when early research by Joanne Whitmore documented highly gifted students with severe learning disabilities who were systematically under-identified for both their gifts and their disabilities.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
-                </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <Search className="text-[#0A9DC4] w-6 h-6 mb-3" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Historical Context</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Recognition emerged in the 1980s when early research by Joanne Whitmore documented highly gifted students with severe learning disabilities who were systematically under-identified for both their gifts and their disabilities.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-3">
-                <Activity className="text-[#0A9DC4] w-5 h-5 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Prevalence</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Exact prevalence is difficult to pin down due to misdiagnosis, but clinical research suggests 2% to 5% of all students may be twice-exceptional.<sup className="text-[#10b981] font-bold ml-0.5">2</sup> Some estimates indicate that 14% to 20% of all gifted students have a co-occurring learning disability.<sup className="text-[#10b981] font-bold ml-0.5">3</sup></p>
-                </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <Activity className="text-[#0A9DC4] w-6 h-6 mb-3" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Prevalence</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Exact prevalence is difficult to pin down due to misdiagnosis, but clinical research suggests 2% to 5% of all students may be twice-exceptional.<sup className="text-[#10b981] font-bold ml-0.5">2</sup> Some estimates indicate that 14% to 20% of all gifted students have a co-occurring learning disability.<sup className="text-[#10b981] font-bold ml-0.5">3</sup></p>
               </div>
             </div>
           </div>
 
-          {/* Combinations Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          {/* Combinations Card (Yellow) - Centered Hero + Circular Icon Badges */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Common Combinations</h2>
             
             <ImageWithFallback 
               src="/images/2e/2e-overview-combinations-hero.webp"
               alt="Venn diagram showing Giftedness intersecting with ADHD, Dyslexia, and Autism"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -130,23 +126,35 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Gifted + LD</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#fffbeb] text-[#ffd166] flex items-center justify-center mb-3 shadow-sm border border-[#ffd166] border-opacity-50">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Gifted + LD</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">High intellectual ability co-occurring with specific learning disabilities like Dyslexia, Dyscalculia, or Dysgraphia. They may reason at a collegiate level but read at a 2nd-grade level.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Gifted + ADHD</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#fffbeb] text-[#ffd166] flex items-center justify-center mb-3 shadow-sm border border-[#ffd166] border-opacity-50">
+                  <Zap className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Gifted + ADHD</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Exceptional problem-solving abilities masked by severe executive dysfunction, inattention, or impulsivity that interferes with consistent academic performance.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Gifted + Autism</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#fffbeb] text-[#ffd166] flex items-center justify-center mb-3 shadow-sm border border-[#ffd166] border-opacity-50">
+                  <Brain className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Gifted + Autism</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Remarkable talents in specific domains (like math or music) combined with significant challenges navigating unwritten social rules, sensory input, and adaptive functioning.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Gifted + Emotional</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#fffbeb] text-[#ffd166] flex items-center justify-center mb-3 shadow-sm border border-[#ffd166] border-opacity-50">
+                  <Heart className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Gifted + Emotional</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">The profound sensitivity associated with giftedness triggering or exacerbating clinical emotional disorders, such as severe anxiety, depression, or OCD.</p>
               </div>
             </div>
@@ -181,47 +189,68 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
       )}
 
       {/* ==========================================
-          TAB 2: PARADOX & PROFILE
+          TAB 2: PARADOX & PROFILE (Numbered Badges & Horizontal Bars)
       ========================================== */}
       {activeTab === 'paradox' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Paradox Card (Slate) - Uses Float Image */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
+          {/* Paradox Card (Slate) - Centered Hero + Horizontal Bars with Numbers */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Masking Paradox</h2>
             
             <ImageWithFallback 
               src="/images/2e/2e-overview-paradox.webp"
               alt="Conceptual visual of overlapping lenses masking the original colors"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-gray-300 mb-6 shadow-sm"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-8">
               The defining struggle of twice-exceptionality is the "masking effect." High intelligence often compensates for the disability, resulting in average performance that hides both the giftedness <em>and</em> the disability from teachers.
             </p>
 
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 mb-4 clear-both">
-              <div className="flex items-center gap-2 mb-3 border-b border-gray-100 pb-2">
-                <Layers className="text-[#0c264d] w-5 h-5" />
-                <h3 className="text-[#0c264d] font-bold text-sm">Baum's Three Identification Patterns</h3>
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 mb-4 clear-both">
+              <h3 className="text-[#0c264d] font-bold text-lg mb-2 text-center">Baum's Three Identification Patterns</h3>
+              <p className="text-sm text-slate-600 text-center mb-6">Dr. Susan Baum famously identified three tragic patterns in how 2e students are perceived by the educational system:<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
+              
+              <div className="space-y-4">
+                {/* Horizontal Bar 1 */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 shadow-md text-lg">1</div>
+                  <div>
+                    <h4 className="text-sm font-bold text-[#0c264d] mb-1">Identified Gifted, Disability Ignored</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">The student is in gifted classes but silently drowning due to a lack of accommodations, often labeled "lazy" or "careless."</p>
+                  </div>
+                </div>
+
+                {/* Horizontal Bar 2 */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 shadow-md text-lg">2</div>
+                  <div>
+                    <h4 className="text-sm font-bold text-[#0c264d] mb-1">Identified Disabled, Giftedness Ignored</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">The student is receiving special education services, but the low-level curriculum completely starves their high intellect.</p>
+                  </div>
+                </div>
+
+                {/* Horizontal Bar 3 */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 shadow-md text-lg">3</div>
+                  <div>
+                    <h4 className="text-sm font-bold text-[#0c264d] mb-1">Neither Recognized</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">The gift and disability perfectly mask each other. The student performs at "grade level" and flies entirely under the radar, never receiving enrichment or intervention.</p>
+                  </div>
+                </div>
               </div>
-              <p className="text-xs text-slate-700 leading-relaxed mb-3">Dr. Susan Baum famously identified three tragic patterns in how 2e students are usually perceived by the educational system:<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
-              <ul className="grid grid-cols-1 gap-y-2 list-disc ml-5 text-xs text-slate-700">
-                <li><strong>Identified Gifted, Disability Ignored:</strong> The student is in gifted classes but silently drowning due to a lack of accommodations, often labeled "lazy" or "careless."</li>
-                <li><strong>Identified Disabled, Giftedness Ignored:</strong> The student is receiving special education services, but the low-level curriculum completely starves their high intellect.</li>
-                <li><strong>Neither Recognized:</strong> The gift and disability perfectly mask each other. The student performs at "grade level" and flies entirely under the radar, never receiving enrichment or intervention.</li>
-              </ul>
             </div>
           </div>
 
-          {/* Profile & Challenges Card (Cyan) - Uses Hero Image */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+          {/* Profile & Challenges Card (Cyan) - Centered Hero + Circled Icons */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Characteristics & Challenges</h2>
             
             <ImageWithFallback 
               src="/images/2e/2e-overview-profile-hero.webp"
               alt="Spiky cognitive profile graph showing extreme highs and lows"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -229,20 +258,24 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Brain className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">The "Spiky" Cognitive Profile</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd]">
+                  <Target className="w-5 h-5" />
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Unlike neurotypical peers who have relatively flat, even test scores, 2e students show massive "scatter" in cognitive testing. They may score in the 99th percentile for verbal reasoning but the 10th percentile for processing speed.</p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">The "Spiky" Cognitive Profile</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Unlike neurotypical peers who have relatively flat, even test scores, 2e students show massive "scatter" in cognitive testing. They may score in the 99th percentile for verbal reasoning but the 10th percentile for processing speed.</p>
+                </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <AlertTriangle className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Underachievement & Misdiagnosis</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd]">
+                  <AlertTriangle className="w-5 h-5" />
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Because their academic performance is incredibly inconsistent, their gifts are frequently misinterpreted as ADHD, or their genuine learning disabilities are dismissed as laziness, leading to chronic underachievement and a refusal to participate.</p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Underachievement & Misdiagnosis</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Because their academic performance is incredibly inconsistent, their gifts are frequently misinterpreted as ADHD, or their genuine learning disabilities are dismissed as laziness, leading to chronic underachievement and a refusal to participate.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -274,82 +307,78 @@ export function TwiceExceptionalOverview({ setCurrentArticle, initialTab }: Twic
       )}
 
       {/* ==========================================
-          TAB 3: STRENGTHS & FRAMEWORKS
+          TAB 3: STRENGTHS & FRAMEWORKS (3D Accents, NO ICONS)
       ========================================== */}
       {activeTab === 'frameworks' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Strengths Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          {/* Strengths Card (Yellow) - Centered Hero + 3D Accent Cards */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Strengths & Resilience</h2>
             
             <ImageWithFallback 
               src="/images/2e/2e-overview-strengths.webp"
               alt="Visual representing out-of-the-box, compensatory problem solving"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#ffd166] mb-6 shadow-sm"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-8">
               Despite their challenges, 2e individuals demonstrate remarkable resilience. Because their brains process information differently, they naturally develop sophisticated workarounds and out-of-the-box solutions that neurotypical peers would never consider.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Lightbulb className="text-[#d4a017] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Unique Contributions</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 clear-both">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#ffd166]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Unique Contributions</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">The combination of high ability and a learning difference creates highly innovative thinking. Many of history's most successful innovators, artists, and scientists (such as Albert Einstein and Temple Grandin) are widely believed to have been twice-exceptional.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Puzzle className="text-[#d4a017] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Compensatory Strategies</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#ffd166]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Compensatory Strategies</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">2e students frequently develop incredibly advanced adaptive approaches to bypass their disabilities. This demonstrates profound cognitive flexibility and perseverance in the face of academic roadblocks.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Frameworks Card (Slate) - Uses Hero Image */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+          {/* Frameworks Card (Slate) - Centered Hero + 3D Accent Layout */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Theoretical Frameworks</h2>
             
             <ImageWithFallback 
               src="/images/2e/2e-overview-frameworks-hero.webp"
               alt="Visual celebrating a neurodiverse brain and strength-based learning"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
-                  <Target className="text-[#0c264d] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Strength-Based Approach</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0A9DC4]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-3 border-b border-gray-100 pb-2">Strength-Based Approach</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Pioneered by researchers like Baum, Schader, and Owen, this model dictates that schools must focus on actively developing the student's <em>talents</em> first, rather than focusing solely on remediating their deficits.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Pioneered by researchers like Baum, Schader, and Owen, this model dictates that schools must focus on actively developing the student's <em>talents</em> first, rather than focusing solely on remediating their deficits.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
-                  <ShieldCheck className="text-[#0c264d] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Dual Differentiation</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0A9DC4]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-3 border-b border-gray-100 pb-2">Dual Differentiation</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">The talent development framework recognizes that 2e students explicitly need *both* at the same time: advanced acceleration for their gifts, and robust IEP accommodations for their disabilities.</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">The talent development framework recognizes that 2e students explicitly need *both* at the same time: advanced acceleration for their gifts, and robust IEP accommodations for their disabilities.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
-                  <Network className="text-[#0c264d] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Neurodiversity</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0A9DC4]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-3 border-b border-gray-100 pb-2">Neurodiversity</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Contemporary frameworks view twice-exceptionality as representing entirely valid, different ways of thinking and learning, valuing the unique cognitive profile rather than treating the disability as something to be "cured."</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Contemporary frameworks view twice-exceptionality as representing entirely valid, different ways of thinking and learning, valuing the unique cognitive profile rather than treating the disability as something to be "cured."</p>
               </div>
 
             </div>

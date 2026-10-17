@@ -119,7 +119,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
           </div>
 
           {/* Hyper-Connectivity Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Specific Brain Regions</h2>
             
             <ImageWithFallback 
@@ -132,7 +132,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
               
               {/* CSS SHAPE (DOT) INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Anterior Insular Cortex (AIC)</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">The AIC is a part of the brain that processes emotions and internal body states. fMRI studies have definitively proven that the AIC is significantly more active in people with misophonia the exact second they hear a trigger sound, proving the physiological reality of the disorder.<sup>4</sup></p>
@@ -261,7 +261,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
         <div className="space-y-8 animate-fadeIn">
 
           {/* Genetics Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Genetics & Brain Development</h2>
             
             <ImageWithFallback 
@@ -274,7 +274,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
               
               {/* ACCENT BORDER INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Familial Connections</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Misophonia very frequently runs in families, strongly suggesting an underlying genetic component that predisposes a nervous system to develop this specific auditory-motor crossover.<sup>1</sup></p>
@@ -283,7 +283,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
 
               {/* ACCENT BORDER INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">The Pruning Phase</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">The condition typically emerges between ages 9 and 13. This coincides perfectly with a major "pruning" phase of brain development, suggesting misophonia may be an accidental byproduct of how neural connections reorganize during late childhood.<sup>2</sup></p>

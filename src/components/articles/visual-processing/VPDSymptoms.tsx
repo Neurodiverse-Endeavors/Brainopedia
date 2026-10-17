@@ -143,7 +143,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
           </div>
 
           {/* Spatial & Motor Card (Yellow) - Uses W-Full Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Spatial, Motor & Constancy</h2>
             
             <ImageWithFallback 
@@ -155,7 +155,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Map className="text-[#d4a017] w-5 h-5" />
+                  <Map className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Visual-Spatial</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Confusion regarding position in space. Deficits cause deep confusion with directional instructions (left/right), poor physical navigation, and extreme difficulty reading maps, graphs, or geometric shapes.</p>
@@ -163,7 +163,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <PenTool className="text-[#d4a017] w-5 h-5" />
+                  <PenTool className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Motor Integration</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">The brain struggles to coordinate visual data with physical movement (eye-hand coordination). This highly affects the legibility of handwriting, cutting with scissors, tying shoes, and playing sports.</p>
@@ -171,7 +171,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Puzzle className="text-[#d4a017] w-5 h-5" />
+                  <Puzzle className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Closure & Constancy</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Closure is the ability to recognize an object when only part is visible. Constancy is recognizing an object regardless of its size or font. Deficits make it incredibly hard to recognize words printed in new formats.</p>
@@ -302,7 +302,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
         <div className="space-y-8 animate-fadeIn">
 
           {/* Social Impact Card (Yellow) - Uses W-64 Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social & Emotional Impact</h2>
             
             <ImageWithFallback 
@@ -318,7 +318,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <AlertTriangle className="text-[#d4a017] w-5 h-5" />
+                  <AlertTriangle className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Frustration & Avoidance</h3>
@@ -328,7 +328,7 @@ export function VPDSymptoms({ setCurrentArticle, initialTab }: VPDSymptomsProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Low Self-Esteem & Social Impact</h3>

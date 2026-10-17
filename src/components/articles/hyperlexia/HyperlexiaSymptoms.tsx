@@ -124,7 +124,7 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
           </div>
 
           {/* Comprehension Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Comprehension Difficulties</h2>
             
             <ImageWithFallback 
@@ -140,7 +140,7 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <Split className="text-[#d4a017] w-5 h-5" />
+                  <Split className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">The Reading Split</h3>
                 </div>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
@@ -151,7 +151,7 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-3 border-b border-[#ffd166] pb-2">
-                  <Ear className="text-[#d4a017] w-5 h-5" />
+                  <Ear className="text-[#ffd166] w-5 h-5" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Listening Comprehension</h3>
                 </div>
                 <ul className="list-disc ml-4 text-xs text-slate-700 space-y-2">
@@ -296,7 +296,7 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
         <div className="space-y-8 animate-fadeIn">
 
           {/* Cognitive Profile Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Cognitive Profile</h2>
             
             <ImageWithFallback 
@@ -312,7 +312,7 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <Brain className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Exceptional Strengths</h3>
@@ -326,7 +326,7 @@ export function HyperlexiaSymptoms({ setCurrentArticle, initialTab }: Hyperlexia
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Activity className="text-[#d4a017] w-5 h-5" />
+                  <Activity className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Cognitive Weaknesses</h3>

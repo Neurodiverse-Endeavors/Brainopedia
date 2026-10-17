@@ -125,7 +125,7 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-200">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Activity className="text-[#d4a017] w-6 h-6" />
+                  <Activity className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Peak Severity</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Symptoms often reach their peak frequency and severity during early adolescence.<sup>3</sup></p>
@@ -154,7 +154,7 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
           </p>
 
           {/* Experience Card (Yellow) - Uses Horizontal Rounded Square Icons */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Urges & Suppression</h2>
             
             <ImageWithFallback 
@@ -170,7 +170,7 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Zap className="text-[#d4a017] w-5 h-5" />
+                  <Zap className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2">The Premonitory Urge</h3>
@@ -181,7 +181,7 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <BatteryWarning className="text-[#d4a017] w-5 h-5" />
+                  <BatteryWarning className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2">The Cost of Suppression</h3>

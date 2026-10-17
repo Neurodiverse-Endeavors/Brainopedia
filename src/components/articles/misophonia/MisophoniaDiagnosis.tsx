@@ -119,7 +119,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
           </div>
 
           {/* Differential Diagnosis Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
             
             <ImageWithFallback 
@@ -136,7 +136,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
               
               {/* CSS SHAPE (DOT) INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Hyperacusis</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Sensitivity to <em>loudness</em>. A person with hyperacusis feels physical pain when sounds reach a certain decibel level. Misophonia, however, is about the <em>type</em> of sound, regardless of volume.<sup>3</sup></p>
@@ -145,7 +145,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
 
               {/* CSS SHAPE (DOT) INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Phonophobia</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">A specific, psychological fear of sound. While misophonia can cause anticipatory anxiety, the core emotional response is usually profound anger, rage, or disgust—not just fear.</p>
@@ -154,7 +154,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
 
               {/* CSS SHAPE (DOT) INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Sensory Processing Disorder</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">SPD involves a much broader neurological sensitivity across multiple systems (touch, balance, taste). Misophonia is hyper-focused primarily on specific auditory/visual triggers.<sup>4</sup></p>
@@ -285,7 +285,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
         <div className="space-y-8 animate-fadeIn">
 
           {/* Clinical Interview Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Clinical Interview</h2>
             
             <ImageWithFallback 
@@ -302,7 +302,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
               
               {/* ACCENT BORDER INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Trigger Specificity</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">The clinician will ask exactly what sounds (and visual stimuli) act as triggers. They will explore whether the reaction changes based on who is making the sound (e.g., family members vs. strangers).</p>
@@ -311,7 +311,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
 
               {/* ACCENT BORDER INSTEAD OF ICON */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Onset & Emotion</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">They will trace the history to identify when symptoms first started (typically ages 9–13). They will also require the patient to clearly identify their primary involuntary emotion (anger, disgust, or panic).<sup>1</sup></p>

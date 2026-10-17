@@ -1,6 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { BookOpen, Brain, Heart, Users, ShieldAlert, Sparkles, Compass, Target, GraduationCap, Briefcase, Activity, Map, Lightbulb, CheckCircle, BookOpenCheck } from 'lucide-react';
 
 interface GiftednessLivingProps {
   setCurrentArticle?: (article: string) => void;
@@ -82,14 +81,14 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
       {activeTab === 'identity' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Identity Card (Cyan) - Uses Float Image */}
+          {/* Identity Card (Cyan) - Thick 3D Accent Cards (No Dots, No Icons) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Identity Development</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-living-identity.webp"
               alt="Young adult engaged in deep existential thought and reflection"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -97,64 +96,62 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <ShieldAlert className="text-[#0A9DC4] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Imposter Syndrome</h3>
+              {/* 3D Accent Border Card */}
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Imposter Syndrome</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Highly gifted individuals frequently experience imposter syndrome—feeling like a fraud despite overwhelming evidence of competence, largely driven by perfectionism and the awareness of how much they *don't* know.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <Compass className="text-[#0A9DC4] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Multipotentiality</h3>
+              {/* 3D Accent Border Card */}
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Multipotentiality</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Having intense interests and high abilities in multiple, unrelated domains. While exciting, this often leads to "analysis paralysis" when trying to commit to a single college major or career path.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Emotional Well-being Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          {/* Emotional Well-being Card (Yellow) - Stark Dark Navy Circular Badges */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Emotional Well-Being & Growth</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-living-wellbeing-hero.webp"
               alt="Visual representing mindfulness, resilience, and managing emotional intensity"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               The gifted mind is a high-performance engine. Without the right emotional maintenance, it is prone to overheating. Managing intensity, perfectionism, and existential anxiety are lifelong practices.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Activity className="text-[#d4a017] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Managing Intensity</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-[#0c264d] text-white flex items-center justify-center mb-4 shadow-md ring-4 ring-[#f8fafc] border-2 border-[#0c264d] shrink-0 font-bold text-xl">
+                  1
                 </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-3">Managing Intensity</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Learning to reframe intense emotional and sensory experiences as a strength (passion, deep empathy) rather than a flaw (being "too sensitive" or "too dramatic").</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Target className="text-[#d4a017] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Existential Depression</h3>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-[#0c264d] text-white flex items-center justify-center mb-4 shadow-md ring-4 ring-[#f8fafc] border-2 border-[#0c264d] shrink-0 font-bold text-xl">
+                  2
                 </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-3">Existential Depression</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Gifted individuals often grapple with the meaning of life, death, and systemic injustice. This requires engaging in highly meaningful pursuits and finding community with others who share these heavy concerns.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Mindfulness & Burnout</h3>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-[#0c264d] text-white flex items-center justify-center mb-4 shadow-md ring-4 ring-[#f8fafc] border-2 border-[#0c264d] shrink-0 font-bold text-xl">
+                  3
                 </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-3">Mindfulness & Burnout</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">The constantly racing mind benefits profoundly from mindfulness and presence. Setting strict boundaries and saying "no" to opportunities protects the individual from chronic burnout.</p>
               </div>
             </div>
@@ -184,14 +181,14 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
       {activeTab === 'social' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Relationships Card (Slate) - Uses Float Image */}
+          {/* Relationships Card (Slate) - Thick 3D Accent without CSS Dots */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social Relationships</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-living-social.webp"
               alt="Friends or a romantic couple engaged in an intense, deeply engaging conversation"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-gray-300 mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -199,65 +196,67 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
-                  <Users className="text-[#0c264d] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Intellectual Peers</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0c264d]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Intellectual Peers</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Gifted individuals desperately need peers who share their thinking patterns. This often means finding friends based on shared intellectual intensity rather than chronological age. Quality matters far more than quantity.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
-                  <Heart className="text-[#0c264d] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Romantic Relationships</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0c264d]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Romantic Relationships</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">In romance, gifted adults require partners who appreciate deep, philosophical conversation, respect their need to process intensely, and share core values. Matching IQ scores is far less important than matching emotional respect.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Community & Lifespan Card (Cyan) - Uses Hero Image */}
+          {/* Community & Lifespan Card (Cyan) - Stark Cyan Numbered Badges */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Community & The Lifespan</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-living-community-hero.webp"
               alt="Diverse community group connecting over shared intellectual passions or advocacy"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Giftedness doesn't disappear when a person graduates high school. It is a lifelong trajectory that requires constant adaptation, community finding, and advocacy.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Map className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Navigating Contexts</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#0A9DC4] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0A9DC4] text-lg mt-1">
+                  1
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Gifted adults frequently "code-switch," constantly adjusting their vocabulary and topic depth depending on the audience to avoid intimidating others. This adaptability is a skill, but can be highly exhausting.</p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Navigating Contexts</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Gifted adults frequently "code-switch," constantly adjusting their vocabulary and topic depth depending on the audience to avoid intimidating others. This adaptability is a skill, but can be highly exhausting.</p>
+                </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Sparkles className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Advocacy & Justice</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#0A9DC4] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0A9DC4] text-lg mt-1">
+                  2
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">A core trait of the gifted profile is a burning need for justice. Channeling this intense concern into constructive action—through careers, volunteer work, or advocacy—provides a highly necessary outlet.</p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Advocacy & Justice</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">A core trait of the gifted profile is a burning need for justice. Channeling this intense concern into constructive action—through careers, volunteer work, or advocacy—provides a highly necessary outlet.</p>
+                </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Users className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Support Networks</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#0A9DC4] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0A9DC4] text-lg mt-1">
+                  3
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Organizations like Mensa and SENG, as well as specialized online forums, are critical for adults to find a "tribe" that understands the lived experience of neurodivergent intensity.</p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Support Networks</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Organizations like Mensa and SENG, as well as specialized online forums, are critical for adults to find a "tribe" that understands the lived experience of neurodivergent intensity.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -285,82 +284,86 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
       {activeTab === 'career' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Educational Journey Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          {/* Educational Journey Card (Yellow) - Stark Navy/Yellow Numbered Badges */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Educational Journey</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-living-education.webp"
               alt="Student navigating a self-directed learning journey with excitement"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#ffd166] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
               The educational journey for a gifted individual is rarely linear. It requires constant advocacy to ensure they are placed in environments that stimulate their intellect rather than extinguishing their natural love of learning.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <GraduationCap className="text-[#d4a017] w-5 h-5" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 clear-both">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] text-lg mt-1">
+                  1
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">College Selection</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">College Selection</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Highly selective, brand-name colleges aren't the only path to success. Gifted students thrive when they find a campus culture that matches their specific intellectual interests, personal values, and need for autonomy.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <BookOpen className="text-[#d4a017] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] text-lg mt-1">
+                  2
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Lifelong Learning</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Lifelong Learning</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Learning does not end with formal degrees. Gifted adults must continue to intellectually stimulate themselves through professional development, reading, and deep-dive hobbies to maintain life satisfaction.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Career & Thriving Card (Slate) - Uses Hero Image */}
+          {/* Career & Thriving Card (Slate) - Pure Typography + 3D Accent Boxes (No Icons) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Career, Innovation & Thriving</h2>
             
             <ImageWithFallback 
               src="/images/giftedness/giftedness-living-career-hero.webp"
               alt="Gifted adult thriving in a dynamic, innovative work environment"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Giftedness is neither a guarantee of wealth nor a burden to bear; it is simply a unique operating system. Thriving means finding environments that allow that system to run at full capacity.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               
               <div>
-                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <Briefcase className="text-[#2abcd4] w-5 h-5" /> Workplace Dynamics
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 border-b border-[#0c264d] border-opacity-10 pb-2">
+                  Workplace Dynamics
                 </h3>
                 <p className="text-xs text-slate-700 leading-relaxed mb-4">
                   Gifted adults often experience severe frustration with slow corporate processes, bureaucracy, and rigid authority figures. They thrive in work environments that value rapid innovation, provide complex intellectual challenges, and allow for high degrees of independence. Because of multipotentiality, they may change careers multiple times.
                 </p>
-                <div className="bg-white p-3 rounded-lg border border-[#0c264d] border-opacity-20 shadow-sm flex items-start gap-2">
-                  <Lightbulb className="text-[#0c264d] w-4 h-4 mt-0.5 shrink-0" />
-                  <p className="text-xs text-slate-700">Many are naturally drawn to entrepreneurship, which offers the ultimate autonomy, creativity, and ability to pursue a singular vision without bureaucratic red tape.</p>
+                <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm relative overflow-hidden mt-5">
+                  <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0A9DC4]"></div>
+                  <div className="pl-3">
+                    <p className="text-xs text-slate-700 font-medium leading-relaxed">Many are naturally drawn to entrepreneurship, which offers the ultimate autonomy, creativity, and ability to pursue a singular vision without bureaucratic red tape.</p>
+                  </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <CheckCircle className="text-[#2abcd4] w-5 h-5" /> Defining Success
+                <h3 className="text-[#0c264d] font-bold text-lg mb-4 border-b border-[#0c264d] border-opacity-10 pb-2">
+                  Defining Success
                 </h3>
                 <p className="text-xs text-slate-700 leading-relaxed mb-4">
                   Not all gifted individuals need to pursue prestigious or high-profile careers. Personal fulfillment and alignment with core values matter far more than external markers of success.
                 </p>
-                <div className="bg-white p-3 rounded-lg border border-[#0c264d] border-opacity-20 shadow-sm flex items-start gap-2">
-                  <Activity className="text-[#0c264d] w-4 h-4 mt-0.5 shrink-0" />
-                  <p className="text-xs text-slate-700">Terman's famous longitudinal study found that life satisfaction in gifted adults related far more to personal relationships and life balance than to professional achievement alone.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
+                <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm relative overflow-hidden mt-5">
+                  <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0A9DC4]"></div>
+                  <div className="pl-3">
+                    <p className="text-xs text-slate-700 font-medium leading-relaxed">Terman's famous longitudinal study found that life satisfaction in gifted adults related far more to personal relationships and life balance than to professional achievement alone.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
+                  </div>
                 </div>
               </div>
 

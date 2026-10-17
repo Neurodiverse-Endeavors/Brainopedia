@@ -85,10 +85,10 @@ export function DyslexiaCausesBrain({ setCurrentArticle }: DyslexiaCausesBrainPr
               </div>
             </div>
             
-            <div className="bg-yellow-50 p-6 rounded-xl border border-yellow-200 shadow-sm flow-root">
+            <div className="bg-[#ffd166]/20 p-6 rounded-xl border border-yellow-200 shadow-sm flow-root">
               <div className="flex flex-col h-full items-center text-center">
                 <h4 className="font-bold text-[#0c264d] text-lg flex items-center justify-center gap-3 mb-4">
-                  <Lightbulb className="w-7 h-7 text-[#d4a017] shrink-0" />
+                  <Lightbulb className="w-7 h-7 text-[#ffd166] shrink-0" />
                   <span>Compensatory Strengths</span>
                 </h4>
                 <p className="text-sm text-slate-700 text-left flex-grow">
@@ -249,20 +249,20 @@ export function DyslexiaCausesBrain({ setCurrentArticle }: DyslexiaCausesBrainPr
             {/* Magnocellular */}
             <div className="bg-[#ffd166]/20 border-t-4 border-[#ffd166] rounded-xl p-6 shadow-md flex flex-col">
               <h4 className="font-bold text-[#0c264d] text-lg flex items-center justify-center gap-3 mb-4 text-center">
-                <Eye className="w-7 h-7 text-[#d4a017] shrink-0" />
+                <Eye className="w-7 h-7 text-[#ffd166] shrink-0" />
                 <span>Magnocellular</span>
               </h4>
               <ul className="space-y-3 text-slate-700 text-sm flex-grow">
                 <li className="flex items-start gap-2">
-                  <ChevronRight className="w-5 h-5 text-[#d4a017] shrink-0 mt-0.5" /> 
+                  <ChevronRight className="w-5 h-5 text-[#ffd166] shrink-0 mt-0.5" /> 
                   <span>Dysfunction in visual magnocellular pathways affects visual processing specifically during reading.<sup className="text-[10px]">7</sup></span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <ChevronRight className="w-5 h-5 text-[#d4a017] shrink-0 mt-0.5" /> 
+                  <ChevronRight className="w-5 h-5 text-[#ffd166] shrink-0 mt-0.5" /> 
                   <span>Results in a reduced capacity to process multiple letters simultaneously across the page.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <ChevronRight className="w-5 h-5 text-[#d4a017] shrink-0 mt-0.5" /> 
+                  <ChevronRight className="w-5 h-5 text-[#ffd166] shrink-0 mt-0.5" /> 
                   <span>Explains the visual-distortion symptoms that impact some (but not all) dyslexic readers.</span>
                 </li>
               </ul>

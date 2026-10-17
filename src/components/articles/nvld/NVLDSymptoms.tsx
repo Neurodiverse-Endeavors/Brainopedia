@@ -118,7 +118,7 @@ export function NVLDSymptoms({ setCurrentArticle, initialTab }: NVLDSymptomsProp
           </div>
 
           {/* Motor Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Motor Coordination Difficulties</h2>
             
             <ImageWithFallback 
@@ -265,7 +265,7 @@ export function NVLDSymptoms({ setCurrentArticle, initialTab }: NVLDSymptomsProp
         <div className="space-y-8 animate-fadeIn">
 
           {/* Progression Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Developmental Progression</h2>
             
             <ImageWithFallback 
@@ -335,7 +335,7 @@ export function NVLDSymptoms({ setCurrentArticle, initialTab }: NVLDSymptomsProp
               {/* Icon Mini-Card 2 */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Ear className="text-[#d4a017] w-5 h-5" />
+                  <Ear className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Rote Verbal Memory</h3>

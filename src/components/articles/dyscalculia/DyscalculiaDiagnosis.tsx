@@ -105,7 +105,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
           </div>
 
           {/* Diagnostic Criteria Card (Yellow - Text Only) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Diagnostic Criteria</h2>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -266,7 +266,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
           </div>
 
           {/* Differential Diagnosis Card (Yellow - Text Only) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -299,7 +299,7 @@ export function DyscalculiaDiagnosis({ setCurrentArticle, initialTab }: Dyscalcu
           </p>
 
           {/* The Report Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Assessment Report & Access</h2>
             
             <ImageWithFallback 

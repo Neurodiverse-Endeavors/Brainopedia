@@ -130,7 +130,7 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
           </div>
 
           {/* Accommodations Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Accommodations & Assistive Tech</h2>
             
             <ImageWithFallback 
@@ -146,7 +146,7 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Clock className="text-[#d4a017] w-6 h-6" />
+                  <Clock className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Classroom Modifications</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Provide extended time for tests, dramatically reduce board-copying (provide printed notes instead), and use preferential seating to minimize distractions.</p>
@@ -154,7 +154,7 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Laptop className="text-[#d4a017] w-6 h-6" />
+                  <Laptop className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Writing Technology</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Allow typing for all assignments instead of handwriting. Implement speech-to-text dictation software to capture their high-level verbal ideas before working memory drops them.<sup className="text-[#10b981] font-bold ml-0.5">3</sup></p>
@@ -162,7 +162,7 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Map className="text-[#d4a017] w-6 h-6" />
+                  <Map className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Organizational Apps</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Replace messy paper planners with digital calendars, automated task-management apps, and timers to help support their challenged executive function.</p>
@@ -275,7 +275,7 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
         <div className="space-y-8 animate-fadeIn">
 
           {/* Daily Living Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Living & Safety Skills</h2>
             
             <ImageWithFallback 
@@ -291,7 +291,7 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both max-w-4xl">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <ListChecks className="text-[#d4a017] w-5 h-5" />
+                  <ListChecks className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Self-Care Routines</h3>
@@ -301,7 +301,7 @@ export function NVLDSupport({ setCurrentArticle, initialTab }: NVLDSupportProps)
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <ShieldCheck className="text-[#d4a017] w-5 h-5" />
+                  <ShieldCheck className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Navigation & Safety</h3>

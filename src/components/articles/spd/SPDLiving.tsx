@@ -130,7 +130,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
           </div>
 
           {/* Daily Strategies Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Living Strategies</h2>
             
             <ImageWithFallback 
@@ -142,7 +142,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Clock className="text-[#d4a017] w-5 h-5" />
+                  <Clock className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Sensory Routines</h3>
@@ -152,7 +152,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Modifying Self-Care</h3>
@@ -162,7 +162,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Home className="text-[#d4a017] w-5 h-5" />
+                  <Home className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Eating Environments</h3>
@@ -316,7 +316,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Mental Health Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Mental Health & Advocacy</h2>
             
             <ImageWithFallback 
@@ -332,7 +332,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Managing Stress</h3>
@@ -342,7 +342,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <Brain className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Building Resilience</h3>
@@ -352,7 +352,7 @@ export function SPDLiving({ setCurrentArticle, initialTab }: SPDLivingProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <MessageSquare className="text-[#d4a017] w-5 h-5" />
+                  <MessageSquare className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Self-Advocacy</h3>

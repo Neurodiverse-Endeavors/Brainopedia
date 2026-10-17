@@ -214,7 +214,7 @@ export function DownSyndromeLiving({ setCurrentArticle, initialTab }: DownSyndro
       {activeTab === 'advocacy' && (
         <div className="space-y-8 animate-fadeIn">
 
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Advocacy & Civil Rights</h2>
             
             <ImageWithFallback 
@@ -231,7 +231,7 @@ export function DownSyndromeLiving({ setCurrentArticle, initialTab }: DownSyndro
               
               {/* BADGE 1: Yellow Background with Navy Icon */}
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mt-0.5">
                   <Megaphone className="w-4 h-4" />
                 </div>
                 <div>

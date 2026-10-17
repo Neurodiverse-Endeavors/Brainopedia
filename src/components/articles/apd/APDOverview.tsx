@@ -127,7 +127,7 @@ export function APDOverview({ setCurrentArticle, initialTab }: APDOverviewProps)
           </div>
 
           {/* Subtypes Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Types & Subtypes of APD</h2>
             
             <ImageWithFallback 
@@ -304,7 +304,7 @@ export function APDOverview({ setCurrentArticle, initialTab }: APDOverviewProps)
         <div className="space-y-8 animate-fadeIn">
 
           {/* Impact Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Impact & Emotional Effects</h2>
             
             <ImageWithFallback 
@@ -319,7 +319,7 @@ export function APDOverview({ setCurrentArticle, initialTab }: APDOverviewProps)
 
             <div className="mb-5">
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <AlertTriangle className="text-[#d4a017] w-5 h-5" /> Academic & Social Hurdles
+                <AlertTriangle className="text-[#ffd166] w-5 h-5" /> Academic & Social Hurdles
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 Students struggle to follow multi-step verbal directions or take notes from lectures. Socially, environments like cafeterias or parties are exhausting, and constantly asking for repetition damages self-esteem.
@@ -328,7 +328,7 @@ export function APDOverview({ setCurrentArticle, initialTab }: APDOverviewProps)
 
             <div>
               <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Heart className="text-[#d4a017] w-5 h-5" /> Behavioral Misunderstandings
+                <Heart className="text-[#ffd166] w-5 h-5" /> Behavioral Misunderstandings
               </h3>
               <p className="text-xs text-slate-700 leading-relaxed">
                 APD is tragically often misunderstood as willful inattention, laziness, or defiance. Frustration from chronic communication breakdowns can quickly lead to severe anxiety, withdrawal, or behavioral outbursts.

@@ -120,7 +120,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
           </div>
 
           {/* Specific Techniques Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Specific Intervention Techniques</h2>
             
             <ImageWithFallback 
@@ -132,7 +132,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Hand className="text-[#d4a017] w-5 h-5" />
+                  <Hand className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Wilbarger Protocol</h3>
@@ -142,7 +142,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <Brain className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Alert Program®</h3>
@@ -152,7 +152,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">SOS Approach to Feeding</h3>
@@ -310,7 +310,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Family Support Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Supporting Caregivers</h2>
             
             <ImageWithFallback 
@@ -326,7 +326,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <MessageSquare className="text-[#d4a017] w-5 h-5" />
+                  <MessageSquare className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Psychoeducation</h3>
@@ -336,7 +336,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <ListChecks className="text-[#d4a017] w-5 h-5" />
+                  <ListChecks className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Strategy Development</h3>
@@ -346,7 +346,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <ShieldCheck className="text-[#d4a017] w-5 h-5" />
+                  <ShieldCheck className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Advocacy Training</h3>

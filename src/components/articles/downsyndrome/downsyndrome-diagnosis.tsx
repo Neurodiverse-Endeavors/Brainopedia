@@ -149,7 +149,7 @@ export function DownSyndromeDiagnosis({ setCurrentArticle, initialTab }: DownSyn
       {activeTab === 'birth' && (
         <div className="space-y-8 animate-fadeIn">
 
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Diagnosis at Birth</h2>
             
             <ImageWithFallback 
@@ -165,7 +165,7 @@ export function DownSyndromeDiagnosis({ setCurrentArticle, initialTab }: DownSyn
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1.5 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1.5 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Clinical Observation</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Medical professionals often recognize the condition upon delivery by identifying distinct physical traits, such as low muscle tone, a flattened facial profile, or the characteristic single crease across the infant's palm.</p>
@@ -173,7 +173,7 @@ export function DownSyndromeDiagnosis({ setCurrentArticle, initialTab }: DownSyn
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1.5 shrink-0"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1.5 shrink-0"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Chromosomal Karyotype</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Because physical traits alone can be inconclusive, a blood sample is drawn to perform a karyotype test. This laboratory analysis physically maps and counts the baby's chromosomes to definitively confirm the presence of an extra chromosome 21.</p>
@@ -250,10 +250,10 @@ export function DownSyndromeDiagnosis({ setCurrentArticle, initialTab }: DownSyn
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1 flex items-center gap-2">
-                    <Activity className="w-4 h-4 text-[#d4a017]" /> Thyroid Testing
+                    <Activity className="w-4 h-4 text-[#ffd166]" /> Thyroid Testing
                   </h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Routine blood work is established to continuously monitor thyroid function, as endocrine issues are common and can impact overall growth and energy levels.</p>
                 </div>

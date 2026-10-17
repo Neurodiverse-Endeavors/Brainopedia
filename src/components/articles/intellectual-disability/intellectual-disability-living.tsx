@@ -156,7 +156,7 @@ export function IDLiving({ setCurrentArticle, initialTab }: IDLivingProps) {
       {activeTab === 'community' && (
         <div className="space-y-8 animate-fadeIn">
 
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             
             <ImageWithFallback 
               src="/images/id/id-living-tab2-community.webp"
@@ -173,7 +173,7 @@ export function IDLiving({ setCurrentArticle, initialTab }: IDLivingProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -183,7 +183,7 @@ export function IDLiving({ setCurrentArticle, initialTab }: IDLivingProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Users className="w-5 h-5" />
                 </div>
                 <div>
@@ -193,7 +193,7 @@ export function IDLiving({ setCurrentArticle, initialTab }: IDLivingProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <HeartHandshake className="w-5 h-5" />
                 </div>
                 <div>
@@ -273,10 +273,10 @@ export function IDLiving({ setCurrentArticle, initialTab }: IDLivingProps) {
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1 flex items-center gap-2">
-                    <Users className="w-4 h-4 text-[#d4a017]" /> Shared Living
+                    <Users className="w-4 h-4 text-[#ffd166]" /> Shared Living
                   </h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Residing with a supportive family or roommates who provide integrated, daily assistance and a shared sense of community.</p>
                 </div>

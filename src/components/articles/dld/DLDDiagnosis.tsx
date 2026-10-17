@@ -124,7 +124,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
           </div>
 
           {/* CATALISE Criteria Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The CATALISE Diagnostic Criteria</h2>
             
             <ImageWithFallback 
@@ -140,7 +140,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <AlertTriangle className="text-[#d4a017] w-4 h-4" />
+                  <AlertTriangle className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Persistent Difficulty</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">The child must exhibit persistent problems with language learning and use that interfere significantly with their everyday life, academic achievement, or social interactions.</p>
@@ -148,7 +148,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Search className="text-[#d4a017] w-4 h-4" />
+                  <Search className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Rule-Outs</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">The language deficit cannot be primarily explained by another known biomedical condition (like a brain injury), intellectual disability, hearing impairment, or severe environmental deprivation.</p>
@@ -156,7 +156,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ClipboardList className="text-[#d4a017] w-4 h-4" />
+                  <ClipboardList className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">Clinical Flexibility</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Clinical judgment is prioritized alongside standardized test scores, allowing SLPs to diagnose children whose test scores might barely pass but whose functional language severely impacts them.</p>
@@ -309,7 +309,7 @@ export function DLDDiagnosis({ setCurrentArticle, initialTab }: DLDDiagnosisProp
         <div className="space-y-8 animate-fadeIn">
 
           {/* Differential Diagnosis Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
             
             <ImageWithFallback 

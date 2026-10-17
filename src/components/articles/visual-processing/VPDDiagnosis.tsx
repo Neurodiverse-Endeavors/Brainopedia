@@ -135,7 +135,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
           </div>
 
           {/* The Steps Card (Yellow) - W-Full Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Evaluation Process</h2>
             
             <ImageWithFallback 
@@ -147,7 +147,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ClipboardList className="text-[#d4a017] w-4 h-4" />
+                  <ClipboardList className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">1. Case History</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Gathering developmental milestones, family history of learning disabilities, and specific academic struggles noted by parents and teachers.</p>
@@ -155,7 +155,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Eye className="text-[#d4a017] w-4 h-4" />
+                  <Eye className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">2. Vision Exam</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">A comprehensive eye exam must precede VPD testing to rule out refractive errors or binocular vision dysfunctions that mimic processing issues.</p>
@@ -163,7 +163,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <FileText className="text-[#d4a017] w-4 h-4" />
+                  <FileText className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">3. Standardized Tests</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Administering norm-referenced tests to determine if the patient's visual processing falls significantly below expectations for their age.</p>
@@ -171,7 +171,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <CheckCircle className="text-[#d4a017] w-4 h-4" />
+                  <CheckCircle className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">4. Functional Impact</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Observing how the deficits actually affect real-world tasks—reading fluency, handwriting mechanics, and daily physical coordination.</p>
@@ -314,7 +314,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
         <div className="space-y-8 animate-fadeIn">
 
           {/* Differential Card (Yellow) - W-64 Centered Hero */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
             
             <ImageWithFallback 
@@ -330,7 +330,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Brain className="text-[#d4a017] w-4 h-4" />
+                  <Brain className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">vs. Cognitive Delays</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">VPD involves severe visual processing deficits that are entirely disproportionate to the individual's general intellectual ability. They are often highly intelligent but mechanically struggle with visual translation.</p>
@@ -338,7 +338,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ShieldAlert className="text-[#d4a017] w-4 h-4" />
+                  <ShieldAlert className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">vs. ADHD</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Both feature inattention and losing place while reading. However, ADHD impairs attention across all sensory modalities, while VPD difficulties are specifically tied to visual processing demands.</p>
@@ -346,7 +346,7 @@ export function VPDDiagnosis({ setCurrentArticle, initialTab }: VPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Glasses className="text-[#d4a017] w-4 h-4" />
+                  <Glasses className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">vs. Vision Problems</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Distinguishing neurological processing issues from mechanical eye-based problems is fundamental. Refractive errors (needing glasses) or eye-teaming dysfunctions require entirely different interventions than VPD.</p>

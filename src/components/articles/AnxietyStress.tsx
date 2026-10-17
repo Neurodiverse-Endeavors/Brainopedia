@@ -139,7 +139,7 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
           </div>
 
           {/* Management Strategies Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Management & Support</h2>
             
             <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
@@ -281,7 +281,7 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
           </div>
 
           {/* Sensory Triggers Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Sensory & Systemic Triggers</h2>
             
             <div className="flex flex-col md:flex-row items-center gap-6 mb-6">

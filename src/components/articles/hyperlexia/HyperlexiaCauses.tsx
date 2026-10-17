@@ -118,7 +118,7 @@ export function HyperlexiaCauses({ setCurrentArticle, initialTab }: HyperlexiaCa
           </div>
 
           {/* Cognition & Genetics Card (Yellow Container / Centered Icon Badges) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Cognition & Genetic Factors</h2>
             
             <ImageWithFallback 
@@ -129,7 +129,7 @@ export function HyperlexiaCauses({ setCurrentArticle, initialTab }: HyperlexiaCa
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Eye className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Visual Processing</h3>
@@ -137,7 +137,7 @@ export function HyperlexiaCauses({ setCurrentArticle, initialTab }: HyperlexiaCa
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Ear className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Auditory Differences</h3>
@@ -145,7 +145,7 @@ export function HyperlexiaCauses({ setCurrentArticle, initialTab }: HyperlexiaCa
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#ffd166] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Dna className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Family Patterns</h3>
@@ -212,8 +212,8 @@ export function HyperlexiaCauses({ setCurrentArticle, initialTab }: HyperlexiaCa
               </div>
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex items-start gap-3">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#d4a017]"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-[#d4a017] mt-1.5 shrink-0 ml-1.5 shadow-sm"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1.5 shrink-0 ml-1.5 shadow-sm"></div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Modular Reading System</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">This model argues that the brain's decoding (reading) system can develop entirely independently of the semantic (meaning) system. This explains the massive "split" between flawless mechanical reading and poor reading comprehension.</p>
@@ -281,7 +281,7 @@ export function HyperlexiaCauses({ setCurrentArticle, initialTab }: HyperlexiaCa
         <div className="space-y-8 animate-fadeIn">
 
           {/* Environment Card (Yellow Container / Centered Icon Badges) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Environmental Factors</h2>
             
             <ImageWithFallback 
@@ -296,7 +296,7 @@ export function HyperlexiaCauses({ setCurrentArticle, initialTab }: HyperlexiaCa
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 clear-both max-w-4xl mx-auto">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#2abcd4] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#2abcd4] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Early Exposure</h3>
@@ -304,7 +304,7 @@ export function HyperlexiaCauses({ setCurrentArticle, initialTab }: HyperlexiaCa
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-50 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#2abcd4] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#d4a017] border-opacity-30 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#2abcd4] text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-30 mb-3">
                   <Target className="w-5 h-5" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Savant Skill Theory</h3>

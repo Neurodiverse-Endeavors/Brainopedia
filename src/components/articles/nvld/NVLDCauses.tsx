@@ -130,7 +130,7 @@ export function NVLDCauses({ setCurrentArticle, initialTab }: NVLDCausesProps) {
           </div>
 
           {/* Genetics & Medical Factors Card (Yellow) - Uses Hero Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Genetics & Medical Risk Factors</h2>
             
             <ImageWithFallback 
@@ -146,7 +146,7 @@ export function NVLDCauses({ setCurrentArticle, initialTab }: NVLDCausesProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Dna className="text-[#d4a017] w-6 h-6" />
+                  <Dna className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Familial Patterns</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">NVLD appears to run in families. While specific genetic markers are still being researched, a family history of learning disabilities or autism spectrum traits significantly increases the likelihood of an NVLD profile.</p>
@@ -154,7 +154,7 @@ export function NVLDCauses({ setCurrentArticle, initialTab }: NVLDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Stethoscope className="text-[#d4a017] w-6 h-6" />
+                  <Stethoscope className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Acquired Conditions</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">NVLD-like symptoms frequently emerge following medical conditions that impact white matter, such as hydrocephalus, brain tumors, multiple sclerosis, or early traumatic brain injury to the right hemisphere.<sup className="text-[#10b981] font-bold ml-0.5">5</sup></p>
@@ -162,7 +162,7 @@ export function NVLDCauses({ setCurrentArticle, initialTab }: NVLDCausesProps) {
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center sm:col-span-2 lg:col-span-1">
                 <div className="bg-[#fffbeb] p-3 rounded-full border border-[#ffd166] border-opacity-50 mb-3">
-                  <Baby className="text-[#d4a017] w-6 h-6" />
+                  <Baby className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Perinatal Complications</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Premature birth and very low birth weight are significant risk factors, as the brain's white matter tracts are incredibly vulnerable to damage or oxygen deprivation during early development.<sup className="text-[#10b981] font-bold ml-0.5">1</sup></p>
@@ -248,7 +248,7 @@ export function NVLDCauses({ setCurrentArticle, initialTab }: NVLDCausesProps) {
         <div className="space-y-8 animate-fadeIn">
 
           {/* Myths Card (Yellow) - Uses Float Image */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm clear-both">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">What NVLD Is NOT Caused By</h2>
             
             <ImageWithFallback 

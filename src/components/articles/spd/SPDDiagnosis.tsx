@@ -140,7 +140,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
           </div>
 
           {/* The Evaluation Journey Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Evaluation Journey</h2>
             
             <ImageWithFallback 
@@ -152,7 +152,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <MessageSquare className="text-[#d4a017] w-4 h-4" />
+                  <MessageSquare className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">1. Consultation</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">A detailed parent/caregiver interview gathering prenatal history, developmental milestones, and specific concerns across home and school environments.</p>
@@ -160,7 +160,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <CheckSquare className="text-[#d4a017] w-4 h-4" />
+                  <CheckSquare className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">2. Information Gathering</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Completion of standardized parent/teacher questionnaires to map out the individual's baseline sensory reactivity in natural environments.</p>
@@ -168,7 +168,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Eye className="text-[#d4a017] w-4 h-4" />
+                  <Eye className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">3. Clinical Observation</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">Direct interaction with the individual to observe their motor planning, self-regulation strategies, and physical responses to controlled sensory stimuli.</p>
@@ -176,7 +176,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
                 <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <FileText className="text-[#d4a017] w-4 h-4" />
+                  <FileText className="text-[#ffd166] w-4 h-4" />
                   <h3 className="text-[#0c264d] font-bold text-sm">4. Integration & Feedback</h3>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed">The OT synthesizes all data to identify the specific SPD subtype, culminating in a comprehensive diagnostic report with targeted home and school recommendations.</p>
@@ -310,7 +310,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
         <div className="space-y-8 animate-fadeIn">
 
           {/* Differential Diagnosis Card (Yellow) */}
-          <div className="bg-yellow-50 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
             
             <ImageWithFallback 
@@ -326,7 +326,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <GitMerge className="text-[#d4a017] w-5 h-5" />
+                  <GitMerge className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Autism Spectrum Disorder</h3>
@@ -336,7 +336,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Brain className="text-[#d4a017] w-5 h-5" />
+                  <Brain className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">ADHD vs. SPD</h3>
@@ -346,7 +346,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#d4a017] w-5 h-5" />
+                  <Heart className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Anxiety Disorders</h3>
@@ -356,7 +356,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
 
               <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
                 <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <ShieldAlert className="text-[#d4a017] w-5 h-5" />
+                  <ShieldAlert className="text-[#ffd166] w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-[#0c264d] font-bold text-sm mb-1">Medical Exclusions</h3>
