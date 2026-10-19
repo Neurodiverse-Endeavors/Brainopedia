@@ -1,5 +1,4 @@
-import React from 'react';
-import { Code, Layout, Palette, FileText, CheckCircle, ImageIcon, Smartphone, Brain, AlertTriangle, Type, Move } from 'lucide-react';
+import { Code, Layout, Palette, FileText, CheckCircle, ImageIcon, Smartphone, Brain, AlertTriangle, Type, Move, Sparkles, Square } from 'lucide-react';
 
 interface ProjectStandardsProps {
   setCurrentArticle?: (article: string) => void;
@@ -281,7 +280,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         </div>
       </section>
 
-{/* COLOR PALETTE */}
+      {/* COLOR PALETTE */}
       <section className="mb-10">
         <h2 className="text-[#0c264d] text-2xl font-bold mb-4 flex items-center gap-2 border-b pb-2">
           <Palette className="text-[#2abcd4]" /> COLOR PALETTE
@@ -361,17 +360,18 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             <li>
               <strong>Navy Cards (Tab 2 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl</code>
               <p className="mt-1 text-slate-600">
-                Inner cards <em>MUST</em> utilize the <strong>3D Accent Border</strong> (colored left stripe) on a stark white background using Navy, Cyan, or Dark Cyan. Inside these 3D mini cards, use a <strong>Custom CSS Dot Bullet</strong> instead of a standard icon.
+                Inner cards <em>MUST</em> utilize the <strong>3D Accent Border</strong> (colored left stripe) on a stark white background using Navy, Cyan, or Dark Cyan. Inside these 3D mini cards, <strong>do NOT use icons, numbered circles, or CSS dot bullets</strong>—the left stripe provides enough visual hierarchy on its own.
               </p>
             </li>
             <li>
               <strong>Yellow Cards (Tab 3 Default):</strong> <code className="bg-gray-100 px-2 py-1 rounded break-words">bg-[#ffd166]/20 border-2 border-[#ffd166]</code>
               <p className="mt-1 text-slate-600">
-                Inner cards must use <strong>Icon Badges (Circular Backgrounds)</strong> stacked <strong>directly above the text</strong>. Do not use gold icons against the yellow/#ffd166 backgrounds. Use navy color #0c264d instead.
+                Inner cards must use <strong>Icon Badges (Circular Backgrounds)</strong> stacked <strong>directly above the text</strong>. Do not use gold icons against the yellow/#ffd166 backgrounds. Use navy color #0c264d instead. To make them pop against the yellow card background, always include the double ring effect: <code className="bg-gray-100 px-1 rounded text-xs">shadow-md ring-2 ring-offset-2 ring-[#0c264d]</code>.
               </p>
             </li>
           </ul>
         </div>
+        
         <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 rounded-r-lg shadow-sm mb-6">
           <h3 className="font-bold text-[#831843] mb-2 uppercase text-xs">Accessible Warning & Myth Cards</h3>
           <p className="text-sm text-slate-700 mb-3">
@@ -386,15 +386,15 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
         </div>
 
         <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm clear-both mb-6">
-          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">3D Accent Border Cards (No Lucide Icons)</h3>
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">3D Accent Border Cards (No Redundant Icons)</h3>
           <p className="text-sm text-slate-700 mb-4">
-            When a section has too many repetitive Lucide icons, or when placing inner cards inside a Slate container, use this "3D stripe" design pattern to create visual hierarchy. It uses absolute positioning to paint a thick accent stripe down the left edge.
+            When a section has too many repetitive Lucide icons, or when placing inner cards inside a Slate container, use this "3D stripe" design pattern to create visual hierarchy. It uses absolute positioning to paint a thick accent stripe down the left edge. <strong>Do NOT combine these with dot bullets or numbered circles</strong>—the stripe itself is the visual anchor.
           </p>
 
           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden max-w-sm mb-4">
             <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
             <div className="pl-2">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-1">Card Title</h3>
+              <h3 className="text-[#0c264d] font-bold text-sm mb-1 border-b border-gray-100 pb-1">Card Title</h3>
               <p className="text-xs text-slate-700 leading-relaxed">This is the inner card content with the thick Dark Cyan accent stripe on the left.</p>
             </div>
           </div>
@@ -403,7 +403,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             {`<div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
   <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
   <div className="pl-2">
-    <h3 className="text-[#0c264d] font-bold text-sm mb-1">Title</h3>
+    <h3 className="text-[#0c264d] font-bold text-sm mb-1 border-b border-gray-100 pb-1">Title</h3>
     <p className="text-xs text-slate-700">Content goes here.</p>
   </div>
 </div>`}
@@ -466,34 +466,89 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           </code>
         </div>
 
+        {/* 3 TYPES OF ICON BADGES */}
         <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm clear-both mb-6">
-          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">Icon Badges (Circular Backgrounds)</h3>
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">The 3 Types of Icon Badges</h3>
           <p className="text-sm text-slate-700 mb-4">
-            You can use the exact same circular flexbox container, but swap the text number for a Lucide icon sized to <code className="bg-white px-1 rounded border border-gray-200">w-4 h-4</code> or <code className="bg-white px-1 rounded border border-gray-200">w-5 h-5</code>.
+            Instead of bare icons, use perfect flexbox shapes to create badges. <strong className="text-[#0c264d]">Note: Bare, darker-colored icons can still be used without a background when you need to reduce visual repetition.</strong> Here are the approved styles for inner card badges:
           </p>
           
-          {/* VISUAL EXAMPLE */}
-          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-center gap-4 mb-4 max-w-sm">
-            <div className="w-8 h-8 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd]">
-              <Brain className="w-4 h-4" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            {/* 1. Monochromatic */}
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                <Brain className="w-5 h-5" />
+              </div>
+              <h3 className="text-[#0c264d] font-bold text-xs mb-1">1. Monochromatic</h3>
+              <p className="text-[10px] text-slate-500 leading-relaxed">Light background with a darker icon from the same color family.</p>
             </div>
-            <div>
-              <p className="text-sm text-[#0c264d] font-bold">Cognitive Profile</p>
-              <p className="text-xs text-slate-500">Highlighting strengths and challenges.</p>
+
+            {/* 2. High Contrast (Gold/Navy Rule) */}
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-full bg-[#ffd166]/20 text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-50 mb-3">
+                <Layout className="w-5 h-5" />
+              </div>
+              <h3 className="text-[#0c264d] font-bold text-xs mb-1">2. High Contrast</h3>
+              <p className="text-[10px] text-slate-500 leading-relaxed">Gold /20 backgrounds MUST use Navy icons for visibility.</p>
+            </div>
+
+            {/* 3. Double Ring */}
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mb-3">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <h3 className="text-[#0c264d] font-bold text-xs mb-1">3. Double Ring</h3>
+              <p className="text-[10px] text-slate-500 leading-relaxed">Combination colors with an offset ring for maximum pop.</p>
+            </div>
+
+            {/* 4. Rounded Square */}
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#f0fdf4] text-[#10b981] flex items-center justify-center shrink-0 shadow-sm border border-[#bbf7d0] mb-3">
+                <Square className="w-5 h-5" />
+              </div>
+              <h3 className="text-[#0c264d] font-bold text-xs mb-1">4. Rounded Square</h3>
+              <p className="text-[10px] text-slate-500 leading-relaxed">Use <code className="bg-gray-100 rounded px-1">rounded-lg</code> to break up repetitive circle layouts.</p>
             </div>
           </div>
 
-          <code className="text-xs block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
-            {`<div className="flex items-center gap-4">
-  <div className="w-8 h-8 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0">
-    <Brain className="w-4 h-4" />
-  </div>
-  <div>
-    <p className="text-sm text-[#0c264d] font-bold">Header text here</p>
-    <p className="text-xs text-slate-500">Subtitle text</p>
-  </div>
+          {/* CODE SNIPPETS */}
+          <div className="bg-gray-900 rounded-lg p-4 space-y-4">
+            <div>
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">1. Monochromatic (Cyan Example)</p>
+              <code className="text-xs block text-green-400 whitespace-pre-wrap break-words">
+{`<div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd]">
+  <Brain className="w-5 h-5" />
 </div>`}
-          </code>
+              </code>
+            </div>
+            
+            <div className="border-t border-gray-700 pt-4">
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">2. High Contrast (Gold/Navy Rule)</p>
+              <code className="text-xs block text-green-400 whitespace-pre-wrap break-words">
+{`<div className="w-10 h-10 rounded-full bg-[#ffd166]/20 text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-50">
+  <Layout className="w-5 h-5" />
+</div>`}
+              </code>
+            </div>
+
+            <div className="border-t border-gray-700 pt-4">
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">3. Double Ring (Navy/Gold Example)</p>
+              <code className="text-xs block text-green-400 whitespace-pre-wrap break-words">
+{`<div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+  <Sparkles className="w-5 h-5" />
+</div>`}
+              </code>
+            </div>
+
+            <div className="border-t border-gray-700 pt-4">
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">4. Rounded Square (Green Example)</p>
+              <code className="text-xs block text-green-400 whitespace-pre-wrap break-words">
+{`<div className="w-10 h-10 rounded-lg bg-[#f0fdf4] text-[#10b981] flex items-center justify-center shrink-0 shadow-sm border border-[#bbf7d0]">
+  <Square className="w-5 h-5" />
+</div>`}
+              </code>
+            </div>
+          </div>
         </div>
       </section>
 

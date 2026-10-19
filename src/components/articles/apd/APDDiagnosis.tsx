@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Stethoscope, ClipboardList, Users, Brain, Ear, Activity, FileText, CheckCircle, Search, AlertTriangle, Building, ShieldCheck, Heart, Headphones } from 'lucide-react';
+import { Stethoscope, Users, Brain, Ear, FileText, AlertTriangle, Building, Heart } from 'lucide-react';
 
 interface APDDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
@@ -93,90 +93,103 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
       {activeTab === 'process' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Process Card (Cyan) - Uses Float Image with organic text flow */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+          {/* Process Card (Cyan) - Top Card with ROUNDED SQUARES */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Who & When to Test</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-diagnosis-process.webp"
+              src="/images/apd/apd-diagnosis-process-1.webp"
               alt="Audiologist working with a school-aged child in a clinical setting"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               Diagnosing APD requires a highly specialized assessment. Because the central auditory nervous system is still actively developing in early childhood, formal diagnosis requires careful timing and the right professional.
             </p>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Stethoscope className="text-[#0A9DC4] w-5 h-5" /> Qualified Professionals
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Audiologists are the primary professionals qualified to diagnose APD. However, not all audiologists have the specific training or specialized equipment required for central auditory processing assessment; parents must seek out specialized clinical audiologists.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Stethoscope className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Qualified Professionals</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Audiologists are the primary professionals qualified to diagnose APD. However, not all audiologists have the specific training or specialized equipment required for central auditory processing assessment; parents must seek out specialized clinical audiologists.</p>
+              </div>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Brain className="text-[#0A9DC4] w-5 h-5" /> Age Considerations
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                APD is typically not formally diagnosed before age 7, as the auditory system must mature sufficiently for the tests to be clinically valid.<sup>1</sup> However, younger children showing red flags can and should receive early intervention therapies without waiting for the official label.
-              </p>
-            </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Brain className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Age Considerations</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">APD is typically not formally diagnosed before age 7, as the auditory system must mature sufficiently for the tests to be clinically valid.<sup>1</sup> However, younger children showing red flags can and should receive early intervention therapies without waiting for the official label.</p>
+              </div>
 
-            <div>
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Users className="text-[#0A9DC4] w-5 h-5" /> Multidisciplinary Team
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                While the audiologist conducts the core APD testing, a comprehensive evaluation relies heavily on speech-language pathologists, psychologists, and educators to rule out other co-occurring conditions like language disorders or ADHD.
-              </p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Users className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Multidisciplinary Team</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">While the audiologist conducts the core APD testing, a comprehensive evaluation relies heavily on speech-language pathologists, psychologists, and educators to rule out other co-occurring conditions like language disorders or ADHD.</p>
+              </div>
             </div>
           </div>
 
-          {/* Steps Card (Yellow) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          {/* Steps Card (Navy) - Second Card with NUMBERED CIRCLES in 3D BORDERS */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Diagnostic Steps</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-diagnosis-steps-hero.webp"
+              src="/images/apd/apd-diagnosis-steps-1.webp"
               alt="Visual flowchart representing the multidisciplinary assessment journey"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ClipboardList className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">1. Case History</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-3 mb-2 border-b border-gray-100 pb-2">
+                    <div className="w-6 h-6 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 text-xs shadow-sm">1</div>
+                    <h3 className="text-[#0c264d] font-bold text-sm">Case History</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">Documents developmental milestones, academic performance, and detailed medical history—paying particularly close attention to any history of chronic ear infections.</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Documents developmental milestones, academic performance, and detailed medical history—paying particularly close attention to any history of chronic ear infections.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Ear className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">2. Peripheral Hearing Test</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-3 mb-2 border-b border-gray-100 pb-2">
+                    <div className="w-6 h-6 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 text-xs shadow-sm">2</div>
+                    <h3 className="text-[#0c264d] font-bold text-sm">Peripheral Hearing Test</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">Standard audiological evaluation must precede APD testing. APD absolutely cannot be diagnosed if a peripheral hearing loss is present and accounts for the difficulties.</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Standard audiological evaluation must precede APD testing. APD absolutely cannot be diagnosed if a peripheral hearing loss is present and accounts for the difficulties.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Headphones className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">3. Central Auditory Testing</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-3 mb-2 border-b border-gray-100 pb-2">
+                    <div className="w-6 h-6 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 text-xs shadow-sm">3</div>
+                    <h3 className="text-[#0c264d] font-bold text-sm">Central Auditory Testing</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">A specialized battery of tests assessing how the brain processes degraded speech, rapid timing, and competing signals. No single test can diagnose APD; a full battery is required.</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">A specialized battery of tests assessing how the brain processes degraded speech, rapid timing, and competing signals. No single test can diagnose APD; a full battery is required.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <CheckCircle className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">4. Integration</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-3 mb-2 border-b border-gray-100 pb-2">
+                    <div className="w-6 h-6 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 text-xs shadow-sm">4</div>
+                    <h3 className="text-[#0c264d] font-bold text-sm">Integration</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">The audiologist integrates the battery results with cognitive, language, and academic assessments to determine specific APD subtypes and real-world functional impacts.</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">The audiologist integrates the battery results with cognitive, language, and academic assessments to determine specific APD subtypes and real-world functional impacts.</p>
               </div>
+
             </div>
           </div>
 
@@ -212,78 +225,94 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
       {activeTab === 'tests' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Types of Tests Card (Slate) - Uses Float Image with organic text flow */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+          {/* Types of Tests Card (Navy) - Top Card with CSS DOTS in 3D BORDERS */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Types of APD Tests</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-diagnosis-tests.webp"
+              src="/images/apd/apd-diagnosis-tests-1.webp"
               alt="Child wearing specialized headphones in a sound booth, taking a dichotic listening task"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
               Clinical tests are designed to deliberately stress the auditory system by degrading the signal or introducing competing noise, forcing the brain to work harder to interpret the sound.
             </p>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Headphones className="text-[#0c264d] w-5 h-5" /> Dichotic Listening
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Different stimuli are presented to each ear simultaneously. The patient must either integrate the sounds or ignore one ear to focus on the other. This directly measures interhemispheric transfer.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#0A9DC4] shrink-0"></div>
+                    <h3 className="text-[#0c264d] font-bold text-sm">Dichotic Listening</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">Different stimuli are presented to each ear simultaneously. The patient must either integrate the sounds or ignore one ear to focus on the other. This directly measures interhemispheric transfer.</p>
+                </div>
+              </div>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Activity className="text-[#0c264d] w-5 h-5" /> Temporal Processing
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Tests like the Gaps-In-Noise (GIN) or Frequency Pattern Test assess the brain's ability to perceive the rapid timing, duration, and order of sounds—a critical function for perceiving rapid human speech.
-              </p>
-            </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#0A9DC4] shrink-0"></div>
+                    <h3 className="text-[#0c264d] font-bold text-sm">Temporal Processing</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">Tests like the Gaps-In-Noise (GIN) or Frequency Pattern Test assess the brain's ability to perceive the rapid timing, duration, and order of sounds—a critical function for perceiving rapid human speech.</p>
+                </div>
+              </div>
 
-            <div>
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Search className="text-[#0c264d] w-5 h-5" /> Monaural Low-Redundancy
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Speech signals are artificially degraded (filtered, time-compressed, or buried in noise) and presented to one ear at a time to assess the brain's "auditory closure"—its ability to fill in missing audio gaps.
-              </p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#0A9DC4] shrink-0"></div>
+                    <h3 className="text-[#0c264d] font-bold text-sm">Monaural Low-Redundancy</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed">Speech signals are artificially degraded (filtered, time-compressed, or buried in noise) and presented to one ear at a time to assess the brain's "auditory closure"—its ability to fill in missing audio gaps.</p>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          {/* Electrophysiology Card (Cyan) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+          {/* Electrophysiology Card (Yellow) - Second Card with HORIZONTAL DOUBLE RINGS */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Electrophysiological Measures</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-diagnosis-eeg-hero.webp"
+              src="/images/apd/apd-diagnosis-eeg-1.webp"
               alt="Clinical visual of an ABR test showing brain waves responding to auditory stimuli"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               While behavioral testing requires the patient to actively respond, electrophysiological measures objectively record the brain's actual electrical response to sound.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Brain className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">ABR & MLR</h3>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              
+              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#ffd166] shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1">
+                  <Brain className="w-5 h-5" />
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Auditory Brainstem Response (ABR) measures electrical activity from the auditory nerve. Middle Latency Response (MLR) measures thalamocortical pathways occurring 15-50 milliseconds after the sound, indicating how the mid-brain processes it.<sup>1</sup></p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">ABR & MLR</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Auditory Brainstem Response (ABR) measures electrical activity from the auditory nerve. Middle Latency Response (MLR) measures thalamocortical pathways occurring 15-50 milliseconds after the sound, indicating how the mid-brain processes it.<sup>1</sup></p>
+                </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <FileText className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Diagnostic Criteria & Batteries</h3>
+              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#ffd166] shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1">
+                  <FileText className="w-5 h-5" />
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">APD is typically diagnosed when performance falls 2 or more standard deviations below the mean for the patient's age on at least two auditory processing tests.<sup>2</sup> The SCAN-3 battery is widely used to provide these age-normed scores.<sup>3</sup></p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Diagnostic Criteria & Batteries</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">APD is typically diagnosed when performance falls 2 or more standard deviations below the mean for the patient's age on at least two auditory processing tests.<sup>2</sup> The SCAN-3 battery is widely used to provide these age-normed scores.<sup>3</sup></p>
+                </div>
               </div>
+
             </div>
           </div>
 
@@ -321,80 +350,76 @@ export function APDDiagnosis({ setCurrentArticle, initialTab }: APDDiagnosisProp
       {activeTab === 'differential' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Differential Card (Yellow) - Uses Float Image with organic text flow */}
-          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          {/* Differential Card (Yellow) - Top Card with VERTICAL DOUBLE RINGS */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
             
+            {/* EXCEPTION: Uses wide w-96 class for readability of comparative elements */}
             <ImageWithFallback 
-              src="/images/apd/apd-diagnosis-differential.webp"
+              src="/images/apd/apd-diagnosis-differential-1.webp"
               alt="Magnifying glass separating the overlapping traits of APD, ADHD, and Language Disorders"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-96 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Because APD lacks a universal "gold standard" test, audiologists must carefully rule out other conditions that mimic APD symptoms, particularly ADHD, Autism, and standard language disorders.
             </p>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <AlertTriangle className="text-[#ffd166] w-5 h-5" /> vs. ADHD
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Both involve apparent inattention and difficulty following directions. The key difference is modality: APD difficulties are strictly specific to auditory processing, whereas ADHD impairs attention across all sensory modalities (visual, auditory, tactile).
-              </p>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <AlertTriangle className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">vs. ADHD</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Both involve apparent inattention and difficulty following directions. The key difference is modality: APD difficulties are strictly specific to auditory processing, whereas ADHD impairs attention across all sensory modalities.</p>
+              </div>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Ear className="text-[#ffd166] w-5 h-5" /> vs. ANSD
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Auditory Neuropathy Spectrum Disorder (ANSD) involves dyssynchrony in the auditory nerve. Distinguishing features include absent or severely abnormal acoustic reflexes on medical testing, despite completely normal otoacoustic emissions.
-              </p>
-            </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Ear className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">vs. ANSD</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Auditory Neuropathy Spectrum Disorder (ANSD) involves dyssynchrony in the auditory nerve. Distinguishing features include absent or severely abnormal acoustic reflexes on medical testing, despite completely normal otoacoustic emissions.</p>
+              </div>
 
-            <div>
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Users className="text-[#ffd166] w-5 h-5" /> vs. Autism
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                While auditory processing differences are extremely common in autism, isolated APD does not present with the qualitative social-communication impairments, restricted interests, or severe repetitive behaviors required for an autism diagnosis.
-              </p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Users className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">vs. Autism</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">While auditory processing differences are extremely common in autism, isolated APD does not present with the qualitative social-communication impairments, restricted interests, or severe repetitive behaviors required for an autism diagnosis.</p>
+              </div>
+
             </div>
           </div>
 
-          {/* Access Card (Slate) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+          {/* Access Card (Cyan) - Second Card with BARE ICONS */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Access & The Report</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-diagnosis-advocacy-hero.webp"
+              src="/images/apd/apd-diagnosis-advocacy-1.webp"
               alt="Parent reviewing a comprehensive diagnostic report, finding validation"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Securing an APD diagnosis can be administratively challenging, but it provides profound emotional validation and legal backing for academic accommodations.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               
-              <div>
-                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <Building className="text-[#2abcd4] w-5 h-5" /> The Access Hurdle
-                </h3>
-                <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                  Not all school districts recognize APD for special education eligibility, and insurance coverage varies wildly (many do not consider it a covered medical diagnosis). Families often must seek out-of-pocket private evaluations at specialized audiology centers.
-                </p>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <Building className="text-[#0A9DC4] w-8 h-8 mb-4" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">The Access Hurdle</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Not all school districts recognize APD for special education eligibility, and insurance coverage varies wildly (many do not consider it a covered medical diagnosis). Families often must seek out-of-pocket private evaluations at specialized audiology centers.</p>
               </div>
 
-              <div>
-                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <Heart className="text-[#2abcd4] w-5 h-5" /> The Value of Validation
-                </h3>
-                <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                  Diagnosis provides an immediate explanation for longstanding difficulties. Understanding that the child's academic challenges stem from genuine neurological differences—rather than a lack of effort or intelligence—is deeply powerful for their self-esteem.
-                </p>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <Heart className="text-[#0A9DC4] w-8 h-8 mb-4" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">The Value of Validation</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Diagnosis provides an immediate explanation for longstanding difficulties. Understanding that the child's academic challenges stem from genuine neurological differences—rather than a lack of effort or intelligence—is deeply powerful for their self-esteem.</p>
               </div>
 
             </div>

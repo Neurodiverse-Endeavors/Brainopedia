@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Eye, Ear, Heart, AlertTriangle, Users, Home, GraduationCap, Briefcase, Zap, Laptop, Clock, ShieldCheck, Compass, CheckCircle, Baby, MessageSquare } from 'lucide-react';
+import { AlertTriangle, Zap, Heart, Briefcase, ShieldCheck, Eye, Baby, Users, Compass, MessageSquare, CheckCircle } from 'lucide-react';
 
 interface APDLivingProps {
   setCurrentArticle?: (article: string) => void;
@@ -93,82 +93,83 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
       {activeTab === 'life' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Daily Life Card (Cyan) - Uses Float Image with organic text flow */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+          {/* Daily Life Card (Cyan) - Top Card with ROUNDED SQUARE BADGES */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Life & Emotional Impact</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-living-daily.webp"
+              src="/images/apd/apd-living-daily-1.webp"
               alt="Person experiencing listening fatigue, visually separating from a noisy environment"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               Routine communication tasks that others take for granted can be exhausting with APD. Because it is completely invisible, the daily friction of navigating an auditory world takes a heavy emotional toll.
             </p>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <AlertTriangle className="text-[#0A9DC4] w-5 h-5" /> The Invisible Challenge
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                People frequently misinterpret APD challenges as rudeness, lack of intelligence, or willful inattention. Constantly having to explain your neurological profile to strangers or peers becomes incredibly tiring.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <AlertTriangle className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">The Invisible Challenge</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">People frequently misinterpret APD challenges as rudeness, lack of intelligence, or willful inattention. Constantly having to explain your neurological profile to strangers or peers becomes incredibly tiring.</p>
+              </div>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Zap className="text-[#0A9DC4] w-5 h-5" /> Listening Fatigue
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                The constant, hyper-active cognitive effort required to simply process basic auditory information leads to severe exhaustion. By the end of the day, this depletion is not laziness—it is genuine neurological fatigue.
-              </p>
-            </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Zap className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Listening Fatigue</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">The constant, hyper-active cognitive effort required to simply process basic auditory information leads to severe exhaustion. By the end of the day, this depletion is not laziness—it is genuine neurological fatigue.</p>
+              </div>
 
-            <div>
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Heart className="text-[#0A9DC4] w-5 h-5" /> Emotional Toll
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Chronic struggles and the anxiety of missing important information often contribute to depression. Many individuals withdraw from social activities to avoid the embarrassment of communication breakdowns.
-              </p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Heart className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Emotional Toll</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Chronic struggles and the anxiety of missing important information often contribute to depression. Many individuals withdraw from social activities to avoid the embarrassment of communication breakdowns.</p>
+              </div>
             </div>
           </div>
 
-          {/* Relationships Card (Yellow) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          {/* Relationships Card (Navy) - Second Card with CLEAN 3D ACCENT BORDERS (NO redundant dots/icons) */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships & Social Contexts</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-living-relationships-hero.webp"
+              src="/images/apd/apd-living-relationships-1.webp"
               alt="Friends engaged in a quiet, intimate, and accessible conversation"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Users className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Friendships & Dating</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Friendships & Dating</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Group conversations with overlapping voices are notoriously difficult. Close, one-on-one friendships in quiet settings feel far more comfortable. Romantic partners must be willing to adapt their communication style.</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Group conversations with overlapping voices are notoriously difficult. Close, one-on-one friendships in quiet settings feel far more comfortable. Romantic partners must be willing to adapt their communication style.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Home className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Family Dynamics</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Family Dynamics</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Family members may struggle to understand why you "hear when you want to" or seem to ignore them. Open education about APD is essential to help families develop patience and use accessible communication.</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Family members may struggle to understand why you "hear when you want to" or seem to ignore them. Open education about APD is essential to help families develop patience and use accessible communication.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <GraduationCap className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">School Socializing</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">School Socializing</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Cafeterias, playgrounds, and hallways are auditory nightmares. Choosing quieter social options isn't "antisocial"—it's a highly practical, healthy accommodation to preserve your energy.</p>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Cafeterias, playgrounds, and hallways are auditory nightmares. Choosing quieter social options isn't "antisocial"—it's a highly practical, healthy accommodation to preserve your energy.</p>
               </div>
+
             </div>
           </div>
 
@@ -194,86 +195,89 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
       {activeTab === 'work' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Strategies Card (Slate) - Uses Float Image with organic text flow */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+          {/* Strategies Card (Navy) - Top Card with CLEAN 3D ACCENT BORDERS */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Practical Management & Tech</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-living-strategies.webp"
+              src="/images/apd/apd-living-strategies-1.webp"
               alt="Person utilizing practical management tools like noise-canceling headphones"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
               Executive function challenges heavily affect daily life. Developing highly personalized systems for organization, time management, and task completion is essential for independent success.
             </p>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Laptop className="text-[#0c264d] w-5 h-5" /> Technology as an Equalizer
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Technology is transformative. Captioning apps, noise-canceling headphones, and recording important meetings (with permission) allow you to bypass your processing weaknesses entirely. Email and text messaging drastically reduce reliance on stressful phone calls.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Technology as an Equalizer</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Technology is transformative. Captioning apps, noise-canceling headphones, and recording important meetings (with permission) allow you to bypass processing weaknesses. Email and messaging reduce reliance on stressful phone calls.</p>
+                </div>
+              </div>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Ear className="text-[#0c264d] w-5 h-5" /> Environmental Control
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Whenever possible, control your listening environment. Choose quiet restaurants, sit far away from noise sources (like kitchens or speakers), and purposefully schedule important conversations during quiet times of the day.
-              </p>
-            </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Environmental Control</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Whenever possible, control your listening environment. Choose quiet restaurants, sit far away from noise sources (like kitchens or speakers), and purposefully schedule important conversations during quiet times of the day.</p>
+                </div>
+              </div>
 
-            <div>
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Clock className="text-[#0c264d] w-5 h-5" /> Energy & Memory
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Never rely on auditory memory for important information—write it down immediately. Building in breaks and setting strict limits on challenging listening situations is crucial to preventing complete burnout.
-              </p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Energy & Memory</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Never rely on auditory memory for important information—write it down immediately. Building in breaks and setting strict limits on challenging listening situations is crucial to preventing complete burnout.</p>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          {/* Career Card (Cyan) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+          {/* Career Card (Yellow) - Second Card with VERTICAL DOUBLE RING BADGES */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Career & Strengths</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-living-career-hero.webp"
+              src="/images/apd/apd-living-career-1.webp"
               alt="Adult with APD thriving in a visually-oriented career"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Some careers are significantly better suited to individuals with APD. Success means ruthlessly playing to your strengths rather than trying to force yourself to overcome your deficits.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Briefcase className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Finding the Fit</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Briefcase className="w-5 h-5" />
                 </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Finding the Fit</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Careers emphasizing visual or hands-on skills (art, design, engineering, tech) are incredible fits. Many gravitate toward entrepreneurship, which offers the ultimate autonomy to structure work perfectly around your strengths.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <ShieldCheck className="text-[#0A9DC4] w-7 h-7" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Workplace Accommodations</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Accommodations</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Under the ADA, employees have the right to request reasonable accommodations.<sup>1</sup> This might include requesting written instructions, utilizing closed-door offices, or securing remote work arrangements.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Eye className="text-[#0A9DC4] w-6 h-6" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Visual & Creative Strengths</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Eye className="w-5 h-5" />
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Many with APD excel at visual processing and hyper-focus. Furthermore, developing workarounds for auditory challenges builds profound, out-of-the-box creative problem-solving skills that translate brilliantly into the workplace.</p>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Visual Strengths</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Many with APD excel at visual processing and hyper-focus. Furthermore, developing workarounds for auditory challenges builds profound, out-of-the-box creative problem-solving skills that translate brilliantly into work.</p>
               </div>
+
             </div>
           </div>
 
@@ -309,81 +313,82 @@ export function APDLiving({ setCurrentArticle, initialTab }: APDLivingProps) {
       {activeTab === 'future' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Lifespan Card (Yellow) - Uses Float Image with organic text flow */}
-          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          {/* Lifespan Card (Yellow) - Top Card with HORIZONTAL DOUBLE RING BADGES */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Life Across the Ages</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-living-lifespan.webp"
+              src="/images/apd/apd-living-lifespan-1.webp"
               alt="Split visual showing a child receiving early support and an adult advocating for needs"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
-              Twice-exceptionality and APD are lifelong profiles—they are not something you "outgrow." However, self-understanding and life experience make management significantly easier over time.
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
+              Auditory Processing Disorder is a lifelong neurological profile—it is not something you "outgrow." However, self-understanding and life experience make management significantly easier over time.
             </p>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Baby className="text-[#ffd166] w-5 h-5" /> Childhood & School
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Young children benefit immensely from early language intervention. As academic demands soar during elementary and middle school, appropriate accommodations (like IEPs) are absolutely crucial for success and preserving self-esteem.
-              </p>
-            </div>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              
+              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#ffd166] shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1">
+                  <Baby className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Childhood & School</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Young children benefit immensely from early language intervention. As academic demands soar during elementary and middle school, appropriate accommodations (like IEPs) are absolutely crucial for success and preserving self-esteem.</p>
+                </div>
+              </div>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Users className="text-[#ffd166] w-5 h-5" /> Adolescence
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Teenagers face complex social dynamics and incredibly fast-paced instruction. This is the critical period where identity development occurs, and students must actively learn how to advocate for their own needs.
-              </p>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#ffd166] shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Adolescence</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Teenagers face complex social dynamics and incredibly fast-paced instruction. This is the critical period where identity development occurs, and students must actively learn how to advocate for their own needs.</p>
+                </div>
+              </div>
 
-            <div>
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Compass className="text-[#ffd166] w-5 h-5" /> Adulthood & Beyond
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Many adults report that life improves significantly after school ends because they finally gain control over their environments. While age-related hearing changes may eventually compound APD, a lifetime of compensation strategies provides immense resilience.
-              </p>
+              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#ffd166] shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1">
+                  <Compass className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Adulthood & Beyond</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Many adults report that life improves significantly after school ends because they finally gain control over their environments. While age-related hearing changes may eventually compound APD, a lifetime of compensation strategies provides immense resilience.</p>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          {/* Advocacy Card (Slate) - Uses W-64 Centered Hero Image and Grid */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
+          {/* Advocacy Card (Cyan) - Second Card with BARE DARK ICONS */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Advocacy, Community & Hope</h2>
             
             <ImageWithFallback 
-              src="/images/apd/apd-living-advocacy-hero.webp"
+              src="/images/apd/apd-living-advocacy-1.webp"
               alt="Diverse support group connecting over shared neurodivergent experiences"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
-                  <Users className="text-[#0c264d] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Finding Your People</h3>
-                </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <Users className="text-[#0A9DC4] w-8 h-8 mb-4" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Finding Your People</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Connecting with other individuals who share your exact auditory experiences completely shatters the feeling of isolation. Online communities and advocacy organizations offer validation that is difficult to find anywhere else.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
-                  <MessageSquare className="text-[#0c264d] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Self-Advocacy</h3>
-                </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <MessageSquare className="text-[#0A9DC4] w-8 h-8 mb-4" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Self-Advocacy</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Learning to fiercely advocate for your accommodations is incredibly empowering. Many individuals take this a step further, sharing their story to raise awareness in schools and workplaces to improve support for the next generation.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
-                  <CheckCircle className="text-[#0c264d] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Redefining Success</h3>
-                </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <CheckCircle className="text-[#0A9DC4] w-8 h-8 mb-4" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Redefining Success</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Success for neurodivergent individuals often looks very different than conventional definitions. Personal fulfillment, pursuing your passions, and living authentically matter far more than traditional, standardized markers of achievement.</p>
               </div>
 

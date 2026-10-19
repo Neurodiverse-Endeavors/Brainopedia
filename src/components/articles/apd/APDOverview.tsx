@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Ear, Brain, XCircle, Search, Layers, Activity, Users, Network, BookOpen, Clock, AlertTriangle, Lightbulb, ShieldCheck, Heart, FileText, Target } from 'lucide-react';
+import { Ear, Brain, Layers, Network, Activity, Clock, Target, BookOpen, Users, AlertTriangle, Heart, FileText, Lightbulb, ShieldCheck } from 'lucide-react';
 
 interface APDOverviewProps {
   setCurrentArticle?: (article: string) => void;
@@ -93,67 +93,76 @@ export function APDOverview({ setCurrentArticle, initialTab }: APDOverviewProps)
       {activeTab === 'definition' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Definition Card (Cyan) - Uses Float Image */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
+          {/* Definition Card (Cyan) */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">What is APD?</h2>
             
             <ImageWithFallback 
               src="/images/apd/apd-overview-definition.webp"
               alt="Person with normal hearing but a highlighted brain processing center"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
               Auditory Processing Disorder (APD)—also known as Central Auditory Processing Disorder (CAPD)—is a neurological condition affecting how the brain interprets sound. The individual's ears detect sound perfectly, but the brain struggles to organize and make sense of what was heard.
             </p>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Brain className="text-[#0A9DC4] w-5 h-5" /> A Central Deficit
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                The American Speech-Language-Hearing Association (ASHA) defines APD as a deficit in the neural processing of auditory information, affecting sound localization, pattern recognition, and auditory performance in degraded environments.<sup>1</sup>
-              </p>
-            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <Brain className="text-[#0A9DC4] w-6 h-6 mb-3" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">A Central Deficit</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">The American Speech-Language-Hearing Association (ASHA) defines APD as a deficit in the neural processing of auditory information, affecting sound localization, pattern recognition, and auditory performance in degraded environments.<sup>1</sup></p>
+              </div>
 
-            <div>
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <XCircle className="text-red-500 w-5 h-5" /> What APD Is Not
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                It is not a hearing loss (hearing thresholds are strictly normal). It is also not primarily a higher-order language disorder or a pure attention deficit, although it heavily impacts how an individual responds to spoken language.
-              </p>
+              {/* Accessible Warning Myth Card */}
+              <div className="bg-white border-l-4 border-[#be185d] p-5 rounded-r-xl shadow-sm flex flex-col items-center text-center">
+                <AlertTriangle className="text-[#be185d] w-6 h-6 mb-3" />
+                <h3 className="text-[#831843] font-bold text-sm mb-2">What APD Is Not</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">It is not a hearing loss (hearing thresholds are strictly normal). It is also not primarily a higher-order language disorder or a pure attention deficit, although it heavily impacts how an individual responds to spoken language.</p>
+              </div>
             </div>
           </div>
 
-          {/* Subtypes Card (Yellow) - Uses Hero Image */}
+          {/* Subtypes Card (Yellow) - Navy Ring Badges */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Types & Subtypes of APD</h2>
             
             <ImageWithFallback 
               src="/images/apd/apd-overview-subtypes-hero.webp"
               alt="Infographic brain map visually separating the different auditory processing deficits"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#ffd166] mb-8 shadow-sm"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Auditory Decoding</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Ear className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2 w-full">Auditory Decoding</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Difficulty analyzing and identifying sounds, particularly in background noise. The brain struggles to extract the correct acoustic features from a muddy auditory signal.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Prosodic Deficit</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Brain className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2 w-full">Prosodic Deficit</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Difficulty interpreting prosody—the rhythm, stress, and intonation patterns of speech. The individual frequently misses sarcasm, tone, or subtle emotional nuance.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Integration</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Layers className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2 w-full">Integration</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Difficulty integrating auditory information across both hemispheres. It heavily affects the ability to combine separate auditory pieces into a single, meaningful whole.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50">
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2">Output-Organization</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Network className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] pb-2 w-full">Output-Organization</h3>
                 <p className="text-xs text-slate-700 leading-relaxed">Difficulty organizing, recalling, and sequencing auditory information. This severely impairs tasks requiring short-term auditory memory and following multi-step directions.</p>
               </div>
             </div>
@@ -191,80 +200,82 @@ export function APDOverview({ setCurrentArticle, initialTab }: APDOverviewProps)
       {activeTab === 'demographics' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Demographics Card (Slate) - CHANGED TO CENTERED W-64 HERO */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+          {/* Demographics Card (Navy) - 3D Accent Borders */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prevalence & Demographics</h2>
             
             <ImageWithFallback 
               src="/images/apd/apd-overview-demographics.webp"
               alt="Diverse classroom setting where a student struggles to process verbal instructions"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
               APD is frequently underdiagnosed due to limited clinical awareness and a lack of standardized assessment availability in many school districts.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
-                  <Activity className="text-[#0c264d] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Statistical Prevalence</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Statistical Prevalence</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Estimates suggest approximately 2-5% of school-aged children have APD.<sup>1</sup> Some research points to a male-to-female ratio of roughly 2:1, though this may heavily reflect referral bias rather than true biological prevalence.<sup>2</sup></p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
-                  <Clock className="text-[#0c264d] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Age of Diagnosis</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Age of Diagnosis</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">While symptoms are often apparent much earlier, formal diagnosis is typically delayed until a child is age 7 or older, when the central auditory system has matured enough for valid clinical testing.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Co-occurring Card (Cyan) - Uses Hero Image */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+          {/* Co-occurring Card (Cyan) - Horizontal Bars with Circled Icons */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Co-occurring Conditions</h2>
             
             <ImageWithFallback 
               src="/images/apd/apd-overview-cooccurring-hero.webp"
               alt="Venn diagram showing APD intersecting with ADHD, Dyslexia, and Autism"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               APD rarely exists in a vacuum. It heavily overlaps with other neurodevelopmental profiles, requiring careful differential diagnosis to ensure accurate support.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Target className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">APD & ADHD</h3>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center font-bold shrink-0 shadow-sm border border-[#bae6fd] mt-1">
+                  <Target className="w-5 h-5" />
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">They share massive overlapping symptoms, including distractibility and difficulty following directions. Estimates suggest 50% or more of children diagnosed with APD also have ADHD.<sup>3</sup></p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">APD & ADHD</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">They share massive overlapping symptoms, including distractibility and difficulty following directions. Estimates suggest 50% or more of children diagnosed with APD also have ADHD.<sup>3</sup></p>
+                </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <BookOpen className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">APD & Dyslexia</h3>
+              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center font-bold shrink-0 shadow-sm border border-[#bae6fd] mt-1">
+                  <BookOpen className="w-5 h-5" />
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Phonological processing deficits strongly link APD and dyslexia. A brain struggling to decode the auditory difference between "b" and "p" will inherently struggle to learn to read those letters on a page.</p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">APD & Dyslexia</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Phonological processing deficits strongly link APD and dyslexia. A brain struggling to decode the auditory difference between "b" and "p" will inherently struggle to learn to read those letters on a page.</p>
+                </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Network className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">APD & Autism</h3>
+              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center font-bold shrink-0 shadow-sm border border-[#bae6fd] mt-1">
+                  <Users className="w-5 h-5" />
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Auditory processing differences are highly common in the autistic profile. Many autistic individuals report severe auditory hypersensitivity or extreme difficulty processing spoken language in noisy environments.</p>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">APD & Autism</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Auditory processing differences are highly common in the autistic profile. Many autistic individuals report severe auditory hypersensitivity or extreme difficulty processing spoken language in noisy environments.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -303,75 +314,93 @@ export function APDOverview({ setCurrentArticle, initialTab }: APDOverviewProps)
       {activeTab === 'impact' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Impact Card (Yellow) - Uses Float Image */}
-          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
+          {/* Impact Card (Yellow) - Horizontal Bars with Navy Icons */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Impact & Emotional Effects</h2>
             
             <ImageWithFallback 
               src="/images/apd/apd-overview-impact.webp"
               alt="Individual experiencing severe listening fatigue in a noisy environment"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#ffd166] mb-6 shadow-sm"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
               The invisible nature of APD makes it incredibly taxing. The constant, active effort required to process basic auditory information leads to severe "listening fatigue" and burnout by the end of a school or workday.
             </p>
 
-            <div className="mb-5">
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <AlertTriangle className="text-[#ffd166] w-5 h-5" /> Academic & Social Hurdles
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Students struggle to follow multi-step verbal directions or take notes from lectures. Socially, environments like cafeterias or parties are exhausting, and constantly asking for repetition damages self-esteem.
-              </p>
-            </div>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <AlertTriangle className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Academic & Social Hurdles</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Students struggle to follow multi-step verbal directions or take notes from lectures. Socially, environments like cafeterias or parties are exhausting, and constantly asking for repetition damages self-esteem.</p>
+                </div>
+              </div>
 
-            <div>
-              <h3 className="text-[#0c264d] font-bold text-sm mb-2 flex items-center gap-2">
-                <Heart className="text-[#ffd166] w-5 h-5" /> Behavioral Misunderstandings
-              </h3>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                APD is tragically often misunderstood as willful inattention, laziness, or defiance. Frustration from chronic communication breakdowns can quickly lead to severe anxiety, withdrawal, or behavioral outbursts.
-              </p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Heart className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Behavioral Misunderstandings</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">APD is tragically often misunderstood as willful inattention, laziness, or defiance. Frustration from chronic communication breakdowns can quickly lead to severe anxiety, withdrawal, or behavioral outbursts.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Trajectory & History Card (Slate) - Uses Hero Image */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+          {/* Trajectory Card (Navy) - 3D Accent Borders + CSS Dot Bullets */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Trajectory, History & Hope</h2>
             
             <ImageWithFallback 
               src="/images/apd/apd-overview-trajectory-hero.webp"
               alt="Timeline of a child growing into an adult successfully using compensatory strategies"
-              className="block mx-auto w-full max-w-2xl mb-8 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
               
-              <div>
-                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <FileText className="text-[#2abcd4] w-5 h-5" /> Historical Context
-                </h3>
-                <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                  The concept emerged in the 1950s through Helmer Myklebust's observations of children with "auditory disorders" despite perfect hearing.<sup>1</sup> Diagnostic guidelines were later solidified during the 1996 Consensus Conference on APD.<sup>2</sup>
-                </p>
-                <div className="bg-white p-3 rounded-lg border border-[#0c264d] border-opacity-20 shadow-sm flex items-start gap-2">
-                  <ShieldCheck className="text-[#0c264d] w-4 h-4 mt-0.5 shrink-0" />
-                  <p className="text-xs text-slate-700">Diagnosis provides vital explanation and validation, helping individuals understand their academic struggles aren't their fault, shifting the focus from punishment to accommodation.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                    <FileText className="text-[#2abcd4] w-4 h-4" />
+                    <h3 className="text-[#0c264d] font-bold text-sm">Historical Context</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                    The concept emerged in the 1950s through Helmer Myklebust's observations of children with "auditory disorders" despite perfect hearing.<sup>1</sup> Diagnostic guidelines were later solidified during the 1996 Consensus Conference on APD.<sup>2</sup>
+                  </p>
+                  <div className="bg-blue-50 p-3 rounded-lg border border-[#0c264d] border-opacity-20 shadow-sm flex items-start gap-2">
+                    <ShieldCheck className="text-[#0c264d] w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-xs text-slate-700">Diagnosis provides vital explanation and validation, helping individuals understand their academic struggles aren't their fault, shifting the focus from punishment to accommodation.</p>
+                  </div>
                 </div>
               </div>
 
-              <div>
-                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <Lightbulb className="text-[#2abcd4] w-5 h-5" /> Lifespan Outcomes
-                </h3>
-                <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                  Core deficits typically persist into adulthood. However, the condition becomes highly manageable as the individual's auditory system matures and they actively master self-advocacy.
-                </p>
-                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
-                  <li>Adults learn to structure their lives, avoiding challenging listening environments when possible.</li>
-                  <li>Many individuals with APD possess significant cognitive strengths in visual processing, hands-on learning, and creativity, allowing them to thrive professionally.</li>
-                </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <div className="flex items-center gap-2 mb-2 border-b border-gray-100 pb-2">
+                    <Lightbulb className="text-[#2abcd4] w-4 h-4" />
+                    <h3 className="text-[#0c264d] font-bold text-sm">Lifespan Outcomes</h3>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                    Core deficits typically persist into adulthood. However, the condition becomes highly manageable as the individual's auditory system matures and they actively master self-advocacy.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                      <p className="text-xs text-slate-700">Adults learn to structure their lives, avoiding challenging listening environments when possible.</p>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                      <p className="text-xs text-slate-700">Many individuals with APD possess significant cognitive strengths in visual processing, hands-on learning, and creativity, allowing them to thrive professionally.</p>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
             </div>
