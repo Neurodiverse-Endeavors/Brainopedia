@@ -142,15 +142,15 @@ export function ADHDSymptomsTabMore({ setCurrentArticle }: TabMoreProps) {
       
       <ImageWithFallback 
         src="/images/adhd/adhd-more-symptoms-wheel.webp"
-        alt="ADHD symptom wheel showing additional symptoms beyond DSM-5 criteria"
+        alt="ADHD symptoms stack showing additional symptoms beyond DSM-5 criteria"
         className="w-full max-w-md mx-auto mb-4 rounded"
       />
 
       <p className="mb-4 text-slate-700 leading-relaxed">
         While the DSM-5-TR focuses on the three core symptoms of inattention, hyperactivity, and impulsivity (covered 
         in the previous tabs), people with ADHD experience a much broader range of symptoms that significantly impact 
-        daily life. The symptom wheel above shows additional symptoms commonly reported by individuals with ADHD, 
-        rated on a scale from 0 (no symptoms) to 10 (maximum symptoms).
+        daily life. The stack of symptoms above shows additional symptoms commonly reported by individuals with ADHD, 
+        rated on a scale from 0 (no symptoms) to 10 (means very affected by this trait or symptom).
       </p>
       
       <p className="mb-6 text-slate-700 leading-relaxed">
@@ -160,8 +160,8 @@ export function ADHDSymptomsTabMore({ setCurrentArticle }: TabMoreProps) {
       </p>
       <div className="bg-[#ffd166] border-l-4 border-[#0c264d] p-4 rounded mb-8 shadow-sm">
         <p className="text-sm mb-2 text-[#0c264d]">
-          <strong>About the Symptom Wheel:</strong> The wheel rates each symptom from 0 to 10 based on severity of 
-          impact. Each person with ADHD experiences these symptoms differently—some may rate high on certain symptoms 
+          <strong>About the Symptom Stack above:</strong> The stack rates each symptom from 0 to 10 based on severity of 
+          impact. Each person with ADHD experiences these symptoms or traits differently—some may rate high on certain symptoms 
           and low on others. There's no "correct" pattern, and your individual symptom profile is valid.
         </p>
         <p className="text-sm mt-3 text-[#0c264d]">
