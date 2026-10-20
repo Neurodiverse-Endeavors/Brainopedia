@@ -150,7 +150,7 @@ export function ADHDSymptomsTabMore({ setCurrentArticle }: TabMoreProps) {
         While the DSM-5-TR focuses on the three core symptoms of inattention, hyperactivity, and impulsivity (covered 
         in the previous tabs), people with ADHD experience a much broader range of symptoms that significantly impact 
         daily life. The stack of symptoms above shows additional symptoms commonly reported by individuals with ADHD, 
-        rated on a scale from 0 (no symptoms) to 10 (means very affected by this trait or symptom).
+        rated on a scale from 0 (means not very affected by this trait or symptom) to 10 (means very affected by this trait or symptom).
       </p>
       
       <p className="mb-6 text-slate-700 leading-relaxed">

@@ -99,7 +99,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
             <ImageWithFallback 
               src="/images/spd/spd-overview-definition.webp"
               alt="Child exploring sensory textures like deep-pressure sand"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-smborder border-cyan-200"
             />
             
             <div className="max-w-4xl mx-auto space-y-4 mb-6">
@@ -141,7 +141,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
             <ImageWithFallback 
               src="/images/spd/spd-overview-senses.webp"
               alt="Infographic showing the 5 traditional senses alongside the 3 internal senses"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -230,7 +230,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
             <ImageWithFallback 
               src="/images/spd/spd-overview-prevalence.webp"
               alt="A diverse group of children, with one child wearing noise-canceling headphones"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-smborder border-gray-300"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -267,7 +267,7 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
             <ImageWithFallback 
               src="/images/spd/spd-overview-patterns.webp"
               alt="Visual splitting the 3 patterns: over-responsive, craving, and motor-based"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -346,8 +346,8 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
             
             <ImageWithFallback 
               src="/images/spd/spd-overview-impact.webp"
-              alt="Venn diagram showing SPD intersecting heavily with Autism and ADHD"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              alt="SPD intersecting heavily with Autism and ADHD"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-smborder border-yellow-200"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -383,8 +383,8 @@ export function SPDOverview({ setCurrentArticle, initialTab }: SPDOverviewProps)
             
             <ImageWithFallback 
               src="/images/spd/spd-overview-neurology.webp"
-              alt="A brain scan visual showing white matter pathways"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
+              alt="SPD laid out with Ayers integration"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
