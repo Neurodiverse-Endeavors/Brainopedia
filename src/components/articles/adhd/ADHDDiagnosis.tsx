@@ -3,6 +3,7 @@ import { ADHDComorbidities } from '../../infographics/ADHDComorbidities';
 import { ADHDDiagnosticProfessionals } from '../../infographics/ADHDDiagnosticProfessionals';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Info, Monitor, Activity, Layers, AlertTriangle, Brain, GraduationCap, CheckCircle } from 'lucide-react';
 
 interface ADHDDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
@@ -215,176 +216,242 @@ export function ADHDDiagnosis({ setCurrentArticle, initialTab }: ADHDDiagnosisPr
         {/* =========================================
             TAB 2: TESTS & ASSESSMENTS
             ========================================= */}
-        <TabsContent value="tests" className="animate-fadeIn">
-          <div className="clear-both">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl clear-both text-center">Tests & Assessments Used</h2>
-            
-            <div className="bg-[#ffd166] border-l-4 border-[#0c264d] p-4 rounded-r-lg mb-10 shadow-sm max-w-4xl mx-auto">
-              <p className="text-sm">
-                <strong>Important Note:</strong> Not all of these tests are needed for every evaluation. Your clinician 
-                will select the appropriate assessments based on your individual situation, age, and presenting concerns. 
-                ADHD can be diagnosed with clinical interview and rating scales alone—additional testing is used when needed 
-                to clarify diagnosis or identify co-occurring conditions.
+{/* ==========================================
+          TAB 2: TESTS & ASSESSMENTS (ADHD)
+      ========================================== */}
+      {activeTab === 'tests' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Intro & Rating Scales (Navy) - Uses 3D Accent Borders */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <div className="bg-[#576d8e]/10 border-l-4 border-[#576d8e] p-4 mb-8 rounded-r-lg">
+              <h3 className="font-bold text-[#0c264d] mb-1 uppercase text-xs flex items-center gap-2">
+                <Info className="w-4 h-4 text-[#576d8e]" /> Important Note
+              </h3>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Not all of these tests are needed for every evaluation. Your clinician will select the appropriate assessments based on your individual situation, age, and presenting concerns. ADHD can be diagnosed with clinical interview and rating scales alone—additional testing is used when needed to clarify diagnosis or identify co-occurring conditions.
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mb-6 text-[#0c264d] border-b border-gray-200 pb-2 text-center">
-              ADHD-Specific Rating Scales
-            </h3>
-            <p className="text-slate-700 text-center mb-8 max-w-3xl mx-auto">
-              Standardized questionnaires completed by parents, teachers, the individual, or observers 
-              to rate symptom frequency and severity.
-            </p>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">ADHD-Specific Rating Scales</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#0A9DC4] flex flex-col">
-                <div className="font-bold text-[#0c264d] mb-2">Conners Rating Scales (4th Ed.)</div>
-                <div className="text-sm text-slate-700">Widely used. Versions available for parents, teachers, and self-report. Assesses ADHD symptoms, executive function, and learning problems.</div>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#0A9DC4] flex flex-col">
-                <div className="font-bold text-[#0c264d] mb-2">ADHD Rating Scale-5 (ADHD-RS-5)</div>
-                <div className="text-sm text-slate-700">Brief questionnaire (18 items matching the 18 DSM symptoms) with versions for home and school settings.<sup>1</sup></div>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#0A9DC4] flex flex-col">
-                <div className="font-bold text-[#0c264d] mb-2">Vanderbilt Diagnostic Scales</div>
-                <div className="text-sm text-slate-700">Free, publicly available scales often used in primary care settings. Includes screening for common comorbidities.</div>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#0A9DC4] flex flex-col">
-                <div className="font-bold text-[#0c264d] mb-2">SNAP-IV Rating Scale</div>
-                <div className="text-sm text-slate-700">Includes DSM-based ADHD items plus oppositional defiant disorder symptoms. Free and widely used in research.</div>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#0A9DC4] flex flex-col">
-                <div className="font-bold text-[#0c264d] mb-2">Brown ADD Scales</div>
-                <div className="text-sm text-slate-700">Focuses on executive function aspects of ADHD (activation, focus, effort, emotion, memory).</div>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#0A9DC4] flex flex-col">
-                <div className="font-bold text-[#0c264d] mb-2">Adult ADHD Self-Report (ASRS)</div>
-                <div className="text-sm text-slate-700">WHO-developed screening tool specifically for adults.<sup>2</sup> Brief version available for quick screening.</div>
-              </div>
-            </div>
-
-            <h3 className="text-2xl font-bold mb-6 text-[#0c264d] border-b border-gray-200 pb-2 text-center">
-              Continuous Performance Tests (CPTs)
-            </h3>
-            <p className="text-slate-700 text-center mb-8 max-w-3xl mx-auto">
-              Computer-based tests measuring sustained attention, impulsivity, and response variability.
-            </p>
+            <ImageWithFallback 
+              src="/images/adhd/adhd-diagnosis-tests-1.webp"
+              alt="3D graphic of assessment related icons"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
+            />
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#ffd166]">
-                <div className="font-bold text-[#0c264d] mb-2">Conners CPT-3</div>
-                <div className="text-sm text-slate-700">14-minute computer test measuring inattention, impulsivity, sustained attention, and vigilance via visual targets.</div>
-              </div>
+            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
+              Standardized questionnaires completed by parents, teachers, the individual, or observers to rate symptom frequency and severity.
+            </p>
 
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#ffd166]">
-                <div className="font-bold text-[#0c264d] mb-2">Test of Variables of Attention (TOVA)</div>
-                <div className="text-sm text-slate-700">21.6-minute visual or auditory attention test measuring response time, variability, and impulsivity.</div>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-t-4 border-[#ffd166]">
-                <div className="font-bold text-[#0c264d] mb-2">Integrated Visual & Auditory (IVA-2)</div>
-                <div className="text-sm text-slate-700">Tests both visual and auditory attention and response control simultaneously.</div>
-              </div>
-            </div>
-
-            <div className="bg-gray-100 border-l-4 border-gray-400 p-4 rounded-r-lg mb-12 text-sm text-slate-700 max-w-4xl mx-auto shadow-sm">
-              <strong>Limitation:</strong> CPTs should NEVER be used alone to diagnose ADHD. Many people with ADHD 
-              perform normally on these tests (especially in novel testing environments).
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
-              {/* Exec Function */}
-              <div>
-                <h3 className="text-xl font-bold mb-6 text-[#0c264d] border-b border-gray-200 pb-2">
-                  Executive Function Assessments
-                </h3>
-                <div className="flex flex-col gap-4">
-                  <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-l-4 border-l-[#2abcd4]">
-                    <div className="font-bold text-[#0c264d] mb-1">BRIEF-2</div>
-                    <div className="text-sm text-slate-700">Questionnaire assessing real-world executive function behaviors (working memory, planning, emotional control).</div>
-                  </div>
-                  <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-l-4 border-l-[#2abcd4]">
-                    <div className="font-bold text-[#0c264d] mb-1">D-KEFS</div>
-                    <div className="text-sm text-slate-700">Battery of performance-based tests measuring cognitive flexibility, inhibition, problem-solving, and creativity.</div>
-                  </div>
-                  <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-l-4 border-l-[#2abcd4]">
-                    <div className="font-bold text-[#0c264d] mb-1">Wisconsin Card Sorting (WCST)</div>
-                    <div className="text-sm text-slate-700">Measures abstract reasoning and set-shifting ability (changing strategies when rules change).</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Academic */}
-              <div>
-                <h3 className="text-xl font-bold mb-6 text-[#0c264d] border-b border-gray-200 pb-2">
-                  Intellectual & Academic Tests
-                </h3>
-                <div className="flex flex-col gap-4">
-                  <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-l-4 border-l-[#0c264d]">
-                    <div className="font-bold text-[#0c264d] mb-1">Wechsler Intelligence Scales</div>
-                    <div className="text-sm text-slate-700">WISC-V, WAIS-IV, WPPSI-IV. Comprehensive IQ tests measuring verbal comprehension, processing speed, and working memory.</div>
-                  </div>
-                  <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-l-4 border-l-[#0c264d]">
-                    <div className="font-bold text-[#0c264d] mb-1">Wechsler Achievement Test (WIAT-4)</div>
-                    <div className="text-sm text-slate-700">Assesses academic achievement in reading, writing, and math to identify co-occurring learning disabilities.</div>
-                  </div>
-                  <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-200 border-l-4 border-l-[#0c264d]">
-                    <div className="font-bold text-[#0c264d] mb-1">Woodcock-Johnson (WJ IV)</div>
-                    <div className="text-sm text-slate-700">Comprehensive battery measuring academic skills and cognitive abilities for educational planning.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#0c264d] text-white p-6 rounded-xl text-center shadow-md">
-              <p className="text-sm md:text-base leading-relaxed">
-                <strong>Bottom Line:</strong> A typical ADHD evaluation uses a clinical interview + 1-2 rating scales + medical history. Additional testing is added only when there are questions about learning disabilities or diagnostic uncertainty. <em>Quality of clinical judgment matters more than quantity of tests!</em>
-              </p>
-            </div>
-
-            <div className="flex justify-end my-8 clear-both">
-              <button 
-                onClick={() => setCurrentArticle?.('adhd')}
-                className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm shrink-0"
-              >
-                <span className="text-lg">←</span>
-                All About ADHD
-              </button>
-            </div>
-
-            {/* ===== REFERENCES SECTION ===== */}
-            <div className="clear-both mt-16 font-spartan">
-              <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               
-              <div className="mb-6">
-                <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
-                  Cited Studies & Statistics
-                </h4>
-                <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-                  <p>1. DuPaul, G. J., et al. (2016). <i>ADHD Rating Scale-5 for Children and Adolescents: Checklists, Norms, and Clinical Interpretation</i>. Guilford Press.</p>
-                  <p>2. Kessler, R. C., et al. (2005). The World Health Organization Adult ADHD Self-Report Scale (ASRS): A short screening scale for use in the general population. <i>Psychological Medicine</i>.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[gray-200] relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#576d8e]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#576d8e] border-opacity-30 pb-2">Conners Rating Scales</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Widely used 4th Edition. Versions available for parents, teachers, and self-report. Assesses ADHD symptoms, executive function, and learning problems.</p>
                 </div>
               </div>
 
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#ffd166]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] border-opacity-60 pb-2">ADHD-RS-5</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Brief questionnaire (18 items matching the 18 DSM symptoms) with versions for home and school settings.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#576d8e] border-opacity-30 pb-2">Vanderbilt Scales</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Free, publicly available diagnostic scales often used in primary care settings. Includes critical screening for common comorbidities.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] border-opacity-60 pb-2">SNAP-IV</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Includes DSM-based ADHD items plus oppositional defiant disorder symptoms. Free and widely used in research settings.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#576d8e]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#576d8e] border-opacity-30 pb-2">Brown ADD Scales</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Focuses heavily on the executive function aspects of ADHD, specifically activation, focus, effort, emotion, and memory.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#ffd166]"></div>
+                <div className="pl-2">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] border-opacity-60 pb-2">Adult ADHD (ASRS)</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">WHO-developed screening tool specifically designed for adults.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup> A brief version is available for highly efficient quick screening.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* CPT Card (Slate) - Double Rings with accessible warning note */}
+          <div className="bg-[#576d8e]/10 border-2 border-[#576d8e] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Continuous Performance Tests (CPTs)</h2>
+            
+            <ImageWithFallback 
+              src="/images/adhd/adhd-diagnosis-cpt-1.webp"
+              alt="computer-based attention test"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#576d8e]"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Computer-based tests designed to objectively measure sustained attention, impulsivity, and response variability over a set period of time.
+            </p>
+
+            <div className="space-y-4 max-w-4xl mx-auto mb-8">
+              
+              <div className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-[#0A9DC4] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#576d8e] mt-1 ml-1">
+                  <Monitor className="w-6 h-6" />
+                </div>
+                <div className="pr-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 uppercase tracking-wide">Conners CPT-3</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">A 14-minute computer test measuring inattention, impulsivity, sustained attention, and vigilance via visual targets.</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-[#576d8e] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1 ml-1">
+                  <Activity className="w-6 h-6" />
+                </div>
+                <div className="pr-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 uppercase tracking-wide">TOVA</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">The Test of Variables of Attention (TOVA) is a 21.6-minute visual or auditory attention test measuring response time, variability, and impulsivity.</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#576d8e] mt-1 ml-1">
+                  <Layers className="w-6 h-6" />
+                </div>
+                <div className="pr-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 uppercase tracking-wide">IVA-2</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">The Integrated Visual & Auditory test evaluates both visual and auditory attention and response control simultaneously.</p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* CPT LIMITATION WARNING */}
+            <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-5 rounded-r-xl shadow-sm max-w-4xl mx-auto flex items-start gap-4">
+              <AlertTriangle className="text-[#be185d] w-6 h-6 shrink-0 mt-1" />
               <div>
-                <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
-                  Background Sources
-                </h4>
-                <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-                  <li>Conners, C. K. (2014). <i>Conners 3rd Edition</i>. Multi-Health Systems.</li>
-                  <li>Harrison, P. L., & Thomas, A. (2014). <i>Best Practices in School Psychology: Data-Based and Collaborative Decision Making</i>. National Association of School Psychologists.</li>
-                  <li>Ramsay, J. R., & Rostain, A. L. (2015). <i>The Adult ADHD Tool Kit: Using CBT to Facilitate Coping Inside and Out</i>. Routledge.</li>
-                </ul>
+                <h3 className="font-bold text-[#831843] mb-1 uppercase text-xs">Diagnostic Limitation</h3>
+                <p className="text-sm text-slate-700 leading-relaxed">
+                  CPTs should <strong>NEVER</strong> be used alone to diagnose ADHD. Many people with ADHD perform perfectly normally on these tests, especially because the novel, highly structured testing environment temporarily stimulates their focus.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Cognitive & Academic Card (Yellow) - Side-by-side grids */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-8 text-2xl text-center">Cognitive, Executive & Academic Tests</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              
+              {/* Executive Function Column */}
+              <div>
+                <div className="flex items-center gap-2 mb-4 border-b border-[#ffd166] border-opacity-50 pb-2">
+                  <Brain className="text-[#0c264d] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-lg">Executive Function</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                    <h4 className="text-[#0c264d] font-bold text-sm mb-1">BRIEF-2</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">Questionnaire assessing real-world executive function behaviors like working memory, planning, and emotional control.</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                    <h4 className="text-[#0c264d] font-bold text-sm mb-1">D-KEFS</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">Battery of performance-based tests measuring cognitive flexibility, inhibition, problem-solving, and creativity.</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                    <h4 className="text-[#0c264d] font-bold text-sm mb-1">Wisconsin Card Sorting (WCST)</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">Measures abstract reasoning and set-shifting ability (the capacity to change strategies when rules suddenly change).</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Intellectual & Academic Column */}
+              <div>
+                <div className="flex items-center gap-2 mb-4 border-b border-[#ffd166] border-opacity-50 pb-2">
+                  <GraduationCap className="text-[#0c264d] w-5 h-5" />
+                  <h3 className="text-[#0c264d] font-bold text-lg">Intellectual & Academic</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                    <h4 className="text-[#0c264d] font-bold text-sm mb-1">Wechsler Intelligence Scales</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">WISC-V, WAIS-IV, WPPSI-IV. Comprehensive IQ tests measuring verbal comprehension, processing speed, and working memory.</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                    <h4 className="text-[#0c264d] font-bold text-sm mb-1">Wechsler Achievement (WIAT-4)</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">Assesses academic achievement in reading, writing, and math to help identify co-occurring learning disabilities.</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+                    <h4 className="text-[#0c264d] font-bold text-sm mb-1">Woodcock-Johnson (WJ IV)</h4>
+                    <p className="text-xs text-slate-700 leading-relaxed">Comprehensive battery measuring academic skills and cognitive abilities for detailed educational planning.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* THE BOTTOM LINE - Highlight Box */}
+          <div className="bg-white border-2 border-[#0c264d] p-6 rounded-xl shadow-md max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-4">
+             <div className="w-12 h-12 rounded-full bg-[#0A9DC4] bg-opacity-20 text-[#0c264d] flex items-center justify-center font-bold shrink-0">
+                <CheckCircle className="w-6 h-6" />
+             </div>
+             <div>
+               <h3 className="text-[#0c264d] font-bold text-lg mb-2 text-center md:text-left">The Bottom Line</h3>
+               <p className="text-sm text-slate-700 leading-relaxed text-center md:text-left">
+                 A typical ADHD evaluation uses a clinical interview + 1-2 rating scales + medical history. Additional testing is added only when there are questions about learning disabilities or diagnostic uncertainty. <strong>The quality of clinical judgment matters far more than the quantity of tests!</strong>
+               </p>
+             </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                {/* Note: Update these citations with your actual sources when you have them! */}
+                <p>1. [Citation needed for ADHD-RS-5 validity and settings].</p>
+                <p>2. [Citation needed for WHO Adult ADHD Self-Report Scale (ASRS)].</p>
               </div>
             </div>
 
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Barkley, R. A. (2015). Attention-deficit hyperactivity disorder: A handbook for diagnosis and treatment. <i>Guilford Press</i>.</li>
+              </ul>
+            </div>
           </div>
-        </TabsContent>
+        </div>
+      )}
 
         {/* =========================================
             TAB 3: WHO CAN DIAGNOSE

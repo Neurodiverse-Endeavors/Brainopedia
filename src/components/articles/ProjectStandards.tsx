@@ -340,13 +340,19 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             To break up dense text, content sections should be wrapped in colorful, styled cards. Card backgrounds must <strong>always</strong> be a lightened/pastel version of our core colors, paired with a darker, thicker border of the same color family. Use these exact combinations and inner-card pairings unless otherwise specified:
           </p>
 
-          <div className="bg-blue-50 border-l-4 border-[#0A9DC4] p-4 mb-5 rounded-r-lg shadow-sm">
+<div className="bg-blue-50 border-l-4 border-[#0A9DC4] p-4 mb-5 rounded-r-lg shadow-sm">
             <h4 className="text-xs font-bold text-[#0c264d] uppercase mb-1">Standard Tab Sequence & Layout Rule</h4>
             <p className="text-xs text-slate-700 leading-relaxed mb-2">
               For standard 3-tab pages, strictly follow this styling sequence for the primary (top) card to maintain visual rhythm: <strong>Tab 1 = bg-[#2abcd4]/20, Tab 2 = bg-[#0c264d]/20, Tab 3 = bg-[#ffd166]/20.</strong> 
             </p>
-            <p className="text-xs text-slate-700 leading-relaxed">
+            
+            {/* Added mb-4 here for spacing! */}
+            <p className="text-xs text-slate-700 leading-relaxed mb-4">
               <strong>Multiple Cards Per Tab:</strong> Because most tabs have two or more large container cards, you should mix styles from the other primary cards on the subsequent containers (alternating Cyan, Navy, or Yellow) to provide visual variety. For example, if Tab 1 has two cards, Card 1 is Cyan, and Card 2 can be Navy or Yellow.
+            </p>
+
+            <p className="text-xs text-slate-700 leading-relaxed">
+              <strong>COLOR CHOICES for BORDERS of 3D BOXES:</strong> When creating the borders for the 3D boxes or the icon badges or bare icons or steps, please try not to use the two shades of cyan together. So place the #2abcd4 and #0a9dc4 NOT next to each other. Use the secondary Canva Slate Background #576d8e if the PRIMARY colors have been used.
             </p>
           </div>
 
@@ -466,9 +472,9 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           </code>
         </div>
 
-        {/* 3 TYPES OF ICON BADGES */}
+        {/*TYPES OF ICON BADGES */}
         <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm clear-both mb-6">
-          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">The 3 Types of Icon Badges</h3>
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">The VARIOUS Types of Icon Badges</h3>
           <p className="text-sm text-slate-700 mb-4">
             Instead of bare icons, use perfect flexbox shapes to create badges. <strong className="text-[#0c264d]">Note: Bare, darker-colored icons can still be used without a background when you need to reduce visual repetition.</strong> Here are the approved styles for inner card badges:
           </p>

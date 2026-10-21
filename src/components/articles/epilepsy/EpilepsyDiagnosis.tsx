@@ -1,141 +1,392 @@
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { FileText, ClipboardCheck, History, Activity, Monitor, Search, Brain, Eye, Dna, Zap, FlaskConical, Target, ShieldAlert, BookOpen } from 'lucide-react';
 
 interface EpilepsyDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function EpilepsyDiagnosis({ setCurrentArticle }: EpilepsyDiagnosisProps) {
+export function EpilepsyDiagnosis({ setCurrentArticle, initialTab }: EpilepsyDiagnosisProps) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'history';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
+
   return (
-    <article className="max-w-6xl">
-      <style>{`sup { color: #10b981; }`}</style>
-      <div className="mb-6">
-        <a href="#" onClick={(e) => { e.preventDefault(); setCurrentArticle?.('epilepsy'); }} className="text-[#2abcd4] hover:underline cursor-pointer">← Back to Epilepsy</a>
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* GLOBAL STYLE FOR CITATIONS */}
+      <style>
+        {`
+          sup {
+            color: #10b981;
+            font-weight: bold;
+            margin-left: 2px;
+          }
+        `}
+      </style>
+
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Epilepsy: Diagnosis & Assessment
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('epilepsy')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+        >
+          <span className="text-xl">←</span>
+          All About Epilepsy
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">Epilepsy: Diagnosis &amp; Assessment</h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('epilepsy')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About Epilepsy
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">Diagnosing epilepsy is primarily a clinical process — there is no single test that confirms or rules it out.<sup>[1]</sup> A thorough history, supported by electroencephalography (EEG) and neuroimaging, forms the diagnostic foundation. The goal is not just to confirm epilepsy but to classify the seizure type, identify the epilepsy syndrome, and determine etiology — each of which guides treatment.<sup>[2]</sup></p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Clinical History</h2>
-          <ImageWithFallback src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1080&q=80" alt="Medical consultation and history taking" className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4" />
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Seizure Description</h3>
-          <p className="mb-4">The most critical diagnostic information comes from eyewitness accounts and the patient's own recollection.<sup>[3]</sup> Clinicians ask about:</p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">What happens before, during, and after the event</li>
-            <li className="mb-2">Duration of the episode</li>
-            <li className="mb-2">Level of awareness or consciousness</li>
-            <li className="mb-2">Movements, automatisms, or vocalizations</li>
-            <li className="mb-2">Recovery time and post-ictal symptoms</li>
-            <li className="mb-2">Precipitating factors or triggers</li>
-          </ul>
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Medical and Family History</h3>
-          <p className="mb-4">History of birth complications, febrile seizures, head injury, CNS infection, and stroke are all relevant.<sup>[4]</sup> A family history of epilepsy or neurological disorders raises the probability of a genetic etiology. Medication history, substance use, and sleep patterns are also reviewed.</p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Electroencephalography (EEG)</h2>
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Standard EEG</h3>
-          <p className="mb-4">EEG records electrical activity from electrodes placed on the scalp.<sup>[5]</sup> Interictal epileptiform discharges (IEDs) — spikes, sharp waves, or spike-and-wave complexes — support an epilepsy diagnosis. A standard EEG captures 20–40 minutes of brain activity; its diagnostic yield is approximately 50% after a first seizure.</p>
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Activation Procedures</h3>
-          <p className="mb-4">Hyperventilation and photic stimulation (flashing lights) are routinely performed during EEG to provoke abnormal activity.<sup>[6]</sup> Sleep deprivation before the EEG also increases the yield of epileptiform abnormalities.</p>
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Prolonged and Ambulatory EEG</h3>
-          <p className="mb-4">When a standard EEG is normal but clinical suspicion remains high, prolonged EEG monitoring (24–72 hours) or long-term video-EEG telemetry is used.<sup>[7]</sup> Video-EEG simultaneously records brain electrical activity and behavior, allowing correlation of symptoms with EEG changes.</p>
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Limitations of EEG</h3>
-          <p className="mb-4">A normal EEG does not rule out epilepsy.<sup>[8]</sup> EEG activity is only a sample; seizures may be infrequent, or the focus may be deep within the brain, not visible on scalp electrodes. Conversely, 0.5–2% of the general population has epileptiform EEG patterns without clinical epilepsy.</p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Neuroimaging</h2>
-          <ImageWithFallback src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1080&q=80" alt="MRI brain imaging and neurology" className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4" />
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">MRI</h3>
-          <p className="mb-4">MRI is the neuroimaging modality of choice for epilepsy evaluation.<sup>[9]</sup> Epilepsy-protocol MRI uses specific sequences (including T1, T2, FLAIR, and fluid attenuation inversion recovery) to identify structural causes such as hippocampal sclerosis, cortical dysplasia, tumors, and vascular malformations. 3T MRI (3 Tesla) provides significantly greater detail than 1.5T in detecting subtle focal abnormalities.</p>
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">CT Scan</h3>
-          <p className="mb-4">CT is used in emergency settings when MRI is unavailable, to rapidly exclude hemorrhage, large tumors, or acute structural causes.<sup>[10]</sup> CT is inferior to MRI for detecting most epilepsy-causing lesions.</p>
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Functional Imaging</h3>
-          <p className="mb-4">PET (positron emission tomography) and SPECT (single-photon emission computed tomography) are used in presurgical epilepsy evaluation:<sup>[11]</sup></p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Interictal FDG-PET:</strong> Shows hypometabolism (reduced glucose use) in the epileptogenic zone</li>
-            <li className="mb-2"><strong>Ictal SPECT:</strong> Shows hyperperfusion in the seizure focus during or immediately after a seizure</li>
-            <li className="mb-2"><strong>Subtraction ictal SPECT coregistered to MRI (SISCOM):</strong> Combines imaging modalities to localize the seizure focus</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Laboratory Tests</h2>
-          <p className="mb-4">Blood tests help rule out metabolic and systemic causes of seizures:<sup>[12]</sup></p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Complete blood count, electrolytes, glucose, calcium, magnesium</li>
-            <li className="mb-2">Liver and kidney function tests (relevant to medication selection)</li>
-            <li className="mb-2">Thyroid function</li>
-            <li className="mb-2">Toxicology screen</li>
-            <li className="mb-2">Autoimmune encephalitis antibody panel (anti-NMDAR, LGI1, CASPR2) when clinically indicated</li>
-            <li className="mb-2">Genetic testing — chromosomal microarray, epilepsy gene panels, whole exome sequencing<sup>[13]</sup></li>
-          </ul>
-          <p className="mb-4">Lumbar puncture is performed when infectious or autoimmune encephalitis is suspected.<sup>[14]</sup></p>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Differential Diagnosis</h2>
-          <p className="mb-4">Many conditions can be mistaken for epilepsy:<sup>[15]</sup></p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Syncope (vasovagal or cardiac):</strong> Fainting can include brief myoclonic jerks, often misidentified as seizures</li>
-            <li className="mb-2"><strong>Psychogenic non-epileptic seizures (PNES):</strong> Seizure-like episodes without EEG changes; occur in approximately 20–30% of patients referred to epilepsy centers<sup>[16]</sup></li>
-            <li className="mb-2"><strong>Transient ischemic attacks (TIAs):</strong> Focal neurological deficits that may resemble focal seizures</li>
-            <li className="mb-2"><strong>Migraine with aura:</strong> Visual and sensory auras may be confused with focal aware seizures</li>
-            <li className="mb-2"><strong>Sleep disorders:</strong> Night terrors, REM sleep behavior disorder, hypnic jerks</li>
-            <li className="mb-2"><strong>Hyperekplexia:</strong> Exaggerated startle response</li>
-            <li className="mb-2"><strong>Breath-holding spells:</strong> In young children<sup>[17]</sup></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Neuropsychological Assessment</h2>
-          <p className="mb-4">Comprehensive neuropsychological testing evaluates cognitive function — particularly important in drug-resistant epilepsy and presurgical evaluation.<sup>[18]</sup> Assessment typically includes:</p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">Memory (verbal and visual)</li>
-            <li className="mb-2">Attention and processing speed</li>
-            <li className="mb-2">Language and naming</li>
-            <li className="mb-2">Executive function</li>
-            <li className="mb-2">Visuospatial abilities</li>
-            <li className="mb-2">Mood and quality of life measures<sup>[19]</sup></li>
-          </ul>
-          <p className="mb-4">In temporal lobe epilepsy surgery, the Wada test (intracarotid amobarbital procedure) or functional MRI is used to lateralize language and memory before resection.<sup>[20]</sup></p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => handleTabChange('history')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'history'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Clinical History
+        </button>
+        <button
+          onClick={() => handleTabChange('imaging')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'imaging'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          EEG & Neuroimaging
+        </button>
+        <button
+          onClick={() => handleTabChange('differential')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'differential'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Differential & Testing
+        </button>
       </div>
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Krumholz, A., Wiebe, S., Gronseth, G. S., et al. (2015). "Evidence-based guideline: Management of an unprovoked first seizure in adults." <em>Neurology</em>, 84(16), 1705–1713.</p>
-          <p>[2] Scheffer, I. E., Berkovic, S., Capovilla, G., et al. (2017). "ILAE classification of the epilepsies." <em>Epilepsia</em>, 58(4), 512–521.</p>
-          <p>[3] Pohlmann-Eden, B., Beghi, E., Camfield, C., & Camfield, P. (2006). "The first seizure and its management in adults and children." <em>BMJ</em>, 332(7537), 339–342.</p>
-          <p>[4] Ottman, R., Hirose, S., Jain, S., et al. (2010). "Genetic testing in the epilepsies." <em>Epilepsia</em>, 51(4), 655–670.</p>
-          <p>[5] Blume, W. T., Lüders, H. O., Mizrahi, E., Tassinari, C., van Emde Boas, W., & Engel, J. Jr. (2001). "Glossary of descriptive terminology for ictal semiology." <em>Epilepsia</em>, 42(9), 1212–1218.</p>
-          <p>[6] Binnie, C. D., & Stefan, H. (1999). "Modern electroencephalography: Its role in epilepsy management." <em>Clinical Neurophysiology</em>, 110(10), 1671–1697.</p>
-          <p>[7] Cascino, G. D. (2002). "Video-EEG monitoring in adults." <em>Epilepsia</em>, 43(Suppl 3), 80–93.</p>
-          <p>[8] Pillai, J., & Sperling, M. R. (2006). "Interictal EEG and the diagnosis of epilepsy." <em>Epilepsia</em>, 47(Suppl 1), 14–22.</p>
-          <p>[9] Bernasconi, N., Bernasconi, A., Caramanos, Z., et al. (2003). "Mesial temporal damage in temporal lobe epilepsy." <em>Annals of Neurology</em>, 54(6), 793–800.</p>
-          <p>[10] Gaillard, W. D., Chiron, C., Cross, J. H., et al. (2009). "Guidelines for imaging infants and children with recent-onset epilepsy." <em>Epilepsia</em>, 50(9), 2147–2153.</p>
-          <p>[11] la Fougère, C., Rominger, A., Förster, S., Geisler, J., & Bartenstein, P. (2009). "PET and SPECT in epilepsy." <em>Epilepsy &amp; Behavior</em>, 15(1), 50–55.</p>
-          <p>[12] Huff, J. S., & Fountain, N. B. (2011). "Pathophysiology and definitions of seizures and status epilepticus." <em>Emergency Medicine Clinics of North America</em>, 29(1), 1–13.</p>
-          <p>[13] Olson, H., Shen, Y., Avallone, J., et al. (2014). "Copy number variation plays an important role in clinical epilepsy." <em>Annals of Neurology</em>, 75(6), 943–958.</p>
-          <p>[14] Graus, F., Titulaer, M. J., Balu, R., et al. (2016). "A clinical approach to diagnosis of autoimmune encephalitis." <em>The Lancet Neurology</em>, 15(4), 391–404.</p>
-          <p>[15] Benbadis, S. R., & Hauser, W. A. (2000). "An estimate of the prevalence of psychogenic non-epileptic seizures." <em>Seizure</em>, 9(4), 280–281.</p>
-          <p>[16] LaFrance, W. C. Jr., & Benbadis, S. R. (2006). "Avoiding the costs of unrecognized psychological nonepileptic seizures." <em>Neurology</em>, 66(11), 1620–1621.</p>
-          <p>[17] Stephenson, J. B. (1990). <em>Fits and faints</em>. Mac Keith Press.</p>
-          <p>[18] Loring, D. W., & Bauer, R. M. (2010). "Testing the limits: Cautions and concerns regarding the new MMPI-2 restructured form." <em>Psychological Assessment</em>, 22(3), 559–570.</p>
-          <p>[19] Helmstaedter, C. (2004). "Neuropsychological aspects of epilepsy surgery." <em>Epilepsy &amp; Behavior</em>, 5(Suppl 1), S45–S55.</p>
-          <p>[20] Wada, J., & Rasmussen, T. (1960). "Intracarotid injection of sodium amytal for the lateralization of cerebral speech dominance." <em>Journal of Neurosurgery</em>, 17(2), 266–282.</p>
-        </div>
-      </section>
+      {/* ==========================================
+          TAB 1: CLINICAL HISTORY
+      ========================================== */}
+      {activeTab === 'history' && (
+        <div className="space-y-8 animate-fadeIn">
 
-      <div className="mt-8">
-        <a href="#" onClick={(e) => { e.preventDefault(); setCurrentArticle?.('epilepsy'); }} className="text-[#2abcd4] hover:underline cursor-pointer">← Back to Epilepsy</a>
+          {/* Clinical Card (Cyan) - Uses requested CYAN #0a9dc4 badges mixed with Slate/Navy */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Clinical History</h2>
+            
+            <ImageWithFallback 
+              src="/images/epilepsy/epilepsy-diagnosis-history-1.webp"
+              alt="Medical consultation and deep patient history taking"
+              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
+              Diagnosing epilepsy is primarily a clinical process—there is no single magical test that confirms or rules it out.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup> The goal is not just to confirm epilepsy, but to classify the exact seizure type, identify the broader syndrome, and determine the etiology to guide treatment.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                {/* NEW CYAN BADGE */}
+                <div className="w-10 h-10 rounded-lg bg-[#0A9DC4] text-white flex items-center justify-center shrink-0 shadow-sm mb-3">
+                  <ClipboardCheck className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Eyewitness Description</h3>
+                <p className="text-xs text-slate-700 leading-relaxed mb-2">The most critical diagnostic information comes from eyewitness accounts.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup> Clinicians ask specifically about:</p>
+                <ul className="text-xs text-slate-700 text-left list-disc pl-5 space-y-1 w-full">
+                  <li>Duration of the episode</li>
+                  <li>Level of awareness or consciousness</li>
+                  <li>Specific movements, automatisms, or vocalizations</li>
+                  <li>Recovery time and precise post-ictal symptoms</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                {/* SLATE BADGE */}
+                <div className="w-10 h-10 rounded-lg bg-[#576d8e] text-white flex items-center justify-center shrink-0 shadow-sm mb-3">
+                  <History className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Medical & Family History</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">History of birth complications, childhood febrile seizures, head injuries, CNS infections, or stroke are deeply relevant.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4</sup> A family history of epilepsy raises the probability of a genetic etiology. Sleep patterns and substance use are also heavily reviewed.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>1. Krumholz, A., et al. (2015). "Evidence-based guideline: Management of an unprovoked first seizure in adults." <i>Neurology</i>.</li>
+                <li>2. Scheffer, I. E., et al. (2017). "ILAE classification of the epilepsies." <i>Epilepsia</i>.</li>
+                <li>3. Pohlmann-Eden, B., et al. (2006). "The first seizure and its management in adults and children." <i>BMJ</i>.</li>
+                <li>4. Ottman, R., et al. (2010). "Genetic testing in the epilepsies." <i>Epilepsia</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==========================================
+          TAB 2: EEG & NEUROIMAGING
+      ========================================== */}
+      {activeTab === 'imaging' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* EEG Card (Navy) - DOUBLE RINGS */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Electroencephalography (EEG)</h2>
+            
+            <ImageWithFallback 
+              src="/images/epilepsy/epilepsy-diagnosis-eeg-1.webp"
+              alt="Patient undergoing a scalp EEG monitoring session"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
+            />
+
+            <div className="space-y-4 max-w-4xl mx-auto">
+              
+              {/* YELLOW RING */}
+              <div className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-xl border border-gray-200 shadow-sm relative overflow-hidden">
+                <div className="absolute right-0 top-0 bottom-0 w-1.5 bg-[#ffd166] opacity-50"></div>
+                <div className="w-12 h-12 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#ffd166] mt-1 ml-1">
+                  <Activity className="w-6 h-6" />
+                </div>
+                <div className="pr-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 uppercase tracking-wide">Standard EEG & Limits</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">EEG records electrical activity from the scalp. Interictal epileptiform discharges (IEDs) directly support a diagnosis. However, a normal EEG does not rule out epilepsy. It only captures 20–40 minutes of time, and the seizure focus may be deep within the brain.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1, 4</sup></p>
+                </div>
+              </div>
+
+              {/* SLATE RING */}
+              <div className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-xl border border-gray-200 shadow-sm relative overflow-hidden">
+                <div className="absolute right-0 top-0 bottom-0 w-1.5 bg-[#576d8e] opacity-50"></div>
+                <div className="w-12 h-12 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#576d8e] mt-1 ml-1">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <div className="pr-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 uppercase tracking-wide">Activation Procedures</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Hyperventilation and photic stimulation (flashing lights) are routinely performed during the EEG to actively provoke abnormal activity.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup> Sleep deprivation before the test also heavily increases the diagnostic yield.</p>
+                </div>
+              </div>
+
+              {/* CYAN RING */}
+              <div className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-xl border border-gray-200 shadow-sm relative overflow-hidden">
+                <div className="absolute right-0 top-0 bottom-0 w-1.5 bg-[#2abcd4] opacity-50"></div>
+                <div className="w-12 h-12 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#2abcd4] mt-1 ml-1">
+                  <Monitor className="w-6 h-6" />
+                </div>
+                <div className="pr-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 uppercase tracking-wide">Prolonged Video-EEG</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">When a standard EEG is normal but clinical suspicion remains high, prolonged monitoring (24–72 hours) or long-term video-EEG telemetry is utilized.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup> This allows clinicians to directly correlate physical behaviors with electrical spikes.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Neuroimaging Card (Navy) - CLEAN 3D BORDERS */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Neuroimaging</h2>
+            
+            <ImageWithFallback 
+              src="/images/epilepsy/epilepsy-diagnosis-imaging-1.webp"
+              alt="High resolution MRI brain scan indicating structural anomalies"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#2abcd4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">MRI</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">The modality of choice. Epilepsy-protocol MRI uses specific sequences to identify structural causes like hippocampal sclerosis, dysplasia, or tumors. 3T MRI provides far greater detail than standard 1.5T.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">5</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#576d8e]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">CT Scan</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Used strictly in emergency settings when MRI is unavailable, to rapidly exclude severe hemorrhage or large tumors. CT is highly inferior to MRI for detecting most epilepsy-causing lesions.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">6</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#ffd166]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Functional Imaging</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">PET shows reduced glucose use in the epileptogenic zone. SPECT shows hyperperfusion in the seizure focus during a seizure. Both are utilized heavily in presurgical evaluations.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">7</sup></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Blume, W. T., et al. (2001). "Glossary of descriptive terminology for ictal semiology." <i>Epilepsia</i>.</p>
+                <p>2. Binnie, C. D., & Stefan, H. (1999). "Modern electroencephalography: Its role in epilepsy management." <i>Clinical Neurophysiology</i>.</p>
+                <p>3. Cascino, G. D. (2002). "Video-EEG monitoring in adults." <i>Epilepsia</i>.</p>
+                <p>4. Pillai, J., & Sperling, M. R. (2006). "Interictal EEG and the diagnosis of epilepsy." <i>Epilepsia</i>.</p>
+                <p>5. Bernasconi, N., et al. (2003). "Mesial temporal damage in temporal lobe epilepsy." <i>Annals of Neurology</i>.</p>
+                <p>6. Gaillard, W. D., et al. (2009). "Guidelines for imaging infants and children with recent-onset epilepsy." <i>Epilepsia</i>.</p>
+                <p>7. la Fougère, C., et al. (2009). "PET and SPECT in epilepsy." <i>Epilepsy & Behavior</i>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==========================================
+          TAB 3: DIFFERENTIAL & TESTING
+      ========================================== */}
+      {activeTab === 'differential' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Differential Card (Yellow) - CSS DOTS */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Differential Diagnosis</h2>
+            
+            <ImageWithFallback 
+              src="/images/epilepsy/epilepsy-diagnosis-differential-1.webp"
+              alt="Medical visual distinguishing epilepsy from overlapping neurological events"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+              Many conditions powerfully mimic seizures and can be heavily mistaken for epilepsy in clinical settings.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
+            </p>
+
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-4">
+                
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Syncope:</strong> Fainting can include brief, terrifying myoclonic jerks, often misidentified as convulsive seizures.</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#576d8e] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>PNES:</strong> Psychogenic non-epileptic seizures are psychological events without EEG changes. They occur in ~20–30% of patients referred to epilepsy centers.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2, 3</sup></p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ffd166] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Migraine & TIA:</strong> Visual auras from migraines, or focal deficits from a TIA, frequently resemble focal aware seizures.</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#2abcd4] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Sleep Disorders:</strong> Night terrors, REM sleep behavior disorder, and severe hypnic jerks can easily masquerade as nocturnal epilepsy.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Testing Card (Cyan) - ROUNDED SQUARES using NEW CYAN BADGE */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Laboratory & Neuropsychological Testing</h2>
+            
+            <ImageWithFallback 
+              src="/images/epilepsy/epilepsy-diagnosis-testing-1.webp"
+              alt="Lab samples and cognitive testing charts"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#2abcd4]"
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                {/* NEW CYAN BADGE */}
+                <div className="w-10 h-10 rounded-lg bg-[#0A9DC4] text-white flex items-center justify-center shrink-0 shadow-sm mt-1">
+                  <FlaskConical className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Laboratory Panels</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Blood tests strictly rule out metabolic/systemic causes. Panels include complete blood count, toxicology, thyroid function, and autoimmune encephalitis antibodies (anti-NMDAR, LGI1). Genetic testing (microarrays, whole exome sequencing) is increasingly critical.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4, 5</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-[#0c264d] text-white flex items-center justify-center shrink-0 shadow-sm mt-1">
+                  <Brain className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Neuropsychology</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Comprehensive testing evaluates memory, processing speed, and executive function. This is vital in drug-resistant epilepsy. In presurgical evaluation, the Wada test (or fMRI) specifically lateralizes language and memory before surgical resection.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">6, 7</sup></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>1. Huff, J. S., & Fountain, N. B. (2011). "Pathophysiology and definitions of seizures and status epilepticus." <i>Emergency Medicine Clinics of North America</i>.</li>
+                <li>2. Benbadis, S. R., & Hauser, W. A. (2000). "An estimate of the prevalence of psychogenic non-epileptic seizures." <i>Seizure</i>.</li>
+                <li>3. LaFrance, W. C. Jr., & Benbadis, S. R. (2006). "Avoiding the costs of unrecognized psychological nonepileptic seizures." <i>Neurology</i>.</li>
+                <li>4. Olson, H., et al. (2014). "Copy number variation plays an important role in clinical epilepsy." <i>Annals of Neurology</i>.</li>
+                <li>5. Graus, F., et al. (2016). "A clinical approach to diagnosis of autoimmune encephalitis." <i>The Lancet Neurology</i>.</li>
+                <li>6. Helmstaedter, C. (2004). "Neuropsychological aspects of epilepsy surgery." <i>Epilepsy & Behavior</i>.</li>
+                <li>7. Wada, J., & Rasmussen, T. (1960). "Intracarotid injection of sodium amytal for the lateralization of cerebral speech dominance." <i>Journal of Neurosurgery</i>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('epilepsy')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+        >
+          <span className="text-xl">←</span>
+          All About Epilepsy
+        </button>
       </div>
+
     </article>
   );
 }

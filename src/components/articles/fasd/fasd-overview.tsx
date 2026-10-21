@@ -1,131 +1,457 @@
+import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { Brain, Activity, Users, Baby, ShieldCheck, Heart, AlertTriangle, Search, FileText, Zap, Compass, CheckCircle, Network } from 'lucide-react';
 
 interface FASDOverviewProps {
   setCurrentArticle?: (article: string) => void;
+  initialTab?: string;
 }
 
-export function FASDOverview({ setCurrentArticle }: FASDOverviewProps) {
+export function FASDOverview({ setCurrentArticle, initialTab }: FASDOverviewProps) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || initialTab || 'understanding';
+
+  const handleTabChange = (newTab: string) => {
+    setSearchParams({ tab: newTab });
+  };
+
   return (
-    <article className="max-w-6xl">
-      <style>{`sup { color: #10b981; }`}</style>
-      <div className="mb-6">
-        <a href="#" onClick={(e) => { e.preventDefault(); setCurrentArticle?.('fasd'); }} className="text-[#2abcd4] hover:underline cursor-pointer">← Back to FASD</a>
+    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
+      
+      {/* HEADER & DESKTOP BACK BUTTON */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <h1 className="text-3xl text-[#0c264d] font-normal">
+          Fetal Alcohol Spectrum Disorder: Overview
+        </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('fasd')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+        >
+          <span className="text-xl">←</span>
+          All About FASD
+        </button>
       </div>
 
-      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl">Fetal Alcohol Spectrum Disorder: Overview</h1>
+      {/* MOBILE BACK BUTTON */}
+      <button 
+        onClick={() => setCurrentArticle?.('fasd')}
+        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
+      >
+        <span className="text-xl">←</span>
+        All About FASD
+      </button>
 
-      <div className="space-y-8">
-        <div>
-          <p className="mb-4">Fetal Alcohol Spectrum Disorder (FASD) is an umbrella term describing the range of lifelong physical, behavioral, and cognitive effects that can occur in a person whose mother consumed alcohol during pregnancy.<sup>[1]</sup> FASD is the leading known preventable cause of neurodevelopmental disability worldwide — yet it remains significantly underdiagnosed and misunderstood.<sup>[2]</sup></p>
-        </div>
+      {/* TAB NAVIGATION */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+        <button
+          onClick={() => handleTabChange('understanding')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'understanding'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Understanding FASD
+        </button>
+        <button
+          onClick={() => handleTabChange('brain')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'brain'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Brain & Neurodiversity
+        </button>
+        <button
+          onClick={() => handleTabChange('conditions')}
+          className={`px-6 py-3 rounded-md transition-colors font-normal text-sm shadow-sm ${
+            activeTab === 'conditions'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Co-occurring & Protection
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">What Is FASD?</h2>
-          <ImageWithFallback src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1080&q=80" alt="Brain development and neuroscience" className="w-80 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4" />
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">The Spectrum</h3>
-          <p className="mb-4">FASD is not a single diagnosis but a spectrum of conditions caused by prenatal alcohol exposure (PAE).<sup>[3]</sup> The spectrum includes:</p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Fetal Alcohol Syndrome (FAS):</strong> The most recognizable form, involving the full triad of facial features, growth deficits, and central nervous system abnormalities</li>
-            <li className="mb-2"><strong>Partial FAS (pFAS):</strong> Some FAS features but not the full triad</li>
-            <li className="mb-2"><strong>Alcohol-Related Neurodevelopmental Disorder (ARND):</strong> Neurocognitive and behavioral impairments without physical features</li>
-            <li className="mb-2"><strong>Alcohol-Related Birth Defects (ARBD):</strong> Structural abnormalities of organs (heart, kidney, bones) without the CNS features</li>
-            <li className="mb-2"><strong>Neurobehavioral Disorder Associated with Prenatal Alcohol Exposure (ND-PAE):</strong> DSM-5 diagnostic category emphasizing neurobehavioral profile<sup>[4]</sup></li>
-          </ul>
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Why "Spectrum"?</h3>
-          <p className="mb-4">Alcohol's effects on fetal development vary enormously depending on the amount, timing, and pattern of exposure; genetic factors in both mother and fetus; and nutritional and environmental variables.<sup>[5]</sup> Two individuals with similar exposure may have very different presentations.</p>
-        </div>
+      {/* ==========================================
+          TAB 1: UNDERSTANDING FASD
+      ========================================== */}
+      {activeTab === 'understanding' && (
+        <div className="space-y-8 animate-fadeIn">
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Prevalence</h2>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2">FASD affects an estimated <strong>2–5% of the population</strong> in the United States and Western Europe<sup>[6]</sup></li>
-            <li className="mb-2">FAS alone affects approximately <strong>0.2–1.5 per 1,000 live births</strong> in the general population<sup>[7]</sup></li>
-            <li className="mb-2">Rates are significantly higher in some communities with heavy drinking patterns<sup>[8]</sup></li>
-            <li className="mb-2">FASD affects all races, ethnicities, and socioeconomic groups</li>
-            <li className="mb-2">Many individuals remain undiagnosed into adulthood<sup>[9]</sup></li>
-          </ul>
-        </div>
+          {/* Intro & Spectrum Card (Cyan) - ROUNDED SQUARES */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">What Is FASD?</h2>
+            
+            <ImageWithFallback 
+              src="/images/fasd/fasd-overview-understanding-1.webp"
+              alt="Conceptual visual of the diverse neurodevelopmental spectrum of FASD"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
+              Fetal Alcohol Spectrum Disorder (FASD) is an umbrella term describing the range of lifelong physical, behavioral, and cognitive effects that can occur in a person whose mother consumed alcohol during pregnancy.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup> It is the leading known preventable cause of neurodevelopmental disability worldwide—yet remains significantly underdiagnosed.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup>
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">How Alcohol Affects the Developing Brain</h2>
-          <ImageWithFallback src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1080&q=80" alt="Fetal development and brain growth" className="w-64 h-auto rounded-md border border-gray-300 float-left mr-6 mb-4" />
-          <p className="mb-4">Alcohol is a teratogen — a substance that disrupts normal development.<sup>[10]</sup> The fetal brain is vulnerable throughout pregnancy because it is continuously developing from conception through birth (and beyond). Key mechanisms include:</p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>Cell death:</strong> Alcohol triggers apoptosis (programmed cell death) in developing neurons, particularly during active periods of brain growth</li>
-            <li className="mb-2"><strong>Disrupted migration:</strong> Neurons fail to migrate to their correct positions in the cortex<sup>[11]</sup></li>
-            <li className="mb-2"><strong>Impaired myelination:</strong> Alcohol disrupts the formation of myelin sheaths that speed neural transmission</li>
-            <li className="mb-2"><strong>Altered gene expression:</strong> Epigenetic changes affect how genes are expressed throughout life</li>
-            <li className="mb-2"><strong>Oxidative stress:</strong> Alcohol metabolism generates free radicals that damage developing cells<sup>[12]</sup></li>
-          </ul>
-          <p className="mb-4">There is no established "safe" amount of alcohol during pregnancy — no trimester is risk-free. The first trimester is particularly critical for the facial features associated with FAS, but brain development continues throughout pregnancy.</p>
-        </div>
+            <h3 className="text-[#0c264d] font-bold mb-4 text-xl border-b border-[#2abcd4] border-opacity-30 pb-2">The Spectrum</h3>
+            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+              FASD is not a single diagnosis but a spectrum of conditions caused by prenatal alcohol exposure (PAE).<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup> Alcohol's effects vary enormously depending on timing, amount, genetics, and environment.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4</sup> The spectrum includes:
+            </p>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The FASD Brain: Neurodiversity Perspective</h2>
-          <p className="mb-4">People with FASD have brains that are genuinely organized differently — not simply damaged versions of neurotypical brains.<sup>[13]</sup> The FASD brain often shows relative strengths alongside significant challenges, and individuals frequently display creativity, humor, loyalty, enthusiasm, and strong visual-spatial abilities.</p>
-          <p className="mb-4">A strengths-based approach to FASD recognizes that many challenges arise from mismatch between the FASD brain's needs and environment demands — and that appropriate support can dramatically improve outcomes.<sup>[14]</sup> The neurodiversity framework does not minimize the real challenges of FASD but situates it within a broader understanding of brain variation.</p>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Activity className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Fetal Alcohol Syndrome (FAS)</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">The most recognizable form, involving the full triad of facial features, growth deficits, and central nervous system abnormalities.</p>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Co-occurring Conditions</h2>
-          <p className="mb-4">FASD rarely occurs in isolation — co-occurring conditions are the rule rather than the exception:<sup>[15]</sup></p>
-          <ul className="list-disc ml-6 mb-4">
-            <li className="mb-2"><strong>ADHD:</strong> Present in approximately 50–70% of individuals with FASD</li>
-            <li className="mb-2"><strong>Anxiety and depression:</strong> Highly prevalent; often secondary to repeated failure and social difficulties</li>
-            <li className="mb-2"><strong>Sleep disorders:</strong> Disrupted sleep is nearly universal in FASD<sup>[16]</sup></li>
-            <li className="mb-2"><strong>Sensory processing difficulties:</strong> Over- or under-sensitivity to sensory input</li>
-            <li className="mb-2"><strong>Autism spectrum disorder:</strong> Overlapping features; may co-occur</li>
-            <li className="mb-2"><strong>Reactive attachment disorder:</strong> Related to trauma history in many adopted/foster children with FASD</li>
-            <li className="mb-2"><strong>Intellectual disability:</strong> Present in FAS but not all FASD<sup>[17]</sup></li>
-          </ul>
-        </div>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Search className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Partial FAS (pFAS)</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Involves some of the facial features and growth deficits of FAS, but not the complete physical triad, alongside neurocognitive challenges.</p>
+              </div>
 
-        <div>
-          <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Protective Factors</h2>
-          <p className="mb-4">Research has identified factors that significantly improve outcomes for individuals with FASD:<sup>[18]</sup></p>
-          <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6">
-            <h3 className="text-[#0c264d] font-bold mb-3">Key Protective Factors:</h3>
-            <ul className="list-disc ml-6 space-y-2 text-sm">
-              <li>Early diagnosis (before age 6) leads to significantly better outcomes<sup>[19]</sup></li>
-              <li>Stable, nurturing home environment — biological or adoptive/foster</li>
-              <li>Absence of violence in the home</li>
-              <li>Connection with social services and support networks</li>
-              <li>Eligible for and receiving disability-related services</li>
-              <li>Remaining in school until age 18</li>
-              <li>Living in a stable home as an adult rather than independently before ready</li>
-            </ul>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Brain className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">ARND</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Alcohol-Related Neurodevelopmental Disorder features severe neurocognitive and behavioral impairments completely without the facial features.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Heart className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">ARBD</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Alcohol-Related Birth Defects involve structural abnormalities of organs (heart, kidney, bones) but lack the central nervous system features.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <FileText className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">ND-PAE</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Neurobehavioral Disorder Associated with Prenatal Alcohol Exposure is the DSM-5 diagnostic category emphasizing the neurobehavioral profile.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">5</sup></p>
+              </div>
+            </div>
+          </div>
+
+          {/* Prevalence Card (Navy) - CLEAN 3D BORDERS */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Prevalence & Scope</h2>
+            
+            <ImageWithFallback 
+              src="/images/fasd/fasd-overview-prevalence-1.webp"
+              alt="Global map overlay highlighting the widespread, invisible nature of FASD"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#2abcd4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">General Population</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">FASD affects an estimated <strong>2–5% of the population</strong> in the United States and Western Europe.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">6</sup> FAS alone affects roughly 0.2–1.5 per 1,000 live births.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">7</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#ffd166]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Demographics</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">FASD affects all races, ethnicities, and socioeconomic groups. While rates are higher in some communities with heavy drinking patterns,<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">8</sup> it remains a universal issue.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between md:col-span-2">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#576d8e]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">The Hidden Disability</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Because the physical facial features only appear if alcohol is consumed during a highly specific window in the first trimester, the vast majority of individuals with FASD have no outward physical markers. Consequently, many individuals remain completely undiagnosed into adulthood.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">9</sup></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Hoyme, H. E., et al. (2016). "Updated clinical guidelines for diagnosing fetal alcohol spectrum disorders." <i>Pediatrics</i>.</p>
+                <p>2. Lange, S., et al. (2017). "Global prevalence of fetal alcohol spectrum disorder among children and youth." <i>JAMA Pediatrics</i>.</p>
+                <p>3. Bertrand, J., et al. (2004). "Fetal alcohol syndrome: Guidelines for referral and diagnosis." <i>CDC</i>.</p>
+                <p>4. Guerri, C., Bazinet, A., & Riley, E. P. (2009). "Foetal alcohol spectrum disorders and alterations in brain and behaviour." <i>Alcohol and Alcoholism</i>.</p>
+                <p>5. American Psychiatric Association. (2013). <i>Diagnostic and statistical manual of mental disorders (5th ed.)</i>.</p>
+                <p>6. May, P. A., et al. (2018). "Prevalence of fetal alcohol spectrum disorders in 4 US communities." <i>JAMA</i>.</p>
+                <p>7. Centers for Disease Control and Prevention. (2020). <i>Data and statistics: Fetal alcohol spectrum disorders</i>.</p>
+                <p>8. Popova, S., et al. (2017). "Estimation of national, regional, and global prevalence of alcohol use during pregnancy." <i>BMC Medicine</i>.</p>
+                <p>9. Streissguth, A. P., et al. (2004). "Risk factors for adverse life outcomes in fetal alcohol syndrome and fetal alcohol effects." <i>Journal of Developmental and Behavioral Pediatrics</i>.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <section className="mt-12 pt-6 border-t-2 border-gray-300">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">References</h2>
-        <div className="text-sm space-y-2">
-          <p>[1] Hoyme, H. E., Kalberg, W. O., Elliott, A. J., et al. (2016). "Updated clinical guidelines for diagnosing fetal alcohol spectrum disorders." <em>Pediatrics</em>, 138(2), e20154256.</p>
-          <p>[2] Lange, S., Probst, C., Gmel, G., Rehm, J., Burd, L., & Popova, S. (2017). "Global prevalence of fetal alcohol spectrum disorder among children and youth." <em>JAMA Pediatrics</em>, 171(10), 948–956.</p>
-          <p>[3] Bertrand, J., Floyd, R. L., Weber, M. K., et al. (2004). <em>Fetal alcohol syndrome: Guidelines for referral and diagnosis</em>. Centers for Disease Control and Prevention.</p>
-          <p>[4] American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). Washington, DC: APA.</p>
-          <p>[5] Guerri, C., Bazinet, A., & Riley, E. P. (2009). "Foetal alcohol spectrum disorders and alterations in brain and behaviour." <em>Alcohol and Alcoholism</em>, 44(2), 108–114.</p>
-          <p>[6] May, P. A., Chambers, C. D., Kalberg, W. O., et al. (2018). "Prevalence of fetal alcohol spectrum disorders in 4 US communities." <em>JAMA</em>, 319(5), 474–482.</p>
-          <p>[7] CDC. (2020). <em>Data and statistics: Fetal alcohol spectrum disorders (FASDs)</em>. Atlanta: Centers for Disease Control and Prevention.</p>
-          <p>[8] Popova, S., Lange, S., Probst, C., Gmel, G., & Rehm, J. (2017). "Estimation of national, regional, and global prevalence of alcohol use during pregnancy." <em>BMC Medicine</em>, 15(1), 57.</p>
-          <p>[9] Streissguth, A. P., Bookstein, F. L., Barr, H. M., Sampson, P. D., O'Malley, K., & Young, J. K. (2004). "Risk factors for adverse life outcomes in fetal alcohol syndrome and fetal alcohol effects." <em>Journal of Developmental and Behavioral Pediatrics</em>, 25(4), 228–238.</p>
-          <p>[10] Sokol, R. J., Delaney-Black, V., & Nordstrom, B. (2003). "Fetal alcohol spectrum disorder." <em>JAMA</em>, 290(22), 2996–2999.</p>
-          <p>[11] Clarren, S. K., Alvord, E. C., Sumi, S. M., Streissguth, A. P., & Smith, D. W. (1978). "Brain malformations related to prenatal exposure to ethanol." <em>Journal of Pediatrics</em>, 92(1), 64–67.</p>
-          <p>[12] Brocardo, P. S., Gil-Mohapel, J., & Christie, B. R. (2011). "The role of oxidative stress in fetal alcohol spectrum disorders." <em>Brain Research Reviews</em>, 67(1–2), 209–225.</p>
-          <p>[13] Kully-Martens, K., Denys, K., Treit, S., Tamana, S., & Rasmussen, C. (2012). "A review of social skills deficits in individuals with fetal alcohol spectrum disorders." <em>Alcoholism: Clinical and Experimental Research</em>, 36(4), 568–576.</p>
-          <p>[14] Paley, B., & O'Connor, M. J. (2011). "Behavioral interventions for children and adolescents with fetal alcohol spectrum disorders." <em>Alcohol Research and Health</em>, 34(1), 64–75.</p>
-          <p>[15] Landgraf, M. N., Nothacker, M., Kopp, I. B., & Heinen, F. (2013). "The diagnosis of fetal alcohol syndrome." <em>Deutsches Ärzteblatt International</em>, 110(43), 703–710.</p>
-          <p>[16] Jan, J. E., Asante, K. O., Conry, J. L., et al. (2010). "Sleep health issues for children with FASD." <em>International Journal of Pediatrics</em>, 2010, 639048.</p>
-          <p>[17] Mattson, S. N., Crocker, N., & Nguyen, T. T. (2011). "Fetal alcohol spectrum disorders: Neuropsychological and behavioral features." <em>Neuropsychology Review</em>, 21(2), 81–101.</p>
-          <p>[18] Streissguth, A. P., Bookstein, F. L., Barr, H. M., et al. (2004). "Risk factors for adverse life outcomes in fetal alcohol syndrome." <em>Journal of Developmental and Behavioral Pediatrics</em>, 25(4), 228–238.</p>
-          <p>[19] Astley, S. J., Olson, H. C., Kerns, K., et al. (2009). "Neuropsychological and behavioral outcomes from a comprehensive magnetic resonance study of children with fetal alcohol spectrum disorders." <em>Canadian Journal of Clinical Pharmacology</em>, 16(1), e178–e201.</p>
+      {/* ==========================================
+          TAB 2: BRAIN & NEURODIVERSITY
+      ========================================== */}
+      {activeTab === 'brain' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Brain Impacts Card (Navy) - CLEAN 3D BORDERS */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">How Alcohol Affects the Developing Brain</h2>
+            
+            <ImageWithFallback 
+              src="/images/fasd/fasd-overview-brain-1.webp"
+              alt="Microscopic representation of disrupted neuronal migration during fetal development"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
+              Alcohol is a teratogen—a substance that radically disrupts normal cellular development.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup> Because the fetal brain is continuously developing from conception through birth, there is no "safe" trimester.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#2abcd4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#2abcd4] border-opacity-30 pb-2">Cell Death</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Alcohol actively triggers apoptosis (programmed cell death) in developing neurons, particularly during periods of intense brain growth.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#ffd166]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#ffd166] border-opacity-60 pb-2">Disrupted Migration</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Neurons completely fail to migrate to their correct, intended positions in the cortex, causing structural disorganization.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup></p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#576d8e]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#576d8e] border-opacity-30 pb-2">Impaired Myelination</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Alcohol disrupts the formation of myelin sheaths (the brain's "insulation"), severely slowing down neural transmission and processing speed.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-[#0A9DC4] border-opacity-30 pb-2">Oxidative Stress & Genes</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Alcohol metabolism generates free radicals that damage developing cells,<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup> while epigenetic changes permanently alter how genes are expressed throughout life.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Neurodiversity Card (Yellow) - DOUBLE RINGS */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The FASD Brain: A Neurodiversity Perspective</h2>
+            
+            <ImageWithFallback 
+              src="/images/fasd/fasd-overview-neurodiversity-1.webp"
+              alt="Artistic representation of a neurodivergent brain showing unique pathways and strengths"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
+            />
+
+            <div className="space-y-4 max-w-4xl mx-auto">
+              
+              <div className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-xl border border-gray-200 shadow-sm relative overflow-hidden">
+                <div className="absolute right-0 top-0 bottom-0 w-1.5 bg-[#2abcd4] opacity-50"></div>
+                <div className="w-12 h-12 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#2abcd4] mt-1 ml-1">
+                  <Network className="w-6 h-6" />
+                </div>
+                <div className="pr-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 uppercase tracking-wide">Differently Organized</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">People with FASD have brains that are genuinely organized differently—not simply "damaged" versions of neurotypical brains.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4</sup> The FASD brain shows relative strengths alongside its challenges, frequently displaying high creativity, humor, intense loyalty, enthusiasm, and strong visual-spatial abilities.</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-5 p-5 bg-white rounded-xl border border-gray-200 shadow-sm relative overflow-hidden">
+                <div className="absolute right-0 top-0 bottom-0 w-1.5 bg-[#576d8e] opacity-50"></div>
+                <div className="w-12 h-12 rounded-full bg-[#2abcd4] text-white flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1 ml-1">
+                  <Compass className="w-6 h-6" />
+                </div>
+                <div className="pr-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 uppercase tracking-wide">The Strengths-Based Model</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">A strengths-based approach recognizes that behavioral challenges arise from a mismatch between the FASD brain's needs and environmental demands. The neurodiversity framework does not minimize the real struggles of FASD, but it situates the condition within a broader understanding of natural brain variation.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">5</sup></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Sokol, R. J., Delaney-Black, V., & Nordstrom, B. (2003). "Fetal alcohol spectrum disorder." <i>JAMA</i>.</p>
+                <p>2. Clarren, S. K., et al. (1978). "Brain malformations related to prenatal exposure to ethanol." <i>Journal of Pediatrics</i>.</p>
+                <p>3. Brocardo, P. S., Gil-Mohapel, J., & Christie, B. R. (2011). "The role of oxidative stress in fetal alcohol spectrum disorders." <i>Brain Research Reviews</i>.</p>
+                <p>4. Kully-Martens, K., et al. (2012). "A review of social skills deficits in individuals with fetal alcohol spectrum disorders." <i>Alcoholism: Clinical and Experimental Research</i>.</p>
+                <p>5. Paley, B., & O'Connor, M. J. (2011). "Behavioral interventions for children and adolescents with fetal alcohol spectrum disorders." <i>Alcohol Research and Health</i>.</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      )}
 
-      <div className="mt-8">
-        <a href="#" onClick={(e) => { e.preventDefault(); setCurrentArticle?.('fasd'); }} className="text-[#2abcd4] hover:underline cursor-pointer">← Back to FASD</a>
+      {/* ==========================================
+          TAB 3: CO-OCCURRING & PROTECTION
+      ========================================== */}
+      {activeTab === 'conditions' && (
+        <div className="space-y-8 animate-fadeIn">
+
+          {/* Co-occurring Card (Yellow) - DOUBLE RINGS */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Co-occurring Conditions</h2>
+            
+            <ImageWithFallback 
+              src="/images/fasd/fasd-overview-conditions-1.webp"
+              alt="Visual demonstrating the complex overlap of FASD with ADHD and Anxiety"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              FASD rarely occurs in isolation—co-occurring conditions are the rule rather than the exception, heavily complicating both diagnosis and treatment.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+              
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Activity className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">ADHD & Sleep</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">ADHD is present in approximately 50–70% of individuals with FASD. Additionally, severely disrupted sleep architecture is nearly universal across the spectrum.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup></p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <AlertTriangle className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Mental Health & Trauma</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Anxiety and depression are highly prevalent, often secondary to repeated social failures. Reactive Attachment Disorder is also common due to trauma histories in foster/adoption settings.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center md:col-span-2">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Brain className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Neurodevelopmental Overlap</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Autism spectrum disorder frequently co-occurs due to overlapping sensory and social features. While Intellectual Disability is present in full FAS, it is <em>not</em> present in all types of FASD.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup></p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Protective Factors Card (Cyan) - CSS DOTS */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Key Protective Factors</h2>
+            
+            <ImageWithFallback 
+              src="/images/fasd/fasd-overview-protective-1.webp"
+              alt="Supportive family environment providing stability for a child with FASD"
+              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#2abcd4]"
+            />
+            
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
+              Research has identified critical environmental factors that drastically improve lifelong outcomes and build resilience for individuals with FASD.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4</sup>
+            </p>
+
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-4">
+                
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Early Diagnosis:</strong> Receiving an accurate diagnosis before age 6 leads to significantly better outcomes.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">5</sup></p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Stable Home:</strong> A nurturing, highly structured environment (whether biological, adoptive, or foster).</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Safety:</strong> Complete absence of violence or trauma in the home environment.</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Service Eligibility:</strong> Successfully qualifying for and receiving disability-related services.</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Educational Support:</strong> Accommodations that allow the individual to remain in school until age 18.</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0c264d] mt-1.5 shrink-0"></div>
+                  <p className="text-sm text-slate-700 leading-relaxed"><strong>Supported Adulthood:</strong> Living in a stable home as an adult rather than attempting independent living before developmentally ready.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Landgraf, M. N., et al. (2013). "The diagnosis of fetal alcohol syndrome." <i>Deutsches Ärzteblatt International</i>.</p>
+                <p>2. Jan, J. E., et al. (2010). "Sleep health issues for children with FASD." <i>International Journal of Pediatrics</i>.</p>
+                <p>3. Mattson, S. N., Crocker, N., & Nguyen, T. T. (2011). "Fetal alcohol spectrum disorders: Neuropsychological and behavioral features." <i>Neuropsychology Review</i>.</p>
+                <p>4. Streissguth, A. P., et al. (2004). "Risk factors for adverse life outcomes in fetal alcohol syndrome." <i>Journal of Developmental and Behavioral Pediatrics</i>.</p>
+                <p>5. Astley, S. J., et al. (2009). "Neuropsychological and behavioral outcomes from a comprehensive magnetic resonance study of children with fetal alcohol spectrum disorders." <i>Canadian Journal of Clinical Pharmacology</i>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FOOTER BUTTON */}
+      <div className="flex justify-end my-8 w-full clear-both">
+        <button 
+          onClick={() => setCurrentArticle?.('fasd')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
+        >
+          <span className="text-xl">←</span>
+          All About FASD
+        </button>
       </div>
+
     </article>
   );
 }
