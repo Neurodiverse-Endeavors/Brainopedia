@@ -89,7 +89,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <ImageWithFallback 
               src="/images/spd/spd-support-therapy.webp"
               alt="Child actively engaged in a clinical occupational therapy gym"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
+              className="block mx-auto w-120 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
@@ -126,7 +126,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <ImageWithFallback 
               src="/images/spd/spd-support-techniques.webp"
               alt="Close-up of clinical sensory tools, such as a therapeutic Wilbarger brush"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -204,7 +204,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <ImageWithFallback 
               src="/images/spd/spd-support-environment.webp"
               alt="A calm, sensory-friendly cool down corner with soft lighting"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
@@ -251,7 +251,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <ImageWithFallback 
               src="/images/spd/spd-support-tech.webp"
               alt="Child wearing noise-canceling headphones while working"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -316,7 +316,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <ImageWithFallback 
               src="/images/spd/spd-support-family.webp"
               alt="Occupational therapist sitting with parents, reviewing a sensory diet schedule"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-120 max-w-full h-auto mb-6 rounded-lg shadow-smborder border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
@@ -363,7 +363,7 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <ImageWithFallback 
               src="/images/spd/spd-support-collaborative.webp"
               alt="A multidisciplinary meeting with a teacher, speech pathologist, and OT"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-120 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

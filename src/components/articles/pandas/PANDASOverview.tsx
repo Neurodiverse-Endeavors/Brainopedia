@@ -99,7 +99,7 @@ export function PANDASOverview({ setCurrentArticle, initialTab }: PANDASOverview
             <ImageWithFallback 
               src="/images/pandas/pandas-overview-understanding-1.webp"
               alt="Medical illustration demonstrating autoimmune brain inflammation"
-              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
+              className="block mx-auto w-96 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -165,7 +165,7 @@ export function PANDASOverview({ setCurrentArticle, initialTab }: PANDASOverview
             <ImageWithFallback 
               src="/images/pandas/pandas-overview-distinction-1.webp"
               alt="Medical diagram showing the overlapping relationship between PANS and PANDAS"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
+              className="block mx-auto w-96 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
             />
 
             <div className="space-y-5 max-w-4xl mx-auto">
@@ -234,7 +234,7 @@ export function PANDASOverview({ setCurrentArticle, initialTab }: PANDASOverview
             <ImageWithFallback 
               src="/images/pandas/pandas-overview-traits-1.webp"
               alt="Medical visual indicating the demographic scope and onset of symptoms"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
+              className="block mx-auto w-96 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">

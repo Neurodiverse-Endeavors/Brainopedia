@@ -89,7 +89,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
             <ImageWithFallback 
               src="/images/spd/spd-diagnosis-professionals.webp"
               alt="Multidisciplinary team reviewing a child's clinical file"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
@@ -146,7 +146,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
             <ImageWithFallback 
               src="/images/spd/spd-diagnosis-process.webp"
               alt="Visual flowchart tracking the journey from consultation to feedback session"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-smborder border-yellow-200"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -316,7 +316,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
             <ImageWithFallback 
               src="/images/spd/spd-diagnosis-differential.webp"
               alt="Clinical diagram showing the overlapping circles of SPD, Autism, and ADHD"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
@@ -373,7 +373,7 @@ export function SPDDiagnosis({ setCurrentArticle, initialTab }: SPDDiagnosisProp
             <ImageWithFallback 
               src="/images/spd/spd-diagnosis-criteria.webp"
               alt="Evaluator reviewing assessment data and matching it against specific diagnostic criteria"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
+              className="block mx-auto w-96 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

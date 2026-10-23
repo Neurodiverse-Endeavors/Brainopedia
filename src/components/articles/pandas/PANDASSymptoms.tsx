@@ -88,7 +88,7 @@ export function PANDASSymptoms({ setCurrentArticle, initialTab }: PANDASSymptoms
             <ImageWithFallback 
               src="/images/pandas/pandas-symptoms-primary-1.webp"
               alt="Conceptual visual of sudden onset anxiety and intrusive thoughts"
-              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
+              className="block mx-auto w-full max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -146,7 +146,7 @@ export function PANDASSymptoms({ setCurrentArticle, initialTab }: PANDASSymptoms
             <ImageWithFallback 
               src="/images/pandas/pandas-symptoms-associated-1.webp"
               alt="Medical visual showing the overlapping neuropsychiatric symptoms of PANDAS"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
+              className="block mx-auto w-full max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
             />
 
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
@@ -284,7 +284,7 @@ export function PANDASSymptoms({ setCurrentArticle, initialTab }: PANDASSymptoms
             <ImageWithFallback 
               src="/images/pandas/pandas-symptoms-cycle-1.webp"
               alt="Line graph demonstrating the episodic, sawtooth nature of PANDAS flares"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
+              className="block mx-auto w-full max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
