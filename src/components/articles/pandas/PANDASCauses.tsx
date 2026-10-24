@@ -99,7 +99,7 @@ export function PANDASCauses({ setCurrentArticle, initialTab }: PANDASCausesProp
             <ImageWithFallback 
               src="/images/pandas/pandas-causes-mimicry-1.webp"
               alt="Conceptual visual of antibodies and molecular mimicry"
-              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
+              className="block mx-auto w-full max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -177,7 +177,7 @@ export function PANDASCauses({ setCurrentArticle, initialTab }: PANDASCausesProp
             <ImageWithFallback 
               src="/images/pandas/pandas-causes-basal-1.webp"
               alt="Medical visual showing the location and function of the basal ganglia"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
+              className="block mx-auto w-full max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
@@ -252,7 +252,7 @@ export function PANDASCauses({ setCurrentArticle, initialTab }: PANDASCausesProp
             <ImageWithFallback 
               src="/images/pandas/pandas-causes-factors-1.webp"
               alt="Conceptual visual linking genetics, environment, and immune response"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
+              className="block mx-auto w-full max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
