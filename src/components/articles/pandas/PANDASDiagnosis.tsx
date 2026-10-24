@@ -100,7 +100,7 @@ export function PANDASDiagnosis({ setCurrentArticle, initialTab }: PANDASDiagnos
             <ImageWithFallback 
               src="/images/pandas/pandas-diagnosis-criteria-1.webp"
               alt="Medical checklist and pediatric consultation"
-              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
+              className="block mx-auto w-120 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
@@ -239,7 +239,7 @@ export function PANDASDiagnosis({ setCurrentArticle, initialTab }: PANDASDiagnos
             <ImageWithFallback 
               src="/images/pandas/pandas-diagnosis-workup-1.webp"
               alt="Medical laboratory and specialized blood testing"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
+              className="block mx-auto w-120 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
@@ -309,7 +309,7 @@ export function PANDASDiagnosis({ setCurrentArticle, initialTab }: PANDASDiagnos
             <ImageWithFallback 
               src="/images/pandas/pandas-diagnosis-misdiagnoses-1.webp"
               alt="Medical chart distinguishing between overlapping psychiatric conditions"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
+              className="block mx-auto w-120 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
