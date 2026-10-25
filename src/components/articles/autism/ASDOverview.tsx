@@ -330,19 +330,19 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
                 </div>
               </div>
 
-              <div className="bg-[#fff0f0] p-5 rounded-md border-l-4 border-[#ff6b6b] shadow-sm">
+              <div className="bg-[#fff0f0] p-5 rounded-md border-l-4 border-[#be185d] shadow-sm">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Terms to Avoid</h3>
                 <div className="space-y-3">
                   <div className="bg-white p-3 rounded shadow-sm">
-                    <div className="font-bold text-[#0c264d] text-sm text-red-700">"Suffers from" / "Victim of"</div>
+                    <div className="font-bold text-[#0c264d] text-sm text-[#be185d]">"Suffers from" / "Victim of"</div>
                     <div className="text-xs text-gray-600 mt-1">Implies a purely tragic narrative.</div>
                   </div>
                   <div className="bg-white p-3 rounded shadow-sm">
-                    <div className="font-bold text-[#0c264d] text-sm text-red-700">"High/Low-Functioning"</div>
+                    <div className="font-bold text-[#0c264d] text-sm text-[#be185d]">"High/Low-Functioning"</div>
                     <div className="text-xs text-gray-600 mt-1">Oversimplifies and ignores fluctuating support needs.</div>
                   </div>
                   <div className="bg-white p-3 rounded shadow-sm">
-                    <div className="font-bold text-[#0c264d] text-sm text-red-700">"Asperger's"</div>
+                    <div className="font-bold text-[#0c264d] text-sm text-[#be185d]">"Asperger's"</div>
                     <div className="text-xs text-gray-600 mt-1">Phased out clinically; harmful historical associations.</div>
                   </div>
                 </div>
@@ -381,10 +381,10 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
       {activeTab === 'context' && (
         <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
           
-          {/* Video Overview (Placed here as a great summary) */}
-          <div className="bg-slate-900 p-6 rounded-lg shadow-lg">
+{/* Video Overview (Placed here as a great summary) */}
+          <div className="bg-[#0c264d] p-6 rounded-lg shadow-lg max-w-xl mx-auto w-full">
             <h3 className="text-white font-bold mb-4 text-xl text-center">Video: Understanding Autism</h3>
-            <div className="relative w-full max-w-3xl mx-auto rounded-md overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+            <div className="relative w-full rounded-md overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/MTW7H5UQ8Ts"
@@ -454,8 +454,8 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
               Autism is a complex neurodevelopmental condition. Current evidence indicates it is <strong>highly heritable</strong> (genetics plays a major role, involving multiple genes), with early environmental factors contributing to brain development. It often runs in families.
             </p>
             
-            <div className="clear-both bg-[#fff0f0] rounded-md border-l-4 border-red-500 p-4">
-              <h3 className="font-bold text-red-700 mb-2 text-sm uppercase tracking-wider">What Does NOT Cause Autism:</h3>
+            <div className="clear-both bg-[#fff0f0] rounded-md border-l-4 border-[#be185d] p-4">
+              <h3 className="font-bold text-[#be185d] mb-2 text-sm uppercase tracking-wider">What Does NOT Cause Autism:</h3>
               <div className="grid grid-cols-2 gap-2 text-sm text-gray-800">
                 <div><strong>✗ Vaccines</strong> (Thoroughly debunked<sup>3</sup>)</div>
                 <div><strong>✗ Parenting Style</strong></div>
@@ -474,8 +474,8 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
                   <div className="font-bold text-[#0c264d] text-sm">1943 - 1944</div>
                   <div className="text-xs text-gray-600">Kanner & Asperger publish first descriptions.<sup>4, 5</sup></div>
                 </div>
-                <div className="border-l-2 border-red-400 pl-4">
-                  <div className="font-bold text-red-700 text-sm">1960s - 1980s</div>
+                <div className="border-l-2 border-[#be185d] pl-4">
+                  <div className="font-bold text-[#be185d] text-sm">1960s - 1980s</div>
                   <div className="text-xs text-gray-600">Harmful "refrigerator mother" theory blamed parents.<sup>6</sup></div>
                 </div>
                 <div className="border-l-2 border-[#0A9DC4] pl-4">

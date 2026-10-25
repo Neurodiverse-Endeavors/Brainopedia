@@ -22,7 +22,7 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
         </p>
 
         <p className="mb-8 leading-relaxed text-[#0c264d]">
-          Research indicates that while autism is highly heritable, these non-genetic factors—such as maternal immune responses, metabolic conditions, or exposure to certain medications in utero—can interact with a child's genetic blueprint to influence brain development.<sup>2</sup>
+          Research indicates that while autism is highly heritable, these non-genetic factors—such as maternal immune responses, metabolic conditions, or exposure to certain medications in utero—can interact with a child's genetic blueprint to influence brain development.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup>
         </p>
       </div>
 
@@ -76,13 +76,13 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
           <h3 className="font-bold mb-3 text-lg font-spartan text-[#0c264d]">Prenatal Factors</h3>
           <p className="text-sm mb-3 text-[#0c264d] opacity-90 italic">Factors during pregnancy associated with increased risk:</p>
           <ul className="list-disc ml-5 space-y-2 text-sm text-[#0c264d] opacity-90">
-            <li><strong>Advanced parental age:</strong> Both maternal and paternal age over 35.<sup>2</sup></li>
-            <li><strong>Maternal infections:</strong> Severe infections, particularly in the second trimester.<sup>3</sup></li>
-            <li><strong>Maternal immune activation:</strong> Immune responses affecting fetal brain development.<sup>3</sup></li>
-            <li><strong>Certain medications:</strong> Valproic acid exposure during pregnancy.<sup>4</sup></li>
-            <li><strong>Prenatal nutrition:</strong> Deficiencies in nutrients like folic acid.<sup>3</sup></li>
-            <li><strong>Gestational diabetes:</strong> Metabolic conditions affecting development.<sup>1</sup></li>
-            <li><strong>Air pollution:</strong> Exposure during pregnancy and early life.<sup>3</sup></li>
+            <li><strong>Advanced parental age:</strong> Both maternal and paternal age over 35.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup></li>
+            <li><strong>Maternal infections:</strong> Severe infections, particularly in the second trimester.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup></li>
+            <li><strong>Maternal immune activation:</strong> Immune responses affecting fetal brain development.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup></li>
+            <li><strong>Certain medications:</strong> Valproic acid exposure during pregnancy.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4</sup></li>
+            <li><strong>Prenatal nutrition:</strong> Deficiencies in nutrients like folic acid.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup></li>
+            <li><strong>Gestational diabetes:</strong> Metabolic conditions affecting development.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup></li>
+            <li><strong>Air pollution:</strong> Exposure during pregnancy and early life.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup></li>
           </ul>
         </div>
 
@@ -90,10 +90,10 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
           <h3 className="font-bold mb-3 text-lg font-spartan text-[#0c264d]">Perinatal & Neonatal Factors</h3>
           <p className="text-sm mb-3 text-[#0c264d] opacity-90 italic">Complications around birth associated with modest risk increases:</p>
           <ul className="list-disc ml-5 space-y-2 text-sm text-[#0c264d] opacity-90">
-            <li><strong>Preterm birth:</strong> Birth before 37 weeks, especially very preterm birth.<sup>1</sup></li>
-            <li><strong>Low birth weight:</strong> Particularly very low birth weight infants.<sup>1</sup></li>
-            <li><strong>Birth complications:</strong> Significant oxygen deprivation (hypoxia).<sup>3</sup></li>
-            <li><strong>Multiple births:</strong> Twins/multiples have a slightly elevated risk.<sup>1</sup></li>
+            <li><strong>Preterm birth:</strong> Birth before 37 weeks, especially very preterm birth.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup></li>
+            <li><strong>Low birth weight:</strong> Particularly very low birth weight infants.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup></li>
+            <li><strong>Birth complications:</strong> Significant oxygen deprivation (hypoxia).<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup></li>
+            <li><strong>Multiple births:</strong> Twins/multiples have a slightly elevated risk.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup></li>
           </ul>
         </div>
       </div>
@@ -101,7 +101,7 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
       <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#0c264d] mb-8">
         <h3 className="font-bold mb-3 text-lg font-spartan text-[#0c264d]">The Complexity of Antidepressants (SSRIs)</h3>
         <p className="text-sm mb-4 leading-relaxed text-[#0c264d]">
-          Parents often ask about the safety of taking antidepressants during pregnancy. Studying this is notoriously difficult; researchers cannot ethically run randomized trials on pregnant women, so they must rely on observational data. While early studies suggested a slight link between SSRIs and autism, massive, rigorous sibling-studies revealed that when researchers adjust for the mother's underlying depression and psychiatric genetics, the link to the medication itself largely disappears.<sup>5</sup> 
+          Parents often ask about the safety of taking antidepressants during pregnancy. Studying this is notoriously difficult; researchers cannot ethically run randomized trials on pregnant women, so they must rely on observational data. While early studies suggested a slight link between SSRIs and autism, massive, rigorous sibling-studies revealed that when researchers adjust for the mother's underlying depression and psychiatric genetics, the link to the medication itself largely disappears.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">5</sup> 
         </p>
         
         <h4 className="font-bold text-[#0c264d] text-sm mb-1">The Third Trimester Debate</h4>
@@ -113,7 +113,7 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
       <div className="bg-white p-6 md:p-8 rounded-xl shadow-md border-l-4 border-[#00bf63] mb-10">
         <h3 className="font-bold mb-4 text-xl font-spartan text-[#0c264d]">Gene-Environment Interactions</h3>
         <p className="text-sm leading-relaxed text-[#0c264d]">
-          Environmental factors likely don't act alone but interact with genetic susceptibility. Genetic vulnerability may determine which environmental factors affect a child, or environmental factors may "trigger" a genetic risk in susceptible individuals.<sup>2</sup>
+          Environmental factors likely don't act alone but interact with genetic susceptibility. Genetic vulnerability may determine which environmental factors affect a child, or environmental factors may "trigger" a genetic risk in susceptible individuals.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup>
         </p>
       </div>
 
@@ -127,28 +127,31 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
         />
 
         <p className="mb-4 text-sm leading-relaxed text-[#0c264d]">
-          It is a deeply understandable, protective instinct for parents to worry about the "immunological load" of the vaccine schedule on a tiny infant. Many wonder if spacing vaccines out might be safer, particularly for a genetically susceptible child. Extensive, global research has conclusively proven that vaccines do not cause autism. To address parents' specific concerns about the <i>schedule</i>, researchers have thoroughly studied these critical areas:
+          It is a deeply understandable, protective instinct for parents to worry about the "immunological load" of the vaccine schedule on a tiny infant. Many wonder if spacing vaccines out might be safer, particularly for a genetically susceptible child. Extensive, global research has conclusively proven that vaccines do not cause autism.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">8,9</sup> To address parents' specific concerns about the <i>schedule</i>, researchers have thoroughly studied these critical areas:
         </p>
 
         <div className="space-y-4">
           <div>
             <h4 className="font-bold text-[#0c264d] text-sm">1. The Antigen Load</h4>
             <p className="text-sm text-[#0c264d] leading-relaxed">
-              Because modern vaccines are highly purified, the total "antigen load" (the immune-stimulating proteins) a child receives today from the <i>entire</i> schedule is a fraction of what a child received decades ago from just one or two shots. Clinical studies measuring the exact antigen load in children with and without autism show absolutely no difference.<sup>6</sup> 
+              Because modern vaccines are highly purified, the total "antigen load" (the immune-stimulating proteins) a child receives today from the <i>entire</i> schedule is a fraction of what a child received decades ago from just one or two shots. Clinical studies measuring the exact antigen load in children with and without autism show absolutely no difference.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">6</sup> 
             </p>
           </div>
 
-          <div>
+<div>
             <h4 className="font-bold text-[#0c264d] text-sm">2. "Why so early?" (The Hepatitis B Example)</h4>
+            <p className="text-sm text-[#0c264d] leading-relaxed mb-3">
+              Parents logically ask why a 2-hour-old newborn needs a vaccine for Hepatitis B—a blood-borne virus typically associated with adult transmission. The answer lies in a major public health policy shift from 1991. Before then, the CDC only vaccinated "high-risk" adults, but that strategy failed to stop the virus from spreading. In response, they shifted to a universal newborn approach to build a completely immune generation from the ground up.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">12</sup>
+            </p>
             <p className="text-sm text-[#0c264d] leading-relaxed">
-              Parents often ask why a 2-hour-old newborn needs a Hepatitis B shot. Hep B can be entirely asymptomatic in adults, and tests can yield false negatives. If transmitted during the fluids of childbirth, an infant has a 90% chance of developing a chronic, lifelong infection that frequently leads to liver failure or cancer. The newborn vaccine acts as an immediate, life-saving safety net.
+              For a baby born in a low-risk household to a mother who truly tested negative, the individual, immediate risk of exposure is indeed incredibly small. However, the CDC maintains the universal birth dose because prenatal tests can occasionally yield false negatives, and adults can carry the virus entirely asymptomatically. If a newborn is accidentally exposed (even through microscopic blood contact from an undiagnosed caregiver's cracked skin), their immature immune system cannot fight it off, leading to a 90% chance of a chronic, life-threatening infection.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">11</sup> In this context, the birth dose acts as a broad public health net and a universal fail-safe.
             </p>
           </div>
 
           <div>
             <h4 className="font-bold text-[#0c264d] text-sm">3. The Window of Vulnerability</h4>
             <p className="text-sm text-[#0c264d] leading-relaxed">
-              The schedule is not designed for a doctor's convenience; it is meticulously timed to protect infants during their highest "window of vulnerability." Spacing out vaccines does not reduce autism risk; it artificially extends the amount of time an infant is unprotected from lethal diseases (like pertussis/whooping cough) during the exact months their airways are too small to handle them. Furthermore, spacing them out increases the number of trips to a pediatrician's waiting room, unnecessarily exposing the infant to everyday viruses like RSV.<sup>7</sup>
+              The schedule is not designed for a doctor's convenience; it is meticulously timed to protect infants during their highest "window of vulnerability." Spacing out vaccines does not reduce autism risk; it artificially extends the amount of time an infant is unprotected from lethal diseases (like pertussis/whooping cough) during the exact months their airways are too small to handle them. Furthermore, spacing them out increases the number of trips to a pediatrician's waiting room, unnecessarily exposing the infant to everyday viruses like RSV.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">7</sup>
             </p>
           </div>
 
@@ -158,6 +161,13 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
               For mild illnesses (like a runny nose or low-grade fever), an infant's immune system is capable of handling a vaccine safely. However, if a child has a moderate or severe illness (such as a high fever or an infection requiring hospitalization), pediatricians <i>will</i> recommend holding off on the vaccine. This is a clinical precaution to ensure that a normal, mild vaccine side-effect (like a temperature) isn't confused with the underlying illness getting dangerously worse. 
             
               Please consult your child's physician for medical guidance and personalized care.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-[#0c264d] text-sm">5. The Prenatal Consult: Planning Ahead</h4>
+            <p className="text-sm text-[#0c264d] leading-relaxed">
+              Because anxiety around the vaccine schedule is so common, many pediatricians strongly encourage expecting parents to schedule a prenatal consultation during the third trimester. This allows you to have a proactive, unhurried conversation about the standard timeline, discuss your family's specific medical history, and evaluate any tailored risk-assessments (such as your individual household risk for Hepatitis B) long before the chaos of the delivery room. Establishing this collaborative, trust-based relationship early ensures you feel confident and fully supported in your child's care plan from day one.
             </p>
           </div>
         </div>
@@ -179,7 +189,7 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
         
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
@@ -190,19 +200,24 @@ export function EnvironmentalFactors({ setCurrentArticle }: EnvironmentalFactors
             <p>5. Brown, H. K., et al. (2017). Association Between Maternal Antidepressant Use During Pregnancy and Autism Spectrum Disorder: An Analysis of Sibling Subsets. <i>JAMA</i>.</p>
             <p>6. DeStefano, F., et al. (2013). Increasing exposure to antibody-stimulating proteins and polysaccharides in vaccines is not associated with risk of autism. <i>The Journal of Pediatrics</i>.</p>
             <p>7. Institute of Medicine (US) Committee on the Assessment of Studies of Health Outcomes Related to the Recommended Childhood Immunization Schedule. (2013). <i>The Childhood Immunization Schedule and Safety: Stakeholder Concerns, Scientific Evidence, and Future Studies</i>. National Academies Press.</p>
+            <p>8. Taylor, L. E., et al. (2014). Vaccines are not associated with autism: An evidence-based meta-analysis of case-control and cohort studies. <i>Vaccine</i>.</p>
+            <p>9. Hviid, A., et al. (2019). Measles, Mumps, Rubella Vaccination and Autism: A Nationwide Cohort Study. <i>Annals of Internal Medicine</i>.</p>
+            <p>10. U.S. Department of Health and Human Services (HHS). (2023). Hepatitis B Basic Information.</p>
+            <p>11. Centers for Disease Control and Prevention. (2024). Clinical Overview of Perinatal Hepatitis B. <i>CDC</i>.</p>
+            {/* Add this right below citation 11 */}
+            <p>12. Centers for Disease Control and Prevention. (1991). Hepatitis B virus: A comprehensive strategy for eliminating transmission in the United States through universal childhood vaccination. <i>MMWR. Recommendations and Reports</i>.</p>
           </div>
         </div>
 
         {/* BACKGROUND SOURCES: CYAN */}
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-10 pb-1">
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>American Academy of Pediatrics (AAP). (2022). Vaccine Safety: Get the Facts. HealthyChildren.org.</li>
             <li>American Psychiatric Association. (2022). <i>Diagnostic and statistical manual of mental disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
             <li>Lord, C., et al. (2018). Autism spectrum disorder. <i>The Lancet</i>.</li>
-            <li>Taylor, L. E., et al. (2014). Vaccines are not associated with autism: An evidence-based meta-analysis of case-control and cohort studies. <i>Vaccine</i>.</li>
           </ul>
         </div>
       </div>
