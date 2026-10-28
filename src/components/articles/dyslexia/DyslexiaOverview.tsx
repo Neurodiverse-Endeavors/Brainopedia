@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 
 interface DyslexiaOverviewProps {
@@ -73,7 +73,7 @@ export function DyslexiaOverview({ setCurrentArticle }: DyslexiaOverviewProps) {
         </section>
 
         {/* SECTION 1.5: KEY CHARACTERISTICS */}
-        <section className="bg-[#ffd166]/10 p-8 rounded-2xl mb-8 clear-both">
+        <section className="bg-[#f0f9ff] p-8 rounded-2xl mb-8 clear-both">
           <h3 className="text-[#0c264d] font-bold mb-6 text-2xl">Key Characteristics</h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -193,7 +193,7 @@ export function DyslexiaOverview({ setCurrentArticle }: DyslexiaOverviewProps) {
         </section>
 
         {/* SECTION 2.5: CO-OCCURRING CONDITIONS */}
-        <section className="bg-[#ffd166]/10 p-8 rounded-2xl clear-both">
+        <section className="bg-[#f0f9ff] p-8 rounded-2xl clear-both">
           <h3 className="text-[#0c264d] font-bold mb-6 text-2xl">Co-occurring Conditions</h3>
           <p className="leading-relaxed mb-6">
             Dyslexia frequently co-occurs with other neurodevelopmental and mental health conditions:
@@ -327,7 +327,7 @@ export function DyslexiaOverview({ setCurrentArticle }: DyslexiaOverviewProps) {
             </div>
 
             <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm flex flex-col sm:flex-row gap-4 items-start">
-              <div className="bg-[#fff9e6] text-[#d97706] font-bold p-3 rounded-md w-full sm:w-1/3 shrink-0">
+              <div className="bg-[#f0f9ff] text-[#0c264d] font-bold p-3 rounded-md w-full sm:w-1/3 shrink-0">
                 Compensatory Detours
               </div>
               <div className="text-sm text-slate-700 pt-1">
@@ -336,7 +336,7 @@ export function DyslexiaOverview({ setCurrentArticle }: DyslexiaOverviewProps) {
             </div>
           </div>
 
-          <div className="bg-[#ffd166]/10 border-l-4 border-[#ffd166] p-5 rounded-lg mb-6 shadow-sm">
+          <div className="bg-[#f0f9ff] border-l-4 border-[#0A9DC4] p-5 rounded-lg mb-6 shadow-sm">
             <h3 className="text-[#0c264d] font-bold text-lg mb-2">The Phonological Core Deficit</h3>
             <p className="text-sm leading-relaxed text-slate-700">
               The most well-established explanation for dyslexia is the <strong>phonological deficit hypothesis</strong>. 
@@ -452,7 +452,7 @@ export function DyslexiaOverview({ setCurrentArticle }: DyslexiaOverviewProps) {
       </button>
 
       {/* TAB NAVIGATION */}
-      <Tabs defaultValue={activeTab} value={activeTab} onValueChange={setActiveTab} className="w-full">
+      <Tabs defaultValue={activeTab} value={activeTab} onValueChange={handleTabChange} className="w-full">
         <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 gap-3 mb-12 bg-transparent h-auto p-0">
           <TabsTrigger value="what-is" className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white data-[state=active]:bg-[#0A9DC4] data-[state=active]:text-white data-[state=active]:shadow-md font-normal text-sm transition-all duration-200 shadow-sm rounded-lg !px-6 !py-3 md:!py-2 !h-auto">
             What is Dyslexia

@@ -10,14 +10,28 @@ interface EpigeneticsProps {
 export function Epigenetics({ setCurrentArticle }: EpigeneticsProps) {
   return (
     <article className="max-w-6xl mx-auto p-4 w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
+      
+      {/* --- TOP BACK BUTTON --- */}
+      <div className="flex justify-start mb-6">
+        <button 
+          onClick={() => setCurrentArticle?.('autism-causes')}
+          className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
+        >
+          <span className="text-lg">←</span>Back to Causes
+        </button>
+      </div>
+
+      {/* --- MATCHING H1 HEADER --- */}
+      <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-3xl text-[#0c264d] font-normal">
+        Epigenetics and Autism Spectrum Disorder
+      </h1>
+
       {/* --- INTRO SECTION WITH FLOATING GRAPHIC --- */}
       <div className="bg-[#f0f9ff] p-8 rounded-xl text-[#0c264d] border border-[#0c264d]/5 mb-8 shadow-sm overflow-hidden">
         
         {/* The Graphic: Floated right */}
         <div className="md:float-right md:ml-8 mb-6 md:mb-2 w-full md:w-72 text-center">
-          <p className="text-[#0c264d]/80 mb-3 italic font-medium text-xs">
-            The Molecular Bridge: Genetics & Environment
-          </p>
+  
           <div className="mx-auto border border-[#0c264d]/10 rounded-lg shadow-sm bg-white p-1">
             <ImageWithFallback 
               src="/images/autism/autism-causes-epigenetics.webp" 
@@ -27,9 +41,6 @@ export function Epigenetics({ setCurrentArticle }: EpigeneticsProps) {
           </div>
         </div>
 
-        <h2 className="font-bold mb-4 text-2xl font-spartan underline decoration-[#2abcd4] decoration-2 underline-offset-4">
-          Epigenetics and Autism Spectrum Disorder
-        </h2>
         <p className="leading-relaxed font-spartan text-lg">
           Epigenetics — the study of how gene expression is regulated without changes to the underlying DNA sequence — has emerged as a critical framework for understanding Autism Spectrum Disorder (ASD). Acting as a molecular bridge between genetic predisposition and environmental exposure, epigenetic mechanisms help explain how factors such as prenatal stress, nutrition, and toxin exposure can shape neurodevelopment and contribute to the wide variability seen across the autism spectrum.<sup>1, 2</sup>
         </p>
@@ -84,16 +95,16 @@ export function Epigenetics({ setCurrentArticle }: EpigeneticsProps) {
           </ul>
         </div>
 
-        <div className="bg-white p-6 rounded-xl border-l-4 border-red-400 shadow-sm">
-          <h3 className="font-bold mb-4 text-lg font-spartan flex items-center gap-2 text-red-500">
+        <div className="bg-white p-6 rounded-xl border-l-4 border-[#831843] shadow-sm">
+          <h3 className="font-bold mb-4 text-lg font-spartan flex items-center gap-2 text-[#831843]">
             <ShieldAlert size={20} /> Critical Risk Factors
           </h3>
           <ul className="space-y-4 font-spartan text-sm text-gray-700">
             <li>
-              <strong className="font-bold text-red-600">Valproic Acid (VPA):</strong> In utero exposure significantly elevates ASD-like outcomes via altered DNA methylation and histone inhibition.<sup>4, 5</sup>
+              <strong className="font-bold text-[#831843]">Valproic Acid (VPA):</strong> In utero exposure significantly elevates ASD-like outcomes via altered DNA methylation and histone inhibition.<sup>4, 5</sup>
             </li>
             <li>
-              <strong className="font-bold text-red-600">Maternal Stress:</strong> Induces DNA methylation changes that mediate increased risk, reinforcing the importance of the prenatal environment.<sup>1, 2</sup>
+              <strong className="font-bold text-[#831843]">Maternal Stress:</strong> Induces DNA methylation changes that mediate increased risk, reinforcing the importance of the prenatal environment.<sup>1, 2</sup>
             </li>
           </ul>
         </div>
@@ -105,14 +116,17 @@ export function Epigenetics({ setCurrentArticle }: EpigeneticsProps) {
           Featured Resource: Epigenetics in Action
         </h4>
         
-        <div className="relative w-full overflow-hidden pt-[56.25%] rounded-lg shadow-inner border border-[#0c264d] border-opacity-10 bg-slate-50">
-          <iframe 
-            className="absolute top-0 left-0 w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/fp-XHU3_V5w?rel=0" 
-            title="What Makes Identical Twins Different?"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen
-          ></iframe>
+{/* Responsive Video Container (Frameless) */}
+        <div className="max-w-2xl mx-auto w-full my-6">
+          <div className="relative w-full overflow-hidden pt-[56.25%] rounded-lg shadow-inner border border-[#0c264d] border-opacity-10 bg-slate-50">
+            <iframe 
+              className="absolute top-0 left-0 w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/fp-XHU3_V5w?rel=0" 
+              title="What Makes Identical Twins Different?"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
         
         <p className="mt-3 text-xs text-slate-600 leading-relaxed ml-1">
@@ -121,7 +135,7 @@ export function Epigenetics({ setCurrentArticle }: EpigeneticsProps) {
       </div>
       
       {/* --- FUTURE HORIZONS --- */}
-      <div className="bg-[#ffffff] bg-opacity-10 p-6 rounded-lg border-2 border-dashed border-[#2abcd4] mb-10 shadow-sm">
+      <div className="bg-[#ffffff] bg-opacity-10 p-6 rounded-lg border-2 border-[#2abcd4] mb-10 shadow-sm">
         <h3 className="font-bold mb-3 text-xl font-spartan flex items-center gap-2 text-[#0c264d]">
           <Microscope className="text-[#2abcd4]" size={24} /> 
           Diagnosis & Targeted Therapies
@@ -131,13 +145,13 @@ export function Epigenetics({ setCurrentArticle }: EpigeneticsProps) {
         </p>
       </div>
    
-      {/* Bottom back button */}
+{/* Bottom back button */}
       <div className="flex justify-end mt-12 mb-6">
         <button 
-          onClick={() => setCurrentArticle?.('autism')}
+          onClick={() => setCurrentArticle?.('autism-causes')}
           className="bg-[#ffd166] text-[#0c264d] px-5 py-2.5 rounded-lg font-normal text-sm shadow-sm hover:bg-[#0c264d] hover:text-white transition-all flex items-center gap-2 font-spartan whitespace-nowrap shrink-0"
         >
-          <span className="text-lg">←</span>All About Autism
+          <span className="text-lg">←</span>Back to Causes
         </button>
       </div>
  

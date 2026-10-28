@@ -686,6 +686,64 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             import &#123; ImageWithFallback &#125; from '../../figma/ImageWithFallback';
           </code>
         </div>
+</section>
+
+      {/* 8. VIDEO EMBED STANDARDS */}
+      <section className="mb-12">
+        <h2 className="text-[#0c264d] text-2xl font-bold mb-6 flex items-center gap-2 border-b pb-2">
+          <Smartphone className="text-[#2abcd4]" /> VIDEO EMBED STANDARDS
+        </h2>
+
+        <div className="bg-[#f0f9ff] border-l-4 border-[#2abcd4] p-5 rounded-r-xl shadow-sm mb-6">
+          <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">Responsive 16:9 Rule</h3>
+          <p className="text-sm text-slate-700 mb-3">
+            To ensure all embedded YouTube videos maintain a responsive 16:9 aspect ratio without stretching edge-to-edge, always use a <strong>two-div structure</strong>:
+          </p>
+          <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+            <li><strong>Outer Wrapper (<code className="bg-white px-1 rounded border border-gray-200">max-w-2xl mx-auto w-full</code>):</strong> Controls the max width. <em>Never</em> put <code className="bg-white px-1 rounded border border-gray-200">max-w-*</code> on the same div as the padding-top ratio.</li>
+            <li><strong>Inner Ratio Box (<code className="bg-white px-1 rounded border border-gray-200">relative w-full overflow-hidden pt-[56.25%]</code>):</strong> Forces the strict 16:9 widescreen ratio.</li>
+            <li><strong>URL Parameter (<code className="bg-white px-1 rounded border border-gray-200">?rel=0</code>):</strong> Always append this to prevent unrelated video suggestions.</li>
+          </ul>
+        </div>
+
+        <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm mb-6">
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">Style A: Standard Frameless Video</h3>
+          <p className="text-sm text-slate-700 mb-4">Use when placing a video inside an existing section or light card.</p>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg text-xs overflow-x-auto whitespace-pre-wrap break-words">
+{`<div className="max-w-2xl mx-auto w-full my-6">
+  <div className="relative w-full overflow-hidden pt-[56.25%] rounded-lg shadow-inner border border-[#0c264d] border-opacity-10 bg-slate-50">
+    <iframe 
+      className="absolute top-0 left-0 w-full h-full rounded-lg"
+      src="https://www.youtube.com/embed/VIDEO_ID_HERE?rel=0" 
+      title="Descriptive Video Title"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>`}
+          </pre>
+        </div>
+
+        <div className="bg-slate-100 border-2 border-slate-600 rounded-xl p-6 shadow-sm">
+          <h3 className="font-bold text-[#0c264d] mb-4 uppercase text-xs border-b border-slate-300 pb-2">Style B: Dark Slate Feature Card</h3>
+          <p className="text-sm text-slate-700 mb-4">Use for standalone summary or overview videos that need visual separation and a header.</p>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg text-xs overflow-x-auto whitespace-pre-wrap break-words">
+{`<div className="bg-slate-900 p-6 rounded-lg shadow-lg max-w-2xl mx-auto w-full my-6">
+  <h3 className="text-white font-bold mb-4 text-xl text-center font-spartan">
+    Video: [Insert Title Here]
+  </h3>
+  <div className="relative w-full overflow-hidden pt-[56.25%] rounded-md shadow-2xl">
+    <iframe
+      className="absolute top-0 left-0 w-full h-full"
+      src="https://www.youtube.com/embed/VIDEO_ID_HERE?rel=0"
+      title="Descriptive Video Title"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>`}
+          </pre>
+        </div>
       </section>
 
       {/* Footer */}

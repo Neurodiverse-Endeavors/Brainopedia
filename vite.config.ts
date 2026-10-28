@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { visualizer } from 'rollup-plugin-visualizer';
 import Sitemap from 'vite-plugin-sitemap'; // <-- 1. Import the new plugin
 
@@ -51,22 +50,19 @@ const encyclopediaRoutes = [
   '/pandas', '/pandas-overview', '/pandas-symptoms', '/pandas-causes', '/pandas-diagnosis', '/pandas-support', '/pandas-living'
 ];
 export default defineConfig({
-  plugins: [
+plugins: [
     react(),
-    ViteImageOptimizer({
-      png: { quality: 90 },
-      jpeg: { quality: 80 },
-      webp: { lossless: true },
-    }),
     visualizer({ open: true }),
-    
-    // 3. Add the Sitemap generator!
+  
+  
+// 3. Add the Sitemap generator!
     Sitemap({
       hostname: 'https://brainopedia.org',
       dynamicRoutes: encyclopediaRoutes,
       generateRobotsTxt: false, // <-- This is the only new line!
     })
   ],
+
   build: {
     rollupOptions: {
       output: {
