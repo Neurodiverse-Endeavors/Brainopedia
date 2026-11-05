@@ -8,13 +8,13 @@ export function Footer({ setCurrentArticle }: FooterProps) {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-[#0c264d] text-white py-8 mt-12 border-t-4 border-[#ffd166]">
+    <footer className="bg-[#0c264d] text-white py-8 mt-12 border-t-4 border-[#ffd166] font-spartan">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright Notice */}
           <div className="text-center md:text-left">
             <p className="text-sm">
-              © {currentYear} <span className="font-semibold">Neurodiverse Endeavors</span> DBA <span className="font-semibold">Brainopedia.org</span>
+              © {currentYear} <span className="font-semibold">Neurodiverse Endeavors</span> DBA "does business as" <span className="font-semibold">Brainopedia</span>
             </p>
             <p className="text-xs text-gray-300 mt-1">
               All rights reserved.
@@ -47,11 +47,13 @@ export function Footer({ setCurrentArticle }: FooterProps) {
           </div>
         </div>
         
-        {/* Additional Info */}
-        <div className="mt-6 pt-6 border-t border-gray-700 text-center text-xs text-gray-400">
-          <ul className="space-y-1">
-            <li>Brainopedia.org is an official project of Neurodiverse Endeavors, a registered 501(c)(3) non-profit organization.</li>
-            <li>Brainopedia serves as a free, comprehensive encyclopedia dedicated to neurodivergent conditions and brain differences.</li>
+        {/* Additional Info - GOOGLE COMPLIANCE SECTION */}
+        <div className="mt-6 pt-6 border-t border-gray-600 text-center text-sm text-white">
+          <ul className="space-y-2">
+            <li className="font-bold text-base">Brainopedia is an official project of Neurodiverse Endeavors, a registered 501(c)(3) non-profit organization.</li>
+            <li>Brainopedia.org serves as a free, comprehensive encyclopedia dedicated to neurodivergent conditions and brain differences.</li>
+            <li><strong>Charity ID / EIN:</strong> 99-2870398</li>
+            <li><strong>Official Address:</strong> 1903 Rolling Hill Road, Charlottesville, VA 22901</li>
           </ul>
         </div>
       </div>
