@@ -18,20 +18,20 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
       {/* HEADER WITH CORRECT BACK BUTTON */}
-      <div className="flex justify-start mb-6">
-        <button 
-          onClick={() => setCurrentArticle?.('synesthesia-overview')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
-        >
-          <span className="text-lg">←</span>Back to Causes
-        </button>
-      </div>
-
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6">
+        <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Synesthesia: Overview
         </h1>
+
+        <button 
+          onClick={() => setCurrentArticle?.('synesthesia')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
+        >
+          <span className="text-lg">←</span>
+          All About Synesthesia
+        </button>
       </div>
+
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
