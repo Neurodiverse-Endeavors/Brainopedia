@@ -83,15 +83,15 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
             <ImageWithFallback 
               src="/images/synesthesia/synesthesia-symptoms-visual.webp" 
               alt="Visual depiction of numbers and letters associated with specific colors"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
+              className="w-120 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Grapheme-color synesthesia is the most widely researched and most common form of the condition. It occurs when letters and numbers are perceived as inherently colored.
             </p>
 
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100 max-w-4xl mx-auto">
-              <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Key Characteristics</h3>
+            <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#2abcd4] max-w-4xl mx-auto">
+              <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4]/20 pb-2">Key Characteristics</h3>
               <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                 <li><strong>Unique Palettes:</strong> Each synesthete has their own highly unique set of color associations.<sup>2</sup></li>
                 <li><strong>Consistency:</strong> The letter "A" might be fire-engine red, while the number "4" is deep blue, and these associations rarely change over a lifetime.</li>
@@ -105,8 +105,8 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Chromesthesia & Lexical-Gustatory</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Chromesthesia (Sound-to-Color)</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166]/30 pb-2">Chromesthesia (Sound-to-Color)</h3>
                 <p className="text-sm text-slate-700 leading-relaxed mb-4">
                   Involves perceiving colors when hearing sounds, music, or voices.
                 </p>
@@ -117,8 +117,8 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
                 </ul>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Lexical-Gustatory</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166]/30 pb-2">Lexical-Gustatory</h3>
                 <p className="text-sm text-slate-700 leading-relaxed mb-4">
                   A rarer form that occurs when words or phonemes evoke specific taste sensations.<sup>4</sup>
                 </p>
@@ -150,7 +150,7 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
             <ImageWithFallback 
               src="/images/synesthesia/synesthesia-symptoms-spatial.webp" 
               alt="Visual representation of numbers arranged in physical space"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
+              className="w-120 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -158,16 +158,16 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Spatial Sequences</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#0c264d]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#0c264d]/10 pb-2">Spatial Sequences</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Time Mapping:</strong> Months of the year or days of the week are visualized in a specific shape, such as a circle, spiral, or wavy line.</li>
                   <li><strong>Physical Navigation:</strong> The individual feels they can physically "walk through" the calendar year in their mind.</li>
                 </ul>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Number-Form</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#0c264d]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#0c264d]/10 pb-2">Number-Form</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Number Lines:</strong> Numbers are visualized in specific, consistent spatial arrangements.<sup>5</sup></li>
                   <li><strong>Calculation Aid:</strong> Often assists with mathematical calculations, as the person can mentally "see" where the answer physically sits on their number map.</li>
@@ -184,8 +184,8 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
               A fascinating cognitive variant where ordered sequences are automatically infused with rich, distinct human personalities.
             </p>
 
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100 max-w-4xl mx-auto">
-              <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Personality Mapping</h3>
+            <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#2abcd4] max-w-4xl mx-auto">
+              <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4]/20 pb-2">Personality Mapping</h3>
               <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                 <li><strong>Inherent Traits:</strong> Letters, numbers, or days have distinct, unchangeable personalities and genders.<sup>6</sup></li>
                 <li><strong>Interpersonal Dynamics:</strong> The number "8" might be perceived as a bossy, arrogant older sister to the timid number "7".</li>
@@ -213,20 +213,20 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
             <ImageWithFallback 
               src="/images/synesthesia/synesthesia-symptoms-tactile.webp" 
               alt="Conceptual representation of sound and touch mapping"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
+              className="w-120 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Mirror-Touch</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166]/30 pb-2">Mirror-Touch</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Physical Reflection:</strong> Observing a touch on another person triggers identical tactile sensations on one's own body.<sup>7</sup></li>
                   <li><strong>Emotional Depth:</strong> This variant is strongly linked with exceptionally high levels of interpersonal empathy.<sup>7</sup></li>
                 </ul>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Auditory-Tactile</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166]/30 pb-2">Auditory-Tactile</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Sound as Feeling:</strong> Specific sounds produce distinct, physical tactile sensations on or inside the body.<sup>7</sup></li>
                   <li><strong>Consistency:</strong> The strum of a guitar might consistently produce a warm tingling sensation on the back of the neck.</li>
@@ -243,8 +243,8 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
               While the specific sensory pairings vary wildly, the underlying mechanics of how these experiences manifest are universally shared among synesthetes.
             </p>
 
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200 max-w-4xl mx-auto">
-              <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Universal Characteristics</h3>
+            <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#0c264d] max-w-4xl mx-auto">
+              <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#0c264d]/10 pb-2">Universal Characteristics</h3>
               <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                 <li><strong>Multiple Forms:</strong> It is incredibly common for a single person to have multiple intersecting forms of synesthesia (e.g., experiencing both chromesthesia and grapheme-color simultaneously).<sup>8</sup></li>
                 <li><strong>Lifelong Traits:</strong> The experiences are automatic, consistent, and completely involuntary, occurring throughout the person's life.<sup>9</sup></li>
@@ -273,10 +273,9 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
         {/* CITED STUDIES: GREEN */}
         <div className="mb-6">
           <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
-            Cited Studies & Literature
+            Cited Studies & Empirical Literature
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Day, S. (2005). Some demographic and socio-cultural aspects of synesthesia. In <i>Synesthesia: Perspectives from cognitive neuroscience</i>. Oxford University Press.</p>
             <p>2. Simner, J., & Ward, J. (2006). The taste of words on the tip of the tongue. <i>Nature</i>.</p>
             <p>3. Ward, J., et al. (2006). Sound-colour synaesthesia: To what extent does it use cross-modal mechanisms common to us all? <i>Cortex</i>.</p>
             <p>4. Ward, J., & Simner, J. (2003). Lexical-gustatory synaesthesia: Linguistic and conceptual factors. <i>Cognition</i>.</p>
@@ -286,6 +285,16 @@ export function SynesthesiaSymptoms({ setCurrentArticle, initialTab }: Synesthes
             <p>8. Novich, S., et al. (2011). Is synaesthesia one condition or many? A large-scale analysis reveals subgroups. <i>Journal of Neuropsychology</i>.</p>
             <p>9. Asher, J. E., et al. (2009). A whole-genome scan and fine-mapping linkage study of auditory-visual synesthesia reveals evidence of linkage to chromosomes 2q24, 5q33, 6p12, and 12p12. <i>American Journal of Human Genetics</i>.</p>
           </div>
+        </div>
+
+        {/* BACKGROUND SOURCES: CYAN */}
+        <div>
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+            Background & Clinical Overviews
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+            <li>1. Day, S. (2005). Some demographic and socio-cultural aspects of synesthesia. In <i>Synesthesia: Perspectives from cognitive neuroscience</i>. Oxford University Press.</li>
+          </ul>
         </div>
       </div>
     </article>

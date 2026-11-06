@@ -196,7 +196,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
             <ImageWithFallback 
               src="/images/misophonia/misophonia-diagnosis-tools.webp"
               alt="Clipboard displaying a clinical questionnaire"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
+              className="block mx-auto w-80 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
@@ -233,7 +233,7 @@ export function MisophoniaDiagnosis({ setCurrentArticle, initialTab }: Misophoni
             <ImageWithFallback 
               src="/images/misophonia/misophonia-diagnosis-scales.webp"
               alt="Stylized visual of a clinical rating scale"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-80 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

@@ -53,7 +53,7 @@ export function Footer({ setCurrentArticle }: FooterProps) {
             <li className="font-bold text-base">Brainopedia is an official project of Neurodiverse Endeavors, a registered 501(c)(3) non-profit organization.</li>
             <li>Brainopedia.org serves as a free, comprehensive encyclopedia dedicated to neurodivergent conditions and brain differences.</li>
             <li><strong>Charity ID / EIN:</strong> 99-2870398</li>
-            <li><strong>Official Address:</strong> 1903 Rolling Hill Road, Charlottesville, VA 22901</li>
+            <li><strong>Location:</strong> Charlottesville, Virginia, USA</li>
           </ul>
         </div>
       </div>

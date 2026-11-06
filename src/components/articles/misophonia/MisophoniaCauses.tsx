@@ -86,8 +86,8 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Neurological Shift</h2>
             
             <ImageWithFallback 
-              src="/images/misophonia/misophonia-causes-brain.webp"
-              alt="Glowing brain visualization highlighting the limbic system"
+              src="/images/misophonia/misophonia-causes-connectivity.webp"
+              alt="Hyperconnections of wires and circuits"
               className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-200"
             />
             
@@ -123,8 +123,8 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Specific Brain Regions</h2>
             
             <ImageWithFallback 
-              src="/images/misophonia/misophonia-causes-connectivity.webp"
-              alt="Stylized visual showing thick neural pathways connecting the ear to the emotional center"
+              src="/images/misophonia/misophonia-causes-brain.webp"
+              alt="Stylized visual showing cartoon brain shwoing emotions juggled in the air"
               className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
 
@@ -172,7 +172,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Hyper-Mirroring Discovery</h2>
             
             <ImageWithFallback 
-              src="/images/misophonia/misophonia-causes-motor.webp"
+              src="/images/misophonia/misophonia-causes-mirroring.webp"
               alt="Brain scan specifically illuminating the premotor cortex"
               className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-300"
             />
@@ -209,7 +209,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Beyond Just Audio</h2>
             
             <ImageWithFallback 
-              src="/images/misophonia/misophonia-causes-mirroring.webp"
+              src="/images/misophonia/misophonia-causes-motor.webp"
               alt="Two people facing each other with mirrored silhouettes"
               className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
@@ -267,7 +267,7 @@ export function MisophoniaCauses({ setCurrentArticle, initialTab }: MisophoniaCa
             <ImageWithFallback 
               src="/images/misophonia/misophonia-causes-genetics.webp"
               alt="DNA strand seamlessly transitioning into neural brain synapses"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="block mx-auto w-96 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

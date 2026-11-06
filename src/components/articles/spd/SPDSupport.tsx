@@ -96,23 +96,23 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
               The ultimate goal of intervention is not to "cure" SPD, but to actively retrain the nervous system while building functional self-regulation strategies.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <Activity className="text-[#0A9DC4] w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#f0f9ff] border border-[#2abcd4] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <Activity className="text-[#0A9DC4] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Core ASI Principles</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Core ASI Principles</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">ASI uses highly structured, child-directed physical play to provide controlled sensory experiences (using swings, crash mats, and tactile bins). This forces the nervous system to organize input and generate an adaptive, coordinated physical response.<sup>1</sup></p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <CheckCircle className="text-[#0A9DC4] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#f0f9ff] border border-[#2abcd4] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <CheckCircle className="text-[#0A9DC4] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Modern Clinical Evidence</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Modern Clinical Evidence</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Contemporary research strongly supports ASI. A landmark 2014 randomized controlled trial demonstrated that children receiving rigorous, high-fidelity ASI therapy showed significant, measurable improvements in sensory processing and daily functional goals.<sup>2</sup></p>
                 </div>
               </div>
@@ -129,33 +129,33 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
               className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Hand className="text-[#ffd166] w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#fffbeb] border border-[#ffd166] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <Hand className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Wilbarger Protocol</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Wilbarger Protocol</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">A specific deep-pressure technique utilizing a therapeutic surgical brush followed by joint compressions. It is widely used by OTs to aggressively address severe tactile defensiveness.<sup>3</sup></p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Brain className="text-[#ffd166] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#fffbeb] border border-[#ffd166] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <Brain className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Alert Program®</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Alert Program®</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">A cognitive approach that teaches children to recognize their internal arousal states using an engine metaphor ("Is my engine running too fast, too slow, or just right?").<sup>4</sup></p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#ffd166] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#fffbeb] border border-[#ffd166] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <Heart className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">SOS Approach to Feeding</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">SOS Approach to Feeding</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">The Sequential Oral Sensory (SOS) approach is utilized when sensory sensitivities cause severe picky eating. It involves a playful, non-stressful desensitization to new textures and smells.<sup>5</sup></p>
                 </div>
               </div>
@@ -211,33 +211,33 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
               You cannot always change the nervous system, but you can change the environment. Modifying the surroundings to remove sensory friction is the fastest way to improve daily functioning.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-slate-100 p-2 rounded-lg border border-gray-200 shrink-0">
-                  <Home className="text-[#0c264d] w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-slate-100 border border-gray-200 flex items-center justify-center shrink-0 shadow-sm">
+                  <Home className="text-[#0c264d] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Home Sanctuaries</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Home Sanctuaries</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Establish a predictable "calm down corner" featuring dim lighting and low sensory input. Transition to tagless clothing, soft fabrics, and predictable mealtime routines to prevent surprise overload.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-slate-100 p-2 rounded-lg border border-gray-200 shrink-0">
-                  <GraduationCap className="text-[#0c264d] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-slate-100 border border-gray-200 flex items-center justify-center shrink-0 shadow-sm">
+                  <GraduationCap className="text-[#0c264d] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">School Settings</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">School Settings</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Accommodations include preferential seating away from noisy doors, explicit advance warnings for sensory-intense activities (like fire drills), and alternative seating like wobble cushions to allow subtle movement.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-slate-100 p-2 rounded-lg border border-gray-200 shrink-0">
-                  <Clock className="text-[#0c264d] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-slate-100 border border-gray-200 flex items-center justify-center shrink-0 shadow-sm">
+                  <Clock className="text-[#0c264d] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Sensory Diets</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Sensory Diets</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">A personalized schedule of sensory activities implemented throughout the day to keep the nervous system regulated. This balances "alerting" activities (crunchy snacks) with "calming" heavy work (pushing walls).</p>
                 </div>
               </div>
@@ -254,33 +254,33 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
               className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <Headphones className="text-[#0A9DC4] w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#f0f9ff] border border-[#2abcd4] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <Headphones className="text-[#0A9DC4] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Auditory Protections</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Auditory Protections</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Noise-canceling headphones or discreet earplugs are vital for surviving cafeterias and shopping centers. White noise machines help mask unpredictable environmental sounds during sleep or study.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <Settings className="text-[#0A9DC4] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#f0f9ff] border border-[#2abcd4] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <Settings className="text-[#0A9DC4] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Tactile & Oral Tools</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Tactile & Oral Tools</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Discreet fidget tools (spinners, textured objects) keep the hands occupied to improve focus. Chewable jewelry or specialized pencil toppers safely satisfy intense oral sensory-seeking needs.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <Anchor className="text-[#0A9DC4] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#f0f9ff] border border-[#2abcd4] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <Anchor className="text-[#0A9DC4] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Proprioceptive Input</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Proprioceptive Input</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Weighted vests, weighted blankets, and compression clothing provide continuous, calming deep-pressure input. These must be used under OT guidance with explicit wearing schedules to prevent habituation.</p>
                 </div>
               </div>
@@ -316,40 +316,40 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
             <ImageWithFallback 
               src="/images/spd/spd-support-family.webp"
               alt="Occupational therapist sitting with parents, reviewing a sensory diet schedule"
-              className="block mx-auto w-120 max-w-full h-auto mb-6 rounded-lg shadow-smborder border-yellow-200"
+              className="block mx-auto w-120 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-6 max-w-3xl mx-auto">
               Families are the primary implementers of sensory support. Equipping them with education and emotional validation is just as critical as the clinical therapy itself.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <MessageSquare className="text-[#ffd166] w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#fffbeb] border border-[#ffd166] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <MessageSquare className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Psychoeducation</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Psychoeducation</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Helping families understand that SPD is a valid, measurable neurological difference. Reframing "bad behavior" as "sensory overload" profoundly shifts the family dynamic toward empathy.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <ListChecks className="text-[#ffd166] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#fffbeb] border border-[#ffd166] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <ListChecks className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Strategy Development</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Strategy Development</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Therapists must actively teach caregivers how to implement "sensory diets" at home, manage meltdown triggers, and utilize deep-pressure regulation techniques effectively.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <ShieldCheck className="text-[#ffd166] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#fffbeb] border border-[#ffd166] border-opacity-30 flex items-center justify-center shrink-0 shadow-sm">
+                  <ShieldCheck className="text-[#ffd166] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Advocacy Training</h3>
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Advocacy Training</h3>
                   <p className="text-xs text-slate-700 leading-relaxed">Empowering parents to advocate for their child. This includes teaching them the vocabulary needed to successfully negotiate for 504 Plan accommodations or IEP services within the school system.</p>
                 </div>
               </div>
@@ -366,27 +366,27 @@ export function SPDSupport({ setCurrentArticle, initialTab }: SPDSupportProps) {
               className="block mx-auto w-120 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
             />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
               
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-slate-100 p-2 rounded-lg border border-gray-200 shrink-0">
-                  <Users className="text-[#0c264d] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-slate-100 border border-gray-200 flex items-center justify-center shrink-0 shadow-sm">
+                  <Users className="text-[#0c264d] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Interdisciplinary Teams</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Interdisciplinary Teams</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     SPD rarely exists in isolation. Comprehensive support requires seamless communication between the lead OT, the psychologist (addressing co-occurring anxiety), the speech pathologist (for oral-motor/feeding delays), and the classroom teachers implementing daily accommodations.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-slate-100 p-2 rounded-lg border border-gray-200 shrink-0">
-                  <Heart className="text-[#0c264d] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-slate-100 border border-gray-200 flex items-center justify-center shrink-0 shadow-sm">
+                  <Heart className="text-[#0c264d] w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Evidence-Informed Goals</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Evidence-Informed Goals</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     Intervention must be fiercely functional. Therapy goals should never be about "normalizing" the child's sensory preferences, but rather improving their quality of life, emotional regulation, and meaningful participation in daily activities.
                   </p>
                 </div>

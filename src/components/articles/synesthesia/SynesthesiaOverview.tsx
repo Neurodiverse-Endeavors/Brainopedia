@@ -17,19 +17,20 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
-      {/* HEADER */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      {/* HEADER WITH CORRECT BACK BUTTON */}
+      <div className="flex justify-start mb-6">
+        <button 
+          onClick={() => setCurrentArticle?.('synesthesia-overview')}
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
+        >
+          <span className="text-lg">←</span>Back to Causes
+        </button>
+      </div>
+
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Synesthesia: Overview
         </h1>
-
-        <button 
-          onClick={() => setCurrentArticle?.('synesthesia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
-        >
-          <span className="text-lg">←</span>
-          All About Synesthesia
-        </button>
       </div>
 
       {/* Tab Navigation */}
@@ -77,7 +78,7 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
           </p>
 
           {/* Definition Card (Cyan) */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#f0f9ff] border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Joined Sensation</h2>
             
             <ImageWithFallback 
@@ -91,8 +92,8 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Core Characteristics</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#2abcd4]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4]/20 pb-2">Core Characteristics</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Involuntary:</strong> The cross-sensory experience happens automatically without conscious effort.<sup>6</sup></li>
                   <li><strong>Consistent:</strong> If the letter "A" appears red, it will always appear red throughout the person's life.<sup>7</sup></li>
@@ -100,8 +101,8 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
                 </ul>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">What It Is Not</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-slate-400">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">What It Is Not</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Not a hallucination:</strong> Synesthetes know the colors or tastes are in their mind's eye, not physical objects in the room.</li>
                   <li><strong>Not a disorder:</strong> It does not impair cognitive function or indicate mental illness.</li>
@@ -124,13 +125,13 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
           </p>
 
           {/* Common Types Card (Yellow) */}
-          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+          <div className="bg-[#ffd166]/10 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Common Presentations</h2>
             
             <ImageWithFallback 
               src="/images/synesthesia/synesthesia-overview-types.webp" 
               alt="Visual depiction of letters associated with colors"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
+              className="w-96 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -138,9 +139,9 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Grapheme-Color</h3>
-                <p className="text-sm text-slate-700 mb-2 font-bold italic">Seeing letters & numbers as colors</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#0A9DC4]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#0A9DC4]/20 pb-2">Grapheme-Color</h3>
+                <p className="text-sm text-[#0A9DC4] mb-2 font-bold italic">Seeing letters & numbers as colors</p>
                 <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
                   <li>The most common and widely researched form of synesthesia.</li>
                   <li>Each letter or number has an inherent, specific color (e.g., A is always red).</li>
@@ -148,9 +149,9 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
                 </ul>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Chromesthesia</h3>
-                <p className="text-sm text-slate-700 mb-2 font-bold italic">Hearing sounds as colors</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#ffd166]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#ffd166]/30 pb-2">Chromesthesia</h3>
+                <p className="text-sm text-[#0c264d]/85 mb-2 font-bold italic">Hearing sounds as colors</p>
                 <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
                   <li>Music, voices, or everyday sounds trigger moving colors, shapes, and textures.</li>
                   <li>Often highly prevalent among musicians and composers.</li>
@@ -158,9 +159,9 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
                 </ul>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Lexical-Gustatory</h3>
-                <p className="text-sm text-slate-700 mb-2 font-bold italic">Tasting spoken or written words</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#576d8e]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#576d8e]/20 pb-2">Lexical-Gustatory</h3>
+                <p className="text-sm text-[#576d8e] mb-2 font-bold italic">Tasting spoken or written words</p>
                 <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
                   <li>A rarer form where hearing or reading specific words triggers intense physical tastes.</li>
                   <li>The word "society" might taste exactly like baked apples.</li>
@@ -189,7 +190,7 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
             <ImageWithFallback 
               src="/images/synesthesia/synesthesia-overview-facts.webp" 
               alt="Artist creating vibrant artwork utilizing synesthetic perception"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
+              className="w-96 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -197,8 +198,8 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Population Statistics</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#0c264d]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#0c264d]/10 pb-2">Population Statistics</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>General Prevalence:</strong> Estimated to occur in roughly 2-4% of the global population.<sup>5</sup></li>
                   <li><strong>Underreported:</strong> Many individuals never realize their perception is unique, assuming everyone sees days of the week as colors.</li>
@@ -206,8 +207,8 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
                 </ul>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Cognitive Strengths</h3>
+              <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#2abcd4]">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4]/20 pb-2">Cognitive Strengths</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Enhanced Memory:</strong> The extra sensory associations make recalling facts, names, and dates significantly easier.</li>
                   <li><strong>Creative Link:</strong> Synesthesia is found at much higher rates among artists, musicians, and creative professionals.<sup>8, 9</sup></li>
@@ -222,11 +223,11 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
       {/* FOOTER BUTTON */}
       <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
-          onClick={() => setCurrentArticle?.('synesthesia')}
+          onClick={() => setCurrentArticle?.('synesthesia-overview')}
           className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
           <span className="text-lg">←</span>
-          All About Synesthesia
+          Back to Causes
         </button>
       </div>
 
