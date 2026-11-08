@@ -87,7 +87,7 @@ export function SynesthesiaCauses({ setCurrentArticle, initialTab }: Synesthesia
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Synesthesia has a strong genetic component and frequently runs in families. While the specific manifestations (like which colors match to which letters) are not inherited directly, the underlying neurological predisposition to cross-sensory connections is passed down.<sup>1</sup>
+              Synesthesia has a strong genetic component and frequently runs in families. While the specific manifestations (like which colors match to which letters) are not inherited directly, the underlying neurological predisposition to cross-sensory connections is passed down.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -102,10 +102,34 @@ export function SynesthesiaCauses({ setCurrentArticle, initialTab }: Synesthesia
               <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Ongoing Gene Research</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>Axonogenesis Genes:</strong> Recent studies have found rare variants in genes related to axonogenesis (the process of forming neural connections) connecting families with sound-color synesthesia.<sup>2</sup></li>
+                  <li><strong>Axonogenesis Genes:</strong> Recent studies have found rare variants in genes related to axonogenesis (the process of forming neural connections) connecting families with sound-color synesthesia.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup></li>
                   <li><strong>Polygenic Trait:</strong> It is likely polygenic, meaning multiple genes interact to create the condition rather than a single "synesthesia gene."</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Empirical Literature
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Tomson, S. N., et al. (2011). The genetics of colored sequence synesthesia: Suggestive evidence of linkage to 16q and genetic heterogeneity for the condition. <i>Behavioural Brain Research</i>.</p>
+                <p>2. Tilot, A. K., et al. (2018). Rare variants in axonogenesis genes connect three families with sound-color synesthesia. <i>Proceedings of the National Academy of Sciences</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background & Clinical Overviews
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Core literature mapping genetic predispositions and inherited traits of synesthetic variations.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -139,8 +163,8 @@ export function SynesthesiaCauses({ setCurrentArticle, initialTab }: Synesthesia
               <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Cross-Activation Theory</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>Physical Connections:</strong> Suggests that synesthesia occurs due to an excess of physical neural connections between adjacent brain areas.<sup>3</sup></li>
-                  <li><strong>Grapheme-Color Example:</strong> The brain region that processes letters/numbers sits physically adjacent to the region that processes color; excess connections between them cause simultaneous firing.<sup>4</sup></li>
+                  <li><strong>Physical Connections:</strong> Suggests that synesthesia occurs due to an excess of physical neural connections between adjacent brain areas.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup></li>
+                  <li><strong>Grapheme-Color Example:</strong> The brain region that processes letters/numbers sits physically adjacent to the region that processes color; excess connections between them cause simultaneous firing.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup></li>
                 </ul>
               </div>
 
@@ -148,9 +172,34 @@ export function SynesthesiaCauses({ setCurrentArticle, initialTab }: Synesthesia
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Disinhibited Feedback Theory</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Existing Pathways:</strong> Proposes that all humans actually have neural connections between different sensory areas.</li>
-                  <li><strong>Reduced Inhibition:</strong> In most people, these cross-sensory connections are inhibited by the brain. In synesthetes, this inhibition is reduced, allowing sensory signals to "leak" or feed back into other regions.<sup>5</sup></li>
+                  <li><strong>Reduced Inhibition:</strong> In most people, these cross-sensory connections are inhibited by the brain. In synesthetes, this inhibition is reduced, allowing sensory signals to "leak" or feed back into other regions.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup></li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Empirical Literature
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Ramachandran, V. S., & Hubbard, E. M. (2001). Synaesthesia—a window into perception, thought and language. <i>Journal of Consciousness Studies</i>.</p>
+                <p>2. Hubbard, E. M., et al. (2005). Individual differences among grapheme-color synesthetes: Brain-behavior correlations. <i>Neuron</i>.</p>
+                <p>3. Grossenbacher, P. G., & Lovelace, C. T. (2001). Mechanisms of synesthesia: Cognitive and physiological constraints. <i>Trends in Cognitive Sciences</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background & Clinical Overviews
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Scientific models explaining neural crosstalk, synaptic inhibition, and prevailing neurological hypotheses.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -184,18 +233,43 @@ export function SynesthesiaCauses({ setCurrentArticle, initialTab }: Synesthesia
               <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Physical Differences</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>Increased Gray Matter:</strong> Scans show greater volumes of gray matter in regions related to perception and attention.<sup>7</sup></li>
-                  <li><strong>Structural Connectivity:</strong> DTI (Diffusion Tensor Imaging) confirms significantly enhanced white matter connectivity (the brain's "highways") between sensory areas.<sup>6</sup></li>
+                  <li><strong>Increased Gray Matter:</strong> Scans show greater volumes of gray matter in regions related to perception and attention.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup></li>
+                  <li><strong>Structural Connectivity:</strong> DTI (Diffusion Tensor Imaging) confirms significantly enhanced white matter connectivity (the brain's "highways") between sensory areas.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup></li>
                 </ul>
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b pb-2">Neonatal Synesthesia</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>The Infant Brain:</strong> Researchers theorize that all infants may experience the world synesthetically due to highly interconnected, unpruned neural networks.<sup>8</sup></li>
-                  <li><strong>The Pruning Process:</strong> As a typical brain develops, it "prunes" away excess connections to differentiate the senses. In synesthetes, this pruning process is incomplete, leaving the cross-connections active for life.<sup>8</sup></li>
+                  <li><strong>The Infant Brain:</strong> Researchers theorize that all infants may experience the world synesthetically due to highly interconnected, unpruned neural networks.</li>
+                  <li><strong>The Pruning Process:</strong> As a typical brain develops, it "prunes" away excess connections to differentiate the senses. In synesthetes, this pruning process is incomplete, leaving the cross-connections active for life.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup></li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Empirical Literature
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Jäncke, L., et al. (2009). The neuroanatomy of grapheme-color synesthesia. <i>European Journal of Neuroscience</i>.</p>
+                <p>2. Rouw, R., & Scholte, H. S. (2007). Increased structural connectivity in grapheme-color synesthesia. <i>Nature Neuroscience</i>.</p>
+                <p>3. Maurer, D., & Mondloch, C. J. (2005). Neonatal synesthesia: A re-evaluation. In <i>Synesthesia: Perspectives from cognitive neuroscience</i>. Oxford University Press.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background & Clinical Overviews
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Imaging methodologies and structural analysis data regarding white matter and gray matter distribution in synesthetic individuals.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -212,27 +286,6 @@ export function SynesthesiaCauses({ setCurrentArticle, initialTab }: Synesthesia
         </button>
       </div>
 
-      {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both mt-16 font-spartan">
-        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-        
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
-            Cited Studies & Literature
-          </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Tomson, S. N., et al. (2011). The genetics of colored sequence synesthesia: Suggestive evidence of linkage to 16q and genetic heterogeneity for the condition. <i>Behavioural Brain Research</i>.</p>
-            <p>2. Tilot, A. K., et al. (2018). Rare variants in axonogenesis genes connect three families with sound-color synesthesia. <i>Proceedings of the National Academy of Sciences</i>.</p>
-            <p>3. Ramachandran, V. S., & Hubbard, E. M. (2001). Synaesthesia—a window into perception, thought and language. <i>Journal of Consciousness Studies</i>.</p>
-            <p>4. Hubbard, E. M., et al. (2005). Individual differences among grapheme-color synesthetes: Brain-behavior correlations. <i>Neuron</i>.</p>
-            <p>5. Grossenbacher, P. G., & Lovelace, C. T. (2001). Mechanisms of synesthesia: Cognitive and physiological constraints. <i>Trends in Cognitive Sciences</i>.</p>
-            <p>6. Rouw, R., & Scholte, H. S. (2007). Increased structural connectivity in grapheme-color synesthesia. <i>Nature Neuroscience</i>.</p>
-            <p>7. Jäncke, L., et al. (2009). The neuroanatomy of grapheme-color synesthesia. <i>European Journal of Neuroscience</i>.</p>
-            <p>8. Maurer, D., & Mondloch, C. J. (2005). Neonatal synesthesia: A re-evaluation. In <i>Synesthesia: Perspectives from cognitive neuroscience</i>. Oxford University Press.</p>
-          </div>
-        </div>
-      </div>
     </article>
   );
 }

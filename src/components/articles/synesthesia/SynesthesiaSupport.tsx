@@ -83,7 +83,7 @@ export function SynesthesiaSupport({ setCurrentArticle, initialTab }: Synesthesi
             <ImageWithFallback 
               src="/images/synesthesia/synesthesia-support-embracing.webp" 
               alt="Individual engaging in creative, multi-sensory artistic expression"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
+              className="w-96 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -128,7 +128,7 @@ export function SynesthesiaSupport({ setCurrentArticle, initialTab }: Synesthesi
             <ImageWithFallback 
               src="/images/synesthesia/synesthesia-support-challenges.webp" 
               alt="Person managing a highly stimulating auditory environment"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
+              className="w-96 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">

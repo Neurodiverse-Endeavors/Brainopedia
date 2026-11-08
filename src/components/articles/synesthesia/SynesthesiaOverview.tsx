@@ -17,8 +17,8 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
   return (
     <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full min-w-0 [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px] animate-in fade-in duration-300">
       
-      {/* HEADER WITH CORRECT BACK BUTTON */}
-        <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      {/* HEADER */}
+      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-3xl font-normal text-[#0c264d]">
           Synesthesia: Overview
         </h1>
@@ -31,7 +31,6 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
           All About Synesthesia
         </button>
       </div>
-
 
       {/* Tab Navigation */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -74,7 +73,7 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
         <div className="space-y-8 animate-fadeIn">
           
           <p className="text-slate-700 leading-relaxed text-sm text-center max-w-4xl mx-auto mb-8">
-            Synesthesia is a fascinating neurological phenomenon in which stimulation of one sensory or cognitive pathway leads to involuntary, automatic experiences in a second sensory or cognitive pathway.<sup>1</sup>
+            Synesthesia is a fascinating neurological phenomenon in which stimulation of one sensory or cognitive pathway leads to involuntary, automatic experiences in a second sensory or cognitive pathway.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
           </p>
 
           {/* Definition Card (Cyan) */}
@@ -88,16 +87,16 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              The term comes from the Greek words "syn" (together) and "aisthesis" (sensation).<sup>3</sup> For a synesthete, the senses are uniquely intertwined—they might see vibrant colors when listening to music, or taste distinct flavors when reading words on a page.<sup>2</sup>
+              The term comes from the Greek words "syn" (together) and "aisthesis" (sensation).<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup> For a synesthete, the senses are uniquely intertwined—they might see vibrant colors when listening to music, or taste distinct flavors when reading words on a page.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup>
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#2abcd4]">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4]/20 pb-2">Core Characteristics</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>Involuntary:</strong> The cross-sensory experience happens automatically without conscious effort.<sup>6</sup></li>
-                  <li><strong>Consistent:</strong> If the letter "A" appears red, it will always appear red throughout the person's life.<sup>7</sup></li>
-                  <li><strong>Lifelong:</strong> It is typically a condition people are born with, not something developed later in life.<sup>4</sup></li>
+                  <li><strong>Involuntary:</strong> The cross-sensory experience happens automatically without conscious effort.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4</sup></li>
+                  <li><strong>Consistent:</strong> If the letter "A" appears red, it will always appear red throughout the person's life.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">5</sup></li>
+                  <li><strong>Lifelong:</strong> It is typically a condition people are born with, not something developed later in life.</li>
                 </ul>
               </div>
 
@@ -109,6 +108,33 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
                   <li><strong>Not a metaphor:</strong> They actually experience the sensation, rather than just associating two ideas.</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Cytowic, R. E., & Eagleman, D. M. (2009). <i>Wednesday is indigo blue: Discovering the brain of synesthesia</i>. MIT Press.</p>
+                <p>2. Simner, J., & Hubbard, E. M. (2013). <i>The Oxford handbook of synesthesia</i>. Oxford University Press.</p>
+                <p>3. Baron-Cohen, S., & Harrison, J. E. (1997). <i>Synaesthesia: Classic and contemporary readings</i>. Blackwell Publishers.</p>
+                <p>4. Cytowic, R. E. (1989). <i>Synesthesia: A union of the senses</i>. Springer-Verlag.</p>
+                <p>5. Baron-Cohen, S., et al. (1987). Hearing words and seeing colours: An experimental investigation of a case of synaesthesia. <i>Perception</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>General foundational insights into the structural separation and unified nature of human sensory pathways.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -170,6 +196,29 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
               </div>
             </div>
           </div>
+
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Simner, J., et al. (2006). Synaesthesia: The prevalence of atypical cross-modal experiences. <i>Perception</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Comprehensive diagnostic documentation on cross-modal sensory variants and multi-presentation profiles.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       )}
 
@@ -201,9 +250,9 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
               <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-[#0c264d]">
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#0c264d]/10 pb-2">Population Statistics</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                  <li><strong>General Prevalence:</strong> Estimated to occur in roughly 2-4% of the global population.<sup>5</sup></li>
+                  <li><strong>General Prevalence:</strong> Estimated to occur in roughly 2-4% of the global population.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup></li>
                   <li><strong>Underreported:</strong> Many individuals never realize their perception is unique, assuming everyone sees days of the week as colors.</li>
-                  <li><strong>Familial links:</strong> It runs strongly in families, suggesting a clear genetic component.<sup>4</sup></li>
+                  <li><strong>Familial links:</strong> It runs strongly in families, suggesting a clear genetic component.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup></li>
                 </ul>
               </div>
 
@@ -211,10 +260,36 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
                 <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4]/20 pb-2">Cognitive Strengths</h3>
                 <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                   <li><strong>Enhanced Memory:</strong> The extra sensory associations make recalling facts, names, and dates significantly easier.</li>
-                  <li><strong>Creative Link:</strong> Synesthesia is found at much higher rates among artists, musicians, and creative professionals.<sup>8, 9</sup></li>
+                  <li><strong>Creative Link:</strong> Synesthesia is found at much higher rates among artists, musicians, and creative professionals.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3, 4</sup></li>
                   <li><strong>Perceptual richness:</strong> Provides a multidimensional, vibrant overlay to everyday life.</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Simner, J., et al. (2006). Synaesthesia: The prevalence of atypical cross-modal experiences. <i>Perception</i>.</p>
+                <p>2. Baron-Cohen, S., et al. (1996). Synaesthesia: Prevalence and familiality. <i>Perception</i>.</p>
+                <p>3. Ward, J., et al. (2008). Synaesthesia, creativity and art: What is the link? <i>British Journal of Psychology</i>.</p>
+                <p>4. Rothen, N., & Meier, B. (2010). Higher prevalence of synaesthesia in art students. <i>Perception</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Foundational literature on cognitive advantages, artistic correlation, and population distribution metrics.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -223,36 +298,14 @@ export function SynesthesiaOverview({ setCurrentArticle, initialTab }: Synesthes
       {/* FOOTER BUTTON */}
       <div className="flex justify-end mt-8 mb-6 clear-both">
         <button 
-          onClick={() => setCurrentArticle?.('synesthesia-overview')}
+          onClick={() => setCurrentArticle?.('synesthesia')}
           className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
           <span className="text-lg">←</span>
-          Back to Causes
+          All About Synesthesia
         </button>
       </div>
 
-      {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both mt-16 font-spartan">
-        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-        
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-10 pb-1">
-            Cited Studies & Literature
-          </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Cytowic, R. E., & Eagleman, D. M. (2009). <i>Wednesday is indigo blue: Discovering the brain of synesthesia</i>. MIT Press.</p>
-            <p>2. Baron-Cohen, S., & Harrison, J. E. (1997). <i>Synaesthesia: Classic and contemporary readings</i>. Blackwell Publishers.</p>
-            <p>3. Simner, J., & Hubbard, E. M. (2013). <i>The Oxford handbook of synesthesia</i>. Oxford University Press.</p>
-            <p>4. Baron-Cohen, S., et al. (1996). Synaesthesia: Prevalence and familiality. <i>Perception</i>.</p>
-            <p>5. Simner, J., et al. (2006). Synaesthesia: The prevalence of atypical cross-modal experiences. <i>Perception</i>.</p>
-            <p>6. Cytowic, R. E. (1989). <i>Synesthesia: A union of the senses</i>. Springer-Verlag.</p>
-            <p>7. Baron-Cohen, S., et al. (1987). Hearing words and seeing colours: An experimental investigation of a case of synaesthesia. <i>Perception</i>.</p>
-            <p>8. Ward, J., et al. (2008). Synaesthesia, creativity and art: What is the link? <i>British Journal of Psychology</i>.</p>
-            <p>9. Rothen, N., & Meier, B. (2010). Higher prevalence of synaesthesia in art students. <i>Perception</i>.</p>
-          </div>
-        </div>
-      </div>
     </article>
   );
 }
