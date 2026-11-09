@@ -130,7 +130,7 @@ export function DyspraxiaOverview({ setCurrentArticle, initialTab }: DyspraxiaOv
             <ImageWithFallback 
               src="/images/dyspraxia/dyspraxia-overview-brain.webp" 
               alt="Visual map of the brain processing movement"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
+              className="w-96 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
@@ -180,7 +180,7 @@ export function DyspraxiaOverview({ setCurrentArticle, initialTab }: DyspraxiaOv
             <ImageWithFallback 
               src="/images/dyspraxia/dyspraxia-overview-overlap.webp" 
               alt="Venn diagram showing neurodivergent overlaps"
-              className="w-64 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-slate-200"
+              className="w-96 h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-slate-200"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
