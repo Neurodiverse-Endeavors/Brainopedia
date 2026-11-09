@@ -1,7 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
-import React, { useState } from 'react';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Brain, Heart, ShieldCheck, Users, MessageCircle, VolumeX, Headphones, BatteryCharging, ChevronRight, Megaphone } from 'lucide-react';
+import { Brain, Heart, ShieldCheck, Users, MessageCircle, VolumeX, Headphones, BatteryCharging, Megaphone } from 'lucide-react';
 
 interface MisophoniaLivingProps {
   setCurrentArticle?: (article: string) => void;
@@ -18,19 +17,8 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
-      
-      {/* GLOBAL STYLE FOR CITATIONS */}
-      <style>
-        {`
-          sup {
-            color: #10b981;
-            font-weight: bold;
-            margin-left: 2px;
-          }
-        `}
-      </style>
 
-      {/* HEADER & DESKTOP BACK BUTTON */}
+      {/* HEADER */}
       <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <h1 className="text-3xl text-[#0c264d] font-normal">
           Living with Misophonia
@@ -38,21 +26,12 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
 
         <button 
           onClick={() => setCurrentArticle?.('misophonia')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 whitespace-nowrap"
         >
-          <span className="text-xl">←</span>
+          <span className="text-lg">←</span>
           All About Misophonia
         </button>
       </div>
-
-      {/* MOBILE BACK BUTTON */}
-      <button 
-        onClick={() => setCurrentArticle?.('misophonia')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        All About Misophonia
-      </button>
 
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -95,7 +74,7 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
         <div className="space-y-8 animate-fadeIn">
 
           <p className="text-sm text-slate-700 leading-relaxed">
-            Living with misophonia requires constant, exhausting navigation of the auditory environment. While it can be a deeply isolating condition, building a self-affirming perspective and a practical toolkit allows many individuals to lead rich, connected lives.<sup className="text-[#10b981] font-bold ml-0.5">1</sup>
+            Living with misophonia requires constant, exhausting navigation of the auditory environment. While it can be a deeply isolating condition, building a self-affirming perspective and a practical toolkit allows many individuals to lead rich, connected lives.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
           </p>
 
           {/* Self-Compassion Card (Cyan) */}
@@ -103,9 +82,9 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Self-Compassion & Reframing</h2>
             
             <ImageWithFallback 
-              src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=1080&q=80" 
-              alt="Person relaxing in a quiet space" 
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block" 
+              src="/images/misophonia/misophonia-living-mindset.webp" 
+              alt="Person reflecting in deep self-compassion, with vibrant, neural-like colors visualising inner thought" 
+              className="w-56 h-auto rounded-md border border-[#2abcd4] block mx-auto float-none md:float-right md:ml-6 mb-6 md:mb-4 mt-1 shadow-sm" 
             />
             
             <p className="text-sm text-slate-700 leading-relaxed mb-6">
@@ -113,35 +92,68 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-cyan-100 shadow-sm">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg shrink-0">
-                  <Brain className="text-[#0A9DC4] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">"It's My Brain, Not My Character"</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Recognize that the intense rage or disgust is a neurological "glitch" in the brain's salience network, not a reflection of your actual feelings toward a person.<sup className="text-[#10b981] font-bold ml-0.5">2</sup></p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-cyan-100 shadow-sm">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg shrink-0">
-                  <ShieldCheck className="text-[#0A9DC4] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Accepting Limitations</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Understand that on some days, your sensory tolerance will simply be lower due to stress or fatigue. It is completely acceptable to step away or prioritize a quiet environment without guilt.</p>
+              <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-cyan-100 shadow-sm relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
+                <div className="pl-2 flex items-start gap-3">
+                  <div className="bg-[#f0f9ff] p-2 rounded-lg shrink-0">
+                    <Brain className="text-[#0A9DC4] w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-[#0c264d] font-bold text-sm mb-1">"It's My Brain, Not My Character"</h3>
+                    <p className="text-xs text-slate-700 leading-relaxed">Recognize that the intense rage or disgust is a neurological "glitch" in the brain's salience network, not a reflection of your actual feelings toward a person.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup></p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-cyan-100 shadow-sm">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg shrink-0">
-                  <Heart className="text-[#0A9DC4] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Differentiating "Annoyance" from "Trigger"</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Learn to identify the physical sensations that separate when a sound is merely annoying versus when it is actively triggering a severe "fight-or-flight" survival response.</p>
+              <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-cyan-100 shadow-sm relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
+                <div className="pl-2 flex items-start gap-3">
+                  <div className="bg-[#f0f9ff] p-2 rounded-lg shrink-0">
+                    <ShieldCheck className="text-[#0A9DC4] w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-[#0c264d] font-bold text-sm mb-1">Accepting Limitations</h3>
+                    <p className="text-xs text-slate-700 leading-relaxed">Understand that on some days, your sensory tolerance will simply be lower due to stress or fatigue. It is completely acceptable to step away or prioritize a quiet environment without guilt.</p>
+                  </div>
                 </div>
               </div>
+
+              <div className="flex items-start gap-4 bg-white p-4 rounded-xl border border-cyan-100 shadow-sm relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
+                <div className="pl-2 flex items-start gap-3">
+                  <div className="bg-[#f0f9ff] p-2 rounded-lg shrink-0">
+                    <Heart className="text-[#0A9DC4] w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-[#0c264d] font-bold text-sm mb-1">Differentiating "Annoyance" from "Trigger"</h3>
+                    <p className="text-xs text-slate-700 leading-relaxed">Learn to identify the physical sensations that separate when a sound is merely annoying versus when it is actively triggering a severe "fight-or-flight" survival response.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* TAB 1 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Rouw, R., & Erfanian, M. (2018). A large-scale study of misophonia. <i>Journal of Clinical Psychology</i>.</p>
+                <p>2. Kumar, S., et al. (2017). The brain basis for misophonia. <i>Current Biology</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Germer, C. K. (2009). <i>The Mindful Path to Self-Compassion</i>. Guilford Press.</li>
+              </ul>
             </div>
           </div>
 
@@ -157,32 +169,48 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
           {/* Social Navigation Card (Yellow) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social Navigation</h2>
+            
+            <ImageWithFallback 
+              src="/images/misophonia/misophonia-living-social.webp" 
+              alt="Artistic representation of people conversing in a shared environment, showcasing vibrant social connectivity" 
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]" 
+            />
+
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Socializing with misophonia requires proactive planning and clear, unapologetic communication to protect your nervous system from unexpected triggers.<sup className="text-[#10b981] font-bold ml-0.5">3</sup>
+              Socializing with misophonia requires proactive planning and clear, unapologetic communication to protect your nervous system from unexpected triggers.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-              <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm">
-                <Users className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">The "Dine-and-Dash" Alternative</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Choose social activities that don't center around food, or eat a meal beforehand so you can focus on the conversation rather than the terrifying anticipation of chewing noises.</p>
+              <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
+                <div className="pl-2 flex items-start gap-3">
+                  <Users className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-[#0c264d] font-bold text-sm mb-1">The "Dine-and-Dash" Alternative</h3>
+                    <p className="text-xs text-slate-700 leading-relaxed">Choose social activities that don't center around food, or eat a meal beforehand so you can focus on the conversation rather than the terrifying anticipation of chewing noises.</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm">
-                <MessageCircle className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Transparent Communication</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Tell friends upfront: "I have a sensory condition that makes certain sounds very physically distressing; I might need to step away or use headphones sometimes."</p>
+              <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
+                <div className="pl-2 flex items-start gap-3">
+                  <MessageCircle className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-[#0c264d] font-bold text-sm mb-1">Transparent Communication</h3>
+                    <p className="text-xs text-slate-700 leading-relaxed">Tell friends upfront: "I have a sensory condition that makes certain sounds very physically distressing; I might need to step away or use headphones sometimes."</p>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm md:col-span-2 max-w-2xl mx-auto w-full">
-                <Heart className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Identifying "Safe" People</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Prioritize relationships with individuals who understand your neurological boundaries and do not take it personally when you need to abruptly leave a triggering situation.</p>
+              <div className="flex items-start gap-3 bg-white p-5 rounded-xl border border-yellow-200 shadow-sm md:col-span-2 max-w-2xl mx-auto w-full relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
+                <div className="pl-2 flex items-start gap-3">
+                  <Heart className="text-[#ffd166] w-5 h-5 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-[#0c264d] font-bold text-sm mb-1">Identifying "Safe" People</h3>
+                    <p className="text-xs text-slate-700 leading-relaxed">Prioritize relationships with individuals who understand your neurological boundaries and do not take it personally when you need to abruptly leave a triggering situation.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -198,6 +226,29 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
             </p>
           </div>
 
+          {/* TAB 2 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Edelstein, M., et al. (2013). Misophonia: Physiological investigations and case descriptions. <i>Frontiers in Human Neuroscience</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Resources provided by soquiet.org and the Misophonia Association on peer support, communication boundary mapping, and public advocacy.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       )}
 
@@ -210,6 +261,13 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
           {/* Layered Approach Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Strategy: The Layered Approach</h2>
+            
+            <ImageWithFallback 
+              src="/images/misophonia/misophonia-living-strategies.webp" 
+              alt="Detailed visualization of headphones and barrier strategies to manage triggers, showcasing a protective sensory response" 
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]" 
+            />
+
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Many successful individuals use multiple, overlapping layers of auditory protection to maintain their focus and prevent panic in public or shared spaces.
             </p>
@@ -241,8 +299,32 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
               <BatteryCharging className="text-[#0A9DC4] w-7 h-7" /> Building a "Quiet Reserve"
             </h2>
             <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto">
-              Living with misophonia is mentally and physically exhausting because the brain's salience network is constantly scanning the environment for threats. Creating a "quiet reserve"—dedicated, scheduled times of the day with absolutely zero trigger sounds—is essential for lowering the nervous system's baseline irritability and preventing burnout.<sup className="text-[#10b981] font-bold ml-0.5">4</sup>
+              Living with misophonia is mentally and physically exhausting because the brain's salience network is constantly scanning the environment for threats. Creating a "quiet reserve"—dedicated, scheduled times of the day with absolutely zero trigger sounds—is essential for lowering the nervous system's baseline irritability and preventing burnout.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
             </p>
+          </div>
+
+          {/* TAB 3 REFERENCES */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+                <p>1. Potgieter, I., et al. (2019). Misophonia: A scoping review of research. <i>Journal of Clinical Psychology</i>.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+                <li>Schröder, A., et al. (2013). Misophonia: Diagnostic criteria for a new psychiatric disorder. <i>PLOS ONE</i>.</li>
+                <li>Brout, J. J. (2018). <i>The Misophonia Provider Network</i>.</li>
+              </ul>
+            </div>
           </div>
 
         </div>
@@ -257,36 +339,6 @@ export function MisophoniaLiving({ setCurrentArticle, initialTab }: MisophoniaLi
           <span className="text-xl">←</span>
           All About Misophonia
         </button>
-      </div>
-
-      {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both mt-16 font-spartan">
-        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-        
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-            Cited Studies & Statistics
-          </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Rouw, R., & Erfanian, M. (2018). A large-scale study of misophonia. <i>Journal of Clinical Psychology</i>.</p>
-            <p>2. Kumar, S., et al. (2017). The brain basis for misophonia. <i>Current Biology</i>.</p>
-            <p>3. Edelstein, M., et al. (2013). Misophonia: Physiological investigations and case descriptions. <i>Frontiers in Human Neuroscience</i>.</p>
-            <p>4. Potgieter, I., et al. (2019). Misophonia: A scoping review of research. <i>Journal of Clinical Psychology</i>.</p>
-          </div>
-        </div>
-
-        {/* BACKGROUND SOURCES: CYAN */}
-        <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
-            Background Sources
-          </h4>
-          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>Germer, C. K. (2009). <i>The Mindful Path to Self-Compassion</i>. Guilford Press.</li>
-            <li>Schröder, A., et al. (2013). Misophonia: Diagnostic criteria for a new psychiatric disorder. <i>PLOS ONE</i>.</li>
-            <li>Brout, J. J. (2018). <i>The Misophonia Provider Network</i>.</li>
-          </ul>
-        </div>
       </div>
 
     </article>
