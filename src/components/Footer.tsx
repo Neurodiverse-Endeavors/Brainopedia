@@ -14,7 +14,7 @@ export function Footer({ setCurrentArticle }: FooterProps) {
           {/* Copyright Notice */}
           <div className="text-center md:text-left">
             <p className="text-sm">
-              © {currentYear} <span className="font-semibold">Neurodiverse Endeavors</span> DBA<span className="font-semibold">Brainopedia</span>
+              © {currentYear} <span className="font-semibold">Neurodiverse Endeavors</span> DBA <span className="font-semibold">Brainopedia</span>
             </p>
             <p className="text-xs text-gray-300 mt-1">
               All rights reserved.

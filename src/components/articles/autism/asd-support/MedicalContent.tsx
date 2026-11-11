@@ -6,17 +6,24 @@ interface MedicalContentProps {
 
 export function MedicalContent({ setCurrentArticle }: MedicalContentProps) {
   return (
-    <article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
+<article className="space-y-6 text-[#0c264d] font-spartan max-w-full w-full [&_sup]:text-[#10b981] [&_sup]:font-bold [&_sup]:ml-[2px] [&_sup]:text-[10px]">
       <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Medical Management</h2>
 
-      <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Medication</h3>
-      <p className="mb-4">
-        There is no medication for autism itself, but medications may help co-occurring conditions:<sup>1</sup>
-      </p>
+      <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm mb-6">
+        <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4] pb-2">The Role of Medication</h3>
+        <p className="mb-4 text-slate-700 text-sm leading-relaxed">
+          It is critical to understand that there is no medication that treats or "cures" autism itself. Rather, psychiatric and behavioral medications are prescribed strictly to manage <strong>symptoms</strong> (such as severe aggression, anxiety, or hyperactivity) that co-occur with the autistic neurotype.<sup>1</sup>
+        </p>
+        <p className="text-slate-700 text-sm leading-relaxed font-bold text-[#be185d]">
+          Because these medications only suppress behavioral symptoms, they can sometimes mask underlying physiological issues. A child exhibiting sudden, severe dysregulation may actually be experiencing untreated gastrointestinal pain, dental issues, or metabolic distress. Always ensure a full physical medical workup is completed to rule out hidden pain before relying solely on psychiatric medication to manage "behavior."
+        </p>
+      </div>
 
-      {/* --- CENTERED GRAPHIC SECTION 1 --- */} 
+{/* --- CENTERED GRAPHIC SECTION 1 --- */} 
       <div className="text-center w-full mb-8"> 
-        <div className="mx-auto w-64 md:w-96"> {/* Fixed width classes here! */}
+        {/* Increased from w-72 to w-80 on mobile */}
+        {/* Increased from md:w-[450px] to md:w-[550px] on desktop */}
+        <div className="mx-auto w-80 md:w-[550px]"> 
           <div className="rounded-lg shadow-md overflow-hidden bg-white">
             <ImageWithFallback 
               src="/images/autism/autism-support-MMtab-5guys.webp" 
@@ -250,32 +257,108 @@ export function MedicalContent({ setCurrentArticle }: MedicalContentProps) {
         </table>
       </div>
 
-      <div className="bg-blue-50 border-l-4 border-[#2abcd4] p-4 mb-6">
-        <p className="mb-2"><strong>Important GI Management Considerations:</strong></p>
-        <ul className="list-disc ml-6 text-sm space-y-1">
-          <li><strong>Rule out underlying conditions:</strong> Celiac disease, food allergies, inflammatory bowel disease should be evaluated<sup>9</sup></li>
-          <li><strong>Dietary modifications:</strong> Some children benefit from addressing food selectivity, increasing fiber, or identifying trigger foods<sup>9</sup></li>
-          <li><strong>Hydration:</strong> Ensure adequate fluid intake, especially with fiber supplements or laxatives<sup>9</sup></li>
-          <li><strong>Communication challenges:</strong> Nonverbal children may show behavioral changes as only sign of GI distress<sup>9</sup></li>
-          <li><strong>Medication side effects:</strong> Some psychotropic medications can worsen constipation<sup>9</sup></li>
-          <li><strong>Toileting issues:</strong> Address sensory aversions, fear of toilet, or lack of interoceptive awareness<sup>9</sup></li>
-        </ul>
+  
+      <h3 className="text-[#0c264d] font-bold mb-4 mt-8 text-xl border-b-2 border-[#2abcd4] pb-2">Crucial GI Considerations</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        
+        <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 border-l-4 border-l-[#be185d]">
+          <h4 className="font-bold text-[#be185d] mb-1">Behavior as Communication</h4>
+          <p className="text-sm text-slate-700 leading-relaxed">Nonverbal children may show sudden behavioral changes (aggression, self-injury) as the <i>only</i> sign of severe GI distress.<sup>9</sup></p>
+        </div>
+        
+        <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 border-l-4 border-l-[#0c264d]">
+          <h4 className="font-bold text-[#0c264d] mb-1">Rule Out the Root</h4>
+          <p className="text-sm text-slate-700 leading-relaxed">Celiac disease, severe food allergies, and inflammatory bowel disease (IBD) must be actively evaluated by a specialist.<sup>9</sup></p>
+        </div>
+        
+        <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 border-l-4 border-l-[#ffd166]">
+          <h4 className="font-bold text-[#0c264d] mb-1">Medication Side Effects</h4>
+          <p className="text-sm text-slate-700 leading-relaxed">Many psychotropic and behavioral medications actively worsen or outright cause severe constipation.<sup>9</sup></p>
+        </div>
+        
+        <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 border-l-4 border-l-[#10b981]">
+          <h4 className="font-bold text-[#10b981] mb-1">Hydration is Key</h4>
+          <p className="text-sm text-slate-700 leading-relaxed">Ensure adequate fluid intake, especially when utilizing fiber supplements or osmotic laxatives to prevent blockages.<sup>9</sup></p>
+        </div>
+
+        <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 border-l-4 border-l-[#2abcd4]">
+          <h4 className="font-bold text-[#2abcd4] mb-1">Dietary Modifications</h4>
+          <p className="text-sm text-slate-700 leading-relaxed">Address extreme food selectivity, actively identify physiological trigger foods, and safely increase fiber.<sup>9</sup></p>
+        </div>
+
+        <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 border-l-4 border-l-[#0c264d]">
+          <h4 className="font-bold text-[#0c264d] mb-1">Toileting Trauma</h4>
+          <p className="text-sm text-slate-700 leading-relaxed">Address sensory aversions, fear of the physical toilet, or a lack of interoceptive awareness (not feeling the urge to go).<sup>9</sup></p>
+        </div>
+
       </div>
 
-      <h4 className="text-[#0c264d] font-bold mb-3">Other Co-occurring Medical Conditions</h4>
-      <ul className="list-disc ml-6 mb-4">
-        <li className="mb-2"><strong>Sleep disorders:</strong> Insomnia, irregular sleep-wake cycles; sleep hygiene, melatonin<sup>10</sup></li>
-        <li className="mb-2"><strong>Seizure disorders:</strong> Higher prevalence in autism; regular neurology follow-up<sup>11</sup></li>
-        <li className="mb-2"><strong>Immune dysregulation:</strong> Some evidence of immune differences; manage allergies, autoimmune conditions<sup>12</sup></li>
-      </ul>
+      {/* VITAL SIGNS: 3-COLUMN GRID */}
+      <h3 className="text-[#0c264d] font-bold mb-4 text-xl border-b-2 border-[#2abcd4] pb-2">Beyond the Gut: Other Medical Realities</h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+        
+        <div className="bg-[#f0f9ff] p-5 rounded-lg border border-[#2abcd4] text-center shadow-sm">
+          <div className="w-10 h-10 mx-auto bg-[#2abcd4] text-white rounded-full flex items-center justify-center font-bold text-xl mb-3">☾</div>
+          <h4 className="font-bold text-[#0c264d] mb-2">Sleep Disorders</h4>
+          <p className="text-xs text-slate-700 leading-relaxed">Insomnia and highly irregular sleep-wake cycles are pervasive. Melatonin and strict sleep hygiene are front-line supports.<sup>10</sup></p>
+        </div>
+        
+        <div className="bg-[#fff0f0] p-5 rounded-lg border border-[#be185d] text-center shadow-sm">
+          <div className="w-10 h-10 mx-auto bg-[#be185d] text-white rounded-full flex items-center justify-center font-bold text-xl mb-3">⚡</div>
+          <h4 className="font-bold text-[#0c264d] mb-2">Seizure Disorders</h4>
+          <p className="text-xs text-slate-700 leading-relaxed">Epilepsy has a significantly higher prevalence in autism. Regular neurology follow-ups and EEGs are critical.<sup>11</sup></p>
+        </div>
+        
+        <div className="bg-slate-50 p-5 rounded-lg border border-[#10b981] text-center shadow-sm">
+          <div className="w-10 h-10 mx-auto bg-[#10b981] text-white rounded-full flex items-center justify-center font-bold text-xl mb-3">⛨</div>
+          <h4 className="font-bold text-[#0c264d] mb-2">Immune Dysregulation</h4>
+          <p className="text-xs text-slate-700 leading-relaxed">Emerging evidence points to distinct immune differences, requiring active management of severe allergies and autoimmune conditions.<sup>12</sup></p>
+        </div>
 
-      <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Healthcare Considerations</h3>
-      <ul className="list-disc ml-6 mb-4">
-        <li className="mb-2"><strong>Communication supports:</strong> AAC devices, visual supports for medical visits</li>
-        <li className="mb-2"><strong>Sensory accommodations:</strong> Weighted lap pads, noise-canceling headphones, dimmed lights in exam rooms</li>
-        <li className="mb-2"><strong>Preventive care:</strong> Don't neglect routine care (dental, vision, well visits) despite challenges<sup>13</sup></li>
-        <li className="mb-2"><strong>Transition to adult care:</strong> Plan transition from pediatric to adult providers<sup>14</sup></li>
-      </ul>
+      </div>
+
+      {/* THE CLINIC TOOLKIT */}
+      <div className="bg-[#0c264d] rounded-xl p-1 mb-8 shadow-md">
+        <div className="bg-white rounded-lg p-6">
+          <h3 className="text-[#0c264d] font-bold mb-5 text-xl flex items-center gap-2 border-b border-gray-100 pb-3">
+            <span className="text-[#ffd166] text-2xl">📋</span> The Clinic Toolkit: Healthcare Access
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+            <div className="flex items-start gap-3">
+              <div className="text-[#2abcd4] font-bold text-lg mt-0.5">✓</div>
+              <div>
+                <h4 className="font-bold text-[#0c264d] text-sm">Communication Access</h4>
+                <p className="text-xs text-slate-600 leading-relaxed mt-1">Ensure AAC devices and visual supports are prepped and utilized for every medical visit.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-3">
+              <div className="text-[#2abcd4] font-bold text-lg mt-0.5">✓</div>
+              <div>
+                <h4 className="font-bold text-[#0c264d] text-sm">Sensory Shields</h4>
+                <p className="text-xs text-slate-600 leading-relaxed mt-1">Bring weighted lap pads, noise-canceling headphones, and explicitly request dimmed lights in exam rooms.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-3">
+              <div className="text-[#2abcd4] font-bold text-lg mt-0.5">✓</div>
+              <div>
+                <h4 className="font-bold text-[#0c264d] text-sm">Routine Preventive Care</h4>
+                <p className="text-xs text-slate-600 leading-relaxed mt-1">Do not neglect routine dental, vision, and well visits despite the high sensory challenges of clinics.<sup>13</sup></p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-3">
+              <div className="text-[#2abcd4] font-bold text-lg mt-0.5">✓</div>
+              <div>
+                <h4 className="font-bold text-[#0c264d] text-sm">Adult Transition</h4>
+                <p className="text-xs text-slate-600 leading-relaxed mt-1">Proactively plan the highly difficult transition from pediatric specialists to adult providers well before age 18.<sup>14</sup></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* --- BOTTOM BACK BUTTON --- */}
       <div className="flex justify-end mt-8 mb-6 clear-both">

@@ -122,22 +122,6 @@ export function EarlyInterventionContent({ setCurrentArticle }: EarlyInterventio
               </div>
             </li>
             
-            <li className="flex items-start gap-3">
-              <span className="text-[#2abcd4] font-bold text-lg mt-0.5">→</span>
-              <div>
-                <a 
-                  href="https://www.zerotothree.org/wp-content/uploads/2010/02/Georgetown-States-Early-Intervention.webp" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="font-bold text-[#0c264d] underline hover:text-[#2abcd4] transition-colors text-base"
-                >
-                  State-by-State EI Eligibility Map
-                </a>
-                <p className="mt-1 text-slate-600 leading-relaxed">
-                  A visual graphic (originally sourced from Georgetown University) that illustrates how Early Intervention eligibility criteria vary dramatically across different US states.
-                </p>
-              </div>
-            </li>
             
             <li className="flex items-start gap-3">
               <span className="text-[#2abcd4] font-bold text-lg mt-0.5">→</span>

@@ -21,15 +21,28 @@ export const coreNeurodevelopmentalRoutes: RouteMap = {
   // ==========================================
   'autism': lazy(() => import('../ArticleAutism').then(m => ({ default: m.ArticleAutism }))),
   
+  // --- HISTORY SUBPAGES ---
+  'autism-history-psychiatry': lazy(() => import('../autism/asd-overview/AutismHistoryPsychiatry').then(m => ({ default: m.AutismHistoryPsychiatry }))),
+  'autism-history-neurobiology': lazy(() => import('../autism/asd-overview/AutismHistoryNeurobiology').then(m => ({ default: m.AutismHistoryNeurobiology }))),
+  'autism-history-medical': lazy(() => import('../autism/asd-overview/AutismHistoryMedical').then(m => ({ default: m.AutismHistoryMedical }))),
+  'autism-history-advocacy': lazy(() => import('../autism/asd-overview/AutismHistoryAdvocacy').then(m => ({ default: m.AutismHistoryAdvocacy }))),
+
+  // --- BIOMEDICAL SUBPAGES ---
+'autism-biomedical-history': lazy(() => import('../autism/asd-support/BiomedicalHistory').then(m => ({ default: m.BiomedicalHistory }))),
+  'autism-biomedical-gut': lazy(() => import('../autism/asd-support/BiomedicalGut').then(m => ({ default: m.BiomedicalGut }))),
+  'autism-biomedical-tiers': lazy(() => import('../autism/asd-support/BiomedicalTiers').then(m => ({ default: m.BiomedicalTiers }))),
+  
   // Autism Sub-Pages
-  'autism-overview': lazy(() => import('../autism/ASDOverview').then(m => ({ default: m.ASDOverview }))),
+  'autism-overview': lazy(() => import('../autism/asd-overview/ASDOverview').then(m => ({ default: m.ASDOverview }))),
   'autism-symptoms': lazy(() => import('../autism/asd-symptoms/ASDSymptoms').then(m => ({ default: m.ASDSymptoms }))),
   'autism-causes':   lazy(() => import('../autism/asd-causes/ASDCauses').then(m => ({ default: m.ASDCauses }))),
   'autism-diagnosis': lazy(() => import('../autism/asd-diagnosis/ASDDiagnosis').then(m => ({ default: m.ASDDiagnosis }))),
   'autism-living':    lazy(() => import('../autism/asd-living/ASDLiving').then(m => ({ default: m.ASDLiving }))),
   'autism-support':   lazy(() => import('../autism/asd-support/ASDSupport').then(m => ({ default: m.ASDSupport }))),
   'autism-support-therapies': lazy(() => import('../autism/asd-support/ASDSupport').then(m => ({ default: (props: any) => <m.ASDSupport {...props} initialTab="therapies" /> }))),
-
+// Special Backdoor Routes for Subpage Back Buttons
+  'autism-overview-history': lazy(() => import('../autism/asd-overview/ASDOverview').then(m => ({ default: (props: any) => <m.ASDOverview {...props} initialTab="context" /> }))),
+  'autism-support-biomedical': lazy(() => import('../autism/asd-support/ASDSupport').then(m => ({ default: (props: any) => <m.ASDSupport {...props} initialTab="biomedical" /> }))),
   // Autism Support Deep Dives
   'autism-early-intervention': lazy(() => import('../autism/asd-support/EarlyInterventionContent').then(m => ({ default: m.EarlyInterventionContent }))),
   'autism-therapies': lazy(() => import('../autism/asd-support/TherapiesContent').then(m => ({ default: m.TherapiesContent }))),

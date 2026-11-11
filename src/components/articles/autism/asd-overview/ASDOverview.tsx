@@ -1,18 +1,31 @@
 import { useSearchParams } from 'react-router-dom';
-import { ImageWithFallback } from '../../figma/ImageWithFallback';
+import { useEffect } from 'react';
+import { ImageWithFallback } from '../../../figma/ImageWithFallback'; // Ensure the path has the 3 dots!
 
 interface ASDOverviewProps {
   setCurrentArticle?: (article: string) => void;
   initialTab?: string;
 }
 
-export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
+export function ASDOverview({ setCurrentArticle, initialTab }: ASDOverviewProps) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeTab = searchParams.get('tab') || 'basics';
+  const activeTab = searchParams.get('tab') || initialTab || 'basics';
 
   const handleTabChange = (newTab: string) => {
     setSearchParams({ tab: newTab });
+    
+    // Clean up the URL if it is stuck on the backdoor route
+    if (window.location.pathname.includes('autism-overview-history')) {
+      window.history.replaceState(null, '', '/autism-overview');
+    }
   };
+
+  // Forces React to change the tab if the router sends a new instruction
+  useEffect(() => {
+    if (initialTab) {
+      handleTabChange(initialTab);
+    }
+  }, [initialTab]);
 
   const tabs = [
     { id: 'basics', label: 'Basics & Features' },
@@ -465,41 +478,85 @@ export function ASDOverview({ setCurrentArticle }: ASDOverviewProps) {
             </div>
           </div>
 
-          {/* History & Looking Forward */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm">
-              <h2 className="text-[#0c264d] font-bold mb-4 text-xl">Historical Milestones</h2>
-              <div className="space-y-4">
-                <div className="border-l-2 border-[#0A9DC4] pl-4">
-                  <div className="font-bold text-[#0c264d] text-sm">1943 - 1944</div>
-                  <div className="text-xs text-gray-600">Kanner & Asperger publish first descriptions.<sup>4, 5</sup></div>
-                </div>
-                <div className="border-l-2 border-[#be185d] pl-4">
-                  <div className="font-bold text-[#be185d] text-sm">1960s - 1980s</div>
-                  <div className="text-xs text-gray-600">Harmful "refrigerator mother" theory blamed parents.<sup>6</sup></div>
-                </div>
-                <div className="border-l-2 border-[#0A9DC4] pl-4">
-                  <div className="font-bold text-[#0c264d] text-sm">1990s</div>
-                  <div className="text-xs text-gray-600">Neurodiversity movement emerges, led by advocates.</div>
-                </div>
-                <div className="border-l-2 border-[#0A9DC4] pl-4">
-                  <div className="font-bold text-[#0c264d] text-sm">2013</div>
-                  <div className="text-xs text-gray-600">DSM-5 consolidates diagnoses under "Autism Spectrum Disorder."</div>
-                </div>
-              </div>
-            </div>
+  {/* History & Pioneer Directory */}
+          <div className="mt-10">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl border-b-2 border-[#0c264d] pb-2">
+              The Pioneers of Autism Research
+            </h2>
+            <p className="text-sm text-gray-700 mb-6">
+              The understanding of autism has evolved drastically over the last century. Select a domain below to explore the key researchers, clinicians, and advocates who shaped our modern understanding of the spectrum.
+            </p>
 
-            <div className="bg-[#ffd166]/20 p-6 rounded-lg border border-[#ffd166]/50 shadow-sm flex flex-col justify-center">
-              <h2 className="text-[#0c264d] font-bold mb-3 text-xl">Looking Forward</h2>
-              <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                The understanding of autism continues to evolve, driven increasingly by autistic voices and neurodiversity perspectives. The focus is shifting drastically from "fixing" or "curing" autism to supporting autistic individuals to thrive authentically as themselves.
-              </p>
-              <p className="text-sm font-bold text-[#0c264d]">
-                Explore the other volumes of Brainopedia for deep dives into Symptoms, Causes, and Support!
-              </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              
+              {/* Psychiatric & Diagnostic Card */}
+              <div className="bg-white p-5 rounded-lg border-l-4 border-[#0c264d] shadow-sm flex flex-col h-full">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Psychiatric & Diagnostic</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2 flex-grow mb-4">
+                  <li><strong>Leo Kanner & Hans Asperger:</strong> Authored the earliest clinical descriptions in the 1940s.</li>
+                  <li><strong>Dr. Bernard Rimland:</strong> Dismantled the harmful "refrigerator mother" theory in 1964.</li>
+                  <li><strong>Drs. Lorna Wing & Judith Gould:</strong> Coined the concept of the "Autism Spectrum" and the Triad of Impairments.</li>
+                  <li><strong>Dr. Catherine Lord:</strong> Co-developed the ADOS and ADI-R, the global gold-standard diagnostic tools.</li>
+                </ul>
+                <button 
+                  onClick={() => setCurrentArticle?.('autism-history-psychiatry')}
+                  className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full sm:w-auto self-start"
+                >
+                  Read more →
+                </button>
+              </div>
+
+              {/* Genetics & Neurobiology Card */}
+              <div className="bg-white p-5 rounded-lg border-l-4 border-[#2abcd4] shadow-sm flex flex-col h-full">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Genetics & Neurobiology</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2 flex-grow mb-4">
+                  <li><strong>Drs. Susan Folstein & Michael Rutter:</strong> Proved the genetic heritability of autism in their 1977 twin studies.</li>
+                  <li><strong>Drs. Margaret Bauman & Eric Courchesne:</strong> Pioneered the study of early brain development and neuroanatomy.</li>
+                  <li><strong>Dr. Thomas Bourgeron & Dr. Wendy Chung:</strong> Leading geneticists mapping synaptic genes and *de novo* variations.</li>
+                  <li><strong>Dr. A. Jean Ayres:</strong> Developed Sensory Integration Theory, laying the groundwork for modern OT.</li>
+                </ul>
+                <button 
+                  onClick={() => setCurrentArticle?.('autism-history-neurobiology')}
+                  className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full sm:w-auto self-start"
+                >
+                  Read more →
+                </button>
+              </div>
+
+              {/* Whole-Body & Medical Card */}
+              <div className="bg-white p-5 rounded-lg border-l-4 border-[#ffd166] shadow-sm flex flex-col h-full">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Whole-Body & Medical</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2 flex-grow mb-4">
+                  <li><strong>Dr. Martha Herbert:</strong> Championed the systems-biology approach, viewing autism as a whole-body phenomenon.</li>
+                  <li><strong>Drs. Timothy Buie & Alessio Fasano:</strong> Established the consensus on physical GI pain in autism and gut microbiome permeability.</li>
+                  <li><strong>Drs. Richard Frye & S. Jill James:</strong> Pioneered research into mitochondrial dysfunction, oxidative stress, and folate immunology.</li>
+                </ul>
+                <button 
+                  onClick={() => setCurrentArticle?.('autism-history-medical')}
+                  className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full sm:w-auto self-start"
+                >
+                  Read more →
+                </button>
+              </div>
+
+              {/* Cognitive & Advocacy Card */}
+              <div className="bg-white p-5 rounded-lg border-l-4 border-[#be185d] shadow-sm flex flex-col h-full">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Cognition & Self-Advocacy</h3>
+                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2 flex-grow mb-4">
+                  <li><strong>Drs. Simon Baron-Cohen & Laurent Mottron:</strong> Advanced theories on cognitive strengths (Systemizing, Enhanced Perceptual Functioning).</li>
+                  <li><strong>Jim Sinclair:</strong> Early self-advocate who wrote the foundational 1993 essay "Don't Mourn For Us."</li>
+                  <li><strong>Dr. Damian Milton:</strong> Autistic sociologist who formulated the "Double Empathy Problem" regarding cross-neurotype communication breakdowns.</li>
+                </ul>
+                <button 
+                  onClick={() => setCurrentArticle?.('autism-history-advocacy')}
+                  className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full sm:w-auto self-start"
+                >
+                  Read more →
+                </button>
+              </div>
+
             </div>
           </div>
-
         </div>
       )}
 
