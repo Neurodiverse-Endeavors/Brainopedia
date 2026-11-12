@@ -37,7 +37,7 @@ export function BiomedicalTiers({ setCurrentArticle }: BiomedicalTiersProps) {
             It is critical to state clearly: none of the interventions below "cure" autism. Autism is a neurodevelopmental difference. However, autistic individuals suffer from notoriously high rates of co-occurring medical issues—like severe gastrointestinal disease, immune dysregulation, and metabolic blockages.
           </p>
           <p className="text-slate-700 leading-relaxed text-sm font-bold text-[#0c264d]">
-            When a child is in chronic physical pain, their nervous system dysregulates. The biomedical interventions listed here are specific, studied medical treatments designed to heal underlying physiology. When physical pain and inflammation are resolved, regulation, communication, and overall quality of life drastically improve.
+            When a child is in chronic physical pain, their nervous system dysregulates. The biomedical interventions listed here under Tier 1 are specific, studied medical treatments designed to heal underlying physiology. When physical pain and inflammation are resolved, regulation, communication, and overall quality of life drastically improve. As stated, Tier 2 have more limited evidence. And Tier 3 interventions are dangerous or disproven. Please read carefully and consult a license physician before pursuing any biomedical intervention.
           </p>
         </div>
 
