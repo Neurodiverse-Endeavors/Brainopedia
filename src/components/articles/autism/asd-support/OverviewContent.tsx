@@ -1,4 +1,5 @@
 import { ImageWithFallback } from "../../../figma/ImageWithFallback";
+import { Sparkles, CheckCircle, Heart, TrendingUp, Shield, MessageCircle, Target, MessageSquare, Sliders, Users } from 'lucide-react';
 
 interface OverviewContentProps {
   setCurrentArticle?: (article: string) => void;
@@ -12,22 +13,26 @@ export function OverviewContent({ setCurrentArticle }: OverviewContentProps) {
       <div>
         <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Support Philosophy & Approach</h2>
         
-        <p className="mb-4 text-slate-700 leading-relaxed">
+        <p className="mb-4 text-slate-700 leading-relaxed text-sm">
           Support for autistic individuals should be individualized, strengths-based, and centered on improving 
           quality of life rather than simply reducing autistic traits.<sup>1</sup> The goal is to help autistic 
           people thrive as themselves, not to make them "indistinguishable from their peers."<sup>1</sup> Effective 
           support respects neurodiversity while providing accommodations and skills to navigate a neurotypical world.
         </p>
+
+        {/* Level 3 / High Support Needs Acknowledgement */}
+        <div className="bg-slate-50 border-l-4 border-[#10b981] p-4 mb-4 rounded-r-md shadow-sm">
+          <p className="text-slate-700 text-sm leading-relaxed">
+            <strong>Acknowledging Profound Support Needs:</strong> Embracing neurodiversity does not mean minimizing severe disability. For individuals with Level 3 autism, "thriving" often requires intensive, 24/7 care to ensure physical safety, manage severe dysregulation (such as self-injury or elopement), and rigorously investigate underlying medical pain that cannot be verbally communicated. Validating the autistic neurotype includes validating the immense, daily realities of profound disability.
+          </p>
+        </div>
    
-{/* --- CENTERED GRAPHIC SECTION 1 --- */} 
-      <div className="text-center w-full mb-8 mt-6"> 
-        <div className="mx-auto w-48 md:w-64"> 
-          <ImageWithFallback 
-            src="/images/autism/autism-support-Overvtab-philosph.webp" 
-            alt="abstract graphic of philosophy and support"
-          /> 
-        </div> 
-      </div>
+        {/* --- CENTERED GRAPHIC SECTION 1 --- */} 
+        <ImageWithFallback 
+          src="/images/autism/autism-support-Overvtab-philosph.webp" 
+          alt="abstract painting of philosophy and support"
+          className="block mx-auto w-96 max-w-full h-auto mb-8 mt-6 rounded-lg shadow-md border border-[#2abcd4]"
+        /> 
       
         {/* CORE PRINCIPLES MINI CARDS */}
         <div className="bg-white rounded-md border-2 border-[#2abcd4] p-6 mb-4 shadow-sm">
@@ -35,58 +40,100 @@ export function OverviewContent({ setCurrentArticle }: OverviewContentProps) {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Presume competence:</strong> Assume understanding and potential even when not immediately obvious.<sup>2</sup></p>
+            {/* Principle 1: Cyan Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-4">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Presume Competence</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Assume understanding and potential even when not immediately obvious.<sup>2</sup></p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Respect autonomy:</strong> Heavily support individual choice-making and self-determination.<sup>3</sup></p>
+            {/* Principle 2: Gold/Navy Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#ffd166]/20 text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-50 mb-4">
+                <CheckCircle className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Respect Autonomy</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Heavily support individual choice-making and self-determination.<sup>3</sup></p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Focus on quality of life:</strong> Prioritize joy, comfort, and regulation, not just skill acquisition or behavior reduction.</p>
+            {/* Principle 3: Green Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#f0fdf4] text-[#10b981] flex items-center justify-center shrink-0 shadow-sm border border-[#bbf7d0] mb-4">
+                <Heart className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Focus on Quality of Life</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Prioritize joy, comfort, and regulation, not just skill acquisition or behavior reduction.</p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Build on strengths:</strong> Leverage special interests and deep passions for learning and engagement.</p>
+            {/* Principle 4: Cyan Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-4">
+                <TrendingUp className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Build on Strengths</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Leverage special interests and deep passions for learning and engagement.</p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Accept autistic ways of being:</strong> Do not target harmless regulatory behaviors like stimming.</p>
+            {/* Principle 5: Gold/Navy Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#ffd166]/20 text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-50 mb-4">
+                <Shield className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Accept Autistic Ways</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Do not target harmless regulatory behaviors like stimming.</p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Listen to autistic voices:</strong> Always center autistic perspectives in care decisions and frameworks.<sup>4</sup></p>
+            {/* Principle 6: Green Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#f0fdf4] text-[#10b981] flex items-center justify-center shrink-0 shadow-sm border border-[#bbf7d0] mb-4">
+                <MessageCircle className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Listen to Autistic Voices</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Always center autistic perspectives in care decisions and frameworks.<sup>4</sup></p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Teach to the individual:</strong> Recognize that one size does not fit all; adapt to their unique neurotype.</p>
+            {/* Principle 7: Cyan Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-4">
+                <Target className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Teach to the Individual</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Recognize that one size does not fit all; adapt to their unique neurotype.</p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Support communication:</strong> Provide immediate access to AAC and communication methods that work for them.</p>
+            {/* Principle 8: Gold/Navy Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#ffd166]/20 text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166] border-opacity-50 mb-4">
+                <MessageSquare className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Support Communication</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Provide immediate access to AAC and communication methods that work for them.</p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Sensory environments:</strong> Reduce physical barriers rather than expecting constant sensory adaptation.</p>
+            {/* Principle 9: Green Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#f0fdf4] text-[#10b981] flex items-center justify-center shrink-0 shadow-sm border border-[#bbf7d0] mb-4">
+                <Sliders className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Sensory Environments</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Reduce physical barriers rather than expecting constant sensory adaptation.</p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-md border-l-4 border-[#2abcd4] shadow-sm">
-              <p className="text-sm text-slate-700"><strong>Promote inclusion:</strong> Support active, meaningful participation in community life.<sup>3</sup></p>
+            {/* Principle 10: Cyan Square */}
+            <div className="bg-slate-50 p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-4">
+                <Users className="w-5 h-5" />
+              </div>
+              <h4 className="text-[#0c264d] font-bold text-sm mb-2">Promote Inclusion</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">Support active, meaningful participation in community life.<sup>3</sup></p>
             </div>
 
           </div>
         </div>
       </div>
-      {/* --- CENTERED GRAPHIC SECTION 2 --- */} 
-      <div className="text-center w-full mb-8 mt-8"> 
-        <div className="mx-auto w-48 md:w-64"> 
-          <ImageWithFallback 
-            src="/images/autism/autism-support-Overvtab-harmful.webp" 
-            alt="medical caution graphic"
-          /> 
-        </div> 
-      </div>
+      
       {/* Unsupported & Harmful Approaches */}
       <div className="mt-12">
         <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Red Flags: Approaches to Avoid</h2>
@@ -97,7 +144,7 @@ export function OverviewContent({ setCurrentArticle }: OverviewContentProps) {
             <div className="bg-[#fff0f0] p-4 rounded">
               <p><strong>Conversion/Compliance-focused Interventions:</strong> Therapies that prioritize forcing a child to act "indistinguishable from peers" (such as suppressing harmless stimming or forcing eye contact) rather than focusing on the child's internal regulation. These have been heavily linked to severe mental health declines and PTSD.<sup>5</sup></p>
             </div>
-         <div className="bg-[#fff0f0] p-4 rounded">
+            <div className="bg-[#fff0f0] p-4 rounded">
               <p><strong>Facilitated Communication (FC):</strong> A discredited practice where a "facilitator" guides the hand or arm of a non-speaking individual. Systematic reviews have consistently found no evidence that the messages are authored by the autistic person, demonstrating instead that they reflect the facilitator's thoughts.<sup>6</sup></p>
             </div>
           </div>
@@ -119,7 +166,12 @@ export function OverviewContent({ setCurrentArticle }: OverviewContentProps) {
           </button>
         </div>
     
-
+        {/* --- CENTERED GRAPHIC SECTION 2 --- */} 
+        <ImageWithFallback 
+          src="/images/autism/autism-support-Overvtab-harmful.webp" 
+          alt="doctor explaining approaches photo"
+          className="block mx-auto w-96 max-w-full h-auto mb-8 mt-8 rounded-lg shadow-md border border-[#be185d]"
+        /> 
              
       </div>
 
