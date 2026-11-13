@@ -106,23 +106,31 @@ export function BiomedicalHistory({ setCurrentArticle }: BiomedicalHistoryProps)
       <div className="flex justify-end mt-12 mb-6">
         <BackButton />
       </div>
-
+{/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
       
         <div className="mb-6">
           <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-            Cited Studies & Historical Literature
+            Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Edelson, S. M. (2020). The Autism Research Institute: 50+ Years of Advancing Research and Supporting Families. <i>Autism Research Institute</i>.</p>
-            <p>2. Herbert, M. (2005). Large brains in autism: the challenge of pervasive abnormality. <i>The Neuroscientist</i>, 11(5), 417-440.</p>
-            <p>3. Frye, R. E., & Rossignol, D. A. (2014). Treatments for biomedical abnormalities associated with autism spectrum disorder. <i>Frontiers in Pediatrics</i>, 2, 66.</p>
-            <p>4. McCarthy, J., & Kartzinel, J. (2009). <i>Healing and Preventing Autism: A Complete Guide</i>. Dutton Adult.</p>
-            <p>5. Bock, K., & Stauth, C. (2007). <i>Healing the New Childhood Epidemics: Autism, ADHD, Asthma, and Allergies</i>. Ballantine Books.</p>
-            <p>6. Taylor, L. E., Swerdfeger, A. L., & Eslick, G. D. (2014). Vaccines are not associated with autism: an evidence-based meta-analysis of case-control and cohort studies. <i>Vaccine</i>, 32(29), 3623-3629.</p>
-            <p>7. Madsen, K. M., et al. (2002). A population-based study of measles, mumps, and rubella vaccination and autism. <i>New England Journal of Medicine</i>, 347(19), 1477-1482.</p>
+            <p>1. Edelson, S. M. (2020). "The Autism Research Institute: 50+ Years of Advancing Research and Supporting Families." <i>Autism Research Institute</i>.</p>
+            <p>2. Herbert, M. (2005). "Large brains in autism: the challenge of pervasive abnormality." <i>The Neuroscientist</i>.</p>
+            <p>3. Frye, R. E., & Rossignol, D. A. (2014). "Treatments for biomedical abnormalities associated with autism spectrum disorder." <i>Frontiers in Pediatrics</i>.</p>
+            <p>4. Taylor, L. E., Swerdfeger, A. L., & Eslick, G. D. (2014). "Vaccines are not associated with autism: an evidence-based meta-analysis of case-control and cohort studies." <i>Vaccine</i>.</p>
+            <p>5. Madsen, K. M., et al. (2002). "A population-based study of measles, mumps, and rubella vaccination and autism." <i>New England Journal of Medicine</i>.</p>
           </div>
+        </div>
+        
+        <div>
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+            Background Sources
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>McCarthy, J., & Kartzinel, J. (2009). <i>Healing and Preventing Autism: A Complete Guide</i>. Dutton Adult.</li>
+            <li>Bock, K., & Stauth, C. (2007). <i>Healing the New Childhood Epidemics: Autism, ADHD, Asthma, and Allergies</i>. Ballantine Books.</li>
+          </ul>
         </div>
       </div>
     </article>

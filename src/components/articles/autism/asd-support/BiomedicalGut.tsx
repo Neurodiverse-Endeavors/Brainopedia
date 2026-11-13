@@ -151,19 +151,19 @@ export function BiomedicalGut({ setCurrentArticle }: BiomedicalGutProps) {
       
         <div className="mb-6">
           <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-            Cited Studies & Medical Literature
+            Cited Studies & STATISTICS
           </h4>
           <div className="text-xs space-y-4 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Adams, J. B., et al. (2011). Gastrointestinal flora and gastrointestinal status in children with autism--comparisons to typical children and correlation with autism severity. <i>BMC Gastroenterology</i>, 11, 22.</p>
-            <p>2. MacFabe, D. F. (2012). Short-chain fatty acid fermentation products of the gut microbiome: implications in autism spectrum disorders. <i>Microbial Ecology in Health and Disease</i>, 23(1).</p>
-            <p>3. Fasano, A. (2012). Zonulin, regulation of tight junctions, and autoimmune diseases. <i>Annals of the New York Academy of Sciences</i>, 1258(1), 25-33.</p>
-            <p>4. Hsiao, E. Y., et al. (2013). Microbiota modulate behavioral and physiological abnormalities associated with neurodevelopmental disorders. <i>Cell</i>, 155(7), 1451-1463.</p>
-            <p>5. Mayer, E. A. (2011). Gut feelings: the emerging biology of gut-brain communication. <i>Nature Reviews Neuroscience</i>, 12(8), 453-466.</p>
+            <p>1. Adams, J. B., et al. (2011). "Gastrointestinal flora and gastrointestinal status in children with autism--comparisons to typical children and correlation with autism severity." <i>BMC Gastroenterology</i>.</p>
+            <p>2. MacFabe, D. F. (2012). "Short-chain fatty acid fermentation products of the gut microbiome: implications in autism spectrum disorders." <i>Microbial Ecology in Health and Disease</i>.</p>
+            <p>3. Fasano, A. (2012). "Zonulin, regulation of tight junctions, and autoimmune diseases." <i>Annals of the New York Academy of Sciences</i>.</p>
+            <p>4. Hsiao, E. Y., et al. (2013). "Microbiota modulate behavioral and physiological abnormalities associated with neurodevelopmental disorders." <i>Cell</i>.</p>
+            <p>5. Mayer, E. A. (2011). "Gut feelings: the emerging biology of gut-brain communication." <i>Nature Reviews Neuroscience</i>.</p>
             <p>6. Porges, S. W. (2011). <i>The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-regulation</i>. W. W. Norton & Company.</p>
-            <p>7. Buie, T., et al. (2010). Evaluation, diagnosis, and treatment of gastrointestinal disorders in individuals with ASDs: a consensus report. <i>Pediatrics</i>, 125 Suppl 1, S1-18.</p>
-            <p>8. Reichelt, K. L., et al. (1990). Biologically active peptide-containing fractions in schizophrenia and childhood autism. <i>Advances in Biochemical Psychopharmacology</i>, 28, 1-7.</p>
+            <p>7. Buie, T., et al. (2010). "Evaluation, diagnosis, and treatment of gastrointestinal disorders in individuals with ASDs: a consensus report." <i>Pediatrics</i>.</p>
+            <p>8. Reichelt, K. L., et al. (1990). "Biologically active peptide-containing fractions in schizophrenia and childhood autism." <i>Advances in Biochemical Psychopharmacology</i>.</p>
             <p>9. Campbell-McBride, N. (2004). <i>Gut and Psychology Syndrome: Natural Treatment for Autism, ADD/ADHD, Dyslexia, Dyspraxia, Depression, Schizophrenia</i>. Medinform Publishing.</p>
-            <p>10. Nigg, J. T., et al. (2012). Meta-analysis of attention-deficit/hyperactivity disorder or attention-deficit/hyperactivity disorder symptoms, restriction diet, and synthetic food color additives. <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>, 51(1), 86-97. / Konstantynowicz, J., et al. (2012). A potential pathogenic role of oxalate in autism. <i>European Journal of Paediatric Neurology</i>, 16(5), 485-491.</p>
+            <p>10. Nigg, J. T., et al. (2012). "Meta-analysis of attention-deficit/hyperactivity disorder or attention-deficit/hyperactivity disorder symptoms, restriction diet, and synthetic food color additives." <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. / Konstantynowicz, J., et al. (2012). "A potential pathogenic role of oxalate in autism." <i>European Journal of Paediatric Neurology</i>.</p>
           </div>
         </div>
         
@@ -172,7 +172,7 @@ export function BiomedicalGut({ setCurrentArticle }: BiomedicalGutProps) {
             Background Sources
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
-            <li>Navarro, F., et al. (2016). Research review: the role of diets in the treatment of autism spectrum disorder. <i>Child and Adolescent Psychiatric Clinics of North America</i>, 25(1), 117-143.</li>
+            <li>Navarro, F., et al. (2016). "Research review: the role of diets in the treatment of autism spectrum disorder." <i>Child and Adolescent Psychiatric Clinics of North America</i>.</li>
             <li>Herbert, M., & Weintraub, K. (2012). <i>The Autism Revolution: Whole-Body Strategies for Making Life All It Can Be</i>. Ballantine Books.</li>
           </ul>
         </div>

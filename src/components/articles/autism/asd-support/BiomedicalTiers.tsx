@@ -198,27 +198,37 @@ export function BiomedicalTiers({ setCurrentArticle }: BiomedicalTiersProps) {
         <BackButton />
       </div>
 
+
+{/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
       
         <div className="mb-6">
           <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-            Cited Studies & Empirical Literature
+            Cited Studies & Statistics
           </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Rossignol, D. A., & Frye, R. E. (2011). Melatonin in autism spectrum disorders: a systematic review and meta-analysis. <i>Developmental Medicine & Child Neurology</i>, 53(9), 783-792.</p>
-            <p>2. Adams, J. B., et al. (2011). Nutritional and metabolic status of children with autism vs. neurotypical children, and the association with autism severity. <i>Nutrition & Metabolism</i>, 8(1), 34.</p>
-            <p>3. Frye, R. E., et al. (2013). Cerebral folate receptor autoantibodies in autism spectrum disorder. <i>Molecular Psychiatry</i>, 18(3), 369-381.</p>
-            <p>4. Buie, T., et al. (2010). Evaluation, diagnosis, and treatment of gastrointestinal disorders in individuals with ASDs: a consensus report. <i>Pediatrics</i>, 125 Suppl 1, S1-18.</p>
-            <p>5. Kang, D. W., et al. (2019). Long-term benefit of Microbiota Transfer Therapy on autism symptoms and gut microbiota. <i>Scientific Reports</i>, 9(1), 5821.</p>
-            <p>6. Levy, S. E., & Hyman, S. L. (2015). Complementary and Alternative Medicine Treatments for Children with Autism Spectrum Disorders. <i>Child and Adolescent Psychiatric Clinics of North America</i>, 24(1), 117-143.</p>
-            <p>7. Hendren, R. L., et al. (2016). Randomized, Placebo-Controlled Trial of Methyl B12 for Children with Autism. <i>Journal of Child and Adolescent Psychopharmacology</i>, 26(9), 774-783.</p>
-            <p>8. Xiong, T., et al. (2016). Hyperbaric oxygen therapy for people with autism spectrum disorder (ASD). <i>Cochrane Database of Systematic Reviews</i>, 10.</p>
-            <p>9. U.S. Food and Drug Administration (FDA). (2019). <i>Be Aware of Potentially Dangerous Products and Therapies that Claim to Treat Autism</i>. Consumer Updates.</p>
-            <p>10. James, S., et al. (2015). Chelation for autism spectrum disorder (ASD). <i>Cochrane Database of Systematic Reviews</i>, (5).</p>
-            <p>11. Hyman, S. L., et al. (2020). Identification, Evaluation, and Management of Children With Autism Spectrum Disorder. <i>Pediatrics</i>, 145(1).</p>
-            <p>12. Williams, K., et al. (2012). Intravenous secretin for autism spectrum disorder (ASD). <i>Cochrane Database of Systematic Reviews</i>, (4).</p>
+          <div className="text-xs space-y-4 text-slate-600 leading-relaxed" style={{ textIndent: 0 }}>
+            <p>1. Adams, J. B., et al. (2011). "Gastrointestinal flora and gastrointestinal status in children with autism--comparisons to typical children and correlation with autism severity." <i>BMC Gastroenterology</i>.</p>
+            <p>2. MacFabe, D. F. (2012). "Short-chain fatty acid fermentation products of the gut microbiome: implications in autism spectrum disorders." <i>Microbial Ecology in Health and Disease</i>.</p>
+            <p>3. Fasano, A. (2012). "Zonulin, regulation of tight junctions, and autoimmune diseases." <i>Annals of the New York Academy of Sciences</i>.</p>
+            <p>4. Hsiao, E. Y., et al. (2013). "Microbiota modulate behavioral and physiological abnormalities associated with neurodevelopmental disorders." <i>Cell</i>.</p>
+            <p>5. Mayer, E. A. (2011). "Gut feelings: the emerging biology of gut-brain communication." <i>Nature Reviews Neuroscience</i>.</p>
+            <p>6. Porges, S. W. (2011). <i>The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-regulation</i>. W. W. Norton & Company.</p>
+            <p>7. Buie, T., et al. (2010). "Evaluation, diagnosis, and treatment of gastrointestinal disorders in individuals with ASDs: a consensus report." <i>Pediatrics</i>.</p>
+            <p>8. Reichelt, K. L., et al. (1990). "Biologically active peptide-containing fractions in schizophrenia and childhood autism." <i>Advances in Biochemical Psychopharmacology</i>.</p>
+            <p>9. Nigg, J. T., et al. (2012). "Meta-analysis of attention-deficit/hyperactivity disorder or attention-deficit/hyperactivity disorder symptoms, restriction diet, and synthetic food color additives." <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>. / Konstantynowicz, J., et al. (2012). "A potential pathogenic role of oxalate in autism." <i>European Journal of Paediatric Neurology</i>.</p>
           </div>
+        </div>
+        
+        <div>
+          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+            Background Sources
+          </h4>
+          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
+            <li>Campbell-McBride, N. (2004). <i>Gut and Psychology Syndrome: Natural Treatment for Autism, ADD/ADHD, Dyslexia, Dyspraxia, Depression, Schizophrenia</i>. Medinform Publishing.</li>
+            <li>Navarro, F., et al. (2016). "Research review: the role of diets in the treatment of autism spectrum disorder." <i>Child and Adolescent Psychiatric Clinics of North America</i>.</li>
+            <li>Herbert, M., & Weintraub, K. (2012). <i>The Autism Revolution: Whole-Body Strategies for Making Life All It Can Be</i>. Ballantine Books.</li>
+          </ul>
         </div>
       </div>
     </article>
