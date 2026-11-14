@@ -31,7 +31,7 @@ export function OverviewContent({ setCurrentArticle }: OverviewContentProps) {
         <ImageWithFallback 
           src="/images/autism/autism-support-Overvtab-philosph.webp" 
           alt="abstract painting of philosophy and support"
-          className="block mx-auto w-96 max-w-full h-auto mb-8 mt-6 rounded-lg shadow-md border border-[#2abcd4]"
+          className="block mx-auto w-120 max-w-full h-auto mb-8 mt-6 rounded-lg shadow-md border border-[#2abcd4]"
         /> 
       
         {/* CORE PRINCIPLES MINI CARDS */}

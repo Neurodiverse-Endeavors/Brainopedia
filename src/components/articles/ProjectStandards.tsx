@@ -719,7 +719,77 @@ export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
             className="mt-2 px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold"
           </code>
         </div>
+
+    
       </section>
+
+   {/* ===== BACK NAVIGATION BUTTONS ===== */}
+      <div className="mt-12">
+        <h3 className="text-xl font-bold text-[#0c264d] mb-4 border-b pb-2">
+          "Back to [Section]" Navigation Buttons
+        </h3>
+        <p className="text-sm text-slate-700 mb-4">
+          Used to return users to a parent hub from a deep-dive page. These buttons act as primary navigation, utilizing the Yellow-to-Navy hover transition and a text-based left arrow (<code>←</code>). They must never use Lucide icons.
+        </p>
+
+        <h4 className="font-bold text-[#0c264d] text-sm mb-2">Core Button Class String:</h4>
+        <div className="bg-slate-800 rounded-lg p-4 mb-6 overflow-x-auto text-sm text-white font-mono whitespace-pre">
+          {`<button 
+  onClick={() => setCurrentArticle?.('parent-route-id')}
+  className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
+>
+  <span className="text-xl">←</span>
+  Back to [Section]
+</button>`}
+
+<p>
+  {/* ===== BOTTOM BACK BUTTON (Right-Aligned) ===== */}
+      <div className="mt-8 mb-12 flex justify-end w-full">
+        <button 
+          onClick={() => setCurrentArticle?.('autism-support-biomedical')}
+          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+        >
+          <span className="text-xl">←</span>
+          Back to Biomedical
+        </button>
+      </div>
+      
+</p>
+
+<div className="bg-slate-800 rounded-lg p-4 mb-6 overflow-x-auto text-sm text-white font-mono whitespace-pre">
+          {`{/* ===== BOTTOM BACK BUTTON EXAMPLE OF BIOMEDICAL BUTTON ABOVE (Right-Aligned) ===== */}
+<div className="mt-8 mb-12 flex justify-end w-full">
+  <button 
+    onClick={() => setCurrentArticle?.('autism-support-biomedical')}
+    className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+  >
+    <span className="text-xl">←</span>
+    Back to Biomedical
+  </button>
+</div>`}
+        </div>
+
+        </div>
+        
+
+        <h4 className="font-bold text-[#0c264d] text-sm mb-2">Required Layout Placements:</h4>
+        <ul className="list-none space-y-4 text-sm text-slate-700 mb-4">
+          <li className="bg-slate-50 p-4 rounded border border-slate-200">
+            <strong>1. Header Placement (Right-Aligned next to Title):</strong>
+            <p className="mt-1 mb-2 text-xs">Wrap the Title <code></code> and the Button in this flex container:</p>
+            <code className="text-xs bg-slate-200 px-2 py-1 rounded text-slate-800 block">
+              {`<div className="pb-6 border-b-4 border-[#0c264d] mb-10 mt-6 flex flex-col md:flex-row md:items-start justify-between gap-6">`}
+            </code>
+          </li>
+          <li className="bg-slate-50 p-4 rounded border border-slate-200">
+            <strong>2. Bottom Placement (Right-Aligned before References):</strong>
+            <p className="mt-1 mb-2 text-xs">Place this wrapper immediately following the end of the core content, strictly before the References section:</p>
+            <code className="text-xs bg-slate-200 px-2 py-1 rounded text-slate-800 block">
+              {`<div className="mt-8 mb-12 flex justify-end w-full">`}
+            </code>
+          </li>
+        </ul>
+      </div>
 
       {/* CRITICAL ALERTS */}
       <section className="mb-12">

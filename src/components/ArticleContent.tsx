@@ -233,6 +233,7 @@ const articleMap: RouteMap = {
   'terms': lazy(() => import('./articles/TermsOfUse').then(m => ({ default: m.TermsOfUse }))),
   'contact': lazy(() => import('./articles/Contact').then(m => ({ default: m.Contact }))),
   'rsd-deep-dive': lazy(() => import('./articles/adhd/ADHDSymptomsTabRSD').then(m => ({ default: m.ADHDSymptomsTabRSD }))),
+  'biomedical-pathways': lazy(() => import('./articles/autism/asd-support/BiomedicalPathways').then(m => ({ default: m.BiomedicalPathways }))),
   
   // MAP THE HIDDEN BOARD PAGE HERE (Loading it directly instead of lazily prevents routing blips)
   'board-verification': BoardOfDirectors,
