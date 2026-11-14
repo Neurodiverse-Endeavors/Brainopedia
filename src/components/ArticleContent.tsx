@@ -225,7 +225,7 @@ const articleMap: RouteMap = {
 
   'home': lazy(() => import('./articles/Home').then(m => ({ default: m.Home }))),
   'symptom-wheel-demo': lazy(() => import('./SymptomWheelDemo').then(m => ({ default: m.SymptomWheelDemo }))),
-  'project-standards': lazy(() => import('./articles/ProjectStandards')),
+  'project-standards': lazy(() => import('./articles/ProjectStandards').then(m => ({ default: m.ProjectStandards }))),
   'about': lazy(() => import('./articles/ArticleAbout').then(m => ({ default: m.ArticleAbout }))),
   'donate': lazy(() => import('./articles/ArticleDonate').then(m => ({ default: m.ArticleDonate }))),
   'blog': lazy(() => import('./articles/ArticleBlog').then(m => ({ default: m.ArticleBlog }))),

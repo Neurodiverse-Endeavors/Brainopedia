@@ -24,12 +24,12 @@ export function BiomedicalContent({ setCurrentArticle }: BiomedicalContentProps)
               <li><strong>Metabolics & Immunology:</strong> The role of mitochondrial function and oxidative stress.</li>
               <li><strong>Integrative Care:</strong> The modern shift toward evidence-based medical and nutritional support.</li>
             </ul>
-            {/* <button 
+            {<button 
               onClick={() => setCurrentArticle?.('autism-biomedical-history')}
               className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full self-start"
             >
               Read more →
-            </button> */}
+            </button>}
           </div>
 
           {/* Gut-Brain & Diets Card */}
@@ -41,12 +41,12 @@ export function BiomedicalContent({ setCurrentArticle }: BiomedicalContentProps)
               <li><strong>Specialized Diets:</strong> Navigating GFCF, GAPS, and targeted elimination protocols.</li>
               <li><strong>Hidden Pain:</strong> How undiagnosed GI conditions actively drive behavioral dysregulation.</li>
             </ul>
-            {/* <button 
+            {<button 
               onClick={() => setCurrentArticle?.('autism-biomedical-gut')}
               className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full self-start"
             >
               Read more →
-            </button> */}
+            </button>}
           </div>
           
           {/* Evidence Tiers Card */}
@@ -57,12 +57,12 @@ export function BiomedicalContent({ setCurrentArticle }: BiomedicalContentProps)
               <li><strong>The "Gray Area":</strong> Mixed-evidence therapies like fecal transplants and high-dose vitamins.</li>
               <li><strong>Dangerous & Disproven:</strong> Unsafe, highly risky protocols explicitly warned against by medical boards.</li>
             </ul>
-            {/* <button 
+            {<button 
               onClick={() => setCurrentArticle?.('autism-biomedical-tiers')}
               className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full self-start"
             >
               Read more →
-            </button> */}
+            </button>}
           </div>
 
         </div>

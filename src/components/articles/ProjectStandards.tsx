@@ -74,8 +74,9 @@ export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
 
         </div>
       </div>
+
       {/* EXPORTS, IMPORTS & ROUTING */}
-      <section className="mb-12">
+      <section className="mt-16 mb-12">
         <h2 className="text-[#0c264d] text-2xl font-bold mb-6 flex items-center gap-2 border-b pb-2">
           <Code className="text-[#2abcd4]" /> EXPORTS, IMPORTS & ROUTING
         </h2>
