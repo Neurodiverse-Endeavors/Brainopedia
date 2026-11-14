@@ -1,4 +1,4 @@
-import { Activity, History, Microscope, Scale } from 'lucide-react';
+import { Activity, History, Microscope, OctagonAlert } from 'lucide-react';
 
 interface BiomedicalContentProps {
   setCurrentArticle?: (article: string) => void;
@@ -93,7 +93,7 @@ export function BiomedicalContent({ setCurrentArticle }: BiomedicalContentProps)
             <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
             <div className="flex items-center gap-4 mb-4 border-b border-[#ffd166]/40 pb-4 pl-2">
               <div className="w-12 h-12 rounded-full bg-white text-[#0c264d] flex items-center justify-center shrink-0 shadow-sm border border-[#ffd166]/50">
-                <Scale className="w-6 h-6" />
+                <OctagonAlert className="w-6 h-6" />
               </div>
               <h3 className="text-xl text-[#0c264d] font-bold leading-tight">Intervention Tiers</h3>
             </div>

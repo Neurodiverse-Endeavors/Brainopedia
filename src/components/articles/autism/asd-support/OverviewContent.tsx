@@ -13,15 +13,18 @@ export function OverviewContent({ setCurrentArticle }: OverviewContentProps) {
       <div>
         <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Support Philosophy & Approach</h2>
         
-        <p className="mb-4 text-slate-700 leading-relaxed text-sm">
+              <div className="bg-slate-50 border-l-4 border-[#ffd166] p-4 mb-4 rounded-r-md shadow-sm">
+          <p className="text-slate-700 text-sm leading-relaxed">
+            <strong>Thriving, Not Conforming: </strong>
           Support for autistic individuals should be individualized, strengths-based, and centered on improving 
           quality of life rather than simply reducing autistic traits.<sup>1</sup> The goal is to help autistic 
           people thrive as themselves, not to make them "indistinguishable from their peers."<sup>1</sup> Effective 
           support respects neurodiversity while providing accommodations and skills to navigate a neurotypical world.
         </p>
+        </div>
 
         {/* Level 3 / High Support Needs Acknowledgement */}
-        <div className="bg-slate-50 border-l-4 border-[#10b981] p-4 mb-4 rounded-r-md shadow-sm">
+        <div className="bg-slate-50 border-l-4 border-[#2abcd4] p-4 mb-4 rounded-r-md shadow-sm">
           <p className="text-slate-700 text-sm leading-relaxed">
             <strong>Acknowledging Profound Support Needs:</strong> Embracing neurodiversity does not mean minimizing severe disability. For individuals with Level 3 autism, "thriving" often requires intensive, 24/7 care to ensure physical safety, manage severe dysregulation (such as self-injury or elopement), and rigorously investigate underlying medical pain that cannot be verbally communicated. Validating the autistic neurotype includes validating the immense, daily realities of profound disability.
           </p>
