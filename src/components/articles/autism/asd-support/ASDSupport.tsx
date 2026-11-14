@@ -1,7 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 
-
 // Updated paths based on your articleMap directory structure
 import { OverviewContent } from './OverviewContent';
 import { EarlyInterventionContent } from './EarlyInterventionContent';
@@ -11,6 +10,7 @@ import { MedicalContent } from './MedicalContent';
 import { EnvironmentalContent } from './EnvironmentalContent';
 import { FamilyPrinciplesContent } from './FamilyPrinciplesContent';
 import { SafetyContent } from './SafetyContent'; // <-- New Safety Import!
+import { BiomedicalContent } from './BiomedicalContent';
 
 interface ASDSupportProps {
   setCurrentArticle?: (article: string) => void;
@@ -122,74 +122,15 @@ export function ASDSupport({ setCurrentArticle, initialTab }: ASDSupportProps) {
         {activeTab === 'safety' && (
           <SafetyContent setCurrentArticle={setCurrentArticle} />
         )}
+{activeTab === 'safety' && (
+          <SafetyContent setCurrentArticle={setCurrentArticle} />
+        )}
 
         {/* ========================================== */}
         {/* TAB 9: BIOMEDICAL & ALTERNATIVE            */}
         {/* ========================================== */}
         {activeTab === 'biomedical' && (
-          <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
-            
-            <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm">
-              <h2 className="text-[#0c264d] font-bold mb-4 text-2xl border-b-2 border-[#0c264d] pb-2">
-                Biomedical Approaches & The Gut-Brain Axis
-              </h2>
-              <p className="text-sm text-gray-700 mb-6">
-                The biomedical movement approaches autism as a whole-body, systemic condition rather than a strictly neurological one. Select a topic below to explore the history, the gut-brain connection, and a breakdown of which interventions are helpful versus those that are unsafe.
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                
-        {/* Origins & Practitioners Card */}
-              <div className="bg-white p-5 rounded-lg border-l-4 border-[#0c264d] shadow-sm flex flex-col h-full">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Origins & Practitioners</h3>
-                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2 flex-grow mb-4">
-                  <li><strong>The Early Movement:</strong> Dr. Bernard Rimland, Dr. Sidney Baker, and the foundational biomedical origins.</li>
-                  <li><strong>Systems Biology:</strong> Dr. Martha Herbert's paradigm-shifting work viewing autism as a whole-body, systemic condition.</li>
-                  <li><strong>Metabolics & Immunology:</strong> Dr. Richard Frye (mitochondrial research) and Dr. S. Jill James (oxidative stress).</li>
-                  <li><strong>Integrative Care:</strong> Dr. Daniel Rossignol and the shift toward evidence-based medical and nutritional support.</li>
-                </ul>
-                <button 
-                  onClick={() => setCurrentArticle?.('autism-biomedical-history')}
-                  className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full self-start"
-                >
-                  Read more →
-                </button>
-              </div>
-
-{/* Gut-Brain & Diets Card */}
-              <div className="bg-white p-5 rounded-lg border-l-4 border-[#2abcd4] shadow-sm flex flex-col h-full">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Gut-Brain & Diets</h3>
-                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2 flex-grow mb-4">
-                  <li><strong>The Microbiome:</strong> Understanding dysbiosis, bacterial/yeast overgrowth, and the role of targeted probiotics.</li>
-                  <li><strong>Intestinal Permeability:</strong> How "leaky gut" and systemic inflammation can cross the blood-brain barrier.</li>
-                  <li><strong>Specialized Diets:</strong> Navigating GFCF (Gluten/Casein-Free), GAPS, and elimination protocols for food sensitivities.</li>
-                  <li><strong>Hidden Pain & Behavior:</strong> Recognizing how undiagnosed GI conditions (like EoE or reflux) drive behavioral dysregulation.</li>
-                </ul>
-                <button 
-                  onClick={() => setCurrentArticle?.('autism-biomedical-gut')}
-                  className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full self-start"
-                >
-                  Read more →
-                </button>
-              </div>
-               {/* Evidence Tiers Card */}
-              <div className="bg-white p-5 rounded-lg border-l-4 border-[#ffd166] shadow-sm flex flex-col h-full">
-                <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Intervention Tiers</h3>
-                <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2 flex-grow mb-4">
-                  <li><strong>Helpful & Targeted:</strong> Treating verified deficiencies, chronic GI pain, sleep disorders, and specific metabolic needs.</li>
-                  <li><strong>The "Gray Area":</strong> Experimental or mixed-evidence therapies like Microbiota Transfer Therapy (fecal transplants), methyl-B12 injections, and high-dose vitamin protocols.</li>
-                  <li><strong>Dangerous & Disproven:</strong> Unsafe protocols like heavy metal chelation (without actual poisoning), MMS (bleach), and Lupron.</li>
-                </ul>
-                <button 
-                  onClick={() => setCurrentArticle?.('autism-biomedical-tiers')}
-                  className="mt-auto px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-center w-full self-start"
-                >
-                  Read more →
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
+          <BiomedicalContent setCurrentArticle={setCurrentArticle} />
         )}
       </div>
     </article>

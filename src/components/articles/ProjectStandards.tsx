@@ -4,7 +4,7 @@ interface ProjectStandardsProps {
   setCurrentArticle?: (article: string) => void;
 }
 
-export default function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
+export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
   return (
    <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
       
@@ -18,7 +18,62 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
           The definitive technical and editorial manual for the Brainopedia digital encyclopedia.
         </p>
       </div>
+{/* ===== SITE ARCHITECTURE & NAVIGATION ===== */}
+      <div className="bg-white p-6 md:p-8 rounded-lg border border-gray-200 shadow-sm mt-10 font-spartan">
+        <h2 className="text-[#0c264d] font-bold mb-6 text-2xl border-b-2 border-[#0c264d] pb-2">
+          Site Architecture & Navigation Guidelines
+        </h2>
 
+        <div className="space-y-6">
+          
+          {/* Point 1: Component Dictionary */}
+          <div className="bg-slate-50 p-5 rounded-md border-l-4 border-[#0c264d] shadow-sm flex flex-col md:flex-row gap-4 items-start">
+            <div className="w-12 h-12 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 border border-[#bae6fd] font-bold text-xl">1</div>
+            <div>
+              <h3 className="font-bold text-[#0c264d] text-lg mb-2">Dynamic State Routing (The Component Dictionary)</h3>
+              <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                Brainopedia operates as a fast Single Page Application (SPA) using a state-driven component dictionary, rather than traditional React Router slash-paths.
+              </p>
+              <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+                <li>All primary page navigation is handled by the <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-[#0A9DC4] font-semibold">setCurrentArticle('article-id')</code> state function.</li>
+                <li>When a user clicks a button, <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">ArticleContent.tsx</code> looks up the provided ID in the master <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">articleMap</code> dictionary and dynamically swaps the active component on the screen.</li>
+                <li>To add a new standalone page to the platform, it must first be registered as a lazy-loaded component in the appropriate subgroup route file (e.g., <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">coreNeurodevelopmentalRoutes.tsx</code>) before a button can route to it.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Point 2: Query Parameters */}
+          <div className="bg-slate-50 p-5 rounded-md border-l-4 border-[#2abcd4] shadow-sm flex flex-col md:flex-row gap-4 items-start">
+            <div className="w-12 h-12 rounded-full bg-[#f0f9ff] text-[#2abcd4] flex items-center justify-center shrink-0 border border-[#bae6fd] font-bold text-xl">2</div>
+            <div>
+              <h3 className="font-bold text-[#0c264d] text-lg mb-2">Sub-Navigation & Query Parameters (?tab=)</h3>
+              <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                For complex parent components that contain internal menus (such as <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">ASDSupport.tsx</code>), we utilize URL query parameters (e.g., <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">?tab=biomedical</code>) managed by the <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-[#0A9DC4] font-semibold">useSearchParams</code> hook.
+              </p>
+              <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+                <li>This hybrid approach allows specific tabs to be bookmarked and shared externally without disrupting the master routing state.</li>
+                <li>When building a new hub with tabs, always use <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-[#0A9DC4] font-semibold">useSearchParams</code> to manage the active view.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Point 3: Routing Restrictions */}
+          <div className="bg-[#fff0f0] p-5 rounded-md border-l-4 border-[#be185d] shadow-sm flex flex-col md:flex-row gap-4 items-start">
+            <div className="w-12 h-12 rounded-full bg-[#fdf2f8] text-[#be185d] flex items-center justify-center shrink-0 border border-[#fbcfe8] font-bold text-xl">3</div>
+            <div>
+              <h3 className="font-bold text-[#be185d] text-lg mb-2">Strict Routing Restriction (Preventing 404 Errors)</h3>
+              <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                <strong>Do not attempt to implement standard React Router clean paths</strong> (e.g., <code className="bg-white px-1.5 py-0.5 rounded border border-[#fbcfe8] text-[#be185d]">{"<Route path='/autism-support/:tabId'/>"}</code>) for individual sub-pages or deep-dives.
+              </p>
+              <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+                <li>Because the application relies on the root URL to execute the component dictionary, forcing deep slash-paths will cause the hosting environment to search for non-existent directories, resulting in fatal 404 deployment errors upon page refresh.</li>
+                <li>All internal page swapping must remain tethered to the <code className="bg-white px-1.5 py-0.5 rounded border border-[#fbcfe8] text-[#be185d] font-semibold">setCurrentArticle</code> function.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
       {/* EXPORTS, IMPORTS & ROUTING */}
       <section className="mb-12">
         <h2 className="text-[#0c264d] text-2xl font-bold mb-6 flex items-center gap-2 border-b pb-2">
@@ -42,7 +97,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             Because we use modern React (17+), importing React just to write JSX is obsolete and will trigger VS Code warnings (yellow squiggles). Only import specific hooks when needed.
           </p>
           <ul className="list-disc ml-5 mt-3 text-sm text-slate-700 space-y-2">
-            <li><strong>DO USE:</strong> <code className="bg-white px-1 text-green-700 rounded border border-gray-200">import &#123; useState &#125; from 'react';</code></li>
+            <li><strong>DO USE:</strong> <code className="bg-white px-1 text-green-700 rounded border border-gray-200">{"import { useState } from 'react';"}</code></li>
             <li><strong>REMOVE:</strong> <code className="bg-white px-1 text-red-700 rounded border border-red-200">import React from 'react';</code></li>
           </ul>
         </div>
@@ -683,7 +738,7 @@ export default function ProjectStandards({ setCurrentArticle }: ProjectStandards
             All images must utilize the custom fallback component. Ensure the relative import path is correct based on the file's depth in the directory structure. It is usually the following depth example:
           </p>
           <code className="bg-white px-2 py-1 text-[#0c264d] rounded border border-gray-200 mt-2 block w-full text-xs">
-            import &#123; ImageWithFallback &#125; from '../../figma/ImageWithFallback';
+             {"import { ImageWithFallback } from '../../figma/ImageWithFallback';"}
           </code>
         </div>
 </section>
