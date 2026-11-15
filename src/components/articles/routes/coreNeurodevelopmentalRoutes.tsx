@@ -61,6 +61,12 @@ export const coreNeurodevelopmentalRoutes: RouteMap = {
   'autism-mental-health': lazy(() => import('../autism/asd-support/MentalHealth').then(m => ({ default: m.MentalHealth }))),
   'autism-physical-therapy': lazy(() => import('../autism/asd-support/PhysicalTherapy').then(m => ({ default: m.PhysicalTherapy }))),
   
+  // NDBI Deep Dives (Routed from ABA Therapy)
+  'autism-aba-prt': lazy(() => import('../autism/asd-support/PRTTherapy').then(m => ({ default: m.PRTTherapy }))),
+  'autism-aba-esdm': lazy(() => import('../autism/asd-support/ESDMTherapy').then(m => ({ default: m.ESDMTherapy }))),
+  'autism-aba-net': lazy(() => import('../autism/asd-support/NETTherapy').then(m => ({ default: m.NETTherapy }))),
+  'autism-aba-it': lazy(() => import('../autism/asd-support/ITTherapy').then(m => ({ default: m.ITTherapy }))),
+ 
   // NEW DYSREGULATION ROUTE 
   'autism-dysregulation': lazy(() => import('../autism/asd-support/AutismDysregulation').then(m => ({ default: m.AutismDysregulation }))),
   

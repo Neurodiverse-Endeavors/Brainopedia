@@ -26,18 +26,18 @@ export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
 
         <div className="space-y-6">
           
-          {/* Point 1: Component Dictionary */}
+{/* Point 1: Component Dictionary */}
           <div className="bg-slate-50 p-5 rounded-md border-l-4 border-[#0c264d] shadow-sm flex flex-col md:flex-row gap-4 items-start">
             <div className="w-12 h-12 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 border border-[#bae6fd] font-bold text-xl">1</div>
             <div>
-              <h3 className="font-bold text-[#0c264d] text-lg mb-2">Dynamic State Routing (The Component Dictionary)</h3>
+              <h3 className="font-bold text-[#0c264d] text-lg mb-2">Dynamic State Routing (The Routes Folder)</h3>
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                Brainopedia operates as a fast Single Page Application (SPA) using a state-driven component dictionary, rather than traditional React Router slash-paths.
+                Brainopedia operates as a fast Single Page Application (SPA) using state-driven component dictionaries, rather than traditional React Router slash-paths.
               </p>
               <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
                 <li>All primary page navigation is handled by the <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-[#0A9DC4] font-semibold">setCurrentArticle('article-id')</code> state function.</li>
-                <li>When a user clicks a button, <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">ArticleContent.tsx</code> looks up the provided ID in the master <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">articleMap</code> dictionary and dynamically swaps the active component on the screen.</li>
-                <li>To add a new standalone page to the platform, it must first be registered as a lazy-loaded component in the appropriate subgroup route file (e.g., <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">coreNeurodevelopmentalRoutes.tsx</code>) before a button can route to it.</li>
+                <li>When a user clicks a button, the application looks up the provided ID in the specific dictionary files located inside the <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">routes</code> folder (such as <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">coreNeurodevelopmentalRoutes.tsx</code>) and dynamically swaps the active component on the screen.</li>
+                <li>To add a new standalone page to the platform, it must first be registered as a lazy-loaded component in the appropriate subgroup file inside the <code className="bg-white px-1.5 py-0.5 rounded border border-gray-200 text-slate-800">routes</code> folder before a button can route to it.</li>
               </ul>
             </div>
           </div>

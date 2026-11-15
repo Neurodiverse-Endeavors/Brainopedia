@@ -77,8 +77,8 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
         </p>
       </div>
 
-   {/* ===== HIDDEN PAIN: MEDICAL & TRAUMA TRIGGERS ===== */}
-      <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#ff6b6b] mb-8">
+      {/* ===== HIDDEN PAIN: MEDICAL & TRAUMA TRIGGERS ===== */}
+      <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#ff6b6b] mb-8 flow-root">
         <h2 className="text-[#0c264d] font-bold mb-4 text-xl flex items-center gap-2">
           <Activity className="text-[#ff6b6b]" size={24} /> 
           Hidden Pain: Medical Comorbidities & Trauma
@@ -87,6 +87,15 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
         <p className="mb-4 text-sm text-gray-700 leading-relaxed">
           When evaluating dysregulation, it is critical to look beyond the surface behavior and audit for hidden pain, unmet physical needs, or underlying trauma. Because many autistic individuals experience differences in interoception—the ability to recognize internal bodily signals—or face significant communication barriers, what appears to be an aggressive outburst is frequently an urgent, desperate communication of acute physical distress.
         </p>
+
+        {/* --- FLOATED MIDDLE GRAPHIC --- */}
+        <div className="float-right ml-6 mb-4 bg-white p-2 rounded-lg shadow-sm border border-gray-200 w-64 shrink-0">
+          <ImageWithFallback 
+            src="/images/autism/autism-support-TTtab-speech-hidden-pain.webp" 
+            alt="Graphic illustrating hidden medical pain and trauma"
+            className="w-full h-auto rounded-md block"
+          />
+        </div>
         
         <p className="mb-4 text-sm text-gray-700 leading-relaxed">
           Research indicates that medical comorbidities are highly prevalent in the autistic community; for instance, gastrointestinal (GI) disorders affect between 46% and 84% of autistic children<sup className="text-[#10b981] font-bold ml-0.5">6</sup>, while migraine prevalence in autistic adults is estimated at over 42%, more than double the rate of the general population<sup className="text-[#10b981] font-bold ml-0.5">7</sup>.
@@ -97,7 +106,6 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
         </p>
 
         {/* INTERACTIVE ACCORDION FOR COMPLEX BEHAVIORS (SCATOLIA) */}
-       {/* INTERACTIVE ACCORDION FOR COMPLEX BEHAVIORS (SCATOLIA) */}
         <details className="group bg-[#fff5f5] border border-[#ff6b6b]/30 rounded-lg overflow-hidden cursor-pointer shadow-sm">
           <summary className="font-bold text-[#0c264d] p-4 bg-white hover:bg-slate-50 transition-colors flex justify-between items-center list-none">
             <span className="flex items-center gap-2">
@@ -108,9 +116,8 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
-          
+
           <div className="p-5 text-sm text-gray-700 space-y-6 border-t border-[#ff6b6b]/20 cursor-default">
-            
             {/* Part 1: The "Why" */}
             <p className="leading-relaxed">
               In autism, fecal smearing is rarely driven by defiance or malice. It is usually rooted directly in medical discomfort, sensory processing differences, communication barriers, or learned behavioral patterns. Understanding the underlying function is key to addressing it effectively.
@@ -119,33 +126,57 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <h4 className="font-bold text-[#0c264d] mb-2 border-b border-[#ff6b6b]/20 pb-1">1. Medical & Physical Discomfort</h4>
-                <ul className="space-y-2 list-none">
-                  <li><strong className="text-[#0c264d]">Constipation & GI Pain:</strong> Chronic constipation or anal fissures can lead a person to dig into their clothing to relieve pressure or remove painful stool.</li>
-                  <li><strong className="text-[#0c264d]">Overflow Soiling (Encopresis):</strong> When severely constipated, liquid stool can leak unexpectedly. Surprised by the mess, the individual may reach down to inspect or wipe it off on a nearby surface.</li>
+                <ul className="space-y-3 text-xs text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                    <span><strong className="text-[#0c264d]">Constipation & GI Pain:</strong> Chronic constipation or anal fissures can lead a person to dig into their clothing to relieve pressure or remove painful stool.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                    <span><strong className="text-[#0c264d]">Overflow Soiling (Encopresis):</strong> When severely constipated, liquid stool can leak unexpectedly. Surprised by the mess, the individual may reach down to inspect or wipe it off on a nearby surface.</span>
+                  </li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="font-bold text-[#0c264d] mb-2 border-b border-[#ff6b6b]/20 pb-1">2. Sensory Processing Differences</h4>
-                <ul className="space-y-2 list-none">
-                  <li><strong className="text-[#0c264d]">Sensory Seeking:</strong> The warm texture, strong odor, and wide arm movements of spreading can feel stimulating or regulating during unstructured times.</li>
-                  <li><strong className="text-[#0c264d]">Sensory Avoidance:</strong> Finding a soiled diaper unbearable, they may try to scoop the stool out immediately to escape the sensation.</li>
+                <ul className="space-y-3 text-xs text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                    <span><strong className="text-[#0c264d]">Sensory Seeking:</strong> The warm texture, strong odor, and wide arm movements of spreading can feel stimulating or regulating during unstructured times.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                    <span><strong className="text-[#0c264d]">Sensory Avoidance:</strong> Finding a soiled diaper unbearable, they may try to scoop the stool out immediately to escape the sensation.</span>
+                  </li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="font-bold text-[#0c264d] mb-2 border-b border-[#ff6b6b]/20 pb-1">3. Skill Gaps & Social Understanding</h4>
-                <ul className="space-y-2 list-none">
-                  <li><strong className="text-[#0c264d]">Unclear Expectations:</strong> Without explicit instruction, someone wearing diapers long-term may not understand that stool belongs exclusively in the toilet.</li>
-                  <li><strong className="text-[#0c264d]">Wiping Mechanics:</strong> Someone learning to wipe independently may accidentally get stool on their hands and wipe it on a wall simply because they do not know the next step.</li>
+                <ul className="space-y-3 text-xs text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                    <span><strong className="text-[#0c264d]">Unclear Expectations:</strong> Without explicit instruction, someone wearing diapers long-term may not understand that stool belongs exclusively in the toilet.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                    <span><strong className="text-[#0c264d]">Wiping Mechanics:</strong> Someone learning to wipe independently may accidentally get stool on their hands and wipe it on a wall simply because they do not know the next step.</span>
+                  </li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="font-bold text-[#0c264d] mb-2 border-b border-[#ff6b6b]/20 pb-1">4. Communication & Emotional Regulation</h4>
-                <ul className="space-y-2 list-none">
-                  <li><strong className="text-[#0c264d]">Distress Outlet:</strong> For those who struggle to communicate when overwhelmed, smearing can serve as a physical outlet for a loss of control.</li>
-                  <li><strong className="text-[#0c264d]">Predictable Reactions:</strong> Caregivers naturally react with shock or a rush to clean up. Even negative attention (or getting a warm bath afterward) can unintentionally reinforce the behavior if the person is seeking interaction.</li>
+                <ul className="space-y-3 text-xs text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                    <span><strong className="text-[#0c264d]">Distress Outlet:</strong> For those who struggle to communicate when overwhelmed, smearing can serve as a physical outlet for a loss of control.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                    <span><strong className="text-[#0c264d]">Predictable Reactions:</strong> Caregivers naturally react with shock or a rush to clean up. Even negative attention (or getting a warm bath afterward) can unintentionally reinforce the behavior if the person is seeking interaction.</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -156,55 +187,85 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
               <p className="mb-5 text-sm leading-relaxed">
                 Based on guidance and resources from the <strong>National Autistic Society (UK)</strong>, addressing scatolia requires a combination of medical checks and targeted practical changes. Because the behavior serves a specific function for the individual, the goal is to safely replace that function.
               </p>
-              
+
               <div className="space-y-4">
-                
                 {/* Step 1 */}
                 <div className="bg-white p-4 rounded-md shadow-sm border-l-4 border-[#ff6b6b]">
-                  <h4 className="font-bold text-[#0c264d] mb-2 text-sm uppercase tracking-wider">1. Rule Out Medical Triggers First</h4>
-                  <ul className="space-y-2 text-gray-700 list-none">
-                    <li><span className="text-[#ff6b6b] mr-2">•</span><strong>Consult a Doctor:</strong> Have a physician check for chronic constipation, impacted stool, overflow diarrhea (encopresis), anal fissures, or pinworms. Treating gut pain often stops the behavior entirely.</li>
-                    <li><span className="text-[#ff6b6b] mr-2">•</span><strong>Check for Skin Irritation:</strong> Inspect for diaper rash, yeast infections, or dryness. Switch to gentle, fragrance-free wipes or barrier creams to reduce itching.</li>
+                  <h4 className="font-bold text-[#0c264d] mb-3 text-sm uppercase tracking-wider">1. Rule Out Medical Triggers First</h4>
+                  <ul className="space-y-3 text-xs text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Consult a Doctor:</strong> Have a physician check for chronic constipation, impacted stool, overflow diarrhea (encopresis), anal fissures, or pinworms. Treating gut pain often stops the behavior entirely.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#ff6b6b] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Check for Skin Irritation:</strong> Inspect for diaper rash, yeast infections, or dryness. Switch to gentle, fragrance-free wipes or barrier creams to reduce itching.</span>
+                    </li>
                   </ul>
                 </div>
 
                 {/* Step 2 */}
                 <div className="bg-white p-4 rounded-md shadow-sm border-l-4 border-[#2abcd4]">
-                  <h4 className="font-bold text-[#0c264d] mb-2 text-sm uppercase tracking-wider">2. Provide Safe Sensory Substitutes</h4>
-                  <ul className="space-y-2 text-gray-700 list-none">
-                    <li><span className="text-[#2abcd4] mr-2">•</span><strong>Messy Tactile Alternatives:</strong> If they seek squishy textures, schedule daily supervised play with finger paints, playdough, kinetic sand, shaving cream, slime, or mashed potatoes.</li>
-                    <li><span className="text-[#2abcd4] mr-2">•</span><strong>Address Smell Seeking:</strong> Offer safe olfactory input such as scented playdough, aromatherapy rollers, or scratch-and-sniff stickers.</li>
-                    <li><span className="text-[#2abcd4] mr-2">•</span><strong>Upgrade Wiping Comfort:</strong> If rough toilet paper triggers sensory avoidance, try moist flushable wipes (disposed of in a bin) or a bidet attachment.</li>
+                  <h4 className="font-bold text-[#0c264d] mb-3 text-sm uppercase tracking-wider">2. Provide Safe Sensory Substitutes</h4>
+                  <ul className="space-y-3 text-xs text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-[#2abcd4] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Messy Tactile Alternatives:</strong> If they seek squishy textures, schedule daily supervised play with finger paints, playdough, kinetic sand, shaving cream, slime, or mashed potatoes.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#2abcd4] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Address Smell Seeking:</strong> Offer safe olfactory input such as scented playdough, aromatherapy rollers, or scratch-and-sniff stickers.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#2abcd4] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Upgrade Wiping Comfort:</strong> If rough toilet paper triggers sensory avoidance, try moist flushable wipes (disposed of in a bin) or a bidet attachment.</span>
+                    </li>
                   </ul>
                 </div>
 
                 {/* Step 3 */}
                 <div className="bg-white p-4 rounded-md shadow-sm border-l-4 border-[#ffd166]">
-                  <h4 className="font-bold text-[#0c264d] mb-2 text-sm uppercase tracking-wider">3. Modify Clothing and Environment</h4>
-                  <ul className="space-y-2 text-gray-700 list-none">
-                    <li><span className="text-[#d97706] mr-2">•</span><strong>Adaptive Clothing:</strong> During high-risk times (naps or overnight), use backwards zip-up pajamas or specialized anti-strip rompers to block easy access while building new habits.</li>
-                    <li><span className="text-[#d97706] mr-2">•</span><strong>Simplify the Bathroom:</strong> Keep surfaces bare and place a small, clear visual checklist on the wall showing the exact steps for wiping, flushing, and washing hands.</li>
-                    <li><span className="text-[#d97706] mr-2">•</span><strong>Predictable Schedules:</strong> Prompt regular toilet visits—especially 15 to 20 minutes after meals—to catch bowel movements before they happen in a diaper.</li>
+                  <h4 className="font-bold text-[#0c264d] mb-3 text-sm uppercase tracking-wider">3. Modify Clothing and Environment</h4>
+                  <ul className="space-y-3 text-xs text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-[#d97706] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Adaptive Clothing:</strong> During high-risk times (naps or overnight), use backwards zip-up pajamas or specialized anti-strip rompers to block easy access while building new habits.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#d97706] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Simplify the Bathroom:</strong> Keep surfaces bare and place a small, clear visual checklist on the wall showing the exact steps for wiping, flushing, and washing hands.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#d97706] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Predictable Schedules:</strong> Prompt regular toilet visits—especially 15 to 20 minutes after meals—to catch bowel movements before they happen in a diaper.</span>
+                    </li>
                   </ul>
                 </div>
 
                 {/* Step 4 */}
                 <div className="bg-white p-4 rounded-md shadow-sm border-l-4 border-[#0c264d]">
-                  <h4 className="font-bold text-[#0c264d] mb-2 text-sm uppercase tracking-wider">4. Keep Reactions Calm and Consistent</h4>
-                  <ul className="space-y-2 text-gray-700 list-none">
-                    <li><span className="text-[#0c264d] mr-2">•</span><strong>Maintain a Neutral Demeanor:</strong> Avoid scolding, gasping, or intense frustration. Strong emotional reactions can heighten anxiety or unintentionally reward attention-seeking behavior.</li>
-                    <li><span className="text-[#0c264d] mr-2">•</span><strong>Avoid Rewarding Cleanup:</strong> Clean the person and space calmly with minimal conversation. Use a brief, lukewarm shower instead of a long, fun bath right after an incident.</li>
-                    <li><span className="text-[#0c264d] mr-2">•</span><strong>Track Patterns (ABC Log):</strong> Log the Antecedent (what happened right before), Behavior, and Consequence to spot specific triggers like time of day or certain foods.</li>
+                  <h4 className="font-bold text-[#0c264d] mb-3 text-sm uppercase tracking-wider">4. Keep Reactions Calm and Consistent</h4>
+                  <ul className="space-y-3 text-xs text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Maintain a Neutral Demeanor:</strong> Avoid scolding, gasping, or intense frustration. Strong emotional reactions can heighten anxiety or unintentionally reward attention-seeking behavior.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Avoid Rewarding Cleanup:</strong> Clean the person and space calmly with minimal conversation. Use a brief, lukewarm shower instead of a long, fun bath right after an incident.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
+                      <span><strong className="text-[#0c264d]">Track Patterns (ABC Log):</strong> Log the Antecedent (what happened right before), Behavior, and Consequence to spot specific triggers like time of day or certain foods.</span>
+                    </li>
                   </ul>
                 </div>
-
               </div>
             </div>
-
           </div>
         </details>
       </div>
-      
+
       {/* ===== REFRAMING DYSREGULATION & AGGRESSION ===== */}
       <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 mb-8">
         <h2 className="text-[#0c264d] font-bold mb-4 text-xl flex items-center gap-2">
@@ -219,7 +280,7 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
         </p>
       </div>
 
-  {/* ===== BRIDGING THE GENERALIZATION GAP ===== */}
+{/*  {/* ===== BRIDGING THE GENERALIZATION GAP ===== */}
       <div className="bg-white p-5 rounded-md border-l-4 border-[#2abcd4] shadow-sm mb-6">
         <h2 className="text-[#0c264d] font-bold mb-4 text-xl flex items-center justify-center gap-2">
           Bridging the Generalization Gap Across Environments
@@ -236,9 +297,15 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
             <h4 className="font-bold text-[#0c264d] mb-3 border-b border-[#0A9DC4]/20 pb-2 text-sm uppercase tracking-wider">
               School & Day Support
             </h4>
-            <ul className="space-y-3 text-sm text-gray-700">
-              <li><strong className="text-[#0c264d]">Mitigate the Audience Effect:</strong> Having a crowd of peers watching an individual escalate increases shame and defensive aggression. Remove the audience by moving the other participants out of the room rather than forcing the dysregulated individual to move.</li>
-              <li><strong className="text-[#0c264d]">Proactive Intermittent Access:</strong> Schedule proactive "sensory resets" in a low-stimulus area to keep their nervous system baseline stable before dysregulation occurs.</li>
+            <ul className="space-y-3 text-xs text-gray-700">
+              <li className="flex items-start">
+                <span className="text-[#0A9DC4] mr-2 mt-0.5 text-[10px]">◆</span>
+                <span><strong className="text-[#0c264d]">Mitigate the Audience Effect:</strong> Having a crowd of peers watching an individual escalate increases shame and defensive aggression. Remove the audience by moving the other participants out of the room rather than forcing the dysregulated individual to move.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#0A9DC4] mr-2 mt-0.5 text-[10px]">◆</span>
+                <span><strong className="text-[#0c264d]">Proactive Intermittent Access:</strong> Schedule proactive "sensory resets" in a low-stimulus area to keep their nervous system baseline stable before dysregulation occurs.</span>
+              </li>
             </ul>
           </div>
           
@@ -246,9 +313,15 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
             <h4 className="font-bold text-[#0c264d] mb-3 border-b border-[#0A9DC4]/20 pb-2 text-sm uppercase tracking-wider">
               Community Outings
             </h4>
-            <ul className="space-y-3 text-sm text-gray-700">
-              <li><strong className="text-[#0c264d]">Portable Micro-Schedules:</strong> Outings fail when the timeline becomes ambiguous. Staff should carry a highly visual, 3-step portable schedule to anchor the individual.</li>
-              <li><strong className="text-[#0c264d]">Environmental Reconnaissance:</strong> Map out "escape hatches" (quiet aisles, park benches, service vehicles) before arriving where co-regulation can happen privately.</li>
+            <ul className="space-y-3 text-xs text-gray-700">
+              <li className="flex items-start">
+                <span className="text-[#0A9DC4] mr-2 mt-0.5 text-[10px]">◆</span>
+                <span><strong className="text-[#0c264d]">Portable Micro-Schedules:</strong> Outings fail when the timeline becomes ambiguous. Staff should carry a highly visual, 3-step portable schedule to anchor the individual.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#0A9DC4] mr-2 mt-0.5 text-[10px]">◆</span>
+                <span><strong className="text-[#0c264d]">Environmental Reconnaissance:</strong> Map out "escape hatches" (quiet aisles, park benches, service vehicles) before arriving where co-regulation can happen privately.</span>
+              </li>
             </ul>
           </div>
 
@@ -256,15 +329,20 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
             <h4 className="font-bold text-[#0c264d] mb-3 border-b border-[#0A9DC4]/20 pb-2 text-sm uppercase tracking-wider">
               Home Environments
             </h4>
-            <ul className="space-y-3 text-sm text-gray-700">
-              <li><strong className="text-[#0c264d]">Communication Continuity:</strong> Ensure the exact same visual icons, phrase structures, and AAC setups used at day support are physically present and utilized at home<sup className="text-[#10b981] font-bold ml-0.5">3</sup>.</li>
-              <li><strong className="text-[#0c264d]">Physical De-escalation Zones:</strong> Establish a designated, permanent "safe space" at home that is purely associated with comfort, never punishment.</li>
+            <ul className="space-y-3 text-xs text-gray-700">
+              <li className="flex items-start">
+                <span className="text-[#0A9DC4] mr-2 mt-0.5 text-[10px]">◆</span>
+                <span><strong className="text-[#0c264d]">Communication Continuity:</strong> Ensure the exact same visual icons, phrase structures, and AAC setups used at day support are physically present and utilized at home<sup className="text-[#10b981] font-bold ml-0.5">3</sup>.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#0A9DC4] mr-2 mt-0.5 text-[10px]">◆</span>
+                <span><strong className="text-[#0c264d]">Physical De-escalation Zones:</strong> Establish a designated, permanent "safe space" at home that is purely associated with comfort, never punishment.</span>
+              </li>
             </ul>
           </div>
 
         </div>
       </div>
-
       {/* ===== ADVANCED SAFETY PROTOCOLS ===== */}
       <div className="bg-white p-5 rounded-md border-l-4 border-red-500 shadow-sm mb-6">
         <h2 className="text-[#0c264d] font-bold mb-4 text-xl flex items-center justify-center gap-2">

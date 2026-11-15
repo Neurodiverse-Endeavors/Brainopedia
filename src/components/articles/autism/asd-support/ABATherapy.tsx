@@ -29,9 +29,18 @@ export function ABATherapy({ setCurrentArticle }: ABATherapyProps) {
         <div className="bg-white p-5 rounded-lg border-l-4 border-[#0c264d] shadow-sm">
           <h3 className="font-bold text-[#0c264d] mb-3">Key Concepts</h3>
           <ul className="text-sm space-y-3 text-gray-700">
-            <li>• <strong>Positive Reinforcement:</strong> Rewarding desired behaviors to encourage repetition.</li>
-            <li>• <strong>Task Analysis:</strong> Breaking complex skills into tiny, achievable steps.</li>
-            <li>• <strong>Data-Driven:</strong> Constant measurement of progress to adjust the plan.</li>
+            <li className="flex items-start">
+              <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
+              <span><strong>Positive Reinforcement:</strong> Rewarding desired behaviors to encourage repetition.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
+              <span><strong>Task Analysis:</strong> Breaking complex skills into tiny, achievable steps.</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
+              <span><strong>Data-Driven:</strong> Constant measurement of progress to adjust the plan.</span>
+            </li>
           </ul>
         </div>
         
@@ -42,6 +51,74 @@ export function ABATherapy({ setCurrentArticle }: ABATherapyProps) {
           </p>
         </div>
       </div>
+
+  <div className="grid md:grid-cols-2 gap-5">
+          
+          {/* PRT */}
+          <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#0A9DC4]/20 shadow-sm flex flex-col h-full">
+            <h4 className="font-bold text-[#0c264d] mb-2 border-b border-[#0A9DC4]/20 pb-1 text-sm uppercase tracking-wider">
+              Pivotal Response Treatment (PRT)
+            </h4>
+            <p className="text-xs text-gray-700 leading-relaxed mb-4 flex-grow">
+              Rather than targeting individual, isolated behaviors, PRT focuses on "pivotal" areas of a child's development—such as motivation, responding to multiple cues, and self-management. It uses natural reinforcers directly tied to the task (e.g., if a child asks for a car, they are rewarded with the car, not a piece of candy).<sup>4</sup>
+            </p>
+            <button 
+              onClick={() => setCurrentArticle?.('autism-aba-prt')}
+              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1"
+            >
+              Read more →
+            </button>
+          </div>
+
+          {/* ESDM */}
+          <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#0A9DC4]/20 shadow-sm flex flex-col h-full">
+            <h4 className="font-bold text-[#0c264d] mb-2 border-b border-[#0A9DC4]/20 pb-1 text-sm uppercase tracking-wider">
+              Early Start Denver Model (ESDM)
+            </h4>
+            <p className="text-xs text-gray-700 leading-relaxed mb-4 flex-grow">
+              A comprehensive early intervention program designed specifically for toddlers and young children. ESDM heavily utilizes naturalistic, play-based ABA principles combined with relationship-based developmental frameworks to foster joint attention and language.<sup>5</sup>
+            </p>
+            <button 
+              onClick={() => setCurrentArticle?.('autism-aba-esdm')}
+              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1"
+            >
+              Read more →
+            </button>
+          </div>
+
+          {/* NET */}
+          <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#0A9DC4]/20 shadow-sm flex flex-col h-full">
+            <h4 className="font-bold text-[#0c264d] mb-2 border-b border-[#0A9DC4]/20 pb-1 text-sm uppercase tracking-wider">
+              Natural Environment Teaching (NET)
+            </h4>
+            <p className="text-xs text-gray-700 leading-relaxed mb-4 flex-grow">
+              A core methodology where therapists teach skills during natural play and everyday routines rather than at a sterile desk. By teaching a skill exactly where it will be used (e.g., learning to request a snack in the kitchen), NET significantly improves the generalization of that skill.
+            </p>
+            <button 
+              onClick={() => setCurrentArticle?.('autism-aba-net')}
+              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1"
+            >
+              Read more →
+            </button>
+          </div>
+
+          {/* IT */}
+          <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#0A9DC4]/20 shadow-sm flex flex-col h-full">
+            <h4 className="font-bold text-[#0c264d] mb-2 border-b border-[#0A9DC4]/20 pb-1 text-sm uppercase tracking-wider">
+              Incidental Teaching (IT)
+            </h4>
+            <p className="text-xs text-gray-700 leading-relaxed mb-4 flex-grow">
+              A child-led technique where the practitioner sets up an engaging environment and waits for the individual to initiate an interaction about an object of interest. The practitioner then uses that natural, highly motivated moment to prompt a skill, such as expressive communication.
+            </p>
+            <button 
+              onClick={() => setCurrentArticle?.('autism-aba-it')}
+              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1"
+            >
+              Read more →
+            </button>
+          </div>
+
+        </div>
 
       {/* --- BOTTOM BACK BUTTON --- */}
       <div className="flex justify-end mt-8 mb-6 clear-both">
@@ -65,6 +142,9 @@ export function ABATherapy({ setCurrentArticle }: ABATherapyProps) {
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
             <p>1. Lovaas, O. I. (1987). Behavioral treatment and normal educational and intellectual functioning in young autistic children. <i>Journal of Consulting and Clinical Psychology</i>.</p>
             <p>2. Kapp, S. K., et al. (2019). 'People should be allowed to do what they like': Autistic adults' views and experiences of stimming. <i>Autism</i>.</p>
+            <p>3. Schreibman, L., et al. (2015). Naturalistic Developmental Behavioral Interventions: Empirically Validated Treatments for Autism Spectrum Disorder. <i>Journal of Autism and Developmental Disorders</i>.</p>
+            <p>4. Koegel, R. L., & Koegel, L. K. (2006). <i>Pivotal Response Treatments for Autism: Communication, Social, & Academic Development</i>. Brookes Publishing.</p>
+            <p>5. Dawson, G., et al. (2010). Randomized, Controlled Trial of an Intervention for Toddlers with Autism: The Early Start Denver Model. <i>Pediatrics</i>.</p>
           </div>
         </div>
       </div>
