@@ -199,10 +199,10 @@ export function OverviewContent({ setCurrentArticle }: OverviewContentProps) {
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
             <p>1. Leadbitter, K., et al. (2021). Autistic Self-Advocacy and the Neurodiversity Movement: Implications for Autism Early Intervention Research and Practice. <i>Frontiers in Psychology</i>.</p>
-            <p>2. Biklen, D., & Burke, J. (2006). Presuming Competence. <i>Equity & Excellence in Education</i>, 39(2), 166-175.</p>
-            <p>3. Wehmeyer, M. L., et al. (2010). Self-Determination and Individuals with Severe Disabilities: Re-evaluating Meanings and Misinterpretations. <i>Research and Practice for Persons with Severe Disabilities</i>, 35(1-2), 29-35.</p>
-            <p>4. Fletcher-Watson, S., et al. (2019). Making the future together: Shaping autism research through meaningful participation. <i>Autism</i>, 23(4), 943-953.</p>
-            <p>5. Kupferstein, H. (2018). Evidence of increased PTSD symptoms in autistics exposed to applied behavior analysis. <i>Advances in Autism</i>, 4(1), 19-29.</p>
+            <p>2. Biklen, D., & Burke, J. (2006). Presuming Competence. <i>Equity & Excellence in Education</i></p>
+            <p>3. Wehmeyer, M. L., et al. (2010). Self-Determination and Individuals with Severe Disabilities: Re-evaluating Meanings and Misinterpretations. <i>Research and Practice for Persons with Severe Disabilities</i></p>
+            <p>4. Fletcher-Watson, S., et al. (2019). Making the future together: Shaping autism research through meaningful participation. <i>Autism</i></p>
+            <p>5. Kupferstein, H. (2018). Evidence of increased PTSD symptoms in autistics exposed to applied behavior analysis. <i>Advances in Autism</i></p>
             <p>6. Hemsley, B., et al. (2018). Systematic review of facilitated communication 2014-2018 finds no new evidence that messages delivered using facilitated communication are authored by the person with disability. <i>Autism & Developmental Language Impairments</i>, 3.</p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Activity, Brain, Layers, Users, Hand, Sun, CheckCircle, Home, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Activity, Brain, Layers, Users, Hand, Sun, CheckCircle, Home, MessageCircle, ArrowRight, Sparkles, Headphones, Utensils, Puzzle } from 'lucide-react';
 import { SectionActions } from '../../../SectionActions';
 import { ImageWithFallback } from '../../../figma/ImageWithFallback';
 
@@ -260,44 +260,93 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
         </div>
       </div>
 
-      {/* ===== SPECIFIC TECHNIQUES & QUESTIONS FOR YOUR OT ===== */}
-      <div className="bg-white p-5 rounded-md border-l-4 border-[#0c264d] shadow-sm mb-6">
-        <h2 className="text-[#0c264d] font-bold mb-4 text-xl flex items-center justify-center gap-2">
-          <MessageCircle className="text-[#0A9DC4]" size={24} /> 
-          Specific Techniques & Questions for Your OT
+{/* ===== COMMON CLINICAL MODALITIES & FRAMEWORKS ===== */}
+      <div className="bg-white p-6 rounded-md border-l-4 border-[#0c264d] shadow-sm mb-8 mt-4">
+        <h2 className="text-[#0c264d] font-bold mb-6 text-2xl border-b border-slate-200 pb-3">
+          Common Clinical Modalities & Frameworks
         </h2>
         
-        <p className="text-sm text-gray-700 mb-6">
-          When interviewing or evaluating a new occupational therapist, it is vital to ensure they utilize modern, neurodiversity-affirming approaches. Here are specific clinical methodologies and questions you can ask to gauge their practice style<sup>3</sup>.
+        <p className="text-sm text-slate-700 mb-6 leading-relaxed">
+          Because occupational therapy is a broad clinical profession, there is no single "OT protocol" for autism. Instead, therapists draw from dozens of distinct evidence-based frameworks, tailoring them to an individual's specific sensory, motor, and daily living goals.
         </p>
 
-        <div className="space-y-4">
-          <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#0A9DC4]/20">
-            <h4 className="font-bold text-[#0c264d] mb-1 flex items-center gap-2">
-              <ArrowRight className="text-[#0A9DC4]" size={16} /> Interoception Curriculums
-            </h4>
-            <p className="text-sm text-gray-700 mb-2">Interoception is the internal sense of recognizing hunger, pain, temperature, and emotional states. Autistic individuals often have disrupted interoceptive signals.</p>
-            <p className="text-sm italic text-[#0c264d]"><strong>Ask:</strong> "Do you utilize interoception mapping or curriculums to help them recognize their internal body signals, rather than just treating external behaviors?"</p>
+        <div className="grid md:grid-cols-2 gap-6">
+          
+          {/* 1. Sensory Processing */}
+          <div className="bg-[#f8fafc] p-5 rounded-xl border border-slate-200">
+            <h3 className="font-bold text-[#0c264d] mb-4 flex items-center gap-3">
+              <div className="bg-[#e0f2fe] text-[#0A9DC4] p-1.5 rounded-full ring-2 ring-[#0A9DC4]/40 ring-offset-2 ring-offset-[#f8fafc] shrink-0">
+                <Sun size={18} />
+              </div>
+              Sensory Processing & Integration
+            </h3>
+            <ul className="space-y-3 text-sm text-slate-700">
+              <li><strong className="text-[#0c264d]">Ayres Sensory Integration (ASI):</strong> Play-based physical activities (swinging, climbing) to help the brain organize balance and body awareness.</li>
+              <li><strong className="text-[#0c264d]">Sound-Based Protocols:</strong> Emerging therapies like the Tomatis Method or Therapeutic Listening that use modified sound frequencies to support auditory processing and regulation.<sup>4</sup></li>
+              <li><strong className="text-[#0c264d]">Targeted Protocols:</strong> The Wilbarger Brushing Protocol (deep pressure) or Astronaut Training (vestibular-visual exercises).</li>
+            </ul>
           </div>
 
-          <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#0A9DC4]/20">
-            <h4 className="font-bold text-[#0c264d] mb-1 flex items-center gap-2">
-              <ArrowRight className="text-[#0A9DC4]" size={16} /> The CO-OP Approach
-            </h4>
-            <p className="text-sm text-gray-700 mb-2">Cognitive Orientation to daily Occupational Performance (CO-OP) is an active, collaborative approach where the individual guides their own motor-skill goals (like learning to ride a bike or tie shoes) through problem-solving.</p>
-            <p className="text-sm italic text-[#0c264d]"><strong>Ask:</strong> "Are you familiar with the CO-OP approach to allow them to lead their own goal-setting and problem-solving?"</p>
+          {/* 2. Emotional Regulation */}
+          <div className="bg-[#f8fafc] p-5 rounded-xl border border-slate-200">
+            <h3 className="font-bold text-[#0c264d] mb-4 flex items-center gap-3">
+              <div className="bg-[#ffe4e6] text-[#ff6b6b] p-1.5 rounded-full ring-2 ring-[#ff6b6b]/40 ring-offset-2 ring-offset-[#f8fafc] shrink-0">
+                <Brain size={18} />
+              </div>
+              Emotional Regulation & Interoception
+            </h3>
+            <ul className="space-y-3 text-sm text-slate-700">
+              <li><strong className="text-[#0c264d]">Interoception Curriculum:</strong> Training individuals to notice internal body signals (racing heart, tense muscles) to identify emotions earlier.</li>
+              <li><strong className="text-[#0c264d]">Zones of Regulation:</strong> A cognitive framework that categorizes energy levels into color-coded "zones" to help select regulation tools.</li>
+              <li><strong className="text-[#0c264d]">The Alert Program:</strong> Uses a "car engine" analogy to help learners recognize if they are running too fast, too slow, or just right.</li>
+            </ul>
           </div>
 
-          <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#0A9DC4]/20">
-            <h4 className="font-bold text-[#0c264d] mb-1 flex items-center gap-2">
-              <ArrowRight className="text-[#0A9DC4]" size={16} /> Affirming Sensory Diets
-            </h4>
-            <p className="text-sm text-gray-700 mb-2">Sensory diets should proactively regulate the nervous system, not punish or extinguish natural "stimming" (self-stimulatory behavior).</p>
-            <p className="text-sm italic text-[#0c264d]"><strong>Ask:</strong> "How do you build a proactive sensory diet that supports their natural regulation, rather than trying to suppress their stimming?"</p>
+          {/* 3. Motor Skills */}
+          <div className="bg-[#f8fafc] p-5 rounded-xl border border-slate-200">
+            <h3 className="font-bold text-[#0c264d] mb-4 flex items-center gap-3">
+              <div className="bg-[#f1f5f9] text-[#0c264d] p-1.5 rounded-full ring-2 ring-[#0c264d]/30 ring-offset-2 ring-offset-[#f8fafc] shrink-0">
+                <Hand size={18} />
+              </div>
+              Motor Skills & Praxis
+            </h3>
+            <ul className="space-y-3 text-sm text-slate-700">
+              <li><strong className="text-[#0c264d]">The CO-OP Approach:</strong> A "Goal-Plan-Do-Check" problem-solving strategy where individuals lead their own mastery of motor tasks (like riding a bike).</li>
+              <li><strong className="text-[#0c264d]">Fine Motor Curriculums:</strong> Programs like Handwriting Without Tears paired with strengthening activities to improve coordination.</li>
+            </ul>
           </div>
+
+          {/* 4. ADLs & Feeding */}
+          <div className="bg-[#f8fafc] p-5 rounded-xl border border-slate-200">
+            <h3 className="font-bold text-[#0c264d] mb-4 flex items-center gap-3">
+              <div className="bg-[#fef3c7] text-[#d97706] p-1.5 rounded-full ring-2 ring-[#ffd166]/60 ring-offset-2 ring-offset-[#f8fafc] shrink-0">
+                <Utensils size={18} />
+              </div>
+              Daily Living (ADLs) & Feeding
+            </h3>
+            <ul className="space-y-3 text-sm text-slate-700">
+              <li><strong className="text-[#0c264d]">SOS Approach to Feeding:</strong> Addresses extreme picky eating and oral-motor sensitivities by gradually desensitizing textures without pressure.</li>
+              <li><strong className="text-[#0c264d]">Task Analysis & Chaining:</strong> Breaking complex routines (showering, dressing) into visual, manageable steps taught one at a time.</li>
+            </ul>
+          </div>
+
+          {/* 5. Play & Relationship */}
+          <div className="bg-[#f8fafc] p-5 rounded-xl border border-slate-200 md:col-span-2">
+            <h3 className="font-bold text-[#0c264d] mb-4 flex items-center gap-3">
+              <div className="bg-[#d1fae5] text-[#10b981] p-1.5 rounded-full ring-2 ring-[#10b981]/40 ring-offset-2 ring-offset-[#f8fafc] shrink-0">
+                <Puzzle size={18} />
+              </div>
+              Play & Relationship-Based
+            </h3>
+            <ul className="space-y-3 text-sm text-slate-700 md:columns-2 gap-8">
+              <li><strong className="text-[#0c264d]">DIR/Floortime:</strong> Following a child's natural interests and play ideas to build shared attention and two-way communication.</li>
+              <li><strong className="text-[#0c264d]">Visual Supports:</strong> Using illustrated stories and first-then boards to make social expectations highly predictable.</li>
+            </ul>
+          </div>
+
         </div>
       </div>
-
+      
       {/* ===== SUPPORTING OT AT HOME ===== */}
       <div id="ot-support" className="bg-white p-5 rounded-md border-l-4 border-[#ffd166] shadow-sm mb-6">
         <h2 className="text-[#0c264d] font-bold mb-4 text-xl flex items-center justify-center gap-2">
@@ -336,7 +385,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
         </button>
       </div>
 
-      {/* ===== REFERENCES SECTION ===== */}
+{/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -349,6 +398,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
             <p>1. Case-Smith, J., & Arbesman, M. (2008). Evidence-based review of interventions for autism used in or of relevance to occupational therapy. <i>American Journal of Occupational Therapy</i>.</p>
             <p>2. Schaaf, R. C., et al. (2014). An intervention for sensory difficulties in children with autism: A randomized trial. <i>Journal of Autism and Developmental Disorders</i>.</p>
             <p>3. Dallman, A. R., et al. (2022). Neurodiversity-Affirming Practices are a Moral Imperative for Occupational Therapy. <i>The Open Journal of Occupational Therapy</i>.</p>
+            <p>4. Duranovic, M., et al. (2026). The Potential Effects of the Tomatis Method in Children With Autism Spectrum Disorder. <i>Journal of Speech, Language, and Hearing Research</i>.</p>
           </div>
         </div>
         
