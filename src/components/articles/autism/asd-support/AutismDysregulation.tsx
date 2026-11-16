@@ -22,16 +22,15 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
           onClick={() => setCurrentArticle?.('autism-support-therapies')}
           className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm shrink-0"
         >
-          <span className="text-lg">&larr;</span>
+          <span className="text-lg">←</span>
           All About Autism
         </button>
       </div>
 
-
       {/* ===== INTRODUCTION CARDS SECTION ===== */}
       <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#0A9DC4]/20 mb-8 space-y-6">
         
-        {/* Card 1: Physiological Attunement (Image on Left, w-64) */}
+        {/* Card 1: Physiological Attunement */}
         <div className="bg-white p-5 rounded-md border-l-4 border-[#2abcd4] shadow-sm flow-root">
           <div className="float-left mr-6 mb-2 bg-white p-2 rounded-lg shadow-sm border border-gray-200 w-64 shrink-0">
             <ImageWithFallback 
@@ -45,8 +44,14 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
             Navigating dysregulation is a profoundly shared experience between the autistic individual and their support team, rooted deeply in mutual nervous system physiology. When an individual's nervous system is pushed to its limits—frequently driven by relentless sensory overload or an absence of accessible communication tools—it generates acute distress for the person, while simultaneously triggering a parallel layer of vicarious stress for the caregiver. Because human nervous systems are biologically wired to attune to one another, an escalating crisis can rapidly transform into a shared state of high alert if not met with grounded presence.
           </p>
         </div>
-
-        {/* Card 2: Co-Regulated Partnership (Image on Left, w-64) */}
+        {/* NEW: Clinical Context Callout */}
+          <div className="bg-[#ffd166]/40 p-3 rounded border border-[#0c264d]/30 flex items-start gap-3 clear-both mt-4">
+            <div className="w-1.5 h-full bg-[#2abcd4] rounded-full shrink-0"></div>
+            <p className="text-xs text-slate-700 leading-relaxed">
+              <strong>Clinical Context:</strong> The concept of "affective attunement" was coined in 1985 by psychiatrist Daniel Stern to describe the profound, non-verbal emotional mirroring between caregivers and infants. In modern neurodiversity-affirming care, this framework is used to explain the shared nervous-system regulation required to support an individual in crisis.
+            </p>
+          </div>
+        {/* Card 2: Co-Regulated Partnership */}
         <div className="bg-white p-5 rounded-md border-l-4 border-[#ffd166] shadow-sm flow-root">
           <div className="float-left mr-6 mb-2 bg-white p-2 rounded-lg shadow-sm border border-gray-200 w-64 shrink-0">
             <ImageWithFallback 
@@ -57,7 +62,7 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
           </div>
           <h3 className="font-bold text-[#0c264d] mb-2 text-sm uppercase tracking-wider">Co-Regulated Partnership</h3>
           <p className="text-sm text-gray-700 leading-relaxed">
-            True, neurodiversity-affirming support moves fundamentally away from outdated paradigms focused on compliance and behavioral control. Instead, it anchors itself in building a genuine, co-regulated partnership. In this model, the individual’s urgent plea for physical and emotional safety is met not with demands for behavioral suppression, but with steady, non-judgmental stability. Simultaneously, the caregiver’s need for sustainable, compassionate, and trauma-informed strategies is equally prioritized—recognizing that meaningful caregiving cannot occur in chronic exhaustion.
+            True, neurodiversity-affirming support moves fundamentally away from outdated paradigms focused on compliance and behavioral control<sup className="text-[#10b981] font-bold ml-0.5">8</sup>. Instead, it anchors itself in building a genuine, co-regulated partnership. In this model, the individual’s urgent plea for physical and emotional safety is met not with demands for behavioral suppression, but with steady, non-judgmental stability. Simultaneously, the caregiver’s need for sustainable, compassionate, and trauma-informed strategies is equally prioritized—recognizing that meaningful caregiving cannot occur in chronic exhaustion.
           </p>
         </div>
 
@@ -89,7 +94,7 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
         </p>
 
         {/* --- FLOATED MIDDLE GRAPHIC --- */}
-        <div className="float-right ml-6 mb-4 bg-white p-2 rounded-lg shadow-sm border border-gray-200 w-64 shrink-0">
+        <div className="float-right ml-6 mb-4 bg-white p-2 rounded-lg shadow-sm border border-gray-200 w-56 shrink-0">
           <ImageWithFallback 
             src="/images/autism/autism-support-TTtab-speech-hidden-pain.webp" 
             alt="Graphic illustrating hidden medical pain and trauma"
@@ -120,7 +125,7 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
           <div className="p-5 text-sm text-gray-700 space-y-6 border-t border-[#ff6b6b]/20 cursor-default">
             {/* Part 1: The "Why" */}
             <p className="leading-relaxed">
-              In autism, fecal smearing is rarely driven by defiance or malice. It is usually rooted directly in medical discomfort, sensory processing differences, communication barriers, or learned behavioral patterns. Understanding the underlying function is key to addressing it effectively.
+              In autism, if fecal smearing occurs it is rarely driven by defiance or malice. It is usually rooted directly in medical discomfort, sensory processing differences, communication barriers, or learned behavioral patterns. Understanding the underlying function is key to addressing it effectively.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -276,11 +281,11 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
           Dysregulation escalating into aggression is often a profound stress response to unmet communication needs<sup className="text-[#10b981] font-bold ml-0.5">1</sup>. Individuals with communication barriers frequently resort to reactive aggression because they lack the necessary tools or accommodations to verbally articulate frustration, sensory overload, or physical pain.
         </p>
         <p>
-          Systemic reviews confirm that individuals experiencing emotion dysregulation are significantly more likely to engage in physical aggression, especially when feeling trapped, misunderstood, or unable to self-soothe<sup className="text-[#10b981] font-bold ml-0.5">2</sup>. By providing robust, alternative communication methods, aggressive behavior naturally decreases as autonomy increases.
+          Systemic reviews confirm that individuals experiencing emotion dysregulation are significantly more likely to engage in physical aggression, especially when feeling trapped, misunderstood, or unable to self-soothe<sup className="text-[#10b981] font-bold ml-0.5">2</sup>. By providing robust, alternative communication methods, aggressive behavior naturally decreases as autonomy increases<sup className="text-[#10b981] font-bold ml-0.5">8, 9</sup>.
         </p>
       </div>
 
-{/*  {/* ===== BRIDGING THE GENERALIZATION GAP ===== */}
+      {/* ===== BRIDGING THE GENERALIZATION GAP ===== */}
       <div className="bg-white p-5 rounded-md border-l-4 border-[#2abcd4] shadow-sm mb-6">
         <h2 className="text-[#0c264d] font-bold mb-4 text-xl flex items-center justify-center gap-2">
           Bridging the Generalization Gap Across Environments
@@ -332,7 +337,7 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
             <ul className="space-y-3 text-xs text-gray-700">
               <li className="flex items-start">
                 <span className="text-[#0A9DC4] mr-2 mt-0.5 text-[10px]">◆</span>
-                <span><strong className="text-[#0c264d]">Communication Continuity:</strong> Ensure the exact same visual icons, phrase structures, and AAC setups used at day support are physically present and utilized at home<sup className="text-[#10b981] font-bold ml-0.5">3</sup>.</span>
+                <span><strong className="text-[#0c264d]">Communication Continuity:</strong> Ensure the exact same visual icons, phrase structures, and AAC setups used at day support are physically present and utilized at home<sup className="text-[#10b981] font-bold ml-0.5">3, 9</sup>.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-[#0A9DC4] mr-2 mt-0.5 text-[10px]">◆</span>
@@ -343,6 +348,7 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
 
         </div>
       </div>
+      
       {/* ===== ADVANCED SAFETY PROTOCOLS ===== */}
       <div className="bg-white p-5 rounded-md border-l-4 border-red-500 shadow-sm mb-6">
         <h2 className="text-[#0c264d] font-bold mb-4 text-xl flex items-center justify-center gap-2">
@@ -395,7 +401,7 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
           onClick={() => setCurrentArticle?.('autism-support-therapies')}
           className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal text-sm font-spartan py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2"
         >
-          <span className="text-lg">&larr;</span>
+          <span className="text-lg">←</span>
           All About Autism
         </button>
       </div>
@@ -412,13 +418,15 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
             Cited Studies & Statistics
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>1. Purba, C. A. P., et al. (2024). "Managing Aggressive Behavior in Adolescents With Autism Spectrum Disorder: Pharmacological and Non-Pharmacological Approaches." <i>Journal of the Korean Academy of Child and Adolescent Psychiatry</i>. https://doi.org/10.5765/jkacap.240026</p>
-            <p>2. Smith, K., et al. (2026). "Emotion Regulation and Aggression: A Systematic Review and Meta-Analysis." <i>Aggressive Behavior</i>. https://doi.org/10.1002/ab.70055</p>
-            <p>3. Fahmie, T. A., et al. (2020). "Topographies and functions of emerging problem behavior and appropriate requests in neurotypical preschoolers." <i>Journal of Applied Behavior Analysis</i>. https://doi.org/10.1002/jaba.741</p>
-            <p>4. Ibrahim, K., et al. (2019). "Reduced Amygdala–Prefrontal Functional Connectivity in Children With Autism Spectrum Disorder and Co-occurring Disruptive Behavior." <i>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</i>. https://doi.org/10.1016/j.bpsc.2019.01.009</p>
-            <p>5. Hughes, J. E. A., et al. (2018). "Savant syndrome has a distinct psychological profile in autism." <i>Molecular Autism</i>. https://doi.org/10.1186/s13229-018-0237-1</p>
-            <p>6. McElhanon, B. O., et al. (2014). "Gastrointestinal Symptoms in Autism Spectrum Disorder: A Meta-analysis." <i>Pediatrics</i>. https://doi.org/10.1542/peds.2013-3995</p>
-            <p>7. Croen, L. A., et al. (2015). "The health status of adults on the autism spectrum." <i>Autism</i>. https://doi.org/10.1177/1362361315577517</p>
+            <p>1. Purba, C. A. P., et al. (2024). "Managing Aggressive Behavior in Adolescents With Autism Spectrum Disorder: Pharmacological and Non-Pharmacological Approaches." <i>Journal of the Korean Academy of Child and Adolescent Psychiatry</i>.</p>
+            <p>2. Smith, K., et al. (2026). "Emotion Regulation and Aggression: A Systematic Review and Meta-Analysis." <i>Aggressive Behavior</i>.</p>
+            <p>3. Fahmie, T. A., et al. (2020). "Topographies and functions of emerging problem behavior and appropriate requests in neurotypical preschoolers." <i>Journal of Applied Behavior Analysis</i>.</p>
+            <p>4. Ibrahim, K., et al. (2019). "Reduced Amygdala–Prefrontal Functional Connectivity in Children With Autism Spectrum Disorder and Co-occurring Disruptive Behavior." <i>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</i>.</p>
+            <p>5. Hughes, J. E. A., et al. (2018). "Savant syndrome has a distinct psychological profile in autism." <i>Molecular Autism</i>.</p>
+            <p>6. McElhanon, B. O., et al. (2014). "Gastrointestinal Symptoms in Autism Spectrum Disorder: A Meta-analysis." <i>Pediatrics</i>.</p>
+            <p>7. Croen, L. A., et al. (2015). "The health status of adults on the autism spectrum." <i>Autism</i>.</p>
+            <p>8. Autistic Self Advocacy Network (ASAN). (2021). <i>For Whose Benefit?: Evidence, Ethics, and Effectiveness of Autism Interventions</i>.</p>
+            <p>9. Beukelman, D. R., & Light, J. C. (2020). <i>Augmentative & Alternative Communication: Supporting Children and Adults with Complex Communication Needs</i> (5th ed.). Brookes Publishing.</p>
           </div>
         </div>
         
@@ -428,8 +436,8 @@ export function AutismDysregulation({ setCurrentArticle }: AutismDysregulationPr
             Background Sources
           </h4>
           <div className="text-xs space-y-4 text-slate-700 leading-relaxed" style={{ textIndent: 0 }}>
-            <p>Crisis Prevention Institute (CPI). (n.d.). "De-escalation & Crisis Prevention Training for Health Care." https://www.crisisprevention.com/industries/health-care/</p>
-            <p>Kimberly's Educational Resources. (n.d.). "Alternative Communication Options: Evaluating AAC, Independence, and Expression." https://www.kimberlyedu.org/alternative-communication-options</p>
+            <p>National Autistic Society (UK). (2023). <i>Distressed Behaviour and Safeguarding Guidance</i>.</p>
+            <p>Richmond, J. S., et al. (2012). "Verbal De-escalation of the Agitated Patient: Consensus Statement of the American Association for Emergency Psychiatry Project BETA De-escalation Workgroup." <i>Western Journal of Emergency Medicine</i>.</p>
           </div>
         </div>
       </div>
