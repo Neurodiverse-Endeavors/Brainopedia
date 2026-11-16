@@ -1,3 +1,5 @@
+import { AlertTriangle } from 'lucide-react';
+
 interface ABATherapyProps {
   setCurrentArticle?: (article: string) => void;
 }
@@ -24,35 +26,97 @@ export function ABATherapy({ setCurrentArticle }: ABATherapyProps) {
           ABA is a behavior-focused therapy that uses reinforcement to teach skills. While it is widely used, it is important to understand both its goals and the ongoing community dialogue regarding its implementation.<sup>1</sup>
         </p>
       </div>
-
+{/* ===== UNIFORM TOP BOXES (3D STRIPE STYLE) ===== */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white p-5 rounded-lg border-l-4 border-[#0c264d] shadow-sm">
-          <h3 className="font-bold text-[#0c264d] mb-3">Key Concepts</h3>
-          <ul className="text-sm space-y-3 text-gray-700">
-            <li className="flex items-start">
-              <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
-              <span><strong>Positive Reinforcement:</strong> Rewarding desired behaviors to encourage repetition.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
-              <span><strong>Task Analysis:</strong> Breaking complex skills into tiny, achievable steps.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-[#0c264d] mr-2 mt-0.5 text-[10px]">◆</span>
-              <span><strong>Data-Driven:</strong> Constant measurement of progress to adjust the plan.</span>
-            </li>
-          </ul>
+        
+        {/* Key Concepts Box */}
+        <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col h-full">
+          <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0c264d]"></div>
+          <div className="pl-2 flex flex-col flex-grow">
+            <h2 className="font-bold text-[#0c264d] mb-3 border-b border-gray-100 pb-2">Key Concepts</h2>
+            <ul className="text-sm space-y-3 text-gray-700 flex-grow list-none p-0 m-0">
+              <li><strong>Positive Reinforcement:</strong> Rewarding desired behaviors to encourage repetition.</li>
+              <li><strong>Task Analysis:</strong> Breaking complex skills into tiny, achievable steps.</li>
+              <li><strong>Data-Driven:</strong> Constant measurement of progress to adjust the plan.</li>
+            </ul>
+          </div>
         </div>
         
-        <div className="bg-[#fffbeb] p-5 rounded-lg border-l-4 border-[#d97706] shadow-sm">
-          <h3 className="font-bold text-[#0c264d] mb-3">Community Perspective</h3>
-          <p className="text-sm text-gray-700 leading-relaxed">
-            Modern advocates emphasize that ABA should never be used to "mask" autistic traits or suppress harmless stimming.<sup>2</sup> The focus should always be on the individual's safety, autonomy, and chosen goals.
+        {/* Community Perspective Box */}
+        <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col h-full">
+          <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
+          <div className="pl-2 flex flex-col flex-grow">
+            <h2 className="font-bold text-[#0c264d] mb-3 border-b border-gray-100 pb-2">Community Perspective</h2>
+            <p className="text-sm text-gray-700 leading-relaxed flex-grow">
+              Modern advocates emphasize that ABA should never be used to "mask" autistic traits or suppress harmless stimming.<sup>2</sup> The focus should always be on the individual's safety, autonomy, and chosen goals.
+            </p>
+          </div>
+        </div>
+
+      </div>
+{/* ===== THE CONTROVERSY (ACCESSIBLE WARNING CARD) ===== */}
+      <div className="bg-[#fdf2f8] p-6 rounded-xl border border-[#fbcfe8] shadow-md relative overflow-hidden mb-8 mt-8">
+        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#be185d]"></div>
+        
+        <div className="pl-2">
+          <h2 className="text-[#831843] font-bold mb-4 text-xl flex items-center gap-2">
+            <AlertTriangle className="text-[#be185d]" size={24} />
+            The Core Controversy: Compliance & Masking
+          </h2>
+          <p className="text-sm text-[#831843] leading-relaxed mb-5">
+            The most significant criticism of traditional ABA from autistic adults and advocates is its historical focus on <strong>compliance and masking</strong>. For decades, the explicit goal of early ABA was to make autistic children "indistinguishable from their peers."
           </p>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            
+            {/* Inner Card 1: No side border, added shadow */}
+            <div className="bg-white p-5 rounded-xl shadow-md border border-gray-200 flex flex-col h-full">
+              <h4 className="font-bold text-[#831843] mb-3 text-sm uppercase tracking-wider border-b border-gray-100 pb-2">
+                The Cost of "Indistinguishable"
+              </h4>
+              <ul className="space-y-3 text-xs text-slate-700 flex-grow">
+                <li className="flex items-start">
+                  <span className="text-[#be185d] mr-2 mt-0.5 text-[10px]">◆</span>
+                  <span><strong>Suppressing Regulation:</strong> Punishing or withholding rewards for harmless self-regulation (stimming).</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#be185d] mr-2 mt-0.5 text-[10px]">◆</span>
+                  <span><strong>Forced Compliance:</strong> Mandating unnatural behaviors, such as forced eye contact, which many autistic people report as physically painful.</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Inner Card 2: No side border, added shadow */}
+            <div className="bg-white p-5 rounded-xl shadow-md border border-gray-200 flex flex-col h-full">
+              <h4 className="font-bold text-[#831843] mb-3 text-sm uppercase tracking-wider border-b border-gray-100 pb-2">
+                Trauma & Burnout
+              </h4>
+              <p className="text-xs text-slate-700 leading-relaxed flex-grow">
+                When individuals are trained to continuously ignore their internal distress to comply with adult demands, it removes their autonomy. A growing body of research and firsthand accounts link these strict compliance-based therapies to severe autistic burnout, anxiety, and trauma (PTSD) in adulthood.<sup>6</sup>
+              </p>
+            </div>
+
+          </div>
         </div>
       </div>
 
-  <div className="grid md:grid-cols-2 gap-5">
+      {/* ===== NATURALISTIC APPROACHES (NDBI) ===== */}
+{/* 3D Yellow Accent Container */}
+      <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative overflow-hidden mb-8 mt-4">
+        {/* The 3D Stripe */}
+        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#ffd166]"></div>
+        
+        {/* Inner Content Wrapper */}
+        <div className="pl-2">
+        <h2 className="text-[#0c264d] font-bold mb-4 text-xl uppercase tracking-wider">
+          Naturalistic Developmental Behavioral Interventions (NDBI)
+        </h2>
+        
+        <p className="text-sm text-gray-700 leading-relaxed mb-6">
+          <strong>NDBI stands for Naturalistic Developmental Behavioral Interventions.</strong> It is an umbrella term for a modern class of therapies that combine the science of Applied Behavior Analysis (ABA) with developmental psychology. Instead of rigid table-work, NDBIs are child-led and play-based. They are conducted in natural environments (like the floor of a playroom) and rely on the child's natural interests and intrinsic motivation to teach skills, making them much more aligned with neurodiversity-affirming care.<sup>3</sup>
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-5">
           
           {/* PRT */}
           <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#0A9DC4]/20 shadow-sm flex flex-col h-full">
@@ -64,7 +128,7 @@ export function ABATherapy({ setCurrentArticle }: ABATherapyProps) {
             </p>
             <button 
               onClick={() => setCurrentArticle?.('autism-aba-prt')}
-              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1"
+              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1 shrink-0"
             >
               Read more →
             </button>
@@ -80,7 +144,7 @@ export function ABATherapy({ setCurrentArticle }: ABATherapyProps) {
             </p>
             <button 
               onClick={() => setCurrentArticle?.('autism-aba-esdm')}
-              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1"
+              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1 shrink-0"
             >
               Read more →
             </button>
@@ -96,7 +160,7 @@ export function ABATherapy({ setCurrentArticle }: ABATherapyProps) {
             </p>
             <button 
               onClick={() => setCurrentArticle?.('autism-aba-net')}
-              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1"
+              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1 shrink-0"
             >
               Read more →
             </button>
@@ -112,13 +176,15 @@ export function ABATherapy({ setCurrentArticle }: ABATherapyProps) {
             </p>
             <button 
               onClick={() => setCurrentArticle?.('autism-aba-it')}
-              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1"
+              className="px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold text-xs w-fit flex items-center gap-1 shrink-0"
             >
               Read more →
             </button>
           </div>
 
         </div>
+      </div>
+      </div>
 
       {/* --- BOTTOM BACK BUTTON --- */}
       <div className="flex justify-end mt-8 mb-6 clear-both">
