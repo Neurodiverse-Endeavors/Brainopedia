@@ -28,13 +28,22 @@ export function BiomedicalGut({ setCurrentArticle }: BiomedicalGutProps) {
       </div>
 
       <div className="space-y-10 animate-in slide-in-from-bottom-4 duration-500">
+   {/* Intro Section */}
+      <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#2abcd4] flow-root">
         
-        {/* Intro Section */}
-        <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#2abcd4]">
-          <p className="text-slate-700 leading-relaxed text-sm md:text-base max-w-4xl mx-auto text-center font-medium">
-            The gastrointestinal system and the brain are inextricably linked via the vagus nerve and the microbiome—a biological superhighway known as the Gut-Brain Axis. For many autistic individuals, treating physical GI distress and optimizing diet is not about "treating autism," but rather resolving systemic neuroinflammation to achieve profound improvements in comfort, emotional regulation, and cognitive focus.
-          </p>
+        <div className="w-40 max-w-full shrink-0 block mx-auto float-none md:float-right md:ml-6 mb-4 mt-1">
+          <ImageWithFallback 
+            src="/images/autism/autism-support-biomed-gut-girl.webp" 
+            alt="body systems showing vagal nerve connection between gut and brain"
+            className="w-full h-auto rounded-lg shadow-md border border-[#2abcd4] block"
+          /> 
         </div>
+
+        {/* Text is now left-aligned to wrap perfectly around the floated image */}
+        <p className="text-slate-700 leading-relaxed text-sm md:text-base font-medium">
+          The gastrointestinal system and the brain are inextricably linked via the vagus nerve and the microbiome—a biological superhighway known as the Gut-Brain Axis. For many autistic individuals, treating physical GI distress and optimizing diet is not about "treating autism," but rather resolving systemic neuroinflammation to achieve profound improvements in comfort, emotional regulation, and cognitive focus.
+        </p>
+      </div>
 
         {/* 1. Microbiome & Permeability */}
         <div className="bg-white p-6 md:p-8 rounded-lg border border-gray-200 shadow-sm">
@@ -76,6 +85,14 @@ export function BiomedicalGut({ setCurrentArticle }: BiomedicalGutProps) {
             <p className="text-sm text-slate-700 leading-relaxed mb-4">
               The vagus nerve is the biological superhighway connecting the enteric nervous system (the gut) to the central nervous system (the brain). According to Dr. Emeran Mayer's research on the gut-brain axis, nearly 80% of vagal nerve fibers send information <i>from</i> the gut <i>up</i> to the brain.<sup>5</sup>
             </p>
+                    {/* Image MUST go before the text it floats next to */}
+        <div className="w-56 max-w-full shrink-0 block mx-auto float-none md:float-right md:ml-6 mb-4 mt-1">
+          <ImageWithFallback 
+            src="/images/autism/autism-support-biomed-gut-vagus.webp" 
+            alt="body systems showing vagal nerve connection between gut and brain"
+            className="w-full h-auto rounded-lg shadow-md border border-[#2abcd4] block"
+          /> 
+        </div>
             <p className="text-sm text-slate-700 leading-relaxed mb-4">
               Normally, the vagus nerve controls the parasympathetic "rest and digest" calming system (as mapped out in Dr. Stephen Porges' Polyvagal Theory).<sup>6</sup> However, chronic visceral pain from undiagnosed GI conditions sends overwhelming, constant distress signals up the afferent vagal fibers. The brain interprets this severe gut pain as a literal threat to survival, completely hijacking the nervous system and locking the autistic child into a sympathetic "fight or flight" panic state.
             </p>

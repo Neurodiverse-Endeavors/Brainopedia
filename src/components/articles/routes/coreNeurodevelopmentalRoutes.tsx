@@ -67,6 +67,9 @@ export const coreNeurodevelopmentalRoutes: RouteMap = {
   'autism-aba-net': lazy(() => import('../autism/asd-support/NETTherapy').then(m => ({ default: m.NETTherapy }))),
   'autism-aba-it': lazy(() => import('../autism/asd-support/ITTherapy').then(m => ({ default: m.ITTherapy }))),
  
+  // Neuromodulation Deep Dive (Routed from Therapies)
+  'autism-neuromodulation': lazy(() => import('../autism/asd-support/AutismNeuromodulation').then(m => ({ default: m.AutismNeuromodulation }))),
+
   // NEW DYSREGULATION ROUTE 
   'autism-dysregulation': lazy(() => import('../autism/asd-support/AutismDysregulation').then(m => ({ default: m.AutismDysregulation }))),
   

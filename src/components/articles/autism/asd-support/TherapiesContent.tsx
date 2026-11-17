@@ -87,8 +87,12 @@ export function TherapiesContent({ setCurrentArticle }: TherapiesContentProps) {
         </div>
         <div className="flex-1">
           <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Applied Behavior Analysis (ABA)</h3>
-          <p className="mb-4 text-sm leading-relaxed text-gray-700">
-            ABA uses behavioral principles to teach skills and is one of the most researched autism interventions. However, it's also controversial—many autistic adults report trauma from compliance-focused ABA that targeted harmless autistic behaviors.<sup>4</sup> Modern approaches emphasize naturalistic, play-based methods that respect autonomy and neurodiversity.<sup>2</sup>
+          <p className="text-sm text-slate-700 leading-relaxed mb-4">
+            Applied Behavior Analysis (ABA) is a highly researched behavioral framework, but it remains deeply controversial due to a history of rigid, compliance-driven methods that many autistic adults report caused profound trauma. In response to these ethical concerns, neurodiversity-affirming guidelines heavily caution against traditional ABA practices that attempt to extinguish harmless autistic traits, such as stimming or atypical eye contact.
+          </p>
+
+          <p className="text-sm text-slate-700 leading-relaxed mb-4">
+            Modern behavioral support has largely evolved toward Naturalistic Developmental Behavioral Interventions (NDBIs), which integrate behavioral science into child-led, play-based environments that prioritize physical and emotional autonomy. This newer umbrella of therapies includes frameworks like Pivotal Response Treatment (PRT), the Early Start Denver Model (ESDM), and Natural Environment Teaching (NET), which focus on relationship-building rather than forced compliance.
           </p>
           <button 
             onClick={() => setCurrentArticle?.('autism-aba-therapy')} 
@@ -170,7 +174,29 @@ export function TherapiesContent({ setCurrentArticle }: TherapiesContentProps) {
           </button>
         </div>
       </div>
-
+{/* NEUROMODULATION */}
+      <div className="bg-white rounded-md border-2 border-[#0c264d] p-6 mb-6 flex flex-col sm:flex-row-reverse gap-6 items-center sm:items-start">
+        <div className="w-64 flex-shrink-0">
+          <div className="rounded-lg shadow-sm overflow-hidden bg-white">
+            <ImageWithFallback 
+              src="/images/autism/autism-support-TTtab-neuromodulation.webp" 
+              alt="Neuromodulation and neurotech graphic"
+            />
+          </div>
+        </div>
+        <div className="flex-1">
+          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Emerging Neuromodulation</h3>
+          <p className="mb-4 text-sm leading-relaxed text-gray-700">
+            Neuromodulation is an investigational field using targeted electrical or magnetic signals (like rTMS or vagus nerve stimulation) to balance overactive or underactive nervous system networks. For autistic individuals, this technology is not used to "treat" autism, but rather to alleviate severe co-occurring physiological distress—specifically balancing the autonomic nervous system and easing the chronic anxiety that stems from sensory overload.
+          </p>
+          <button 
+            onClick={() => setCurrentArticle?.('autism-neuromodulation')} 
+            className="mt-2 px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold inline-block"
+          >
+            Read more →
+          </button>
+        </div>
+      </div>
       {/* Choosing the Right Approach */}
       <div className="mt-8 mb-8">
         <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Choosing the Right Approach</h2>
@@ -364,6 +390,9 @@ export function TherapiesContent({ setCurrentArticle }: TherapiesContentProps) {
           </h4>
           <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
             <li>Autistic Self Advocacy Network (ASAN). Navigating Healthcare and Therapy Options.</li>
+            <li>Kupferstein, H. (2018). Evidence of increased PTSD symptoms in autistics exposed to applied behavior analysis. <i>Advances in Autism</i>.</li>
+            <li>Schreibman, L., et al. (2015). Naturalistic Developmental Behavioral Interventions: Empirically Validated Treatments for Autism Spectrum Disorder. <i>Journal of Autism and Developmental Disorders</i>.</li>
+
           </ul>
         </div>
       </div>

@@ -33,6 +33,19 @@ export function BiomedicalTiers({ setCurrentArticle }: BiomedicalTiersProps) {
         {/* Intro Section: The Philosophy */}
         <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#2abcd4]">
           <h2 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-[#2abcd4] pb-2">Healing the Body, Not "Curing" the Neurotype</h2>
+            {/* Intro Section */}
+      <div className="bg-[#f0f9ff] p-6 rounded-lg shadow-sm border border-[#2abcd4] flow-root">
+        
+        <div className="w-72 max-w-full shrink-0 block mx-auto float-none md:float-right md:ml-6 mb-4 mt-1">
+          <ImageWithFallback 
+            src="/images/autism/autism-support-biomed-tiers-traffic-light.webp" 
+            alt="traffic light describing tiers of biomedical"
+            className="w-full h-auto rounded-lg shadow-md border border-[#2abcd4] block"
+          /> 
+        </div> 
+
+          
+          
           <p className="text-slate-700 leading-relaxed text-sm mb-4">
             It is critical to state clearly: none of the interventions below "cure" autism. Autism is a neurodevelopmental difference. However, autistic individuals suffer from notoriously high rates of co-occurring medical issues—like severe gastrointestinal disease, immune dysregulation, and metabolic blockages.
           </p>
@@ -40,7 +53,7 @@ export function BiomedicalTiers({ setCurrentArticle }: BiomedicalTiersProps) {
             When a child is in chronic physical pain, their nervous system dysregulates. The biomedical interventions listed here under Tier 1 are specific, studied medical treatments designed to heal underlying physiology. When physical pain and inflammation are resolved, regulation, communication, and overall quality of life drastically improve. As stated, Tier 2 have more limited evidence. And Tier 3 interventions are dangerous or disproven. Please read carefully and consult a license physician before pursuing any biomedical intervention.
           </p>
         </div>
-
+      </div>
         {/* TIER 1: Helpful & Targeted */}
         <div>
           <h2 className="text-[#10b981] font-bold mb-4 text-2xl border-b-2 border-[#10b981] pb-2">

@@ -118,15 +118,7 @@ export function SafetyContent({ setCurrentArticle }: SafetyContentProps) {
         </div>
 
       </div>
-        {/* --- 2nd CENTERED PRISM GRAPHIC --- */} 
-        <div className="text-center w-full mb-10 mt-6"> 
-          <div className="mx-auto w-64 rounded-lg shadow-md overflow-hidden"> 
-            <ImageWithFallback 
-              src="/images/autism/autism-support-safetytab-3gens.webp" 
-              alt="abstract painting signifyingchildhood, adolescence, and adulthood"
-            /> 
-          </div> 
-        </div>
+       
 
       {/* --- BOTTOM BACK BUTTON --- */}
       <div className="flex justify-end mt-8 mb-6 clear-both">

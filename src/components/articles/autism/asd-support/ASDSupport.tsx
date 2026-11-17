@@ -122,9 +122,6 @@ export function ASDSupport({ setCurrentArticle, initialTab }: ASDSupportProps) {
         {activeTab === 'safety' && (
           <SafetyContent setCurrentArticle={setCurrentArticle} />
         )}
-{activeTab === 'safety' && (
-          <SafetyContent setCurrentArticle={setCurrentArticle} />
-        )}
 
         {/* ========================================== */}
         {/* TAB 9: BIOMEDICAL & ALTERNATIVE            */}
