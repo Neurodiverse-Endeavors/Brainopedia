@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import React, { lazy } from 'react';
 import { RouteMap } from './routeTypes';
 
 export const coreNeurodevelopmentalRoutes: RouteMap = {

@@ -140,17 +140,52 @@ export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContent
             </div>
           </div>
         </div>
+{/* Social & Communicative Environment (NEW RESEARCH-BACKED SECTION) */}
+        <div className="bg-[#f0f9ff] p-6 rounded-lg mb-8">
+          <h3 className="text-[#0c264d] font-bold mb-4 text-lg">The Social & Communicative Environment</h3>
+          
+          <p className="mb-6 text-sm leading-relaxed">
+            An environment isn't just walls, lighting, and furniture—it is also made up of the people, communication tools, and social expectations surrounding an autistic person. Landmark clinical trials show that modifying how the <em>environment</em> communicates is one of the most powerful forms of support:
+          </p>
+
           {/* --- CENTERED GRAPHIC SECTION 3 --- */} 
           <div className="text-center w-full mb-8"> 
-          <div className="mx-auto w-64">
-                      <div className="rounded-lg shadow-md overflow-hidden bg-white">
-                        <ImageWithFallback 
-                          src="/images/autism/autism-support-EnviroSupptab-communication-bubbles.webp" 
-                          alt="Communication bubbles to signify communication supports"
-                        /> 
-                      </div>
-                    </div> 
-                  </div>
+            <div className="mx-auto w-64">
+              <div className="rounded-lg shadow-md overflow-hidden bg-white">
+                <ImageWithFallback 
+                  src="/images/autism/autism-support-EnviroSupptab-communication-bubbles.webp" 
+                  alt="Communication bubbles to signify communication supports"
+                /> 
+              </div>
+            </div> 
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {/* Study 1: PACT */}
+            <div className="bg-white p-5 rounded-md border-t-4 border-[#0c264d] shadow-sm">
+              <h4 className="text-[#0c264d] font-bold mb-2 text-base">Adult Synchrony</h4>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Instead of drilling a child to change their behavior, the landmark <strong>PACT trial</strong> trained caregivers to adapt to the child's communication pace and cues. Shifting the adult environment led to lasting, multi-year gains in reciprocal communication.<sup>4</sup>
+              </p>
+            </div>
+
+            {/* Study 2: Double Empathy */}
+            <div className="bg-white p-5 rounded-md border-t-4 border-[#2abcd4] shadow-sm">
+              <h4 className="text-[#0c264d] font-bold mb-2 text-base">Peer Affinity Spaces</h4>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Empirical research on the <strong>"Double Empathy Problem"</strong> proves that autistic-to-autistic communication is just as effective and high-rapport as neurotypical interaction. Creating neurodivergent peer spaces reduces the exhausting environmental pressure to mask.<sup>5</sup>
+              </p>
+            </div>
+
+            {/* Study 3: Multimodal AAC */}
+            <div className="bg-white p-5 rounded-md border-t-4 border-[#10b981] shadow-sm">
+              <h4 className="text-[#0c264d] font-bold mb-2 text-base">Multimodal Access</h4>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                Providing immediate environmental access to Speech-Generating Devices (AAC), text, and visual tools does not delay speech—randomized trials prove it actually accelerates spontaneous communication and autonomy.<sup>6</sup>
+              </p>
+            </div>
+          </div>
+        </div>
                   
         <div className="bg-[#ffd166] border-2 border-[#0c264d] p-5 rounded-lg shadow-md">
           <h3 className="text-[#0c264d] font-bold mb-3 text-lg flex items-center gap-2">
@@ -186,6 +221,9 @@ export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContent
               <p>1. Martin, C. S. (2014). Exploring the impact of the design of the physical environment on children with autism spectrum disorders. <i>Journal of Child and Family Studies</i>.</p>
               <p>2. Tomchek, S. D., & Dunn, W. (2007). Sensory processing in children with and without autism: A comparative study using the short sensory profile. <i>The American Journal of Occupational Therapy</i>.</p>
               <p>3. Mesibov, G. B., & Shea, V. (2010). The TEACCH program in the era of evidence-based practice. <i>Journal of Autism and Developmental Disorders</i>.</p>
+              <p>4. Pickles, A., Green, J., et al. (2016). Parent-mediated social communication therapy for young children with autism (PACT): Long-term follow-up of a randomised controlled trial. <i>The Lancet</i>.</p>
+              <p>5. Crompton, C. J., et al. (2020). Autistic peer-to-peer information transfer is highly effective. <i>Autism</i>.</p>
+              <p>6. Kasari, C., et al. (2014). Communication interventions for minimally verbal children with autism: A sequential multiple assignment randomized trial. <i>Journal of the American Academy of Child & Adolescent Psychiatry</i>.</p>
             </div>
           </div>
           
@@ -196,6 +234,7 @@ export function EnvironmentalContent({ setCurrentArticle }: EnvironmentalContent
             </h4>
             <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0" style={{ textIndent: 0 }}>
               <li>American Psychiatric Association. (2013). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed.). American Psychiatric Publishing.</li>
+              <li>Milton, D. E. (2012). On the ontological status of autism: The 'double empathy problem'. <i>Disability & Society</i>.</li>
             </ul>
           </div>
         </div>

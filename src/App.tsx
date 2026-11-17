@@ -47,13 +47,8 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
           }
         }, 100);
       }
-    } else {
-      // If there is no link, just do the normal scroll to the very top
-      const pathParts = location.pathname.split('/').filter(Boolean);
-      const prevPathParts = (window as any).__prevPath?.split('/').filter(Boolean) || [];
-      if (pathParts[0] !== prevPathParts[0]) {
-        window.scrollTo(0, 0);
-      }
+} else {
+      window.scrollTo(0, 0);
     }
     
     (window as any).__prevPath = location.pathname;

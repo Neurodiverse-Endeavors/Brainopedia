@@ -43,7 +43,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
           Occupational therapy (OT) helps people of all ages regain or build the skills needed for daily living. Rather than focusing strictly on physical movement, OT focuses on functional independence, supporting "occupations"—the meaningful activities that occupy your time, such as working, self-care, or play.
         </p>
         <p className="text-base leading-relaxed">
-          For autistic individuals, OT supports functional communication, sensory regulation, and daily independence across all support levels. Because autism impacts individuals differently, an OT evaluates unique strengths and challenges to help people adapt to physical, cognitive, or developmental challenges so they can participate in everyday life.
+          For autistic individuals, OT supports functional communication, sensory regulation, and daily independence across all support levels. Because autism impacts individuals differently, an OT evaluates unique strengths and challenges to help people adapt to physical, cognitive, or developmental challenges so they can participate in everyday life.<sup>1</sup>
         </p>
       </div>
 
@@ -64,7 +64,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
               <Sun className="text-[#ff6b6b]" size={18} /> Sensory Integration
             </h4>
             <p className="text-sm text-gray-700">
-              Developing personalized "sensory diets" to help individuals process noise, lights, or textures, minimizing sensory meltdowns and maximizing comfort<sup>2</sup>.
+              Developing personalized "sensory diets" to help individuals process noise, lights, or textures, minimizing sensory meltdowns and maximizing comfort.
             </p>
           </div>
           
@@ -105,7 +105,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
         </h2>
         
         <p className="text-sm text-gray-700 mb-4 leading-relaxed">
-          An Affirming Sensory Diet is a personalized plan of daily physical activities and environmental adjustments designed to keep a person's nervous system feeling regulated and safe. Unlike older, compliance-based approaches that tried to stop neurodivergent behaviors, an affirming sensory diet embraces neurodiversity-affirming care. It treats self-stimulatory behaviors (stimming)—like rocking, hand-flapping, or humming—as vital, natural tools for self-regulation, rather than behaviors that need to be fixed or extinguished.
+          An Affirming Sensory Diet is a personalized plan of daily physical activities and environmental adjustments designed to keep a person's nervous system feeling regulated and safe. Unlike older, compliance-based approaches that tried to stop neurodivergent behaviors, an affirming sensory diet embraces neurodiversity-affirming care. It treats self-stimulatory behaviors (stimming)—like rocking, hand-flapping, or humming—as vital, natural tools for self-regulation, rather than behaviors that need to be fixed or extinguished.<sup>3</sup>
         </p>
 
         <div className="grid md:grid-cols-3 gap-4 mb-6">
@@ -260,7 +260,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
         </div>
       </div>
 
-{/* ===== COMMON CLINICAL MODALITIES & FRAMEWORKS ===== */}
+      {/* ===== COMMON CLINICAL MODALITIES & FRAMEWORKS ===== */}
       <div className="bg-white p-6 rounded-md border-l-4 border-[#0c264d] shadow-sm mb-8 mt-4">
         <h2 className="text-[#0c264d] font-bold mb-6 text-2xl border-b border-slate-200 pb-3">
           Common Clinical Modalities & Frameworks
@@ -281,7 +281,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
               Sensory Processing & Integration
             </h3>
             <ul className="space-y-3 text-sm text-slate-700">
-              <li><strong className="text-[#0c264d]">Ayres Sensory Integration (ASI):</strong> Play-based physical activities (swinging, climbing) to help the brain organize balance and body awareness.</li>
+              <li><strong className="text-[#0c264d]">Ayres Sensory Integration (ASI):</strong> Play-based physical activities (swinging, climbing) to help the brain organize balance and body awareness.<sup>2</sup></li>
               <li><strong className="text-[#0c264d]">Sound-Based Protocols:</strong> Emerging therapies like the Tomatis Method or Therapeutic Listening that use modified sound frequencies to support auditory processing and regulation.<sup>4</sup></li>
               <li><strong className="text-[#0c264d]">Targeted Protocols:</strong> The Wilbarger Brushing Protocol (deep pressure) or Astronaut Training (vestibular-visual exercises).</li>
             </ul>
@@ -296,7 +296,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
               Emotional Regulation & Interoception
             </h3>
             <ul className="space-y-3 text-sm text-slate-700">
-              <li><strong className="text-[#0c264d]">Interoception Curriculum:</strong> Training individuals to notice internal body signals (racing heart, tense muscles) to identify emotions earlier.</li>
+              <li><strong className="text-[#0c264d]">Interoception Curriculum:</strong> Training individuals to notice internal body signals (racing heart, tense muscles) to identify emotions and reduce anxiety earlier.<sup>5</sup></li>
               <li><strong className="text-[#0c264d]">Zones of Regulation:</strong> A cognitive framework that categorizes energy levels into color-coded "zones" to help select regulation tools.</li>
               <li><strong className="text-[#0c264d]">The Alert Program:</strong> Uses a "car engine" analogy to help learners recognize if they are running too fast, too slow, or just right.</li>
             </ul>
@@ -385,7 +385,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
         </button>
       </div>
 
-{/* ===== REFERENCES SECTION ===== */}
+      {/* ===== REFERENCES SECTION ===== */}
       <div className="clear-both mt-16 font-spartan">
         <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
         
@@ -399,6 +399,7 @@ export function OccupationalTherapy({ setCurrentArticle }: OccupationalTherapyPr
             <p>2. Schaaf, R. C., et al. (2014). An intervention for sensory difficulties in children with autism: A randomized trial. <i>Journal of Autism and Developmental Disorders</i>.</p>
             <p>3. Dallman, A. R., et al. (2022). Neurodiversity-Affirming Practices are a Moral Imperative for Occupational Therapy. <i>The Open Journal of Occupational Therapy</i>.</p>
             <p>4. Duranovic, M., et al. (2026). The Potential Effects of the Tomatis Method in Children With Autism Spectrum Disorder. <i>Journal of Speech, Language, and Hearing Research</i>.</p>
+            <p>5. Quadt, L., Garfinkel, S. N., et al. (2021). Interoceptive training to target anxiety in autistic adults (ADIE): A single-center, superiority randomized controlled trial. <i>eClinicalMedicine (The Lancet)</i>.</p>
           </div>
         </div>
         

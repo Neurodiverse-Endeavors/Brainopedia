@@ -191,8 +191,14 @@ const seoMap: Record<string, { title: string; description: string; noindex?: boo
     title: 'Board of Directors | Neurodiverse Endeavors',
     description: 'Official Board of Directors for Neurodiverse Endeavors 501(c)(3).',
     noindex: true // This flag triggers the hidden SEO tag!
-  }
+  },
+
+  'autism-neuromodulation': {
+    title: 'Neuromodulation & Emerging Supports for Autism | Brainopedia',
+    description: 'Explore investigational neurotechnology, including rTMS, tDCS, vagus nerve stimulation, and median nerve research for autonomic and sensory regulation in autism.'
+  },
 };
+
 
 // --- THE DELAYED LOADER ---
 const DelayedFallback = () => {
@@ -203,10 +209,11 @@ const DelayedFallback = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!show) return null; 
+  // Return an invisible spacer of the same height so the box never collapses!
+  if (!show) return <div className="min-h-[60vh]" />; 
 
   return (
-    <div className="flex justify-center items-center py-20 opacity-0 animate-fadeIn">
+    <div className="flex justify-center items-center min-h-[60vh]">
       <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#0c264d]"></div>
       <span className="ml-3 text-[#0c264d] font-spartan font-medium">Loading volume...</span>
     </div>
@@ -284,7 +291,7 @@ export function ArticleContent({ articleId, setCurrentArticle }: ArticleContentP
         {seoData.noindex && <meta name="robots" content="noindex, nofollow" />}
       </Helmet>
 
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 min-h-[70vh] transition-all duration-150">
         <Suspense fallback={<DelayedFallback />}>
           <SelectedComponent setCurrentArticle={setCurrentArticle} />
         </Suspense>
