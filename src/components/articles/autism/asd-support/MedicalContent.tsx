@@ -175,7 +175,7 @@ export function MedicalContent({ setCurrentArticle }: MedicalContentProps) {
         
         <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 border-l-4 border-l-[#be185d]">
           <h4 className="font-bold text-[#be185d] mb-1">Behavior as Communication</h4>
-          <p className="text-sm text-slate-700 leading-relaxed">Nonverbal children may show sudden behavioral changes (aggression, self-injury) as the <i>only</i> sign of severe GI distress.<sup>9</sup></p>
+          <p className="text-sm text-slate-700 leading-relaxed">Nonverbal children may show sudden behavioral changes (aggression, self-injury) as the <i>only</i> sign of severe GI distress.<sup>8</sup></p>
         </div>
         
         <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 border-l-4 border-l-[#0c264d]">
@@ -231,6 +231,61 @@ export function MedicalContent({ setCurrentArticle }: MedicalContentProps) {
               {/* Reflux */}
               <tr className="bg-[#2abcd4]"><td colSpan={6} className="p-2 font-bold text-white tracking-wide">REFLUX & GERD</td></tr>
               <tr className="bg-white border-b border-[#2abcd4]"><td className="p-3 border-r border-gray-300"><strong>Omeprazole</strong><br/>(Prilosec)</td><td className="p-3 border-r border-gray-300">Proton Pump Inhibitor (PPI)</td><td className="p-3 border-r border-gray-300"><span className="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-[10px] font-bold">OTC</span></td><td className="p-3 border-r border-gray-300">GERD, heartburn</td><td className="p-3 border-r border-gray-300">Long-term: decreased calcium absorption, B12 deficiency</td><td className="p-3">Most effective for acid suppression<sup>9</sup></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* TABLE 3: DRUG-INDUCED NUTRIENT DEPLETION */}
+      <h3 className="text-[#0c264d] font-bold mb-4 mt-12 text-xl border-b-2 border-[#be185d] pb-2">The Physiological Cost: Nutrient Depletion</h3>
+      
+      <div className="bg-[#fdf2f8] border-l-4 border-[#be185d] p-4 mb-6 rounded-r-lg shadow-sm">
+        <p className="text-sm text-[#831843] leading-relaxed">
+          <strong>Why This Matters:</strong> Psychiatric and gastrointestinal medications commonly deplete essential micronutrients and alter metabolic pathways. For an autistic individual with a highly sensitive nervous system, these chemical depletions can inadvertently worsen sensory vulnerabilities, trigger panic, and fuel emotional dysregulation.<sup>15</sup>
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 min-w-0 w-full mb-8">
+        <div className="w-full overflow-x-auto pb-4">
+          <table className="medication-table w-full min-w-[700px] table-fixed border-2 border-[#be185d] rounded-lg text-sm bg-white shadow-sm">
+            <thead>
+              <tr className="bg-[#be185d] text-white">
+                <th className="text-left border-r border-white/20 text-xs w-[18%]">Medication Class</th>
+                <th className="text-left border-r border-white/20 text-xs w-[22%]">Primary Depletions</th>
+                <th className="text-left text-xs w-[60%]">Physiological Impact on the Autistic Profile</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white border-b border-[#be185d]/30">
+                <td className="p-3 border-r border-gray-200"><strong>Atypical Antipsychotics</strong><br/>(Risperidone, Abilify)</td>
+                <td className="p-3 border-r border-gray-200 text-[#be185d] font-bold">CoQ10, B-Vitamins</td>
+                <td className="p-3 text-slate-700">Aggressively alters glucose metabolism. Frequently elevates prolactin, disrupting the entire endocrine system. Metabolic shifts often alter the gut microbiome, exacerbating existing gastrointestinal pain.</td>
+              </tr>
+              <tr className="bg-slate-50 border-b border-[#be185d]/30">
+                <td className="p-3 border-r border-gray-200"><strong>Stimulants</strong><br/>(Ritalin, Adderall)</td>
+                <td className="p-3 border-r border-gray-200 text-[#be185d] font-bold">Magnesium, Zinc</td>
+                <td className="p-3 text-slate-700">Magnesium is the nervous system's primary relaxation mineral; its depletion actively worsens sensory overload, muscle tension, and anxiety. Appetite suppression leads to generalized macronutrient and micronutrient starvation.</td>
+              </tr>
+              <tr className="bg-white border-b border-[#be185d]/30">
+                <td className="p-3 border-r border-gray-200"><strong>SSRIs</strong><br/>(Sertraline, Prozac)</td>
+                <td className="p-3 border-r border-gray-200 text-[#be185d] font-bold">Melatonin, Sodium</td>
+                <td className="p-3 text-slate-700">Depleting melatonin paradoxically worsens severe sleep-onset insomnia. Because 90% of serotonin is produced in the gut, SSRIs actively alter gut motility, frequently triggering diarrhea, nausea, or severe constipation.</td>
+              </tr>
+              <tr className="bg-slate-50 border-b border-[#be185d]/30">
+                <td className="p-3 border-r border-gray-200"><strong>Anticonvulsants</strong><br/>(Keppra)</td>
+                <td className="p-3 border-r border-gray-200 text-[#be185d] font-bold">Vitamin B6, Folate (B9), Vitamin D</td>
+                <td className="p-3 text-slate-700">Vitamin B6 depletion is a primary biochemical driver of the severe irritability, aggression, and behavioral changes (colloquially known as "Kepprage") frequently associated with this specific drug.</td>
+              </tr>
+              <tr className="bg-white border-b border-[#be185d]/30">
+                <td className="p-3 border-r border-gray-200"><strong>Proton Pump Inhibitors</strong><br/>(Omeprazole)</td>
+                <td className="p-3 border-r border-gray-200 text-[#be185d] font-bold">Vitamin B12, Magnesium, Iron, Zinc</td>
+                <td className="p-3 text-slate-700">Low B12 and iron worsen fatigue and cognitive fog. Zinc depletion impacts taste and smell, severely worsening selective eating. Lowered stomach acid significantly increases the risk of Small Intestinal Bacterial Overgrowth (SIBO).</td>
+              </tr>
+              <tr className="bg-slate-50">
+                <td className="p-3 border-r border-gray-200"><strong>Laxatives (Osmotic/Stimulant)</strong><br/>(MiraLAX, Senna)</td>
+                <td className="p-3 border-r border-gray-200 text-[#be185d] font-bold">Potassium, Magnesium, Gut Flora</td>
+                <td className="p-3 text-slate-700">Flushes out crucial electrolytes. Electrolyte imbalances cause muscle cramping and heart palpitations, which an individual with interoception differences may experience as sudden panic, leading to an aggressive meltdown.</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -337,6 +392,7 @@ export function MedicalContent({ setCurrentArticle }: MedicalContentProps) {
             <p>12. Hughes, H. K., et al. (2018). Immune dysfunction and autoimmunity as pathological mechanisms in autism spectrum disorders. <i>Frontiers in Cellular Neuroscience</i>.</p>
             <p>13. Nicolaidis, C., et al. (2014). Healthcare experiences of autistic adults. <i>Journal of General Internal Medicine</i>.</p>
             <p>14. Cheak-Zamora, N. C., et al. (2015). Health care transition in youth with autism spectrum disorder. <i>Pediatrics</i>.</p>
+            <p>15. Pelton, R., LaValle, J. B., Hawkins, E. B., & Krinsky, D. L. (2001). <i>Drug-Induced Nutrient Depletion Handbook</i>. Lexi-Comp.</p>
           </div>
         </div>
         
