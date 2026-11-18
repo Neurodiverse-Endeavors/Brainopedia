@@ -177,8 +177,7 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
           </div>
         </div>
       )}
-
-      {/* ==========================================
+{/* ==========================================
           TAB 2: RSD
       ========================================== */}
       {activeTab === 'rsd' && (
@@ -202,21 +201,24 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
 
           {/* The Neurological Impact Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Neurological Impact</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              The Neurological Impact
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  RSD is not a sign of weakness or a lack of resilience; it is a neurological misfiring where the brain processes emotional rejection with the exact same intensity as severe physical trauma. Because ADHD brains struggle to regulate the flow of emotion, a minor perceived slight floods the system instantly, bypassing rational thought.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/mood-rsd-brain.webp"
                   alt="Brain map showing emotional flooding during RSD"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                RSD is not a sign of weakness or a lack of resilience; it is a neurological misfiring where the brain processes emotional rejection with the exact same intensity as severe physical trauma. Because ADHD brains struggle to regulate the flow of emotion, a minor perceived slight floods the system instantly, bypassing rational thought.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -242,21 +244,36 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
 
           {/* Management Strategies Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Management Strategies</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Management Strategies
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-64">
-                <ImageWithFallback 
-                  src="/images/mental-health/mood-rsd-management.webp"
-                  alt="Individual using grounding techniques"
-                  className="w-full h-auto rounded-lg shadow-sm"
-                />
+            {/* Centered Video with WebP Backup */}
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-96">
+                <video 
+                  poster="/images/mental-health/mood-rsd-management.webp"
+                  className="w-full h-auto rounded-lg shadow-sm border border-cyan-100"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  aria-label="Individual using grounding techniques"
+                >
+                  <source src="/images/mental-health/mood-rsd-management.mp4" type="video/mp4" />
+                  <ImageWithFallback 
+                    src="/images/mental-health/mood-rsd-management.webp"
+                    alt="Individual using grounding techniques"
+                    className="w-full h-auto rounded-lg shadow-sm border border-cyan-100"
+                  />
+                </video>
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Because RSD hits so rapidly, traditional in-the-moment talk therapy is often ineffective. Management requires creating distance between the trigger and the reaction, allowing the physiological storm to pass before attempting to analyze the situation logically.
-                </p>
-              </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Because RSD hits so rapidly, traditional in-the-moment talk therapy is often ineffective. Management requires creating distance between the trigger and the reaction, allowing the physiological storm to pass before attempting to analyze the situation logically.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -289,7 +306,6 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
           </div>
         </div>
       )}
-
       {/* ==========================================
           TAB 3: BIPOLAR & DYSREGULATION
       ========================================== */}
@@ -350,35 +366,56 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
             </div>
           </div>
 
-          {/* Emotional Dysregulation Card (Slate) */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Managing General Dysregulation</h2>
-            
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-64">
-                <ImageWithFallback 
-                  src="/images/mental-health/mood-dysregulation-tools.webp"
-                  alt="Tools for managing big emotions and dysregulation"
-                  className="w-full h-auto rounded-lg shadow-sm"
-                />
-              </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Regardless of a co-occurring diagnosis, almost all neurodivergent individuals struggle with emotional dysregulation—the inability to flexibly manage the intensity of their feelings. Validating these intense emotions while providing structured outlets prevents them from turning into destructive meltdowns.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-              <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">Stabilization Techniques</h3>
-              <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-                <li><strong>Interoceptive training:</strong> Helping the individual learn the physical signs of rising emotion (e.g., tight chest) before it reaches a boiling point.</li>
-                <li><strong>Safe venting spaces:</strong> Designating a safe room where pacing, vocalizing, or intense movement is allowed without judgment during high-emotion periods.</li>
-                <li><strong>Co-regulation:</strong> A calm, steady presence from a support partner whose own nervous system serves as an anchor, rather than matching the escalating panic.</li>
-              </ul>
-            </div>
+   {/* Emotional Dysregulation Card (Slate) */}
+      <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+        <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Managing General Dysregulation</h2>
+        
+        {/* --- CENTERED HERO GRAPHIC --- */}
+        <div className="text-center w-full mb-6">
+          <div className="mx-auto w-full md:w-[30rem]">
+            <ImageWithFallback 
+              src="/images/mental-health/mood-dysregulation-tools.webp"
+              alt="Tools for managing big emotions and dysregulation"
+              className="w-full h-auto rounded-lg shadow-sm border border-slate-200"
+            />
           </div>
         </div>
+
+        {/* Introductory Text underneath the Hero Graphic */}
+        <div className="mb-8 max-w-4xl mx-auto">
+          <p className="text-sm text-slate-700 leading-relaxed text-center md:text-left">
+            Regardless of a co-occurring diagnosis, almost all neurodivergent individuals struggle with emotional dysregulation—the inability to flexibly manage the intensity of their feelings. Validating these intense emotions while providing structured outlets prevents them from turning into destructive meltdowns.
+          </p>
+        </div>
+
+        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+          <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">Stabilization Techniques</h3>
+          <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+            <li><strong>Interoceptive training:</strong> Helping the individual learn the physical signs of rising emotion (e.g., tight chest) before it reaches a boiling point.</li>
+            <li><strong>Safe venting spaces:</strong> Designating a safe room where pacing, vocalizing, or intense movement is allowed without judgment during high-emotion periods.</li>
+            <li><strong>Co-regulation:</strong> A calm, steady presence from a support partner whose own nervous system serves as an anchor, rather than matching the escalating panic.</li>
+          </ul>
+        </div>
+      </div>
+      
+      {/* DYSREGULATION CALLOUT BOX */}
+      <div className="bg-[#f0f9ff] border-2 border-[#2abcd4] p-6 rounded-xl shadow-sm my-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 className="text-[#0c264d] font-bold mb-2 text-lg uppercase tracking-wider">
+            Learn more about dysregulation... 
+          </h3>
+          <p className="text-sm text-slate-700 leading-relaxed">
+            A lack of access to robust communication is one of the leading causes of nervous system dysregulation. If an individual is experiencing chronic meltdowns or shutdowns, evaluating their communication environment is step one.
+          </p>
+        </div>
+        <button 
+          onClick={() => setCurrentArticle?.('autism-dysregulation')}
+          className="bg-[#2abcd4] hover:bg-[#0c264d] text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shrink-0 shadow-sm"
+        >
+          Read the Dysregulation Guide <span className="text-lg">→</span>
+        </button>
+      </div>
+      </div>
       )}
 
       {/* Bottom navigation button */}
