@@ -221,7 +221,7 @@ export function GiftednessLiving({ setCurrentArticle, initialTab }: GiftednessLi
             <ImageWithFallback 
               src="/images/giftedness/giftedness-living-community-hero.webp"
               alt="Diverse community group connecting over shared intellectual passions or advocacy"
-              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">

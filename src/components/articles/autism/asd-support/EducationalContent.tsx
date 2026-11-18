@@ -135,11 +135,11 @@ export function EducationalContent({ setCurrentArticle }: EducationalContentProp
             <div className="bg-white p-4 rounded-md shadow-sm">
               <h4 className="text-[#0c264d] font-bold mb-3 text-center">Environmental</h4>
               <ul className="space-y-2 text-sm">
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Quiet workspace</span></li>
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Noise-canceling headphones</span></li>
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Sensory-friendly lighting</span></li>
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Movement breaks</span></li>
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Fidget tools allowed</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#2abcd4] mt-1">✓</span><span>Quiet workspace</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#2abcd4] mt-1">✓</span><span>Noise-canceling headphones</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#2abcd4] mt-1">✓</span><span>Sensory-friendly lighting</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#2abcd4] mt-1">✓</span><span>Movement breaks</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#2abcd4] mt-1">✓</span><span>Fidget tools allowed</span></li>
               </ul>
             </div>
 
@@ -157,11 +157,11 @@ export function EducationalContent({ setCurrentArticle }: EducationalContentProp
             <div className="bg-white p-4 rounded-md shadow-sm">
               <h4 className="text-[#0c264d] font-bold mb-3 text-center">Assessment</h4>
               <ul className="space-y-2 text-sm">
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Extended time on tests</span></li>
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Alternative formats</span></li>
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Quiet testing room</span></li>
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Oral responses allowed</span></li>
-                <li className="flex items-start gap-2"><span className="text-[#10b981] mt-1">✓</span><span>Calculator/computer use</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#ffd166] mt-1">✓</span><span>Extended time on tests</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#ffd166] mt-1">✓</span><span>Alternative formats</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#ffd166] mt-1">✓</span><span>Quiet testing room</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#ffd166] mt-1">✓</span><span>Oral responses allowed</span></li>
+                <li className="flex items-start gap-2"><span className="text-[#ffd166] mt-1">✓</span><span>Calculator/computer use</span></li>
               </ul>
             </div>
           </div>
@@ -204,8 +204,8 @@ export function EducationalContent({ setCurrentArticle }: EducationalContentProp
           </div>
         </div>
 
-        <div className="bg-[#ffd166] border-2 border-[#0c264d] p-5 rounded-lg shadow-md">
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg flex items-center gap-2">
+        <div className="bg-[#ffd166] border-2 border-[#2abcd4] p-5 rounded-lg shadow-md">
+          <h3 className="text-[#2abcd4] font-bold mb-3 text-lg flex items-center gap-2">
             Remember
           </h3>
           <p className="text-sm">
