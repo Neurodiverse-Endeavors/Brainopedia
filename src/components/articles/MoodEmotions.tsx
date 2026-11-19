@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import React, { useState } from 'react';
+import React from 'react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 interface MoodEmotionsProps {
@@ -43,10 +43,10 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
       </button>
 
       {/* Tab Navigation */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8 clear-both">
         <button
           onClick={() => handleTabChange('depression')}
-          className={`px-6 py-3 rounded-md transition-colors font-normal ${
+          className={`px-4 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'depression'
               ? 'bg-[#0A9DC4] text-white'
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
@@ -56,7 +56,7 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
         </button>
         <button
           onClick={() => handleTabChange('rsd')}
-          className={`px-6 py-3 rounded-md transition-colors font-normal ${
+          className={`px-4 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'rsd'
               ? 'bg-[#0A9DC4] text-white'
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
@@ -66,13 +66,23 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
         </button>
         <button
           onClick={() => handleTabChange('bipolar')}
-          className={`px-6 py-3 rounded-md transition-colors font-normal ${
+          className={`px-4 py-3 rounded-md transition-colors font-normal ${
             activeTab === 'bipolar'
               ? 'bg-[#0A9DC4] text-white'
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Bipolar & Dysregulation
+          Bipolar Disorder
+        </button>
+        <button
+          onClick={() => handleTabChange('dysregulation')}
+          className={`px-4 py-3 rounded-md transition-colors font-normal ${
+            activeTab === 'dysregulation'
+              ? 'bg-[#0A9DC4] text-white'
+              : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
+          }`}
+        >
+          Dysregulation
         </button>
       </div>
 
@@ -83,38 +93,41 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
         <div className="space-y-6">
           
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Depression in neurodivergent individuals is frequently a secondary reaction to chronic burnout, systemic lack of support, and the lifelong exhaustion of masking natural traits. Recognizing this environmental root cause is essential, as treating the depression without accommodating the underlying neurodivergence often leads to therapeutic failure.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-mood-emotions.webp"
                 alt="All About Mood & Emotions"
                 className="w-full h-auto rounded-lg shadow-md"
               />
             </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Depression in neurodivergent individuals is frequently a secondary reaction to chronic burnout, systemic lack of support, and the lifelong exhaustion of masking natural traits. Recognizing this environmental root cause is essential, as treating the depression without accommodating the underlying neurodivergence often leads to therapeutic failure.
+              </p>
+            </div>
           </div>
 
           {/* The Masking Toll Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Toll of Masking</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              The Toll of Masking
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  For many autistic and ADHD individuals, existing in neurotypical spaces requires actively suppressing who they are to appear "normal" and avoid rejection. Over time, this chronic suppression destroys self-esteem and leads to a profound sense of isolation, which serves as the primary catalyst for severe depressive episodes.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/mood-depression-masking.webp"
                   alt="Visual representation of the emotional toll of masking"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                For many autistic and ADHD individuals, existing in neurotypical spaces requires actively suppressing who they are to appear "normal" and avoid rejection. Over time, this chronic suppression destroys self-esteem and leads to a profound sense of isolation, which serves as the primary catalyst for severe depressive episodes.
+              </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -140,21 +153,24 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
 
           {/* Affirming Support Card (Yellow) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Affirming Support Strategies</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Affirming Support Strategies
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/mood-depression-support.webp"
                   alt="Therapist providing neuro-affirming care"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Traditional Cognitive Behavioral Therapy (CBT) can sometimes inadvertently gaslight neurodivergent individuals by telling them their thoughts are "distorted" when they are actually reacting accurately to an unaccommodating world. Therapy must shift from changing the person to changing their environment and validating their burnout.
-                </p>
-              </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Traditional Cognitive Behavioral Therapy (CBT) can sometimes inadvertently gaslight neurodivergent individuals by telling them their thoughts are "distorted" when they are actually reacting accurately to an unaccommodating world. Therapy must shift from changing the person to changing their environment and validating their burnout.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -177,25 +193,26 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
           </div>
         </div>
       )}
-{/* ==========================================
+
+      {/* ==========================================
           TAB 2: RSD
       ========================================== */}
       {activeTab === 'rsd' && (
         <div className="space-y-6">
 
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Rejection Sensitive Dysphoria (RSD) is characterized by extreme emotional pain triggered by the perception of being rejected, teased, or criticized by important people in one's life. While not an official DSM diagnosis, it is a defining, intensely physical reality for the vast majority of individuals with ADHD and Autism.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-mood-emotions.webp"
                 alt="All About Mood & Emotions"
                 className="w-full h-auto rounded-lg shadow-md"
               />
+            </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Rejection Sensitive Dysphoria (RSD) is characterized by extreme emotional pain triggered by the perception of being rejected, teased, or criticized by important people in one's life. While not an official DSM diagnosis, it is a defining, intensely physical reality for the vast majority of individuals with ADHD and Autism.
+              </p>
             </div>
           </div>
 
@@ -255,7 +272,8 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
                   poster="/images/mental-health/mood-rsd-management.webp"
                   className="w-full h-auto rounded-lg shadow-sm border border-cyan-100"
                   autoPlay 
-                  loop 
+                  loop
+                
                   muted 
                   playsInline
                   aria-label="Individual using grounding techniques"
@@ -300,51 +318,55 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
                 onClick={() => setCurrentArticle?.('rsd-deep-dive')}
                 className="mt-2 px-6 py-3 bg-[#ffd166] text-[#0c264d] rounded-lg hover:bg-[#0c264d] hover:text-white transition-colors font-bold shadow-sm"
               >
-                Read the Full RSD Deep-Dive →
+                Read the Full RSD Deep-Dive (specific to ADHD) →
               </button>
             </div>
           </div>
         </div>
       )}
+
       {/* ==========================================
-          TAB 3: BIPOLAR & DYSREGULATION
+          TAB 3: BIPOLAR DISORDER
       ========================================== */}
       {activeTab === 'bipolar' && (
         <div className="space-y-6">
 
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Bipolar Disorder involves distinct periods of intense elevated mood and severe depressive slumps, which can sometimes overlap with the natural hyperfocus and burnout cycles of neurodivergence. Carefully untangling innate emotional dysregulation from clinical mood episodes ensures individuals receive the most accurate and effective therapeutic support.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-mood-emotions.webp"
                 alt="All About Mood & Emotions"
                 className="w-full h-auto rounded-lg shadow-sm"
               />
             </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Bipolar Disorder involves distinct periods of intense elevated mood and severe depressive slumps, which can sometimes overlap with the natural hyperfocus and burnout cycles of neurodivergence. Carefully untangling innate emotional dysregulation from clinical mood episodes ensures individuals receive the most accurate and effective therapeutic support.
+              </p>
+            </div>
           </div>
 
           {/* Untangling the Overlap Card (Yellow) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Untangling the Overlap</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Untangling the Overlap
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Neurodivergent individuals are frequently misdiagnosed with Bipolar Disorder due to surface-level similarities in emotional intensity and energy shifts. The key diagnostic difference lies in the trigger and duration: neurodivergent emotions are highly reactive to immediate environmental changes and pass quickly, whereas Bipolar episodes are autonomous, sustained over weeks, and completely detached from daily events.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/mood-bipolar-cycles.webp"
                   alt="Chart distinguishing neurodivergent energy cycles from bipolar cycles"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Neurodivergent individuals are frequently misdiagnosed with Bipolar Disorder due to surface-level similarities in emotional intensity and energy shifts. The key diagnostic difference lies in the trigger and duration: neurodivergent emotions are highly reactive to immediate environmental changes and pass quickly, whereas Bipolar episodes are autonomous, sustained over weeks, and completely detached from daily events.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -365,58 +387,127 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
               </div>
             </div>
           </div>
+        </div>
+      )}
 
-   {/* Emotional Dysregulation Card (Slate) */}
-      <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-        <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Managing General Dysregulation</h2>
-        
-        {/* --- CENTERED HERO GRAPHIC --- */}
-        <div className="text-center w-full mb-6">
-          <div className="mx-auto w-full md:w-[30rem]">
-            <ImageWithFallback 
-              src="/images/mental-health/mood-dysregulation-tools.webp"
-              alt="Tools for managing big emotions and dysregulation"
-              className="w-full h-auto rounded-lg shadow-sm border border-slate-200"
-            />
+      {/* ==========================================
+          TAB 4: DYSREGULATION
+      ========================================== */}
+      {activeTab === 'dysregulation' && (
+        <div className="space-y-6">
+
+          {/* Shared Hero Graphic for Intro */}
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
+              <ImageWithFallback 
+                src="/images/mental-health/all-about-mood-emotions.webp"
+                alt="All About Mood & Emotions"
+                className="w-full h-auto rounded-lg shadow-sm"
+              />
+            </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Emotional dysregulation—the difficulty modulating the speed, intensity, and duration of emotional responses—cuts across nearly every neurodivergent profile, from ADHD and autism to trauma and sensory processing differences. Understanding it as a nervous system stress response rather than a behavioral choice shifts support from control to safety.
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Introductory Text underneath the Hero Graphic */}
-        <div className="mb-8 max-w-4xl mx-auto">
-          <p className="text-sm text-slate-700 leading-relaxed text-center md:text-left">
-            Regardless of a co-occurring diagnosis, almost all neurodivergent individuals struggle with emotional dysregulation—the inability to flexibly manage the intensity of their feelings. Validating these intense emotions while providing structured outlets prevents them from turning into destructive meltdowns.
-          </p>
-        </div>
+          {/* Emotional Dysregulation Card (Slate) */}
+          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Managing General Dysregulation
+            </h2>
+            
+            {/* --- CENTERED HERO GRAPHIC --- */}
+            <div className="text-center w-full mb-6">
+              <div className="mx-auto w-full md:w-[30rem]">
+                <ImageWithFallback 
+                  src="/images/mental-health/mood-dysregulation-tools.webp"
+                  alt="Tools for managing big emotions and dysregulation"
+                  className="w-full h-auto rounded-lg shadow-sm border border-slate-200"
+                />
+              </div>
+            </div>
 
-        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">Stabilization Techniques</h3>
-          <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
-            <li><strong>Interoceptive training:</strong> Helping the individual learn the physical signs of rising emotion (e.g., tight chest) before it reaches a boiling point.</li>
-            <li><strong>Safe venting spaces:</strong> Designating a safe room where pacing, vocalizing, or intense movement is allowed without judgment during high-emotion periods.</li>
-            <li><strong>Co-regulation:</strong> A calm, steady presence from a support partner whose own nervous system serves as an anchor, rather than matching the escalating panic.</li>
-          </ul>
-        </div>
-      </div>
-      
-      {/* DYSREGULATION CALLOUT BOX */}
-      <div className="bg-[#f0f9ff] border-2 border-[#2abcd4] p-6 rounded-xl shadow-sm my-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <h3 className="text-[#0c264d] font-bold mb-2 text-lg uppercase tracking-wider">
-            Learn more about dysregulation... 
-          </h3>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            A lack of access to robust communication is one of the leading causes of nervous system dysregulation. If an individual is experiencing chronic meltdowns or shutdowns, evaluating their communication environment is step one.
-          </p>
-        </div>
+            {/* Introductory Text underneath the Hero Graphic */}
+            <div className="mb-8 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Regardless of a co-occurring diagnosis, almost all neurodivergent individuals struggle with emotional dysregulation—the inability to flexibly manage the intensity of their feelings. Validating these intense emotions while providing structured outlets prevents them from turning into destructive meltdowns or shutdowns.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">Stabilization Techniques</h3>
+                <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+                  <li><strong>Interoceptive training:</strong> Helping the individual learn the physical signs of rising emotion (e.g., tight chest, clenched jaw) before it reaches a boiling point.</li>
+                  <li><strong>Safe venting spaces:</strong> Designating a safe room where pacing, vocalizing, or intense movement is allowed without judgment during high-emotion periods.</li>
+                  <li><strong>Co-regulation:</strong> A calm, steady presence from a support partner whose own nervous system serves as an anchor, rather than matching the escalating panic.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-slate-200 pb-2">Hidden Physiological Triggers</h3>
+                <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+                  <li><strong>Unmet bodily needs:</strong> Blood-sugar drops, dehydration, sleep debt, headaches, or chronic pain frequently surface as sudden emotional volatility before the person realizes they are physically uncomfortable.</li>
+                  <li><strong>Sensory & cognitive overload:</strong> Stacked demands, background noise, or unexpected transitions can push the nervous system past its threshold without warning.</li>
+                  <li><strong>Communication bottlenecks:</strong> Losing access to clear words under stress often intensifies panic and fight-or-flight reactions.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Co-Regulation & De-Escalation Card (Cyan) */}
+          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Co-Regulation & De-Escalation
+            </h2>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Because human nervous systems are biologically wired to mirror one another, an escalating crisis can quickly become a shared state of high alert. Neurodiversity-affirming support moves away from demands for compliance and focuses instead on lowering the physiological threat level until the prefrontal cortex comes back online.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-cyan-100 pb-2">In the Moment</h3>
+                <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+                  <li><strong>Reduce verbal & visual load:</strong> Keep sentences short, lower your voice, relax your posture, and avoid lecturing or demanding logical explanations mid-crisis.</li>
+                  <li><strong>Remove the audience:</strong> Being watched by bystanders or peers spikes shame and defensive escalation; prioritize privacy and space.</li>
+                  <li><strong>Offer physical anchors:</strong> Provide access to dim lighting, cold water, weighted pressure, or quiet movement without forcing interaction.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
+                <h3 className="text-[#0c264d] font-bold mb-3 text-lg border-b border-cyan-100 pb-2">After the Storm</h3>
+                <ul className="list-disc ml-5 text-sm text-slate-700 space-y-2">
+                  <li><strong>Allow recovery time:</strong> High-adrenaline episodes leave the nervous system physically exhausted; schedule low-demand decompression before resuming tasks.</li>
+                  <li><strong>Repair without shame:</strong> Once everyone is regulated, review what triggered the overload as a collaborative problem-solving exercise rather than a moral failing.</li>
+                  <li><strong>Support the supporter:</strong> Caregivers and partners absorb vicarious stress too—sustainable co-regulation requires rest and debriefing for both sides.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Clinical Context Callout */}
+            <div className="bg-[#ffd166]/40 p-4 rounded-lg border border-[#0c264d]/20 max-w-4xl mx-auto">
+              <p className="text-xs text-slate-700 leading-relaxed text-center">
+                <strong>Clinical Context:</strong> The concept of "affective attunement" was introduced by psychiatrist Daniel Stern in 1985 to describe non-verbal emotional mirroring between caregivers and infants. In modern neurodiversity-affirming care, this framework explains how steady, grounded nervous-system presence helps anchor a dysregulated person back to safety.
+              </p>
+            </div>
+            {/*Autism Dysregulation button */}    
+        <div className="mt-3 mb-6 flex flex-col md:flex-row md:justify-end clear-both"></div> 
         <button 
           onClick={() => setCurrentArticle?.('autism-dysregulation')}
-          className="bg-[#2abcd4] hover:bg-[#0c264d] text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shrink-0 shadow-sm"
+          className="bg-[#2abcd4] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-bold py-2.5 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-sm"
         >
-          Read the Dysregulation Guide <span className="text-lg">→</span>
+          For autism-specific information, check out our Autism Dysregulation Guide <span className="text-lg">→</span>
         </button>
-      </div>
-      </div>
+          </div>
+          
+        </div>
       )}
+
 
       {/* Bottom navigation button */}
       <div className="mt-12 mb-6 flex flex-col md:flex-row md:justify-end clear-both">
@@ -443,6 +534,7 @@ export function MoodEmotions({ setCurrentArticle, initialTab }: MoodEmotionsProp
             <li>Barkley, R. A. (2015). <i>Attention-deficit hyperactivity disorder: A handbook for diagnosis and treatment</i> (4th ed.). Guilford Press.</li>
             <li>Ginapp, C. M., et al. (2023). Dysregulated not deficit: A qualitative study on symptomatology of ADHD in young adults. <i>PLOS One</i>.</li>
             <li>Hirvikoski, T., et al. (2016). Premature mortality in autism spectrum disorder. <i>The British Journal of Psychiatry</i>.</li>
+            <li>Richmond, J. S., et al. (2012). Verbal de-escalation of the agitated patient: Consensus statement of the American Association for Emergency Psychiatry Project BETA De-escalation Workgroup. <i>Western Journal of Emergency Medicine</i>.</li>
             <li>Shaw, P., et al. (2014). Emotion dysregulation in attention deficit hyperactivity disorder. <i>The American Journal of Psychiatry</i>.</li>
             <li>Skirrow, C., et al. (2012). Everyday emotional experience of adults with attention deficit hyperactivity disorder. <i>Journal of Affective Disorders</i>.</li>
           </ul>

@@ -83,38 +83,41 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
         <div className="space-y-6">
           
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Generalized anxiety is incredibly common among neurodivergent individuals who are constantly forced to navigate a world designed for a different neurotype. It is a physiological state of hyper-arousal, not a character flaw, reflecting a nervous system that is perpetually bracing for the unexpected.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-anxiety-stress.webp"
                 alt="All About Anxiety & Stress"
                 className="w-full h-auto rounded-lg shadow-md border-1 border-slate-200"
               />
             </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Generalized anxiety is incredibly common among neurodivergent individuals who are constantly forced to navigate a world designed for a different neurotype. It is a physiological state of hyper-arousal, not a character flaw, reflecting a nervous system that is perpetually bracing for the unexpected.
+              </p>
+            </div>
           </div>
 
           {/* The Neurodivergent Connection Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Neurodivergent Connection</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              The Neurodivergent Connection
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  For many neurodivergent individuals, generalized anxiety is a completely logical response to chronic environmental stress. When the brain consistently struggles to predict routines, filter sensory input, or manage executive function demands, the nervous system adapts by staying locked in "survival mode" at all times.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-52">
                 <ImageWithFallback 
                   src="/images/mental-health/anxiety-gad-overview.webp"
                   alt="Abstract representation of generalized anxiety"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                For many neurodivergent individuals, generalized anxiety is a completely logical response to chronic environmental stress. When the brain consistently struggles to predict routines, filter sensory input, or manage executive function demands, the nervous system adapts by staying locked in "survival mode" at all times.
+              </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -140,21 +143,24 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
 
           {/* Management Strategies Card (Yellow) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Management & Support</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Management & Support
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-52">
                 <ImageWithFallback 
                   src="/images/mental-health/anxiety-nervous-system.webp"
                   alt="Nervous system regulation tools"
                   className="w-full h-auto rounded-lg shadow-md border-3 border-slate-200"
                 />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Traditional anxiety therapies often fail neurodivergent individuals because they attempt to "logic away" fears that are entirely based in sensory reality. Effective management requires directly accommodating the neurodivergent brain and physically regulating the nervous system first.
-                </p>
-              </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Traditional anxiety therapies often fail neurodivergent individuals because they attempt to "logic away" fears that are entirely based in sensory reality. Effective management requires directly accommodating the neurodivergent brain and physically regulating the nervous system first.
+              </p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
@@ -175,38 +181,41 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
         <div className="space-y-6">
 
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Social anxiety in neurodivergent individuals often stems from a history of missed social cues, peer rejection, or the exhausting demand to mask natural traits. Rather than an irrational fear of people, it is a highly logical protective response to a lifetime of unpredictable social rules.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-anxiety-stress.webp"
                 alt="All About Anxiety & Stress"
                 className="w-full h-auto rounded-lg shadow-md border-1 border-slate-200"
               />
             </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Social anxiety in neurodivergent individuals often stems from a history of missed social cues, peer rejection, or the exhausting demand to mask natural traits. Rather than an irrational fear of people, it is a highly logical protective response to a lifetime of unpredictable social rules.
+              </p>
+            </div>
           </div>
 
           {/* Masking & Exhaustion Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Masking & Exhaustion</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Masking & Exhaustion
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Neurodivergent individuals frequently experience social anxiety because socializing requires them to manually perform behaviors that neurotypical brains execute automatically. The intense concentration required to maintain eye contact, monitor tone, and suppress natural stims turns every social interaction into a high-stakes performance.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/anxiety-social-masking.webp"
                   alt="Visual representation of social masking exhaustion"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Neurodivergent individuals frequently experience social anxiety because socializing requires them to manually perform behaviors that neurotypical brains execute automatically. The intense concentration required to maintain eye contact, monitor tone, and suppress natural stims turns every social interaction into a high-stakes performance.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -230,21 +239,24 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
 
           {/* Building Confidence Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Building Authentic Confidence</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Building Authentic Confidence
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/anxiety-social-support.webp"
                   alt="Connecting through shared neurodivergent interests"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Supporting neurodivergent social anxiety means abandoning the goal of making the person appear "normal" and instead focusing on finding environments where they feel safe. Confidence is built through authentic connection and radical self-acceptance.
-                </p>
-              </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Supporting neurodivergent social anxiety means abandoning the goal of making the person appear "normal" and instead focusing on finding environments where they feel safe. Confidence is built through authentic connection and radical self-acceptance.
+              </p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
@@ -265,38 +277,41 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
         <div className="space-y-6">
 
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Specific phobias and panic attacks often emerge when sensory sensitivities or intense cognitive load push the nervous system far past its coping capacity. Recognizing panic as a sensory or systemic overload—rather than just a psychological breakdown—is the key to effective regulation and recovery.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-anxiety-stress.webp"
                 alt="All About Anxiety & Stress"
                 className="w-full h-auto rounded-lg shadow-md border-1 border-slate-200"
               />
             </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Specific phobias and panic attacks often emerge when sensory sensitivities or intense cognitive load push the nervous system far past its coping capacity. Recognizing panic as a sensory or systemic overload—rather than just a psychological breakdown—is the key to effective regulation and recovery.
+              </p>
+            </div>
           </div>
 
           {/* Sensory Triggers Card (Yellow) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Sensory & Systemic Triggers</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Sensory & Systemic Triggers
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  What appears to be an irrational phobia from the outside is often deeply rooted in neurological sensory pain on the inside. For instance, an extreme fear of dogs may not be about the animal itself, but about the unpredictable barking that triggers severe auditory processing distress.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/anxiety-panic-sensory.webp"
                   alt="Sensory overwhelm and environmental triggers"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                What appears to be an irrational phobia from the outside is often deeply rooted in neurological sensory pain on the inside. For instance, an extreme fear of dogs may not be about the animal itself, but about the unpredictable barking that triggers severe auditory processing distress.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -320,21 +335,24 @@ export function AnxietyStress({ setCurrentArticle, initialTab }: AnxietyStressPr
 
           {/* Regulation Strategies Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Regulation & Recovery Tools</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Regulation & Recovery Tools
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-64 md:w-52">
                 <ImageWithFallback 
                   src="/images/mental-health/anxiety-regulation-tools.webp"
                   alt="Grounding techniques and regulation tools"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  During a panic response, the rational, language-processing part of the brain effectively shuts down. Attempting to reason or talk someone out of a panic attack is rarely effective; the goal must be physical safety and sensory grounding.
-                </p>
-              </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                During a panic response, the rational, language-processing part of the brain effectively shuts down. Attempting to reason or talk someone out of a panic attack is rarely effective; the goal must be physical safety and sensory grounding.
+              </p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">
