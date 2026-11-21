@@ -83,38 +83,41 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
         <div className="space-y-6">
           
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Neurodivergent burnout is a state of severe physical, mental, and emotional exhaustion caused by the prolonged stress of navigating an unaccommodating neurotypical world. Unlike standard occupational burnout, it fundamentally compromises an individual's ability to execute basic daily living skills and often causes a temporary loss of previously mastered abilities.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-trauma-burnout.webp"
                 alt="All About Trauma & Burnout"
                 className="w-full h-auto rounded-lg shadow-md border-1 border-slate-200"
               />
             </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Neurodivergent burnout is a state of severe physical, mental, and emotional exhaustion caused by the prolonged stress of navigating an unaccommodating neurotypical world. Unlike standard occupational burnout, it fundamentally compromises an individual's ability to execute basic daily living skills and often causes a temporary loss of previously mastered abilities.
+              </p>
+            </div>
           </div>
 
           {/* The Burnout Cycle Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Autistic & ADHD Burnout Cycle</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              The Autistic & ADHD Burnout Cycle
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Burnout occurs when the demands of masking, managing sensory overload, and compensating for executive dysfunction vastly outweigh the nervous system's capacity to recover. It is frequently misdiagnosed as clinical depression, but treating it strictly with antidepressants while ignoring the environmental exhaustion usually worsens the condition.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-48">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/trauma-burnout-cycle.webp"
                   alt="Chart showing the cumulative effects of sensory and social demands"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Burnout occurs when the demands of masking, managing sensory overload, and compensating for executive dysfunction vastly outweigh the nervous system's capacity to recover. It is frequently misdiagnosed as clinical depression, but treating it strictly with antidepressants while ignoring the environmental exhaustion usually worsens the condition.
+              </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -140,21 +143,24 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
 
           {/* Recovery Card (Yellow) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Radical Rest & Recovery</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Radical Rest & Recovery
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-48">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/trauma-burnout-recovery.webp"
                   alt="Individual resting in a low-sensory environment"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Recovering from neurodivergent burnout is not a quick fix; it often takes months of deliberate, radical rest to repair the nervous system. The most crucial step is forcefully lowering daily demands and eliminating any pressure to mask or conform to neurotypical timelines.
-                </p>
-              </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Recovering from neurodivergent burnout is not a quick fix; it often takes months of deliberate, radical rest to repair the nervous system. The most crucial step is forcefully lowering daily demands and eliminating any pressure to mask or conform to neurotypical timelines.
+              </p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-sm border border-yellow-200">
@@ -175,38 +181,41 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
         <div className="space-y-6">
           
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Complex Post-Traumatic Stress Disorder (C-PTSD) frequently co-occurs with neurodivergence as a direct result of ongoing systemic invalidation, compliance-based therapies, and peer bullying. Rather than stemming from a single traumatic event, C-PTSD develops from years of being repeatedly misunderstood and forced to ignore one's own physical and sensory needs.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-trauma-burnout.webp"
                 alt="All About Trauma & Burnout"
                 className="w-full h-auto rounded-lg shadow-md border-1 border-slate-200"
               />
             </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Complex Post-Traumatic Stress Disorder (C-PTSD) frequently co-occurs with neurodivergence as a direct result of ongoing systemic invalidation, compliance-based therapies, and peer bullying. Rather than stemming from a single traumatic event, C-PTSD develops from years of being repeatedly misunderstood and forced to ignore one's own physical and sensory needs.
+              </p>
+            </div>
           </div>
 
           {/* Systemic Trauma Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Roots of Systemic Trauma</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              The Roots of Systemic Trauma
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Many neurodivergent individuals grow up constantly receiving the message that their natural way of moving, communicating, and feeling is "wrong." When children are repeatedly punished for their neurological reality—or forced through therapies designed to make them look neurotypical at the expense of their well-being—trauma becomes deeply encoded in their nervous system.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/trauma-cptsd-nervous.webp"
                   alt="Nervous system mapping showing trauma response"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Many neurodivergent individuals grow up constantly receiving the message that their natural way of moving, communicating, and feeling is "wrong." When children are repeatedly punished for their neurological reality—or forced through therapies designed to make them look neurotypical at the expense of their well-being—trauma becomes deeply encoded in their nervous system.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -231,21 +240,24 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
 
           {/* Healing Pathways Card (Cyan) */}
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">Healing Pathways</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Healing Pathways
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/trauma-cptsd-healing.webp"
                   alt="Neuro-affirming therapy space"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Healing C-PTSD requires neuro-affirming therapy that validates the individual's lived experience instead of trying to correct their cognitive processes. It is a slow, deeply personal journey focused on rebuilding bodily autonomy and trusting one's own internal signals again.
-                </p>
-              </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Healing C-PTSD requires neuro-affirming therapy that validates the individual's lived experience instead of trying to correct their cognitive processes. It is a slow, deeply personal journey focused on rebuilding bodily autonomy and trusting one's own internal signals again.
+              </p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-sm border border-cyan-100">
@@ -266,38 +278,41 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
         <div className="space-y-6">
           
           {/* Shared Hero Graphic for Intro */}
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-4">
-            <div className="flex-1">
-              <p className="text-slate-700 leading-relaxed text-sm">
-                Masking fatigue is the profound exhaustion that comes from continuously camouflaging neurodivergent traits to survive in neurotypical spaces. While masking often begins as an unconscious survival mechanism, maintaining the performance severely depletes executive function and fragments the individual's sense of self.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-64">
+          <div className="w-full mb-6">
+            <div className="mx-auto w-full md:w-64 mb-4">
               <ImageWithFallback 
                 src="/images/mental-health/all-about-trauma-burnout.webp"
                 alt="All About Trauma & Burnout"
                 className="w-full h-auto rounded-lg shadow-md border-1 border-slate-200"
               />
             </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-slate-700 leading-relaxed text-sm">
+                Masking fatigue is the profound exhaustion that comes from continuously camouflaging neurodivergent traits to survive in neurotypical spaces. While masking often begins as an unconscious survival mechanism, maintaining the performance severely depletes executive function and fragments the individual's sense of self.
+              </p>
+            </div>
           </div>
 
           {/* The Cost of Passing Card (Yellow) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Cost of "Passing"</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              The Cost of "Passing"
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  When a neurodivergent person successfully masks, society rewards them for "overcoming" their condition and appearing normal. However, this invisible labor takes a massive physiological toll, frequently resulting in late-in-life diagnoses, severe burnout, and a complete disconnection from authentic joy.
-                </p>
-              </div>
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/trauma-masking-weight.webp"
                   alt="Conceptual image showing the weight of a social mask"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                When a neurodivergent person successfully masks, society rewards them for "overcoming" their condition and appearing normal. However, this invisible labor takes a massive physiological toll, frequently resulting in late-in-life diagnoses, severe burnout, and a complete disconnection from authentic joy.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -322,21 +337,24 @@ export function TraumaBurnout({ setCurrentArticle, initialTab }: TraumaBurnoutPr
 
           {/* Safe Unmasking Card (Slate) */}
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-4 text-2xl">The Journey of Unmasking</h2>
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              The Journey of Unmasking
+            </h2>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-              <div className="shrink-0 w-full md:w-64">
+            <div className="w-full mb-6">
+              <div className="mx-auto w-full md:w-64">
                 <ImageWithFallback 
                   src="/images/mental-health/trauma-masking-unmasking.webp"
                   alt="Person finding freedom in authentic expression"
                   className="w-full h-auto rounded-lg shadow-sm"
                 />
               </div>
-              <div className="flex-1">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Unmasking is not a switch that can simply be flipped; it requires actively unlearning years of survival habits in environments that are genuinely safe. It is a deeply vulnerable process of rediscovering one's authentic neurological baseline and allowing oneself to exist without constant self-correction.
-                </p>
-              </div>
+            </div>
+
+            <div className="mb-6 max-w-3xl mx-auto text-center">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                Unmasking is not a switch that can simply be flipped; it requires actively unlearning years of survival habits in environments that are genuinely safe. It is a deeply vulnerable process of rediscovering one's authentic neurological baseline and allowing oneself to exist without constant self-correction.
+              </p>
             </div>
 
             <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200">

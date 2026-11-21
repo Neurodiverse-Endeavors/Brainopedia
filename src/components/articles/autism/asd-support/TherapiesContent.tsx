@@ -75,9 +75,9 @@ export function TherapiesContent({ setCurrentArticle }: TherapiesContentProps) {
         </div>
       </div>
 
-      {/* ABA THERAPY */}
-      <div className="bg-white rounded-md border-2 border-[#0c264d] p-6 mb-6 flex flex-col sm:flex-row-reverse gap-6 items-center sm:items-start">
-        <div className="w-64 flex-shrink-0">
+    {/* ABA THERAPY */}
+      <div className="bg-white rounded-md border-2 border-[#0c264d] p-6 mb-6 flow-root">
+        <div className="w-64 mx-auto sm:mx-0 sm:float-right sm:ml-6 mb-4">
           <div className="rounded-lg shadow-sm overflow-hidden bg-white">
             <ImageWithFallback 
               src="/images/autism/autism-support-TTtab-ABA.webp" 
@@ -85,22 +85,22 @@ export function TherapiesContent({ setCurrentArticle }: TherapiesContentProps) {
             />
           </div>
         </div>
-        <div className="flex-1">
-          <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Applied Behavior Analysis (ABA)</h3>
-          <p className="text-sm text-slate-700 leading-relaxed mb-4">
-            Applied Behavior Analysis (ABA) is a highly researched behavioral framework, but it remains deeply controversial due to a history of rigid, compliance-driven methods that many autistic adults report caused profound trauma. In response to these ethical concerns, neurodiversity-affirming guidelines heavily caution against traditional ABA practices that attempt to extinguish harmless autistic traits, such as stimming or atypical eye contact.
-          </p>
 
-          <p className="text-sm text-slate-700 leading-relaxed mb-4">
-            Modern behavioral support has largely evolved toward Naturalistic Developmental Behavioral Interventions (NDBIs), which integrate behavioral science into child-led, play-based environments that prioritize physical and emotional autonomy. This newer umbrella of therapies includes frameworks like Pivotal Response Treatment (PRT), the Early Start Denver Model (ESDM), and Natural Environment Teaching (NET), which focus on relationship-building rather than forced compliance.
-          </p>
-          <button 
-            onClick={() => setCurrentArticle?.('autism-aba-therapy')} 
-            className="mt-2 px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold inline-block"
-          >
-            Read more →
-          </button>
-        </div>
+        <h3 className="text-[#0c264d] font-bold mb-3 text-lg">Applied Behavior Analysis (ABA)</h3>
+        <p className="text-sm text-slate-700 leading-relaxed mb-4">
+          Applied Behavior Analysis (ABA) is a highly researched behavioral framework, but it remains deeply controversial due to a history of rigid, compliance-driven methods that many autistic adults report caused profound trauma. In response to these ethical concerns, neurodiversity-affirming guidelines heavily caution against traditional ABA practices that attempt to extinguish harmless autistic traits, such as stimming or atypical eye contact.
+        </p>
+
+        <p className="text-sm text-slate-700 leading-relaxed mb-4">
+          Modern behavioral support has largely evolved toward Naturalistic Developmental Behavioral Interventions (NDBIs), which integrate behavioral science into child-led, play-based environments that prioritize physical and emotional autonomy. This newer umbrella of therapies includes frameworks like Pivotal Response Treatment (PRT), the Early Start Denver Model (ESDM), and Natural Environment Teaching (NET), which focus on relationship-building rather than forced compliance.
+        </p>
+
+        <button 
+          onClick={() => setCurrentArticle?.('autism-aba-therapy')} 
+          className="mt-2 px-4 py-2 bg-[#ffd166] text-[#0c264d] rounded hover:bg-[#0c264d] hover:text-white transition-colors font-bold inline-block"
+        >
+          Read more →
+        </button>
       </div>
 
       {/* SOCIAL SKILLS SUPPORT */}
