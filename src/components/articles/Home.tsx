@@ -6,7 +6,7 @@ interface HomeProps {
 
 export function Home({ setCurrentArticle }: HomeProps) {
   return (
-    <article className="bg-white -m-8 p-4 sm:p-8 rounded-lg font-spartan">
+    <article className="bg-[#ffd166]/20 -m-8 p-4 sm:p-8 rounded-lg font-spartan">
       <h1 className="pb-2 border-b-2 border-[#0c264d] mb-6 text-2xl sm:text-3xl font-normal text-[#0c264d]">
         Welcome to Brainopedia
       </h1>
