@@ -1,6 +1,16 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Brain, FileText, Calculator, Activity, Eye, Heart, ClipboardList, Users, Target, LineChart, ShieldCheck, CheckCircle, Lightbulb, Search } from 'lucide-react';
+import {
+  Brain,
+  FileText,
+  Calculator,
+  Heart,
+  ClipboardList,
+  Users,
+  Target,
+  LineChart,
+  Search,
+} from 'lucide-react';
 
 interface TwiceExceptionalDiagnosisProps {
   setCurrentArticle?: (article: string) => void;
@@ -18,40 +28,20 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
       
-      {/* GLOBAL STYLE FOR CITATIONS */}
-      <style>
-        {`
-          sup {
-            color: #10b981;
-            font-weight: bold;
-            margin-left: 2px;
-          }
-        `}
-      </style>
-
-      {/* HEADER & DESKTOP BACK BUTTON */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      {/* HEADER & BACK BUTTON */}
+      <div className="pb-6 border-b-4 border-[#0c264d] mb-10 mt-6 flex flex-col md:flex-row md:items-start justify-between gap-6">
         <h1 className="text-3xl text-[#0c264d] font-normal">
-          Twice-Exceptional: Testing & Diagnosing
+          Twice-Exceptional: Testing &amp; Diagnosing
         </h1>
 
-        <button 
+        <button
           onClick={() => setCurrentArticle?.('twice-exceptional')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm self-start"
         >
           <span className="text-xl">←</span>
           All About 2e
         </button>
       </div>
-
-      {/* MOBILE BACK BUTTON */}
-      <button 
-        onClick={() => setCurrentArticle?.('twice-exceptional')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        All About 2e
-      </button>
 
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -63,7 +53,7 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Cognitive & Academic
+          Cognitive &amp; Academic
         </button>
         <button
           onClick={() => handleTabChange('behavioral')}
@@ -73,7 +63,7 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Behavioral & Autism
+          Behavioral &amp; Autism
         </button>
         <button
           onClick={() => handleTabChange('holistic')}
@@ -83,97 +73,136 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Holistic & Best Practices
+          Holistic &amp; Best Practices
         </button>
       </div>
 
       {/* ==========================================
-          TAB 1: COGNITIVE & ACADEMIC (Icons Tab)
+          TAB 1: COGNITIVE & ACADEMIC (Cyan -> Yellow)
       ========================================== */}
       {activeTab === 'cognitive' && (
         <div className="space-y-8 animate-fadeIn">
-
-          {/* Cognitive Card (Cyan) - Centered Hero + Stacked Icons */}
+          
+          {/* Card 1: Cognitive & IQ Testing (Cyan - Stacked Lucide Icons) */}
           <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Cognitive & IQ Testing</h2>
-            
-            <ImageWithFallback 
-              src="/images/2e/2e-diagnosis-cognitive.webp"
-              alt="Child engaged in a cognitive assessment puzzle"
-              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#2abcd4] mb-6 shadow-sm"
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Cognitive &amp; IQ Testing
+            </h2>
+
+            <ImageWithFallback
+              src="/images/twice-exceptional/2e-diagnosis-cognitive.webp"
+              alt="Intricate 3D layered paper-cut shadowbox diorama illustrating deep cognitive scatter beneath a calm baseline"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
-            
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
-              The primary hurdle in diagnosing 2e is the "masking effect"—where a student's high intelligence perfectly hides their disability, resulting in average, unremarkable test scores. Evaluators must look past the averages and actively search for "scatter."
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-6">
+              The primary hurdle in identifying twice-exceptionality is the &ldquo;masking effect&rdquo;—where a student&apos;s high intelligence and learning differences compensate for one another, resulting in average composite test scores. Evaluators must look past composite averages and examine subtest scatter.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <Brain className="text-[#0A9DC4] w-6 h-6 mb-3" />
+                <Brain className="text-[#0A9DC4] w-6 h-6 mb-3 shrink-0" />
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Analyzing Scatter</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">2e students typically show massive scatter among subtests. Discrepancies of 20+ points between the highest and lowest index scores on tests like the WISC-V or SB5 are incredibly common.<sup>1</sup></p>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  2e students typically show marked scatter among subtests. Discrepancies of 20+ points between the highest and lowest index scores on tests like the WISC-V or SB5 are very common.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
+                </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <LineChart className="text-[#0A9DC4] w-6 h-6 mb-3" />
+                <LineChart className="text-[#0A9DC4] w-6 h-6 mb-3 shrink-0" />
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Beyond Full Scale IQ</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">A Full Scale IQ is deeply misleading for a 2e student because low processing speed drags down high reasoning. Evaluators should use the General Ability Index (GAI) instead.<sup>2</sup></p>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  A Full Scale IQ can be misleading for a 2e student because processing speed or working memory demands pull down high reasoning scores. Evaluators use the General Ability Index (GAI) instead.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup>
+                </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <Search className="text-[#0A9DC4] w-6 h-6 mb-3" />
+                <Search className="text-[#0A9DC4] w-6 h-6 mb-3 shrink-0" />
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Nonverbal Measures</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Tests like the NNAT or Raven's Matrices assess pure reasoning without language, which is vital for uncovering giftedness in students with severe language-based learning disabilities.</p>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Tests like the NNAT or Raven&apos;s Matrices assess pure abstract reasoning without language demands, helping uncover giftedness in students with language-based learning differences.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Achievement Card (Yellow) - Centered Hero + Stacked Icons */}
+          {/* Card 2: Achievement & Specific LDs (Yellow - Double-Ring Navy Circular Icon Badges) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Achievement & Specific LDs</h2>
-            
-            <ImageWithFallback 
-              src="/images/2e/2e-diagnosis-academic.webp"
-              alt="Visual contrast showing advanced oral concepts but struggling with a basic written worksheet"
-              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Achievement &amp; Specific Educational Profiles
+            </h2>
+
+            <ImageWithFallback
+              src="/images/twice-exceptional/2e-diagnosis-academic.webp"
+              alt="3D layered paper-cut shadowbox diorama showing an open golden book radiating geometric constellations above cyan stepped pathways"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
-            
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Achievement testing requires comparing the student's academic output against their intellectual *ability*, not just against their grade level. A highly gifted student reading "at grade level" may actually possess a severe reading disability.
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              Achievement testing requires comparing a student&apos;s academic output against their intellectual capability, not just against grade-level norms. A gifted student performing &ldquo;at grade level&rdquo; may still be navigating an unaddressed learning difference.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <FileText className="text-[#d4a017] w-6 h-6 mb-3" />
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mb-3">
+                  <FileText className="w-5 h-5" />
+                </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Reading (Dyslexia)</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Gifted students with dyslexia often show vastly superior comprehension when material is read aloud to them, revealing the massive discrepancy between their decoding limits and actual understanding.</p>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Twice-exceptional students with dyslexia often show far more advanced comprehension when materials are read aloud or shared verbally. This distinct mismatch highlights the difference between phonetic decoding challenges and high-level conceptual understanding.
+                </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <Calculator className="text-[#d4a017] w-6 h-6 mb-3" />
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mb-3">
+                  <Calculator className="w-5 h-5" />
+                </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Math (Dyscalculia)</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Assessment must separate reasoning from calculation. A 2e student may effortlessly grasp high-level theoretical algebra while consistently failing to memorize basic multiplication facts.</p>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Assessment should verify conceptual mathematical reasoning separately from rote, automatic memory retrieval. A 2e student can deeply grasp theoretical algebra or advanced math concepts while concurrently struggling to quickly recall basic calculation facts.
+                </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
-                <Target className="text-[#d4a017] w-6 h-6 mb-3" />
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mb-3">
+                  <Target className="w-5 h-5" />
+                </div>
                 <h3 className="text-[#0c264d] font-bold text-sm mb-2">Above-Level Testing</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Giving middle schoolers high school tests avoids "ceiling effects," revealing genuine giftedness in 2e children whose disabilities artificially depress their grade-level achievement scores.</p>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Utilizing above-level assessment options bypasses common "ceiling effects." This process reveals advanced reasoning strengths in 2e students whose processing differences might otherwise suppress and mask scores on grade-level testing.
+                </p>
               </div>
             </div>
+          </div>
+
+          {/* BOTTOM NAVIGATION BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full clear-both">
+            <button
+              onClick={() => setCurrentArticle?.('twice-exceptional')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About 2e
+            </button>
           </div>
 
           {/* TAB 1 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-            
+
             <div className="mb-6">
               <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-                Cited Studies & Statistics
+                Cited Studies &amp; Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Silverman, L. K. (2009). The measurement of giftedness. In L. V. Shavinina (Ed.), <i>International handbook on giftedness</i>. Springer.</p>
-                <p>2. Saklofske, D. H., Prifitera, A., Weiss, L. G., Rolfhus, E., & Zhu, J. (2005). <i>Clinical interpretation of the WISC-IV FSIQ and GAI</i>. Elsevier Academic Press.</p>
+                <p>
+                  1. Silverman, L. K. (2009). The measurement of giftedness. In L. V. Shavinina (Ed.),{' '}
+                  <i>International handbook on giftedness</i>. Springer.
+                </p>
+                <p>
+                  2. Saklofske, D. H., Prifitera, A., Weiss, L. G., Rolfhus, E., &amp; Zhu, J. (2005).{' '}
+                  <i>Clinical interpretation of the WISC-IV FSIQ and GAI</i>. Elsevier Academic Press.
+                </p>
               </div>
             </div>
 
@@ -181,9 +210,17 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
               <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
                 Background Sources
               </h4>
-              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Pfeiffer, S. I. (2015). <i>Essentials of gifted assessment</i>. John Wiley & Sons.</li>
-                <li>Mazzocco, M. M., & Myers, G. F. (2003). Complexities in identifying and defining mathematics learning disability. <i>Annals of Dyslexia</i>.</li>
+              <ul
+                className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words"
+                style={{ textIndent: 0 }}
+              >
+                <li>
+                  Pfeiffer, S. I. (2015). <i>Essentials of gifted assessment</i>. John Wiley &amp; Sons.
+                </li>
+                <li>
+                  Mazzocco, M. M., &amp; Myers, G. F. (2003). Complexities in identifying and defining mathematics learning disability.{' '}
+                  <i>Annals of Dyslexia</i>.
+                </li>
               </ul>
             </div>
           </div>
@@ -191,88 +228,121 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
       )}
 
       {/* ==========================================
-          TAB 2: BEHAVIORAL & AUTISM (Horizontal Bars / Badges)
+          TAB 2: BEHAVIORAL & AUTISM (Navy -> Yellow)
       ========================================== */}
       {activeTab === 'behavioral' && (
         <div className="space-y-8 animate-fadeIn">
-
-          {/* ADHD Card (Navy) - Horizontal Bars + Numbered Badges */}
+          
+          {/* Card 1: ADHD & Executive Function (Navy - 3D Left-Stripe Inner Cards, No Icons) */}
           <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">ADHD & Executive Function</h2>
-            
-            <ImageWithFallback 
-              src="/images/2e/2e-diagnosis-adhd.webp"
-              alt="Child taking a computerized Continuous Performance Test (CPT)"
-              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#0c264d] mb-6 shadow-sm"
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              ADHD &amp; Executive Function
+            </h2>
+
+            <ImageWithFallback
+              src="/images/twice-exceptional/2e-diagnosis-adhd.webp"
+              alt="3D layered paper-cut shadowbox diorama showing a golden hourglass and compass surrounded by swirling light trails and cyan geometric tracks, representing ADHD and executive function in twice-exceptionality"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
-            
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
-              ADHD and giftedness share massive behavioral overlaps (high energy, intense questioning, boredom with routine). Evaluators must carefully distinguish between genuine executive dysfunction and a gifted child reacting to an under-stimulating environment.
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-6">
+              ADHD and giftedness share substantial behavioral overlaps, including high energy, intense questioning, and boredom with repetitive routines. Evaluators distinguish between executive function differences and a gifted child reacting to an under-stimulating environment.
             </p>
 
             <div className="space-y-4">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 shadow-md text-lg">1</div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Rating Scales & Context</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Tools like the BASC or BRIEF evaluate attention across settings.<sup>1</sup> A key differentiator: a gifted child is only inattentive when bored, whereas a child with ADHD shows impairment even during tasks they want to complete.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 border-b border-gray-100 pb-1">
+                    Rating Scales &amp; Cross-Setting Context
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Tools like the BASC or BRIEF evaluate attention across home and school settings.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup> A key differentiator is consistency: a gifted student without ADHD typically sustains focus on self-selected challenges, whereas ADHD impacts executive regulation even during preferred tasks.
+                  </p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-white flex items-center justify-center font-bold shrink-0 shadow-md text-lg">2</div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Performance Limitations</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Continuous Performance Tests (CPTs) measure sustained attention. However, gifted children can sometimes "hyperfocus" during these brief testing windows, temporarily masking their severe ADHD symptoms.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#576d8e]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-1 border-b border-gray-100 pb-1">
+                    Continuous Performance Nuances
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Continuous Performance Tests (CPTs) measure sustained vigilance, yet gifted students can often hyperfocus during brief, novel clinic sessions—requiring evaluators to pair lab tasks with longitudinal real-world observations.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Autism Card (Cyan) - Horizontal Bars + Circled Icons */}
-          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Autism & Emotional Assessment</h2>
-            
-            <ImageWithFallback 
-              src="/images/2e/2e-diagnosis-autism.webp"
-              alt="Clinician conducting a play-based observation to evaluate social communication"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#2abcd4]"
+          {/* Card 2: Autism & Emotional Assessment (Yellow - Double-Ring Navy Circular Icon Badges) */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Autism &amp; Emotional Assessment
+            </h2>
+
+            <ImageWithFallback
+              src="/images/twice-exceptional/2e-diagnosis-autism.webp"
+              alt="Visual representation of naturalistic social communication and emotional evaluation"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
-            
-            <div className="space-y-4 max-w-4xl mx-auto">
-              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center font-bold shrink-0 shadow-sm border border-[#bae6fd] mt-1">
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              Giftedness and autism share overlapping traits such as deep, specialized passions and analytical pattern recognition, making nuanced clinical observation essential.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mb-3">
                   <Users className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Autism Assessment & Masking</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Giftedness and Autism share traits like intense niche interests. Evaluators rely on the ADOS-2 and ADI-R to distinguish between them.<sup>2</sup> Highly gifted individuals with autism often use their advanced intellect to actively "mask" their social deficits during testing. Assessors must observe them in complex, naturalistic situations.</p>
-                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Autism Assessment &amp; Masking</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Evaluators rely on tools like the ADOS-2 and ADI-R alongside developmental history.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup> Because gifted autistic students often use advanced verbal reasoning to compensate during structured one-on-one tasks, naturalistic social observation is vital.
+                </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#2abcd4] border-opacity-30 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center font-bold shrink-0 shadow-sm border border-[#bae6fd] mt-1">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mb-3">
                   <Heart className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Mental Health & Perfectionism</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Because of their constant internal awareness of their own discrepancies, 2e students suffer from drastically elevated rates of anxiety. Formal evaluations must aggressively screen for crippling perfectionism, which often demolishes self-esteem and leads to behavioral withdrawal.</p>
-                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Emotional Well-Being &amp; Perfectionism</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Acute awareness of uneven internal abilities can fuel intense perfectionism and performance anxiety. Comprehensive evaluations screen for emotional stress to support healthy self-concept early.
+                </p>
               </div>
             </div>
+          </div>
+
+          {/* BOTTOM NAVIGATION BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full clear-both">
+            <button
+              onClick={() => setCurrentArticle?.('twice-exceptional')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About 2e
+            </button>
           </div>
 
           {/* TAB 2 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-            
+
             <div className="mb-6">
               <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-                Cited Studies & Statistics
+                Cited Studies &amp; Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Gioia, G. A., Isquith, P. K., Guy, S. C., & Kenworthy, L. (2000). <i>Behavior Rating Inventory of Executive Function: BRIEF</i>. Psychological Assessment Resources.</p>
-                <p>2. Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., & Bishop, S. L. (2012). <i>Autism Diagnostic Observation Schedule-Second Edition (ADOS-2)</i>. Western Psychological Services.</p>
+                <p>
+                  1. Gioia, G. A., Isquith, P. K., Guy, S. C., &amp; Kenworthy, L. (2000).{' '}
+                  <i>Behavior Rating Inventory of Executive Function: BRIEF</i>. Psychological Assessment Resources.
+                </p>
+                <p>
+                  2. Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., &amp; Bishop, S. L. (2012).{' '}
+                  <i>Autism Diagnostic Observation Schedule-Second Edition (ADOS-2)</i>. Western Psychological Services.
+                </p>
               </div>
             </div>
 
@@ -280,9 +350,18 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
               <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
                 Background Sources
               </h4>
-              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., & Olenchak, F. R. (2005). <i>Misdiagnosis and dual diagnoses of gifted children and adults</i>. Great Potential Press.</li>
-                <li>Foley-Nicpon, M., Doobay, A. F., & Assouline, S. G. (2010). Parent, teacher, and self perceptions of psychosocial functioning in intellectually gifted children and adolescents with autism. <i>Journal of Autism and Developmental Disorders</i>.</li>
+              <ul
+                className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words"
+                style={{ textIndent: 0 }}
+              >
+                <li>
+                  Webb, J. T., Amend, E. R., Webb, N. E., Goerss, J., Beljan, P., &amp; Olenchak, F. R. (2005).{' '}
+                  <i>Misdiagnosis and dual diagnoses of gifted children and adults</i>. Great Potential Press.
+                </li>
+                <li>
+                  Foley-Nicpon, M., Doobay, A. F., &amp; Assouline, S. G. (2010). Parent, teacher, and self perceptions of psychosocial functioning in intellectually gifted children and adolescents with autism.{' '}
+                  <i>Journal of Autism and Developmental Disorders</i>.
+                </li>
               </ul>
             </div>
           </div>
@@ -290,100 +369,124 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
       )}
 
       {/* ==========================================
-          TAB 3: HOLISTIC & BEST PRACTICES (3D Borders, No Icons/Dots)
+          TAB 3: HOLISTIC & BEST PRACTICES (Yellow -> Navy)
       ========================================== */}
       {activeTab === 'holistic' && (
         <div className="space-y-8 animate-fadeIn">
-
-          {/* Holistic Card (Yellow) - 3D Accent Borders */}
+          
+          {/* Card 1: Portfolios & Observation (Yellow - Double-Ring Navy Circular Icon Badges) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Portfolios & Observation</h2>
-            
-            <ImageWithFallback 
-              src="/images/2e/2e-diagnosis-holistic.webp"
-              alt="Teacher, parent, and student collaboratively reviewing a portfolio of authentic project work"
-              className="block mx-auto w-64 max-w-full h-auto rounded-md border border-[#ffd166] mb-6 shadow-sm"
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Portfolios &amp; Observation
+            </h2>
+
+            <ImageWithFallback
+              src="/images/twice-exceptional/2e-diagnosis-holistic.webp"
+              alt="Visual representation of authentic student work portfolios and observational rating scales"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
-            
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
-              Because standardized testing environments often trigger anxiety or executive dysfunction in 2e students, holistic, performance-based assessments are critical for uncovering their true capabilities.
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-6">
+              Because timed standardized testing environments can trigger anxiety or executive bottlenecks, holistic, performance-based evidence is essential for uncovering a 2e student&apos;s authentic strengths.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mb-3">
+                  <ClipboardList className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Work Portfolios</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Curated collections of authentic projects highlight the contrast between sophisticated conceptual thinking and mechanical execution hurdles such as handwriting fatigue or calculation slips.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mb-3">
+                  <Search className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Behavioral Rating Scales</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Parent and educator observations capture curiosity and deep early interests outside formal test settings. Tools like the SRBCSS evaluate multiple dimensions of superior student potential.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: Best Practices & Interpretation (Navy - 3D Left-Stripe Inner Cards, No Icons) */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Best Practices &amp; Interpretation
+            </h2>
+
+            <ImageWithFallback
+              src="/images/twice-exceptional/2e-diagnosis-bestpractices.webp"
+              alt="Visual representation of multidisciplinary evaluation and dual-differentiation planning"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
+            />
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              Accurate interpretation ensures a student is recognized across their full profile rather than defined by a single score or label.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0c264d]"></div>
-                <div className="pl-3 py-1">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Work Portfolios</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Collections of student work reveal the precise discrepancy between their sophisticated thinking (advanced scientific concepts) and basic skill execution (illegible handwriting or calculation errors).</p>
+                <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0A9DC4]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-3 border-b border-gray-100 pb-2">
+                    Comprehensive Triangulation
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                    No single test captures twice-exceptionality. Diagnosticians triangulate subtest scatter alongside developmental history, educator observations, and authentic work samples.
+                  </p>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Evaluators account for intellectual compensation—recognizing when strong reasoning masks underlying processing or literacy challenges.
+                  </p>
                 </div>
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0c264d]"></div>
-                <div className="pl-3 py-1">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-2">Rating Scales</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Parent and teacher interviews are vital. Tools like the SRBCSS assess multiple dimensions of giftedness outside of testing environments, capturing creativity and intense early interests.<sup>1</sup></p>
+                <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0c264d]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-3 border-b border-gray-100 pb-2">
+                    Dual Differentiation Planning
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                    Categorizing a 2e student by only one side of their profile leaves core needs unmet. Effective educational plans address both sides together:
+                  </p>
+                  <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
+                    <li>Sustained access to advanced, intellectually challenging enrichment and acceleration.</li>
+                    <li>Targeted accommodations and skill supports documented within an IEP or 504 plan.</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Best Practices Card (Navy) - 3D Accent Borders */}
-          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Best Practices & Interpretation</h2>
-            
-            <ImageWithFallback 
-              src="/images/2e/2e-diagnosis-bestpractices.webp"
-              alt="Multidisciplinary team reviewing a spiky profile chart"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
-            />
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0A9DC4]"></div>
-                <div className="pl-3">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-3 border-b border-gray-100 pb-2">
-                    Comprehensive Evaluation
-                  </h3>
-                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                    No single measure captures twice-exceptionality. Diagnosticians must utilize triangulation—comparing IQ scores against behavioral observations, teacher reports, and authentic classwork. 
-                  </p>
-                  <p className="text-xs text-slate-700 leading-relaxed">
-                    Evaluators must actively look for "scatter" and actively account for *compensation* (how the student's high intelligence is artificially inflating their disability scores).
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#0A9DC4]"></div>
-                <div className="pl-3">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-3 border-b border-gray-100 pb-2">
-                    Avoiding Single-Label Thinking
-                  </h3>
-                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                    The most destructive mistake a school can make is categorizing a 2e student as simply "gifted with a few quirks" or "disabled with some smarts." 
-                  </p>
-                  <ul className="list-disc ml-5 text-xs text-slate-700 space-y-2">
-                    <li>They must be recognized as genuinely twice-exceptional.</li>
-                    <li>Both exceptionalities deserve equal, simultaneous consideration in the resulting IEP or 504 plan.</li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
+          {/* BOTTOM NAVIGATION BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full clear-both">
+            <button
+              onClick={() => setCurrentArticle?.('twice-exceptional')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About 2e
+            </button>
           </div>
 
           {/* TAB 3 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-            
+
             <div className="mb-6">
               <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-                Cited Studies & Statistics
+                Cited Studies &amp; Statistics
               </h4>
               <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-                <p>1. Renzulli, J. S., Smith, L. H., White, A. J., Callahan, C. M., Hartman, R. K., & Westberg, K. L. (2002). <i>Scales for Rating the Behavioral Characteristics of Superior Students</i>. Creative Learning Press.</p>
+                <p>
+                  1. Renzulli, J. S., Smith, L. H., White, A. J., Callahan, C. M., Hartman, R. K., &amp; Westberg, K. L. (2002).{' '}
+                  <i>Scales for Rating the Behavioral Characteristics of Superior Students</i>. Creative Learning Press.
+                </p>
               </div>
             </div>
 
@@ -391,26 +494,23 @@ export function TwiceExceptionalDiagnosis({ setCurrentArticle, initialTab }: Twi
               <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
                 Background Sources
               </h4>
-              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Gilman, B. J., et al. (2013). Critical issues in the identification of gifted students with co-existing disabilities: The twice-exceptional. <i>SAGE Open</i>.</li>
-                <li>Baum, S. M., & Owen, S. V. (1988). High ability/learning disabled students: How are they different? <i>Gifted Child Quarterly</i>.</li>
+              <ul
+                className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words"
+                style={{ textIndent: 0 }}
+              >
+                <li>
+                  Gilman, B. J., et al. (2013). Critical issues in the identification of gifted students with co-existing disabilities: The twice-exceptional.{' '}
+                  <i>SAGE Open</i>.
+                </li>
+                <li>
+                  Baum, S. M., &amp; Owen, S. V. (1988). High ability/learning disabled students: How are they different?{' '}
+                  <i>Gifted Child Quarterly</i>.
+                </li>
               </ul>
             </div>
           </div>
         </div>
       )}
-
-      {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
-        <button 
-          onClick={() => setCurrentArticle?.('twice-exceptional')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
-        >
-          <span className="text-xl">←</span>
-          All About 2e
-        </button>
-      </div>
-
     </article>
   );
 }
