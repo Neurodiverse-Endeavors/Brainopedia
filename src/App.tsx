@@ -6,7 +6,7 @@ import { Header } from './components/Header';
 import { DonationBanner } from './components/DonationBanner';
 import { Footer } from './components/Footer';
 
-function AppContent(): import("react/jsx-runtime").JSX.Element {
+function AppContent() {
   const { articleId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -15,9 +15,34 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
 
   const currentArticle = articleId || 'home';
 
-  const setCurrentArticle = (article: string) => {
-    navigate(`/${article}`);
+  const handleNavigateWithTab = (targetArticle: string, tab?: string) => {
+    if (!targetArticle || targetArticle === 'home') {
+      navigate('/');
+      return;
+    }
+    const query = tab ? `?tab=${encodeURIComponent(tab)}` : '';
+    navigate(`/${targetArticle}${query}`);
   };
+
+  const setCurrentArticle = (article: string) => {
+    handleNavigateWithTab(article);
+  };
+
+  const handleSearchSubmit = () => {
+    const trimmed = searchQuery.trim();
+    navigate(trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : '/search');
+  };
+
+  // Sync searchQuery if user lands directly on /search?q=...
+  useEffect(() => {
+    if (currentArticle === 'search') {
+      const params = new URLSearchParams(location.search);
+      const urlQuery = params.get('q');
+      if (urlQuery !== null && urlQuery !== searchQuery) {
+        setSearchQuery(urlQuery);
+      }
+    }
+  }, [currentArticle, location.search]);
 
   // ===== THE "HUNTER" LOOP FOR SCROLLING =====
   useEffect(() => {
@@ -26,18 +51,17 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
         const id = location.hash.replace('#', '');
         const element = document.getElementById(id);
         if (element) {
-          // Add a slight offset so the header doesn't cover the title!
-          const yOffset = -80; 
+          // Offset so the sticky header does not cover the section title
+          const yOffset = -80;
           const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
-          return true; // We found it!
+          return true;
         }
       }
-      return false; // Not found yet
+      return false;
     };
 
     if (location.hash) {
-      // If there is a link, hunt for the element for up to 2 seconds
       if (!scrollToHash()) {
         let attempts = 0;
         const interval = setInterval(() => {
@@ -47,22 +71,22 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
           }
         }, 100);
       }
-} else {
+    } else {
       window.scrollTo(0, 0);
     }
-    
-    (window as any).__prevPath = location.pathname;
+
+    (window as Window & { __prevPath?: string }).__prevPath = location.pathname;
   }, [articleId, location.pathname, location.hash]);
 
   // Set favicon and page title
   useEffect(() => {
-    let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement('link');
       link.rel = 'icon';
       document.head.appendChild(link);
     }
-    link.type = 'image.webp';
+    link.type = 'image/webp';
     link.href = '/images/favicon.webp';
     document.title = 'Brainopedia - Encyclopedia of Neurodivergent Minds';
   }, []);
@@ -74,7 +98,8 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
           toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
-          onSearchSelect={(articleId) => setCurrentArticle(articleId)}
+          onSearchSelect={handleNavigateWithTab}
+          onSearchSubmit={handleSearchSubmit}
         />
       </div>
 
@@ -89,7 +114,13 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
         </div>
 
         <main className="flex-1 p-2 md:p-8 lg:p-12 max-w-5xl mx-auto w-full print:p-0 print:max-w-none">
-          <ArticleContent articleId={currentArticle} setCurrentArticle={setCurrentArticle} />
+          <ArticleContent
+            articleId={currentArticle}
+            setCurrentArticle={setCurrentArticle}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            onSelectResult={handleNavigateWithTab}
+          />
         </main>
       </div>
 
@@ -101,14 +132,15 @@ function AppContent(): import("react/jsx-runtime").JSX.Element {
   );
 }
 
-export default function App(): import("react/jsx-runtime").JSX.Element {
+export function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppContent />} />
         <Route path="/:articleId" element={<AppContent />} />
-        <Route path="/:articleId/:tabId" element={<AppContent />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;

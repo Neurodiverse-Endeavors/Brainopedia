@@ -1,28 +1,26 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useMemo, type KeyboardEvent } from 'react';
 import { Search, Menu, X } from 'lucide-react';
-import { searchableArticles } from './searchIndex';
+import { searchArticles } from './searchindex';
 
 interface HeaderProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   toggleSidebar: () => void;
-  onSearchSelect: (articleId: string) => void;
+  onSearchSelect: (articleId: string, tab?: string) => void;
+  onSearchSubmit?: () => void;
 }
 
-export function Header({ searchQuery, setSearchQuery, toggleSidebar, onSearchSelect }: HeaderProps) {
+export function Header({
+  searchQuery,
+  setSearchQuery,
+  toggleSidebar,
+  onSearchSelect,
+  onSearchSubmit,
+}: HeaderProps) {
   const [showResults, setShowResults] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  const filteredResults = searchQuery.trim().length > 0
-    ? (() => {
-        const queryWords = searchQuery.toLowerCase().split(/\s+/).filter(word => word.length >= 2);
-        if (queryWords.length === 0) return [];
-        return searchableArticles.filter(article => {
-          const searchText = (article.label + ' ' + article.keywords).toLowerCase();
-          return queryWords.every(word => searchText.includes(word));
-        });
-      })()
-    : [];
+  const filteredResults = useMemo(() => searchArticles(searchQuery), [searchQuery]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -34,15 +32,25 @@ export function Header({ searchQuery, setSearchQuery, toggleSidebar, onSearchSel
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSelect = (articleId: string) => {
-    onSearchSelect(articleId);
-    setSearchQuery('');
+  const handleSelect = (articleId: string, tab?: string) => {
+    onSearchSelect(articleId, tab);
     setShowResults(false);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && filteredResults.length > 0) {
-      handleSelect(filteredResults[0].id);
+  const handleSubmitFullSearch = () => {
+    if (searchQuery.trim().length === 0) return;
+    setShowResults(false);
+    if (onSearchSubmit) {
+      onSearchSubmit();
+    } else {
+      onSearchSelect('search');
+    }
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmitFullSearch();
     }
     if (e.key === 'Escape') {
       setShowResults(false);
@@ -51,37 +59,56 @@ export function Header({ searchQuery, setSearchQuery, toggleSidebar, onSearchSel
 
   return (
     <header className="bg-[#0c264d] text-[#f4f4f4] sticky top-0 z-50 shadow-md w-full">
-      {/* CHANGED: flex-col on mobile, flex-row on desktop (md:) */}
       <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4 px-4 md:px-6 py-3 w-full max-w-full">
-        
         {/* Top Row for Mobile: Menu + Branding */}
         <div className="flex items-center w-full md:w-auto">
           <button
+            type="button"
             onClick={toggleSidebar}
             className="xl:hidden p-2 -ml-2 mr-2 hover:bg-white/10 rounded-md transition-colors"
             aria-label="Toggle menu"
           >
             <Menu className="w-6 h-6" />
           </button>
-          
-          <div className="flex items-center gap-2 md:gap-3">
-            {/* Logo scales down on mobile */}
-            <img src="/images/brainopedia-logo.webp" alt="Brainopedia Logo" className="w-10 h-10 md:w-16 md:h-16 object-contain" />
+
+          <button
+            type="button"
+            onClick={() => handleSelect('home')}
+            className="flex items-center gap-2 md:gap-3 text-left focus:outline-none"
+          >
+            <img
+              src="/images/brainopedia-logo.webp"
+              alt="Brainopedia Logo"
+              className="w-10 h-10 md:w-16 md:h-16 object-contain"
+            />
             <div>
-              <h1 className="text-[#ffd166] text-xl md:text-2xl font-bold" style={{ fontFamily: 'Avenir, Nunito, sans-serif', fontWeight: 800 }}>Brainopedia</h1>
-              {/* Subtitle hidden on mobile, visible on desktop */}
-              <p className="hidden md:block text-sm text-[#f4f4f4] opacity-90">Your encyclopedic platform about neurodivergent minds.</p>
+              <span
+                className="block text-[#ffd166] text-xl md:text-2xl font-bold"
+                style={{ fontFamily: 'Avenir, Nunito, sans-serif', fontWeight: 800 }}
+              >
+                Brainopedia
+              </span>
+              <p className="hidden md:block text-sm text-[#f4f4f4] opacity-90">
+                Your encyclopedic platform about neurodivergent minds.
+              </p>
             </div>
-          </div>
+          </button>
         </div>
-        
-        {/* Search Bar: Full width on mobile, flex-1 on desktop */}
+
+        {/* Search Bar */}
         <div className="w-full md:flex-1 md:max-w-md md:ml-auto" ref={searchRef}>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <button
+              type="button"
+              onClick={handleSubmitFullSearch}
+              aria-label="Submit search"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-[#ffd166] transition-colors"
+            >
+              <Search className="w-4 h-4" />
+            </button>
             <input
               type="text"
-              placeholder="Search volumes..."
+              placeholder="Search conditions, symptoms, accommodations..."
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
@@ -93,7 +120,11 @@ export function Header({ searchQuery, setSearchQuery, toggleSidebar, onSearchSel
             />
             {searchQuery && (
               <button
-                onClick={() => { setSearchQuery(''); setShowResults(false); }}
+                type="button"
+                onClick={() => {
+                  setSearchQuery('');
+                  setShowResults(false);
+                }}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
                 aria-label="Clear search"
               >
@@ -101,30 +132,60 @@ export function Header({ searchQuery, setSearchQuery, toggleSidebar, onSearchSel
               </button>
             )}
 
-            {/* Search Results Dropdown */}
+            {/* Quick Dropdown Preview + Full List Trigger */}
             {showResults && searchQuery.trim().length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-md shadow-lg border border-gray-200 max-h-80 overflow-y-auto z-[100]">
+              <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-md shadow-lg border border-gray-200 max-h-96 overflow-y-auto z-[100]">
                 {filteredResults.length > 0 ? (
-                  filteredResults.map((article) => (
+                  <>
                     <button
-                      key={article.id}
-                      onClick={() => handleSelect(article.id)}
-                      className="w-full text-left px-4 py-3 text-gray-800 hover:bg-[#2abcd4]/10 border-b border-gray-100 last:border-b-0 transition-colors"
+                      type="button"
+                      onClick={handleSubmitFullSearch}
+                      className="w-full text-left px-4 py-2.5 bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white text-xs font-normal transition-colors border-b border-gray-200 flex items-center justify-between"
                     >
-                      {article.label.includes('\u2192') ? (
-                        <span>
-                          <span className="text-[#2abcd4] font-medium">{article.label.split('\u2192')[0].trim()}</span>
-                          <span className="text-gray-400 mx-2">→</span>
-                          <span className="text-gray-700">{article.label.split('\u2192')[1].trim()}</span>
-                        </span>
-                      ) : (
-                        <span className="font-medium">{article.label}</span>
-                      )}
+                      <span>
+                        View all {filteredResults.length} matching {filteredResults.length === 1 ? 'link' : 'links'} for &ldquo;{searchQuery.trim()}&rdquo;
+                      </span>
+                      <span>Press Enter →</span>
                     </button>
-                  ))
+
+                    {filteredResults.slice(0, 8).map((article, idx) => (
+                      <button
+                        type="button"
+                        key={`${article.id}-${article.tab || 'main'}-${idx}`}
+                        onClick={() => handleSelect(article.id, article.tab)}
+                        className="w-full text-left px-4 py-3 text-gray-800 hover:bg-[#2abcd4]/10 border-b border-gray-100 last:border-b-0 transition-colors"
+                      >
+                        <div className="text-sm">
+                          {article.label.includes('→') ? (
+                            <span>
+                              <span className="text-[#0A9DC4] font-bold">
+                                {article.label.split('→')[0].trim()}
+                              </span>
+                              <span className="text-gray-400 mx-2">→</span>
+                              <span className="text-[#0c264d] font-bold">
+                                {article.label.split('→')[1].trim()}
+                              </span>
+                            </span>
+                          ) : (
+                            <span className="text-[#0c264d] font-bold">{article.label}</span>
+                          )}
+                        </div>
+                        <p className="text-xs text-slate-600 line-clamp-1 mt-0.5">
+                          {article.summary}
+                        </p>
+                      </button>
+                    ))}
+                  </>
                 ) : (
-                  <div className="px-4 py-3 text-gray-500 text-sm">
-                    No results found for "{searchQuery}"
+                  <div className="px-4 py-3 text-gray-600 text-sm">
+                    <p className="mb-2">No instant matches for &ldquo;{searchQuery}&rdquo;.</p>
+                    <button
+                      type="button"
+                      onClick={handleSubmitFullSearch}
+                      className="text-xs px-3 py-1.5 rounded bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal transition-colors"
+                    >
+                      Open Search Directory →
+                    </button>
                   </div>
                 )}
               </div>

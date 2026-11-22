@@ -1,101 +1,989 @@
-import React, { useState } from 'react';
-import { Link, Mail, Printer, Check } from 'lucide-react';
-
-interface SectionActionsProps {
-  sectionId: string;
-  sectionTitle: string;
+return results.sort((a, b) => b.score - a.score || a.label.localeCompare(b.label));
 }
 
-export function SectionActions({ sectionId, sectionTitle }: SectionActionsProps) {
-  const [copied, setCopied] = useState(false);
+export const searchableArticles: SearchEntry[] = [
+  // ============================================================
+  // HOME & UTILITY PAGES
+  // ============================================================
+  {
+    id: 'about',
+    label: 'Home & About Brainopedia',
+    summary: 'Explore Brainopedia’s neurodiversity-affirming encyclopedia covering cognitive profiles, learning differences, sensory processing, and mental health crossovers.',
+    category: 'guide',
+    keywords: 'brainopedia home about neurodivergent neurodiversity welcome introduction encyclopedia guide resource information support understanding brain differences strengths',
+  },
+  {
+    id: 'blog',
+    label: 'Blog & Updates',
+    summary: 'Latest updates, newly added encyclopedia volumes, research summaries, and community news from Brainopedia.',
+    category: 'guide',
+    keywords: 'blog news updates articles posts latest new content announcements community stories',
+  },
+  {
+    id: 'donate',
+    label: 'Support & Donate',
+    summary: 'Help keep Brainopedia free, accessible, and continually updated with evidence-based neurodiversity resources.',
+    category: 'guide',
+    keywords: 'donate support contribute funding help sponsor patron give back financial assistance nonprofit mission',
+  },
 
-  // 1. Copy Link
-  const handleCopyLink = () => {
-    const url = `${window.location.origin}${window.location.pathname}#${sectionId}`;
-    navigator.clipboard.writeText(url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000); 
-  };
+  // ============================================================
+  // MENTAL HEALTH CROSSOVERS & STANDALONE DEEP-DIVES
+  // ============================================================
+  {
+    id: 'mood-emotions',
+    label: 'Mood & Emotions Crossovers',
+    summary: 'How neurodivergence intersects with depression, rejection sensitive dysphoria (RSD), bipolar spectrum traits, and emotional dysregulation.',
+    category: 'crossover',
+    keywords: 'mood emotions crossover mental health depression rsd rejection sensitive dysphoria bipolar emotional dysregulation overwhelm affective neurodivergent',
+  },
+  {
+    id: 'mood-emotions',
+    tab: 'depression',
+    label: 'Mood & Emotions → Depression & Dysthymia',
+    summary: 'Recognizing chronic exhaustion, masking fatigue, and depressive episodes in neurodivergent adolescents and adults.',
+    category: 'crossover',
+    keywords: 'mood emotions depression dysthymia persistent depressive low mood hopelessness anhedonia burnout misdiagnosis neurodivergent adhd autism',
+  },
+  {
+    id: 'mood-emotions',
+    tab: 'rsd',
+    label: 'Mood & Emotions → Rejection Sensitive Dysphoria (RSD)',
+    summary: 'Understanding intense emotional pain triggered by perceived rejection, criticism, or falling short of expectations.',
+    category: 'crossover',
+    keywords: 'rsd rejection sensitive dysphoria emotional pain criticism perceived failure people pleasing perfectionism adhd autism',
+  },
+  {
+    id: 'rsd-deep-dive',
+    label: 'Rejection Sensitive Dysphoria (RSD) Deep-Dive',
+    summary: 'In-depth guide to the neurology, emotional triggers, differential diagnosis, and practical self-regulation strategies for RSD.',
+    category: 'crossover',
+    keywords: 'rsd deep dive rejection sensitive dysphoria emotional intensity nervous system triggers guanfacine clonidine therapy coping strategies',
+  },
+  {
+    id: 'mood-emotions',
+    tab: 'bipolar',
+    label: 'Mood & Emotions → Bipolar Spectrum',
+    summary: 'Distinguishing cyclical mood episodes (mania, hypomania, depression) from baseline ADHD energy shifts and autistic hyperfocus.',
+    category: 'crossover',
+    keywords: 'bipolar spectrum mania hypomania mood cycling differential diagnosis adhd impulsivity sleep shifts mood stabilizers',
+  },
+  {
+    id: 'mood-emotions',
+    tab: 'dysregulation',
+    label: 'Mood & Emotions → Emotional Dysregulation',
+    summary: 'Exploring nervous system arousal, interoception, co-regulation, and practical recovery tools for intense emotional surges.',
+    category: 'crossover',
+    keywords: 'emotional dysregulation meltdown shutdown nervous system window of tolerance co regulation interoception anger frustration overwhelm',
+  },
+  {
+    id: 'anxiety-stress',
+    label: 'Anxiety & Stress Crossovers',
+    summary: 'Navigating generalized anxiety, social masking pressure, and sensory-rooted phobias across neurodivergent profiles.',
+    category: 'crossover',
+    keywords: 'anxiety stress crossover generalized anxiety social anxiety phobias sensory overload uncertainty panic nervous system',
+  },
+  {
+    id: 'anxiety-stress',
+    tab: 'generalized',
+    label: 'Anxiety & Stress → Generalized Anxiety & Overload',
+    summary: 'How intolerance of uncertainty, sensory unpredictability, and executive load drive chronic worry.',
+    category: 'crossover',
+    keywords: 'generalized anxiety gad chronic worry intolerance of uncertainty cognitive overload somatic stress regulation',
+  },
+  {
+    id: 'anxiety-stress',
+    tab: 'social',
+    label: 'Anxiety & Stress → Social Anxiety & Masking Pressure',
+    summary: 'Separating authentic social communication differences and post-social exhaustion from fear of negative evaluation.',
+    category: 'crossover',
+    keywords: 'social anxiety masking camouflaging post social exhaustion communication differences scripting eye contact',
+  },
+  {
+    id: 'anxiety-stress',
+    tab: 'phobias',
+    label: 'Anxiety & Stress → Specific Phobias & Sensory Fears',
+    summary: 'Understanding intense fear responses tied to auditory, vestibular, medical, or unpredictable environmental triggers.',
+    category: 'crossover',
+    keywords: 'specific phobias sensory fears loud noises medical anxiety vestibular triggers graded exposure accommodations',
+  },
+  {
+    id: 'trauma-burnout',
+    label: 'Trauma & Burnout Crossovers',
+    summary: 'Examining neurodivergent burnout, complex trauma (C-PTSD), and the long-term toll of chronic masking.',
+    category: 'crossover',
+    keywords: 'trauma burnout crossover autistic burnout cptsd complex ptsd masking camouflaging recovery nervous system',
+  },
+  {
+    id: 'trauma-burnout',
+    tab: 'burnout',
+    label: 'Trauma & Burnout → Neurodivergent & Autistic Burnout',
+    summary: 'Signs of chronic exhaustion, loss of skills, and heightened sensory sensitivity caused by prolonged unaccommodated demand.',
+    category: 'crossover',
+    keywords: 'autistic burnout neurodivergent burnout skill regression chronic exhaustion sensory sensitivity demand reduction rest recovery',
+  },
+  {
+    id: 'trauma-burnout',
+    tab: 'cptsd',
+    label: 'Trauma & Burnout → Complex Trauma (C-PTSD)',
+    summary: 'How repeated invalidation, sensory trauma, and social exclusion shape hypervigilance and trauma responses.',
+    category: 'crossover',
+    keywords: 'cptsd complex trauma ptsd invalidation bullying hypervigilance somatic therapy neurodiversity affirming trauma care',
+  },
+  {
+    id: 'trauma-burnout',
+    tab: 'masking',
+    label: 'Trauma & Burnout → Masking & Camouflaging',
+    summary: 'The cognitive cost of suppressing stims, scripting conversation, and hiding neurodivergent traits to fit in.',
+    category: 'crossover',
+    keywords: 'masking camouflaging fawning scripting suppressing stims identity exhaustion unmasking late diagnosis',
+  },
 
-  // 2. Email Logic
-  const mailtoSubject = encodeURIComponent(`Helpful resource: ${sectionTitle}`);
-  const mailtoBody = encodeURIComponent(`I found this section on Brainopedia and thought it would be helpful for you:\n\n${window.location.origin}${window.location.pathname}#${sectionId}`);
-  const mailtoUrl = `mailto:?subject=${mailtoSubject}&body=${mailtoBody}`;
+  // ============================================================
+  // AUDITORY PROCESSING DISORDER (APD) - Main + Sub-pages + Tabs
+  // ============================================================
+  {
+    id: 'apd',
+    label: 'Auditory Processing Disorder (APD)',
+    summary: 'How the brain interprets, filters, and sequences sound despite normal peripheral hearing on a standard audiogram.',
+    category: 'condition',
+    keywords: 'auditory processing disorder apd capd central hearing listening sound discrimination background noise speech in noise audiogram',
+  },
+  {
+    id: 'apd-overview',
+    label: 'APD → Overview',
+    summary: 'Core neurobiology of central auditory processing, functional profiles, and strengths-based understanding of APD.',
+    category: 'subpage',
+    keywords: 'apd overview introduction what is central auditory processing disorder capd normal audiogram decoding tolerance integration prosodic',
+  },
+  {
+    id: 'apd-symptoms',
+    label: 'APD → Symptoms & Signs',
+    summary: 'Recognizing listening fatigue, difficulty hearing in background noise, similar-sound confusion, and multi-step direction challenges.',
+    category: 'subpage',
+    keywords: 'apd symptoms signs background noise cocktail party effect mishearing similar words multi step directions listening fatigue asking huh repeat',
+  },
+  {
+    id: 'apd-causes',
+    label: 'APD → Causes & Pathways',
+    summary: 'Neurodevelopmental maturation, genetics, early chronic ear infections (otitis media), and central auditory pathway factors.',
+    category: 'subpage',
+    keywords: 'apd causes risk factors chronic otitis media ear infections auditory pathway maturation genetics premature birth head injury',
+  },
+  {
+    id: 'apd-diagnosis',
+    label: 'APD → Diagnosis & Assessment',
+    summary: 'Multidisciplinary audiological testing, behavioral central auditory batteries, electrophysiological measures, and differential diagnosis.',
+    category: 'subpage',
+    keywords: 'apd diagnosis audiologist audiology evaluation central auditory test battery dichotic listening gap detection speech in noise',
+  },
+  {
+    id: 'apd-diagnosis',
+    tab: 'tests',
+    label: 'APD → Diagnosis (Behavioral & Electrophysiological Tests)',
+    summary: 'Dichotic listening, monaural low-redundancy speech, temporal gap detection, ABR, and MLR waveform assessments.',
+    category: 'subpage',
+    keywords: 'apd tests dichotic listening monaural closure gap detection temporal processing abr auditory brainstem response mlr middle latency response',
+  },
+  {
+    id: 'apd-diagnosis',
+    tab: 'differential',
+    label: 'APD → Diagnosis (Differential Diagnosis & Advocacy)',
+    summary: 'Distinguishing APD from ADHD, Auditory Neuropathy Spectrum Disorder (ANSD), and Autism, plus using diagnostic reports.',
+    category: 'subpage',
+    keywords: 'apd differential diagnosis ansd auditory neuropathy spectrum disorder vs adhd vs autism diagnostic report school advocacy',
+  },
+  {
+    id: 'apd-support',
+    label: 'APD → Support & Management',
+    summary: 'The three-pronged framework: acoustic environmental modifications, compensatory strategies, and direct auditory remediation.',
+    category: 'subpage',
+    keywords: 'apd support treatment management three pronged approach classroom acoustics fm system remote microphone therapy accommodations',
+  },
+  {
+    id: 'apd-support',
+    tab: 'environment',
+    label: 'APD → Support (Environment & Assistive Tech)',
+    summary: 'Acoustic panels, preferential seating, wireless remote-microphone (FM/DM) systems, live captioning, and visual anchors.',
+    category: 'subpage',
+    keywords: 'apd environment assistive tech fm system dm system remote microphone roger live captioning transcription preferential seating acoustics',
+  },
+  {
+    id: 'apd-support',
+    tab: 'skills',
+    label: 'APD → Support (Skills & Direct Therapy)',
+    summary: 'Active listening habits, specific clarification prompts, Cornell note-taking, and neuroplasticity-based auditory training.',
+    category: 'subpage',
+    keywords: 'apd skills therapy active listening cornell notes chunking computerized auditory training lace orton gillingham speech therapy',
+  },
+  {
+    id: 'apd-support',
+    tab: 'accommodations',
+    label: 'APD → Support (IEP/504 Accommodations, Home & Workplace)',
+    summary: 'Section 504 and IEP classroom protections, low-noise home communication habits, and ADA workplace accommodations.',
+    category: 'subpage',
+    keywords: 'apd accommodations iep 504 plan home support ada workplace noise canceling headphones written instructions re-evaluation',
+  },
+  {
+    id: 'apd-living',
+    label: 'APD → Living with APD',
+    summary: 'Practical daily strategies for noisy restaurants, meetings, relationships, self-advocacy, and leveraging visual strengths.',
+    category: 'subpage',
+    keywords: 'apd living daily life coping strategies restaurants meetings workplace self advocacy captions visual strengths adults teens',
+  },
 
-  // 3. Bulletproof Print Logic (The Iframe Trick)
-  const handlePrint = () => {
-    const printElement = document.getElementById(sectionId);
-    if (!printElement) return;
+  // ============================================================
+  // ADHD - Main + Sub-pages
+  // ============================================================
+  {
+    id: 'adhd',
+    label: 'ADHD',
+    summary: 'Interest-based nervous system, executive function regulation, hyperfocus, and evidence-based supports across the lifespan.',
+    category: 'condition',
+    keywords: 'attention deficit hyperactivity disorder adhd add inattention impulsivity executive function focus hyperfocus dopamine time blindness',
+  },
+  {
+    id: 'adhd-overview',
+    label: 'ADHD → Overview',
+    summary: 'Core neurobiology of ADHD, inattentive, hyperactive-impulsive, and combined presentations, and lifespan trajectory.',
+    category: 'subpage',
+    keywords: 'adhd overview introduction what is attention deficit hyperactivity disorder presentations inattentive hyperactive combined dopamine norepinephrine',
+  },
+  {
+    id: 'adhd-symptoms',
+    label: 'ADHD → Symptoms & Presentations',
+    summary: 'Executive dysfunction, working memory shifts, time blindness, hyperfocus, emotional intensity, and internalized female presentations.',
+    category: 'subpage',
+    keywords: 'adhd symptoms signs executive dysfunction working memory time blindness hyperfocus women girls masking emotional dysregulation rsd',
+  },
+  {
+    id: 'adhd-causes',
+    label: 'ADHD → Causes & Neurobiology',
+    summary: 'Heritability, catecholamine signaling (dopamine and norepinephrine), prefrontal-striatal networks, and gene-environment factors.',
+    category: 'subpage',
+    keywords: 'adhd causes genetics heritability dopamine norepinephrine prefrontal cortex basal ganglia neurobiology environmental factors',
+  },
+  {
+    id: 'adhd-diagnosis',
+    label: 'ADHD → Diagnosis & Evaluation',
+    summary: 'Comprehensive clinical interviews, rating scales, developmental history, adult diagnosis, and ruling out look-alike conditions.',
+    category: 'subpage',
+    keywords: 'adhd diagnosis assessment evaluation conners vanderbilt clinical interview adult diagnosis late diagnosis differential diagnosis',
+  },
+  {
+    id: 'adhd-support',
+    label: 'ADHD → Support & Treatment',
+    summary: 'Multimodal support combining stimulant and non-stimulant medications, CBT, ADHD coaching, and school/work accommodations.',
+    category: 'subpage',
+    keywords: 'adhd support treatment medication stimulant nonstimulant adderall ritalin vyvanse concerta strattera guanfacine cbt coaching iep 504',
+  },
+  {
+    id: 'adhd-living',
+    label: 'ADHD → Living with ADHD',
+    summary: 'Externalizing working memory, body doubling, visual timers, sleep and movement routines, and thriving with ADHD.',
+    category: 'subpage',
+    keywords: 'adhd living daily life coping strategies body doubling pomodoro timer routines habits productivity relationships strengths creativity',
+  },
 
-    // Create an invisible mini-browser window
-    const iframe = document.createElement('iframe');
-    iframe.style.position = 'fixed';
-    iframe.style.right = '0';
-    iframe.style.bottom = '0';
-    iframe.style.width = '0';
-    iframe.style.height = '0';
-    iframe.style.border = '0';
-    document.body.appendChild(iframe);
+  // ============================================================
+  // AUTISM (ASD) - Main + Sub-pages
+  // ============================================================
+  {
+    id: 'autism',
+    label: 'Autism (ASD)',
+    summary: 'Neurodevelopmental differences in social communication, sensory processing, monotropic focus, and authentic connection.',
+    category: 'condition',
+    keywords: 'autism spectrum disorder asd neurodiversity stimming meltdown shutdown masking special interests monotropism sensory processing',
+  },
+  {
+    id: 'autism-overview',
+    label: 'Autism → Overview',
+    summary: 'Understanding the autism spectrum, support needs levels, neurodiversity-affirming language, and cognitive strengths.',
+    category: 'subpage',
+    keywords: 'autism overview introduction what is asd prevalence neurodiversity identity first support levels 1 2 3 pattern recognition',
+  },
+  {
+    id: 'autism-symptoms',
+    label: 'Autism → Traits & Characteristics',
+    summary: 'Direct communication styles, deep focused interests, self-regulatory stimming, sensory sensitivity, and interoception.',
+    category: 'subpage',
+    keywords: 'autism symptoms traits social communication eye contact literal thinking stimming echolalia special interests sensory overload alexithymia monotropism',
+  },
+  {
+    id: 'autism-causes',
+    label: 'Autism → Causes & Genetics',
+    summary: 'Polygenic inheritance, early neural connectivity patterns, prenatal influences, and debunked environmental myths.',
+    category: 'subpage',
+    keywords: 'autism causes genetics heritability de novo mutations neural connectivity synaptic pruning prenatal factors not vaccines',
+  },
+  {
+    id: 'autism-diagnosis',
+    label: 'Autism → Diagnosis & Identification',
+    summary: 'Developmental evaluations, ADOS-2/ADI-R tools, adult and late-identified autism, and camouflaging in women and AFAB individuals.',
+    category: 'subpage',
+    keywords: 'autism diagnosis assessment ados adi developmental pediatrician neuropsychologist late diagnosis adult diagnosis masking women girls',
+  },
+  {
+    id: 'autism-support',
+    label: 'Autism → Support & Therapies',
+    summary: 'Neurodiversity-affirming speech and occupational therapy, AAC access, sensory accommodations, and individualized school plans.',
+    category: 'subpage',
+    keywords: 'autism support therapies speech therapy occupational therapy aac sensory integration accommodations iep 504 visual supports',
+  },
+  {
+    id: 'autism-living',
+    label: 'Autism → Living with Autism',
+    summary: 'Sensory-friendly environments, energy accounting, burnout prevention, self-advocacy, and adult independence.',
+    category: 'subpage',
+    keywords: 'autism living daily life sensory management routine energy accounting spoon theory burnout recovery self advocacy adulthood',
+  },
+  {
+    id: 'autism-speech-therapy',
+    label: 'Autism → Speech & AAC Support',
+    summary: 'Supporting expressive, receptive, and gestalt language processing alongside Augmentative and Alternative Communication (AAC).',
+    category: 'subpage',
+    keywords: 'autism speech therapy slp aac augmentative alternative communication gestalt language processing echolalia communication device',
+  },
+  {
+    id: 'autism-occupational-therapy',
+    label: 'Autism → Occupational Therapy & Sensory',
+    summary: 'Sensory diets, proprioceptive and vestibular regulation, motor planning, and daily living autonomy.',
+    category: 'subpage',
+    keywords: 'autism occupational therapy ot sensory diet proprioception vestibular fine motor daily living skills regulation',
+  },
+  {
+    id: 'autism-aba-therapy',
+    label: 'Autism → ABA Therapy Context & Perspectives',
+    summary: 'Examining Applied Behavior Analysis history, modern reforms, ethical considerations, and neurodiversity-affirming alternatives.',
+    category: 'subpage',
+    keywords: 'autism aba applied behavior analysis reinforcement ethics consent neurodiversity perspective modern reforms',
+  },
+  {
+    id: 'autism-social-skills',
+    label: 'Autism → Social Connection & Double Empathy',
+    summary: 'Understanding the double empathy problem, interest-based friendships, and authentic social communication.',
+    category: 'subpage',
+    keywords: 'autism social skills double empathy problem friendship peer mentoring communication styles perspective taking',
+  },
+  {
+    id: 'autism-mental-health',
+    label: 'Autism → Mental Health & Well-Being',
+    summary: 'Adapted therapy approaches, preventing autistic burnout, and supporting co-occurring anxiety and depression.',
+    category: 'subpage',
+    keywords: 'autism mental health anxiety depression burnout adapted cbt dbt neurodiversity affirming therapist',
+  },
+  {
+    id: 'autism-dysregulation',
+    label: 'Autism → Sensory & Emotional Dysregulation',
+    summary: 'Understanding the neurology of autistic meltdowns and shutdowns, early warning signs, and compassionate de-escalation.',
+    category: 'subpage',
+    keywords: 'autism dysregulation meltdown shutdown sensory overload nervous system de escalation recovery safe space',
+  },
+  {
+    id: 'autism-support-biomedical',
+    label: 'Autism → Co-Occurring Medical & Biomedical Care',
+    summary: 'Addressing gastrointestinal health, sleep architecture, epilepsy screening, and evidence-based medical care.',
+    category: 'subpage',
+    keywords: 'autism biomedical medical care sleep melatonin gastrointestinal epilepsy co occurring health screening',
+  },
 
-    const iframeDoc = iframe.contentWindow?.document;
-    if (iframeDoc) {
-      // Grab all the Tailwind CSS from your main site so it stays pretty
-      const styles = Array.from(document.querySelectorAll('style, link[rel="stylesheet"]'))
-        .map(s => s.outerHTML)
-        .join('');
+  // ============================================================
+  // DYSLEXIA, DYSCALCULIA, DYSGRAPHIA, NVLD, DLD, HYPERLEXIA
+  // ============================================================
+  {
+    id: 'dyslexia',
+    label: 'Dyslexia',
+    summary: 'Phonological processing differences in reading and spelling paired with strong spatial, narrative, and big-picture reasoning.',
+    category: 'condition',
+    keywords: 'dyslexia reading disability phonological decoding spelling phonics orton gillingham audiobooks text to speech',
+  },
+  {
+    id: 'dyslexia-overview',
+    label: 'Dyslexia → Overview',
+    summary: 'Neurobiology of phonological and orthographic reading networks, prevalence, and cognitive strengths in dyslexia.',
+    category: 'subpage',
+    keywords: 'dyslexia overview what is phonological surface double deficit left hemisphere reading networks strengths',
+  },
+  {
+    id: 'dyslexia-symptoms',
+    label: 'Dyslexia → Symptoms & Signs',
+    summary: 'Decoding effort, reading fluency, spelling patterns, rapid naming, and developmental indicators across school ages.',
+    category: 'subpage',
+    keywords: 'dyslexia symptoms signs slow decoding fluency spelling phonological awareness rhyming word retrieval',
+  },
+  {
+    id: 'dyslexia-causes',
+    label: 'Dyslexia → Causes & Neurobiology',
+    summary: 'Genetic heritability, left-hemisphere temporoparietal and occipitotemporal reading pathways, and orthographic mapping.',
+    category: 'subpage',
+    keywords: 'dyslexia causes genetics kiaa0319 dcdc2 brain reading network phonological processing orthographic mapping',
+  },
+  {
+    id: 'dyslexia-diagnosis',
+    label: 'Dyslexia → Diagnosis & Screening',
+    summary: 'Phonological awareness, decoding, fluency, and rapid automatized naming assessments across early and adult evaluations.',
+    category: 'subpage',
+    keywords: 'dyslexia diagnosis psychoeducational evaluation phonological testing fluency screening early identification',
+  },
+  {
+    id: 'dyslexia-support',
+    label: 'Dyslexia → Structured Literacy & Support',
+    summary: 'Orton-Gillingham and multisensory structured literacy, text-to-speech tools, audiobooks, and extended-time accommodations.',
+    category: 'subpage',
+    keywords: 'dyslexia support orton gillingham wilson structured literacy multisensory text to speech audiobooks iep 504',
+  },
+  {
+    id: 'dyslexia-living',
+    label: 'Dyslexia → Living with Dyslexia',
+    summary: 'Assistive reading workflows, workplace accommodations, self-advocacy, and leveraging visual-spatial strengths.',
+    category: 'subpage',
+    keywords: 'dyslexia living daily life assistive technology study strategies workplace accommodations strengths',
+  },
+  {
+    id: 'dyscalculia',
+    label: 'Dyscalculia',
+    summary: 'Differences in intuitive number sense, magnitude estimation, and arithmetic processing paired with verbal and conceptual strengths.',
+    category: 'condition',
+    keywords: 'dyscalculia math learning disability number sense subitizing arithmetic fractions time money calculator',
+  },
+  {
+    id: 'dyscalculia-overview',
+    label: 'Dyscalculia → Overview',
+    summary: 'Understanding developmental dyscalculia, subitizing, magnitude representation, and everyday numerical reasoning.',
+    category: 'subpage',
+    keywords: 'dyscalculia overview what is math learning difference subitizing number sense magnitude',
+  },
+  {
+    id: 'dyscalculia-symptoms',
+    label: 'Dyscalculia → Symptoms & Signs',
+    summary: 'Number line estimation, place value, math fact retrieval, elapsed time, and money calculation indicators.',
+    category: 'subpage',
+    keywords: 'dyscalculia symptoms counting subitizing place value fractions telling time money math anxiety',
+  },
+  {
+    id: 'dyscalculia-causes',
+    label: 'Dyscalculia → Causes & Brain Networks',
+    summary: 'Intraparietal sulcus number processing networks, working memory interactions, and genetic influences.',
+    category: 'subpage',
+    keywords: 'dyscalculia causes intraparietal sulcus brain number processing working memory genetics',
+  },
+  {
+    id: 'dyscalculia-diagnosis',
+    label: 'Dyscalculia → Diagnosis & Assessment',
+    summary: 'Evaluating numerical magnitude, arithmetic fluency, and spatial-quantitative reasoning in school and clinical settings.',
+    category: 'subpage',
+    keywords: 'dyscalculia diagnosis assessment keymath woodcock johnson wiat number sense evaluation',
+  },
+  {
+    id: 'dyscalculia-support',
+    label: 'Dyscalculia → Support & Math Tools',
+    summary: 'Concrete-representational-abstract manipulatives, visual number lines, calculator access, and step-by-step scaffolding.',
+    category: 'subpage',
+    keywords: 'dyscalculia support manipulatives ten frames number line calculator accommodation iep 504',
+  },
+  {
+    id: 'dyscalculia-living',
+    label: 'Dyscalculia → Living with Dyscalculia',
+    summary: 'Digital budgeting tools, visual scheduling, measurement aids, and confidence in quantitative adult tasks.',
+    category: 'subpage',
+    keywords: 'dyscalculia living budgeting money management time tools workplace accommodations',
+  },
+  {
+    id: 'dysgraphia',
+    label: 'Dysgraphia',
+    summary: 'Differences in handwriting motor planning, orthographic coding, and written transcription despite rich verbal ideas.',
+    category: 'condition',
+    keywords: 'dysgraphia writing handwriting fine motor orthographic coding typing speech to text occupational therapy',
+  },
+  {
+    id: 'dysgraphia-overview',
+    label: 'Dysgraphia → Overview',
+    summary: 'Distinguishing motor, spatial, and orthographic dysgraphia from oral language and conceptual reasoning ability.',
+    category: 'subpage',
+    keywords: 'dysgraphia overview what is writing disability motor spatial orthographic coding',
+  },
+  {
+    id: 'dysgraphia-symptoms',
+    label: 'Dysgraphia → Symptoms & Signs',
+    summary: 'Hand fatigue, irregular letter spacing, slow transcription speed, and the gap between spoken ideas and written output.',
+    category: 'subpage',
+    keywords: 'dysgraphia symptoms messy handwriting hand pain pencil grip spacing written expression',
+  },
+  {
+    id: 'dysgraphia-causes',
+    label: 'Dysgraphia → Causes & Motor Pathways',
+    summary: 'Fine motor sequencing, graphomotor planning, orthographic working memory, and co-occurring neurodivergences.',
+    category: 'subpage',
+    keywords: 'dysgraphia causes fine motor planning orthographic memory parietal frontal lobe',
+  },
+  {
+    id: 'dysgraphia-diagnosis',
+    label: 'Dysgraphia → Diagnosis & Evaluation',
+    summary: 'Occupational therapy fine-motor assessments, Beery VMI, and written expression evaluations.',
+    category: 'subpage',
+    keywords: 'dysgraphia diagnosis occupational therapy assessment beery vmi writing sample evaluation',
+  },
+  {
+    id: 'dysgraphia-support',
+    label: 'Dysgraphia → Support & Assistive Writing',
+    summary: 'Keyboarding instruction, speech-to-text dictation, graphic organizers, note-taking scaffolds, and OT support.',
+    category: 'subpage',
+    keywords: 'dysgraphia support occupational therapy typing keyboard speech to text dictation graphic organizers iep 504',
+  },
+  {
+    id: 'dysgraphia-living',
+    label: 'Dysgraphia → Living with Dysgraphia',
+    summary: 'Digital note-taking workflows, voice dictation tools, and written communication strategies in college and work.',
+    category: 'subpage',
+    keywords: 'dysgraphia living digital notes voice dictation college workplace accommodations',
+  },
+  {
+    id: 'nvld',
+    label: 'Non-Verbal Learning Disability (NVLD)',
+    summary: 'Strong verbal reasoning and vocabulary paired with visual-spatial, motor coordination, and nonverbal social cue differences.',
+    category: 'condition',
+    keywords: 'nvld non verbal learning disability visual spatial body language geometry navigation verbal strengths',
+  },
+  {
+    id: 'nvld-overview',
+    label: 'NVLD → Overview',
+    summary: 'Understanding the NVLD cognitive profile, right-hemisphere white matter research, and verbal mediation strengths.',
+    category: 'subpage',
+    keywords: 'nvld overview what is nonverbal learning disability verbal strengths visual spatial',
+  },
+  {
+    id: 'nvld-symptoms',
+    label: 'NVLD → Symptoms & Characteristics',
+    summary: 'Spatial navigation, geometry, fine-motor coordination, and interpreting implicit facial or postural cues.',
+    category: 'subpage',
+    keywords: 'nvld symptoms visual spatial directions geometry coordination body language sarcasm',
+  },
+  {
+    id: 'nvld-causes',
+    label: 'NVLD → Causes & Neurobiology',
+    summary: 'White matter connectivity, right-hemisphere integration, and developmental neurobiology.',
+    category: 'subpage',
+    keywords: 'nvld causes white matter right hemisphere brain connectivity genetics',
+  },
+  {
+    id: 'nvld-diagnosis',
+    label: 'NVLD → Diagnosis & Assessment',
+    summary: 'Neuropsychological evaluation of verbal-visual spatial discrepancies and adaptive social perception.',
+    category: 'subpage',
+    keywords: 'nvld diagnosis neuropsychological testing verbal spatial discrepancy evaluation',
+  },
+  {
+    id: 'nvld-support',
+    label: 'NVLD → Support & Explicit Teaching',
+    summary: 'Verbal step-by-step scaffolding, explicit social and spatial instruction, and occupational therapy.',
+    category: 'subpage',
+    keywords: 'nvld support explicit instruction verbal scaffolding occupational therapy iep 504',
+  },
+  {
+    id: 'nvld-living',
+    label: 'NVLD → Living with NVLD',
+    summary: 'GPS navigation routines, verbal self-talk strategies, and careers leveraging strong verbal and analytical skills.',
+    category: 'subpage',
+    keywords: 'nvld living navigation gps verbal strategies career strengths adults',
+  },
+  {
+    id: 'dld',
+    label: 'Developmental Language Disorder (DLD)',
+    summary: 'Persistent differences in understanding and structuring spoken or written language unrelated to hearing loss or intellect.',
+    category: 'condition',
+    keywords: 'dld developmental language disorder receptive expressive grammar vocabulary speech therapy',
+  },
+  {
+    id: 'dld-overview',
+    label: 'DLD → Overview',
+    summary: 'Prevalence (~7% of children), lifelong trajectory, and distinguishing DLD from speech sound articulation.',
+    category: 'subpage',
+    keywords: 'dld overview what is developmental language disorder specific language impairment sli prevalence',
+  },
+  {
+    id: 'dld-symptoms',
+    label: 'DLD → Symptoms & Signs',
+    summary: 'Word-finding pauses, complex syntax comprehension, narrative sequencing, and following multi-clause instructions.',
+    category: 'subpage',
+    keywords: 'dld symptoms word finding grammar following directions narrative comprehension',
+  },
+  {
+    id: 'dld-causes',
+    label: 'DLD → Causes & Language Networks',
+    summary: 'Polygenic heritability, procedural language learning networks, and debunking bilingualism myths.',
+    category: 'subpage',
+    keywords: 'dld causes genetics brain language networks not caused by bilingualism',
+  },
+  {
+    id: 'dld-diagnosis',
+    label: 'DLD → Diagnosis & SLP Evaluation',
+    summary: 'Standardized receptive/expressive language testing and narrative discourse analysis by a Speech-Language Pathologist.',
+    category: 'subpage',
+    keywords: 'dld diagnosis speech language pathologist slp receptive expressive evaluation',
+  },
+  {
+    id: 'dld-support',
+    label: 'DLD → Support & Language Therapy',
+    summary: 'Targeted SLP vocabulary and syntax intervention, visual sentence frames, and chunked classroom instructions.',
+    category: 'subpage',
+    keywords: 'dld support speech therapy visual supports sentence frames simplified instructions iep 504',
+  },
+  {
+    id: 'dld-living',
+    label: 'DLD → Living with DLD',
+    summary: 'Self-advocacy scripts, written communication supports, and thriving across education and adulthood.',
+    category: 'subpage',
+    keywords: 'dld living self advocacy communication strategies workplace adults',
+  },
+  {
+    id: 'hyperlexia',
+    label: 'Hyperlexia',
+    summary: 'Early, self-taught precocious word decoding accompanied by an intense fascination with letters, numbers, and print.',
+    category: 'condition',
+    keywords: 'hyperlexia early reading precocious decoding comprehension letters numbers visual learner',
+  },
+  {
+    id: 'hyperlexia-overview',
+    label: 'Hyperlexia → Overview',
+    summary: 'Understanding Type 1, Type 2, and Type 3 hyperlexia, visual pattern recognition, and reading-first learning.',
+    category: 'subpage',
+    keywords: 'hyperlexia overview types 1 2 3 early reading decoding autism giftedness',
+  },
+  {
+    id: 'hyperlexia-symptoms',
+    label: 'Hyperlexia → Characteristics & Signs',
+    summary: 'Self-taught reading before age five, strong visual memory, and bridging the gap between decoding and comprehension.',
+    category: 'subpage',
+    keywords: 'hyperlexia symptoms self taught reading decoding comprehension gap gestalt phrases',
+  },
+  {
+    id: 'hyperlexia-causes',
+    label: 'Hyperlexia → Causes & Visual Word Networks',
+    summary: 'Hyper-efficient visual word-form recognition and neurodevelopmental pattern processing.',
+    category: 'subpage',
+    keywords: 'hyperlexia causes visual word form area pattern recognition brain',
+  },
+  {
+    id: 'hyperlexia-diagnosis',
+    label: 'Hyperlexia → Diagnosis & Assessment',
+    summary: 'Evaluating reading decoding alongside listening comprehension, language development, and social communication.',
+    category: 'subpage',
+    keywords: 'hyperlexia diagnosis reading comprehension evaluation speech language autism screening',
+  },
+  {
+    id: 'hyperlexia-support',
+    label: 'Hyperlexia → Support & Written Scaffolding',
+    summary: 'Using written cues, social scripts, and visual text to build oral language and reading comprehension.',
+    category: 'subpage',
+    keywords: 'hyperlexia support written instructions visual learning comprehension strategies speech therapy',
+  },
+  {
+    id: 'hyperlexia-living',
+    label: 'Hyperlexia → Living with Hyperlexia',
+    summary: 'Channeling lifelong love of text, languages, and visual systems into academic and personal strengths.',
+    category: 'subpage',
+    keywords: 'hyperlexia living strengths reading visual learning self advocacy',
+  },
 
-      // Write ONLY the specific section into the mini-browser
-      iframeDoc.open();
-      iframeDoc.write(`
-        <html>
-          <head>
-            <title>Brainopedia Resource</title>
-            ${styles}
-          </head>
-          <body style="background: white; padding: 2rem;">
-            ${printElement.outerHTML}
-          </body>
-        </html>
-      `);
-      iframeDoc.close();
+  // ============================================================
+  // GIFTEDNESS, TWICE-EXCEPTIONAL (2E), VPD & SPD
+  // ============================================================
+  {
+    id: 'giftedness',
+    label: 'Giftedness',
+    summary: 'Asynchronous development, deep abstract curiosity, heightened intensities, and advanced cognitive pattern recognition.',
+    category: 'condition',
+    keywords: 'giftedness gifted talented high ability asynchronous development overexcitability perfectionism enrichment acceleration',
+  },
+  {
+    id: 'giftedness-overview',
+    label: 'Giftedness → Overview',
+    summary: 'Columbus Group definition of asynchronous development, multidimensional models, and neurodiversity perspectives.',
+    category: 'subpage',
+    keywords: 'giftedness overview asynchronous development columbus group renzulli gagne iq',
+  },
+  {
+    id: 'giftedness-symptoms',
+    label: 'Giftedness → Characteristics & Intensities',
+    summary: 'Rapid conceptual synthesis, Dabrowski overexcitabilities, existential curiosity, and deep emotional sensitivity.',
+    category: 'subpage',
+    keywords: 'giftedness characteristics traits dabrowski overexcitability perfectionism sensitivity curiosity',
+  },
+  {
+    id: 'giftedness-causes',
+    label: 'Giftedness → Causes & Neural Efficiency',
+    summary: 'Genetic heritability, white-matter neural efficiency, and enriching developmental environments.',
+    category: 'subpage',
+    keywords: 'giftedness causes genetics neural efficiency brain development enrichment',
+  },
+  {
+    id: 'giftedness-diagnosis',
+    label: 'Giftedness → Identification & Equity',
+    summary: 'Comprehensive cognitive assessment, non-verbal screening, ceiling effects, and equitable identification.',
+    category: 'subpage',
+    keywords: 'giftedness identification iq test wisc stanford binet ceiling effect equity screening',
+  },
+  {
+    id: 'giftedness-support',
+    label: 'Giftedness → Educational Support & Acceleration',
+    summary: 'Curriculum compacting, subject and grade acceleration, mentorships, and social-emotional counseling.',
+    category: 'subpage',
+    keywords: 'giftedness support acceleration enrichment compacting differentiation mentorship counseling',
+  },
+  {
+    id: 'giftedness-living',
+    label: 'Giftedness → Living with Giftedness',
+    summary: 'Finding intellectual peers, navigating multipotentiality, managing perfectionism, and adult self-actualization.',
+    category: 'subpage',
+    keywords: 'giftedness living multipotentiality imposter syndrome peers perfectionism adults',
+  },
+  {
+    id: 'twice-exceptional',
+    label: 'Twice Exceptional (2E)',
+    summary: 'High cognitive ability co-occurring with ADHD, autism, dyslexia, or another disability—where strengths and challenges mask one another.',
+    category: 'condition',
+    keywords: 'twice exceptional 2e gifted with adhd gifted with autism gifted with dyslexia masking asynchronous dual exceptionality',
+  },
+  {
+    id: 'twice-exceptional-overview',
+    label: '2E → Overview',
+    summary: 'Understanding the three 2E masking subgroups and why average test scores can hide both advanced gifts and support needs.',
+    category: 'subpage',
+    keywords: 'twice exceptional 2e overview masking subgroups dual exceptionality paradox',
+  },
+  {
+    id: 'twice-exceptional-symptoms',
+    label: '2E → Characteristics & Uneven Profiles',
+    summary: 'Wide scatter between abstract reasoning and output fluency, perfectionistic frustration, and asynchronous development.',
+    category: 'subpage',
+    keywords: 'twice exceptional 2e characteristics uneven profile scatter frustration perfectionism',
+  },
+  {
+    id: 'twice-exceptional-causes',
+    label: '2E → Causes & Co-Occurrence',
+    summary: 'Shared neurodevelopmental genetics and overlapping brain network specializations.',
+    category: 'subpage',
+    keywords: 'twice exceptional 2e causes neurobiology genetics overlap comorbidity',
+  },
+  {
+    id: 'twice-exceptional-diagnosis',
+    label: '2E → Diagnosis & Comprehensive Testing',
+    summary: 'Subtest-level neuropsychological analysis to uncover masked gifts and co-occurring learning or attentional differences.',
+    category: 'subpage',
+    keywords: 'twice exceptional 2e diagnosis neuropsychological evaluation subtest scatter masking',
+  },
+  {
+    id: 'twice-exceptional-support',
+    label: '2E → Dual Support & Enrichment',
+    summary: 'Simultaneously nurturing advanced intellectual strengths while providing IEP/504 accommodations and assistive tools.',
+    category: 'subpage',
+    keywords: 'twice exceptional 2e support strength based enrichment accommodations iep 504 assistive tech',
+  },
+  {
+    id: 'twice-exceptional-living',
+    label: '2E → Living as Twice Exceptional',
+    summary: 'Building integrated self-understanding, self-advocacy, and strength-aligned careers.',
+    category: 'subpage',
+    keywords: 'twice exceptional 2e living identity self advocacy community adults college',
+  },
+  {
+    id: 'visual-processing',
+    label: 'Visual Processing Disorder (VPD)',
+    summary: 'Brain-based differences in interpreting visual-spatial patterns, tracking lines of text, and visual-motor integration.',
+    category: 'condition',
+    keywords: 'visual processing disorder vpd visual perception tracking figure ground spatial visual motor',
+  },
+  {
+    id: 'visual-processing-overview',
+    label: 'VPD → Overview',
+    summary: 'Distinguishing cortical visual processing from 20/20 visual acuity and understanding visual-perceptual subtypes.',
+    category: 'subpage',
+    keywords: 'vpd overview visual processing discrimination figure ground closure spatial memory',
+  },
+  {
+    id: 'visual-processing-symptoms',
+    label: 'VPD → Symptoms & Signs',
+    summary: 'Losing place while reading, copying fatigue, visual crowding, and spatial alignment challenges.',
+    category: 'subpage',
+    keywords: 'vpd symptoms skipping lines losing place visual crowding copying board depth perception',
+  },
+  {
+    id: 'visual-processing-causes',
+    label: 'VPD → Causes & Visual Pathways',
+    summary: 'Dorsal and ventral visual processing streams and occipital-parietal integration.',
+    category: 'subpage',
+    keywords: 'vpd causes dorsal ventral stream occipital parietal cortex visual integration',
+  },
+  {
+    id: 'visual-processing-diagnosis',
+    label: 'VPD → Diagnosis & Optometric/OT Testing',
+    summary: 'Developmental optometry and occupational therapy visual-perceptual assessments (TVPS, Beery VMI).',
+    category: 'subpage',
+    keywords: 'vpd diagnosis developmental optometrist tvps beery vmi visual perceptual evaluation',
+  },
+  {
+    id: 'visual-processing-support',
+    label: 'VPD → Support & Visual Accommodations',
+    summary: 'Clean uncluttered layouts, reading guides, high-contrast typography, and occupational therapy.',
+    category: 'subpage',
+    keywords: 'vpd support reading guides tinted overlays clean layout occupational therapy iep 504',
+  },
+  {
+    id: 'visual-processing-living',
+    label: 'VPD → Living with VPD',
+    summary: 'Screen accessibility settings, audio-visual pairing, and spatial organization routines.',
+    category: 'subpage',
+    keywords: 'vpd living accessibility screen settings typography organization adults',
+  },
+  {
+    id: 'spd',
+    label: 'Sensory Processing Disorder (SPD)',
+    summary: 'Differences in how the nervous system modulates, discriminates, and integrates input across all eight sensory systems.',
+    category: 'condition',
+    keywords: 'sensory processing disorder spd overresponsive underresponsive sensory seeking eight senses interoception proprioception vestibular',
+  },
+  {
+    id: 'spd-overview',
+    label: 'SPD → Overview',
+    summary: 'Sensory modulation, sensory discrimination, and sensory-based motor subtypes across the eight senses.',
+    category: 'subpage',
+    keywords: 'spd overview subtypes modulation discrimination eight senses tactile auditory visual vestibular proprioception interoception',
+  },
+  {
+    id: 'spd-symptoms',
+    label: 'SPD → Symptoms & Sensory Profiles',
+    summary: 'Sensory sensitivity, sensory seeking, low registration, clothing and food texture aversions, and sensory overload.',
+    category: 'subpage',
+    keywords: 'spd symptoms hypersensitivity hyposensitivity sensory seeking clothing tags picky eating noise sensitivity overload',
+  },
+  {
+    id: 'spd-causes',
+    label: 'SPD → Causes & Sensory Integration',
+    summary: 'Neural sensory gating, genetic factors, early developmental influences, and co-occurrence with autism and ADHD.',
+    category: 'subpage',
+    keywords: 'spd causes sensory gating genetics nervous system premature birth co occurring',
+  },
+  {
+    id: 'spd-diagnosis',
+    label: 'SPD → Diagnosis & Sensory Profile',
+    summary: 'Occupational therapy evaluation using the Sensory Profile, Sensory Processing Measure (SPM), and clinical observation.',
+    category: 'subpage',
+    keywords: 'spd diagnosis occupational therapist sensory profile spm sensory processing measure evaluation',
+  },
+  {
+    id: 'spd-support',
+    label: 'SPD → Support & Sensory Diets',
+    summary: 'Individualized sensory diets, heavy work, environmental lighting/sound adjustments, and occupational therapy.',
+    category: 'subpage',
+    keywords: 'spd support occupational therapy sensory diet heavy work weighted blanket noise canceling headphones iep 504',
+  },
+  {
+    id: 'spd-living',
+    label: 'SPD → Living with SPD',
+    summary: 'Portable sensory toolkits, sensory-friendly home design, clothing choices, and proactive decompression routines.',
+    category: 'subpage',
+    keywords: 'spd living sensory toolkit home design wardrobe food safety decompression adults families',
+  },
 
-      // Give the mini-browser a split second to load the styles, then print it
-      setTimeout(() => {
-        iframe.contentWindow?.focus();
-        iframe.contentWindow?.print();
-        // Clean up the invisible browser after 2 seconds
-        setTimeout(() => document.body.removeChild(iframe), 2000);
-      }, 250);
-    }
-  };
-
-  return (
-    <div className="flex justify-center gap-3 mb-6 mt-2 print:hidden">
-      <button 
-        onClick={handleCopyLink}
-        className="flex items-center gap-1.5 text-xs font-bold text-[#0A9DC4] hover:text-[#0c264d] transition-colors bg-white px-3 py-1.5 rounded border border-[#0A9DC4]/20 shadow-sm"
-      >
-        {copied ? <Check size={14} className="text-green-600" /> : <Link size={14} />}
-        {copied ? 'Copied!' : 'Copy Link'}
-      </button>
-{/* Changed to an <a> tag with target="_blank" to force webmail support */}
-      <a 
-        href={mailtoUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-1.5 text-xs font-bold text-[#0A9DC4] hover:text-[#0c264d] transition-colors bg-white px-3 py-1.5 rounded border border-[#0A9DC4]/20 shadow-sm"
-      >
-        <Mail size={14} />
-        Email
-      </a>
-
-      <button 
-        onClick={handlePrint}
-        className="flex items-center gap-1.5 text-xs font-bold text-[#0A9DC4] hover:text-[#0c264d] transition-colors bg-white px-3 py-1.5 rounded border border-[#0A9DC4]/20 shadow-sm"
-      >
-        <Printer size={14} />
-        Print
-      </button>
-    </div>
-  );
-}
+  // ============================================================
+  // ADDITIONAL NEURODIVERGENCES & NEUROLOGICAL CONDITIONS
+  // ============================================================
+  {
+    id: 'misophonia',
+    label: 'Misophonia',
+    summary: 'Intense autonomic fight-or-flight or distress responses triggered by specific everyday sounds such as chewing or tapping.',
+    category: 'condition',
+    keywords: 'misophonia sound sensitivity trigger sounds chewing breathing tapping autonomic distress noise canceling headphones coping',
+  },
+  {
+    id: 'synesthesia',
+    label: 'Synesthesia',
+    summary: 'Automatic, involuntary cross-sensory experiences such as seeing colors with music (chromesthesia) or letters (grapheme-color).',
+    category: 'condition',
+    keywords: 'synesthesia chromesthesia grapheme color spatial sequence mirror touch cross modal senses perception creativity',
+  },
+  {
+    id: 'dyspraxia',
+    label: 'Dyspraxia (DCD)',
+    summary: 'Developmental Coordination Disorder affecting motor planning, balance, fine-motor tasks, and spatial sequencing.',
+    category: 'condition',
+    keywords: 'dyspraxia dcd developmental coordination disorder motor planning balance fine motor gross motor occupational therapy',
+  },
+  {
+    id: 'tourette',
+    label: 'Tourette Syndrome',
+    summary: 'Neurodevelopmental condition characterized by involuntary motor and vocal tics, premonitory urges, and CBIT behavioral support.',
+    category: 'condition',
+    keywords: 'tourette syndrome motor tics vocal tics premonitory urge cbit habit reversal therapy accommodations',
+  },
+  {
+    id: 'ocd',
+    label: 'Obsessive-Compulsive Disorder (OCD)',
+    summary: 'Intrusive, ego-dystonic obsessions and repetitive physical or mental compulsions treated with Exposure and Response Prevention (ERP).',
+    category: 'condition',
+    keywords: 'ocd obsessive compulsive disorder intrusive thoughts compulsions pure o erp exposure response prevention cbt',
+  },
+  {
+    id: 'bipolar',
+    label: 'Bipolar Disorder',
+    summary: 'Episodic shifts in mood, energy, sleep, and activity across Bipolar I, Bipolar II, and cyclothymic presentations.',
+    category: 'condition',
+    keywords: 'bipolar disorder bipolar 1 bipolar 2 mania hypomania depression mood stabilizers circadian rhythm',
+  },
+  {
+    id: 'schizophrenia',
+    label: 'Schizophrenia Spectrum',
+    summary: 'Understanding psychosis, perceptual changes, cognitive symptoms, early intervention, and recovery-oriented support.',
+    category: 'condition',
+    keywords: 'schizophrenia psychosis hallucinations delusions cognitive symptoms early intervention recovery support',
+  },
+  {
+    id: 'downsyndrome',
+    label: 'Down Syndrome (Trisomy 21)',
+    summary: 'Genetic profile of Trisomy 21, strengths-based developmental supports, inclusive education, and lifespan health care.',
+    category: 'condition',
+    keywords: 'down syndrome trisomy 21 chromosome early intervention speech therapy inclusive education iep',
+  },
+  {
+    id: 'intellectual-disability',
+    label: 'Intellectual Disability',
+    summary: 'Support-needs-centered framework for conceptual, social, and practical adaptive functioning across the lifespan.',
+    category: 'condition',
+    keywords: 'intellectual disability adaptive functioning support needs iep transition community independence',
+  },
+  {
+    id: 'fasd',
+    label: 'Fetal Alcohol Spectrum Disorder (FASD)',
+    summary: 'Neurodevelopmental impacts of prenatal alcohol exposure on executive function, memory, and adaptive support strategies.',
+    category: 'condition',
+    keywords: 'fasd fetal alcohol spectrum disorder prenatal exposure executive function memory visual supports',
+  },
+  {
+    id: 'epilepsy',
+    label: 'Epilepsy',
+    summary: 'Neurological seizure disorders, focal and generalized seizure types, EEG diagnosis, seizure first aid, and treatments.',
+    category: 'condition',
+    keywords: 'epilepsy seizures focal generalized absence tonic clonic eeg anticonvulsant first aid safety',
+  },
+  {
+    id: 'tbi',
+    label: 'Traumatic Brain Injury (TBI)',
+    summary: 'Acquired cognitive, sensory, and fatigue impacts following concussion or head injury, plus multidisciplinary rehabilitation.',
+    category: 'condition',
+    keywords: 'tbi traumatic brain injury concussion post concussion syndrome cognitive rehabilitation pacing',
+  },
+  {
+    id: 'cte',
+    label: 'Chronic Traumatic Encephalopathy (CTE)',
+    summary: 'Neurodegenerative tauopathy associated with repetitive head impacts, clinical research, and impact prevention.',
+    category: 'condition',
+    keywords: 'cte chronic traumatic encephalopathy repetitive head impacts concussion tau protein prevention',
+  },
+  {
+    id: 'pandas',
+    label: 'PANDAS / PANS',
+    summary: 'Acute-onset pediatric neuropsychiatric symptoms, OCD, and tics following streptococcal or immune triggers.',
+    category: 'condition',
+    keywords: 'pandas pans pediatric autoimmune neuropsychiatric sudden onset ocd tics streptococcal',
+  },
+];
