@@ -1,6 +1,19 @@
 import { useSearchParams } from 'react-router-dom';
 import { ImageWithFallback } from '../../figma/ImageWithFallback';
-import { Ear, MessageSquare, Activity, BookOpen, Edit3, Brain, Users, Heart, AlertCircle, VolumeX, Music, Layers, Baby, GraduationCap, Briefcase, Search, ShieldAlert, FileText } from 'lucide-react';
+import {
+  Ear,
+  MessageSquare,
+  Activity,
+  VolumeX,
+  Music,
+  Layers,
+  Baby,
+  GraduationCap,
+  Briefcase,
+  Search,
+  ShieldAlert,
+  FileText,
+} from 'lucide-react';
 
 interface APDSymptomsProps {
   setCurrentArticle?: (article: string) => void;
@@ -17,41 +30,21 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
 
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
-      
-      {/* GLOBAL STYLE FOR CITATIONS */}
-      <style>
-        {`
-          sup {
-            color: #10b981;
-            font-weight: bold;
-            margin-left: 2px;
-          }
-        `}
-      </style>
 
-      {/* HEADER & DESKTOP BACK BUTTON */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      {/* HEADER & BACK BUTTON */}
+      <div className="pb-6 border-b-4 border-[#0c264d] mb-10 mt-6 flex flex-col md:flex-row md:items-start justify-between gap-6">
         <h1 className="text-3xl text-[#0c264d] font-normal">
-          Auditory Processing Disorder: Symptoms & Characteristics
+          Auditory Processing Disorder: Symptoms &amp; Characteristics
         </h1>
 
-        <button 
+        <button
           onClick={() => setCurrentArticle?.('apd')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm self-start"
         >
           <span className="text-xl">←</span>
           All About APD
         </button>
       </div>
-
-      {/* MOBILE BACK BUTTON */}
-      <button 
-        onClick={() => setCurrentArticle?.('apd')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        All About APD
-      </button>
 
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -63,7 +56,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Auditory & Academic
+          Auditory &amp; Academic
         </button>
         <button
           onClick={() => handleTabChange('social')}
@@ -73,7 +66,7 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Social & Sensory
+          Social &amp; Sensory
         </button>
         <button
           onClick={() => handleTabChange('lifespan')}
@@ -83,107 +76,170 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Lifespan & Diagnosis
+          Lifespan &amp; Diagnosis
         </button>
       </div>
 
       {/* ==========================================
-          TAB 1: AUDITORY & ACADEMIC
+          TAB 1: AUDITORY & ACADEMIC (Cyan -> Navy)
       ========================================== */}
       {activeTab === 'auditory' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Auditory Card (Cyan) - Top Card with ROUNDED SQUARE BADGES */}
+          {/* Card 1: Core Auditory Processing (Cyan - Stacked Lucide Icons) */}
           <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Core Auditory Processing</h2>
-            
-            <ImageWithFallback 
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Core Auditory Processing
+            </h2>
+
+            <ImageWithFallback
               src="/images/apd/apd-symptoms-auditory-1.webp"
-              alt="Person straining to hear a conversation in a visually noisy environment"
-              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#2abcd4] mb-6 shadow-sm"
+              alt="Illustration showing the cognitive effort of separating speech from background noise"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
-            
-            <p className="text-sm text-slate-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
-              The symptoms of APD reflect a brain that struggles to process auditory information despite having perfect hearing sensitivity. These characteristics manifest most aggressively when the listening environment is degraded.
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-6">
+              The characteristics of APD reflect a central auditory system that organizes incoming sound differently despite intact peripheral hearing sensitivity. These differences become most noticeable in acoustically complex or fast-paced environments where background noise competes with speech.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
-                  <Ear className="w-5 h-5" />
-                </div>
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Hearing in Noise</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">The hallmark symptom of APD is the inability to understand speech in background noise. While they may hear perfectly in a quiet room, their performance violently deteriorates in classrooms, restaurants, or parties.</p>
+                <Ear className="text-[#0A9DC4] w-6 h-6 mb-3 shrink-0" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  Hearing in Noise
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Speech-in-noise difficulty is the hallmark feature of APD. While speech is understood clearly in quiet one-on-one settings, comprehension drops sharply in reverberant classrooms, cafeterias, or busy group spaces.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup>
+                </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Auditory Discrimination</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">They constantly ask "what?" or "huh?" because their brain struggles to distinguish between similar-sounding words (like "cat" and "cap"). This is not inattention; it is a genuine processing failure.</p>
+                <MessageSquare className="text-[#0A9DC4] w-6 h-6 mb-3 shrink-0" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  Auditory Discrimination
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Frequently asking for repetition stems from rapid acoustic ambiguity rather than inattention. Subtle phonemic contrasts—such as distinguishing &ldquo;cat&rdquo; from &ldquo;cap&rdquo; or &ldquo;seventy&rdquo; from &ldquo;seventeen&rdquo;—require extra processing time.
+                </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
-                  <Activity className="w-5 h-5" />
-                </div>
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Temporal Processing</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Difficulty processing the timing and order of sounds. Understanding fast talkers, keeping up with rapid verbal exchanges, or perceiving the correct order of a sequence of sounds is highly challenging.</p>
+                <Activity className="text-[#0A9DC4] w-6 h-6 mb-3 shrink-0" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  Temporal Processing
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Tracking rapid speech rates, subtle pauses, and sound sequences requires precise neural timing. Slowing down spoken delivery or pairing audio with visual text immediately boosts clarity.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup>
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Academic Card (Navy) - Second Card with CLEAN 3D BORDERS (No Icons) */}
+          {/* Card 2: Academic & Language Profile (Navy - 3D Left-Stripe Inner Cards, No Icons) */}
           <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Academic & Language Profile</h2>
-            
-            <ImageWithFallback 
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Academic &amp; Language Profile
+            </h2>
+
+            <ImageWithFallback
               src="/images/apd/apd-symptoms-academic-1.webp"
-              alt="Student overwhelmed by verbal instructions but working well with visual materials"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#0c264d]"
+              alt="Student thriving with visual diagrams and written checklists alongside spoken instruction"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
 
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              Because traditional classrooms rely heavily on rapid verbal instruction, learners with APD often demonstrate a striking contrast between spoken-only tasks and visually supported learning.
+            </p>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-              
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
-                <div className="pl-3 py-1">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Following Directions</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Multi-step verbal directions are a major hurdle. By the time the third step is spoken, the first is often forgotten or misunderstood. Written directions are processed far more successfully.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-1">
+                    Following Directions
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Multi-step verbal sequences tax auditory working memory—by the time the third instruction is spoken, earlier details may still be decoding. Written agendas, numbered checklists, and visual models make expectations effortless to follow.
+                  </p>
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
-                <div className="pl-3 py-1">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Reading & Spelling</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Because APD severely impacts phonological processing, decoding unfamiliar words, distinguishing phonetic sounds, and phonics-based spelling are incredibly challenging.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#576d8e]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-1">
+                    Reading &amp; Spelling
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Fine-grained phonological awareness links spoken sounds to written letters. When similar phonemes blur acoustically, structured multisensory literacy and whole-word pattern recognition support strong reading comprehension.
+                  </p>
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
-                <div className="pl-3 py-1">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Note-Taking</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Simultaneously listening to a lecture and writing notes is nearly impossible. By the time the brain processes the auditory information to write it down, the speaker has already moved on.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0c264d]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-1">
+                    Note-Taking
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Simultaneously decoding live speech and writing notes creates a processing bottleneck. Access to lecture slides, guided outlines, or live captioning frees cognitive bandwidth for deep conceptual understanding.
+                  </p>
                 </div>
               </div>
-
             </div>
+          </div>
+
+          {/* BOTTOM NAVIGATION BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full clear-both">
+            <button
+              onClick={() => setCurrentArticle?.('apd')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About APD
+            </button>
           </div>
 
           {/* TAB 1 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies &amp; Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>
+                  1. Iliadou, V. V., Ptok, M., Grech, H., Pedersen, E. R., Brechmann, A., Deggouj, N., ... &amp; Bamiou, D. E. (2017). A European perspective on auditory processing disorder—Current knowledge and future research focus.{' '}
+                  <i>Frontiers in Neurology</i>, 8, 622.
+                </p>
+                <p>
+                  2. Koiek, S., &amp; Keith, R. W. (2022). Speech-in-noise perception and spatial processing in children with suspected auditory processing disorder.{' '}
+                  <i>International Journal of Pediatric Otorhinolaryngology</i>, 158, 111164.
+                </p>
+                <p>
+                  3. Moore, D. R., Ferguson, M. A., Halliday, L. F., &amp; Riley, A. (2011). Frequency discrimination in children: Perception, learning and attention.{' '}
+                  <i>Hearing Research</i>, 276(1–2), 16–23.
+                </p>
+              </div>
+            </div>
+
             <div>
               <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
                 Background Sources
               </h4>
-              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Bellis, T. J. (2003). Assessment and management of central auditory processing disorders in the educational setting. <i>Delmar Learning</i>.</li>
-                <li>Moore, D. R., et al. (2011). Development of auditory processing in 6- to 11-yr-old children. <i>Ear and Hearing</i>.</li>
-                <li>Tallal, P. (1980). Auditory temporal perception, phonics, and reading disabilities in children. <i>Brain and Language</i>.</li>
+              <ul
+                className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words"
+                style={{ textIndent: 0 }}
+              >
+                <li>
+                  Bellis, T. J. (2011). <i>Assessment and management of central auditory processing disorders in the educational setting: From science to practice</i> (2nd ed.). Plural Publishing.
+                </li>
+                <li>
+                  Tallal, P. (1980). Auditory temporal perception, phonics, and reading disabilities in children.{' '}
+                  <i>Brain and Language</i>, 9(2), 182–198.
+                </li>
               </ul>
             </div>
           </div>
@@ -191,110 +247,165 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
       )}
 
       {/* ==========================================
-          TAB 2: SOCIAL & SENSORY
+          TAB 2: SOCIAL & SENSORY (Navy -> Yellow)
       ========================================== */}
       {activeTab === 'social' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Social Card (Navy) - Top Card with CLEAN 3D BORDERS (No Icons) */}
+          {/* Card 1: Social & Emotional Impact (Navy - 3D Left-Stripe Inner Cards, No Icons) */}
           <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Social & Emotional Impact</h2>
-            
-            <ImageWithFallback 
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Social &amp; Emotional Impact
+            </h2>
+
+            <ImageWithFallback
               src="/images/apd/apd-symptoms-social-1.webp"
-              alt="Child withdrawing from a loud group conversation, showing listening fatigue"
-              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#0c264d] mb-6 shadow-sm"
+              alt="Illustration depicting listening fatigue in loud group settings versus calm one-on-one connection"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
-            
-            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
-              The social toll of APD is massive. Because individuals constantly miss the subtle, unspoken cues of human conversation, they are prone to severe anxiety and social withdrawal.
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              Because everyday socializing often happens in noisy restaurants, playgrounds, or open offices, sustained listening effort can quietly drain energy and shape social confidence.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-              
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
-                <div className="pl-3 py-1">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Group Conversations</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Following conversations in groups or noisy social settings is exhausting. Missing parts of conversations leads to confusion or inappropriate responses, causing many to simply avoid social gatherings entirely.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0A9DC4]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-1">
+                    Group Conversations
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Tracking overlapping speakers in crowded rooms requires intense concentration. Preferring quiet one-on-one or small-group settings enables deep, effortless connection without acoustic overload.
+                  </p>
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
-                <div className="pl-3 py-1">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Behavioral Frustration</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">The immense cognitive effort required for auditory processing leads to deep "listening fatigue." Frustration from constant communication breakdowns frequently manifests as irritability, withdrawal, or acting out.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#576d8e]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-1">
+                    Listening Fatigue
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    Continuously filling in missed syllables recruits extra executive and cognitive resources, leading to measurable listening fatigue.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup> Quiet recovery breaks prevent burnout and irritability.
+                  </p>
                 </div>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]"></div>
-                <div className="pl-3 py-1">
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Reading Social Cues</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Because they struggle to process "prosody" (the tone, rhythm, and emotion of a voice), jokes may be taken highly literally, and sarcasm or subtle emotional nuance is often missed entirely.</p>
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0c264d]"></div>
+                <div className="pl-3">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-1">
+                    Reading Prosodic Cues
+                  </h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    When vocal stress, rhythm, or pitch contours are harder to parse, subtle sarcasm or dry humor can sound literal. Clear, direct communication and visible facial expressions make social intent transparent.
+                  </p>
                 </div>
               </div>
-
             </div>
           </div>
 
-          {/* Sensory Card (Yellow) - Second Card with HORIZONTAL DOUBLE RINGS */}
+          {/* Card 2: Sensory & Prosodic Differences (Yellow - Double-Ring Navy Circular Icon Badges) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Sensory & Prosodic Differences</h2>
-            
-            <ImageWithFallback 
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Sensory &amp; Prosodic Differences
+            </h2>
+
+            <ImageWithFallback
               src="/images/apd/apd-symptoms-sensory-1.webp"
-              alt="Conceptual visual representing the processing of music, rhythm, and tone of voice"
-              className="block mx-auto w-64 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#ffd166]"
+              alt="Visual representing auditory sensitivity, musical pitch contours, and background sound filtering"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
-            
-            <div className="space-y-4 max-w-4xl mx-auto">
-              
-              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#ffd166] shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1">
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              Beyond speech comprehension, APD influences how the nervous system regulates volume, filters ambient frequencies, and perceives musical rhythm and pitch.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup>
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
                   <VolumeX className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Auditory Hypersensitivity</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Many with APD experience genuine hyperacusis—where certain frequencies or loud environments are physically uncomfortable or even painful, making multisensory environments incredibly overwhelming.</p>
-                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Auditory Hypersensitivity</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Many individuals with APD experience hyperacusis—where sudden noises or specific high-frequency hums feel physically overwhelming.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup> Acoustic dampening and filtered earplugs provide immediate relief.
+                </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#ffd166] shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
                   <Music className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Musical Processing</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Musical processing may be severely affected. They may have immense difficulty carrying a tune, memorizing song lyrics, or discriminating between different pitches and rhythms.</p>
-                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Musical &amp; Pitch Processing</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Discriminating subtle pitch intervals, reproducing melodies, or parsing fast song lyrics without written text can be challenging, whereas visual rhythm cues or instrumental patterns are often deeply appreciated.
+                </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 p-5 bg-white rounded-lg border border-[#ffd166] shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center font-bold shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d] mt-1">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
                   <Layers className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Background Filtering</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">The brain fundamentally struggles to filter out irrelevant background sounds. A humming refrigerator may seem just as loud and important to the brain as the teacher speaking at the front of the room.</p>
-                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2">Background Filtering</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Auditory figure-ground filtering allows the brain to suppress ambient sound. When this filter is less selective, an HVAC fan or hallway chatter competes at equal volume with a speaker&apos;s voice.
+                </p>
               </div>
-
             </div>
+          </div>
+
+          {/* BOTTOM NAVIGATION BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full clear-both">
+            <button
+              onClick={() => setCurrentArticle?.('apd')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About APD
+            </button>
           </div>
 
           {/* TAB 2 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies &amp; Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>
+                  1. McGarrigle, R., Munro, K. J., Dawes, P., Stewart, A. J., Moore, D. R., Barry, J. G., &amp; Amitay, S. (2014). Listening effort and fatigue: What exactly are we measuring? A British Society of Audiology Cognition in Hearing Special Interest Group &lsquo;white paper&rsquo;.{' '}
+                  <i>International Journal of Audiology</i>, 53(7), 433–445.
+                </p>
+                <p>
+                  2. Gokula, R., Sharma, M., Cupples, L., &amp; Valderrama, J. T. (2019). Comorbidity of auditory processing, attention, and memory in children with word reading difficulties.{' '}
+                  <i>Frontiers in Psychology</i>, 10, 2383.
+                </p>
+                <p>
+                  3. Potgieter, I., Fackrell, K., Kennedy, V., Telford, E., &amp; Hoare, D. J. (2020). Hyperacusis in children: A scoping review.{' '}
+                  <i>BMC Pediatrics</i>, 20(1), 319.
+                </p>
+              </div>
+            </div>
+
             <div>
               <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
                 Background Sources
               </h4>
-              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Chermak, G. D., & Musiek, F. E. (1997). Central auditory processing disorders: New perspectives. <i>Singular Publishing Group</i>.</li>
-                <li>Tyler, R. S., et al. (2014). A review of hyperacusis and future directions. <i>American Journal of Audiology</i>.</li>
-                <li>Baum, S. R., & Pell, M. D. (1999). The neural bases of prosody: Insights from lesion studies and neuroimaging. <i>Aphasiology</i>.</li>
+              <ul
+                className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words"
+                style={{ textIndent: 0 }}
+              >
+                <li>
+                  Chermak, G. D., &amp; Musiek, F. E. (2014). <i>Handbook of central auditory processing disorder: Auditory neuroscience and diagnosis</i> (Vol. 1, 2nd ed.). Plural Publishing.
+                </li>
+                <li>
+                  Baum, S. R., &amp; Pell, M. D. (1999). The neural bases of prosody: Insights from lesion studies and neuroimaging.{' '}
+                  <i>Aphasiology</i>, 13(8), 581–608.
+                </li>
               </ul>
             </div>
           </div>
@@ -302,118 +413,176 @@ export function APDSymptoms({ setCurrentArticle, initialTab }: APDSymptomsProps)
       )}
 
       {/* ==========================================
-          TAB 3: LIFESPAN & DIAGNOSIS
+          TAB 3: LIFESPAN & DIAGNOSIS (Yellow -> Cyan)
       ========================================== */}
       {activeTab === 'lifespan' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Lifespan Card (Yellow) - Top Card with VERTICAL DOUBLE RING BADGES */}
+          {/* Card 1: Age-Related Trajectory (Yellow - Double-Ring Navy Circular Icon Badges) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Age-Related Trajectory</h2>
-            
-            <ImageWithFallback 
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Age-Related Trajectory
+            </h2>
+
+            <ImageWithFallback
               src="/images/apd/apd-symptoms-lifespan-1.webp"
-              alt="Split visual showing a young child ignoring their name, transitioning to an adult struggling in an open office"
-              className="block mx-auto w-64 max-w-full h-auto rounded-lg border border-[#ffd166] mb-6 shadow-sm"
+              alt="Lifespan progression from early childhood to school years and adaptive adult workspaces"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
-            
-            <p className="text-sm text-slate-700 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
-              APD does not disappear with age, but its manifestation changes drastically as the individual matures and academic or professional demands evolve.
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              Auditory processing traits evolve across development as neural pathways mature and acoustic demands shift from early play to classrooms and collaborative workplaces.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup>
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
                   <Baby className="w-5 h-5" />
                 </div>
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Early Childhood</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Toddlers and preschoolers may show delayed language development, difficulty learning nursery rhymes, or fail to respond when their name is called, acting out frequently in noisy environments.</p>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">
+                  Early Childhood
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Young children may take longer to respond when called from another room, find rhyming games tricky, or become overwhelmed in loud group play while showing strong visual curiosity and hands-on focus.
+                </p>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
                   <GraduationCap className="w-5 h-5" />
                 </div>
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">School Years</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">As classroom demands increase, severe academic difficulties emerge. Reading problems, poor note-taking, and complex social challenges become highly apparent as the instructional pace accelerates.</p>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">
+                  School Years
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  As multi-step verbal lectures and phonics demands increase, acoustic barriers become clearer. Remote microphone systems, preferential seating, and visual study guides unlock strong academic performance.
+                </p>
               </div>
 
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shrink-0 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
                   <Briefcase className="w-5 h-5" />
                 </div>
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Adulthood</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Adults with APD continue experiencing difficulty in open office environments, during conference calls, or in meetings. However, they usually develop robust compensatory strategies to minimize these impacts.</p>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">
+                  Adulthood
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Adults may still find open-plan offices or audio-only calls tiring, yet frequently thrive by leveraging visual-spatial strengths, live meeting transcripts, noise-canceling headphones, and clear written workflows.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup>
+                </p>
               </div>
-
             </div>
           </div>
 
-          {/* Differential Diagnosis Card (Cyan) - Second Card with BARE DARK ICONS */}
+          {/* Card 2: Distinguishing APD (Cyan - Stacked Lucide Icons) */}
           <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Distinguishing APD</h2>
-            
-            {/* Using w-96 exception for the complex comparative chart readability */}
-            <ImageWithFallback 
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">
+              Distinguishing APD
+            </h2>
+
+            {/* Wide Centered (w-96) for detailed differential comparison chart */}
+            <ImageWithFallback
               src="/images/apd/apd-symptoms-diagnosis-1.webp"
-              alt="Magnifying glass comparing APD with ADHD and standard hearing loss"
-              className="block mx-auto w-96 max-w-full h-auto mb-8 rounded-lg shadow-sm border border-[#2abcd4]"
+              alt="Comparative diagram distinguishing APD from peripheral hearing loss, ADHD, and language disorders"
+              className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
-            
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              APD is frequently misdiagnosed. It is vital to understand the nuances that separate it from other common conditions that mimic its behavioral output.
+
+            <p className="text-sm text-slate-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              Because listening challenges can look similar on the surface, careful differential assessment distinguishes central auditory processing from peripheral hearing loss, ADHD, and broader language profiles.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup>
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              
               <div className="bg-white p-6 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <Search className="text-[#0A9DC4] w-8 h-8 mb-4" />
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">vs. Hearing Loss</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Unlike peripheral hearing loss, an individual with APD will pass a standard pure-tone audiogram with perfect scores. The impairment is entirely in the brain's central processing, not the ear's mechanical function.</p>
+                <Search className="text-[#0A9DC4] w-8 h-8 mb-4 shrink-0" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  vs. Hearing Loss
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Unlike peripheral hearing loss, an individual with APD passes a standard pure-tone audiogram with normal detection thresholds. The difference lies in how central neural pathways decode and organize sound.
+                </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <ShieldAlert className="text-[#0A9DC4] w-8 h-8 mb-4" />
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">vs. ADHD</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">While both involve apparent inattention, APD symptoms are highly specific to the <em>auditory modality</em>. An individual with APD can pay perfect attention to visual/written tasks, whereas ADHD impairs attention universally.</p>
+                <ShieldAlert className="text-[#0A9DC4] w-8 h-8 mb-4 shrink-0" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  vs. ADHD
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  While both can involve missed instructions, APD is anchored in the <em>auditory modality</em>—focus and comprehension remain strong on visual or written tasks, whereas ADHD shapes attention regulation across all sensory channels.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4</sup>
+                </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
-                <FileText className="text-[#0A9DC4] w-8 h-8 mb-4" />
-                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">vs. Language Disorders</h3>
-                <p className="text-xs text-slate-700 leading-relaxed">Language disorders affect linguistic processing universally. In APD, the symptoms should drastically improve when the exact same information is presented visually rather than auditorily.</p>
+                <FileText className="text-[#0A9DC4] w-8 h-8 mb-4 shrink-0" />
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">
+                  vs. Language Disorders
+                </h3>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Developmental language disorders affect vocabulary and grammar across both spoken and written formats. In APD, comprehension improves markedly whenever information is presented visually rather than solely through speech.
+                </p>
               </div>
-
             </div>
+          </div>
+
+          {/* BOTTOM NAVIGATION BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full clear-both">
+            <button
+              onClick={() => setCurrentArticle?.('apd')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About APD
+            </button>
           </div>
 
           {/* TAB 3 REFERENCES */}
           <div className="clear-both mt-16 font-spartan">
             <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies &amp; Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>
+                  1. Sanfins, M. D., Borges, L. R., Ubiali, T., &amp; Colella-Santos, M. F. (2017). Speech auditory brainstem response (speech ABR) in the differential diagnosis of scholastic difficulties.{' '}
+                  <i>Brazilian Journal of Otorhinolaryngology</i>, 83(1), 112–116.
+                </p>
+                <p>
+                  2. Bamiou, D. E., Musiek, F. E., &amp; Luxon, L. M. (2001). Aetiology and clinical presentations of auditory processing disorders—A review.{' '}
+                  <i>Archives of Disease in Childhood</i>, 85(5), 361–365.
+                </p>
+                <p>
+                  3. Dawes, P., &amp; Bishop, D. V. M. (2009). Auditory processing disorder in relation to developmental disorders of language, communication and attention: A review and critique.{' '}
+                  <i>International Journal of Language &amp; Communication Disorders</i>, 44(4), 440–465.
+                </p>
+                <p>
+                  4. Stavrinos, G., Iliadou, V. M., Edwards, L., Sirimanna, T., &amp; Bamiou, D. E. (2018). The relationship between types of attention and auditory processing skills: Reconsidering auditory processing disorder diagnosis.{' '}
+                  <i>Frontiers in Psychology</i>, 9, 34.
+                </p>
+              </div>
+            </div>
+
             <div>
               <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
                 Background Sources
               </h4>
-              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Chermak, G. D., Tucker, E., & Seikel, J. A. (2002). Behavioral characteristics of auditory processing disorder and attention-deficit hyperactivity disorder. <i>Journal of the American Academy of Audiology</i>.</li>
-                <li>Cacace, A. T., & McFarland, D. J. (2005). The importance of modality specificity in diagnosing central auditory processing disorder. <i>American Journal of Audiology</i>.</li>
+              <ul
+                className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words"
+                style={{ textIndent: 0 }}
+              >
+                <li>
+                  Chermak, G. D., Tucker, E., &amp; Seikel, J. A. (2002). Behavioral characteristics of auditory processing disorder and attention-deficit hyperactivity disorder.{' '}
+                  <i>Journal of the American Academy of Audiology</i>, 13(6), 332–338.
+                </li>
+                <li>
+                  Cacace, A. T., &amp; McFarland, D. J. (2005). The importance of modality specificity in diagnosing central auditory processing disorder.{' '}
+                  <i>American Journal of Audiology</i>, 14(2), 112–123.
+                </li>
               </ul>
             </div>
           </div>
         </div>
       )}
-
-      {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
-        <button 
-          onClick={() => setCurrentArticle?.('apd')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
-        >
-          <span className="text-xl">←</span>
-          All About APD
-        </button>
-      </div>
 
     </article>
   );
