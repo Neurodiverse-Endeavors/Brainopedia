@@ -149,10 +149,11 @@ export function ArticleDonate() {
               className="text-[#0c264d] mb-3 text-center"
               style={{ fontFamily: 'Avenir, Nunito, sans-serif', fontWeight: 800 }}
             >
-              Infrastructure Partners
+              Technology & Infrastructure Partners
             </h4>
             <p className="text-sm text-gray-700 text-center mb-5 leading-relaxed max-w-xl mx-auto">
-              We are deeply grateful for the generous in-kind support and nonprofit grants provided by the following organizations, which ensure our educational platform remains online and accessible to all.
+            
+            We are deeply grateful for the generous nonprofit grants and technology support provided by the following organizations, which help keep our educational platform online, secure, and accessible to all:
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <span className="bg-white text-[#0c264d] font-bold px-5 py-2 rounded-full border border-[#0c264d]/10 shadow-sm text-sm tracking-wide">Canva</span>
