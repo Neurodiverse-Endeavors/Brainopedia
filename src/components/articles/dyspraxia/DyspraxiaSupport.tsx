@@ -80,11 +80,11 @@ export function DyspraxiaSupport({ setCurrentArticle, initialTab }: DyspraxiaSup
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Therapeutic Interventions</h2>
             
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-support-therapy.webp" 
-              alt="Child engaging in balance and coordination therapy exercises"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
-            />
+<ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-support-therapy.webp" 
+  alt="Child engaging in balance and coordination therapy exercises"
+  className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Clinical therapy for DCD heavily relies on a multi-disciplinary approach, blending physical conditioning with cognitive strategy development to help the brain successfully map out complex movements.
@@ -125,12 +125,11 @@ export function DyspraxiaSupport({ setCurrentArticle, initialTab }: DyspraxiaSup
           {/* Accommodations Card (Yellow) */}
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Accommodations & Aids</h2>
-            
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-support-accommodations.webp" 
-              alt="Student utilizing an ergonomic keyboard and laptop in a classroom"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
-            />
+<ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-support-accommodations.webp" 
+  alt="Student utilizing an ergonomic keyboard and laptop in a classroom"
+  className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Accommodations are not about providing an unfair advantage; they are about removing the arbitrary physical barriers that prevent a dyspraxic brain from demonstrating its true capabilities.<sup>4</sup>
@@ -173,11 +172,11 @@ export function DyspraxiaSupport({ setCurrentArticle, initialTab }: DyspraxiaSup
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Hacks & Emotional Support</h2>
             
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-support-daily.webp" 
-              alt="Person organizing a visual planner to manage daily tasks"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
-            />
+<ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-support-daily.webp" 
+  alt="Person organizing a visual planner to manage daily tasks"
+  className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Implementing simple "life hacks" at home can drastically reduce daily anxiety, preserving the individual's limited physical energy for high-priority tasks and relationships.<sup>5</sup>

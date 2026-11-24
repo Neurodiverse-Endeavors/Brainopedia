@@ -80,11 +80,11 @@ export function DyspraxiaLiving({ setCurrentArticle, initialTab }: DyspraxiaLivi
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Navigating the Physical World</h2>
             
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-living-daily.webp" 
-              alt="Person taking a deep breath while organizing a physical space"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
-            />
+<ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-living-daily.webp" 
+  alt="Person taking a deep breath while organizing a physical space"
+  className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Because everyday movements are not fully automated, dyspraxic individuals must use high-level conscious reasoning just to navigate a physical space, which carries a significant energetic cost.<sup>2</sup>
@@ -125,11 +125,11 @@ export function DyspraxiaLiving({ setCurrentArticle, initialTab }: DyspraxiaLivi
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Professional Success</h2>
             
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-living-career.webp" 
-              alt="Professional creatively brainstorming and mapping ideas"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
-            />
+ <ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-living-career.webp" 
+  alt="Professional creatively brainstorming and mapping ideas"
+  className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               In adulthood, the focus shifts away from "fixing" the coordination issues and toward finding supportive environments and careers that naturally align with the dyspraxic brain's unique strengths.<sup>4</sup>
@@ -172,11 +172,11 @@ export function DyspraxiaLiving({ setCurrentArticle, initialTab }: DyspraxiaLivi
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Keys to Thriving</h2>
             
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-living-strategies.webp" 
-              alt="Person enjoying an alternative, low-pressure physical activity"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
-            />
+<ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-living-strategies.webp" 
+  alt="Person enjoying an alternative, low-pressure physical activity"
+  className="w-96 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Resilience and highly creative problem-solving are often the hallmarks of the dyspraxic experience. Over time, these daily adaptations forge an incredibly adaptable and determined mindset.<sup>5</sup>

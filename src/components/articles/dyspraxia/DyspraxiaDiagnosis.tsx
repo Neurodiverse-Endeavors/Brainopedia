@@ -80,11 +80,11 @@ export function DyspraxiaDiagnosis({ setCurrentArticle, initialTab }: DyspraxiaD
           <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">DSM-5 Diagnostic Standards</h2>
             
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-diagnosis-criteria.webp" 
-              alt="Medical professional reviewing a patient file"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
-            />
+<ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-diagnosis-criteria.webp" 
+  alt="Medical professional reviewing a patient file"
+  className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               For a formal diagnosis to be rendered, the individual's motor difficulties must meet the four foundational criteria outlined in the Diagnostic and Statistical Manual of Mental Disorders.<sup>1</sup>
@@ -125,11 +125,11 @@ export function DyspraxiaDiagnosis({ setCurrentArticle, initialTab }: DyspraxiaD
           <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Motor Proficiency Assessments</h2>
             
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-diagnosis-tests.webp" 
-              alt="Physical testing utilizing specialized blocks and balance boards"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
-            />
+<ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-diagnosis-tests.webp" 
+  alt="Physical testing utilizing specialized blocks and balance boards"
+  className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               These standardized tests are highly interactive, requiring the individual to perform a series of timed physical tasks involving balance, throwing, catching, and precise manual dexterity.
@@ -174,11 +174,11 @@ export function DyspraxiaDiagnosis({ setCurrentArticle, initialTab }: DyspraxiaD
           <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
             <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">The Clinical Evaluation</h2>
             
-            <ImageWithFallback 
-              src="/images/dyspraxia/dyspraxia-diagnosis-process.webp" 
-              alt="Occupational therapist interacting with a child during an assessment"
-              className="w-64 max-w-full h-auto block mx-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
-            />
+<ImageWithFallback 
+  src="/images/dyspraxia/dyspraxia-diagnosis-process.webp" 
+  alt="Occupational therapist interacting with a child during an assessment"
+  className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
+/>
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Assessments are primarily conducted by specialized Occupational Therapists (OTs) or developmental pediatricians, ensuring a holistic understanding of how the motor deficits affect daily living.<sup>4</sup>

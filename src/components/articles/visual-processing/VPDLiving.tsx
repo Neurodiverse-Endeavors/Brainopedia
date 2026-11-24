@@ -18,40 +18,20 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
   return (
     <article className="max-w-6xl mx-auto font-spartan animate-in fade-in duration-300 w-full min-w-0">
       
-      {/* GLOBAL STYLE FOR CITATIONS */}
-      <style>
-        {`
-          sup {
-            color: #10b981;
-            font-weight: bold;
-            margin-left: 2px;
-          }
-        `}
-      </style>
-
-      {/* HEADER & DESKTOP BACK BUTTON */}
-      <div className="pb-2 border-b-2 border-[#0c264d] mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      {/* HEADER & BACK BUTTON */}
+      <div className="pb-6 border-b-4 border-[#0c264d] mb-10 mt-6 flex flex-col md:flex-row md:items-start justify-between gap-6">
         <h1 className="text-3xl text-[#0c264d] font-normal">
           Living with Visual Processing Disorder
         </h1>
 
         <button 
           onClick={() => setCurrentArticle?.('visual-processing')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:block hidden"
+          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
         >
           <span className="text-xl">←</span>
           All About VPD
         </button>
       </div>
-
-      {/* MOBILE BACK BUTTON */}
-      <button 
-        onClick={() => setCurrentArticle?.('visual-processing')}
-        className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-2.5 px-5 rounded-lg transition-all duration-200 flex items-center gap-2 shadow-sm shrink-0 md:hidden mb-6"
-      >
-        <span className="text-xl">←</span>
-        All About VPD
-      </button>
 
       {/* TAB NAVIGATION */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 clear-both">
@@ -63,7 +43,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Daily Life & Emotion
+          Daily Life &amp; Emotion
         </button>
         <button
           onClick={() => handleTabChange('education')}
@@ -73,7 +53,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Education & Career
+          Education &amp; Career
         </button>
         <button
           onClick={() => handleTabChange('lifespan')}
@@ -83,7 +63,7 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
               : 'bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white'
           }`}
         >
-          Relationships & Lifespan
+          Relationships &amp; Lifespan
         </button>
       </div>
 
@@ -93,82 +73,62 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
       {activeTab === 'daily' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Daily Life Card (Cyan) - Uses Float Image & Flow Root */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Life with VPD</h2>
+          {/* Single Unified Card (Cyan) */}
+          <div className="bg-[#2abcd4]/20 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Daily Life &amp; Emotion</h2>
             
             <ImageWithFallback 
               src="/images/vpd/vpd-living-daily.webp"
-              alt="Person experiencing visual fatigue, rubbing their eyes after a long day"
-              className="w-56 h-auto rounded-md border border-[#2abcd4] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              alt="Layered 3D paper-cut illustration showing a person rubbing their eyes and a navigational compass with a map"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#2abcd4]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Navigating a visually-oriented world with VPD means routine communication tasks require a massive amount of hidden effort. This constant translation process takes a profound physical and emotional toll.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <Zap className="text-[#0A9DC4] w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <Zap className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Visual Fatigue</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Tasks requiring intense visual processing (reading, navigating cluttered environments) deplete energy rapidly. This exhaustion is not laziness—it is genuine neurological fatigue.</p>
-                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Visual Fatigue</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Tasks requiring intense visual processing deplete energy rapidly. This exhaustion is genuine neurological fatigue.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex items-start gap-4">
-                <div className="bg-[#f0f9ff] p-2 rounded-lg border border-[#2abcd4] border-opacity-30 shrink-0">
-                  <Map className="text-[#0A9DC4] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Spatial Navigation</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Getting lost in familiar places or struggling to follow maps is incredibly common. Driving demands complex visual processing, meaning many rely heavily on GPS with voice directions.</p>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Spatial Navigation</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Getting lost in familiar places or struggling to follow maps is incredibly common, making voice-guided GPS essential.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <AlertTriangle className="w-5 h-5" />
                 </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Anxiety &amp; Frustration</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Anticipatory anxiety about visually challenging situations is common. Chronic frustration frequently presents as avoidance.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30 flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-lg bg-[#e0f2fe] text-[#0A9DC4] flex items-center justify-center shrink-0 shadow-sm border border-[#bae6fd] mb-3">
+                  <ShieldAlert className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#2abcd4] border-opacity-20 pb-2">Self-Esteem</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Understanding that these struggles have a real neurological basis is crucial to countering negative self-perceptions.</p>
               </div>
             </div>
           </div>
 
-          {/* Emotional Impact Card (Yellow) - Uses W-64 Centered Image */}
-          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Emotional & Psychological Impact</h2>
-            
-            <ImageWithFallback 
-              src="/images/vpd/vpd-living-emotional.webp"
-              alt="Visual representing resilience and emotional regulation"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-yellow-200"
-            />
-            
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Repeatedly struggling with tasks that others find completely effortless damages self-esteem. The emotional weight of an invisible disability requires active psychological maintenance.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <AlertTriangle className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Anxiety & Frustration</h3>
-                </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Anticipatory anxiety about visually challenging situations (like taking a written test or navigating a new building) is common. Chronic frustration frequently presents as irritability or avoidance.</p>
-              </div>
-
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <ShieldAlert className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Identity & Self-Esteem</h3>
-                </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Children often internalize labels like "lazy" or "careless." Understanding that these struggles have a real neurological basis is crucial to countering negative self-perceptions.</p>
-              </div>
-
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166]">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#ffd166] pb-2">
-                  <Brain className="text-[#ffd166] w-5 h-5" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Building Resilience</h3>
-                </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Developing resilience requires reframing VPD as a neurodivergent difference rather than purely a deficit. Learning to aggressively advocate for accommodations builds lifelong strength.</p>
-              </div>
-            </div>
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button 
+              onClick={() => setCurrentArticle?.('visual-processing')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About VPD
+            </button>
           </div>
 
           {/* TAB 1 REFERENCES */}
@@ -179,8 +139,8 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Hornsby, B. W., Naylor, G., & Bess, F. H. (2016). A taxonomy of fatigue concepts and their relation to hearing loss. <i>Ear and Hearing</i>.</li>
-                <li>Levine, M. (2003). The myth of laziness. <i>Simon & Schuster</i>.</li>
+                <li>Hornsby, B. W., Naylor, G., &amp; Bess, F. H. (2016). A taxonomy of fatigue concepts and their relation to hearing loss. <i>Ear and Hearing</i>.</li>
+                <li>Levine, M. (2003). The myth of laziness. <i>Simon &amp; Schuster</i>.</li>
               </ul>
             </div>
           </div>
@@ -193,82 +153,63 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
       {activeTab === 'education' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Education Card (Slate) - Uses Float Image */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Educational Experiences</h2>
+          {/* Single Unified Card (Navy) */}
+          <div className="bg-[#0c264d]/20 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Education &amp; Career</h2>
             
             <ImageWithFallback 
               src="/images/vpd/vpd-living-education.webp"
-              alt="Student navigating a self-directed learning journey on a college campus"
-              className="w-56 h-auto rounded-md border border-gray-300 float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              alt="Graphic Placeholder"
+              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#0c264d]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
-              Traditional schooling heavily emphasizes visual learning (textbooks, whiteboards, dense worksheets). Without structural changes, a student with VPD must work twice as hard for the exact same outcomes.
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
+              Traditional schooling heavily emphasizes visual learning. Without structural changes, a student with VPD must work twice as hard. Professional success comes from leaning into natural strengths rather than grinding against deficits.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
-                  <BookOpen className="text-[#0c264d] w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Homework Burden</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Because reading and writing demand so much visual processing time, homework takes significantly longer, frequently bleeding into the evening and robbing the student of necessary rest.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]" />
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Homework Burden</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Because reading and writing demand so much visual processing time, homework takes significantly longer, bleeding into needed rest time.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex items-start gap-4">
-                <div className="bg-blue-50 p-2 rounded-lg border border-[#0c264d] border-opacity-20 shrink-0">
-                  <GraduationCap className="text-[#0c264d] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]" />
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Higher Education</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">College vastly increases reading demands, but it allows students to select majors matching verbal or analytical strengths.</p>
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Higher Education</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">While college vastly increases reading demands, it also allows students to select majors that match their specific strengths (like verbal or analytical fields). Accessing disability services is vital.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]" />
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Career Selection</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">Paths emphasizing verbal or conceptual skills bypass visual deficits. Highly visual fields like graphic design may present more friction.</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-[#0A9DC4]" />
+                <div className="pl-3 py-1">
+                  <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-2">Work Accommodations</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed">The ADA offers legal protections.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup> Reasonable accommodations include remote options or extended deadlines for reading tasks.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Career Card (Cyan) - Uses W-64 Centered Image */}
-          <div className="bg-cyan-50 border-2 border-[#2abcd4] rounded-xl p-6 shadow-sm flow-root">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Career & Work Life</h2>
-            
-            <ImageWithFallback 
-              src="/images/vpd/vpd-living-career.webp"
-              alt="Adult utilizing digital accommodations in an uncluttered workspace"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-cyan-100"
-            />
-            
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Professional success comes from leaning into natural strengths rather than grinding against deficits. Determining whether to formally disclose the disability to an employer is a highly personal decision.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Compass className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Career Selection</h3>
-                </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Career paths emphasizing verbal, interpersonal, or conceptual skills (teaching, counseling, management) often bypass visual deficits. Highly visual fields like architecture or graphic design may present more friction.</p>
-              </div>
-
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <ShieldCheck className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Workplace Accommodations</h3>
-                </div>
-                <p className="text-xs text-slate-700 leading-relaxed">The Americans with Disabilities Act (ADA) offers legal protections for VPD in the workplace.<sup>1</sup> Reasonable accommodations might include assistive technology, remote work options, or extended deadlines for reading-heavy tasks.</p>
-              </div>
-
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#2abcd4] border-opacity-30">
-                <div className="flex items-center gap-2 mb-2 border-b border-[#2abcd4] border-opacity-20 pb-2">
-                  <Briefcase className="text-[#0A9DC4] w-4 h-4" />
-                  <h3 className="text-[#0c264d] font-bold text-sm">Professional Success</h3>
-                </div>
-                <p className="text-xs text-slate-700 leading-relaxed">Many individuals with VPD have wildly successful careers. Their sheer determination, resilience, and creative problem-solving skills make them highly adaptable, innovative employees.</p>
-              </div>
-            </div>
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button 
+              onClick={() => setCurrentArticle?.('visual-processing')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About VPD
+            </button>
           </div>
 
           {/* TAB 2 REFERENCES */}
@@ -302,86 +243,63 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
       {activeTab === 'lifespan' && (
         <div className="space-y-8 animate-fadeIn">
 
-          {/* Social Life Card (Yellow) - Uses Float Image */}
-          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm flow-root">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships & Social Life</h2>
+          {/* Single Unified Card (Yellow) */}
+          <div className="bg-[#ffd166]/20 border-2 border-[#ffd166] rounded-xl p-6 shadow-sm">
+            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Relationships &amp; Lifespan</h2>
             
             <ImageWithFallback 
               src="/images/vpd/vpd-living-social.webp"
-              alt="Friends or a romantic couple engaged in an accessible conversation"
-              className="w-56 h-auto rounded-md border border-[#ffd166] float-right ml-6 mb-4 shadow-sm hidden sm:block"
+              alt="Graphic Placeholder"
+              className="block mx-auto w max-w-full h-auto mb-6 rounded-lg shadow-sm border border-[#ffd166]"
             />
             
-            <p className="text-sm text-slate-700 leading-relaxed mb-6">
+            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
               Socializing requires energy. Because navigating the physical world is exhausting for someone with VPD, choosing social environments wisely is a critical self-care boundary.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Heart className="text-[#ffd166] w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Heart className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Explaining VPD</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">It is incredibly frustrating when partners or friends misinterpret visual deficits as a lack of effort. Using the exact phrase, "My eyes see fine, but my brain processes visual information differently," provides instant clarity.</p>
-                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Explaining VPD</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">It is frustrating when partners misinterpret visual deficits as lack of effort. Saying "my brain processes visual information differently" provides clarity.</p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-[#ffd166] border-opacity-50 flex items-start gap-4">
-                <div className="bg-[#fffbeb] p-2 rounded-lg border border-[#ffd166] border-opacity-30 shrink-0">
-                  <Users className="text-[#ffd166] w-5 h-5" />
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Users className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-[#0c264d] font-bold text-sm mb-1">Social Activities</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed">Social activities involving intense visual-motor tracking (like playing catch or team sports) cause high anxiety. Participating in conversation-based socializing or interest groups is often vastly more enjoyable.</p>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Social Activities</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Social activities involving intense visual-motor tracking cause anxiety. Participating in conversation-based socializing is vastly more enjoyable.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Lightbulb className="w-5 h-5" />
                 </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Built-In Strengths</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Constantly inventing workarounds forces the individual to develop out-of-the-box, highly creative problem-solving skills.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl shadow-sm border border-[#ffd166] flex flex-col items-center text-center">
+                <div className="w-10 h-10 rounded-full bg-[#0c264d] text-[#ffd166] flex items-center justify-center mb-3 shadow-md ring-2 ring-offset-2 ring-[#0c264d]">
+                  <Search className="w-5 h-5" />
+                </div>
+                <h3 className="text-[#0c264d] font-bold text-sm mb-2 w-full border-b border-[#ffd166] border-opacity-50 pb-2">Community</h3>
+                <p className="text-xs text-slate-700 leading-relaxed">Connecting with others who have learning differences shatters isolation and builds deep empathy and understanding for others.</p>
               </div>
             </div>
           </div>
 
-          {/* Advocacy & Strengths Card (Slate) - Uses W-64 Centered Image */}
-          <div className="bg-slate-50 border-2 border-[#0c264d] rounded-xl p-6 shadow-sm flow-root">
-            <h2 className="text-[#0c264d] font-bold mb-6 text-2xl text-center">Advocacy, Strengths & Hope</h2>
-            
-            <ImageWithFallback 
-              src="/images/vpd/vpd-living-advocacy.webp"
-              alt="Diverse community group connecting over shared neurodivergent experiences"
-              className="block mx-auto w-64 h-auto mb-6 rounded-lg shadow-sm border border-gray-200"
-            />
-            
-            <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              VPD does not limit overall intelligence. By harnessing technology and finding supportive communities, individuals transition from merely surviving to actively thriving.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              
-              <div>
-                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <Lightbulb className="text-[#2abcd4] w-5 h-5" /> Built-In Strengths
-                </h3>
-                <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                  Individuals with VPD frequently develop massive verbal and auditory processing strengths. Furthermore, having to constantly invent new workarounds for a visually-designed world forces the individual to develop out-of-the-box, highly creative problem-solving skills that translate brilliantly to the workplace.
-                </p>
-                <div className="bg-white p-3 rounded-lg border border-[#0c264d] border-opacity-20 shadow-sm flex items-start gap-2">
-                  <Monitor className="text-[#0c264d] w-4 h-4 mt-0.5 shrink-0" />
-                  <p className="text-xs text-slate-700">Modern technology (audiobooks, voice dictation, GPS) acts as an instant equalizer, granting unprecedented independence.</p>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-[#0c264d] font-bold text-lg mb-4 flex items-center gap-2">
-                  <Search className="text-[#2abcd4] w-5 h-5" /> Self-Advocacy & Community
-                </h3>
-                <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                  Connecting with others who have learning differences completely shatters the feeling of isolation. Experiencing these challenges often builds deep empathy and understanding for others, making individuals with VPD highly effective advocates for workplace accessibility.
-                </p>
-                <div className="bg-white p-3 rounded-lg border border-[#0c264d] border-opacity-20 shadow-sm flex items-start gap-2">
-                  <Clock className="text-[#0c264d] w-4 h-4 mt-0.5 shrink-0" />
-                  <p className="text-xs text-slate-700">While the core processing difference never vanishes, it becomes highly manageable as the individual matures and masters their accommodations.</p>
-                </div>
-              </div>
-
-            </div>
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button 
+              onClick={() => setCurrentArticle?.('visual-processing')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About VPD
+            </button>
           </div>
 
           {/* TAB 3 REFERENCES */}
@@ -392,25 +310,13 @@ export function VPDLiving({ setCurrentArticle, initialTab }: VPDLivingProps) {
                 Background Sources
               </h4>
               <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-                <li>Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age. <i>ASCD</i>.</li>
-                <li>Esteves, K. J., & Whitten, E. (2011). Assisted reading with digital audiobooks for students with reading disabilities. <i>Reading Horizons</i>.</li>
+                <li>Rose, D. H., &amp; Meyer, A. (2002). Teaching every student in the digital age. <i>ASCD</i>.</li>
+                <li>Esteves, K. J., &amp; Whitten, E. (2011). Assisted reading with digital audiobooks for students with reading disabilities. <i>Reading Horizons</i>.</li>
               </ul>
             </div>
           </div>
         </div>
       )}
-
-      {/* FOOTER BUTTON */}
-      <div className="flex justify-end my-8 w-full clear-both">
-        <button 
-          onClick={() => setCurrentArticle?.('visual-processing')}
-          className="bg-[#ffd166] text-[#0c264d] hover:bg-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 shadow-md whitespace-nowrap"
-        >
-          <span className="text-xl">←</span>
-          All About VPD
-        </button>
-      </div>
-
     </article>
   );
 }
