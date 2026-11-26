@@ -121,6 +121,47 @@ export function TouretteSymptoms({ setCurrentArticle, initialTab }: TouretteSymp
               </div>
             </div>
           </div>
+
+          {/* FOOTER BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button
+              onClick={() => setCurrentArticle?.('tourette')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About Tourette's
+            </button>
+          </div>
+
+          {/* ===== TAB 1 REFERENCES SECTION ===== */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            {/* CITED STUDIES: GREEN */}
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Robertson, M. M. (2000). Tourette syndrome, associated conditions and the complexities of treatment. <i>Brain</i>.</p>
+                <p>2. Van Borsel, J., & Tetnowski, J. A. (2007). Fluency disorders in genetic syndromes. <i>Journal of Fluency Disorders</i>.</p>
+              </div>
+            </div>
+
+            {/* BACKGROUND SOURCES: CYAN */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+                <li>Jankovic, J., & Kurlan, R. (2011). Tourette syndrome: Evolving concepts. <i>Movement Disorders</i>.</li>
+                <li>Leckman, J. F. (2002). Tourette's syndrome. <i>The Lancet</i>.</li>
+                <li>Leckman, J. F., et al. (2014). Clinical features of Tourette syndrome and tic disorders. <i>Journal of Obsessive-Compulsive and Related Disorders</i>.</li>
+                <li>Martino, D., & Leckman, J. F. (2013). <i>Tourette Syndrome</i>. Oxford University Press.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       )}
 
@@ -194,6 +235,36 @@ export function TouretteSymptoms({ setCurrentArticle, initialTab }: TouretteSymp
               </div>
             </div>
           </div>
+
+          {/* FOOTER BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button
+              onClick={() => setCurrentArticle?.('tourette')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About Tourette's
+            </button>
+          </div>
+
+          {/* ===== TAB 2 REFERENCES SECTION ===== */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+
+            {/* BACKGROUND SOURCES: CYAN */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Conelea, C. A., & Woods, D. W. (2008). The influence of contextual factors on tic expression in Tourette's syndrome: A review. <i>Journal of Psychosomatic Research</i>.</li>
+                <li>Leckman, J. F. (2002). Tourette's syndrome. <i>The Lancet</i>.</li>
+                <li>Leckman, J. F., et al. (2014). Clinical features of Tourette syndrome and tic disorders. <i>Journal of Obsessive-Compulsive and Related Disorders</i>.</li>
+                <li>Martino, D., & Leckman, J. F. (2013). <i>Tourette Syndrome</i>. Oxford University Press.</li>
+                <li>Woods, D. W., et al. (2005). <i>Understanding Tourette Syndrome: A Guide for Parents and Professionals</i>. Jessica Kingsley Publishers.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       )}
 
@@ -263,56 +334,48 @@ export function TouretteSymptoms({ setCurrentArticle, initialTab }: TouretteSymp
               </div>
             </div>
           </div>
-        </div>
-      )}
 
-      {/* FOOTER BUTTON */}
-      <div className="mt-8 mb-12 flex justify-end w-full">
-        <button
-          onClick={() => setCurrentArticle?.('tourette')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
-        >
-          <span className="text-xl">←</span>
-          All About Tourette's
-        </button>
-      </div>
+          {/* FOOTER BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button
+              onClick={() => setCurrentArticle?.('tourette')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About Tourette's
+            </button>
+          </div>
 
-      {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both mt-16 font-spartan">
-        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-        
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-            Cited Studies & Statistics
-          </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p className="font-bold text-[#0c264d]">Motor & Vocal Tics</p>
-            <p>1. Robertson, M. M. (2000). Tourette syndrome, associated conditions and the complexities of treatment. <i>Brain</i>.</p>
-            <p>2. Van Borsel, J., & Tetnowski, J. A. (2007). Fluency disorders in genetic syndromes. <i>Journal of Fluency Disorders</i>.</p>
-            <p className="font-bold text-[#0c264d] pt-2">Co-occurring Conditions</p>
-            <p>1. Hirschtritt, M. E., et al. (2015). Lifetime prevalence, age of risk, and genetic relationships of comorbid psychiatric disorders in Tourette syndrome. <i>JAMA Psychiatry</i>.</p>
-            <p>2. Robertson, M. M., et al. (2009). The international prevalence, epidemiology, and clinical phenomenology of Tourette syndrome: A cross-cultural perspective. <i>Journal of Psychosomatic Research</i>.</p>
+          {/* ===== TAB 3 REFERENCES SECTION ===== */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            {/* CITED STUDIES: GREEN */}
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Hirschtritt, M. E., et al. (2015). Lifetime prevalence, age of risk, and genetic relationships of comorbid psychiatric disorders in Tourette syndrome. <i>JAMA Psychiatry</i>.</p>
+                <p>2. Robertson, M. M., et al. (2009). The international prevalence, epidemiology, and clinical phenomenology of Tourette syndrome: A cross-cultural perspective. <i>Journal of Psychosomatic Research</i>.</p>
+              </div>
+            </div>
+
+            {/* BACKGROUND SOURCES: CYAN */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+                <li>Freeman, R. D., et al. (2000). An international perspective on Tourette syndrome: Selected findings from 3,500 individuals in 22 countries. <i>Developmental Medicine & Child Neurology</i>.</li>
+                <li>Martino, D., & Leckman, J. F. (2013). <i>Tourette Syndrome</i>. Oxford University Press.</li>
+                <li>Woods, D. W., et al. (2005). <i>Understanding Tourette Syndrome: A Guide for Parents and Professionals</i>. Jessica Kingsley Publishers.</li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        {/* BACKGROUND SOURCES: CYAN */}
-        <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
-            Background Sources
-          </h4>
-          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
-            <li>Conelea, C. A., & Woods, D. W. (2008). The influence of contextual factors on tic expression in Tourette's syndrome: A review. <i>Journal of Psychosomatic Research</i>.</li>
-            <li>Freeman, R. D., et al. (2000). An international perspective on Tourette syndrome: Selected findings from 3,500 individuals in 22 countries. <i>Developmental Medicine & Child Neurology</i>.</li>
-            <li>Jankovic, J., & Kurlan, R. (2011). Tourette syndrome: Evolving concepts. <i>Movement Disorders</i>.</li>
-            <li>Leckman, J. F. (2002). Tourette's syndrome. <i>The Lancet</i>.</li>
-            <li>Leckman, J. F., et al. (2014). Clinical features of Tourette syndrome and tic disorders. <i>Journal of Obsessive-Compulsive and Related Disorders</i>.</li>
-            <li>Martino, D., & Leckman, J. F. (2013). <i>Tourette Syndrome</i>. Oxford University Press.</li>
-            <li>Woods, D. W., et al. (2005). <i>Understanding Tourette Syndrome: A Guide for Parents and Professionals</i>. Jessica Kingsley Publishers.</li>
-          </ul>
-        </div>
-      </div>
+      )}
     </article>
   );
 }

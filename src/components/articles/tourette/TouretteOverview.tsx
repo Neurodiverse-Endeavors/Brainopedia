@@ -186,6 +186,36 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
               </div>
             </div>
           </div>
+
+          {/* FOOTER BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button 
+              onClick={() => setCurrentArticle?.('tourette')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About Tourette's
+            </button>
+          </div>
+
+          {/* ===== TAB 1 REFERENCES SECTION ===== */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+
+            {/* BACKGROUND SOURCES: CYAN */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+                <li>Bloch, M. H., & Leckman, J. F. (2009). Clinical course of Tourette syndrome. <i>Journal of Psychosomatic Research</i>.</li>
+                <li>Jankovic, J. (2001). Tourette's syndrome. <i>New England Journal of Medicine</i>.</li>
+                <li>Leckman, J. F. (2002). Tourette's syndrome. <i>The Lancet</i>.</li>
+                <li>Martino, D., & Leckman, J. F. (2013). <i>Tourette Syndrome</i>. Oxford University Press.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       )}
 
@@ -210,7 +240,7 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
             />
             
             <p className="text-sm text-slate-700 leading-relaxed text-center mb-8 max-w-3xl mx-auto">
-              Unlike classic spinal or brainstem reflexes—which fire automatically without conscious buildup—clinicians often describe tics as <strong>unvoluntary</strong> or semi-voluntary.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup> They are not chosen to achieve a goal, yet they frequently arise as a compelled response to an intense internal sensation, similar to the overwhelming urge to scratch a severe itch or hold back a sneeze.
+              Unlike classic spinal or brainstem reflexes—which fire automatically without conscious buildup—clinicians often describe tics as <strong>unvoluntary</strong> or semi-voluntary.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">1</sup> They are not chosen to achieve a goal, yet they frequently arise as a compelled response to an intense internal sensation, similar to the overwhelming urge to scratch a severe itch or hold back a sneeze.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -219,7 +249,7 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-1">The Premonitory Urge</h3>
                   <p className="text-xs text-slate-700 leading-relaxed mb-2">
-                    <strong>The Sensation:</strong> Reported by roughly 80–93% of older children and adults with Tourette's, this is an uncomfortable localized feeling—such as pressure, tension, itchiness, tingling, or a sense that something feels "not right"—that builds just before a tic.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">4</sup> (Younger children may not always notice or report these urges.)
+                    <strong>The Sensation:</strong> Reported by roughly 80–93% of older children and adults with Tourette's, this is an uncomfortable localized feeling—such as pressure, tension, itchiness, tingling, or a sense that something feels "not right"—that builds just before a tic.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">2</sup> (Younger children may not always notice or report these urges.)
                   </p>
                   <p className="text-xs text-slate-700 leading-relaxed">
                     <strong>The Release:</strong> Performing the tic temporarily relieves this mounting sensory buildup, though the relief is typically brief before the cycle repeats.
@@ -232,13 +262,54 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
                 <div className="pl-2">
                   <h3 className="text-[#0c264d] font-bold text-sm mb-2 border-b border-gray-100 pb-1">The Cost of Suppression</h3>
                   <p className="text-xs text-slate-700 leading-relaxed mb-2">
-                    <strong>Temporary Control:</strong> Many individuals can voluntarily suppress tics for periods of time—such as in class or a meeting—but doing so requires active cognitive focus and sustained mental effort.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">5</sup>
+                    <strong>Temporary Control:</strong> Many individuals can voluntarily suppress tics for periods of time—such as in class or a meeting—but doing so requires active cognitive focus and sustained mental effort.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup>
                   </p>
                   <p className="text-xs text-slate-700 leading-relaxed">
-                    <strong>The Rebound:</strong> Holding tics in often intensifies the internal urge, leading to a "rebound" where tics discharge with greater frequency once the person is in a safe, relaxed setting.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">5</sup>
+                    <strong>The Rebound:</strong> Holding tics in often intensifies the internal urge, leading to a "rebound" where tics discharge with greater frequency once the person is in a safe, relaxed setting.<sup className="text-[#10b981] font-bold ml-[2px] text-[10px]">3</sup>
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* FOOTER BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button 
+              onClick={() => setCurrentArticle?.('tourette')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About Tourette's
+            </button>
+          </div>
+
+          {/* ===== TAB 2 REFERENCES SECTION ===== */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            {/* CITED STUDIES: GREEN */}
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Cavanna, A. E., & Nani, A. (2013). Tourette syndrome and consciousness of action. <i>Tremor and Other Hyperkinetic Movements</i>.</p>
+                <p>2. Leckman, J. F., Walker, D. E., & Cohen, D. J. (1993). Premonitory urges in Tourette's syndrome. <i>American Journal of Psychiatry</i>.</p>
+                <p>3. Conelea, C. A., & Woods, D. W. (2008). The influence of contextual factors on tic expression in Tourette's syndrome: A review. <i>Journal of Psychosomatic Research</i>.</p>
+              </div>
+            </div>
+
+            {/* BACKGROUND SOURCES: CYAN */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>Kwak, C., et al. (2003). Premonitory sensory phenomenon in Tourette's syndrome. <i>Movement Disorders</i>.</li>
+                <li>Leckman, J. F. (2002). Tourette's syndrome. <i>The Lancet</i>.</li>
+                <li>Martino, D., & Leckman, J. F. (2013). <i>Tourette Syndrome</i>. Oxford University Press.</li>
+                <li>Woods, D. W., et al. (2005). <i>Understanding Tourette Syndrome: A Guide for Parents and Professionals</i>. Jessica Kingsley Publishers.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -300,55 +371,48 @@ export function TouretteOverview({ setCurrentArticle, initialTab }: TouretteOver
               </div>
             </div>
           </div>
-        </div>
-      )}
 
-      {/* FOOTER BUTTON */}
-      <div className="mt-8 mb-12 flex justify-end w-full">
-        <button 
-          onClick={() => setCurrentArticle?.('tourette')}
-          className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shadow-sm"
-        >
-          <span className="text-xl">←</span>
-          All About Tourette's
-        </button>
-      </div>
+          {/* FOOTER BUTTON */}
+          <div className="mt-8 mb-12 flex justify-end w-full">
+            <button 
+              onClick={() => setCurrentArticle?.('tourette')}
+              className="bg-[#ffd166] hover:bg-[#0c264d] text-[#0c264d] hover:text-white font-normal py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
+            >
+              <span className="text-xl">←</span>
+              All About Tourette's
+            </button>
+          </div>
 
-      {/* ===== REFERENCES SECTION ===== */}
-      <div className="clear-both mt-16 font-spartan">
-        <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
-        
-        {/* CITED STUDIES: GREEN */}
-        <div className="mb-6">
-          <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
-            Cited Studies & Statistics
-          </h4>
-          <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
-            <p>1. Freeman, R. D., et al. (2000). An international perspective on Tourette syndrome: Selected findings from 3,500 individuals in 22 countries. <i>Developmental Medicine & Child Neurology</i>.</p>
-            <p>2. Knight, T., et al. (2012). Prevalence of tic disorders: A systematic review and meta-analysis. <i>Pediatric Neurology</i>.</p>
-            <p>3. Cavanna, A. E., & Nani, A. (2013). Tourette syndrome and consciousness of action. <i>Tremor and Other Hyperkinetic Movements</i>.</p>
-            <p>4. Leckman, J. F., Walker, D. E., & Cohen, D. J. (1993). Premonitory urges in Tourette's syndrome. <i>American Journal of Psychiatry</i>.</p>
-            <p>5. Conelea, C. A., & Woods, D. W. (2008). The influence of contextual factors on tic expression in Tourette's syndrome: A review. <i>Journal of Psychosomatic Research</i>.</p>
+          {/* ===== TAB 3 REFERENCES SECTION ===== */}
+          <div className="clear-both mt-16 font-spartan">
+            <h3 className="font-bold mb-5 text-xl text-[#0c264d]">References</h3>
+            
+            {/* CITED STUDIES: GREEN */}
+            <div className="mb-6">
+              <h4 className="text-sm uppercase tracking-wider text-[#10b981] font-bold mb-3 border-b border-[#10b981] border-opacity-20 pb-1">
+                Cited Studies & Statistics
+              </h4>
+              <div className="text-xs space-y-3 text-slate-600 leading-relaxed break-words" style={{ textIndent: 0 }}>
+                <p>1. Freeman, R. D., et al. (2000). An international perspective on Tourette syndrome: Selected findings from 3,500 individuals in 22 countries. <i>Developmental Medicine & Child Neurology</i>.</p>
+                <p>2. Knight, T., et al. (2012). Prevalence of tic disorders: A systematic review and meta-analysis. <i>Pediatric Neurology</i>.</p>
+              </div>
+            </div>
+
+            {/* BACKGROUND SOURCES: CYAN */}
+            <div>
+              <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
+                Background Sources
+              </h4>
+              <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
+                <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
+                <li>Cath, D. C., et al. (2011). European clinical guidelines for Tourette syndrome and other tic disorders. Part I: Assessment. <i>European Child & Adolescent Psychiatry</i>.</li>
+                <li>Martino, D., & Leckman, J. F. (2013). <i>Tourette Syndrome</i>. Oxford University Press.</li>
+                <li>Woods, D. W., et al. (2005). <i>Understanding Tourette Syndrome: A Guide for Parents and Professionals</i>. Jessica Kingsley Publishers.</li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        {/* BACKGROUND SOURCES: CYAN */}
-        <div>
-          <h4 className="text-sm uppercase tracking-wider text-[#2abcd4] font-bold mb-3 border-b border-[#2abcd4] border-opacity-20 pb-1">
-            Background Sources
-          </h4>
-          <ul className="list-none text-xs space-y-3 text-slate-600 leading-relaxed p-0 m-0 break-words" style={{ textIndent: 0 }}>
-            <li>American Psychiatric Association. (2022). <i>Diagnostic and Statistical Manual of Mental Disorders</i> (5th ed., text rev.). American Psychiatric Publishing.</li>
-            <li>Bloch, M. H., & Leckman, J. F. (2009). Clinical course of Tourette syndrome. <i>Journal of Psychosomatic Research</i>.</li>
-            <li>Cath, D. C., et al. (2011). European clinical guidelines for Tourette syndrome and other tic disorders. Part I: Assessment. <i>European Child & Adolescent Psychiatry</i>.</li>
-            <li>Jankovic, J. (2001). Tourette's syndrome. <i>New England Journal of Medicine</i>.</li>
-            <li>Kwak, C., et al. (2003). Premonitory sensory phenomenon in Tourette's syndrome. <i>Movement Disorders</i>.</li>
-            <li>Leckman, J. F. (2002). Tourette's syndrome. <i>The Lancet</i>.</li>
-            <li>Martino, D., & Leckman, J. F. (2013). <i>Tourette Syndrome</i>. Oxford University Press.</li>
-            <li>Woods, D. W., et al. (2005). <i>Understanding Tourette Syndrome: A Guide for Parents and Professionals</i>. Jessica Kingsley Publishers.</li>
-          </ul>
-        </div>
-      </div>
+      )}
     </article>
   );
 }
