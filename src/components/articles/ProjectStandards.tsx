@@ -13,7 +13,7 @@ export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
         <h1 className="text-4xl text-[#0c264d] font-normal mb-2">
           Brainopedia Project Standards & Design System
         </h1>
-        <p className="text-sm text-gray-500 font-bold uppercase tracking-widest">Last Updated: October 2026</p>
+        <p className="text-sm text-gray-500 font-bold uppercase tracking-widest">Last Updated: November 2026</p>
         <p className="mt-4 text-[#0c264d]">
           The definitive technical and editorial manual for the Brainopedia digital encyclopedia.
         </p>
@@ -137,7 +137,7 @@ export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
         </div>
         <p className="text-sm mb-6 text-gray-600">All graphics must be implemented using the <code className="bg-gray-100 px-1 rounded">ImageWithFallback</code> component. Use these strict layout patterns:</p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
             <h3 className="font-bold text-[#0c264d] text-sm mb-2">1. The Main Page Float (w-56, Mobile-First)</h3>
             <p className="text-xs mb-3 text-gray-600">Used strictly on main introductory condition pages. Centers cleanly on mobile screens and floats right with text wrap on desktop.</p>
@@ -147,24 +147,16 @@ export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
           </div>
 
           <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-            <h3 className="font-bold text-[#0c264d] text-sm mb-2">2. The Subpage Centered Hero (w-64)</h3>
-            <p className="text-xs mb-3 text-gray-600">Default standard for ALL graphics inside colored UI cards on subpages. Centers on both mobile and desktop and scales via max-w-full.</p>
-            <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
-              className="block mx-auto w-64 max-w-full h-auto mb-6 rounded-lg shadow-sm"
-            </code>
-          </div>
-
-          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-            <h3 className="font-bold text-[#0c264d] text-sm mb-2">3. The Wide Centered (w-96)</h3>
-            <p className="text-xs mb-3 text-gray-600">Used for wider diagrams or detailed infographics where the standard w-64 is too small to read comfortably.</p>
+            <h3 className="font-bold text-[#0c264d] text-sm mb-2">2. The Tabbed Subpage Centered Hero (w-96)</h3>
+            <p className="text-xs mb-3 text-gray-600">Default standard for ALL graphics inside colored UI cards on tabbed subpages. Centers on both mobile and desktop and scales automatically via max-w-full.</p>
             <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
               className="block mx-auto w-96 max-w-full h-auto mb-6 rounded-lg shadow-sm"
             </code>
           </div>
 
           <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-            <h3 className="font-bold text-[#0c264d] text-sm mb-2">4. The Full Width Hero (w-full)</h3>
-            <p className="text-xs mb-3 text-gray-600">Used only when a complex chart or visual needs to stretch across the absolute entire width of its container.</p>
+            <h3 className="font-bold text-[#0c264d] text-sm mb-2">3. The Full Width Hero (w-full)</h3>
+            <p className="text-xs mb-3 text-gray-600">Used only when a complex chart, wide diagram, or detailed visual needs to stretch across the entire width of its container.</p>
             <code className="text-sm block bg-gray-900 text-green-400 p-3 rounded whitespace-pre-wrap break-words">
               className="block mx-auto w-full max-w-full h-auto mb-6 rounded-lg shadow-sm"
             </code>
@@ -189,10 +181,10 @@ export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
               <strong>NEVER Hide Graphics on Mobile:</strong> Never use <code className="bg-white px-1.5 py-0.5 text-red-700 rounded border border-red-200">hidden sm:block</code> or <code className="bg-white px-1.5 py-0.5 text-red-700 rounded border border-red-200">hidden md:block</code> on article or subpage images. All graphics must display on mobile screens.
             </li>
             <li>
-              <strong>No Floats Inside Subpage Cards:</strong> Inside tabbed subpage cards (Overview, Symptoms, Causes, Diagnosis, Support, Living), <strong>never</strong> use <code className="bg-white px-1.5 py-0.5 text-red-700 rounded border border-red-200">float-right</code>. Always place the graphic immediately below the card's <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> header as a centered hero using <code className="bg-white px-1.5 py-0.5 text-green-700 rounded border border-gray-200">block mx-auto w-64 max-w-full h-auto mb-6</code>.
+              <strong>No Floats Inside Subpage Cards:</strong> Inside tabbed subpage cards (Overview, Symptoms, Causes, Diagnosis, Support, Living), <strong>never</strong> use <code className="bg-white px-1.5 py-0.5 text-red-700 rounded border border-red-200">float-right</code>. Always place the graphic immediately below the card's <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> header as a centered hero using <code className="bg-white px-1.5 py-0.5 text-green-700 rounded border border-gray-200">block mx-auto w-96 max-w-full h-auto mb-6</code>.
             </li>
             <li>
-              <strong>Always Include <code className="bg-white px-1 rounded border border-gray-200">max-w-full h-auto</code>:</strong> Every fixed-width image (<code className="bg-white px-1 rounded border border-gray-200">w-56</code>, <code className="bg-white px-1 rounded border border-gray-200">w-64</code>, <code className="bg-white px-1 rounded border border-gray-200">w-96</code>) must include <code className="bg-white px-1.5 py-0.5 text-green-700 rounded border border-gray-200">max-w-full h-auto</code> so it automatically shrinks if a phone screen or card padding is narrower than the image width.
+              <strong>Always Include <code className="bg-white px-1 rounded border border-gray-200">max-w-full h-auto</code>:</strong> Every fixed-width image (<code className="bg-white px-1 rounded border border-gray-200">w-56</code>, <code className="bg-white px-1 rounded border border-gray-200">w-96</code>) must include <code className="bg-white px-1.5 py-0.5 text-green-700 rounded border border-gray-200">max-w-full h-auto</code> so it automatically shrinks if a phone screen or card padding is narrower than the image width.
             </li>
             <li>
               <strong>Main Page Floats Must Be Responsive:</strong> When floating images on main condition landing pages, always use <code className="bg-white px-1.5 py-0.5 text-green-700 rounded border border-gray-200">block mx-auto float-none md:float-right md:ml-6</code> so the image centers cleanly above the paragraph on phones and only floats right on tablet/desktop (<code className="bg-white px-1 rounded border border-gray-200">md:</code> and up).
@@ -203,7 +195,7 @@ export function ProjectStandards({ setCurrentArticle }: ProjectStandardsProps) {
         <div className="bg-blue-50 border-l-4 border-blue-500 p-5 mt-6 rounded-r-lg shadow-sm">
           <h3 className="font-bold text-[#0c264d] mb-2 uppercase text-xs">The H2 Alignment Rule (Main Landing Pages Only)</h3>
           <p className="text-sm text-gray-700">
-            On main condition landing pages where images float right on desktop, place the <code className="bg-white px-1 rounded border border-gray-200">&lt;ImageWithFallback&gt;</code> tag in the code <strong>immediately before</strong> the <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> tag so the floated image aligns flush with the top of the section header. On subpage cards (where images are centered <code className="bg-white px-1 rounded border border-gray-200">w-64</code> heroes), place the image <strong>immediately after</strong> the centered <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> tag.
+            On main condition landing pages where images float right on desktop, place the <code className="bg-white px-1 rounded border border-gray-200">&lt;ImageWithFallback&gt;</code> tag in the code <strong>immediately before</strong> the <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> tag so the floated image aligns flush with the top of the section header. On subpage cards (where images are centered <code className="bg-white px-1 rounded border border-gray-200">w-96</code> heroes), place the image <strong>immediately after</strong> the centered <code className="bg-white px-1 rounded border border-gray-200">&lt;h2&gt;</code> tag.
           </p>
         </div>
       </section>
